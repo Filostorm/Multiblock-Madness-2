@@ -1,0 +1,55 @@
+{                                                      
+  "type": "geolosys:deposit_dense",                    
+  "config": {
+    "yMin": -40,
+    "yMax": 80,
+    "size": 40,                                        
+    "dimensions": {                                    
+      "isBlacklist": false,                            
+      "filter": [ "overworld" ]                        
+    },
+    "blockStateMatchers": [ "minecraft:stone" ],     
+    "blocks": {                                        
+      "default": [{                                    
+        "block": "geolosys:coal_ore",
+        "chance": 0.4
+      },{                                    
+        "block": "geolosys:lignite_ore",
+        "chance": 0.3
+      },{                                    
+        "block": "geolosys:bituminous_coal_ore",
+        "chance": 0.2
+      },{                                    
+        "block": "geolosys:anthracite_coal_ore",
+        "chance": 0.1
+      }],
+      "minecraft:deepslate": [{                                    
+        "block": "geolosys:deepslate_lignite_ore",
+        "chance": 0.1
+      },{                                    
+        "block": "geolosys:deepslate_bituminous_coal_ore",
+        "chance": 0.2
+      },{                                    
+        "block": "geolosys:deepslate_anthracite_coal_ore",
+        "chance": 0.4
+      },{                                    
+        "block": "minecraft:deepslate_diamond_ore",
+        "chance": 0.3
+      }]
+    },
+    "samples": [{                                    
+      "block": "geolosys:coal_ore_sample",
+      "chance": 0.4
+    },{                                    
+      "block": "geolosys:lignite_ore_sample",
+      "chance": 0.3
+    },{                                    
+      "block": "geolosys:bituminous_coal_ore_sample",
+      "chance": 0.2
+    },{                                    
+      "block": "geolosys:anthracite_coal_ore_sample",
+      "chance": 0.1
+    }],
+    "generationWeight": 15
+  }
+}

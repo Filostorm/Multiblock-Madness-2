@@ -1,0 +1,295 @@
+
+[Ores]
+	#Generate Void Crystal Ore?
+	void = true
+	#Metal types that Crossroads should add gears for
+	#Specify the metal then a space then a hexadecimal color then a space then a density in kg/m3
+	#Adding a new gear material requires adding localization and recipes via datapack
+	#Removing a default gear material is not recommended
+	gear_types = ["copper FF783C 9000", "tin F0F0F0 7300", "iron A0A0A0 8000", "gold FFFF00 20000", "bronze FFA03C 8800", "copshowium FF8200 0"]
+	#Generate Tin Ore?
+	tin = false
+	#Generate Ruby Ore?
+	ruby = false
+	#Metal ore types that Crossroads should generate tripling items for
+	#Specify the metal then a space then a hexadecimal color, ex. "copper FF4800"
+	#Doesn't register a molten fluid, recipes, or localization
+	#Use a datapack to register any desired recipes or localization for new materials, Find a mod already adding the desired molten fluid for the fluid
+	process_ores = ["copper FF7800", "tin C8C8C8", "iron A0A0A0", "gold FFFF00"]
+
+[Specializations]
+	#Allow Multiple specializations per player in Multiplayer?
+	paths_multi = false
+	#Allow forgetting paths using Path Sigils?
+	path_forget = false
+	#Allow Multiple specializations per player in Singleplayer?
+	paths_single = true
+
+	[Specializations.Witchcraft]
+		#Chance for a medicinal mushroom to attempt to spread on a random tick
+		#Value out of 1. Set to 0 to disable spread
+		#Range: 0.0 ~ 1.0
+		medicinal_mushroom_spread = 1.0
+		#Production/growth speed multiplier for the Hydroponics Trough compared to normal crop growth
+		#Setting to 0 will effectively disable the machine
+		#Range: 0 ~ 100
+		hydroponics_mult = 16
+		#Time in seconds for the debuffs on respawned entities
+		#Also controls the vulnerability period. Cannot be disabled
+		#Range: 1 ~ 32767
+		respawn_penalty_duration = 30
+		#Specify entities that can not have their AI disabled by sedation. Players can never be fully sedated
+		#Format of 'domain:entity_id', ex. minecraft:pig
+		sedation_blacklist = ["minecraft:player", "minecraft:wither", "minecraft:ender_dragon"]
+		#Multiplier for the degradation added by the blood centrifuge
+		#Range: 0.0 ~ 4.0
+		blood_centrifuge_degradation_mult = 1.25
+		#The permanent maximum health reduction for each injected permanent potion effect
+		#Set to 0 or lower to disable the penalty
+		#Set to 20 or higher to effectively disable permanent injection for players
+		#Range: 0 ~ 100
+		injection_perma_penalty = 2
+		#Specify entities which can not be cloned. Players can never be cloned
+		#Format of 'domain:entity_id', ex. minecraft:pig
+		cloning_blacklist = ["minecraft:player", "minecraft:wither", "minecraft:ender_dragon"]
+		#Specify potion effects that can not be applied permanently to an entity or player
+		#Format of 'domain:potion_effect_id', ex. minecraft:health_boost
+		permanent_effect_blacklist = ["minecraft:health_boost", "minecraft:glowing"]
+		#Time in seconds for genetically modified entities to respawn
+		#Set to 0 or a negative value to disable respawning
+		#Range: -1 ~ 32767
+		respawn_delay = 30
+		#The duration of injected potions vs drinking them
+		#Setting to 1 or below makes injection equivalent to normal potions
+		#Range: 1.0 ~ 100.0
+		injection_efficiency = 2.0
+		#The reduction in maximum health for each point of degradation on a clone
+		#Range: 0 ~ 100
+		degradation_penalty = 2
+
+	[Specializations.Technomancy]
+		#FE equal to 1 Temporal Entropy
+		#Range: > 1
+		fe_per_entropy = 50
+		#Allow adding Netherite armor to Technomancy armor?
+		techno_armor_reinforce = true
+		#Level of the All-Terrain Boots soul speed effect
+		#Set to 0 to disable
+		#Range: 0 ~ 10
+		enviro_boot_soul = 3
+		#Allow time acceleration of Tile Entities?
+		#Disabling this does not affect acceleration of normal entities or block ticks
+		te_accel = true
+		#Level of the All-Terrain Boots frost walker effect
+		#Higher levels increase freezing range
+		#Set to 0 to disable
+		#Range: 0 ~ 10
+		enviro_boot_frost = 2
+		#Speed boost from All-Terrain Boots in water (swim speed boost)
+		#Set to 0 to disable
+		#Range: 0.0 ~ 100.0
+		enviro_boot_depth = 3.0
+		#Whether Gateways can teleport entities at all
+		allow_gateway = true
+		#Should recalling restore previous health and hunger?
+		#Recommended to disable this for PvP
+		stat_recall = true
+		#Beam power output of the beacon harness
+		#Range: 8 ~ 4096
+		beacon_harness_power = 512
+		#Multiplier for XP levels to upgrade Technomancy armor
+		#Range: 0 ~ 100
+		techno_armor_xp = 1
+		#Temporal Entropy gained per Entropy Node when transferring
+		#Higher values are more difficult, and encourage using fewer node chains
+		#Range: 0 ~ 64
+		entropy_node_gain = 2
+		#Enable hardmode for the Gateway?
+		#If true, dialing in chevrons only works if the beam alignment matches the chevron being dialed
+		#Enable this if you want an extra challenge
+		gateway_hard = false
+		#If enabled, machines will NOT break/explode/cause damage when overfilling on Temporal Entropy
+		#Machines which overfill on Temporal Entropy will shut down instead
+		flux_safe = false
+		#Whether Technomancy machines should drop an item when overloaded
+		drop_machine = false
+		#Whether Gateways can teleport entities that aren't players
+		#If false, players can still use Gateways
+		allow_gateway_ent = true
+		#Maximum time duration for recalling, in seconds. Set to -1 to disable limit, 0 to disable recalling
+		#Range: -1 ~ 86400
+		time_recall = 300
+		#Does the CCC require specifically a Time beam?
+		ccc_req_time = true
+		#Allow Temporal Entropy disasters from Technomancy?
+		#If disabled, disasters create a small explosion instead
+		flux_disaster = true
+		#Destroy the CCC if Copshowium overfills the tank?
+		#Disabling this will make the CCC much easier to use
+		allow_overflow = true
+		#Power output of the Lodestone Dynamo (in J/t)
+		#Set to 0 to disable the Lodestone Dynamo
+		#Range: 0 ~ 1000
+		lodestone_dynamo = 100
+
+	[Specializations.Alchemy]
+		#Acceleration of Density Plates
+		#In blocks/tick/tick, where normal gravity ~0.08
+		#Range: 0.0 ~ 10.0
+		grav_accel = 0.15
+		#Whether lightning bolts from atmospheric overcharging can spawn the 4 horsemen
+		#Overriden by gamerules
+		atmos_horses = true
+		#Maximum charge for the atmosphere
+		#Range: 0 ~ 2000000000
+		charge_limit = 1000000000
+		#Allow the full effect of Phelostogen?
+		#If disabled Phelostogen lights a single small fire instead
+		phel_effect = true
+		#Range of Density Plates
+		#Range: 0 ~ 128
+		grav_range = 64
+		#If true, rift beams will spawn mob drops instead of actual mobs
+		#Rift beams do this regardless of config setting in peaceful mode
+		rift_drops = false
+		#Level of effects from overcharging the atmosphere
+		#0: No negative effects
+		#1: Allow lightning strikes
+		#2: Allow creeper charging
+		#3: Allow lightning strikes & creeper charging
+		#Range: 0 ~ 3
+		atmos_effects = 3
+		#Whether to allow Ignis Infernum
+		#If disabled, Ignis Infernum is still craftable, but it gets nerfed to Phelostogen level
+		ignis_infernum = true
+		#FE produced by one Voltus
+		#Range: 0 ~ 100000
+		voltus_power = 2000
+
+[Internal]
+	#If enabled, the beacon harness will have an extra 'safety period' for a full color loop when the chunk is loaded
+	#Used to stop beacon harnesses shutting off when loading across several chunks
+	beacon_harness_load_safety = false
+	#Number of millibuckets of molten metal per ingot
+	#Does not change recipes
+	#Range: 1 ~ 10000
+	ingot_mb = 90
+	#The size of the raytracing interval used by the beam staff and beam cannon
+	#Larger numbers cause less lag when using those devices, but are less precise
+	#Range: 0.10000000149011612 ~ 1.0
+	beam_raytrace_step = 0.25
+	#Whether beams decide what they can pass through based on beam power
+	#If true, low power beams require a smaller hole, and high power beams require a larger empty space in blocks to pass through
+	beam_collision_use_power = false
+	#Lower values increase network lag but increases gear speed synchronization
+	#Range: 0.05000000074505806 ~ 10.0
+	predict_speed = 0.20000000298023224
+	#Interval in ticks between gear network checks
+	#Range: 100 ~ 2400
+	network_time = 300
+	#Distance in blocks that players can see various effects from (electric arcs, beams from staffs, etc)
+	#Lower values will decrease the amount of packets sent
+	#Range: 1 ~ 512
+	effect_distance = 512
+
+[Misc]
+	#Whether Charge beams can summon lightning underground or under a roof
+	underground_lightning = false
+	#Whether the charge alignment can summon lightning
+	charge_lightning = true
+	#Minimum temperature of nether biomes (in degrees C)
+	#Range: 0.0 ~ 1000.0
+	nether_temp = 60.0
+	#Enable overheat effects?
+	#If false, all heat cable overheating effects are replaced with burning
+	cable_effects = true
+	#Whether void-potential (death) beams do absolute damage
+	#Absolute damage ignores potion effects and enchantments
+	beam_damage_absolute = false
+	#Whether Enchantment beams have a chance to destroy items
+	enchant_destroy = true
+	#Minimum spring speed to hover with the Whirligig
+	#If set at or above 10, gaining elevation with a Whirligig is disabled
+	#Range: 1.0 ~ 100.0
+	whirligig_hover = 6.0
+	#Percentage to reduce success rate of Stamp Mill by when not reaching 100% progress
+	#Effectively nerfs ore-tripling
+	#Range: 0 ~ 100
+	mill_damping = 0
+	#Amount of liquid fat equivalent to 1 hunger or saturation (in millibuckets)
+	#Range: 1 ~ 10000
+	fat_cost = 100
+	#Minimum spring speed to eliminate fall damage with the Whirligig
+	#If set at or above 10, gaining the Whirligig can not eliminate fall damage, but can reduce it
+	#Range: 1.0 ~ 100.0
+	whirligig_safe = 4.0
+
+[Balance]
+	#FE generated by one unit of charge-alignment beam
+	#Range: > 0
+	fe_per_charge = 50
+	#Multiplier for rotary energy loss
+	#Range: 0.0 ~ 2.147483647E9
+	rotary_loss = 1.0
+	#The rate at which the Solar Heater makes heat, in deg/t
+	#Range: 0.0 ~ 100.0
+	solar_rate = 8.0
+	#The maximum speed on a Spring Gun
+	#Higher maximum speeds increase maximum damage
+	#Range: 1.0 ~ 100.0
+	spring_gun_cap = 10.0
+	#The power produced by the Lodestone Turbine (in J/t)
+	#Range: 0.0 ~ 100.0
+	lodestone_power = 15.0
+	#Temperature change from energy and cold beams, per unit power, applied every 4 ticks
+	#Range: 0 ~ 1000
+	beam_heat_mult = 100
+	#The number of degrees one bucket of steam is worth
+	#If this is changed, it is recommended to rebalance JSON recipes with steam
+	#Range: > 0
+	steam_value = 50
+	#FE equivalent to 1J. Set to 0 to effectively disable the dynamo and lodestone dynamo
+	#Range: > 0
+	dynamo_efficiency = 2
+	#The power produced by the Hamster Wheel (in J/t)
+	#Range: 0.0 ~ 100.0
+	hamster_power = 5.0
+	#Maximum fuel burn time in the Firebox. Set to -1 to remove the limit
+	#Range: > -1
+	firebox_cap = 64000
+	#The power produced by the Maxwell's Demon (both hot and cold, in degrees C/t)
+	#Range: 0.0 ~ 100.0
+	demon_power = 5.0
+	#Stirling Engine joules per degree of heat consumed
+	#Stirling engines will never actually reach this efficiency- it is an unreachable upper bound
+	#Range: 0.0 ~ 2.147483647E9
+	stirling_conversion = 20.0
+	#Resistive power exerted by the Winding Table per speed of the wound item
+	#Range: 0.0 ~ 1000.0
+	winding_resist = 20.0
+	#Power generated by the Crystal Master Axis in J/t
+	#Range: 0.0 ~ 2.147483647E9
+	crystal_power = 100.0
+	#The number of Joules generated from one degree worth of steam
+	#Range: > 0
+	joule_value = 4
+	#Multiplier on fuel burn time for a Firebox compared to a furnace
+	#Range: 1 ~ 100
+	firebox_fuel_mult = 4
+	#The maximum speed a Stirling Engine can reach
+	#Range: 0.0 ~ 2.147483647E9
+	stirling_limit = 2.0
+	#Power divider for potential beams grow effect
+	#For example, 2 will cause twice as much beam power for the same effect
+	#Range: 1 ~ 64
+	grow_divider = 1
+	#Whether to destroy items when failing to wind them in a Winding Table
+	winding_destroy = true
+	#Formula for rotary power loss, where 'a' is 'rotary_loss' config
+	#0: No loss
+	#1: -a*w^2 /tick, where w is I-weighted average system speed [default]
+	#2: -a% of system energy /tick [Larger systems lose power faster]
+	#3: -a*w of gear energy /tick, for every gear [Larger systems lose power faster, relatively less loss for larger or slower gears]
+	#Range: 0 ~ 3
+	rotary_loss_mode = 1
+

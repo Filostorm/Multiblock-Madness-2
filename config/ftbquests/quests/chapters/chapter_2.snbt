@@ -1,0 +1,11 @@
+{
+	id: "370D1929712FBFD1"
+	group: "3C8730B42C1725BE"
+	order_index: 1
+	filename: "chapter_2"
+	title: "Chapter 2"
+	icon: "mekanism:ingot_steel"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [ ]
+}

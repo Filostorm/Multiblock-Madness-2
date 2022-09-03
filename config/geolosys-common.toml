@@ -1,0 +1,59 @@
+
+#Prospecting Options
+[prospecting]
+	#The number of times Geolosys will attempt to place plutons in a given chunk
+	#Range: > 1
+	numPlutonsPerChunk = 10
+	#Whether or not Samples randomly tick (like crops). This can be bad for performance but fixes waterlogging issues on worldgen
+	shouldSamplesTick = true
+	#The diameter of the prospector's pick prospecting cycle
+	#Range: > 1
+	proPickDiameter = 5
+	#A list of blocks to always ignore when prospecting, even if they're in a deposit.
+	proPickDetectionBlacklist = ["minecraft:stone", "minecraft:andesite", "minecraft:diorite", "minecraft:granite", "minecraft:netherrack", "minecraft:sandstone", "minecraft:deepslate", "minecraft:tuff", "minecraft:calcite", "minecraft:dripstone_block"]
+	#Enable the prospector's pickaxe
+	enableProPick = true
+	#Allow the prospector's pick to get damaged
+	enableProPickDmg = false
+	#Max durability of a prospector's pick if damage is enabled
+	#Range: > 1
+	proPickDurability = 1024
+	#The range (depth) of the prospector's pick prospecting cycle
+	#Range: > 1
+	proPickRange = 5
+	#Give players a Field Manual if they haven't gotten one
+	giveManual = true
+	#Maximum samples that can generate with each pluton within a chunk
+	#Range: 1 ~ 256
+	maxSamplesPerChunk = 10
+	#The upper limit of RNG for generating any pluton in a given chunk.
+	#Larger values indicate further distance between plutons.
+	#Range: 0.0 ~ 1.0
+	chunkSkipChance = 0.9
+
+#Feature Control
+["feature control"]
+	#Output info into the logs when generating Geolosys deposits
+	debugWorldgen = true
+	#Outputs really advanced info when generating deposits.
+	advancedDebugWorldGen = false
+	#The fallback materials which a Deposit can replace if they're not specified by the deposit itself
+	#Format: Comma-delimited set of <modid:block> (see default for example)
+	defaultReplacementMaterials = ["minecraft:stone", "minecraft:andesite", "minecraft:diorite", "minecraft:granite", "minecraft:netherrack", "minecraft:sandstone", "minecraft:deepslate", "minecraft:tuff", "minecraft:calcite", "minecraft:dripstone_block"]
+	#If "disableVanillaOreGen" is set to true, setting this to false will allow 
+	#you to replace vanilla ores associated with ore veins with geolosys equivalents.
+	removeVeinOres = false
+	#Disable generation of Vanilla ores
+	disableVanillaOreGen = true
+
+#Mod-Compat Settings
+[compat]
+	#This will make it so that Platinum will drop Platinum AND Osmium
+	enableOsmium = false
+	#This will make it so that Platinum will ONLY drop Osmium
+	enableOsmiumExclusively = false
+	#This will make it so that Autunite will drop Uranium AND Yellorium
+	enableYellorium = true
+	#This will make is so that Coal has a rare chance of dropping sulfur
+	enableSulfur = true
+

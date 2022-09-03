@@ -1,0 +1,12 @@
+#Should beams make sounds?
+beam_sounds = true
+#Should the overlay for the beam cage render while not holding a beam staff?
+#Regardless of setting, it only shows while a beam cage is equipped.
+beam_cage_overlay = true
+#Should electrical arcs make sounds?
+electric_sounds = true
+#Should temporal entropy transfer make sounds?
+entropy_sounds = true
+#Should beams visually rotate?
+rotate_beam = true
+

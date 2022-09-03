@@ -1,0 +1,112 @@
+{
+	id: "69EDDBF419DBF1D3"
+	group: "3E99B5839A3C1D8D"
+	order_index: 0
+	filename: "mana_and_artifice"
+	title: "Mana and Artifice"
+	icon: "mna:manaweaving_altar"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			x: -2.5d
+			y: 0.0d
+			id: "47AA157D687A02F7"
+			tasks: [{
+				id: "6652FF81E0985785"
+				type: "item"
+				item: "mna:guide_book"
+			}]
+		}
+		{
+			x: -0.5d
+			y: 0.0d
+			dependencies: ["47AA157D687A02F7"]
+			id: "7EBE28646422EC18"
+			tasks: [{
+				id: "3483C1EA4FEB42A9"
+				type: "item"
+				item: {
+					id: "mna:manaweaver_wand"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: 1.5d
+			y: 0.0d
+			dependencies: ["7EBE28646422EC18"]
+			id: "0E9C33334120AC94"
+			tasks: [{
+				id: "53D3DF24EA663D62"
+				type: "item"
+				item: "mna:transmuted_silver"
+				count: 9L
+			}]
+		}
+		{
+			x: 2.5d
+			y: 1.5d
+			dependencies: ["0E9C33334120AC94"]
+			id: "098CAF7E91266CDC"
+			tasks: [{
+				id: "6302DA60089BF7CD"
+				type: "item"
+				item: "mna:runeforge"
+			}]
+		}
+		{
+			x: 2.5d
+			y: -1.5d
+			dependencies: ["0E9C33334120AC94"]
+			id: "1BF79E8ACC1F917F"
+			tasks: [{
+				id: "1F4122EFD87E59A3"
+				type: "item"
+				item: "mna:manaweaving_altar"
+			}]
+		}
+		{
+			x: 3.5d
+			y: 0.0d
+			dependencies: ["0E9C33334120AC94"]
+			id: "1FC0519495084939"
+			tasks: [{
+				id: "314EFEAEC1C1D314"
+				type: "item"
+				item: "mna:occulus"
+			}]
+		}
+		{
+			x: 4.0d
+			y: 1.5d
+			dependencies: ["098CAF7E91266CDC"]
+			id: "12DDD9CD9F8B934F"
+			tasks: [{
+				id: "340349797FF371F8"
+				type: "item"
+				item: {
+					id: "mna:wizard_chalk"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: 4.0d
+			y: -1.5d
+			dependencies: ["1BF79E8ACC1F917F"]
+			id: "07A718A55B5A7318"
+			tasks: [{
+				id: "5AE55B859A66458A"
+				type: "item"
+				item: "mna:infused_silk"
+			}]
+		}
+	]
+}

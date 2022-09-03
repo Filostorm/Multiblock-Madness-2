@@ -1,0 +1,173 @@
+{
+	id: "0E072989CB71C174"
+	group: "3C8730B42C1725BE"
+	order_index: 0
+	filename: "chapter_1"
+	title: "Chapter 1"
+	icon: "create:brass_ingot"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			x: -8.5d
+			y: 0.5d
+			id: "0094821A5EE0CD69"
+			tasks: [{
+				id: "0265090C2DA1E7E3"
+				type: "item"
+				item: "create:andesite_alloy"
+			}]
+		}
+		{
+			x: -1.5d
+			y: 0.5d
+			dependencies: ["273B98D3C35D7356"]
+			id: "760223888ADD58B0"
+			tasks: [{
+				id: "7BF977CF9356EB36"
+				type: "item"
+				item: "create:mechanical_mixer"
+			}]
+		}
+		{
+			x: -2.5d
+			y: 2.0d
+			dependencies: ["273B98D3C35D7356"]
+			id: "5B6B37AF9780152D"
+			tasks: [{
+				id: "3255A525F1E72672"
+				type: "item"
+				item: "create:empty_blaze_burner"
+			}]
+		}
+		{
+			x: -3.5d
+			y: 0.5d
+			dependencies: ["360253CDEF94C130"]
+			id: "273B98D3C35D7356"
+			tasks: [{
+				id: "38E79964102D2043"
+				type: "item"
+				item: "create:water_wheel"
+			}]
+			rewards: [{
+				id: "64547D403D4F328D"
+				type: "item"
+				item: "create:stressometer"
+			}]
+		}
+		{
+			x: 0.5d
+			y: 0.5d
+			dependencies: [
+				"4C3411D9DB130B75"
+				"760223888ADD58B0"
+			]
+			id: "143FA2A8FD6E4E10"
+			tasks: [
+				{
+					id: "5E243ECA3D6ECAD2"
+					type: "item"
+					item: "create:brass_ingot"
+				}
+				{
+					id: "7C251FEC77B086A4"
+					type: "item"
+					item: "thermal:bronze_ingot"
+				}
+				{
+					id: "1A7011CD74311DC6"
+					type: "item"
+					item: "thermal:invar_ingot"
+				}
+				{
+					id: "4908A51BA51BD0F6"
+					type: "item"
+					item: "thermal:electrum_ingot"
+				}
+				{
+					id: "7808474B24EEAB26"
+					type: "item"
+					item: "thermal:constantan_ingot"
+				}
+			]
+		}
+		{
+			title: "Basic Create Components"
+			x: -5.0d
+			y: 0.5d
+			dependencies: ["36F53EFC92FB2CA7"]
+			id: "360253CDEF94C130"
+			tasks: [
+				{
+					id: "4E90F162081F6CF8"
+					type: "item"
+					item: "create:shaft"
+				}
+				{
+					id: "7CC7E9BFDF0C1530"
+					type: "item"
+					item: "create:cogwheel"
+				}
+				{
+					id: "528B487942066EFB"
+					type: "item"
+					item: "create:belt_connector"
+				}
+			]
+			rewards: [{
+				id: "57431D911DF31C5A"
+				type: "item"
+				item: "create:goggles"
+			}]
+		}
+		{
+			x: -2.0d
+			y: -1.0d
+			dependencies: ["273B98D3C35D7356"]
+			id: "2990DA17B56345DA"
+			tasks: [{
+				id: "3F0EDA5FFCEA62B9"
+				type: "item"
+				item: "create:mechanical_press"
+			}]
+		}
+		{
+			x: -7.0d
+			y: 0.5d
+			dependencies: ["0094821A5EE0CD69"]
+			id: "36F53EFC92FB2CA7"
+			tasks: [{
+				id: "0E054D9FE6175A83"
+				type: "item"
+				item: "create:andesite_casing"
+			}]
+			rewards: [{
+				id: "70C31CF5F1B59E14"
+				type: "item"
+				item: "create:wrench"
+			}]
+		}
+		{
+			x: -0.5d
+			y: 2.0d
+			dependencies: ["5B6B37AF9780152D"]
+			id: "4C3411D9DB130B75"
+			tasks: [{
+				id: "6C0E8821B844D6A1"
+				type: "item"
+				item: "create:blaze_burner"
+			}]
+		}
+		{
+			x: -0.5d
+			y: -1.0d
+			id: "19FD07E867EA3343"
+			tasks: [{
+				id: "784342599913B5DD"
+				type: "dimension"
+				dimension: "minecraft:the_nether"
+			}]
+		}
+	]
+}

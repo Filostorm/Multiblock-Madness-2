@@ -1,0 +1,545 @@
+To refresh this file, delete it and run /reload command again! Last updated: Jul 18, 2022, 6:33:49 AM
+
+#supplementaries:cage_baby_catchable
+- minecraft:cow
+- minecraft:sheep
+- minecraft:pig
+- minecraft:goat
+- alexsmobs:crocodile?
+- alexsmobs:endergrade?
+- alexsmobs:gazelle?
+- alexsmobs:gorilla?
+- alexsmobs:komodo_dragon?
+- alexsmobs:raccoon?
+- alexsmobs:seal?
+- alexsmobs:warped_toad?
+- eanimod:enhanced_sheep?
+- eanimod:enhanced_cow?
+- eanimod:enhanced_llama?
+- eanimod:enhanced_pig?
+- eanimod:enhanced_mooshroom?
+
+#byg:not_hurt_by_quartz_crystals
+- minecraft:ghast
+- minecraft:hoglin
+- minecraft:enderman
+
+#occultism:humans
+- #forge:villagers
+- minecraft:player
+
+#forge:horses
+- minecraft:horse
+
+#tconstruct:rare_mobs
+- minecraft:wither
+- minecraft:ender_dragon
+- minecraft:elder_guardian
+- minecraft:evoker
+- minecraft:player
+
+#botania:cocoon/common
+- minecraft:pig
+- minecraft:cow
+- minecraft:chicken
+- minecraft:rabbit
+- minecraft:sheep
+
+#forge:pigs
+- minecraft:pig
+
+#forge:parrots
+- minecraft:parrot
+
+#botania:cocoon/rare_aquatic
+- minecraft:dolphin
+- minecraft:glow_squid
+- minecraft:axolotl
+
+#tconstruct:melting/show_in_default
+- minecraft:iron_golem
+- minecraft:snow_golem
+- minecraft:villager
+- minecraft:player
+
+#mekanism:hurtable_vehicles
+- minecraft:boat
+- minecraft:minecart
+- minecraft:chest_minecart
+- minecraft:command_block_minecart
+- minecraft:furnace_minecart
+- minecraft:hopper_minecart
+- minecraft:spawner_minecart
+- minecraft:tnt_minecart
+- biomesoplenty:boat?
+- byg:boat?
+
+#botania:cocoon/rare
+- minecraft:horse
+- minecraft:donkey
+- minecraft:wolf
+- minecraft:ocelot
+- minecraft:cat
+- minecraft:parrot
+- minecraft:llama
+- minecraft:fox
+- minecraft:panda
+- minecraft:turtle
+- minecraft:goat
+- quark:frog?
+
+#tconstruct:piggybackpack_blacklist
+
+#forge:small_armor
+- #forge:slimes
+
+#industrialforegoing:mob_duplicator_blacklist
+
+#botania:shaded_mesa_blacklist
+- minecraft:ender_dragon
+- minecraft:wither
+- minecraft:item_frame
+- minecraft:glow_item_frame
+- minecraft:end_crystal
+- minecraft:painting
+- minecraft:command_block_minecart
+- minecraft:marker
+- minecraft:area_effect_cloud
+- minecraft:evoker_fangs
+- minecraft:leash_knot
+- botania:corporea_spark
+- botania:doppleganger
+- botania:flame_ring
+- botania:magic_landmine
+- botania:magic_missile
+- botania:mana_burst
+- botania:pink_wither
+- botania:spark
+- botania:player_mover
+
+#minecraft:powder_snow_walkable_mobs
+- minecraft:rabbit
+- minecraft:endermite
+- minecraft:silverfish
+- minecraft:fox
+- mekanism:robit
+
+#industrialforegoing:mob_imprisonment_tool_blacklist
+- artifacts:mimic
+
+#forge:llamas
+- minecraft:llama
+- minecraft:trader_llama
+
+#farmersdelight:dog_food_users
+- minecraft:wolf
+
+#botania:cocoon/common_aquatic
+- minecraft:cod
+- minecraft:salmon
+- minecraft:tropical_fish
+- minecraft:pufferfish
+- minecraft:squid
+- quark:crab?
+
+#per-viam-invenire:replace_vanilla_navigator
+- mekanism:robit
+
+#industrialforegoing:mob_crusher_blacklist
+- minecraft:ender_dragon
+
+#minecraft:impact_projectiles
+- #minecraft:arrows
+- minecraft:snowball
+- minecraft:fireball
+- minecraft:small_fireball
+- minecraft:egg
+- minecraft:trident
+- minecraft:dragon_fireball
+- minecraft:wither_skull
+- mekanism:flame
+- supplementaries:rope_arrow
+- supplementaries:brick_projectile
+
+#minecraft:beehive_inhabitors
+- minecraft:bee
+
+#forge:creepers
+- minecraft:creeper
+
+#minecraft:skeletons
+- minecraft:skeleton
+- minecraft:stray
+- minecraft:wither_skeleton
+
+#ars_nouveau:drygmy_blacklist
+- minecraft:iron_golem
+
+#forbidden_arcanus:quantum_catcher_blacklisted
+- minecraft:wither
+- minecraft:ender_dragon
+- minecraft:elder_guardian
+
+#minecraft:arrows
+- minecraft:arrow
+- minecraft:spectral_arrow
+- supplementaries:rope_arrow
+
+#forge:sheep
+- minecraft:sheep
+
+#tconstruct:bacon_producer
+- minecraft:pig
+- minecraft:piglin
+- minecraft:hoglin
+
+#forge:zombies
+- minecraft:zombie
+- minecraft:zombie_villager
+- minecraft:husk
+- minecraft:drowned
+
+#ars_nouveau:magic_find
+- ars_nouveau:starbuncle
+- ars_nouveau:drygmy
+- ars_nouveau:whirlisprig
+- ars_nouveau:bookwyrm
+- ars_nouveau:wixie
+
+#minecraft:axolotl_always_hostiles
+- minecraft:drowned
+- minecraft:guardian
+- minecraft:elder_guardian
+
+#forge:squid
+- minecraft:squid
+
+#minecraft:freeze_immune_entity_types
+- minecraft:stray
+- minecraft:polar_bear
+- minecraft:snow_golem
+- minecraft:wither
+- mekanism:robit
+
+#ars_nouveau:spell_can_hit
+
+#forge:spiders
+- minecraft:spider
+
+#forge:golems/snow
+- minecraft:snow_golem
+
+#occultism:wild_hunt
+- occultism:wild_hunt_skeleton
+- occultism:wild_hunt_wither_skeleton
+
+#forge:cows
+- minecraft:cow
+
+#c:bosses
+- botania:doppleganger
+
+#farmersdelight:horse_feed_users
+- minecraft:horse
+- minecraft:skeleton_horse
+- minecraft:zombie_horse
+- minecraft:donkey
+- minecraft:mule
+- minecraft:llama
+
+#forbidden_arcanus:black_hole_affected
+- minecraft:item
+- minecraft:experience_orb
+- minecraft:arrow
+- minecraft:spectral_arrow
+- forbidden_arcanus:boom_arrow
+- forbidden_arcanus:draco_arcanus_arrow
+
+#minecraft:raiders
+- minecraft:evoker
+- minecraft:pillager
+- minecraft:ravager
+- minecraft:vindicator
+- minecraft:illusioner
+- minecraft:witch
+
+#occultism:afrit_allies
+- minecraft:blaze
+
+#forge:villagers
+- minecraft:villager
+- minecraft:wandering_trader
+- minecraft:zombie_villager
+- minecraft:villager
+
+#pneumaticcraft:vacuum_trap_blacklisted
+
+#tconstruct:melting/hide_in_default
+- minecraft:giant
+
+#minecraft:axolotl_hunt_targets
+- minecraft:tropical_fish
+- minecraft:pufferfish
+- minecraft:salmon
+- minecraft:cod
+- minecraft:squid
+- minecraft:glow_squid
+
+#forge:illagers
+- minecraft:evoker
+- minecraft:illusioner
+- minecraft:pillager
+- minecraft:vindicator
+- minecraft:witch
+
+#ars_nouveau:disintegration_whitelist
+
+#supplementaries:eats_fodder
+- minecraft:pig?
+- minecraft:cow?
+- minecraft:sheep?
+- minecraft:chicken?
+- minecraft:goat?
+- minecraft:mooshroom?
+- autumnity:snail?
+- alexsmobs:raccoon?
+
+#supplementaries:tickable_when_captured
+- minecraft:endermite?
+- feywild:spring_pixie?
+- feywild:autumn_pixie?
+- feywild:summer_pixie?
+- feywild:winter_pixie?
+- alexsmobs:mimicube?
+- iceandfire:pixie?
+- druidcraft:lunar_moth?
+- druidcraft:dreadfish?
+
+#forge:slimes
+- minecraft:slime
+- tconstruct:earth_slime
+- tconstruct:sky_slime
+- tconstruct:ender_slime
+- tconstruct:terracube
+
+#supplementaries:flute_pet
+- minecraft:horse?
+- minecraft:llama?
+- minecraft:mule?
+- minecraft:donkey?
+- minecraft:fox?
+
+#tconstruct:killagers
+- #forge:villagers
+- #forge:illagers
+- minecraft:iron_golem
+- minecraft:ravager
+
+#supplementaries:jar_catchable
+- minecraft:slime?
+- minecraft:bee?
+- minecraft:magma_cube?
+- feywild:spring_pixie?
+- feywild:autumn_pixie?
+- feywild:summer_pixie?
+- feywild:winter_pixie?
+- bettermushroom:mushrooms_spores?
+- untamedwilds:tarantula?
+- wyrmroost:coin_dragon?
+- fantasy:unicorn?
+- alexsmobs:enderiophage?
+- iceandfire:pixie?
+- alexsmobs:fly?
+- alexsmobs:hummingbird?
+- alexsmobs:cockroach?
+- terraincognita:butterfly?
+- buzzierbees:honey_slime?
+- mysticalworld:frog?
+- mysticalworld:beetle?
+- mysticalworld:silkworm?
+- druidcraft:lunar_moth?
+- druidcraft:dreadfish?
+- betterendforge:end_slime?
+- betterendforge:dragonfly?
+- betterendforge:silk_moth?
+- savageandravage:creepie?
+- betteranimalsplus:butterfly?
+- whisperwoods:moth?
+- fins:river_pebble_snail?
+- tconstruct:sky_slime?
+- twilightforest:maze_slime?
+- biomemakeover:dragonfly?
+
+#minecraft:freeze_hurts_extra_types
+- minecraft:strider
+- minecraft:blaze
+- minecraft:magma_cube
+
+#pneumaticcraft:omnihopper_blacklisted
+- minecraft:villager
+
+#ars_nouveau:disintegration_blacklist
+
+#forge:chicken
+- minecraft:chicken
+
+#forge:bats
+- minecraft:bat
+
+#supplementaries:cage_catchable
+- minecraft:slime?
+- minecraft:bee?
+- minecraft:magma_cube?
+- minecraft:endermite?
+- minecraft:vex?
+- minecraft:parrot?
+- minecraft:rabbit?
+- minecraft:cat?
+- minecraft:chicken?
+- minecraft:bat?
+- minecraft:fox?
+- minecraft:ocelot?
+- feywild:spring_pixie?
+- feywild:autumn_pixie?
+- feywild:summer_pixie?
+- feywild:winter_pixie?
+- eanimod:enhanced_chicken?
+- eanimod:enhanced_rabbit?
+- quark:foxhound?
+- bettermushroom:shroomie?
+- bettermushroom:shroomie_eater?
+- bettermushroom:mushrooms_spores?
+- untamedwilds:softshell_turtle?
+- untamedwilds:tortoise?
+- untamedwilds:tarantula?
+- wyrmroost:lesser_desertwyrm?
+- wyrmroost:roost_stalker?
+- wyrmroost:coin_dragon?
+- infernalexp:voline?
+- infernalexp:shroomloin?
+- kobolds:kobold_zombie?
+- kobolds:kobold_child?
+- fins:mudhorse?
+- alexsmobs:raccoon?
+- alexsmobs:mungus?
+- alexsmobs:tasmanian_devil?
+- alexsmobs:enderiophage?
+- alexsmobs:platypus?
+- alexsmobs:crow?
+- alexsmobs:mimicube?
+- iceandfire:pixie?
+- alexsmobs:fly?
+- alexsmobs:hummingbird?
+- alexsmobs:cockroach?
+- terraincognita:butterfly?
+- buzzierbees:honey_slime?
+- mysticalworld:frog?
+- mysticalworld:beetle?
+- mysticalworld:silkworm?
+- druidcraft:lunar_moth?
+- druidcraft:dreadfish?
+- swampexpansion:slabfish?
+- endergetic:puff_bug?
+- betterendforge:end_slime?
+- betterendforge:dragonfly?
+- betterendforge:silk_moth?
+- savageandravage:creepie?
+- betteranimalsplus:butterfly?
+- whisperwoods:moth?
+- fins:river_pebble_snail?
+- tconstruct:sky_slime?
+- twilightforest:maze_slime?
+- alexsmobs:roadrunner?
+- alexsmobs:rattlesnake?
+- alexsmobs:lobster?
+- alexsmobs:capuchin_monkey?
+- mysticalworld:silver_fox?
+- mysticalworld:sprout?
+- mysticalworld:endermini?
+- mysticalworld:lava_cat?
+- mysticalworld:owl?
+- mysticalworld:hell_sprout?
+- quark:crab?
+- quark:foxhound?
+- quark:stoneling?
+- quark:frog?
+- rats:rat?
+- rats:piper?
+- rats:plague_doctor?
+- rats:black_death?
+- rats:plague_cloud?
+- rats:plague_beast?
+- rats:rat_king?
+- rats:demon_rat?
+- rats:ratlantean_spirit?
+- rats:ratlantean_automation?
+- rats:feral_ratlantean?
+- rats:neo_ratlantean?
+- rats:pirat?
+- rats:ghost_pirat?
+- rats:dutchrat?
+- rats:ratfish?
+- rats:ratlantean_ratbot?
+- rats:rat_baron?
+- goblintraders:goblin_trader?
+- goblintraders:vein_goblin_trader?
+- autumnity:snail?
+- betteranimalsplus:lammergeier?
+- betteranimalsplus:songbird?
+- betteranimalsplus:pheasant?
+- betteranimalsplus:squirrel?
+- betteranimalsplus:badger?
+- betteranimalsplus:turkey?
+- exoticbirds:roadrunner?
+- exoticbirds:hummingbird?
+- exoticbirds:woodpecker?
+- exoticbirds:kingfisher?
+- exoticbirds:toucan?
+- exoticbirds:macaw?
+- exoticbirds:magpie?
+- exoticbirds:kiwi?
+- exoticbirds:owl?
+- exoticbirds:gouldianfinch?
+- exoticbirds:gull?
+- exoticbirds:pigeon?
+- exoticbirds:penguin?
+- exoticbirds:duck?
+- exoticbirds:booby?
+- exoticbirds:cardinal?
+- exoticbirds:bluejay?
+- exoticbirds:robin?
+- exoticbirds:kookaburra?
+- exoticbirds:budgerigar?
+- exoticbirds:cockatoo?
+- swampexpansion:slabfish?
+- betteranimalsplus:horseshoecrab?
+- betteranimalsplus:crab?
+- whisperwoods:wisp?
+- undergarden:muncher?
+- undergarden:scintling?
+- undergarden:rotling?
+- undergarden:sploogie?
+- dungeonsmod:crow?
+- dungeonsmod:anthermite?
+- pandoras_creatures:crab?
+- twilightforest:raven?
+- twilightforest:bunny?
+- twilightforest:penguin?
+- twilightforest:tiny_bird?
+- twilightforest:squirrel?
+- twilightforest:kobold?
+- twilightforest:death_tome?
+- environmental:duck?
+- environmental:cardinal?
+- environmental:fennec_fox?
+- environmental:slabfish?
+- environmental:penguin?
+- fins:flatback_leaf_snail?
+- fins:penglil?
+- fins:river_pebble_snail?
+- fins:siderol_whiskered_snail?
+- fins:red_bull_crab?
+- fins:white_bull_crab?
+- habitat:pooka?
+- habitat:passerine?
+- biomemakeover:dragonfly?

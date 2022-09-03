@@ -1,0 +1,249 @@
+{
+	id: "661C62FB296F3C05"
+	group: "673E1DAD21B18F9F"
+	order_index: 1
+	filename: "basic_progression"
+	title: "Basic Progression"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			x: -2.0d
+			y: -0.5d
+			dependencies: ["32A7F024B311E7C8"]
+			id: "37B7F433FB6802A7"
+			tasks: [
+				{
+					id: "3B12BC0D86C3895A"
+					type: "item"
+					item: "create:andesite_casing"
+				}
+				{
+					id: "49BEC357F8354890"
+					type: "item"
+					item: "create:copper_casing"
+				}
+			]
+		}
+		{
+			x: -2.0d
+			y: 1.0d
+			dependency_requirement: "one_completed"
+			id: "32A7F024B311E7C8"
+			tasks: [{
+				id: "16274015E76AA307"
+				type: "item"
+				item: "create:andesite_alloy"
+			}]
+		}
+		{
+			x: -0.5d
+			y: -0.5d
+			dependencies: [
+				"645E148000874231"
+				"37B7F433FB6802A7"
+			]
+			id: "094EC6941AB8E520"
+			tasks: [{
+				id: "1849CBE0139187EF"
+				type: "item"
+				item: "create:brass_casing"
+			}]
+		}
+		{
+			x: -0.5d
+			y: 1.0d
+			id: "645E148000874231"
+			tasks: [{
+				id: "679B4100273EBE33"
+				type: "item"
+				item: "create:brass_ingot"
+			}]
+		}
+		{
+			x: 1.0d
+			y: -0.5d
+			dependencies: [
+				"26F06D1F05206831"
+				"094EC6941AB8E520"
+			]
+			id: "2B324121F80CA756"
+			tasks: [{
+				id: "22561644486BE7F9"
+				type: "item"
+				item: "create:railway_casing"
+			}]
+		}
+		{
+			x: 1.0d
+			y: 1.0d
+			id: "26F06D1F05206831"
+			tasks: [{
+				id: "72FFB25F6B5CC1D8"
+				type: "item"
+				item: "create:sturdy_sheet"
+			}]
+		}
+		{
+			x: 3.5d
+			y: -0.5d
+			id: "753B5AB7C4E54A33"
+			tasks: [{
+				id: "27994FC34D7ABACA"
+				type: "item"
+				item: "thermal:machine_frame"
+			}]
+		}
+		{
+			x: 6.0d
+			y: -0.5d
+			id: "5E94C7DAE41EDA7C"
+			tasks: [{
+				id: "4AD7D6FDB398D4A5"
+				type: "item"
+				item: "industrialforegoing:machine_frame_pity"
+			}]
+		}
+		{
+			x: 7.5d
+			y: -0.5d
+			dependencies: [
+				"5E94C7DAE41EDA7C"
+				"5E1CF41000AAADE3"
+			]
+			id: "33212DCFEE0F5113"
+			tasks: [{
+				id: "177F1D17BBBF76D2"
+				type: "item"
+				item: "industrialforegoing:machine_frame_simple"
+			}]
+		}
+		{
+			x: 9.0d
+			y: -0.5d
+			dependencies: [
+				"33212DCFEE0F5113"
+				"4006CF42D5FD7F1E"
+			]
+			id: "75EBDD8DFD0B369D"
+			tasks: [{
+				id: "4A2961AC47975657"
+				type: "item"
+				item: "industrialforegoing:machine_frame_advanced"
+			}]
+		}
+		{
+			x: 10.5d
+			y: -0.5d
+			dependencies: [
+				"75EBDD8DFD0B369D"
+				"0B652E16A428138E"
+			]
+			id: "3E389BE5C9998A84"
+			tasks: [{
+				id: "6EABCBD984FD0361"
+				type: "item"
+				item: "industrialforegoing:machine_frame_supreme"
+			}]
+		}
+		{
+			x: 3.5d
+			y: -2.0d
+			dependencies: ["753B5AB7C4E54A33"]
+			id: "206830EBE9F5C41E"
+			tasks: [{
+				id: "67D8E2E64555E5BC"
+				type: "item"
+				item: "thermal:upgrade_augment_1"
+			}]
+		}
+		{
+			x: 3.5d
+			y: -3.5d
+			dependencies: ["206830EBE9F5C41E"]
+			id: "56AB15739AE73F87"
+			tasks: [{
+				id: "13E750224795FD77"
+				type: "item"
+				item: "thermal:upgrade_augment_2"
+			}]
+		}
+		{
+			x: 3.5d
+			y: -5.0d
+			dependencies: ["56AB15739AE73F87"]
+			id: "3D8CF3FBF04A8536"
+			tasks: [{
+				id: "3DDEB10937AF59A8"
+				type: "item"
+				item: "thermal:upgrade_augment_3"
+			}]
+		}
+		{
+			x: 7.5d
+			y: 1.0d
+			dependencies: ["461F3A82B3E8523C"]
+			id: "5E1CF41000AAADE3"
+			tasks: [{
+				id: "2BA2FBE692C30C3C"
+				type: "item"
+				item: "industrialforegoing:latex_bucket"
+			}]
+		}
+		{
+			x: 9.0d
+			y: 1.0d
+			dependencies: ["1B25A007AB659257"]
+			id: "4006CF42D5FD7F1E"
+			tasks: [{
+				id: "7D5C174902656613"
+				type: "item"
+				item: "industrialforegoing:pink_slime_bucket"
+			}]
+		}
+		{
+			x: 10.5d
+			y: 1.0d
+			dependencies: ["464491CB1C6CF2FF"]
+			id: "0B652E16A428138E"
+			tasks: [{
+				id: "1D4AF9C52EDE98F6"
+				type: "item"
+				item: "industrialforegoing:ether_gas_bucket"
+			}]
+		}
+		{
+			x: 7.5d
+			y: 2.5d
+			dependencies: ["5E94C7DAE41EDA7C"]
+			id: "461F3A82B3E8523C"
+			tasks: [{
+				id: "320F36E034B4A16E"
+				type: "item"
+				item: "industrialforegoing:fluid_extractor"
+			}]
+		}
+		{
+			x: 9.0d
+			y: 2.5d
+			dependencies: ["33212DCFEE0F5113"]
+			id: "1B25A007AB659257"
+			tasks: [{
+				id: "2AFD743966BE2E4B"
+				type: "item"
+				item: "industrialforegoing:mob_slaughter_factory"
+			}]
+		}
+		{
+			x: 10.5d
+			y: 2.5d
+			dependencies: ["75EBDD8DFD0B369D"]
+			id: "464491CB1C6CF2FF"
+			tasks: [{
+				id: "3319053E37822C03"
+				type: "item"
+				item: "industrialforegoing:fluid_laser_base"
+			}]
+		}
+	]
+}

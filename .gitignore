@@ -1,0 +1,9 @@
+/*
+!/config
+/config/AppliedEnergistics2/VersionChecker.cfg
+!/scripts
+!/kubejs
+!*.md
+!.gitignore
+.zsrc
+Probe.cfg

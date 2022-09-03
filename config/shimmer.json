@@ -1,0 +1,53 @@
+{
+  "LightBlock": [
+    {
+      "block": "minecraft:sea_lantern",
+      "r": 34,
+      "g": 255,
+      "b": 200,
+      "a": 255,
+      "radius": 7
+    },
+    {
+      "block": "minecraft:redstone_lamp",
+      "state": {
+        "lit": true
+      },
+      "r": 255,
+      "g": 165,
+      "b": 13,
+      "a": 255,
+      "radius": 10
+    }
+  ],
+  "LightItem": [
+    {
+      "item_id" : "minecraft:torch",
+      "r": 255,
+      "g": 253,
+      "b": 85,
+      "a": 255,
+      "radius": 7
+    }
+  ],
+  "Bloom": [
+    {
+      "particle": "minecraft:flame"
+    },
+    {
+      "fluid": "minecraft:lava"
+    },
+    {
+      "block": "minecraft:glowstone"
+    },
+    {
+      "block": "minecraft:redstone_wire"
+    },
+    {
+      "block": "minecraft:redstone_lamp",
+      "state": {
+        "lit": true
+      }
+    }
+  ]
+}

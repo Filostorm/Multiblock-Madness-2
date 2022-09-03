@@ -1,0 +1,34 @@
+{                                                      
+  "type": "geolosys:deposit_dense",                    
+  "config": {
+    "yMin": -60,
+    "yMax": 0,
+    "size": 20,                                        
+    "dimensions": {                                    
+      "isBlacklist": false,                            
+      "filter": [ "overworld" ]                        
+    },
+    "blockStateMatchers": [ "minecraft:stone" ],     
+    "blocks": {                                        
+      "default": [{                                    
+        "block": "mekanism:osmium_ore",
+        "chance": 0.4
+      },{                                    
+        "block": "geolosys:platinum_ore",
+        "chance": 0.6
+      }],
+      "minecraft:deepslate": [{                                    
+        "block": "mekanism:deepslate_osmium_ore",
+        "chance": 0.4
+      },{                                    
+        "block": "geolosys:deepslate_platinum_ore",
+        "chance": 0.6
+      }]
+    },
+    "samples": [{                                    
+      "block": "geolosys:platinum_ore_sample",
+      "chance": 1.0
+    }],
+    "generationWeight": 5
+  }
+}

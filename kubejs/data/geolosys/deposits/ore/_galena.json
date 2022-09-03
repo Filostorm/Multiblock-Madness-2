@@ -1,0 +1,40 @@
+{                                                      
+  "type": "geolosys:deposit_dense",                    
+  "config": {
+    "yMin": -40,
+    "yMax": 40,
+    "size": 40,                                        
+    "dimensions": {                                    
+      "isBlacklist": false,                            
+      "filter": [ "overworld" ]                        
+    },
+    "blockStateMatchers": [ "minecraft:stone" ],     
+    "blocks": {                                        
+      "default": [{
+        "block": "geolosys:galena_ore",
+        "chance": 0.4
+      },{
+        "block": "thermal:lead_ore",
+        "chance": 0.3
+      },{
+        "block": "thermal:silver_ore",
+        "chance": 0.3
+      }],
+      "minecraft:deepslate": [{
+        "block": "geolosys:deepslate_galena_ore",
+        "chance": 0.4
+      },{                                    
+        "block": "thermal:deepslate_lead_ore",
+        "chance": 0.3
+      },{
+        "block": "thermal:deepslate_silver_ore",
+        "chance": 0.3
+      }]
+    },
+    "samples": [{
+      "block": "geolosys:galena_ore_sample",
+      "chance": 1.0
+    }],
+    "generationWeight": 5
+  }
+}

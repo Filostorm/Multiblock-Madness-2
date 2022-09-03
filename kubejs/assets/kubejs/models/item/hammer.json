@@ -1,0 +1,9 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "kubejs:item/hammer",
+        "layer1": "kubejs:item/hammer_handle",
+        "layer2": "kubejs:item/hammer_overlay"
+    }
+  }
+  

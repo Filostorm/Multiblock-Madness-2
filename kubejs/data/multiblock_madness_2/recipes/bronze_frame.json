@@ -1,0 +1,45 @@
+{
+    "type": "compactcrafting:miniaturization",
+    "recipeSize": 3,
+    "layers": [
+      {
+      "type": "compactcrafting:hollow",
+      "wall": "A"
+      },
+      {
+          "type": "compactcrafting:mixed",
+          "pattern": [
+              ["I", "-","I"],
+              ["-", "-","-"],
+              ["I", "-","I"]
+          ]
+      },
+      {
+      "type": "compactcrafting:hollow",
+      "wall": "S"
+      }
+    ],
+    "catalyst": {
+        "id": "immersiveengineering:component_electronic",
+        "Count": 1
+    },
+    "components": {
+        "S": {
+          "type": "compactcrafting:block",
+          "block": "kubejs:bronze_sheetmetal"
+        },
+        "I": {
+          "type": "compactcrafting:block",
+          "block": "kubejs:copper_scaffolding"
+        },
+        "A": {
+          "type": "compactcrafting:block",
+          "block": "immersiveengineering:sheetmetal_electrum"
+        }
+      }
+    ,
+    "outputs": [{
+        "id": "kubejs:bronze_frame",
+        "Count": 1
+      }]
+  }

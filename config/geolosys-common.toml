@@ -22,7 +22,7 @@
 	#Range: > 1
 	proPickRange = 5
 	#Give players a Field Manual if they haven't gotten one
-	giveManual = true
+	giveManual = false
 	#Maximum samples that can generate with each pluton within a chunk
 	#Range: 1 ~ 256
 	maxSamplesPerChunk = 10

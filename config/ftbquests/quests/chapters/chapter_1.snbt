@@ -7,10 +7,23 @@
 	icon: "create:brass_ingot"
 	default_quest_shape: ""
 	default_hide_dependency_lines: false
+	images: [{
+		x: -1.5d
+		y: 1.0d
+		width: 50.0d
+		height: 40.0d
+		rotation: 0.0d
+		image: "kubejs:textures/quests/parchment.png"
+		hover: [ ]
+		click: ""
+		dev: false
+		corner: false
+	}]
 	quests: [
 		{
 			x: -8.5d
 			y: 0.5d
+			shape: "rsquare"
 			id: "0094821A5EE0CD69"
 			tasks: [{
 				id: "0265090C2DA1E7E3"
@@ -21,6 +34,10 @@
 		{
 			x: -1.5d
 			y: 0.5d
+			description: [
+				"Can also be used to craft shapeless recipes."
+				""
+			]
 			dependencies: ["273B98D3C35D7356"]
 			id: "760223888ADD58B0"
 			tasks: [{
@@ -57,6 +74,7 @@
 			}]
 		}
 		{
+			title: "Basic Alloys"
 			x: 0.5d
 			y: 0.5d
 			dependencies: [
@@ -113,6 +131,16 @@
 					id: "528B487942066EFB"
 					type: "item"
 					item: "create:belt_connector"
+				}
+				{
+					id: "3A03D8E1771034FA"
+					type: "item"
+					item: "create:gearbox"
+				}
+				{
+					id: "0C4797CFB583DF8D"
+					type: "item"
+					item: "create:vertical_gearbox"
 				}
 			]
 			rewards: [{

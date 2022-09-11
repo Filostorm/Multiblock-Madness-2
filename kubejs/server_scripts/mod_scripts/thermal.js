@@ -19,10 +19,12 @@ onEvent('recipes', event => {
 		{id: 'thermal:electrum_dust_2'},
 	])
 	
-
-
-	event.remove({output: 'thermal:device_tree_extractor'})
-	event.shaped('thermal:device_tree_extractor', [
+	//Frame has a miniterzation recipe
+	event.remove({output: 'thermal:machine_frame'})
+	
+	//Latex Extractor
+event.remove({output: 'thermal:device_tree_extractor'})
+event.shaped('thermal:device_tree_extractor', [
 	'ABA',
 	'CDC',
 	'AEA'
@@ -32,5 +34,81 @@ onEvent('recipes', event => {
 	C: '#forge:glass',
 	D: 'thermal:redstone_servo',
 	E: 'minecraft:bucket'
-  })
+  }).id("kubejs:device_tree_extractor")
+
+// [| RF Furnace |] //
+event.remove({output: 'thermal:machine_furnace'})
+event.shaped('thermal:machine_furnace', [
+	'ABA',
+	'CDC',
+	'EFE'
+  ], {
+	A: Item.empty,
+	B: 'minecraft:redstone',
+	C: 'minecraft:bricks',
+	D: 'kubejs:bronze_frame',
+	E: 'thermal:copper_gear',
+	F: 'thermal:rf_coil'
+  }).id("kubejs:machine_furnace")
+
+// [| Crafter |] //
+event.remove({output: 'thermal:machine_crafter'})
+event.shaped('thermal:machine_crafter', [
+	'ABA',
+	'CDC',
+	'EFE'
+  ], {
+	A: Item.empty,
+	B: 'minecraft:crafting_table',
+	C: 'thermal:tin_ingot',
+	D: 'kubejs:bronze_frame',
+	E: 'thermal:copper_gear',
+	F: 'thermal:rf_coil'
+  }).id("kubejs:machine_crafter")
+
+// [| Chiller |] //
+event.remove({output: 'thermal:machine_chiller'})
+event.shaped('thermal:machine_chiller', [
+	'ABA',
+	'CDC',
+	'EFE'
+  ], {
+	A: Item.empty,
+	B: '#forge:glass',
+	C: 'minecraft:packed_ice',
+	D: 'kubejs:bronze_frame',
+	E: 'thermal:invar_gear',
+	F: 'thermal:rf_coil'
+  }).id("kubejs:machine_chiller")
+
+// [| Melter |] //
+event.remove({output: 'thermal:machine_crucible'})
+event.shaped('thermal:machine_crucible', [
+	'ABA',
+	'CDC',
+	'EFE'
+  ], {
+	A: Item.empty,
+	B: '#forge:glass',
+	C: 'minecraft:nether_bricks',
+	D: 'kubejs:bronze_frame',
+	E: 'thermal:invar_gear',
+	F: 'thermal:rf_coil'
+  }).id("kubejs:machine_crucible")
+
+// [| Press |] //
+event.remove({output: 'thermal:machine_press'})
+event.shaped('thermal:machine_press', [
+	'ABA',
+	'CDC',
+	'EFE'
+  ], {
+	A: Item.empty,
+	B: 'minecraft:iron_block',
+	C: 'thermal:bronze_ingot',
+	D: 'kubejs:bronze_frame',
+	E: 'thermal:constantan_gear',
+	F: 'thermal:rf_coil'
+  }).id('kubejs:machine_press')
+
 });

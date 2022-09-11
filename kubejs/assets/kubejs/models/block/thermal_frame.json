@@ -1,0 +1,13 @@
+{
+  "parent": "kubejs:block/frame_base",
+  "textures": {
+    "particle": "kubejs:block/machines/thermal_frame_top",
+    "down": "kubejs:block/machines/thermal_frame_bottom",
+    "up": "kubejs:block/machines/thermal_frame_top",
+    "north": "kubejs:block/machines/thermal_frame_side",
+    "east": "kubejs:block/machines/thermal_frame_side",
+    "south": "kubejs:block/machines/thermal_frame_side",
+    "west": "kubejs:block/machines/thermal_frame_side",
+    "inner": "kubejs:block/machines/thermal_frame_inner"
+  }
+}

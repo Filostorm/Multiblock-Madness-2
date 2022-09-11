@@ -120,14 +120,14 @@ global.newMaterialParts = [
   'color': 0x543923,
   'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire'],
   'blockParts': ['scaffolding', 'sheetmetal'],
-  'fluid': null
+  'fluid': 'thick'
 },
 {
   'material': 'magnesium',
   'color': 0x997996,
   'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire'],
   'blockParts': ['scaffolding', 'sheetmetal'],
-  'fluid': null
+  'fluid': 'thick'
 },
 {
   'material': 'boron',
@@ -361,16 +361,18 @@ global.newMaterialParts = [
 {
   'material': 'rutile',
   'color': 0xff4d4d,
-  'itemParts': [],
+  'itemParts': ['dust'],
   'blockParts': ['ore'],
-  'fluid': null
+  'fluid': null,
+  'ore': true
 },
 {
   'material': 'sphalerite',
-  'color': 0x4c51cf,
-  'itemParts': [],
+  'color': 0x7b7db0,
+  'itemParts': ['dust'],
   'blockParts': ['ore'],
-  'fluid': null
+  'fluid': null,
+  'ore': true
 },
 {
   'material': 'sulfur',
@@ -382,16 +384,17 @@ global.newMaterialParts = [
 {
   'material': 'vincyte',
   'color': 0x0046d1,
-  'itemParts': [],
+  'itemParts': ['dust'],
   'blockParts': ['ore'],
-  'fluid': null
+  'fluid': null,
+  'ore': true
 },
 
 /////////////// Fluid /////////////////////////////
 {
   'material': 'slag',
   'color': 0x947b6c,
-  'itemParts': [],
+  'itemParts': ['dust'],
   'blockParts': [],
   'fluid': 'thick'
 }
@@ -413,9 +416,13 @@ onEvent('item.registry', event => {
       if (part == 'ore') {
       event.create(`raw_${item.material}`).color(0, item.color).texture(`kubejs:item/raw_ore`)
       }
+    if (item.ore) {
+      event.create(`${item.material}_chunk`).color(0, item.color).texture(`kubejs:item/ore_chunk`).parentModel(`kubejs:item/ore_chunk`)
+      event.create(`${item.material}_grit`).color(0, item.color).texture(`kubejs:item/ore_dust`).parentModel(`kubejs:item/ore_dust`)
+      event.create(`${item.material}_clump`).color(0, item.color).texture(`kubejs:item/ore_clump`).parentModel(`kubejs:item/ore_clump`)
+      }
     })
   })
-  event.create(`unfired_clay_brick`)
 });
 
 onEvent('block.registry', event => {

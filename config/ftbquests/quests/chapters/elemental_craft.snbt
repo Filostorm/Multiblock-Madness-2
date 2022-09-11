@@ -91,7 +91,7 @@
 				{
 					id: "63AD5DCD558B5F60"
 					type: "item"
-					item: "elementalcraft:springaline_shard"
+					item: "elementalcraft:burnt_glass"
 				}
 			]
 		}
@@ -144,11 +144,18 @@
 			y: 0.5d
 			dependencies: ["6B06707ECFAFD263"]
 			id: "61CCA7FA3C371180"
-			tasks: [{
-				id: "2CFB04C7A08F97D3"
-				type: "item"
-				item: "elementalcraft:swift_alloy_ingot"
-			}]
+			tasks: [
+				{
+					id: "2CFB04C7A08F97D3"
+					type: "item"
+					item: "elementalcraft:swift_alloy_ingot"
+				}
+				{
+					id: "48F4AD547AF2A043"
+					type: "item"
+					item: "elementalcraft:springaline_shard"
+				}
+			]
 		}
 		{
 			x: 10.0d

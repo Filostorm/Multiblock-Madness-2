@@ -119,7 +119,7 @@ onEvent('recipes', event => {
  	event.recipes.immersiveengineeringMetalPress(`#forge:plates/${metal}`, `#forge:ingots/${metal}`, 'immersiveengineering:mold_plate').id(`immersiveengineering:metalpress/plate_${metal}`)
 
 	//Thermal Plates
-	event.recipes.thermal.press(`#forge:plates/${metal}`, `#forge:ingots/${metal}`).id(`thermal:machines/press/press_${metal}_ingot_to_plate`)
+	event.recipes.thermal.press(`2x #forge:plates/${metal}`, `3x #forge:ingots/${metal}`).id(`thermal:machines/press/press_${metal}_ingot_to_plate`)
 	}
 	////////////////DENSE PLATES///////////////
     if (Item.of(`#forge:dense_plates/${metal}`) != null) {
@@ -150,7 +150,7 @@ onEvent('recipes', event => {
 	event.recipes.immersiveengineeringMetalPress(`#forge:gears/${metal}`, `4x #forge:ingots/${metal}`, 'immersiveengineering:mold_gear').id(`immersiveengineering:metalpress/gear_${metal}`)
 
 	//Thermal Gears
-	event.recipes.thermal.press(`#forge:gears/${metal}`, [`4x #forge:ingots/${metal}`, 'thermal:press_gear_die']).id(`thermal:machines/press/press_${metal}_ingot_to_gear`)
+	event.recipes.thermal.press(`#forge:gears/${metal}`, [`5x #forge:ingots/${metal}`, 'thermal:press_gear_die']).id(`thermal:machines/press/press_${metal}_ingot_to_gear`)
 	}
 	////////////////RODS///////////////
     if (Item.of(`#forge:rods/${metal}`) != null) {
@@ -163,16 +163,20 @@ onEvent('recipes', event => {
 		H: Ingredient.of('#forge:hammers'),
 	  }).damageIngredient(Ingredient.of('#forge:hammers')).id(`kubejs:parts/${metal}_rod`)
 
+	//Create Rods
+	global.createRolling(event, `#forge:rods/${metal}`, 2, `forge:ingots/${metal}`, `createaddition:rolling/${metal}_ingot`)
+	
+	//Immersive Rods
+	event.recipes.immersiveengineeringMetalPress(`2x #forge:rods/${metal}`, `#forge:ingots/${metal}`, 'immersiveengineering:mold_rod').id(`immersiveengineering:metalpress/rod_${metal}`)
+	
+    if (Fluid.of(`forge:molten_${metal}`) != null) {
 	//Rod Casing
   	global.casingTable(event, 'tconstruct:casts/multi_use/rod', false, `#forge:rods/${metal}`, `forge:molten_${metal}`, 45, 20, `tconstruct:smeltery/casting/metal/${metal}/rod_gold_cast`)
   	global.casingTable(event, 'tconstruct:casts/single_use/rod', true, `#forge:rods/${metal}`, `forge:molten_${metal}`, 45, 20, `tconstruct:smeltery/casting/metal/${metal}/rod_sand_cast`)
 
-	//Create Rods
-	global.createRolling(event, `#forge:rods/${metal}`, 2, `forge:ingots/${metal}`, `createaddition:rolling/${metal}_ingot`)
-	
-
-	//Immersive Rods
-  	event.recipes.immersiveengineeringMetalPress(`2x #forge:rods/${metal}`, `#forge:ingots/${metal}`, 'immersiveengineering:mold_rod').id(`immersiveengineering:metalpress/rod_${metal}`)
+	//Thermal Rods
+	global.thermalChilling(event, `forge:molten_${metal}`, 60, `#forge:rods/${metal}`, 1, 'thermal:chiller_rod_cast', 5000, `thermal:machines/chiller/chiller_${metal}_rod`)
+	}
 	}
 	////////////////WIRES///////////////
     if (Item.of(`#forge:wires/${metal}`) != null) {

@@ -7,5 +7,116 @@
 	icon: "mekanism:ingot_steel"
 	default_quest_shape: ""
 	default_hide_dependency_lines: false
-	quests: [ ]
+	quests: [
+		{
+			x: -3.5d
+			y: 0.5d
+			id: "1B57434C3A819E36"
+			tasks: [{
+				id: "036846392BA00D8F"
+				type: "item"
+				item: {
+					id: "mna:improvised_manaweaver_wand"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: -0.5d
+			y: 1.5d
+			dependencies: [
+				"1B57434C3A819E36"
+				"488E2999C6BE6591"
+			]
+			id: "7B33D4E6ED113E07"
+			tasks: [{
+				id: "5CAD45FAADB8C3F5"
+				type: "item"
+				item: "compactcrafting:field_projector"
+			}]
+		}
+		{
+			x: -3.5d
+			y: 2.5d
+			id: "488E2999C6BE6591"
+			tasks: [{
+				id: "2124621A623FF8EA"
+				type: "item"
+				item: "ars_nouveau:imbuement_chamber"
+			}]
+		}
+		{
+			x: 2.0d
+			y: 1.5d
+			dependencies: ["7B33D4E6ED113E07"]
+			id: "050141BF6CD20337"
+			tasks: [{
+				id: "60797B934CE0E8F6"
+				type: "item"
+				item: "kubejs:bronze_frame"
+			}]
+		}
+		{
+			title: "The Coke Oven"
+			icon: "immersiveengineering:cokebrick"
+			x: 1.5d
+			y: 3.0d
+			id: "6DD639FB1E700AAA"
+			tasks: [
+				{
+					id: "2D1BA7A2B0B34E88"
+					type: "item"
+					item: "immersiveengineering:cokebrick"
+					count: 27L
+				}
+				{
+					id: "5B1D66E55A5750DE"
+					type: "item"
+					item: {
+						id: "immersiveengineering:hammer"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+			]
+		}
+		{
+			x: 4.5d
+			y: -0.5d
+			dependencies: ["4479C52D27235BCB"]
+			id: "61807D2D6C850371"
+			tasks: [{
+				id: "757C4BFEBA0AD247"
+				type: "item"
+				item: "thermal:machine_chiller"
+			}]
+		}
+		{
+			x: 3.0d
+			y: 0.0d
+			dependencies: ["050141BF6CD20337"]
+			id: "4479C52D27235BCB"
+			tasks: [{
+				id: "67EF719B029959A6"
+				type: "item"
+				item: "thermal:machine_crucible"
+			}]
+		}
+		{
+			x: 4.0d
+			y: 1.5d
+			dependencies: ["050141BF6CD20337"]
+			id: "2062C95B0D95BED1"
+			tasks: [{
+				id: "4C8F65457EC814FE"
+				type: "item"
+				item: "thermal:machine_press"
+			}]
+		}
+	]
 }

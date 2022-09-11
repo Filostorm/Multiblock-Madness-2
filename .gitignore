@@ -7,3 +7,6 @@
 !.gitignore
 .zsrc
 Probe.cfg
+config/awesomedungeon.properties
+config/awesomedungeonocean.properties
+config/libraryferret.properties

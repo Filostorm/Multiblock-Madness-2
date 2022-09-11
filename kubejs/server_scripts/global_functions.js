@@ -82,3 +82,22 @@ global.tinkersOreMelting = (event, outputFluid, amount, byproductFluid, byproduc
 		
 	}).id(ID)}
 	///////////////////////////////////////////////////////////
+
+	global.thermalChilling = (event, fluid, fluidAmount, outputItem, amount, cast, energy, ID) => {
+		event.custom({
+		type: 'thermal:chiller',
+		ingredients: [
+		  {
+			fluid_tag: fluid,
+			amount: fluidAmount
+		  },
+		  {
+			item: cast
+		  }
+		],
+		result: 
+		Item.of(outputItem, amount),
+
+		energy: energy
+		
+	}).id(ID)}

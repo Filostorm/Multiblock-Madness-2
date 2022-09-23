@@ -1,0 +1,149 @@
+{
+  "version": 1,
+  "location": "mbd:ebf",
+  "traits": {},
+  "properties": {
+    "rotationState": "ALL",
+    "showInJei": true,
+    "isOpaque": true,
+    "hasDynamicShape": false,
+    "hasCollision": true,
+    "destroyTime": 5.0,
+    "explosionResistance": 6.0,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "friction": 0.6,
+    "harvestLevel": 1,
+    "stackSize": 64,
+    "tabGroup": "multiblocked.all"
+  },
+  "status": {
+    "unformed": {
+      "renderer": {
+        "baseTexture": "multiblocked:blocks/casing/ebf_casing",
+        "frontTexture": "multiblocked:blocks/overlay/overlay_front",
+        "formedAsController": true,
+        "type": "gregtech",
+        "postRenderer": false
+      }
+    },
+    "idle": {
+      "parent": "unformed"
+    },
+    "working": {
+      "renderer": {
+        "baseTexture": "multiblocked:blocks/casing/ebf_casing",
+        "frontTexture": "multiblocked:blocks/overlay/overlay_front_active",
+        "formedAsController": true,
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "parent": "idle"
+    },
+    "suspend": {
+      "parent": "working"
+    }
+  },
+  "recipeMap": "ebf",
+  "basePattern": {
+    "structureDir": [
+      "FRONT",
+      "LEFT",
+      "UP"
+    ],
+    "pattern": [
+      [
+        "AAA",
+        "AA@",
+        "AAA"
+      ],
+      [
+        "BBB",
+        "B B",
+        "BBB"
+      ],
+      [
+        "AAA",
+        "AAA",
+        "AAA"
+      ]
+    ],
+    "aisleRepetitions": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "predicates": {
+      "casing": {
+        "blocks": [
+          {
+            "id": "mbd:ebf_casing"
+          }
+        ],
+        "type": "blocks"
+      },
+      "coil": {
+        "blocks": [
+          {
+            "id": "mbd:coil"
+          }
+        ],
+        "type": "blocks"
+      },
+      "controller": {
+        "location": "mbd:ebf",
+        "type": "component"
+      },
+      "item_in": {
+        "location": "mbd:item_bus_in",
+        "type": "component",
+        "minCount": 1,
+        "maxCount": 2,
+        "previewCount": 1
+      },
+      "item_out": {
+        "location": "mbd:item_bus_out",
+        "type": "component",
+        "minCount": 1,
+        "maxCount": 2,
+        "previewCount": 1
+      },
+      "any": {
+        "type": "any"
+      },
+      "fluid_out": {
+        "location": "mbd:fluid_hatch_out",
+        "type": "component",
+        "minCount": 1,
+        "maxCount": 1,
+        "previewCount": 1
+      }
+    },
+    "symbolMap": {
+      "@": [
+        "controller"
+      ],
+      " ": [
+        "any"
+      ],
+      "A": [
+        "casing",
+        "item_in",
+        "item_out",
+        "fluid_out"
+      ],
+      "B": [
+        "coil"
+      ]
+    }
+  }
+}

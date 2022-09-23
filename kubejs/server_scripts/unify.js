@@ -7,7 +7,7 @@ settings.logErroringRecipes = true
 
 console.info('Hello, World! (You will see this line every time server resources reload)')
 
-removeByName = [
+var removeByName = [
 	'mna:chainmail_chestplate',
 	'mna:chainmail_helmet',
 	'mna:chainmail_leggings',
@@ -59,5 +59,12 @@ onEvent('tags.items', event => {
 		event.removeAllTagsFrom(item)
 	})
 	event.add('forge:ingots/vinteum', 'mna:vinteum_ingot')
-	
 })
+/*
+var addItemsJEI = ['thermal:ruby', 'thermal:ruby_dust', 'thermal:ruby_block', 'thermal:ruby_ore', 'thermal:deepslate_ruby_ore']
+
+onEvent('jei.add.items', event => {
+	addItemsJEI.forEach((item) => {
+	event.add(Item.of(item))
+	})
+  })*/

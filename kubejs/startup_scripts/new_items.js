@@ -1,4 +1,4 @@
-basicItems = [
+var basicItems = [
 	'unfired_clay_brick',
 	'blank_rune',
 	'curcuit_board',

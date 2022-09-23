@@ -1,4 +1,4 @@
-newParts = {
+var newParts = {
 	titanium: 0x4668cf,
 	tungsten: 0x282c33,
 	platinum: 0x6be6ff,
@@ -41,7 +41,7 @@ newParts = {
 	uranium: 0xf569b6,
 }
 
-newIngots = {
+var newIngots = {
 	neptunium: 0x5a5863,
 	plutonium: 0x9e785f,
 	americium: 0x4a3a2f,
@@ -53,11 +53,27 @@ newIngots = {
 	platinum: 0x6be6ff,
 }
 
+
+onEvent('tags.items', event => {
+	
+	for (var metal in newParts) {
+
+    if (event.get(`#forge:storage_blocks/${metal}`).getObjectIds() == null) {
+		console.log(`${metal} does not have a block`)
+		event.add(`forge:storage_blocks`, `chemlib:${metal}_metal_block`)
+		event.add(`forge:storage_blocks/${metal}`, `chemlib:${metal}_metal_block`)
+		} else {
+			console.log(`${metal} does have a block`)
+			console.log(Item.of(`#forge:storage_blocks/${metal}`))}
+	}
+  });
+
+
 onEvent('recipes', event => {
   
 
 
-	for (metal in newParts) {
+	for (var metal in newParts) {
 
 	////////////////HAMMER///////////////
     if (Item.of(`#forge:hammers/${metal}`) != null) {
@@ -74,7 +90,7 @@ onEvent('recipes', event => {
 
 		////////////////SHEETMETAL///////////////
     if (Item.of(`#forge:sheetmetals/${metal}`) != null) {
-		event.shaped(`2x #forge:sheetmetals/${metal}`, [
+		event.shaped(`4x #forge:sheetmetals/${metal}`, [
 			' P ',
 			'P P',
 			' P '
@@ -192,7 +208,7 @@ onEvent('recipes', event => {
 	}
 }
 
-	for (metal in newIngots) {
+	for (var metal in newIngots) {
 	//Ingots
 	event.shapeless(`9x #forge:nuggets/${metal}`, [`#forge:ingots/${metal}`])
 	event.shaped(`#forge:ingots/${metal}`, [

@@ -17,10 +17,87 @@ onEvent('recipes', event => {
 		{id: 'thermal:bronze_dust_4'},
 		{id: 'thermal:invar_dust_3'},
 		{id: 'thermal:electrum_dust_2'},
+
+		{id: 'thermal:earth_charge/emerald_dust_from_emerald'},
+		{id: 'thermal:earth_charge/cinnabar_dust_from_cinnabar'},
+		{id: 'thermal:earth_charge/niter_dust_from_niter'},
+		{id: 'thermal:earth_charge/lapis_dust_from_lapis '},
+		{id: 'thermal:earth_charge/ender_pearl_dust_from_ender_pearl'},
+		{id: 'thermal:earth_charge/sulfur_dust_from_sulfur'},
+		{id: 'thermal:earth_charge/apatite_dust_from_apatite'},
+		{id: 'thermal:earth_charge/quartz_dust_from_quartz'},
+		{id: 'thermal:earth_charge/diamond_dust_from_diamond'},
 	])
 	
 	//Frame has a miniterzation recipe
 	event.remove({output: 'thermal:machine_frame'})
+	global.compactCrafting(event, 'thermal:machine_frame', 1, 'immersiveengineering:component_electronic_adv',
+	3, [
+	  {
+	  type: 'compactcrafting:hollow',
+	  wall: 'A'
+	  },
+	  {
+		  type: 'compactcrafting:mixed',
+		  pattern: [
+			  ['I', '-','I'],
+			  ['-', '-','-'],
+			  ['I', '-','I']
+		  ]
+	  },
+	  {
+	  type: 'compactcrafting:hollow',
+	  wall: 'S'
+	  }
+	  ], {
+	  'S': {
+		type: 'compactcrafting:block',
+		block: 'immersiveengineering:sheetmetal_steel'
+	  },
+	  'I': {
+		type: 'compactcrafting:block',
+		block: 'kubejs:invar_scaffolding'
+	  },
+	  'A': {
+		type: 'compactcrafting:block',
+		block: 'immersiveengineering:sheetmetal_aluminum'
+	  }
+	},  'kubejs:machine_frame')
+
+
+	//Bronze Frame
+	global.compactCrafting(event, 'kubejs:bronze_frame', 1, 'immersiveengineering:component_electronic',
+	3, [
+	  {
+	  type: 'compactcrafting:hollow',
+	  wall: 'A'
+	  },
+	  {
+		  type: 'compactcrafting:mixed',
+		  pattern: [
+			  ['I', '-','I'],
+			  ['-', '-','-'],
+			  ['I', '-','I']
+		  ]
+	  },
+	  {
+	  type: 'compactcrafting:hollow',
+	  wall: 'S'
+	  }
+	  ], {
+	  'S': {
+		type: 'compactcrafting:block',
+		block: 'kubejs:bronze_sheetmetal'
+	  },
+	  'I': {
+		type: 'compactcrafting:block',
+		block: 'immersiveengineering:treated_scaffold'
+	  },
+	  'A': {
+		type: 'compactcrafting:block',
+		block: 'immersiveengineering:sheetmetal_electrum'
+	  }
+	},  'kubejs:bronze_frame')
 	
 	//Latex Extractor
 event.remove({output: 'thermal:device_tree_extractor'})
@@ -48,7 +125,7 @@ event.shaped('thermal:machine_furnace', [
 	C: 'minecraft:bricks',
 	D: 'kubejs:bronze_frame',
 	E: 'thermal:copper_gear',
-	F: 'thermal:rf_coil'
+	F: 'kubejs:silver_coil'
   }).id("kubejs:machine_furnace")
 
 // [| Crafter |] //
@@ -63,7 +140,7 @@ event.shaped('thermal:machine_crafter', [
 	C: 'thermal:tin_ingot',
 	D: 'kubejs:bronze_frame',
 	E: 'thermal:copper_gear',
-	F: 'thermal:rf_coil'
+	F: 'kubejs:silver_coil'
   }).id("kubejs:machine_crafter")
 
 // [| Chiller |] //
@@ -78,7 +155,7 @@ event.shaped('thermal:machine_chiller', [
 	C: 'minecraft:packed_ice',
 	D: 'kubejs:bronze_frame',
 	E: 'thermal:invar_gear',
-	F: 'thermal:rf_coil'
+	F: 'kubejs:silver_coil'
   }).id("kubejs:machine_chiller")
 
 // [| Melter |] //
@@ -93,7 +170,7 @@ event.shaped('thermal:machine_crucible', [
 	C: 'minecraft:nether_bricks',
 	D: 'kubejs:bronze_frame',
 	E: 'thermal:invar_gear',
-	F: 'thermal:rf_coil'
+	F: 'kubejs:silver_coil'
   }).id("kubejs:machine_crucible")
 
 // [| Press |] //
@@ -108,7 +185,16 @@ event.shaped('thermal:machine_press', [
 	C: 'thermal:bronze_ingot',
 	D: 'kubejs:bronze_frame',
 	E: 'thermal:constantan_gear',
-	F: 'thermal:rf_coil'
+	F: 'kubejs:silver_coil'
   }).id('kubejs:machine_press')
 
+  //Silver Coil
+  event.shaped('kubejs:silver_coil', [
+	'A  ',
+	' C ',
+	'  A'
+  ], {
+	A: 'minecraft:redstone',
+	C: 'thermal:silver_ingot'
+  })
 });

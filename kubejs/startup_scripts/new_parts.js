@@ -4,16 +4,16 @@ global.newMaterialParts = [
 {
   'material': 'iron',
   'color': 0xd9d7d7,
-  'itemParts': ['dense_plate', 'hammer'],
-  'blockParts': ['scaffolding', 'sheetmetal'],
+  'itemParts': ['dense_plate', 'hammer', 'mechanical_component'],
+  'blockParts': ['scaffolding', 'sheetmetal', 'cog_block'],
   'fluid': null,
   'durability': 128
 },
 {
   'material': 'gold',
   'color': 0xffe870,
-  'itemParts': ['dense_plate'],
-  'blockParts': ['scaffolding', 'sheetmetal'],
+  'itemParts': ['dense_plate', 'mechanical_component'],
+  'blockParts': ['scaffolding', 'sheetmetal', 'cog_block'],
   'fluid': null
 },
 {
@@ -36,9 +36,10 @@ global.newMaterialParts = [
   'material': 'nickel',
   'color': 0xc2b17a,
   'itemParts': ['dense_plate', 'rod', 'wire', 'hammer'],
-  'blockParts': ['scaffolding', 'sheetmetal', 'ore'],
+  'blockParts': ['scaffolding', 'sheetmetal'],
   'fluid': null,
-  'durability': 128
+  'durability': 128,
+  'ore': true
 },
 {
   'material': 'silver',
@@ -61,8 +62,8 @@ global.newMaterialParts = [
 {
   'material': 'cobalt',
   'color': 0x2452c7,
-  'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire', 'hammer'],
-  'blockParts': ['scaffolding', 'sheetmetal'],
+  'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire', 'hammer', 'mechanical_component'],
+  'blockParts': ['scaffolding', 'sheetmetal', 'cog_block'],
   'fluid': null,
   'durability': 256
 },
@@ -77,8 +78,9 @@ global.newMaterialParts = [
   'material': 'zinc',
   'color': 0x97c7b3,
   'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire'],
-  'blockParts': ['scaffolding', 'sheetmetal', 'ore'],
-  'fluid': null
+  'blockParts': ['scaffolding', 'sheetmetal'],
+  'fluid': null,
+  'ore': true
 },
 
 
@@ -88,9 +90,10 @@ global.newMaterialParts = [
   'material': 'titanium',
   'color': 0x4668cf,
   'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire', 'hammer'],
-  'blockParts': ['scaffolding', 'sheetmetal', 'ore'],
+  'blockParts': ['scaffolding', 'sheetmetal'],
   'fluid': 'thick',
-  'durability': 1024
+  'durability': 1024,
+  'ore': true
 },
 {
   'material': 'tungsten',
@@ -104,9 +107,10 @@ global.newMaterialParts = [
   'material': 'platinum',
   'color': 0x6be6ff,
   'itemParts': ['ingot', 'nugget', 'dust', 'plate', 'dense_plate', 'gear', 'rod', 'wire', 'hammer'],
-  'blockParts': ['scaffolding', 'sheetmetal', 'ore', 'storage_block'],
+  'blockParts': ['scaffolding', 'sheetmetal', 'storage_block'],
   'fluid': null,
-  'durability': 1024
+  'durability': 1024,
+  'ore': true
 },
 {
   'material': 'uranium',
@@ -144,22 +148,25 @@ global.newMaterialParts = [
   'material': 'chromium',
   'color': 0x3e224d,
   'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire'],
-  'blockParts': ['scaffolding', 'sheetmetal', 'ore'],
-  'fluid': 'thick'
+  'blockParts': ['scaffolding', 'sheetmetal'],
+  'fluid': 'thick',
+  'ore': true
 },
 {
   'material': 'palladium',
   'color': 0x522d22,
   'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire'],
-  'blockParts': ['scaffolding', 'sheetmetal', 'ore'],
-  'fluid': 'thick'
+  'blockParts': ['scaffolding', 'sheetmetal'],
+  'fluid': 'thick',
+  'ore': true
 },
 {
   'material': 'iridium',
   'color': 0x1942bf,
   'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire'],
-  'blockParts': ['scaffolding', 'sheetmetal', 'ore'],
-  'fluid': 'thick'
+  'blockParts': ['scaffolding', 'sheetmetal'],
+  'fluid': 'thick',
+  'ore': true
 },
 {
   'material': 'vanadium',
@@ -287,7 +294,7 @@ global.newMaterialParts = [
   'material': 'fluix_steel',
   'color': 0x792be0,
   'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire'],
-  'blockParts': ['scaffolding', 'sheetmetal'],
+  'blockParts': ['scaffolding', 'sheetmetal', 'storage_block'],
   'fluid': 'thick'
 },
 {
@@ -315,7 +322,7 @@ global.newMaterialParts = [
   'material': 'vinteum',
   'color': 0x9be3fa,
   'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire'],
-  'blockParts': ['scaffolding', 'sheetmetal'],
+  'blockParts': ['scaffolding', 'sheetmetal', 'storage_block'],
   'fluid': 'thick'
 },
 
@@ -362,7 +369,7 @@ global.newMaterialParts = [
   'material': 'rutile',
   'color': 0xff4d4d,
   'itemParts': ['dust'],
-  'blockParts': ['ore'],
+  'blockParts': [],
   'fluid': null,
   'ore': true
 },
@@ -370,7 +377,7 @@ global.newMaterialParts = [
   'material': 'sphalerite',
   'color': 0x7b7db0,
   'itemParts': ['dust'],
-  'blockParts': ['ore'],
+  'blockParts': [],
   'fluid': null,
   'ore': true
 },
@@ -378,25 +385,44 @@ global.newMaterialParts = [
   'material': 'sulfur',
   'color': 0xe1eb34,
   'itemParts': [],
-  'blockParts': ['ore'],
-  'fluid': null
+  'blockParts': [],
+  'fluid': null,
+  'ore': true
 },
 {
   'material': 'vincyte',
   'color': 0x0046d1,
   'itemParts': ['dust'],
-  'blockParts': ['ore'],
+  'blockParts': [],
   'fluid': null,
   'ore': true
 },
 
-/////////////// Fluid /////////////////////////////
+/////////////// Other /////////////////////////////
 {
   'material': 'slag',
   'color': 0x947b6c,
   'itemParts': ['dust'],
   'blockParts': [],
   'fluid': 'thick'
+},
+
+/////////////// Gems /////////////////////////////
+{
+  'material': 'ruby',
+  'gem': true,
+  'color': 0xff4f55,
+  'itemParts': ['ruby', 'dust'],
+  'blockParts': ['storage_block'],
+  'ore': true
+},
+{
+  'material': 'sapphire',
+  'gem': true,
+  'color': 0x7377ff,
+  'itemParts': ['sapphire', 'dust'],
+  'blockParts': ['storage_block'],
+  'ore': true
 }
 ]
 
@@ -404,54 +430,77 @@ global.newMaterialParts = [
 onEvent('item.registry', event => {
   global.newMaterialParts.forEach((item) => {
     item.itemParts.forEach((part) => {
-      if (part == 'hammer') {
-        event.create(`${item.material}_${part}`, 'pickaxe').color(0, item.color).parentModel(`kubejs:item/${part}`).texture(`kubejs:item/${part}`).unstackable().tier('iron').maxDamage(item.durability).tooltip(`${item.durability} Base Durability`)
-      } else if (part == 'custom_ingot') {
-        event.create(`${item.material}_ingot`)
+    if (part == 'hammer') {
+      event.create(`${item.material}_${part}`, 'pickaxe').color(0, item.color).parentModel(`kubejs:item/${part}`).texture(`kubejs:item/${part}`).unstackable().tier('iron').maxDamage(item.durability).tooltip(`${item.durability} Base Durability`)
+    } else {
+      if (item.gem) {
+        if (part == ('ruby'||'sapphire')) {
+        event.create(`${part}`).color(0, item.color).texture(`kubejs:item/gem/${part}`)
+        } else {
+          event.create(`${item.material}_${part}`).color(0, item.color).texture(`kubejs:item/gem/${part}`)
+        }
       } else {
-      event.create(`${item.material}_${part}`).color(0, item.color).texture(`kubejs:item/${part}`)
+        if (part == 'custom_ingot') {
+          event.create(`${item.material}_ingot`)
+        } else {
+        event.create(`${item.material}_${part}`).color(0, item.color).texture(`kubejs:item/${part}`)
+        }
       }
+    }
     })
-    item.blockParts.forEach((part) => {
-      if (part == 'ore') {
+    if (item.ore && !item.gem) {
       event.create(`raw_${item.material}`).color(0, item.color).texture(`kubejs:item/raw_ore`)
-      }
-    if (item.ore) {
       event.create(`${item.material}_chunk`).color(0, item.color).texture(`kubejs:item/ore_chunk`).parentModel(`kubejs:item/ore_chunk`)
       event.create(`${item.material}_grit`).color(0, item.color).texture(`kubejs:item/ore_dust`).parentModel(`kubejs:item/ore_dust`)
       event.create(`${item.material}_clump`).color(0, item.color).texture(`kubejs:item/ore_clump`).parentModel(`kubejs:item/ore_clump`)
       }
-    })
   })
 });
 
 onEvent('block.registry', event => {
   global.newMaterialParts.forEach((item) => {
     item.blockParts.forEach((part) => {
-      if (part == 'ore') {
+      if (part == 'scaffolding') {
+        event.create(`${item.material}_${part}`).color(0, item.color).material('metal').hardness(3).resistance(3).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').renderType('cutout').defaultCutout().model(`kubejs:block/${part}`)
+      } else {
+        if (item.gem) {
+          event.create(`${item.material}_${part}`).color(0, item.color).material('metal').hardness(3).resistance(3).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').model(`kubejs:block/gem/${part}`)
+        } else {
+          event.create(`${item.material}_${part}`).color(0, item.color).material('metal').hardness(3).resistance(3).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').model(`kubejs:block/${part}`)
+        }
+      }
+    })
+    if (item.ore) {
+      if (item.gem) {
+        event.create(`${item.material}_ore`).color(0, item.color).material('stone').hardness(3).resistance(3).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').renderType('cutout').defaultCutout().model(`kubejs:block/gem/stone_${item.material}_ore`)
+        event.create(`deepslate_${item.material}_ore`).color(0, item.color).material('stone').hardness(6).resistance(6).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').renderType('cutout').defaultCutout().model(`kubejs:block/gem/deepslate_${item.material}_ore`)
+        event.create(`endstone_${item.material}_ore`).color(0, item.color).material('stone').hardness(4).resistance(4).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').renderType('cutout').defaultCutout().model(`kubejs:block/gem/endstone_${item.material}_ore`)
+        event.create(`netherrack_${item.material}_ore`).color(0, item.color).material('stone').hardness(3).resistance(3).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').renderType('cutout').defaultCutout().model(`kubejs:block/gem/netherrack_${item.material}_ore`)
+      } else {
         event.create(`${item.material}_ore`).color(0, item.color).material('stone').hardness(3).resistance(3).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').renderType('cutout').defaultCutout().model("kubejs:block/stone_ore")
         event.create(`deepslate_${item.material}_ore`).color(0, item.color).material('stone').hardness(6).resistance(6).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').renderType('cutout').defaultCutout().model("kubejs:block/deepslate_ore")
         event.create(`endstone_${item.material}_ore`).color(0, item.color).material('stone').hardness(4).resistance(4).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').renderType('cutout').defaultCutout().model("kubejs:block/endstone_ore")
         event.create(`netherrack_${item.material}_ore`).color(0, item.color).material('stone').hardness(3).resistance(3).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').renderType('cutout').defaultCutout().model("kubejs:block/netherrack_ore")
-      } else if (part == 'scaffolding') {
-        event.create(`${item.material}_scaffolding`).color(0, item.color).material('metal').hardness(3).resistance(3).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').renderType('cutout').defaultCutout().model("kubejs:block/scaffolding")
-      } else {
-        event.create(`${item.material}_${part}`).color(0, item.color).material('metal').hardness(3).resistance(3).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').model(`kubejs:block/${part}`)
       }
-    })
+    }
   })
 });
   
 onEvent('block.loot_tables', event => {
   global.newMaterialParts.forEach((item) => {
-    item.blockParts.forEach((part) => {
-      if (part == 'ore') {
-        event.addSimpleBlock(`kubejs:${item.material}_ore`, `kubejs:raw_${item.material}`)
-        event.addSimpleBlock(`kubejs:deepslate_${item.material}_ore`, `kubejs:raw_${item.material}`)
-        event.addSimpleBlock(`kubejs:endstone_${item.material}_ore`, `2x kubejs:raw_${item.material}`)
-        event.addSimpleBlock(`kubejs:netherrack_${item.material}_ore`, `2x kubejs:raw_${item.material}`)
+      if (item.ore) {
+        if (item.gem) {
+          event.addSimpleBlock(`kubejs:${item.material}_ore`, `kubejs:${item.material}`)
+          event.addSimpleBlock(`kubejs:deepslate_${item.material}_ore`, `kubejs:${item.material}`)
+          event.addSimpleBlock(`kubejs:endstone_${item.material}_ore`, `2x kubejs:${item.material}`)
+          event.addSimpleBlock(`kubejs:netherrack_${item.material}_ore`, `2x kubejs:${item.material}`)
+        } else {
+          event.addSimpleBlock(`kubejs:${item.material}_ore`, `kubejs:raw_${item.material}`)
+          event.addSimpleBlock(`kubejs:deepslate_${item.material}_ore`, `kubejs:raw_${item.material}`)
+          event.addSimpleBlock(`kubejs:endstone_${item.material}_ore`, `2x kubejs:raw_${item.material}`)
+          event.addSimpleBlock(`kubejs:netherrack_${item.material}_ore`, `2x kubejs:raw_${item.material}`)
+        }
       }
-    })
   })
 });
 
@@ -461,25 +510,17 @@ onEvent('tags.items', event => {
     if (part == 'custom_ingot') {
       event.add(`forge:ingots`, `kubejs:${item.material}_ingot`)
       event.add(`forge:ingots/${item.material}`, `kubejs:${item.material}_ingot`)
+
+    } else if (part == ('ruby'||'sapphire')) {
+      event.add(`forge:gems`, `kubejs:${item.material}`)
+      event.add(`forge:gems/${item.material}`, `kubejs:${item.material}`)
+
     } else {
       event.add(`forge:${part}s`, `kubejs:${item.material}_${part}`)
-      event.add(`forge:${part}s/${item.material}`, `kubejs:${item.material}_${part}`)
-    }
+      event.add(`forge:${part}s/${item.material}`, `kubejs:${item.material}_${part}`)}
     })
-    item.blockParts.forEach((part) => {
-      if (part == 'ore') {
-        event.add(`forge:raw_materials`, `kubejs:raw_${item.material}`)
-        event.add(`forge:raw_materials/${item.material}`, `kubejs:raw_${item.material}`)
-        
-        event.add(`forge:ores`, `kubejs:${item.material}_ore`)
-        event.add(`forge:ores/${item.material}`, `kubejs:${item.material}_ore`)
-        event.add(`forge:ores`, `kubejs:deepslate_${item.material}_ore`)
-        event.add(`forge:ores/${item.material}`, `kubejs:deepslate_${item.material}_ore`)
-        event.add(`forge:ores`, `kubejs:endstone_${item.material}_ore`)
-        event.add(`forge:ores/${item.material}`, `kubejs:endstone_${item.material}_ore`)
-        event.add(`forge:ores`, `kubejs:netherrack_${item.material}_ore`)
-        event.add(`forge:ores/${item.material}`, `kubejs:netherrack_${item.material}_ore`)
-      } else if (part == 'scaffolding') {
+
+    item.blockParts.forEach((part) => {if (part == 'scaffolding') {
         event.add(`immersiveengineering:scaffoldings`, `kubejs:${item.material}_scaffolding`)
         event.add(`immersiveengineering:scaffoldings/${item.material}`, `kubejs:${item.material}_scaffolding`)
       } else {
@@ -487,6 +528,22 @@ onEvent('tags.items', event => {
       event.add(`forge:${part}s/${item.material}`, `kubejs:${item.material}_${part}`)
       }
     })
+    
+    if (item.ore) {
+      event.add(`forge:ores`, `kubejs:${item.material}_ore`)
+      event.add(`forge:ores/${item.material}`, `kubejs:${item.material}_ore`)
+      event.add(`forge:ores`, `kubejs:deepslate_${item.material}_ore`)
+      event.add(`forge:ores/${item.material}`, `kubejs:deepslate_${item.material}_ore`)
+      event.add(`forge:ores`, `kubejs:endstone_${item.material}_ore`)
+      event.add(`forge:ores/${item.material}`, `kubejs:endstone_${item.material}_ore`)
+      event.add(`forge:ores`, `kubejs:netherrack_${item.material}_ore`)
+      event.add(`forge:ores/${item.material}`, `kubejs:netherrack_${item.material}_ore`)
+        if (!item.gem) {
+          event.add(`forge:raw_materials`, `kubejs:raw_${item.material}`)
+          event.add(`forge:raw_materials/${item.material}`, `kubejs:raw_${item.material}`)
+        }
+    }
+
   })
 });
 

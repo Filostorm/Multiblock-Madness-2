@@ -28,7 +28,7 @@ onEvent('recipes', event => {
 event.recipes.createSequencedAssembly([
 'immersiveengineering:component_iron', // output
   ], '#forge:ingots/copper', [ // input.
-  event.recipes.createCutting('kubejs:incomplete_component_iron', 'kubejs:incomplete_component_iron').processingTime(50),
+  //event.recipes.createCutting('kubejs:incomplete_component_iron', 'kubejs:incomplete_component_iron').processingTime(50),
   event.recipes.createDeploying('kubejs:incomplete_component_iron', ['kubejs:incomplete_component_iron', '#forge:plates/iron']),
   event.recipes.createDeploying('kubejs:incomplete_component_iron', ['kubejs:incomplete_component_iron', '#forge:plates/iron']),
   ]).transitionalItem('kubejs:incomplete_component_iron').loops(1) // transitional item and the loops
@@ -37,7 +37,7 @@ event.recipes.createSequencedAssembly([
 event.recipes.createSequencedAssembly([
 'immersiveengineering:component_steel', // output
   ], '#forge:ingots/copper', [ // input.
-  event.recipes.createCutting('kubejs:incomplete_component_steel', 'kubejs:incomplete_component_steel').processingTime(50),
+  //event.recipes.createCutting('kubejs:incomplete_component_steel', 'kubejs:incomplete_component_steel').processingTime(50),
   event.recipes.createDeploying('kubejs:incomplete_component_steel', ['kubejs:incomplete_component_steel', '#forge:plates/steel']),
   event.recipes.createDeploying('kubejs:incomplete_component_steel', ['kubejs:incomplete_component_steel', '#forge:plates/steel']),
   ]).transitionalItem('kubejs:incomplete_component_steel').loops(1) // transitional item and the loops
@@ -52,7 +52,7 @@ event.recipes.createSequencedAssembly([
 //Electronic Component
 event.recipes.createSequencedAssembly([
 'immersiveengineering:component_electronic', // output
-  ], 'immersiveengineering:slab_treated_wood_packaged', [ // input.
+  ], 'immersiveengineering:slab_treated_wood_horizontal', [ // input.
   event.recipes.createDeploying('kubejs:incomplete_component_electronic', ['kubejs:incomplete_component_electronic', 'minecraft:quartz']),
   event.recipes.createDeploying('kubejs:incomplete_component_electronic', ['kubejs:incomplete_component_electronic', '#forge:dusts/redstone']),
   event.recipes.createDeploying('kubejs:incomplete_electron_tube', ['kubejs:incomplete_electron_tube', '#forge:wires/electrum']),
@@ -85,8 +85,15 @@ event.recipes.createSequencedAssembly([
   event.recipes.createDeploying('kubejs:incomplete_light_bulb', ['kubejs:incomplete_light_bulb', 'minecraft:paper']),
   ]).transitionalItem('kubejs:incomplete_light_bulb').loops(1) // transitional item and the loops
 
-
-
+//Belt
+  event.shaped('8x immersiveengineering:conveyor_basic', [
+  'BBB',
+  'CDC'
+    ], {
+  B: 'thermal:cured_rubber',
+  C: 'minecraft:iron_ingot',
+  D: 'minecraft:redstone'
+    })
 
 
 

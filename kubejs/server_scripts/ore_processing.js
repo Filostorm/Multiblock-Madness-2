@@ -1,6 +1,6 @@
 
 
-tier1Ore = [
+var tier1Ore = [
 	{
 	  'material': 'iron',
 	  'fluid': 'tconstruct:molten_iron'

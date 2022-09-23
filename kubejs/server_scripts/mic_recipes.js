@@ -58,12 +58,8 @@ B: '#mna:improvised_manaweave_wand_caps',
 C: '#forge:rods/wooden'
   }).id("kubejs:improvised_manaweaver_wand")
 
-    
-  
-  
-	console.log(Fluid.of(`#forge:molten_iron`, 45).toJson())
-
-
-
+    /*
+  Item.of('akashictome:tome', '{"akashictome:data":{mna:{Count:1b,id:"mna:guide_book"}}}')
+*/
 });
 	

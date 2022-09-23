@@ -12,26 +12,26 @@
     "blocks": {                                        
       "default": [{                                    
         "block": "geolosys:coal_ore",
-        "chance": 0.4
+        "chance": 0.6
       },{                                    
         "block": "geolosys:lignite_ore",
-        "chance": 0.3
+        "chance": 0.2
       },{                                    
         "block": "geolosys:bituminous_coal_ore",
-        "chance": 0.2
+        "chance": 0.1
       },{                                    
         "block": "geolosys:anthracite_coal_ore",
         "chance": 0.1
       }],
       "minecraft:deepslate": [{                                    
-        "block": "geolosys:deepslate_lignite_ore",
-        "chance": 0.1
+        "block": "geolosys:deepslate_coal_ore",
+        "chance": 0.4
       },{                                    
         "block": "geolosys:deepslate_bituminous_coal_ore",
-        "chance": 0.2
+        "chance": 0.1
       },{                                    
         "block": "geolosys:deepslate_anthracite_coal_ore",
-        "chance": 0.4
+        "chance": 0.2
       },{                                    
         "block": "minecraft:deepslate_diamond_ore",
         "chance": 0.3
@@ -39,13 +39,13 @@
     },
     "samples": [{                                    
       "block": "geolosys:coal_ore_sample",
-      "chance": 0.4
+      "chance": 0.1
     },{                                    
       "block": "geolosys:lignite_ore_sample",
-      "chance": 0.3
+      "chance": 0.1
     },{                                    
       "block": "geolosys:bituminous_coal_ore_sample",
-      "chance": 0.2
+      "chance": 0.1
     },{                                    
       "block": "geolosys:anthracite_coal_ore_sample",
       "chance": 0.1

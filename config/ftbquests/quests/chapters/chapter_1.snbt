@@ -8,10 +8,10 @@
 	default_quest_shape: ""
 	default_hide_dependency_lines: false
 	images: [{
-		x: -1.5d
-		y: 1.0d
-		width: 50.0d
-		height: 40.0d
+		x: -7.0d
+		y: -6.0d
+		width: 5.0d
+		height: 4.0d
 		rotation: 0.0d
 		image: "kubejs:textures/quests/parchment.png"
 		hover: [ ]
@@ -75,11 +75,12 @@
 		}
 		{
 			title: "Basic Alloys"
-			x: 0.5d
+			x: 2.0d
 			y: 0.5d
 			dependencies: [
 				"4C3411D9DB130B75"
 				"760223888ADD58B0"
+				"3054E79F9465C0A5"
 			]
 			id: "143FA2A8FD6E4E10"
 			tasks: [
@@ -188,13 +189,70 @@
 			}]
 		}
 		{
-			x: -0.5d
-			y: -1.0d
+			title: "Visit the Nether"
+			x: 2.5d
+			y: -1.5d
 			id: "19FD07E867EA3343"
 			tasks: [{
 				id: "784342599913B5DD"
 				type: "dimension"
 				dimension: "minecraft:the_nether"
+			}]
+		}
+		{
+			title: "Alloy Kiln"
+			x: 1.5d
+			y: 2.0d
+			dependencies: ["4C3411D9DB130B75"]
+			id: "3054E79F9465C0A5"
+			tasks: [{
+				id: "03A4C79496F1D70C"
+				type: "item"
+				item: "immersiveengineering:alloybrick"
+				count: 8L
+			}]
+		}
+		{
+			x: 0.0d
+			y: -1.0d
+			dependencies: ["760223888ADD58B0"]
+			id: "5673DD53F8BF704E"
+			tasks: [{
+				id: "63D91253A9D9B4F8"
+				type: "item"
+				item: "powah:dielectric_paste"
+			}]
+		}
+		{
+			title: "Basic Item Routing"
+			x: -5.0d
+			y: 2.0d
+			dependencies: [
+				"50E9DDE83C23EE6E"
+				"360253CDEF94C130"
+			]
+			id: "508186DAF72A067F"
+			tasks: [
+				{
+					id: "6F5D170D77E07143"
+					type: "item"
+					item: "create:andesite_funnel"
+				}
+				{
+					id: "16967550EB6E44BD"
+					type: "item"
+					item: "create:andesite_tunnel"
+				}
+			]
+		}
+		{
+			x: -4.0d
+			y: -1.5d
+			id: "7A86EFBA4A46492E"
+			tasks: [{
+				id: "4A607AA8C68A49C0"
+				type: "item"
+				item: "thermal:device_tree_extractor"
 			}]
 		}
 	]

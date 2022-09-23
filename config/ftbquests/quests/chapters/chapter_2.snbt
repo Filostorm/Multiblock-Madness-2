@@ -11,6 +11,7 @@
 		{
 			x: -3.5d
 			y: 0.5d
+			description: ["You'll need to open the Codex stored in your Akashic Tome"]
 			id: "1B57434C3A819E36"
 			tasks: [{
 				id: "036846392BA00D8F"
@@ -51,7 +52,10 @@
 		{
 			x: 2.0d
 			y: 1.5d
-			dependencies: ["7B33D4E6ED113E07"]
+			dependencies: [
+				"7B33D4E6ED113E07"
+				"6DD639FB1E700AAA"
+			]
 			id: "050141BF6CD20337"
 			tasks: [{
 				id: "60797B934CE0E8F6"
@@ -62,8 +66,8 @@
 		{
 			title: "The Coke Oven"
 			icon: "immersiveengineering:cokebrick"
-			x: 1.5d
-			y: 3.0d
+			x: -3.5d
+			y: -1.0d
 			id: "6DD639FB1E700AAA"
 			tasks: [
 				{
@@ -117,6 +121,120 @@
 				type: "item"
 				item: "thermal:machine_press"
 			}]
+		}
+		{
+			title: "Blast Furnace"
+			x: 2.0d
+			y: -3.5d
+			dependencies: ["6DD639FB1E700AAA"]
+			id: "76EE38A56D68275F"
+			tasks: [{
+				id: "05CAE8F86B8224AA"
+				type: "item"
+				item: "immersiveengineering:blastbrick"
+				count: 27L
+			}]
+		}
+		{
+			x: -3.5d
+			y: -4.5d
+			id: "1A4ED8C40CDFBBE5"
+			tasks: [{
+				id: "04DB0EB133536682"
+				type: "item"
+				item: "create:brass_ingot"
+			}]
+		}
+		{
+			x: -1.0d
+			y: -4.5d
+			dependencies: [
+				"3054E79F9465C0A5"
+				"1A4ED8C40CDFBBE5"
+			]
+			id: "50E9DDE83C23EE6E"
+			tasks: [{
+				id: "0F1BAEF386A6666F"
+				type: "item"
+				item: "create:deployer"
+			}]
+		}
+		{
+			x: 4.0d
+			y: 3.5d
+			dependencies: ["050141BF6CD20337"]
+			id: "2629908D70EF88F2"
+			tasks: [{
+				id: "344A51103E296EEB"
+				type: "item"
+				item: "thermal:upgrade_augment_1"
+			}]
+		}
+		{
+			title: "Windmill"
+			x: -0.5d
+			y: -1.0d
+			dependencies: ["6DD639FB1E700AAA"]
+			id: "049F74295DCFC4AC"
+			tasks: [
+				{
+					id: "0F54673FCAC3328A"
+					type: "item"
+					item: "create:windmill_bearing"
+				}
+				{
+					id: "0C1248B7C611EB99"
+					type: "item"
+					item: "create:white_sail"
+					count: 8L
+				}
+			]
+		}
+		{
+			x: 0.5d
+			y: -4.0d
+			dependencies: ["50E9DDE83C23EE6E"]
+			id: "39F16774468E59FE"
+			tasks: [{
+				id: "7B91CDE325666152"
+				type: "item"
+				item: "powah:capacitor_basic"
+			}]
+		}
+		{
+			x: -1.5d
+			y: -3.0d
+			dependencies: ["1A4ED8C40CDFBBE5"]
+			id: "7D69D2DC60D8892C"
+			tasks: [{
+				id: "2CF567A8E41A5082"
+				type: "item"
+				item: "create:rotation_speed_controller"
+			}]
+		}
+		{
+			title: "Advanced Create Components"
+			x: -1.0d
+			y: -6.0d
+			dependencies: ["1A4ED8C40CDFBBE5"]
+			id: "40255F14A4599270"
+			tasks: [
+				{
+					id: "4D7735E388B87348"
+					type: "item"
+					item: "create:mechanical_arm"
+				}
+				{
+					id: "52E864994263D1DD"
+					type: "item"
+					item: "create:brass_tunnel"
+				}
+				{
+					id: "28D761D50147675D"
+					type: "item"
+					item: "create:brass_funnel"
+				}
+			]
 		}
 	]
 }

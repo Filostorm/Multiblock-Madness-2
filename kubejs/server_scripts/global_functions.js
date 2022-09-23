@@ -70,7 +70,7 @@ global.tinkersOreMelting = (event, outputFluid, amount, byproductFluid, byproduc
 
 
 ///////////////// CREATE ADDITIONS ///////////////////////
-	////ROLLING//// Only seems to work with actual item outputs
+	////ROLLING////
 	global.createRolling = (event, outputItem, amount, inputItem, ID) => {
 		event.custom({
 			type: 'createaddition:rolling',
@@ -83,6 +83,8 @@ global.tinkersOreMelting = (event, outputFluid, amount, byproductFluid, byproduc
 	}).id(ID)}
 	///////////////////////////////////////////////////////////
 
+///////////////// THERMAL ///////////////////////
+	////ROLLING////
 	global.thermalChilling = (event, fluid, fluidAmount, outputItem, amount, cast, energy, ID) => {
 		event.custom({
 		type: 'thermal:chiller',
@@ -101,3 +103,21 @@ global.tinkersOreMelting = (event, outputFluid, amount, byproductFluid, byproduc
 		energy: energy
 		
 	}).id(ID)}
+///////////////////////////////////////////////////////////
+///////////////// COMPACT CRAFTING ///////////////////////
+	global.compactCrafting = (event, output, amount, catalyst, size, layers, components, ID) => {
+		event.custom({
+			type: 'compactcrafting:miniaturization',
+			recipeSize: size,
+			layers: layers,
+			catalyst: {
+				id: catalyst,
+				Count: 1
+			},
+			components: components,
+			outputs: [{
+				id: output,
+				Count: amount
+			  }]
+		  }).id(ID)}
+///////////////////////////////////////////////////////////

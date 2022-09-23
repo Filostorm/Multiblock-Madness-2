@@ -223,9 +223,20 @@ global.removeAndHide = [
 	'crossroads:ingot_copper', 
 	'crossroads:block_copper', 
 	'crossroads:nugget_copper', 
-	'crossroads:ore_copper', 
+	'crossroads:ore_copper',
+	'thermal:ruby', 
+	'thermal:ruby_dust', 
 	'crossroads:gem_ruby', 
 	'crossroads:block_ruby', 
+	'thermal:ruby_ore', 
+	'thermal:deepslate_ruby_ore', 
 	'crossroads:ore_ruby',
-
+	Item.of('ae2:facade', '{item:"thermal:sapphire_ore"}'), 
+	Item.of('ae2:facade', '{item:"thermal:deepslate_sapphire_ore"}'), 
+	Item.of('ae2:facade', '{item:"thermal:sapphire_block"}'), 
+	Item.of('ae2:facade', '{item:"crossroads:block_ruby"}'), 
+	Item.of('ae2:facade', '{item:"crossroads:ore_ruby"}'), 
+	Item.of('ae2:facade', '{item:"thermal:ruby_ore"}'), 
+	Item.of('ae2:facade', '{item:"thermal:deepslate_ruby_ore"}'), 
+	Item.of('ae2:facade', '{item:"thermal:ruby_block"}')
 	]

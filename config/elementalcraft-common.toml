@@ -198,6 +198,9 @@
 			#The max amount of items an order sorter can filter.
 			#Range: 0 ~ 100
 			sorterMaxItem = 15
+			#The max amount of runes an order sorter can have.
+			#Range: 0 ~ 10
+			sorterMaxRunes = 3
 
 	#Pure Infuser and pedestals config
 	[elementalcraft.pureInfuser]

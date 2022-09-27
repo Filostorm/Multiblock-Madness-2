@@ -1,3 +1,47 @@
+var bygWood = [
+	'mahogany',
+	'aspen',
+	'baobab',
+	'blue_enchanted',
+	'cherry',
+	'cika',
+	'cypress',
+	'ebony',
+	'nightshade',
+	'palm',
+	'pine',
+	'rainbow_eucalyptus',
+	'redwood',
+	'skyris',
+	'willow',
+	'witch_hazel',
+	'zelkova',
+	'ether',
+	'fir',
+	'green_enchanted',
+	'holly',
+	'jacaranda',
+	'lament',
+	'mangrove',
+	'maple',
+]
+var bygStem = [
+	'sythian',
+//	'embur',
+	'imparius',
+	'bulbis',
+]
+onEvent('tags.items', event => {
+    bygWood.forEach((type) => {
+		event.add(`byg:planks`, `byg:${type}_planks`)
+		event.add(`byg:logs`, `byg:${type}_log`)
+		event.add(`byg:stripped_logs`, `byg:stripped_${type}_log`)
+	})
+    bygStem.forEach((type) => {
+		event.add(`byg:planks`, `byg:${type}_planks`)
+		event.add(`byg:logs`, `byg:${type}_stem`)
+	})
+});
 
 onEvent('recipes', event => {
 
@@ -58,8 +102,28 @@ B: '#mna:improvised_manaweave_wand_caps',
 C: '#forge:rods/wooden'
   }).id("kubejs:improvised_manaweaver_wand")
 
-    /*
-  Item.of('akashictome:tome', '{"akashictome:data":{mna:{Count:1b,id:"mna:guide_book"}}}')
-*/
+
+//Chests
+event.shaped('4x minecraft:chest', [
+	'LLL',
+	'L L',
+	'LLL'
+  ], {
+	L: '#byg:logs',
+  }).id("kubejs:byg_log_chest")
+event.shaped('4x minecraft:chest', [
+	  'LLL',
+	  'L L',
+	  'LLL'
+	], {
+	  L: '#byg:stripped_logs',
+	}).id("kubejs:byg_stripped_log_chest")
+event.shaped('minecraft:chest', [
+	'PPP',
+	'P P',
+	'PPP'
+  ], {
+	P: '#byg:planks',
+  }).id("kubejs:byg_plank_chest")
+//event.shapeless(`minecraft:chest`, ['#forge:chests/wooden']).id("kubejs:default_chest")
 });
-	

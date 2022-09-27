@@ -103,4 +103,22 @@ event.shaped('2x create:sail_frame', [
 event.recipes.createCutting('2x immersiveengineering:slab_treated_wood_horizontal', 'immersiveengineering:treated_wood_horizontal').id('kubejs:cutting/treated_slabs')
 
 
+// [| create:andesite_alloy |] //
+event.remove({id: 'create:crafting/materials/andesite_alloy'})
+event.remove({id: 'create:crafting/materials/andesite_alloy_from_zinc'})
+event.shaped('create:andesite_alloy', [
+	'AB',
+	'BA'
+  ], {
+	A: 'minecraft:iron_nugget',
+	B: '#forge:stone'
+  }).id("kubejs:andesite_alloy")
+
+event.shaped('2x create:andesite_alloy', [
+	'AB',
+	'BA'
+  ], {
+	A: 'minecraft:iron_nugget',
+	B: 'mna:decoration/arcane_stone',
+  }).id("kubejs:andesite_alloy_x2")
 });

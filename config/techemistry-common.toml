@@ -1,0 +1,18 @@
+
+#Ores
+[Levelgen]
+	#Generate Phosphate Ore
+	generatePhosphate = true
+	#Generate Sulfide Ore
+	generateSulfide = true
+	#Generate Dolomite
+	generateDolomite = true
+	#Generate Oxide Ore
+	generateOxide = true
+	#Generate Carbonate Ore
+	generateCarbonate = true
+	#Generate Sulfate Ore
+	generateSulfate = true
+	#Generate Sulfur Ore
+	generateSulfur = true
+

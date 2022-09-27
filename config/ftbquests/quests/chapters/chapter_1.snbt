@@ -8,8 +8,8 @@
 	default_quest_shape: ""
 	default_hide_dependency_lines: false
 	images: [{
-		x: -7.0d
-		y: -6.0d
+		x: -41.5d
+		y: -7.0d
 		width: 5.0d
 		height: 4.0d
 		rotation: 0.0d
@@ -24,6 +24,7 @@
 			x: -8.5d
 			y: 0.5d
 			shape: "rsquare"
+			dependencies: ["5FD77AB0F43882B8"]
 			id: "0094821A5EE0CD69"
 			tasks: [{
 				id: "0265090C2DA1E7E3"
@@ -47,7 +48,7 @@
 			}]
 		}
 		{
-			x: -2.5d
+			x: -3.0d
 			y: 2.0d
 			dependencies: ["273B98D3C35D7356"]
 			id: "5B6B37AF9780152D"
@@ -180,7 +181,10 @@
 		{
 			x: -0.5d
 			y: 2.0d
-			dependencies: ["5B6B37AF9780152D"]
+			dependencies: [
+				"19FD07E867EA3343"
+				"5B6B37AF9780152D"
+			]
 			id: "4C3411D9DB130B75"
 			tasks: [{
 				id: "6C0E8821B844D6A1"
@@ -190,8 +194,8 @@
 		}
 		{
 			title: "Visit the Nether"
-			x: 2.5d
-			y: -1.5d
+			x: -2.5d
+			y: 3.5d
 			id: "19FD07E867EA3343"
 			tasks: [{
 				id: "784342599913B5DD"
@@ -246,14 +250,286 @@
 			]
 		}
 		{
-			x: -4.0d
-			y: -1.5d
+			x: -6.5d
+			y: -1.0d
+			dependencies: ["0094821A5EE0CD69"]
 			id: "7A86EFBA4A46492E"
 			tasks: [{
 				id: "4A607AA8C68A49C0"
 				type: "item"
 				item: "thermal:device_tree_extractor"
 			}]
+		}
+		{
+			title: "Getting Wood"
+			x: -11.5d
+			y: 0.5d
+			subtitle: "We have Vein Miner!"
+			id: "5FD77AB0F43882B8"
+			tasks: [{
+				id: "42C3CD48EA88ABD1"
+				type: "item"
+				title: "Any #minecraft:logs"
+				tags: ["logs"]
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "minecraft:logs"
+					}
+				}
+			}]
+		}
+		{
+			title: "Deep Storage"
+			x: -10.5d
+			y: 2.0d
+			subtitle: "Better Drawers?"
+			dependencies: ["5FD77AB0F43882B8"]
+			id: "09785A45FBC8D26F"
+			tasks: [{
+				id: "3A4EABCE31DA3433"
+				type: "item"
+				title: "Any #functionalstorage:drawer"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "functionalstorage:drawer"
+					}
+				}
+			}]
+			rewards: [{
+				id: "24F80934A3C4A0EF"
+				type: "item"
+				item: {
+					id: "functionalstorage:configuration_tool"
+					Count: 1b
+					tag: {
+						Mode: "LOCKING"
+					}
+				}
+			}]
+		}
+		{
+			icon: "functionalstorage:storage_controller"
+			x: -9.5d
+			y: 3.5d
+			dependencies: ["09785A45FBC8D26F"]
+			id: "0D6A89F8538EA4C6"
+			tasks: [
+				{
+					id: "13A48FA2C12B1EDB"
+					type: "item"
+					item: "functionalstorage:storage_controller"
+				}
+				{
+					id: "39BE0829EC454331"
+					type: "item"
+					item: {
+						id: "functionalstorage:linking_tool"
+						Count: 1b
+						tag: {
+							Action: "ADD"
+							Mode: "SINGLE"
+						}
+					}
+				}
+			]
+		}
+		{
+			title: "Upgrades!"
+			x: -8.5d
+			y: 2.5d
+			subtitle: "These multiply your total storage"
+			dependencies: ["09785A45FBC8D26F"]
+			id: "7A3C0E70F10FC88A"
+			tasks: [{
+				id: "7D61863A05280CAE"
+				type: "item"
+				item: "functionalstorage:copper_upgrade"
+			}]
+		}
+		{
+			x: -11.5d
+			y: 3.0d
+			subtitle: "You'll need to head to cloud level to get ballon pieces"
+			description: ["Place one of the ballons on the Cloud Chest, and the other on any other chest to upload it to the cloud."]
+			dependencies: ["5FD77AB0F43882B8"]
+			id: "531F9CD69D9E1D66"
+			tasks: [
+				{
+					id: "615E87C3D92244EE"
+					type: "item"
+					item: "cloudstorage:cloud_chest"
+				}
+				{
+					id: "0ADA558267694076"
+					type: "item"
+					item: "cloudstorage:balloon"
+					count: 2L
+				}
+			]
+			rewards: [{
+				id: "2EE2F4A8F5D0A34F"
+				type: "item"
+				item: "ironchest:wood_to_iron_chest_upgrade"
+			}]
+		}
+		{
+			x: -9.5d
+			y: -1.0d
+			dependencies: ["5FD77AB0F43882B8"]
+			id: "07A5A4AA9766AC81"
+			tasks: [{
+				id: "38FEDFD05BD59DD5"
+				type: "item"
+				item: "ironfurnaces:iron_furnace"
+			}]
+			rewards: [{
+				id: "7C990AA9440E4C53"
+				type: "item"
+				item: "ironfurnaces:upgrade_iron"
+			}]
+		}
+		{
+			x: -7.5d
+			y: -4.5d
+			dependencies: ["60CC9D168EA08EDA"]
+			id: "63AB31D5757A0097"
+			tasks: [{
+				id: "6899F295A32CD14E"
+				type: "item"
+				item: {
+					id: "mna:manaweaver_wand"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: -4.5d
+			y: -3.0d
+			dependencies: ["3DDDD86ECE49BDDF"]
+			id: "12679B51D93A83D0"
+			tasks: [{
+				id: "78B97DB1F77C5BCA"
+				type: "item"
+				item: "mna:runeforge"
+			}]
+		}
+		{
+			x: -4.5d
+			y: -6.0d
+			dependencies: ["3DDDD86ECE49BDDF"]
+			id: "34BC57F5433AA00D"
+			tasks: [{
+				id: "3CB8584BBC6A01F1"
+				type: "item"
+				item: "mna:manaweaving_altar"
+			}]
+		}
+		{
+			title: "Transmuted Items"
+			x: -5.5d
+			y: -4.5d
+			dependencies: ["63AB31D5757A0097"]
+			id: "3DDDD86ECE49BDDF"
+			tasks: [
+				{
+					id: "6E90F9D179A8C200"
+					type: "item"
+					item: "mna:transmuted_silver"
+				}
+				{
+					id: "16BD069EA2649DFF"
+					type: "item"
+					item: "mna:decoration/arcane_stone"
+				}
+				{
+					id: "4115B7F501E2F84F"
+					type: "item"
+					item: "mna:decoration/arcane_sandstone"
+				}
+			]
+		}
+		{
+			x: -9.0d
+			y: -4.5d
+			id: "60CC9D168EA08EDA"
+			tasks: [{
+				id: "1FE15FEEEF0AB036"
+				type: "item"
+				item: "mna:vinteum_ingot"
+			}]
+		}
+		{
+			title: "Rituals"
+			x: -3.0d
+			y: -3.5d
+			dependencies: ["12679B51D93A83D0"]
+			id: "1074FABB26C67896"
+			tasks: [
+				{
+					id: "2C249D8F0B4EB797"
+					type: "item"
+					item: {
+						id: "mna:wizard_chalk"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+				{
+					id: "1202246154C13921"
+					type: "item"
+					item: "mna:purified_vinteum_dust"
+				}
+			]
+		}
+		{
+			title: "Ritual of the Earthen Steppes"
+			icon: "mna:flat_lands_book"
+			x: -1.5d
+			y: -4.5d
+			subtitle: "Easy Bedrock Tunnel!"
+			dependencies: [
+				"34BC57F5433AA00D"
+				"1074FABB26C67896"
+			]
+			id: "726E9D3539596F01"
+			tasks: [
+				{
+					id: "672B63256E7FBB54"
+					type: "item"
+					item: "mna:flat_lands_book"
+				}
+				{
+					id: "68CCC53F72A21638"
+					type: "item"
+					item: {
+						id: "minecraft:iron_pickaxe"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+				{
+					id: "33A5BE8BA5BB6027"
+					type: "item"
+					item: {
+						id: "minecraft:iron_shovel"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+			]
 		}
 	]
 }

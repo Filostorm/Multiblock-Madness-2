@@ -1,35 +1,37 @@
 onEvent('recipes', event => {
 	
-	event.remove([
-		{id: 'thermal:rubber_from_vine'},
-		{id: 'thermal:rubber_from_dandelion'},
-		{id: 'thermal:fire_charge/lumium_ingot_4'},
-		{id: 'thermal:fire_charge/enderium_ingot_2'},
-		{id: 'thermal:fire_charge/electrum_ingot_2'},
-		{id: 'thermal:fire_charge/constantan_ingot_2'},
-		{id: 'thermal:fire_charge/bronze_ingot_4'},
-		{id: 'thermal:fire_charge/signalum_ingot_4'},
-		{id: 'thermal:fire_charge/invar_ingot_3'},
-		{id: 'thermal:fire_charge/enderium_glass_2'},
-		{id: 'thermal:fire_charge/signalum_glass_2'},
-		{id: 'thermal:fire_charge/lumium_glass_2'},
-		{id: 'thermal:constantan_dust_2'},
-		{id: 'thermal:bronze_dust_4'},
-		{id: 'thermal:invar_dust_3'},
-		{id: 'thermal:electrum_dust_2'},
+	var recipeNamesToRemove = [
+		'thermal:rubber_from_vine',
+		'thermal:rubber_from_dandelion',
+		'thermal:fire_charge/lumium_ingot_4',
+		'thermal:fire_charge/enderium_ingot_2',
+		'thermal:fire_charge/electrum_ingot_2',
+		'thermal:fire_charge/constantan_ingot_2',
+		'thermal:fire_charge/bronze_ingot_4',
+		'thermal:fire_charge/signalum_ingot_4',
+		'thermal:fire_charge/invar_ingot_3',
+		'thermal:fire_charge/enderium_glass_2',
+		'thermal:fire_charge/signalum_glass_2',
+		'thermal:fire_charge/lumium_glass_2',
+		'thermal:constantan_dust_2',
+		'thermal:bronze_dust_4',
+		'thermal:invar_dust_3',
+		'thermal:electrum_dust_2',
+		'thermal:earth_charge/emerald_dust_from_emerald',
+		'thermal:earth_charge/cinnabar_dust_from_cinnabar',
+		'thermal:earth_charge/niter_dust_from_niter',
+		'thermal:earth_charge/lapis_dust_from_lapis',
+		'thermal:earth_charge/ender_pearl_dust_from_ender_pearl',
+		'thermal:earth_charge/sulfur_dust_from_sulfur',
+		'thermal:earth_charge/apatite_dust_from_apatite',
+		'thermal:earth_charge/quartz_dust_from_quartz',
+		'thermal:earth_charge/diamond_dust_from_diamond',
+	]
+    recipeNamesToRemove.forEach((name) => {
+	event.remove({id: name})
+	})
 
-		{id: 'thermal:earth_charge/emerald_dust_from_emerald'},
-		{id: 'thermal:earth_charge/cinnabar_dust_from_cinnabar'},
-		{id: 'thermal:earth_charge/niter_dust_from_niter'},
-		{id: 'thermal:earth_charge/lapis_dust_from_lapis '},
-		{id: 'thermal:earth_charge/ender_pearl_dust_from_ender_pearl'},
-		{id: 'thermal:earth_charge/sulfur_dust_from_sulfur'},
-		{id: 'thermal:earth_charge/apatite_dust_from_apatite'},
-		{id: 'thermal:earth_charge/quartz_dust_from_quartz'},
-		{id: 'thermal:earth_charge/diamond_dust_from_diamond'},
-	])
-	
-	//Frame has a miniterzation recipe
+	//Machine Frame
 	event.remove({output: 'thermal:machine_frame'})
 	global.compactCrafting(event, 'thermal:machine_frame', 1, 'immersiveengineering:component_electronic_adv',
 	3, [

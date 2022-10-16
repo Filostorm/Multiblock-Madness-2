@@ -1,0 +1,40 @@
+{                 
+  "type": "geolosys:deposit_dense",
+  "config": {
+    "yMin": -40,
+    "yMax": 120,
+    "size": 15,
+    "dimensions": {
+      "isBlacklist": false,
+      "filter": [ "overworld" ]
+    },
+    "blockStateMatchers": [ "minecraft:stone" ],
+    "blocks": {
+      "default": [{
+        "block": "create:zinc_ore",
+        "chance": 0.8
+      },{
+        "block": "minecraft:iron_ore",
+        "chance": 0.1
+      },{
+        "block": "thermal:sulfur_ore",
+        "chance": 0.1
+      }],
+      "minecraft:deepslate": [{
+        "block": "create:deepslate_zinc_ore",
+        "chance": 0.8
+      },{
+        "block": "minecraft:deepslate_iron_ore",
+        "chance": 0.1
+      },{
+        "block": "thermal:deepslate_sulfur_ore",
+        "chance": 0.1
+      }]
+    },
+    "samples": [{
+      "block": "minecraft:air",
+      "chance": 1.0
+    }],
+    "generationWeight": 20
+  }
+}

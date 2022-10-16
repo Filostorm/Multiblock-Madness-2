@@ -81,6 +81,28 @@ global.tinkersOreMelting = (event, outputFluid, amount, byproductFluid, byproduc
 		Item.of(outputItem, amount)
 		
 	}).id(ID)}
+
+	////APPLYING////
+	global.createApplying = (event, outputBlock, inputItem, inputBlock, ID) => {
+		event.custom({
+			type: 'create:item_application',
+			ingredients: [
+				{
+				  tag: inputBlock
+				},
+				{
+				  tag: inputItem
+				}
+			  ],
+		results: [
+			{
+			  item: outputBlock
+			}
+		  ]
+		
+	}).id(ID)}
+
+
 	///////////////////////////////////////////////////////////
 
 ///////////////// THERMAL ///////////////////////
@@ -121,3 +143,33 @@ global.tinkersOreMelting = (event, outputFluid, amount, byproductFluid, byproduc
 			  }]
 		  }).id(ID)}
 ///////////////////////////////////////////////////////////
+///////////////// TRANSMUTING ///////////////////////
+	global.mnaBlockTransmutation = (event, output, input, ID) => {
+		event.custom({
+			type: 'mna:transmutation',
+			targetBlock: input,
+			replaceBlock: output,
+		  }).id(ID)}
+
+		  global.mnaItemTransmutation = (event, output, looksLike, input, ID) => {
+			event.custom({
+				type: 'mna:transmutation',
+				targetBlock: input,
+				lootTable: output,
+				representationItem: looksLike
+			  }).id(ID)}
+///////////////////////////////////////////////////////////
+
+
+///////////////// IMBUING ///////////////////////
+
+		  global.arsImbument = (event, output, amount, input, source, extraItems, ID) => {
+			event.custom({
+				type: 'ars_nouveau:imbuement',
+				input: Ingredient.of(input).toJson(),
+				output: output,
+				count: amount,
+				source: source,
+				pedestalItems: extraItems
+			  }).id(ID)}
+  ///////////////////////////////////////////////////////////

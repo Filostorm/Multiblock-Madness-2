@@ -3,7 +3,12 @@ onEvent('block.loot_tables', event => {
 	//Ore should drop the dust
 	event.addSimpleBlock('mna:vinteum_ore', 'mna:vinteum_dust')
 });
-  
+
+onEvent('tags.items', event => {
+	//Missing tags??
+	event.add('forge:ingots/vinteum', 'mna:vinteum_ingot')
+	event.add('forge:ingots/transmuted_silver', 'mna:transmuted_silver')
+})
 
 onEvent('recipes', event => {
 	var recipeNamesToRemove = [
@@ -36,5 +41,6 @@ event.shaped('mna:manaweaving_altar', [
 	C: 'mna:ritual_focus_minor',
 	D: 'mna:decoration/arcane_stone'
   }).id("kubejs:manaweaving_altar")
+
 });
 

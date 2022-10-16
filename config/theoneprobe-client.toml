@@ -69,7 +69,7 @@ boxThickness = 0
 #Range: 0 ~ 20
 boxOffset = 0
 #If true show liquid information when the probe hits liquid first
-showLiquids = true
+showLiquids = false
 #Toggle default probe visibility (client can override)
 isVisible = true
 #If true then the probe hotkey must be held down to show the tooltip
@@ -87,25 +87,25 @@ harvestStyleVanilla = true
 
 [style]
 	#Text style. Use a comma delimited list with colors like: 'red', 'green', 'blue', ... or style codes like 'underline', 'bold', 'italic', 'strikethrough', ..."
-	Progress = "white"
-	#Text style. Use a comma delimited list with colors like: 'red', 'green', 'blue', ... or style codes like 'underline', 'bold', 'italic', 'strikethrough', ..."
-	Info = "white"
-	#Text style. Use a comma delimited list with colors like: 'red', 'green', 'blue', ... or style codes like 'underline', 'bold', 'italic', 'strikethrough', ..."
-	Warning = "yellow"
+	Name = "white"
 	#Text style. Use a comma delimited list with colors like: 'red', 'green', 'blue', ... or style codes like 'underline', 'bold', 'italic', 'strikethrough', ..."
 	Error = "red,bold"
 	#Text style. Use a comma delimited list with colors like: 'red', 'green', 'blue', ... or style codes like 'underline', 'bold', 'italic', 'strikethrough', ..."
-	Obsolete = "gray,strikethrough"
+	Info = "white"
 	#Text style. Use a comma delimited list with colors like: 'red', 'green', 'blue', ... or style codes like 'underline', 'bold', 'italic', 'strikethrough', ..."
-	Label = "gray"
-	#Text style. Use a comma delimited list with colors like: 'red', 'green', 'blue', ... or style codes like 'underline', 'bold', 'italic', 'strikethrough', ..."
-	Name = "white"
-	#Text style. Use a comma delimited list with colors like: 'red', 'green', 'blue', ... or style codes like 'underline', 'bold', 'italic', 'strikethrough', ..."
-	ModName = "blue,italic"
-	#Text style. Use a comma delimited list with colors like: 'red', 'green', 'blue', ... or style codes like 'underline', 'bold', 'italic', 'strikethrough', ..."
-	InfoImportant = "blue"
+	High = "gold"
 	#Text style. Use a comma delimited list with colors like: 'red', 'green', 'blue', ... or style codes like 'underline', 'bold', 'italic', 'strikethrough', ..."
 	Ok = "green"
 	#Text style. Use a comma delimited list with colors like: 'red', 'green', 'blue', ... or style codes like 'underline', 'bold', 'italic', 'strikethrough', ..."
-	High = "gold"
+	Progress = "white"
+	#Text style. Use a comma delimited list with colors like: 'red', 'green', 'blue', ... or style codes like 'underline', 'bold', 'italic', 'strikethrough', ..."
+	InfoImportant = "blue"
+	#Text style. Use a comma delimited list with colors like: 'red', 'green', 'blue', ... or style codes like 'underline', 'bold', 'italic', 'strikethrough', ..."
+	Obsolete = "gray,strikethrough"
+	#Text style. Use a comma delimited list with colors like: 'red', 'green', 'blue', ... or style codes like 'underline', 'bold', 'italic', 'strikethrough', ..."
+	ModName = "blue,italic"
+	#Text style. Use a comma delimited list with colors like: 'red', 'green', 'blue', ... or style codes like 'underline', 'bold', 'italic', 'strikethrough', ..."
+	Label = "gray"
+	#Text style. Use a comma delimited list with colors like: 'red', 'green', 'blue', ... or style codes like 'underline', 'bold', 'italic', 'strikethrough', ..."
+	Warning = "yellow"
 

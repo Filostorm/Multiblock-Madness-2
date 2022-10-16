@@ -39,6 +39,8 @@ var newParts = {
 	electrum: 0xf569b6,
 	invar: 0xf569b6,
 	uranium: 0xf569b6,
+	red_alloy: 0xb5b3b3,
+	transmuted_silver: 0xb5b3b3,
 }
 
 var newIngots = {
@@ -53,7 +55,7 @@ var newIngots = {
 	platinum: 0x6be6ff,
 }
 
-
+/*
 onEvent('tags.items', event => {
 	
 	for (var metal in newParts) {
@@ -66,7 +68,7 @@ onEvent('tags.items', event => {
 			console.log(`${metal} does have a block`)
 			console.log(Item.of(`#forge:storage_blocks/${metal}`))}
 	}
-  });
+  });*/
 
 
 onEvent('recipes', event => {
@@ -88,31 +90,8 @@ onEvent('recipes', event => {
 	  }).id(`kubejs:crafting/${metal}_hammer`)
 	}
 
-		////////////////SHEETMETAL///////////////
-    if (Item.of(`#forge:sheetmetals/${metal}`) != null) {
-		event.shaped(`4x #forge:sheetmetals/${metal}`, [
-			' P ',
-			'P P',
-			' P '
-		  ], {
-			P: `#forge:plates/${metal}`,
-		  }).id(`immersiveengineering:crafting/sheetmetal_${metal}`)
-		  
-  		//Sheetmetal Casing
-  	global.casingBasinCast(event, 'forge:sheetmetal_cast', false, `#forge:sheetmetals/${metal}`, `forge:molten_${metal}`, 90, 80, `tconstruct:smeltery/casting/metal/${metal}/sheetmetal`)
-		}
+
 	
-		////////////////SCAFFOLDING///////////////
-    if (Item.of(`#immersiveengineering:scaffoldings/${metal}`) != null) {
-		event.shaped(`6x #immersiveengineering:scaffoldings/${metal}`, [
-			'III',
-			' R ',
-			'R R'
-		  ], {
-			I: `#forge:ingots/${metal}`,
-			R: `#forge:rods/${metal}`,
-		  }).id(`immersiveengineering:crafting/${metal}_scaffolding_standard`)
-		}
 	////////////////PLATES///////////////
     if (Item.of(`#forge:plates/${metal}`) != null) {
 	event.shaped(`#forge:plates/${metal}`, [
@@ -136,7 +115,7 @@ onEvent('recipes', event => {
 
 	//Thermal Plates
 	event.recipes.thermal.press(`2x #forge:plates/${metal}`, `3x #forge:ingots/${metal}`).id(`thermal:machines/press/press_${metal}_ingot_to_plate`)
-	}
+	
 	////////////////DENSE PLATES///////////////
     if (Item.of(`#forge:dense_plates/${metal}`) != null) {
 
@@ -147,6 +126,20 @@ onEvent('recipes', event => {
  	event.recipes.immersiveengineeringMetalPress(`#forge:dense_plates/${metal}`, `#forge:storage_blocks/${metal}`, 'immersiveengineering:mold_plate').id(`immersiveengineering:metalpress/dense_plate_${metal}`)
 	}
 
+	////////////////SHEETMETAL///////////////
+	if (Item.of(`#forge:sheetmetals/${metal}`) != null) {
+		event.shaped(`4x #forge:sheetmetals/${metal}`, [
+			' P ',
+			'P P',
+			' P '
+		  ], {
+			P: `#forge:plates/${metal}`,
+		  }).id(`immersiveengineering:crafting/sheetmetal_${metal}`)
+		  
+		  //Sheetmetal Casing
+	  global.casingBasinCast(event, 'forge:sheetmetal_cast', false, `#forge:sheetmetals/${metal}`, `forge:molten_${metal}`, 90, 80, `tconstruct:smeltery/casting/metal/${metal}/sheetmetal`)
+		}
+	}
 	////////////////GEARS///////////////
     if (Item.of(`#forge:gears/${metal}`) != null) {
 	event.shaped(`#forge:gears/${metal}`, [
@@ -167,7 +160,32 @@ onEvent('recipes', event => {
 
 	//Thermal Gears
 	event.recipes.thermal.press(`#forge:gears/${metal}`, [`5x #forge:ingots/${metal}`, 'thermal:press_gear_die']).id(`thermal:machines/press/press_${metal}_ingot_to_gear`)
+	
+	//////////////// MECHANICAL PART ///////////////
+    if (Item.of(`#forge:mechanical_components/${metal}`) != null) {
+	event.shaped(`#forge:mechanical_components/${metal}`, [
+		'G G',
+		' W ',
+		'G G'
+	  ], {
+		W: `#forge:wires/${metal}`,
+		G: `#forge:gears/${metal}`
+	  }).id(`kubejs:parts/${metal}_mechanical_component`)
 	}
+
+	//////////////// COG BLOCK ///////////////
+    if (Item.of(`#forge:cog_blocks/${metal}`) != null) {
+		event.shaped(`4x #forge:cog_blocks/${metal}`, [
+			'RGR',
+			'G G',
+			'RGR'
+		  ], {
+			R: `#forge:rods/${metal}`,
+			G: `#forge:gears/${metal}`
+		  }).id(`kubejs:parts/${metal}_cog_block`)
+		}
+	}
+	
 	////////////////RODS///////////////
     if (Item.of(`#forge:rods/${metal}`) != null) {
 		
@@ -193,6 +211,18 @@ onEvent('recipes', event => {
 	//Thermal Rods
 	global.thermalChilling(event, `forge:molten_${metal}`, 60, `#forge:rods/${metal}`, 1, 'thermal:chiller_rod_cast', 5000, `thermal:machines/chiller/chiller_${metal}_rod`)
 	}
+	
+		////////////////SCAFFOLDING///////////////
+		if (Item.of(`#immersiveengineering:scaffoldings/${metal}`) != null) {
+			event.shaped(`6x #immersiveengineering:scaffoldings/${metal}`, [
+				'III',
+				' R ',
+				'R R'
+			  ], {
+				I: `#forge:ingots/${metal}`,
+				R: `#forge:rods/${metal}`,
+			  }).id(`immersiveengineering:crafting/${metal}_scaffolding_standard`)
+			}
 	}
 	////////////////WIRES///////////////
     if (Item.of(`#forge:wires/${metal}`) != null) {
@@ -205,6 +235,11 @@ onEvent('recipes', event => {
 
 	//Immersive Wire
   	event.recipes.immersiveengineeringMetalPress(`2x #forge:wires/${metal}`, `#forge:ingots/${metal}`, 'immersiveengineering:mold_wire').id(`immersiveengineering:metalpress/wire_${metal}`)
+	}
+
+	
+    if (Item.of(`#forge:dusts/${metal}`) != null) {
+	event.recipes.createMilling([`#forge:dusts/${metal}`], [`#forge:ingots/${metal}`]).id(`kubejs:${metal}_ingot_2_dust`)
 	}
 }
 

@@ -9,29 +9,9 @@
 	default_hide_dependency_lines: false
 	quests: [
 		{
-			x: -3.5d
-			y: 0.5d
-			description: ["You'll need to open the Codex stored in your Akashic Tome"]
-			id: "1B57434C3A819E36"
-			tasks: [{
-				id: "036846392BA00D8F"
-				type: "item"
-				item: {
-					id: "mna:improvised_manaweaver_wand"
-					Count: 1b
-					tag: {
-						Damage: 0
-					}
-				}
-			}]
-		}
-		{
-			x: -0.5d
-			y: 1.5d
-			dependencies: [
-				"1B57434C3A819E36"
-				"488E2999C6BE6591"
-			]
+			x: 0.0d
+			y: 5.0d
+			dependencies: ["488E2999C6BE6591"]
 			id: "7B33D4E6ED113E07"
 			tasks: [{
 				id: "5CAD45FAADB8C3F5"
@@ -40,22 +20,24 @@
 			}]
 		}
 		{
-			x: -3.5d
-			y: 2.5d
+			x: -3.0d
+			y: 6.0d
 			id: "488E2999C6BE6591"
 			tasks: [{
 				id: "2124621A623FF8EA"
 				type: "item"
 				item: "ars_nouveau:imbuement_chamber"
 			}]
+			rewards: [{
+				id: "38F12EEED5D870B4"
+				type: "item"
+				item: "ars_nouveau:arcane_pedestal"
+			}]
 		}
 		{
-			x: 2.0d
-			y: 1.5d
-			dependencies: [
-				"7B33D4E6ED113E07"
-				"6DD639FB1E700AAA"
-			]
+			x: 2.5d
+			y: 5.0d
+			dependencies: ["7B33D4E6ED113E07"]
 			id: "050141BF6CD20337"
 			tasks: [{
 				id: "60797B934CE0E8F6"
@@ -64,34 +46,8 @@
 			}]
 		}
 		{
-			title: "The Coke Oven"
-			icon: "immersiveengineering:cokebrick"
-			x: -3.5d
-			y: -1.0d
-			id: "6DD639FB1E700AAA"
-			tasks: [
-				{
-					id: "2D1BA7A2B0B34E88"
-					type: "item"
-					item: "immersiveengineering:cokebrick"
-					count: 27L
-				}
-				{
-					id: "5B1D66E55A5750DE"
-					type: "item"
-					item: {
-						id: "immersiveengineering:hammer"
-						Count: 1b
-						tag: {
-							Damage: 0
-						}
-					}
-				}
-			]
-		}
-		{
-			x: 4.5d
-			y: -0.5d
+			x: 5.0d
+			y: 3.0d
 			dependencies: ["4479C52D27235BCB"]
 			id: "61807D2D6C850371"
 			tasks: [{
@@ -101,8 +57,9 @@
 			}]
 		}
 		{
-			x: 3.0d
-			y: 0.0d
+			x: 3.5d
+			y: 3.5d
+			description: ["Can be used to generate Lava."]
 			dependencies: ["050141BF6CD20337"]
 			id: "4479C52D27235BCB"
 			tasks: [{
@@ -112,8 +69,8 @@
 			}]
 		}
 		{
-			x: 4.0d
-			y: 1.5d
+			x: 4.5d
+			y: 5.0d
 			dependencies: ["050141BF6CD20337"]
 			id: "2062C95B0D95BED1"
 			tasks: [{
@@ -124,9 +81,8 @@
 		}
 		{
 			title: "Blast Furnace"
-			x: 2.0d
-			y: -3.5d
-			dependencies: ["6DD639FB1E700AAA"]
+			x: 10.5d
+			y: -11.5d
 			id: "76EE38A56D68275F"
 			tasks: [{
 				id: "05CAE8F86B8224AA"
@@ -136,32 +92,48 @@
 			}]
 		}
 		{
+			title: "The Brass Age"
+			disable_toast: true
 			x: -3.5d
 			y: -4.5d
 			id: "1A4ED8C40CDFBBE5"
-			tasks: [{
-				id: "04DB0EB133536682"
-				type: "item"
-				item: "create:brass_ingot"
+			tasks: [
+				{
+					id: "04DB0EB133536682"
+					type: "item"
+					item: "create:brass_ingot"
+				}
+				{
+					id: "4E673E908D990AC6"
+					type: "item"
+					item: "create:polished_rose_quartz"
+				}
+			]
+			rewards: [{
+				id: "62DFB40741BA7C64"
+				type: "random"
+				table_id: 1606026794008844755L
 			}]
 		}
 		{
 			x: -1.0d
-			y: -4.5d
-			dependencies: [
-				"3054E79F9465C0A5"
-				"1A4ED8C40CDFBBE5"
-			]
+			y: -3.0d
+			dependencies: ["1A4ED8C40CDFBBE5"]
 			id: "50E9DDE83C23EE6E"
 			tasks: [{
 				id: "0F1BAEF386A6666F"
 				type: "item"
 				item: "create:deployer"
 			}]
+			rewards: [{
+				id: "0F03096F7C0988D9"
+				type: "random"
+				table_id: 1606026794008844755L
+			}]
 		}
 		{
-			x: 4.0d
-			y: 3.5d
+			x: 4.5d
+			y: 7.0d
 			dependencies: ["050141BF6CD20337"]
 			id: "2629908D70EF88F2"
 			tasks: [{
@@ -171,28 +143,8 @@
 			}]
 		}
 		{
-			title: "Windmill"
-			x: -0.5d
-			y: -1.0d
-			dependencies: ["6DD639FB1E700AAA"]
-			id: "049F74295DCFC4AC"
-			tasks: [
-				{
-					id: "0F54673FCAC3328A"
-					type: "item"
-					item: "create:windmill_bearing"
-				}
-				{
-					id: "0C1248B7C611EB99"
-					type: "item"
-					item: "create:white_sail"
-					count: 8L
-				}
-			]
-		}
-		{
 			x: 0.5d
-			y: -4.0d
+			y: -1.5d
 			dependencies: ["50E9DDE83C23EE6E"]
 			id: "39F16774468E59FE"
 			tasks: [{
@@ -202,28 +154,29 @@
 			}]
 		}
 		{
-			x: -1.5d
-			y: -3.0d
-			dependencies: ["1A4ED8C40CDFBBE5"]
+			x: 2.5d
+			y: -4.5d
+			description: ["Attaching a large Cog to the top allows you to configure the speed of the attached system."]
+			dependencies: ["1E77F20F773CA050"]
 			id: "7D69D2DC60D8892C"
 			tasks: [{
 				id: "2CF567A8E41A5082"
 				type: "item"
 				item: "create:rotation_speed_controller"
 			}]
+			rewards: [{
+				id: "312832E0957C42C5"
+				type: "random"
+				table_id: 1606026794008844755L
+			}]
 		}
 		{
-			title: "Advanced Create Components"
+			title: "Advanced Logistics"
 			x: -1.0d
 			y: -6.0d
 			dependencies: ["1A4ED8C40CDFBBE5"]
 			id: "40255F14A4599270"
 			tasks: [
-				{
-					id: "4D7735E388B87348"
-					type: "item"
-					item: "create:mechanical_arm"
-				}
 				{
 					id: "52E864994263D1DD"
 					type: "item"
@@ -234,7 +187,355 @@
 					type: "item"
 					item: "create:brass_funnel"
 				}
+				{
+					id: "1BB36A8FA30A8C5B"
+					type: "item"
+					item: {
+						id: "create:filter"
+						Count: 1b
+						tag: {
+							Items: { }
+						}
+					}
+				}
 			]
+			rewards: [{
+				id: "4A0D81B9053BFD94"
+				type: "random"
+				table_id: 1606026794008844755L
+			}]
+		}
+		{
+			x: 2.5d
+			y: -3.0d
+			dependencies: ["1E77F20F773CA050"]
+			id: "2D4B1C82A8FC7E2E"
+			tasks: [{
+				id: "2DDD22093E3A8DB7"
+				type: "item"
+				item: "create:mechanical_arm"
+			}]
+			rewards: [{
+				id: "4F42CE156075162E"
+				type: "random"
+				table_id: 1606026794008844755L
+			}]
+		}
+		{
+			x: 0.5d
+			y: -3.5d
+			dependencies: ["50E9DDE83C23EE6E"]
+			id: "1E77F20F773CA050"
+			tasks: [{
+				id: "07F3CCB25971C48F"
+				type: "item"
+				item: "create:precision_mechanism"
+			}]
+			rewards: [{
+				id: "039FAFE1BE502DF5"
+				type: "random"
+				table_id: 1606026794008844755L
+			}]
+		}
+		{
+			title: "Simple Storage Network"
+			icon: "storagenetwork:master"
+			x: 0.0d
+			y: 7.0d
+			dependencies: ["488E2999C6BE6591"]
+			id: "3937FEDD97720117"
+			tasks: [
+				{
+					id: "490BB5DB15F8DCD8"
+					type: "item"
+					item: "storagenetwork:master"
+				}
+				{
+					id: "5F5FAF5B7C2A1356"
+					type: "item"
+					item: "storagenetwork:request"
+				}
+				{
+					id: "68D8DB32D0DC4AE7"
+					type: "item"
+					item: "storagenetwork:storage_kabel"
+				}
+			]
+			rewards: [{
+				id: "59DF64CECA4C1673"
+				type: "random"
+				table_id: 6530798407416538447L
+			}]
+		}
+		{
+			x: 5.5d
+			y: -12.0d
+			id: "20FA1AFF0BD65177"
+			tasks: [{
+				id: "318ECF0673D91AB5"
+				type: "dimension"
+				title: "The Nether"
+				dimension: "minecraft:the_nether"
+			}]
+		}
+		{
+			x: 5.5d
+			y: -8.5d
+			dependencies: ["20FA1AFF0BD65177"]
+			id: "46DC0D67FE1C4C67"
+			tasks: [{
+				id: "5A96C7CDF5E89230"
+				type: "item"
+				item: "create:blaze_burner"
+			}]
+		}
+		{
+			title: "Crushing Wheel"
+			icon: "create:crushing_wheel"
+			x: -1.0d
+			y: -4.5d
+			dependencies: ["1A4ED8C40CDFBBE5"]
+			id: "51537052A03715D7"
+			tasks: [
+				{
+					id: "6B2E59152BC2CCF8"
+					type: "item"
+					item: "create:mechanical_crafter"
+					count: 21L
+				}
+				{
+					id: "06BAE99178B34730"
+					type: "item"
+					item: "create:crushing_wheel"
+					count: 2L
+				}
+			]
+			rewards: [{
+				id: "3AEA0291896FE3BB"
+				type: "random"
+				table_id: 1606026794008844755L
+			}]
+		}
+		{
+			title: "The Foundry"
+			icon: "tconstruct:foundry_controller"
+			x: 9.5d
+			y: -5.0d
+			id: "10DE68398263BA60"
+			tasks: [
+				{
+					id: "2553888F18F218E3"
+					type: "item"
+					item: "tconstruct:foundry_controller"
+				}
+				{
+					id: "419372151DDAB757"
+					type: "item"
+					item: "tconstruct:scorched_drain"
+				}
+				{
+					id: "622E3846DAFB5459"
+					type: "item"
+					item: "tconstruct:scorched_chute"
+				}
+				{
+					id: "0CDE7E8E6A6B95B6"
+					type: "item"
+					title: "Any #tconstruct:scorched_tanks"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "tconstruct:scorched_tanks"
+						}
+					}
+				}
+				{
+					id: "11E486E1EF190836"
+					type: "item"
+					item: "tconstruct:scorched_faucet"
+				}
+				{
+					id: "240A9B2EB7B4D3BF"
+					type: "item"
+					item: "tconstruct:scorched_table"
+				}
+			]
+		}
+		{
+			icon: "naturesaura:nature_altar"
+			x: 2.0d
+			y: -10.5d
+			id: "31513AA25B621FD8"
+			tasks: [
+				{
+					id: "2D06F23D4A7EEC74"
+					type: "item"
+					item: "naturesaura:nature_altar"
+				}
+				{
+					id: "2885DD4829B36C14"
+					type: "item"
+					item: "minecraft:oak_planks"
+					count: 20L
+				}
+				{
+					id: "4AA0F6143AFE7D5F"
+					type: "item"
+					item: "minecraft:chiseled_stone_bricks"
+					count: 4L
+				}
+				{
+					id: "2F472C937866CC1E"
+					type: "item"
+					item: "minecraft:stone_bricks"
+					count: 16L
+				}
+				{
+					id: "1AFEE6C8846D9E82"
+					type: "item"
+					item: "naturesaura:gold_brick"
+					count: 8L
+				}
+			]
+		}
+		{
+			title: "Paint the Trees Gold"
+			x: 12.5d
+			y: -9.5d
+			id: "4187F705E4356142"
+			tasks: [
+				{
+					id: "207E8A7F752042D0"
+					type: "item"
+					item: "naturesaura:gold_fiber"
+				}
+				{
+					id: "29FF7F7D6BDD7E50"
+					type: "item"
+					item: "naturesaura:gold_leaf"
+				}
+			]
+		}
+		{
+			title: "Ritual of the Forest"
+			x: 12.5d
+			y: -7.5d
+			dependencies: ["4187F705E4356142"]
+			id: "6AD50F15723B7927"
+			tasks: [
+				{
+					id: "667719DCAABF9464"
+					type: "item"
+					item: "naturesaura:gold_powder"
+					count: 16L
+				}
+				{
+					id: "3B06635E1B7C7118"
+					type: "item"
+					item: "naturesaura:wood_stand"
+					count: 8L
+				}
+			]
+		}
+		{
+			x: 10.5d
+			y: -6.5d
+			dependencies: ["6AD50F15723B7927"]
+			id: "75639B06251CAA16"
+			tasks: [{
+				id: "6EBBBAF37B549654"
+				type: "item"
+				item: "naturesaura:eye"
+			}]
+		}
+		{
+			x: 5.5d
+			y: -7.0d
+			dependencies: ["46DC0D67FE1C4C67"]
+			id: "2A97F4CE430A26BC"
+			tasks: [{
+				id: "276341B53E039140"
+				type: "item"
+				item: "immersiveengineering:alloybrick"
+				count: 8L
+			}]
+		}
+		{
+			title: "Basic Power Generation"
+			x: 2.5d
+			y: 0.5d
+			dependencies: ["39F16774468E59FE"]
+			id: "47910242F4DE9220"
+			tasks: [
+				{
+					id: "1895020E0D74216E"
+					type: "item"
+					item: "powah:furnator_basic"
+				}
+				{
+					id: "3A0881DA9C104671"
+					type: "item"
+					item: "powah:energy_cable_basic"
+				}
+				{
+					id: "13DC6700EE416D18"
+					type: "item"
+					item: "powah:energy_cell_basic"
+				}
+			]
+		}
+		{
+			x: 7.0d
+			y: -9.0d
+			dependencies: ["20FA1AFF0BD65177"]
+			id: "0C62C2532E374205"
+			tasks: [{
+				id: "61E72830C4A6C46D"
+				type: "item"
+				item: {
+					id: "forbidden_arcanus:soul_extractor"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			title: "Tier 2 Powah"
+			x: 4.5d
+			y: 0.5d
+			dependencies: ["47910242F4DE9220"]
+			id: "37610C524354F5F2"
+			tasks: [
+				{
+					id: "3A2BB9386F55B5BC"
+					type: "item"
+					item: "powah:energizing_orb"
+				}
+				{
+					id: "1B08B163ECFB54FC"
+					type: "item"
+					item: "powah:energizing_rod_basic"
+				}
+				{
+					id: "6F2B9F94B6A66B0A"
+					type: "item"
+					item: "powah:steel_energized"
+				}
+			]
+			rewards: [{
+				id: "2033F9214A46820C"
+				type: "item"
+				item: {
+					id: "powah:wrench"
+					Count: 1b
+					tag: {
+						PowahWrenchNBT: { }
+					}
+				}
+			}]
 		}
 	]
 }

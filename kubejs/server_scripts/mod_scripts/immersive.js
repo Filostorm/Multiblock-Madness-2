@@ -10,7 +10,7 @@ onEvent('recipes', event => {
 		'DAA'
 	], {
 		A: Item.empty,
-		B: 'thermal:invar_ingot',
+		B: 'minecraft:iron_ingot',
 		C: 'immersiveengineering:hemp_fiber',
 		D: '#forge:rods/wooden'
 		})
@@ -96,5 +96,14 @@ event.recipes.createSequencedAssembly([
     })
 
 
+// [| Treated Scaffolding |] //
+event.shaped('3x immersiveengineering:treated_scaffold', [
+  'AAA',
+  ' C ',
+  'C C'
+  ], {
+  A: '#forge:treated_wood',
+  C: 'immersiveengineering:stick_treated'
+  }).id("immersiveengineering:crafting/treated_scaffold")
 
 });

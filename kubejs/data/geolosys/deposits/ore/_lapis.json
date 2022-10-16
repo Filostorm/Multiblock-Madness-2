@@ -1,0 +1,46 @@
+{                                                      
+  "type": "geolosys:deposit_dense",                    
+  "config": {
+    "yMin": -60,
+    "yMax": 40,
+    "size": 25,                                        
+    "dimensions": {                                    
+      "isBlacklist": false,                            
+      "filter": [ "overworld" ]                        
+    },
+    "blockStateMatchers": [ "minecraft:stone" ],     
+    "blocks": {                                        
+      "default": [{                                    
+        "block": "minecraft:lapis_ore",
+        "chance": 0.2
+      },{                                    
+        "block": "mna:vinteum_ore",
+        "chance": 0.65
+      },{                                    
+        "block": "thermal:niter_ore",
+        "chance": 0.05
+      },{                                    
+        "block": "thermal:sapphire_ore",
+        "chance": 0.1
+      }],
+      "minecraft:deepslate": [{                                    
+        "block": "minecraft:deepslate_lapis_ore",
+        "chance": 0.5
+      },{                                    
+        "block": "evilcraft:dark_ore_deepslate",
+        "chance": 0.3
+      },{                                    
+        "block": "thermal:deepslate_niter_ore",
+        "chance": 0.1
+      },{                                    
+        "block": "thermal:deepslate_sapphire_ore",
+        "chance": 0.1
+      }]
+    },
+    "samples": [{                                    
+      "block": "minecraft:air",
+      "chance": 1.0
+    }],
+    "generationWeight": 10
+  }
+}

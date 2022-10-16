@@ -26,7 +26,7 @@
       }]
     },
     "samples": [{                                    
-      "block": "geolosys:platinum_ore_sample",
+      "block": "minecraft:air",
       "chance": 1.0
     }],
     "generationWeight": 5

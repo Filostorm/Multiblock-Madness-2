@@ -60,7 +60,7 @@
   },
   "worldGen": {
     "spawnPressesInMeteorites": true,
-    "generateQuartzOre": true,
+    "generateQuartzOre": false,
     "generateMeteorites": true,
     "quartzOresPerCluster": 7,
     "quartzOresClusterAmount": 20,

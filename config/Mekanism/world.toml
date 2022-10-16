@@ -312,7 +312,7 @@
 	#Generation Settings for fluorite ore.
 	[world_generation.fluorite]
 		#Determines if fluorite ore should be added to world generation.
-		shouldGenerate = true
+		shouldGenerate = false
 
 		#normal fluorite vein Generation Settings.
 		[world_generation.fluorite.normal]

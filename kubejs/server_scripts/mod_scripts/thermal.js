@@ -199,4 +199,9 @@ event.shaped('thermal:machine_press', [
 	A: 'minecraft:redstone',
 	C: 'thermal:silver_ingot'
   })
+
+ // Latex
+ event.recipes.thermal.chiller('thermal:rubber', [Fluid.of('thermal:latex', 250), 'thermal:chiller_ball_cast'])
+ event.recipes.thermal.chiller('thermal:rubber_block', [Fluid.of('thermal:latex', 1000)])
+    
 });

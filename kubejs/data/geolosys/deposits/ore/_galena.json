@@ -12,27 +12,27 @@
     "blocks": {                                        
       "default": [{
         "block": "geolosys:galena_ore",
-        "chance": 0.4
+        "chance": 0.2
       },{
         "block": "thermal:lead_ore",
-        "chance": 0.3
+        "chance": 0.4
       },{
         "block": "thermal:silver_ore",
-        "chance": 0.3
+        "chance": 0.4
       }],
       "minecraft:deepslate": [{
         "block": "geolosys:deepslate_galena_ore",
-        "chance": 0.4
+        "chance": 0.3
       },{                                    
         "block": "thermal:deepslate_lead_ore",
         "chance": 0.3
       },{
         "block": "thermal:deepslate_silver_ore",
-        "chance": 0.3
+        "chance": 0.4
       }]
     },
     "samples": [{
-      "block": "geolosys:galena_ore_sample",
+      "block": "minecraft:air",
       "chance": 1.0
     }],
     "generationWeight": 5

@@ -6,5 +6,36 @@
 	title: "Chapter 3"
 	default_quest_shape: ""
 	default_hide_dependency_lines: false
-	quests: [ ]
+	quests: [
+		{
+			x: 5.5d
+			y: 4.0d
+			id: "0EB55E9BCD6E97C3"
+			tasks: [{
+				id: "4DC15F205A40DB58"
+				type: "item"
+				item: "immersiveengineering:heavy_engineering"
+			}]
+		}
+		{
+			x: 9.0d
+			y: 4.5d
+			id: "3D971E0CF8257193"
+			tasks: [{
+				id: "72A3C1702BFF1BB1"
+				type: "item"
+				item: "immersiveengineering:light_engineering"
+			}]
+		}
+		{
+			x: 7.5d
+			y: 6.0d
+			id: "158135602875F498"
+			tasks: [{
+				id: "2B2ED94E62B297B1"
+				type: "item"
+				item: "immersiveengineering:rs_engineering"
+			}]
+		}
+	]
 }

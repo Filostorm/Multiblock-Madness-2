@@ -2,8 +2,8 @@
   "type": "geolosys:deposit_dense",
   "config": {
     "yMin": -60,
-    "yMax": 20,
-    "size": 20,
+    "yMax": 10,
+    "size": 30,
     "dimensions": {
       "isBlacklist": false,
       "filter": [ "overworld" ]
@@ -12,12 +12,12 @@
     "blocks": {
       "default": [{
         "block": "minecraft:redstone_ore",
-        "chance": 0.7
+        "chance": 0.8
       },{
         "block": "thermal:cinnabar_ore",
-        "chance": 0.2
+        "chance": 0.1
       },{
-        "block": "kubejs:ruby_ore",
+        "block": "thermal:ruby_ore",
         "chance": 0.1
       }],
       "minecraft:deepslate": [{
@@ -27,14 +27,14 @@
         "block": "thermal:deepslate_cinnabar_ore",
         "chance": 0.3
       },{
-        "block": "kubejs:deepslate_ruby_ore",
+        "block": "thermal:deepslate_ruby_ore",
         "chance": 0.2
       }]
     },
     "samples": [{
-      "block": "geolosys:cinnabar_ore_sample",
-      "chance": 0.5
+      "block": "minecraft:air",
+      "chance": 1.0
     }],
-    "generationWeight": 10
+    "generationWeight": 15
   }
 }

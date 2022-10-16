@@ -143,6 +143,8 @@
 	allow_scroll_of_mercy = true
 	#Bag of Seeds [false/true|default:true]
 	allow_bag_of_seeds = true
+	#Magic Scroll [false/true|default:true]
+	allow_magic_scroll = true
 
 #Allows to change the chance to drop some items
 [loot]

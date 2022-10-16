@@ -56,31 +56,6 @@ onEvent('recipes', event => {
   	//Sheetmetal Cast
 	global.casingBasinCast(event, 'forge:sheetmetals', true, 'kubejs:sheetmetal_cast', 'forge:molten_steel', 180, 200, 'tconstruct:smeltery/casting/sheetmetal_cast')
 
-// [| compactcrafting:projector_dish |] //
-event.remove({id: 'compactcrafting:projector_dish'})
-event.shaped('4x compactcrafting:projector_dish', [
-	'AB ',
-	'ADB',
-	'AB '
-  ], {
-	A: '#forge:glass_panes/colorless',
-B: 'solarflux:mirror',
-D: 'ars_nouveau:source_gem'
-  }).id("kubejs:projector_dish")
-
-// [| compactcrafting:base |] //
-event.remove({id: 'compactcrafting:base'})
-event.shaped('4x compactcrafting:base', [
-	' B ',
-	'CDC',
-	'EEE'
-  ], {
-B: 'minecraft:ender_eye',
-C: 'minecraft:diamond',
-D: 'mna:decoration/arcane_stone_slab',
-E: 'thermal:invar_plate'
-  }).id("kubejs:base")
-
 // [| solarflux:mirror |] //
 //event.remove({output: 'solarflux:mirror'})
 event.shaped('3x solarflux:mirror', [
@@ -126,4 +101,56 @@ event.shaped('minecraft:chest', [
 	P: '#byg:planks',
   }).id("kubejs:byg_plank_chest")
 //event.shapeless(`minecraft:chest`, ['#forge:chests/wooden']).id("kubejs:default_chest")
+
+
+//Scanner
+event.remove({id: 'scannable:scanner'})
+event.shaped('scannable:scanner', [
+	'A A',
+	'CDC',
+	'EEE'
+  ], {
+	A: 'immersiveengineering:stick_iron',
+ 	C: 'createaddition:gold_wire',
+ 	D: 'minecraft:redstone',
+ 	E: 'create:copper_sheet'
+  }).id("kubejs:scanner")
+
+  event.remove({id: 'scannable:blank_module'})
+  event.shaped('2x scannable:blank_module', [
+	'AAA',
+	'ABA',
+	'CDC'
+  ], {
+	A: 'minecraft:clay_ball',
+	B: 'powah:uraninite',
+	C: 'minecraft:quartz',
+	D: 'thermal:gold_plate'
+  }).id("kubejs:blank_module")
+
+
+// [| Wood Scaffolding |] //
+event.shaped('3x kubejs:wood_scaffolding', [
+	'AAA',
+  ' C ',
+  'C C'
+	], {
+	A: '#minecraft:planks',
+  C: '#forge:rods/wooden'
+	}).id("kubejs:wood_scaffolding")
+
+// [| Summoning Altar |] //
+	event.shaped('summoningrituals:altar', [
+		'ABC',
+		'DED',
+		'EFE'
+	  ], {
+		A: 'forbidden_arcanus:dark_soul',
+		B: 'spirit:soul_crystal_shard',
+		C: 'forbidden_arcanus:soul',
+		D: 'thermal:gold_plate',
+		E: 'minecraft:red_carpet',
+		F: 'mna:basic_table'
+	  }).id("summoningrituals:altar")
+
 });

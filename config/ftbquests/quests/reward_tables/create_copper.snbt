@@ -1,0 +1,14 @@
+{
+	id: "48639D6E11434974"
+	order_index: 3
+	title: "Create Copper"
+	loot_size: 1
+	rewards: [
+		{ item: "create:fluid_pipe", count: 4 }
+		{ item: "create:mechanical_pump" }
+		{ item: "create:cogwheel", count: 2 }
+		{ item: "create:copper_sheet", count: 4 }
+		{ item: "create:fluid_tank" }
+		{ item: "create:copper_casing" }
+	]
+}

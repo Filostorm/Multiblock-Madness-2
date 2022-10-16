@@ -1,0 +1,15 @@
+{
+	id: "1649C0DC2CA819D3"
+	order_index: 4
+	title: "Create Brass Age"
+	loot_size: 1
+	rewards: [
+		{ item: "create:brass_ingot", count: 4 }
+		{ item: "create:brass_casing" }
+		{ item: "create:brass_funnel" }
+		{ item: "create:brass_tunnel" }
+		{ item: "create:cogwheel", count: 4 }
+		{ item: "create:gearbox" }
+		{ item: "create:electron_tube", count: 2 }
+	]
+}

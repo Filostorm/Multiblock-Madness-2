@@ -1,55 +1,43 @@
 {                                                      
   "type": "geolosys:deposit_dense",                    
   "config": {
-    "yMin": -40,
-    "yMax": 80,
-    "size": 40,                                        
-    "dimensions": {                                    
+    "yMin": 0,
+    "yMax": 150,
+    "size": 35,
+    "dimensions": {
       "isBlacklist": false,                            
       "filter": [ "overworld" ]                        
     },
     "blockStateMatchers": [ "minecraft:stone" ],     
     "blocks": {                                        
       "default": [{                                    
-        "block": "geolosys:coal_ore",
-        "chance": 0.6
+        "block": "minecraft:coal_ore",
+        "chance": 0.8
       },{                                    
         "block": "geolosys:lignite_ore",
-        "chance": 0.2
+        "chance": 0.1
       },{                                    
         "block": "geolosys:bituminous_coal_ore",
         "chance": 0.1
-      },{                                    
-        "block": "geolosys:anthracite_coal_ore",
-        "chance": 0.1
       }],
       "minecraft:deepslate": [{                                    
-        "block": "geolosys:deepslate_coal_ore",
-        "chance": 0.4
+        "block": "minecraft:deepslate_coal_ore",
+        "chance": 0.85
       },{                                    
         "block": "geolosys:deepslate_bituminous_coal_ore",
-        "chance": 0.1
+        "chance": 0.05
       },{                                    
         "block": "geolosys:deepslate_anthracite_coal_ore",
-        "chance": 0.2
+        "chance": 0.05
       },{                                    
-        "block": "minecraft:deepslate_diamond_ore",
-        "chance": 0.3
+        "block": "minecraft:lignite_ore",
+        "chance": 0.05
       }]
     },
     "samples": [{                                    
-      "block": "geolosys:coal_ore_sample",
-      "chance": 0.1
-    },{                                    
-      "block": "geolosys:lignite_ore_sample",
-      "chance": 0.1
-    },{                                    
-      "block": "geolosys:bituminous_coal_ore_sample",
-      "chance": 0.1
-    },{                                    
-      "block": "geolosys:anthracite_coal_ore_sample",
-      "chance": 0.1
+      "block": "minecraft:air",
+      "chance": 1.0
     }],
-    "generationWeight": 15
+    "generationWeight": 5
   }
 }

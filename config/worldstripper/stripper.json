@@ -11,7 +11,6 @@
     "minecraft:andesite",
     "minecraft:gravel",
     "minecraft:sand",
-    "minecraft:sandstone",
     "minecraft:oak_log",
     "minecraft:dark_oak_log",
     "minecraft:spruce_log",
@@ -38,6 +37,20 @@
     "minecraft:kelp_plant",
     "minecraft:deepslate",
     "minecraft:tuff",
-    "minecraft:glow_lichen"
+    "minecraft:glow_lichen",
+    "minecraft:sandstone",
+    "byg:lush_dirt",
+    "byg:lush_grass_block",
+    "minecraft:snow",
+    "minecraft:ice",
+    "minecraft:moss_block",
+    "forbidden_arcanus:darkstone",
+    "minecraft:moss_carpet",
+    "minecraft:cave_vines_plant",
+    "minecraft:cave_vines",
+    "minecraft:cobblestone",
+    "byg:soapstone",
+    "minecraft:clay",
+    "byg:dacite"
   ]
 }

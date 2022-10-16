@@ -1,3 +1,8 @@
+
+
+onEvent('tags.items', event => {
+		event.add('#forge:slimeballs', 'createaddition:biomass_pellet')
+});
 onEvent('recipes', event => {
 
 /// Alt Belt Recipe using Rubber
@@ -28,7 +33,7 @@ onEvent('recipes', event => {
 	D: 'thermal:cured_rubber'
 	  }).id(`kubejs:crafting/rubber/brass_funnel`)
 // [| rubber/andesite_tunnel |] //
-event.shaped('create:andesite_tunnel', [
+event.shaped('2x create:andesite_tunnel', [
 	'AA',
 	'CC',
   ], {
@@ -37,7 +42,7 @@ C: 'thermal:cured_rubber'
   }).id(`kubejs:crafting/rubber/andesite_tunnel`)
 
 // [| rubber/brass_tunnel |] //
-event.shaped('create:brass_tunnel', [
+event.shaped('2x create:brass_tunnel', [
 	'A ',
 	'CC',
 	'DD'
@@ -58,11 +63,6 @@ C: 'thermal:cured_rubber'
 
 
 
-	//Basic Alloy Compat
-	event.recipes.createMixing('4x thermal:bronze_ingot', ['3x #forge:ingots/copper','#forge:ingots/tin']).heated().id(`kubejs:mixing/bronze_ingot`)
-	event.recipes.createMixing('2x thermal:electrum_ingot', ['#forge:ingots/gold','#forge:ingots/silver']).heated().id(`kubejs:mixing/electrum_ingot`)
-	event.recipes.createMixing('3x thermal:invar_ingot', ['2x #forge:ingots/iron','#forge:ingots/nickel']).heated().id(`kubejs:mixing/invar_ingot`)
-	event.recipes.createMixing('2x thermal:constantan_ingot', ['#forge:ingots/copper','#forge:ingots/nickel']).heated().id(`kubejs:mixing/constantan_ingot`)
   
 	
   //Basic Capacitor
@@ -83,7 +83,7 @@ C: 'thermal:cured_rubber'
 	'C',
 	'D'
   ], {
-	B: 'immersiveengineering:slab_treated_wood_packaged',
+	B: 'immersiveengineering:slab_treated_wood_horizontal',
 	C: '#forge:stone',
 	D: 'create:shaft'
   }).id('kubejs:crafting/windmill_bearing')
@@ -106,6 +106,8 @@ event.recipes.createCutting('2x immersiveengineering:slab_treated_wood_horizonta
 // [| create:andesite_alloy |] //
 event.remove({id: 'create:crafting/materials/andesite_alloy'})
 event.remove({id: 'create:crafting/materials/andesite_alloy_from_zinc'})
+event.remove({id: 'create:mixing/andesite_alloy'})
+event.remove({id: 'create:mixing/andesite_alloy_from_zinc'})
 event.shaped('create:andesite_alloy', [
 	'AB',
 	'BA'
@@ -113,6 +115,7 @@ event.shaped('create:andesite_alloy', [
 	A: 'minecraft:iron_nugget',
 	B: '#forge:stone'
   }).id("kubejs:andesite_alloy")
+  event.recipes.createMixing([`create:andesite_alloy`], ['#forge:stone', 'minecraft:iron_nugget']).id('kubejs:mixing/andesite_alloy')
 
 event.shaped('2x create:andesite_alloy', [
 	'AB',
@@ -121,4 +124,40 @@ event.shaped('2x create:andesite_alloy', [
 	A: 'minecraft:iron_nugget',
 	B: 'mna:decoration/arcane_stone',
   }).id("kubejs:andesite_alloy_x2")
+  event.recipes.createMixing([`2x create:andesite_alloy`], ['mna:decoration/arcane_stone', 'minecraft:iron_nugget']).id(`kubejs:mixing/andesite_alloy_x2`)
+
+
+/// Hose Pully w/o kelp
+event.shaped('create:hose_pulley', [
+	'B',
+	'D',
+	'C'
+	  ], {
+	B: 'create:copper_casing',
+	C: 'minecraft:chain',
+	D: 'kubejs:copper_mechanical_component'
+	  }).id(`kubejs:crafting/hose_pulley`)
+
+	  //Brass Upgrades
+	event.shapeless('2x create:brass_funnel', ['#forge:ingots/brass', 'create:electron_tube', 'create:andesite_funnel'])
+	event.shapeless('2x create:brass_tunnel', ['#forge:ingots/brass', '#forge:ingots/brass', 'create:electron_tube', 'create:andesite_tunnel'])
+
+	event.remove({id: 'create:item_application/brass_casing_from_wood'})
+	event.remove({id: 'create:item_application/brass_casing_from_log'})
+	event.remove({id: 'create:item_application/brass_casing_from_wood_using_deployer'})
+	event.remove({id: 'create:item_application/brass_casing_from_log_using_deployer'})
+	
+	global.createApplying(event, 'create:brass_casing', 'forge:ingots/brass', 'forge:treated_wood', `kubejs:applying/brass_casing`)
+	//event.recipes.createDeploying('create:brass_casing', ['#forge:treated_wood', '#forge:ingots/brass'])
+	
+	//Gib Saplings
+	event.recipes.createCrushing([
+		Item.of('minecraft:jungle_sapling').withChance(0.1),
+		Item.of('minecraft:dark_oak_sapling').withChance(0.1),
+		Item.of('ars_nouveau:blue_archwood_sapling').withChance(0.1),
+		Item.of('hexerei:mahogany_sapling').withChance(0.1),
+		Item.of('hexerei:willow_sapling').withChance(0.1),
+		Item.of('forbidden_arcanus:growing_edelwood').withChance(0.1)
+	  ], '#minecraft:leaves')
+
 });

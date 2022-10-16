@@ -1,0 +1,12 @@
+{
+	id: "23D770835277D79F"
+	order_index: 1
+	title: "Food"
+	loot_size: 1
+	rewards: [
+		{ item: "thermal:pbj_sandwich" }
+		{ item: "farmersdelight:egg_sandwich" }
+		{ item: "farmersdelight:chicken_sandwich" }
+		{ item: "farmersdelight:bacon_sandwich" }
+	]
+}

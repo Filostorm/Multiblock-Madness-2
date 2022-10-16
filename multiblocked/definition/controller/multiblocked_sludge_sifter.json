@@ -1,0 +1,172 @@
+{
+  "version": 1,
+  "location": "multiblocked:sludge_sifter",
+  "traits": {},
+  "properties": {
+    "rotationState": "ALL",
+    "showInJei": true,
+    "isOpaque": true,
+    "hasDynamicShape": false,
+    "hasCollision": true,
+    "destroyTime": 1.5,
+    "explosionResistance": 6.0,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "friction": 0.6,
+    "harvestLevel": 0,
+    "stackSize": 64,
+    "tabGroup": "multiblocked.all"
+  },
+  "status": {
+    "unformed": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/copper",
+        "frontTexture": "multiblocked:overlay/sifter",
+        "type": "gregtech",
+        "postRenderer": false
+      }
+    },
+    "idle": {
+      "parent": "unformed"
+    },
+    "working": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/copper",
+        "frontTexture": "multiblocked:overlay/sifter_active",
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "parent": "idle"
+    },
+    "suspend": {
+      "parent": "working"
+    }
+  },
+  "recipeMap": "sludge_pump",
+  "basePattern": {
+    "structureDir": [
+      "BACK",
+      "RIGHT",
+      "UP"
+    ],
+    "pattern": [
+      [
+        "ABA",
+        "@CA",
+        "ABA"
+      ],
+      [
+        " B ",
+        " D ",
+        " B "
+      ],
+      [
+        "   ",
+        " E ",
+        "   "
+      ]
+    ],
+    "aisleRepetitions": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        4
+      ]
+    ],
+    "predicates": {
+      "A": {
+        "blocks": [
+          {
+            "id": "create:copper_casing"
+          }
+        ],
+        "type": "blocks"
+      },
+      "controller": {
+        "location": "multiblocked:sludge_sifter",
+        "type": "component"
+      },
+      "B": {
+        "blocks": [
+          {
+            "id": "immersiveengineering:treated_scaffold"
+          }
+        ],
+        "type": "blocks"
+      },
+      "C": {
+        "blocks": [
+          {
+            "id": "kubejs:copper_cog_block"
+          }
+        ],
+        "type": "blocks"
+      },
+      "D": {
+        "blocks": [
+          {
+            "id": "create:fluid_tank"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 0,
+        "maxCount": 1
+      },
+      "T": {
+        "blocks": [
+          {
+            "id": "create:fluid_tank"
+          }
+        ],
+        "type": "blocks",
+        "io": "null"
+      },
+      "E": {
+        "blocks": [
+          {
+            "id": "minecraft:barrel"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 1,
+        "previewCount": 1
+      },
+      "any": {
+        "type": "any"
+      }
+    },
+    "symbolMap": {
+      "@": [
+        "controller"
+      ],
+      " ": [
+        "any"
+      ],
+      "A": [
+        "A"
+      ],
+      "B": [
+        "B",
+        "E"
+      ],
+      "C": [
+        "C"
+      ],
+      "D": [
+        "D"
+      ],
+      "E": [
+        "T",
+        "any"
+      ]
+    }
+  }
+}

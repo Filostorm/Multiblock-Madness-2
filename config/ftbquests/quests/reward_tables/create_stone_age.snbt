@@ -1,0 +1,19 @@
+{
+	id: "20DFA7207A4A1C8D"
+	order_index: 2
+	title: "Create Stone Age"
+	loot_size: 1
+	rewards: [
+		{ item: "create:shaft", count: 4, weight: 2 }
+		{ item: "create:cogwheel", count: 2, weight: 2 }
+		{ item: "create:large_cogwheel", weight: 2 }
+		{ item: "create:andesite_casing", weight: 2 }
+		{ item: "create:andesite_alloy", count: 4, weight: 4 }
+		{ item: "create:andesite_funnel", weight: 2 }
+		{ item: "create:andesite_tunnel" }
+		{ item: "create:gearbox", weight: 2 }
+		{ item: "create:belt_connector", weight: 2 }
+		{ item: "create:encased_chain_drive", weight: 2 }
+		{ item: "create:analog_lever", weight: 2 }
+	]
+}

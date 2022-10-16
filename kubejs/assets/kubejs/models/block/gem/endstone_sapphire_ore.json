@@ -1,8 +1,8 @@
 {
     "textures": {
         "ore": "kubejs:block/gem/sapphire_ore",
-        "stone": "kubejs:block/endstone",
-        "particle": "kubejs:block/endstone"
+        "stone": "kubejs:block/ore/endstone",
+        "particle": "kubejs:block/ore/endstone"
     },
         "display": {
         "gui": {

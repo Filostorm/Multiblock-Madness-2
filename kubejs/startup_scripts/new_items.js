@@ -6,6 +6,12 @@ var basicItems = [
 	'curcuit_board_2',
 	'curcuit_board_3',
 	'silver_coil',
+	'shifting_cube',
+	'source_ingot',
+	'source_nugget',
+	'source_tube',
+	'source_pearl',
+	'blazing_redstone',
 ]
 
 global.transitionalItems = [

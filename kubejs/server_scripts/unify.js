@@ -37,6 +37,10 @@ var removeByName = [
 	'alchemistry:iron_ingot_from_smelting_iron_dust',
 	'immersiveengineering:smelting/iron_ingot_from_dust',
 	'thermal:smelting/iron_ingot_from_dust_smelting',
+	'minecraft:magma_cream',
+	'quark:tweaks/crafting/utility/bent/paper',
+	'mekanism:paper',
+	'minecraft:sticky_piston',
 ]
 
 onEvent('recipes', event => {
@@ -50,7 +54,7 @@ onEvent('recipes', event => {
 		event.remove({output: item})
 	})
 
-	
+	event.shapeless('3x minecraft:paper', ['minecraft:sugar_cane','minecraft:sugar_cane','minecraft:sugar_cane']).id('minecraft:paper')
 })
 
 onEvent('tags.items', event => {
@@ -58,7 +62,6 @@ onEvent('tags.items', event => {
 	global.removeAndHide.forEach((item) => {
 		event.removeAllTagsFrom(item)
 	})
-	event.add('forge:ingots/vinteum', 'mna:vinteum_ingot')
 })
 /*
 var addItemsJEI = ['thermal:ruby', 'thermal:ruby_dust', 'thermal:ruby_block', 'thermal:ruby_ore', 'thermal:deepslate_ruby_ore']

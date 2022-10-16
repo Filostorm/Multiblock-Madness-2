@@ -1,0 +1,85 @@
+{
+  "name": "sludge_pump",
+  "progressTexture": "multiblocked:textures/gui/progress_bar_arrow.png",
+  "recipes": [
+    {
+      "uid": "b50e36b4-3815-4ff0-855c-d109d8c0bfba",
+      "duration": 100,
+      "inputs": {
+        "fluid": [
+          {
+            "content": {
+              "fluid": "minecraft:water",
+              "amount": 500
+            },
+            "chance": 1.0
+          }
+        ]
+      },
+      "outputs": {
+        "item": [
+          {
+            "content": {
+              "type": "multiblocked:sized",
+              "count": 1,
+              "ingredient": {
+                "item": "minecraft:sand"
+              }
+            },
+            "chance": 0.4
+          },
+          {
+            "content": {
+              "type": "multiblocked:sized",
+              "count": 1,
+              "ingredient": {
+                "item": "minecraft:clay_ball"
+              }
+            },
+            "chance": 0.7
+          },
+          {
+            "content": {
+              "type": "multiblocked:sized",
+              "count": 1,
+              "ingredient": {
+                "item": "minecraft:clay"
+              }
+            },
+            "chance": 0.1
+          },
+          {
+            "content": {
+              "type": "multiblocked:sized",
+              "count": 1,
+              "ingredient": {
+                "item": "minecraft:gravel"
+              }
+            },
+            "chance": 0.3
+          },
+          {
+            "content": {
+              "type": "multiblocked:sized",
+              "count": 1,
+              "ingredient": {
+                "item": "minecraft:kelp"
+              }
+            },
+            "chance": 0.2
+          },
+          {
+            "content": {
+              "type": "multiblocked:sized",
+              "count": 1,
+              "ingredient": {
+                "item": "aquaculture:fish_bones"
+              }
+            },
+            "chance": 0.05
+          }
+        ]
+      }
+    }
+  ]
+}

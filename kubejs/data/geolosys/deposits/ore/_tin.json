@@ -1,0 +1,40 @@
+{                 
+  "type": "geolosys:deposit_dense",
+  "config": {
+    "yMin": -40,
+    "yMax": 80,
+    "size": 25,
+    "dimensions": {
+      "isBlacklist": false,
+      "filter": [ "overworld" ]
+    },
+    "blockStateMatchers": [ "minecraft:stone" ],
+    "blocks": {
+      "default": [{
+        "block": "thermal:tin_ore",
+        "chance": 0.9
+      },{
+        "block": "thermal:apatite_ore",
+        "chance": 0.05
+      },{
+        "block": "mekanism:fluorite_ore",
+        "chance": 0.05
+      }],
+      "minecraft:deepslate": [{
+        "block": "thermal:deepslate_tin_ore",
+        "chance": 0.7
+      },{
+        "block": "thermal:deepslate_apatite_ore",
+        "chance": 0.1
+      },{
+        "block": "mekanism:deepslate_fluorite_ore",
+        "chance": 0.1
+      }]
+    },
+    "samples": [{
+      "block": "minecraft:air",
+      "chance": 1.0
+    }],
+    "generationWeight": 15
+  }
+}

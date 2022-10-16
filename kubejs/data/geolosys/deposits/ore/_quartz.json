@@ -1,0 +1,46 @@
+{                 
+  "type": "geolosys:deposit_dense",
+  "config": {
+    "yMin": -60,
+    "yMax": 10,
+    "size": 20,
+    "dimensions": {
+      "isBlacklist": false,
+      "filter": [ "overworld" ]
+    },
+    "blockStateMatchers": [ "minecraft:stone" ],
+    "blocks": {
+      "default": [{
+        "block": "geolosys:quartz_ore",
+        "chance": 0.7
+      },{
+        "block": "ae2:quartz_ore",
+        "chance": 0.1
+      },{
+        "block": "elementalcraft:inert_crystal_ore",
+        "chance": 0.1
+      },{
+        "block": "forbidden_arcanus:arcane_crystal_ore",
+        "chance": 0.1
+      }],
+      "minecraft:deepslate": [{
+        "block": "geolosys:deepslate_quartz_ore",
+        "chance": 0.5
+      },{
+        "block": "ae2:deepslate_quartz_ore",
+        "chance": 0.1
+      },{
+        "block": "elementalcraft:deepslate_inert_crystal_ore",
+        "chance": 0.2
+      },{
+        "block": "forbidden_arcanus:deepslate_arcane_crystal_ore",
+        "chance": 0.2
+      }]
+    },
+    "samples": [{
+      "block": "minecraft:air",
+      "chance": 1.0
+    }],
+    "generationWeight": 15
+  }
+}

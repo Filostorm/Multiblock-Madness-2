@@ -14,7 +14,21 @@ global.removeAndHide = [
 	'mekanism:elite_combining_factory', 
 	'mekanism:ultimate_combining_factory',
 
-	'essentials:auto_crafter',
+	'powah:battery_starter', 
+	'powah:energy_cell_starter', 
+	'powah:ender_cell_starter', 
+	'powah:energy_cable_starter', 
+	'powah:ender_gate_starter', 
+	'powah:energizing_rod_starter', 
+	'powah:furnator_starter', 
+	'powah:magmator_starter', 
+	'powah:thermo_generator_starter', 
+	'powah:solar_panel_starter', 
+	'powah:reactor_starter', 
+	'powah:player_transmitter_starter', 
+	'powah:energy_hopper_starter', 
+	'powah:energy_discharger_starter',
+
 
 
 //////////// MATERIAL PARTS ///////////////////
@@ -224,19 +238,12 @@ global.removeAndHide = [
 	'crossroads:block_copper', 
 	'crossroads:nugget_copper', 
 	'crossroads:ore_copper',
-	'thermal:ruby', 
-	'thermal:ruby_dust', 
 	'crossroads:gem_ruby', 
 	'crossroads:block_ruby', 
-	'thermal:ruby_ore', 
-	'thermal:deepslate_ruby_ore', 
 	'crossroads:ore_ruby',
-	Item.of('ae2:facade', '{item:"thermal:sapphire_ore"}'), 
-	Item.of('ae2:facade', '{item:"thermal:deepslate_sapphire_ore"}'), 
-	Item.of('ae2:facade', '{item:"thermal:sapphire_block"}'), 
-	Item.of('ae2:facade', '{item:"crossroads:block_ruby"}'), 
-	Item.of('ae2:facade', '{item:"crossroads:ore_ruby"}'), 
-	Item.of('ae2:facade', '{item:"thermal:ruby_ore"}'), 
-	Item.of('ae2:facade', '{item:"thermal:deepslate_ruby_ore"}'), 
-	Item.of('ae2:facade', '{item:"thermal:ruby_block"}')
+	'immersiveengineering:raw_block_nickel',
+	'immersiveengineering:ore_nickel',
+	'immersiveengineering:deepslate_ore_nickel',
+	/geolosys:.*_ore_sample/,
+	/geolosys:.*_cluster/,
 	]

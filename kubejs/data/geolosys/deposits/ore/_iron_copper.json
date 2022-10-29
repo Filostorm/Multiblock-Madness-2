@@ -12,20 +12,20 @@
     "blocks": {
       "default": [{
         "block": "minecraft:copper_ore",
-        "chance": 0.75
+        "chance": 0.9
       },{
         "block": "minecraft:iron_ore",
-        "chance": 0.2
+        "chance": 0.05
       },{
         "block": "thermal:sulfur_ore",
         "chance": 0.05
       }],
       "minecraft:deepslate": [{
         "block": "minecraft:deepslate_copper_ore",
-        "chance": 0.65
+        "chance": 0.9
       },{
         "block": "minecraft:deepslate_iron_ore",
-        "chance": 0.3
+        "chance": 0.05
       },{
         "block": "thermal:deepslate_sulfur_ore",
         "chance": 0.05
@@ -35,6 +35,6 @@
       "block": "minecraft:air",
       "chance": 1.0
     }],
-    "generationWeight": 20
+    "generationWeight": 10
   }
 }

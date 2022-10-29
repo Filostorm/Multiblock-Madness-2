@@ -12,9 +12,7 @@
     "showPlacementPreview_comment": "Show a preview of part and facade placement",
     "showPlacementPreview": true,
     "notifyForFinishedCraftingJobs_comment": "Show toast when long-running crafting jobs finish.",
-    "notifyForFinishedCraftingJobs": true,
-    "clearGridOnClose_comment": "Automatically clear the crafting/encoding grid when closing the terminal",
-    "clearGridOnClose": false
+    "notifyForFinishedCraftingJobs": true
   },
   "terminals": {
     "terminalStyle": "tall",

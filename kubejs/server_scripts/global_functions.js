@@ -1,4 +1,7 @@
 
+
+
+
 ///////////////// TINKERS ///////////////////////
 ////CASTING TABLE////
 global.casingTable = (event, cast, consumed, outputItem, inputFluid, amount, cooling, ID) => {
@@ -66,6 +69,19 @@ global.tinkersOreMelting = (event, outputFluid, amount, byproductFluid, byproduc
 		]
 	  
 }).id(ID)}
+
+//////// ALLOYING /////////
+global.tinkersAlloying = (event, outputFluid, amount, inputFluids, temperature, ID) => {
+	event.custom({
+	type: 'tconstruct:alloy',
+	inputs: inputFluids,
+	result: {
+	  fluid: outputFluid,
+	  amount: amount
+	},
+	temperature: temperature
+}).id(ID)}
+
 ///////////////////////////////////////////////////////////
 
 

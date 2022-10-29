@@ -72,14 +72,14 @@
 
 #For settings related to decorative tombs and magic items
 [decorative_grave]
-	#Sets the decorative graves unbreakable [false/true|default:false]
-	unbreakable_decorative_grave = false
 	#The cooldown in hours to pray with the Ankh [1..10|default:3]
 	#Range: 1 ~ 10
 	cooldown_to_pray = 3
 	#The cooldown in minutes to reset the perks with the ankh of Pray [20..1440|default:120]
 	#Range: 20 ~ 1440
 	cooldown_reset_perk = 120
+	#Sets the decorative graves unbreakable [false/true|default:false]
+	unbreakable_decorative_grave = false
 
 #Allows to disable some magic items
 [allowedMagicItems]

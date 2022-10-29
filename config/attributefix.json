@@ -22,6 +22,17 @@
         "value": 10000000
       }
     },
+    "apotheosis:mining_speed": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1024,
+        "value": 10000000
+      }
+    },
     "minecraft:generic.follow_range": {
       "enabled": true,
       "min": {
@@ -33,6 +44,17 @@
         "value": 10000000
       }
     },
+    "apotheosis:arrow_velocity": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1024,
+        "value": 10000000
+      }
+    },
     "malum:soul_ward_shatter_cooldown": {
       "enabled": false,
       "min": {
@@ -41,17 +63,6 @@
       },
       "max": {
         "default": 2048,
-        "value": 10000000
-      }
-    },
-    "forge:nametag_distance": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 64,
         "value": 10000000
       }
     },
@@ -88,6 +99,248 @@
         "value": 10000000
       }
     },
+    "lodestone:magic_proficiency": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 2048,
+        "value": 10000000
+      }
+    },
+    "malum:heart_of_stone_strength": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 2048,
+        "value": 10000000
+      }
+    },
+    "apotheosis:draw_speed": {
+      "enabled": false,
+      "min": {
+        "default": 1,
+        "value": 1
+      },
+      "max": {
+        "default": 4,
+        "value": 10000000
+      }
+    },
+    "minecraft:generic.luck": {
+      "enabled": true,
+      "min": {
+        "default": -1024,
+        "value": -1024
+      },
+      "max": {
+        "default": 1024,
+        "value": 10000000
+      }
+    },
+    "apotheosis:ghost_health": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1024,
+        "value": 10000000
+      }
+    },
+    "forge:reach_distance": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1024,
+        "value": 10000000
+      }
+    },
+    "apotheosis:arrow_damage": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1024,
+        "value": 10000000
+      }
+    },
+    "apotheosis:fire_damage": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1024,
+        "value": 10000000
+      }
+    },
+    "apotheosis:piercing": {
+      "enabled": false,
+      "min": {
+        "default": 1,
+        "value": 1
+      },
+      "max": {
+        "default": 2,
+        "value": 10000000
+      }
+    },
+    "ortus:magic_proficiency": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 2048,
+        "value": 10000000
+      }
+    },
+    "minecraft:zombie.spawn_reinforcements": {
+      "enabled": true,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1,
+        "value": 10000000
+      }
+    },
+    "apotheosis:current_hp_damage": {
+      "enabled": false,
+      "min": {
+        "default": 1,
+        "value": 1
+      },
+      "max": {
+        "default": 2,
+        "value": 10000000
+      }
+    },
+    "apotheosis:overheal": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1024,
+        "value": 10000000
+      }
+    },
+    "apotheosis:crit_chance": {
+      "enabled": false,
+      "min": {
+        "default": 1,
+        "value": 1
+      },
+      "max": {
+        "default": 1024,
+        "value": 10000000
+      }
+    },
+    "malum:heart_of_stone_capacity": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 2048,
+        "value": 10000000
+      }
+    },
+    "minecraft:generic.attack_knockback": {
+      "enabled": true,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 5,
+        "value": 10000000
+      }
+    },
+    "lodestone:magic_resistance": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 2048,
+        "value": 10000000
+      }
+    },
+    "forge:swim_speed": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1024,
+        "value": 10000000
+      }
+    },
+    "minecraft:generic.armor_toughness": {
+      "enabled": true,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 20,
+        "value": 10000000
+      }
+    },
+    "malum:scythe_proficiency": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 2048,
+        "value": 10000000
+      }
+    },
+    "ortus:magic_damage": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 2048,
+        "value": 10000000
+      }
+    },
+    "forge:nametag_distance": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 64,
+        "value": 10000000
+      }
+    },
     "malum:spirit_spoils": {
       "enabled": false,
       "min": {
@@ -121,6 +374,17 @@
         "value": 10000000
       }
     },
+    "apotheosis:cold_damage": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1024,
+        "value": 10000000
+      }
+    },
     "minecraft:generic.attack_damage": {
       "enabled": true,
       "min": {
@@ -129,28 +393,6 @@
       },
       "max": {
         "default": 2048,
-        "value": 10000000
-      }
-    },
-    "malum:heart_of_stone_strength": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 2048,
-        "value": 10000000
-      }
-    },
-    "minecraft:generic.luck": {
-      "enabled": true,
-      "min": {
-        "default": -1024,
-        "value": -1024
-      },
-      "max": {
-        "default": 1024,
         "value": 10000000
       }
     },
@@ -176,6 +418,17 @@
         "value": 10000000
       }
     },
+    "apotheosis:crit_damage": {
+      "enabled": false,
+      "min": {
+        "default": 1,
+        "value": 1
+      },
+      "max": {
+        "default": 1024,
+        "value": 10000000
+      }
+    },
     "ars_nouveau:mana_regen": {
       "enabled": false,
       "min": {
@@ -187,19 +440,19 @@
         "value": 10000000
       }
     },
-    "minecraft:generic.flying_speed": {
-      "enabled": true,
+    "malum:arcane_resonance": {
+      "enabled": false,
       "min": {
         "default": 0,
         "value": 0
       },
       "max": {
-        "default": 1024,
+        "default": 2048,
         "value": 10000000
       }
     },
-    "forge:reach_distance": {
-      "enabled": false,
+    "minecraft:generic.flying_speed": {
+      "enabled": true,
       "min": {
         "default": 0,
         "value": 0
@@ -228,6 +481,17 @@
       },
       "max": {
         "default": 2048,
+        "value": 10000000
+      }
+    },
+    "apotheosis:life_steal": {
+      "enabled": false,
+      "min": {
+        "default": 1,
+        "value": 1
+      },
+      "max": {
+        "default": 1024,
         "value": 10000000
       }
     },
@@ -264,17 +528,6 @@
         "value": 10000000
       }
     },
-    "ortus:magic_proficiency": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 2048,
-        "value": 10000000
-      }
-    },
     "malum:spirit_reach": {
       "enabled": false,
       "min": {
@@ -283,17 +536,6 @@
       },
       "max": {
         "default": 2048,
-        "value": 10000000
-      }
-    },
-    "minecraft:zombie.spawn_reinforcements": {
-      "enabled": true,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 1,
         "value": 10000000
       }
     },
@@ -319,39 +561,6 @@
         "value": 10000000
       }
     },
-    "malum:heart_of_stone_capacity": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 2048,
-        "value": 10000000
-      }
-    },
-    "minecraft:generic.attack_knockback": {
-      "enabled": true,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 5,
-        "value": 10000000
-      }
-    },
-    "forge:swim_speed": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 1024,
-        "value": 10000000
-      }
-    },
     "minecraft:generic.knockback_resistance": {
       "enabled": true,
       "min": {
@@ -363,29 +572,7 @@
         "value": 10000000
       }
     },
-    "minecraft:generic.armor_toughness": {
-      "enabled": true,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 20,
-        "value": 10000000
-      }
-    },
-    "malum:scythe_proficiency": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 2048,
-        "value": 10000000
-      }
-    },
-    "ortus:magic_damage": {
+    "lodestone:magic_damage": {
       "enabled": false,
       "min": {
         "default": 0,

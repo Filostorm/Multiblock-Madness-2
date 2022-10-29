@@ -21,7 +21,7 @@ onEvent('worldgen.add', event => {
 
 	global.newMaterialParts.forEach((item) => {
 		//Poor Ores
-		if (item.tier == 1 && item.ore) {
+		if (item.tier == 1 && item.ore && item.type == 'base_metal') {
 			event.addOre((ore) => {
 				ore.id = `kubejs:poor_${item.material}_ore` // (optional, but recommended) custom id for the feature
 			
@@ -30,7 +30,7 @@ onEvent('worldgen.add', event => {
 					ore.addTarget(`#forge:${type.material}`, `kubejs:poor_${type.material}_${item.material}_ore`)
 				})
 
-				ore.count([10, 15])                      // generate between 15 and 50 veins (chosen at random), you could use a single number here for a fixed amount of blocks
+				ore.count([12, 20])                      // generate between 15 and 50 veins (chosen at random), you could use a single number here for a fixed amount of blocks
 						.squared()                       // randomly spreads the ores out across the chunk, instead of generating them in a column
 						.uniformHeight(				 // triangleHeight, generate the ore with a triangular distribution, this means it will be more likely to be placed closer to the center of the anchors
 								anchors.aboveBottom(48), // the lower bound should be 32 blocks above the bottom of the world, so in this case, Y = -32 since minY = -64
@@ -62,6 +62,26 @@ onEvent('worldgen.add', event => {
 						anchors.absolute(256)
 				)
 		ore.size = 20
+		ore.noSurface = 0
+		ore.worldgenLayer = "underground_ores"
+		  ore.chance = 0
+	})
+	
+
+	// Base copper Veins
+	event.addOre((ore) => {
+		ore.id = 'kubejs:copper_ore'
+	
+		ore.addTarget('#minecraft:stone_ore_replaceables', 'minecraft:copper_ore')
+		ore.addTarget('minecraft:deepslate', 'minecraft:deepslate_copper_ore')
+
+		ore.count([5, 8])
+				.squared()
+				.uniformHeight(
+						anchors.aboveBottom(0),
+						anchors.absolute(256)
+				)
+		ore.size = 10
 		ore.noSurface = 0
 		ore.worldgenLayer = "underground_ores"
 		  ore.chance = 0

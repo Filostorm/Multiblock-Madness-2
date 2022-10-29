@@ -8,5 +8,45 @@
 		{ item: "farmersdelight:egg_sandwich" }
 		{ item: "farmersdelight:chicken_sandwich" }
 		{ item: "farmersdelight:bacon_sandwich" }
+		{ item: "farmersdelight:squid_ink_pasta" }
+		{ item: "farmersdelight:ratatouille" }
+		{ item: "farmersdelight:steak_and_potatoes" }
+		{ item: "farmersdelight:vegetable_noodles" }
+		{ item: "farmersdelight:roasted_mutton_chops" }
+		{ item: "farmersdelight:mushroom_rice" }
+		{ item: "farmersdelight:pasta_with_mutton_chop" }
+		{ item: "farmersdelight:pasta_with_meatballs" }
+		{ item: "farmersdelight:bacon_and_eggs" }
+		{ item: "farmersdelight:noodle_soup" }
+		{ item: "farmersdelight:baked_cod_stew" }
+		{ item: "farmersdelight:pumpkin_soup" }
+		{ item: "farmersdelight:fried_rice" }
+		{ item: "farmersdelight:fish_stew" }
+		{ item: "farmersdelight:vegetable_soup" }
+		{ item: "farmersdelight:chicken_soup" }
+		{ item: "farmersdelight:beef_stew" }
+		{ item: "farmersdelight:bone_broth" }
+		{ item: "farmersdelight:cooked_rice" }
+		{ item: "farmersdelight:kelp_roll_slice" }
+		{ item: "farmersdelight:kelp_roll" }
+		{ item: "farmersdelight:cod_roll" }
+		{ item: "farmersdelight:salmon_roll" }
+		{ item: "farmersdelight:cabbage_rolls" }
+		{ item: "farmersdelight:stuffed_potato" }
+		{ item: "farmersdelight:dumplings" }
+		{ item: "farmersdelight:rice_roll_medley_block" }
+		{ item: "farmersdelight:shepherds_pie" }
+		{ item: "farmersdelight:honey_glazed_ham" }
+		{ item: "farmersdelight:stuffed_pumpkin" }
+		{ item: "farmersdelight:roast_chicken" }
+		{ item: "farmersdelight:grilled_salmon" }
+		{ item: "farmersdelight:smoked_ham" }
+		{ item: "farmersdelight:glow_berry_custard" }
+		{ item: "farmersdelight:fruit_salad" }
+		{ item: "farmersdelight:mixed_salad" }
+		{ item: "farmersdelight:nether_salad" }
+		{ item: "farmersdelight:barbecue_stick" }
+		{ item: "farmersdelight:hamburger" }
+		{ item: "farmersdelight:mutton_wrap" }
 	]
 }

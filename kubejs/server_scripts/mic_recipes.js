@@ -153,4 +153,11 @@ event.shaped('3x kubejs:wood_scaffolding', [
 		F: 'mna:basic_table'
 	  }).id("summoningrituals:altar")
 
+//Sticks
+event.shaped('16x minecraft:stick', [
+	'L',
+	'L'
+  ], {
+	L: '#minecraft:logs',
+  }).id("kubejs:sticks_from_logs")
 });

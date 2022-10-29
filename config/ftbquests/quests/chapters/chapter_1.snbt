@@ -1,116 +1,15 @@
 {
-	id: "0E072989CB71C174"
+	id: "1F6AC8F85FCB7321"
 	group: "3C8730B42C1725BE"
 	order_index: 0
 	filename: "chapter_1"
 	title: "Chapter 1"
-	icon: "create:brass_ingot"
 	default_quest_shape: ""
 	default_hide_dependency_lines: false
-	images: [{
-		x: -9.5d
-		y: 4.0d
-		width: 5.0d
-		height: 4.0d
-		rotation: 0.0d
-		image: "kubejs:textures/quests/parchment.png"
-		hover: [ ]
-		click: ""
-		dev: false
-		corner: false
-	}]
 	quests: [
 		{
-			x: -4.5d
-			y: 10.0d
-			shape: "rsquare"
-			dependencies: ["03F754FB73DEF8FA"]
-			id: "0094821A5EE0CD69"
-			tasks: [{
-				id: "0265090C2DA1E7E3"
-				type: "item"
-				item: "create:andesite_alloy"
-			}]
-		}
-		{
-			icon: "create:mechanical_mixer"
-			x: 2.5d
-			y: 10.0d
-			description: [
-				"Can also be used to craft shapeless recipes."
-				""
-			]
-			dependencies: ["273B98D3C35D7356"]
-			id: "760223888ADD58B0"
-			tasks: [
-				{
-					id: "7BF977CF9356EB36"
-					type: "item"
-					item: "create:mechanical_mixer"
-				}
-				{
-					id: "1F730A4A5AFCD9B8"
-					type: "item"
-					item: "create:basin"
-				}
-			]
-			rewards: [{
-				id: "4CC37FAAADE75E14"
-				type: "random"
-				table_id: 2368795686952639629L
-			}]
-		}
-		{
-			title: "Primitive Rotational Power"
-			x: 0.5d
-			y: 10.0d
-			dependencies: ["360253CDEF94C130"]
-			id: "273B98D3C35D7356"
-			tasks: [{
-				id: "38E79964102D2043"
-				type: "item"
-				item: "create:water_wheel"
-			}]
-			rewards: [
-				{
-					id: "64547D403D4F328D"
-					type: "item"
-					item: "create:stressometer"
-				}
-				{
-					id: "445C512814093A79"
-					type: "random"
-					table_id: 2368795686952639629L
-				}
-			]
-		}
-		{
-			title: "Basic Alloys"
-			x: 6.0d
-			y: 10.0d
-			shape: "gear"
-			dependencies: [
-				"760223888ADD58B0"
-				"1AE07B2CC8D8B725"
-			]
-			size: 2.0d
-			id: "143FA2A8FD6E4E10"
-			tasks: [{
-				id: "5E243ECA3D6ECAD2"
-				type: "item"
-				title: "Tier 1 Alloys"
-				item: {
-					id: "itemfilters:tag"
-					Count: 1b
-					tag: {
-						value: "mbm2:tier_one_alloy_dust"
-					}
-				}
-			}]
-		}
-		{
 			title: "Basic Create Components"
-			x: -1.0d
+			x: -0.5d
 			y: 10.0d
 			description: ["Large Cogwheels can be used in conjunction with small Cogs to increase rotational speed."]
 			dependencies: ["36F53EFC92FB2CA7"]
@@ -124,12 +23,17 @@
 				{
 					id: "7CC7E9BFDF0C1530"
 					type: "item"
-					item: "create:large_cogwheel"
+					item: "create:cogwheel"
 				}
 				{
 					id: "3A03D8E1771034FA"
 					type: "item"
 					item: "create:gearbox"
+				}
+				{
+					id: "6C1909FF963EC075"
+					type: "item"
+					item: "create:large_cogwheel"
 				}
 			]
 			rewards: [
@@ -147,11 +51,10 @@
 		}
 		{
 			icon: "create:mechanical_press"
-			x: 1.5d
-			y: 12.5d
+			x: 1.0d
+			y: 11.5d
 			subtitle: "Cheaper Plates"
 			description: ["You can rig this up manually with a Depot underneath, or have it above a belt for automation."]
-			dependencies: ["273B98D3C35D7356"]
 			id: "2990DA17B56345DA"
 			tasks: [
 				{
@@ -172,7 +75,70 @@
 			}]
 		}
 		{
-			x: -3.0d
+			x: 1.0d
+			y: 8.0d
+			dependencies: ["273B98D3C35D7356"]
+			id: "1AE07B2CC8D8B725"
+			tasks: [{
+				id: "2FD57F5A52E7AE56"
+				type: "item"
+				item: "create:millstone"
+			}]
+			rewards: [{
+				id: "0F222D66626F890D"
+				type: "random"
+				table_id: 2368795686952639629L
+			}]
+		}
+		{
+			title: "Tinkers Tools"
+			x: -10.0d
+			y: 7.5d
+			dependencies: ["5FD77AB0F43882B8"]
+			id: "55B6D04F54F29F96"
+			tasks: [
+				{
+					id: "05DFDCBB82CC8918"
+					type: "item"
+					item: "tconstruct:tinker_station"
+				}
+				{
+					id: "66704FCC19B76EE5"
+					type: "item"
+					item: "tconstruct:part_builder"
+				}
+				{
+					id: "47E29F1EF1308BDC"
+					type: "item"
+					item: "tconstruct:pattern"
+					count: 6L
+				}
+				{
+					id: "3D43150D5BD76989"
+					type: "item"
+					item: "tconstruct:crafting_station"
+				}
+			]
+		}
+		{
+			title: "The Toolbox"
+			x: -0.5d
+			y: 8.0d
+			dependencies: ["360253CDEF94C130"]
+			id: "298E404D2803AB20"
+			tasks: [{
+				id: "664F1389CD85DFDA"
+				type: "item"
+				item: "create:brown_toolbox"
+			}]
+			rewards: [{
+				id: "0B14B51191FB9E3D"
+				type: "random"
+				table_id: 2368795686952639629L
+			}]
+		}
+		{
+			x: -2.5d
 			y: 10.0d
 			subtitle: "Use Ponder!"
 			dependencies: ["0094821A5EE0CD69"]
@@ -196,358 +162,10 @@
 			]
 		}
 		{
-			title: "Basic Item Routing"
-			x: -1.0d
-			y: 11.5d
-			dependencies: ["360253CDEF94C130"]
-			id: "508186DAF72A067F"
-			tasks: [
-				{
-					id: "6F5D170D77E07143"
-					type: "item"
-					item: "create:andesite_funnel"
-				}
-				{
-					id: "16967550EB6E44BD"
-					type: "item"
-					item: "create:andesite_tunnel"
-				}
-				{
-					id: "6E40E6A7E65F0CE1"
-					type: "item"
-					item: "create:belt_connector"
-				}
-			]
-			rewards: [{
-				id: "24020BCCC9948094"
-				type: "random"
-				table_id: 2368795686952639629L
-			}]
-		}
-		{
-			icon: "thermal:device_tree_extractor"
-			x: -3.0d
-			y: 11.5d
-			subtitle: "Replacement for Kelp"
-			dependencies: ["0094821A5EE0CD69"]
-			id: "7A86EFBA4A46492E"
-			tasks: [
-				{
-					id: "4A607AA8C68A49C0"
-					type: "item"
-					item: "thermal:device_tree_extractor"
-				}
-				{
-					id: "6D906487E3C6877B"
-					type: "item"
-					item: "minecraft:jungle_sapling"
-				}
-			]
-			rewards: [{
-				id: "5B69F014A36AE6FC"
-				type: "item"
-				item: "thermal:phytogro"
-				count: 4
-			}]
-		}
-		{
-			title: "Getting Wood"
-			x: -10.0d
-			y: 10.0d
-			subtitle: "We have Vein Miner!"
-			description: ["You know the drill, get Wood, make tools, get Stone, make tools, get Iron, make tools."]
-			id: "5FD77AB0F43882B8"
-			tasks: [{
-				id: "42C3CD48EA88ABD1"
-				type: "item"
-				title: "Any #minecraft:logs"
-				tags: ["logs"]
-				item: {
-					id: "itemfilters:tag"
-					Count: 1b
-					tag: {
-						value: "minecraft:logs"
-					}
-				}
-			}]
-			rewards: [{
-				id: "6E19F1EFD7B265D6"
-				type: "item"
-				item: "comforts:sleeping_bag_purple"
-			}]
-		}
-		{
-			title: "Deep Storage"
-			x: -10.5d
-			y: 12.0d
-			subtitle: "Better Drawers?"
-			dependencies: ["5FD77AB0F43882B8"]
-			id: "09785A45FBC8D26F"
-			tasks: [{
-				id: "3A4EABCE31DA3433"
-				type: "item"
-				title: "Any #functionalstorage:drawer"
-				item: {
-					id: "itemfilters:tag"
-					Count: 1b
-					tag: {
-						value: "functionalstorage:drawer"
-					}
-				}
-			}]
-			rewards: [{
-				id: "24F80934A3C4A0EF"
-				type: "item"
-				item: {
-					id: "functionalstorage:configuration_tool"
-					Count: 1b
-					tag: {
-						Mode: "LOCKING"
-					}
-				}
-			}]
-		}
-		{
-			icon: "functionalstorage:storage_controller"
-			x: -11.5d
-			y: 14.5d
-			subtitle: "Does not need to be next to drawers to link"
-			description: ["Use the Linking Tool to connect Drawers to the Controller."]
-			dependencies: ["09785A45FBC8D26F"]
-			id: "0D6A89F8538EA4C6"
-			tasks: [
-				{
-					id: "13A48FA2C12B1EDB"
-					type: "item"
-					item: "functionalstorage:storage_controller"
-				}
-				{
-					id: "39BE0829EC454331"
-					type: "item"
-					item: {
-						id: "functionalstorage:linking_tool"
-						Count: 1b
-						tag: {
-							Action: "ADD"
-							Mode: "SINGLE"
-						}
-					}
-				}
-			]
-		}
-		{
-			title: "Upgrades!"
-			x: -9.0d
-			y: 14.0d
-			subtitle: "These multiply your total storage"
-			dependencies: ["09785A45FBC8D26F"]
-			id: "7A3C0E70F10FC88A"
-			tasks: [{
-				id: "7D61863A05280CAE"
-				type: "item"
-				item: "functionalstorage:copper_upgrade"
-			}]
-		}
-		{
-			x: -12.5d
-			y: 12.0d
-			subtitle: "You'll need to head to cloud level to get the parts"
-			description: ["Place one of the ballons on the Cloud Chest, and the other on any other chest to upload it to the cloud."]
-			dependencies: ["5FD77AB0F43882B8"]
-			id: "531F9CD69D9E1D66"
-			tasks: [
-				{
-					id: "615E87C3D92244EE"
-					type: "item"
-					item: "cloudstorage:cloud_chest"
-				}
-				{
-					id: "0ADA558267694076"
-					type: "item"
-					item: "cloudstorage:balloon"
-					count: 2L
-				}
-			]
-			rewards: [{
-				id: "2EE2F4A8F5D0A34F"
-				type: "item"
-				item: "ironchest:diamond_chest"
-			}]
-		}
-		{
-			title: "Furnace Upgrades"
-			icon: "ironfurnaces:iron_furnace"
-			x: -8.5d
-			y: 11.0d
-			dependencies: ["03F754FB73DEF8FA"]
-			id: "07A5A4AA9766AC81"
-			tasks: [{
-				id: "648F119E490A167B"
-				type: "item"
-				title: "Any #forge:furnaces"
-				item: {
-					id: "itemfilters:tag"
-					Count: 1b
-					tag: {
-						value: "forge:furnaces"
-					}
-				}
-			}]
-			rewards: [{
-				id: "0478081DF9604AAB"
-				type: "choice"
-				table_id: 5651728752135664854L
-			}]
-		}
-		{
-			x: -5.5d
-			y: 5.0d
-			dependencies: ["60CC9D168EA08EDA"]
-			id: "63AB31D5757A0097"
-			tasks: [{
-				id: "6899F295A32CD14E"
-				type: "item"
-				item: {
-					id: "mna:manaweaver_wand"
-					Count: 1b
-					tag: {
-						Damage: 0
-					}
-				}
-			}]
-		}
-		{
-			x: -1.5d
-			y: 3.0d
-			dependencies: ["3DDDD86ECE49BDDF"]
-			id: "12679B51D93A83D0"
-			tasks: [{
-				id: "78B97DB1F77C5BCA"
-				type: "item"
-				item: "mna:runeforge"
-			}]
-		}
-		{
-			x: -1.5d
-			y: 0.0d
-			dependencies: ["3DDDD86ECE49BDDF"]
-			id: "34BC57F5433AA00D"
-			tasks: [{
-				id: "3CB8584BBC6A01F1"
-				type: "item"
-				item: "mna:manaweaving_altar"
-			}]
-		}
-		{
-			title: "Transmuted Items"
-			x: -4.0d
-			y: 3.5d
-			dependencies: ["63AB31D5757A0097"]
-			id: "3DDDD86ECE49BDDF"
-			tasks: [
-				{
-					id: "6E90F9D179A8C200"
-					type: "item"
-					item: "mna:transmuted_silver"
-				}
-				{
-					id: "16BD069EA2649DFF"
-					type: "item"
-					item: "mna:decoration/arcane_stone"
-				}
-			]
-		}
-		{
-			title: "Vinteum Ingots"
-			icon: "mna:vinteum_ingot"
-			x: -7.0d
-			y: 7.5d
-			dependencies: ["03F754FB73DEF8FA"]
-			id: "60CC9D168EA08EDA"
-			tasks: [
-				{
-					id: "20DB0943309EF30B"
-					type: "item"
-					item: "mna:vinteum_dust"
-				}
-				{
-					id: "342C34380BCB2C72"
-					type: "item"
-					item: "mna:vinteum_ingot"
-				}
-			]
-		}
-		{
-			title: "Rituals"
-			x: 0.0d
-			y: 2.5d
-			dependencies: ["12679B51D93A83D0"]
-			id: "1074FABB26C67896"
-			tasks: [
-				{
-					id: "2C249D8F0B4EB797"
-					type: "item"
-					item: {
-						id: "mna:wizard_chalk"
-						Count: 1b
-						tag: {
-							Damage: 0
-						}
-					}
-				}
-				{
-					id: "1202246154C13921"
-					type: "item"
-					item: "mna:purified_vinteum_dust"
-				}
-			]
-		}
-		{
-			title: "Ritual of the Earthen Steppes"
-			icon: "mna:flat_lands_book"
-			x: 1.5d
-			y: 1.5d
-			subtitle: "Easy Bedrock Tunnel!"
-			dependencies: [
-				"34BC57F5433AA00D"
-				"1074FABB26C67896"
-			]
-			id: "726E9D3539596F01"
-			tasks: [
-				{
-					id: "672B63256E7FBB54"
-					type: "item"
-					item: "mna:flat_lands_book"
-				}
-				{
-					id: "68CCC53F72A21638"
-					type: "item"
-					item: {
-						id: "minecraft:iron_pickaxe"
-						Count: 1b
-						tag: {
-							Damage: 0
-						}
-					}
-				}
-				{
-					id: "33A5BE8BA5BB6027"
-					type: "item"
-					item: {
-						id: "minecraft:iron_shovel"
-						Count: 1b
-						tag: {
-							Damage: 0
-						}
-					}
-				}
-			]
-		}
-		{
 			title: "Coke Oven"
 			icon: "immersiveengineering:coke_oven"
-			x: 3.5d
-			y: 8.5d
+			x: 4.0d
+			y: 9.5d
 			description: ["Good way to extend your fuel supply, and you'll need Creosote Oil for Treated wood, used in many projects going forward."]
 			dependencies: ["760223888ADD58B0"]
 			id: "556CB869A6592D68"
@@ -577,123 +195,161 @@
 			}]
 		}
 		{
-			title: "The Sludge Sifter"
-			icon: "multiblocked:sludge_sifter"
-			x: 3.0d
-			y: 7.0d
-			subtitle: "One way to get Kelp"
-			description: [
-				"The Barrel can replace any of the scaffolding, while the tank can be extended upwards to hold more water."
-				"You'll need to pipe water into the tank!"
-			]
-			dependencies: [
-				"1CC0BFAC83B1134B"
-				"556CB869A6592D68"
-			]
-			id: "4B132B0884AC63AC"
+			title: "Getting Wood"
+			x: -10.0d
+			y: 10.0d
+			subtitle: "We have Vein Miner!"
+			description: ["Welcome to Multiblock Madness 2!"]
+			id: "5FD77AB0F43882B8"
+			tasks: [{
+				id: "42C3CD48EA88ABD1"
+				type: "item"
+				title: "Any #minecraft:logs"
+				tags: ["logs"]
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "minecraft:logs"
+					}
+				}
+			}]
+			rewards: [{
+				id: "6E19F1EFD7B265D6"
+				type: "item"
+				item: "comforts:sleeping_bag_purple"
+			}]
+		}
+		{
+			title: "Deep Storage"
+			x: -10.0d
+			y: 13.0d
+			subtitle: "Better Drawers?"
+			dependencies: ["5FD77AB0F43882B8"]
+			id: "09785A45FBC8D26F"
+			tasks: [{
+				id: "3A4EABCE31DA3433"
+				type: "item"
+				title: "Any #functionalstorage:drawer"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "functionalstorage:drawer"
+					}
+				}
+			}]
+			rewards: [{
+				id: "24F80934A3C4A0EF"
+				type: "item"
+				item: {
+					id: "functionalstorage:configuration_tool"
+					Count: 1b
+					tag: {
+						Mode: "LOCKING"
+					}
+				}
+			}]
+		}
+		{
+			icon: "functionalstorage:storage_controller"
+			x: -10.0d
+			y: 14.5d
+			subtitle: "Does not need to be next to drawers to link"
+			description: ["Use the Linking Tool to connect Drawers to the Controller."]
+			dependencies: ["09785A45FBC8D26F"]
+			id: "0D6A89F8538EA4C6"
 			tasks: [
 				{
-					id: "560BD3E0E7E41B5E"
+					id: "13A48FA2C12B1EDB"
 					type: "item"
-					item: "multiblocked:sludge_sifter"
+					item: "functionalstorage:storage_controller"
 				}
 				{
-					id: "4F717336160B46AB"
+					id: "39BE0829EC454331"
 					type: "item"
-					item: "kubejs:copper_cog_block"
+					item: {
+						id: "functionalstorage:linking_tool"
+						Count: 1b
+						tag: {
+							Action: "ADD"
+							Mode: "SINGLE"
+						}
+					}
+				}
+			]
+		}
+		{
+			title: "Upgrades!"
+			x: -8.5d
+			y: 13.0d
+			subtitle: "These multiply your total storage"
+			dependencies: ["09785A45FBC8D26F"]
+			id: "7A3C0E70F10FC88A"
+			tasks: [{
+				id: "7D61863A05280CAE"
+				type: "item"
+				item: "functionalstorage:copper_upgrade"
+			}]
+		}
+		{
+			x: -11.5d
+			y: 8.5d
+			subtitle: "You'll need to head to cloud level to get the parts"
+			description: ["Place one of the ballons on the Cloud Chest, and the other on any other chest to upload it to the cloud."]
+			dependencies: ["5FD77AB0F43882B8"]
+			id: "531F9CD69D9E1D66"
+			tasks: [
+				{
+					id: "615E87C3D92244EE"
+					type: "item"
+					item: "cloudstorage:cloud_chest"
 				}
 				{
-					id: "220F9C80FCA71D91"
+					id: "0ADA558267694076"
 					type: "item"
-					item: "immersiveengineering:treated_scaffold"
-					count: 3L
-				}
-				{
-					id: "3C79506D1717C6BD"
-					type: "item"
-					item: "create:copper_casing"
-					count: 5L
-				}
-				{
-					id: "2D42E3AA6A6A8962"
-					type: "item"
-					item: "create:fluid_tank"
+					item: "cloudstorage:balloon"
 					count: 2L
 				}
-				{
-					id: "2148606F648EEAC8"
-					type: "item"
-					item: "minecraft:barrel"
-				}
 			]
+		}
+		{
+			title: "Furnace Upgrades"
+			icon: "ironfurnaces:iron_furnace"
+			x: -4.5d
+			y: 11.5d
+			dependencies: ["03F754FB73DEF8FA"]
+			id: "07A5A4AA9766AC81"
+			tasks: [{
+				id: "648F119E490A167B"
+				type: "item"
+				title: "Tier 1 Furnace"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "mbm2:ingots/furnaces/tier_1"
+					}
+				}
+			}]
 			rewards: [
 				{
-					id: "5A45E23A6FD44CA9"
-					type: "item"
-					item: "functionalstorage:void_upgrade"
+					id: "0478081DF9604AAB"
+					type: "choice"
+					table_id: 5651728752135664854L
 				}
 				{
-					id: "0958BA25A2A8EFCE"
-					type: "loot"
-					table_id: 2582656620646881183L
+					id: "151F0A624A408BB8"
+					type: "item"
+					item: "malum:coal_fragment"
+					count: 64
 				}
 			]
 		}
 		{
-			title: "Fluid Transfer"
-			x: 0.5d
-			y: 8.5d
-			description: ["Most fluid handling with Create needs to by done with pipes, rather then buckets."]
-			dependencies: ["273B98D3C35D7356"]
-			id: "1CC0BFAC83B1134B"
-			tasks: [
-				{
-					id: "1BA496B9E29BF928"
-					type: "item"
-					item: "create:fluid_pipe"
-				}
-				{
-					id: "1E4177ED506ACE93"
-					type: "item"
-					item: "create:mechanical_pump"
-				}
-			]
-			rewards: [{
-				id: "2F3C05323B26EF83"
-				type: "random"
-				table_id: 5216185889486752116L
-			}]
-		}
-		{
-			icon: "create:hose_pulley"
-			x: 2.0d
-			y: 5.5d
-			subtitle: "Infinite Water/Lava"
-			description: ["Used to drain bodies of liquid."]
-			dependencies: ["1CC0BFAC83B1134B"]
-			id: "3F1F7439D1A62976"
-			tasks: [
-				{
-					id: "1064F86A75903471"
-					type: "item"
-					item: "create:hose_pulley"
-				}
-				{
-					id: "02446DCA79283765"
-					type: "item"
-					item: "create:hand_crank"
-				}
-			]
-			rewards: [{
-				id: "6A0A631E301C20A2"
-				type: "random"
-				table_id: 5216185889486752116L
-			}]
-		}
-		{
-			title: "Backpack have Upgrades Now!"
-			x: -10.5d
-			y: 8.0d
+			title: "Backpacks have Upgrades now!"
+			x: -11.5d
+			y: 11.5d
 			dependencies: ["5FD77AB0F43882B8"]
 			id: "1C13BCBAB1983C5B"
 			tasks: [{
@@ -748,8 +404,8 @@
 		}
 		{
 			icon: "scannable:scanner"
-			x: -4.5d
-			y: 12.5d
+			x: -6.5d
+			y: 13.0d
 			dependencies: ["11416CF836FAFF76"]
 			id: "3B43853370AE0AA7"
 			tasks: [
@@ -792,7 +448,7 @@
 					Damage: 0
 				}
 			}
-			x: -6.0d
+			x: -6.5d
 			y: 11.5d
 			subtitle: "At least there's no Screwdriver"
 			description: ["You'll need to use a Hammer to craft a lot of early game parts."]
@@ -827,7 +483,7 @@
 		{
 			title: "Finding things is fun!"
 			x: -12.5d
-			y: 9.5d
+			y: 10.0d
 			subtitle: "Looking for things, not so much"
 			dependencies: ["5FD77AB0F43882B8"]
 			id: "7AB2CE16F7A558CA"
@@ -853,108 +509,98 @@
 			]
 		}
 		{
-			title: "The Toolbox"
-			x: -1.0d
-			y: 8.5d
-			dependencies: ["360253CDEF94C130"]
-			id: "298E404D2803AB20"
+			x: -4.5d
+			y: 10.0d
+			shape: "rsquare"
+			dependencies: ["03F754FB73DEF8FA"]
+			id: "0094821A5EE0CD69"
 			tasks: [{
-				id: "664F1389CD85DFDA"
+				id: "0265090C2DA1E7E3"
 				type: "item"
-				item: "create:brown_toolbox"
-			}]
-			rewards: [{
-				id: "0B14B51191FB9E3D"
-				type: "random"
-				table_id: 2368795686952639629L
+				item: "create:andesite_alloy"
 			}]
 		}
 		{
-			x: 3.5d
-			y: 11.5d
-			dependencies: ["273B98D3C35D7356"]
-			id: "1AE07B2CC8D8B725"
-			tasks: [{
-				id: "2FD57F5A52E7AE56"
-				type: "item"
-				item: "create:millstone"
-			}]
-			rewards: [{
-				id: "0F222D66626F890D"
-				type: "random"
-				table_id: 2368795686952639629L
-			}]
-		}
-		{
-			title: "Tinkers Tools"
-			x: -9.0d
-			y: 8.0d
-			dependencies: ["5FD77AB0F43882B8"]
-			id: "55B6D04F54F29F96"
-			tasks: [
-				{
-					id: "05DFDCBB82CC8918"
-					type: "item"
-					item: "tconstruct:tinker_station"
-				}
-				{
-					id: "66704FCC19B76EE5"
-					type: "item"
-					item: "tconstruct:part_builder"
-				}
-				{
-					id: "47E29F1EF1308BDC"
-					type: "item"
-					item: "tconstruct:pattern"
-					count: 6L
-				}
-				{
-					id: "3D43150D5BD76989"
-					type: "item"
-					item: "tconstruct:crafting_station"
-				}
-			]
-		}
-		{
-			title: "Better Rotational Power"
-			x: 5.0d
+			title: "Metal Tools"
+			icon: "tconstruct:seared_melter"
+			x: -8.0d
 			y: 7.5d
-			dependencies: ["556CB869A6592D68"]
-			id: "6C5CC546B5799587"
+			dependencies: ["55B6D04F54F29F96"]
+			id: "23D386A39C0311F4"
 			tasks: [
 				{
-					id: "7803CCF717F4C642"
+					id: "3426AF21C6848DDA"
 					type: "item"
-					item: "create:windmill_bearing"
+					item: "tconstruct:seared_melter"
 				}
 				{
-					id: "1DA69D683191BE27"
+					id: "684E28ACB1F526DA"
 					type: "item"
-					item: "create:white_sail"
-					count: 8L
+					item: "tconstruct:seared_heater"
+				}
+				{
+					id: "40A356DC5F7747F0"
+					type: "item"
+					item: "tconstruct:seared_table"
+				}
+				{
+					id: "238EE426C7BE2CAD"
+					type: "item"
+					item: "tconstruct:seared_faucet"
+				}
+				{
+					id: "63BFB42730F72898"
+					type: "item"
+					item: "tconstruct:blank_sand_cast"
 				}
 			]
 			rewards: [{
-				id: "7F17F23E447F02C7"
+				id: "2297EB6E8DD179BE"
 				type: "random"
-				table_id: 2368795686952639629L
+				table_id: 2582656620646881183L
 			}]
 		}
 		{
-			x: 0.5d
-			y: 5.0d
-			subtitle: "One early use for this is to automate Treated Wood."
-			dependencies: ["1CC0BFAC83B1134B"]
-			id: "03FA25E0602E0B32"
+			x: -10.0d
+			y: 6.0d
+			dependencies: ["55B6D04F54F29F96"]
+			id: "11B5CEA162452EEB"
 			tasks: [{
-				id: "7E35FE79C6F30C43"
+				id: "5C1532D11146684C"
 				type: "item"
-				item: "create:spout"
+				item: {
+					id: "tconstruct:pick_head"
+					Count: 1b
+					tag: {
+						Material: "tconstruct:rock#stone"
+					}
+				}
+			}]
+		}
+		{
+			title: "Chest Upgrades"
+			x: -8.5d
+			y: 11.5d
+			dependencies: ["5FD77AB0F43882B8"]
+			id: "331A846E2C1269E3"
+			tasks: [{
+				id: "11D331BD622334CE"
+				type: "item"
+				item: "sophisticatedstorage:basic_to_iron_tier_upgrade"
 			}]
 			rewards: [{
-				id: "3DBA70525D4DD4A2"
-				type: "random"
-				table_id: 5216185889486752116L
+				id: "351EE8713F5F141F"
+				type: "item"
+				item: {
+					id: "sophisticatedstorage:crafting_upgrade"
+					Count: 1b
+					tag: {
+						craftingInventory: {
+							Size: 9
+							Items: [ ]
+						}
+					}
+				}
 			}]
 		}
 	]

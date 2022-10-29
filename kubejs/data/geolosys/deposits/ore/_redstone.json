@@ -35,6 +35,6 @@
       "block": "minecraft:air",
       "chance": 1.0
     }],
-    "generationWeight": 15
+    "generationWeight": 12
   }
 }

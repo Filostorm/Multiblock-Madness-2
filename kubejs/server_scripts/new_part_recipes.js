@@ -58,18 +58,18 @@ var newIngots = {
 /*
 onEvent('tags.items', event => {
 	
-	for (var metal in newParts) {
+	global.newMaterialParts.forEach((item) => {
 
-    if (event.get(`#forge:storage_blocks/${metal}`).getObjectIds() == null) {
-		console.log(`${metal} does not have a block`)
-		event.add(`forge:storage_blocks`, `chemlib:${metal}_metal_block`)
-		event.add(`forge:storage_blocks/${metal}`, `chemlib:${metal}_metal_block`)
+    if (event.get(`#forge:storage_blocks/${item.material}`).getObjectIds() == null) {
+		console.log(`${item.material} does not have a block`)
+		event.add(`forge:storage_blocks`, `chemlib:${item.material}_metal_block`)
+		event.add(`forge:storage_blocks/${item.material}`, `chemlib:${item.material}_metal_block`)
 		} else {
-			console.log(`${metal} does have a block`)
-			console.log(Item.of(`#forge:storage_blocks/${metal}`))}
-	}
-  });*/
-
+			console.log(`${item.material} does have a block`)
+			console.log(Item.of(`#forge:storage_blocks/${item.material}`))}
+	})
+  });
+*/
 
 onEvent('recipes', event => {
   

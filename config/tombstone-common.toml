@@ -179,8 +179,6 @@
 [recovery]
 	#Enables to backup automatically players [false/true|default:true]
 	recovery_player_enable = true
-	#Enables to backup automatically dead familiars [false/true|default:true]
-	recovery_familiar_enable = true
 	#Backup players on death [false/true|default:false]
 	backup_on_death = true
 	#Time in minutes between players' backups [10..1000|default:40]
@@ -191,6 +189,8 @@
 	recovery_player_max_saves = 15
 	#Log when players are automatically back up [false/true|default:false]
 	log_auto_backup = false
+	#Enables to backup automatically dead familiars [false/true|default:true]
+	recovery_familiar_enable = true
 
 #Allows to change the chance to drop some items
 [loot]

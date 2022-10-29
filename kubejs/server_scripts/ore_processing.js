@@ -1,49 +1,54 @@
 
 
-var tier1Ore = [
-	{
-	  'material': 'iron',
-	  'fluid': 'tconstruct:molten_iron'
-	},
-	{
-	  'material': 'gold',
-	  'fluid': 'tconstruct:molten_gold'
-	},
-	{
-	  'material': 'copper',
-	  'fluid': 'tconstruct:molten_copper'
-	},
-	{
-	  'material': 'lead',
-	  'fluid': 'tconstruct:molten_lead'
-	},
-	{
-	  'material': 'nickel',
-	  'fluid': 'tconstruct:molten_nickel'
-	},
-	{
-	  'material': 'silver',
-	  'fluid': 'tconstruct:molten_silver'
-	},
-	{
-	  'material': 'tin',
-	  'fluid': 'tconstruct:molten_tin'
-	},
-]
-
 onEvent('recipes', event => {
+/*
+//Thanks Nat!
+//Fluid tags for outputs
+fluidTagLookup = {}
+Fluid.getTypes().forEach(fluid => {
+  Fluid.of(fluid).tags.forEach(tag =>{
+    if (tag in fluidTagLookup){
+		fluidTagLookup[tag].push(fluid)
+    } else {
+		fluidTagLookup[tag] = [fluid]
+    }
+  })
+})
+console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);*/
 
-	tier1Ore.forEach((item) => {
+	global.newMaterialParts.forEach((item) => {
+		if (item.ore && item.type == 'base_metal' && item.tier <= 1) {
+
+			console.log(`${item.material} is at most a Tier 1 Metal!`);
+			
 		// Foundry Ore Melting
-		//global.tinkersOreMelting(event, item.fluid, 150, 'kubejs:molten_slag', 200, `forge:ores/${item.material}`, 700, 142, `tconstruct:smeltery/melting/metal/${item.material}/ore_singular`)
+		global.tinkersOreMelting(event, item.fluid_id, 180, 'kubejs:molten_slag', 200, `forge:ores/${item.material}`, 700, 142, `tconstruct:smeltery/melting/metal/${item.material}/ore_singular`)
+		global.tinkersOreMelting(event, item.fluid_id, 90, 'kubejs:molten_slag', 100, `forge:raw_materials/${item.material}`, 700, 142, `tconstruct:smeltery/melting/metal/${item.material}/raw`)
 
 		//Making Dust
-    if (Item.of(`#forge:dusts/${item.material}`) != null) {
 		//event.recipes.createMilling([`#forge:dusts/${item.material}`], [`#forge:raw_materials/${item.material}`])
-	}
+		}
   	})
-});
 
+
+	  global.newMaterialParts.forEach((item) => {
+		if (item.ore && item.type == 'compound_ore' && item.tier <= 1) {
+
+			console.log(`${item.material} is a compound ore!`);
+			console.log(`${item.components[0]} is the first output!`);
+
+			if (Item.of(`#forge:ingots/${item.components[0]}`) != null) {
+				event.smelting(`#forge:ingots/${item.components[0]}`, `#forge:raw_materials/${item.material}`)
+				event.smelting(`#forge:ingots/${item.components[0]}`, `#forge:dusts/${item.material}`)
+			} else {
+				event.smelting(`2x #forge:dusts/${item.components[0]}`, `#forge:raw_materials/${item.material}`)
+				event.smelting(`2x #forge:dusts/${item.components[0]}`, `#forge:dusts/${item.material}`)
+			}
+		}
+  	})
+	  
+	
+});
 
 onEvent('block.loot_tables', event => {
 	global.newMaterialParts.forEach((item) => {

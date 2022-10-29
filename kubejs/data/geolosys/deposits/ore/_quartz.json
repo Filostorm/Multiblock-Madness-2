@@ -11,7 +11,7 @@
     "blockStateMatchers": [ "minecraft:stone" ],
     "blocks": {
       "default": [{
-        "block": "geolosys:quartz_ore",
+        "block": "malum:quartz_ore",
         "chance": 0.7
       },{
         "block": "ae2:quartz_ore",
@@ -24,7 +24,7 @@
         "chance": 0.1
       }],
       "minecraft:deepslate": [{
-        "block": "geolosys:deepslate_quartz_ore",
+        "block": "malum:deepslate_quartz_ore",
         "chance": 0.5
       },{
         "block": "ae2:deepslate_quartz_ore",

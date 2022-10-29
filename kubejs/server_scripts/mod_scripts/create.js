@@ -152,12 +152,13 @@ event.shaped('create:hose_pulley', [
 	
 	//Gib Saplings
 	event.recipes.createCrushing([
-		Item.of('minecraft:jungle_sapling').withChance(0.1),
-		Item.of('minecraft:dark_oak_sapling').withChance(0.1),
-		Item.of('ars_nouveau:blue_archwood_sapling').withChance(0.1),
-		Item.of('hexerei:mahogany_sapling').withChance(0.1),
-		Item.of('hexerei:willow_sapling').withChance(0.1),
-		Item.of('forbidden_arcanus:growing_edelwood').withChance(0.1)
+		Item.of('minecraft:jungle_sapling').withChance(0.01),
+		Item.of('minecraft:dark_oak_sapling').withChance(0.01),
+		Item.of('ars_nouveau:blue_archwood_sapling').withChance(0.01),
+		Item.of('hexerei:mahogany_sapling').withChance(0.01),
+		Item.of('hexerei:willow_sapling').withChance(0.01),
+		Item.of('forbidden_arcanus:growing_edelwood').withChance(0.01),
+		Item.of('malum:runewood_sapling').withChance(0.01)
 	  ], '#minecraft:leaves')
 
 });

@@ -1,500 +1,166 @@
 {
-	id: "370D1929712FBFD1"
+	id: "0E072989CB71C174"
 	group: "3C8730B42C1725BE"
 	order_index: 1
 	filename: "chapter_2"
 	title: "Chapter 2"
-	icon: "mekanism:ingot_steel"
+	icon: "create:brass_ingot"
 	default_quest_shape: ""
 	default_hide_dependency_lines: false
+	images: [{
+		x: -9.5d
+		y: 4.0d
+		width: 5.0d
+		height: 4.0d
+		rotation: 0.0d
+		image: "kubejs:textures/quests/parchment.png"
+		hover: [ ]
+		click: ""
+		dev: false
+		corner: false
+	}]
 	quests: [
 		{
-			x: 0.0d
-			y: 5.0d
-			dependencies: ["488E2999C6BE6591"]
-			id: "7B33D4E6ED113E07"
-			tasks: [{
-				id: "5CAD45FAADB8C3F5"
-				type: "item"
-				item: "compactcrafting:field_projector"
-			}]
-		}
-		{
-			x: -3.0d
-			y: 6.0d
-			id: "488E2999C6BE6591"
-			tasks: [{
-				id: "2124621A623FF8EA"
-				type: "item"
-				item: "ars_nouveau:imbuement_chamber"
-			}]
-			rewards: [{
-				id: "38F12EEED5D870B4"
-				type: "item"
-				item: "ars_nouveau:arcane_pedestal"
-			}]
-		}
-		{
+			icon: "create:mechanical_mixer"
 			x: 2.5d
-			y: 5.0d
-			dependencies: ["7B33D4E6ED113E07"]
-			id: "050141BF6CD20337"
-			tasks: [{
-				id: "60797B934CE0E8F6"
-				type: "item"
-				item: "kubejs:bronze_frame"
-			}]
-		}
-		{
-			x: 5.0d
-			y: 3.0d
-			dependencies: ["4479C52D27235BCB"]
-			id: "61807D2D6C850371"
-			tasks: [{
-				id: "757C4BFEBA0AD247"
-				type: "item"
-				item: "thermal:machine_chiller"
-			}]
-		}
-		{
-			x: 3.5d
-			y: 3.5d
-			description: ["Can be used to generate Lava."]
-			dependencies: ["050141BF6CD20337"]
-			id: "4479C52D27235BCB"
-			tasks: [{
-				id: "67EF719B029959A6"
-				type: "item"
-				item: "thermal:machine_crucible"
-			}]
-		}
-		{
-			x: 4.5d
-			y: 5.0d
-			dependencies: ["050141BF6CD20337"]
-			id: "2062C95B0D95BED1"
-			tasks: [{
-				id: "4C8F65457EC814FE"
-				type: "item"
-				item: "thermal:machine_press"
-			}]
-		}
-		{
-			title: "Blast Furnace"
-			x: 10.5d
-			y: -11.5d
-			id: "76EE38A56D68275F"
-			tasks: [{
-				id: "05CAE8F86B8224AA"
-				type: "item"
-				item: "immersiveengineering:blastbrick"
-				count: 27L
-			}]
-		}
-		{
-			title: "The Brass Age"
-			disable_toast: true
-			x: -3.5d
-			y: -4.5d
-			id: "1A4ED8C40CDFBBE5"
+			y: 10.0d
+			description: [
+				"Can also be used to craft shapeless recipes."
+				""
+			]
+			dependencies: ["273B98D3C35D7356"]
+			id: "760223888ADD58B0"
 			tasks: [
 				{
-					id: "04DB0EB133536682"
+					id: "7BF977CF9356EB36"
 					type: "item"
-					item: "create:brass_ingot"
+					item: "create:mechanical_mixer"
 				}
 				{
-					id: "4E673E908D990AC6"
+					id: "1F730A4A5AFCD9B8"
 					type: "item"
-					item: "create:polished_rose_quartz"
+					item: "create:basin"
 				}
 			]
 			rewards: [{
-				id: "62DFB40741BA7C64"
+				id: "4CC37FAAADE75E14"
 				type: "random"
-				table_id: 1606026794008844755L
+				table_id: 2368795686952639629L
 			}]
 		}
 		{
-			x: -1.0d
-			y: -3.0d
-			dependencies: ["1A4ED8C40CDFBBE5"]
-			id: "50E9DDE83C23EE6E"
+			title: "Primitive Rotational Power"
+			x: -4.0d
+			y: 10.5d
+			dependencies: ["360253CDEF94C130"]
+			id: "273B98D3C35D7356"
 			tasks: [{
-				id: "0F1BAEF386A6666F"
+				id: "38E79964102D2043"
 				type: "item"
-				item: "create:deployer"
+				item: "create:water_wheel"
 			}]
-			rewards: [{
-				id: "0F03096F7C0988D9"
-				type: "random"
-				table_id: 1606026794008844755L
-			}]
-		}
-		{
-			x: 4.5d
-			y: 7.0d
-			dependencies: ["050141BF6CD20337"]
-			id: "2629908D70EF88F2"
-			tasks: [{
-				id: "344A51103E296EEB"
-				type: "item"
-				item: "thermal:upgrade_augment_1"
-			}]
-		}
-		{
-			x: 0.5d
-			y: -1.5d
-			dependencies: ["50E9DDE83C23EE6E"]
-			id: "39F16774468E59FE"
-			tasks: [{
-				id: "7B91CDE325666152"
-				type: "item"
-				item: "powah:capacitor_basic"
-			}]
-		}
-		{
-			x: 2.5d
-			y: -4.5d
-			description: ["Attaching a large Cog to the top allows you to configure the speed of the attached system."]
-			dependencies: ["1E77F20F773CA050"]
-			id: "7D69D2DC60D8892C"
-			tasks: [{
-				id: "2CF567A8E41A5082"
-				type: "item"
-				item: "create:rotation_speed_controller"
-			}]
-			rewards: [{
-				id: "312832E0957C42C5"
-				type: "random"
-				table_id: 1606026794008844755L
-			}]
-		}
-		{
-			title: "Advanced Logistics"
-			x: -1.0d
-			y: -6.0d
-			dependencies: ["1A4ED8C40CDFBBE5"]
-			id: "40255F14A4599270"
-			tasks: [
+			rewards: [
 				{
-					id: "52E864994263D1DD"
+					id: "64547D403D4F328D"
 					type: "item"
-					item: "create:brass_tunnel"
+					item: "create:stressometer"
 				}
 				{
-					id: "28D761D50147675D"
-					type: "item"
-					item: "create:brass_funnel"
+					id: "445C512814093A79"
+					type: "random"
+					table_id: 2368795686952639629L
 				}
-				{
-					id: "1BB36A8FA30A8C5B"
-					type: "item"
-					item: {
-						id: "create:filter"
-						Count: 1b
-						tag: {
-							Items: { }
-						}
+			]
+		}
+		{
+			title: "Basic Alloys"
+			x: 6.0d
+			y: 10.0d
+			shape: "gear"
+			dependencies: [
+				"760223888ADD58B0"
+				"1AE07B2CC8D8B725"
+			]
+			size: 2.0d
+			id: "143FA2A8FD6E4E10"
+			tasks: [{
+				id: "5E243ECA3D6ECAD2"
+				type: "item"
+				title: "Tier 1 Alloys"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "mbm2:alloys/dusts/tier_one"
 					}
 				}
-			]
-			rewards: [{
-				id: "4A0D81B9053BFD94"
-				type: "random"
-				table_id: 1606026794008844755L
 			}]
 		}
 		{
-			x: 2.5d
-			y: -3.0d
-			dependencies: ["1E77F20F773CA050"]
-			id: "2D4B1C82A8FC7E2E"
-			tasks: [{
-				id: "2DDD22093E3A8DB7"
-				type: "item"
-				item: "create:mechanical_arm"
-			}]
-			rewards: [{
-				id: "4F42CE156075162E"
-				type: "random"
-				table_id: 1606026794008844755L
-			}]
-		}
-		{
-			x: 0.5d
-			y: -3.5d
-			dependencies: ["50E9DDE83C23EE6E"]
-			id: "1E77F20F773CA050"
-			tasks: [{
-				id: "07F3CCB25971C48F"
-				type: "item"
-				item: "create:precision_mechanism"
-			}]
-			rewards: [{
-				id: "039FAFE1BE502DF5"
-				type: "random"
-				table_id: 1606026794008844755L
-			}]
-		}
-		{
-			title: "Simple Storage Network"
-			icon: "storagenetwork:master"
-			x: 0.0d
-			y: 7.0d
-			dependencies: ["488E2999C6BE6591"]
-			id: "3937FEDD97720117"
+			title: "Basic Item Routing"
+			x: -1.5d
+			y: 12.0d
+			dependencies: ["360253CDEF94C130"]
+			id: "508186DAF72A067F"
 			tasks: [
 				{
-					id: "490BB5DB15F8DCD8"
+					id: "6F5D170D77E07143"
 					type: "item"
-					item: "storagenetwork:master"
+					item: "create:andesite_funnel"
 				}
 				{
-					id: "5F5FAF5B7C2A1356"
+					id: "16967550EB6E44BD"
 					type: "item"
-					item: "storagenetwork:request"
+					item: "create:andesite_tunnel"
 				}
 				{
-					id: "68D8DB32D0DC4AE7"
+					id: "6E40E6A7E65F0CE1"
 					type: "item"
-					item: "storagenetwork:storage_kabel"
+					item: "create:belt_connector"
 				}
 			]
 			rewards: [{
-				id: "59DF64CECA4C1673"
+				id: "24020BCCC9948094"
 				type: "random"
-				table_id: 6530798407416538447L
+				table_id: 2368795686952639629L
 			}]
 		}
 		{
-			x: 5.5d
-			y: -12.0d
-			id: "20FA1AFF0BD65177"
-			tasks: [{
-				id: "318ECF0673D91AB5"
-				type: "dimension"
-				title: "The Nether"
-				dimension: "minecraft:the_nether"
-			}]
-		}
-		{
-			x: 5.5d
-			y: -8.5d
-			dependencies: ["20FA1AFF0BD65177"]
-			id: "46DC0D67FE1C4C67"
-			tasks: [{
-				id: "5A96C7CDF5E89230"
-				type: "item"
-				item: "create:blaze_burner"
-			}]
-		}
-		{
-			title: "Crushing Wheel"
-			icon: "create:crushing_wheel"
-			x: -1.0d
-			y: -4.5d
-			dependencies: ["1A4ED8C40CDFBBE5"]
-			id: "51537052A03715D7"
+			icon: "thermal:device_tree_extractor"
+			x: -2.5d
+			y: 8.0d
+			subtitle: "Replacement for Kelp"
+			dependencies: ["0094821A5EE0CD69"]
+			id: "7A86EFBA4A46492E"
 			tasks: [
 				{
-					id: "6B2E59152BC2CCF8"
+					id: "4A607AA8C68A49C0"
 					type: "item"
-					item: "create:mechanical_crafter"
-					count: 21L
+					item: "thermal:device_tree_extractor"
 				}
 				{
-					id: "06BAE99178B34730"
+					id: "6D906487E3C6877B"
 					type: "item"
-					item: "create:crushing_wheel"
-					count: 2L
+					item: "minecraft:jungle_sapling"
 				}
 			]
 			rewards: [{
-				id: "3AEA0291896FE3BB"
-				type: "random"
-				table_id: 1606026794008844755L
-			}]
-		}
-		{
-			title: "The Foundry"
-			icon: "tconstruct:foundry_controller"
-			x: 9.5d
-			y: -5.0d
-			id: "10DE68398263BA60"
-			tasks: [
-				{
-					id: "2553888F18F218E3"
-					type: "item"
-					item: "tconstruct:foundry_controller"
-				}
-				{
-					id: "419372151DDAB757"
-					type: "item"
-					item: "tconstruct:scorched_drain"
-				}
-				{
-					id: "622E3846DAFB5459"
-					type: "item"
-					item: "tconstruct:scorched_chute"
-				}
-				{
-					id: "0CDE7E8E6A6B95B6"
-					type: "item"
-					title: "Any #tconstruct:scorched_tanks"
-					item: {
-						id: "itemfilters:tag"
-						Count: 1b
-						tag: {
-							value: "tconstruct:scorched_tanks"
-						}
-					}
-				}
-				{
-					id: "11E486E1EF190836"
-					type: "item"
-					item: "tconstruct:scorched_faucet"
-				}
-				{
-					id: "240A9B2EB7B4D3BF"
-					type: "item"
-					item: "tconstruct:scorched_table"
-				}
-			]
-		}
-		{
-			icon: "naturesaura:nature_altar"
-			x: 2.0d
-			y: -10.5d
-			id: "31513AA25B621FD8"
-			tasks: [
-				{
-					id: "2D06F23D4A7EEC74"
-					type: "item"
-					item: "naturesaura:nature_altar"
-				}
-				{
-					id: "2885DD4829B36C14"
-					type: "item"
-					item: "minecraft:oak_planks"
-					count: 20L
-				}
-				{
-					id: "4AA0F6143AFE7D5F"
-					type: "item"
-					item: "minecraft:chiseled_stone_bricks"
-					count: 4L
-				}
-				{
-					id: "2F472C937866CC1E"
-					type: "item"
-					item: "minecraft:stone_bricks"
-					count: 16L
-				}
-				{
-					id: "1AFEE6C8846D9E82"
-					type: "item"
-					item: "naturesaura:gold_brick"
-					count: 8L
-				}
-			]
-		}
-		{
-			title: "Paint the Trees Gold"
-			x: 12.5d
-			y: -9.5d
-			id: "4187F705E4356142"
-			tasks: [
-				{
-					id: "207E8A7F752042D0"
-					type: "item"
-					item: "naturesaura:gold_fiber"
-				}
-				{
-					id: "29FF7F7D6BDD7E50"
-					type: "item"
-					item: "naturesaura:gold_leaf"
-				}
-			]
-		}
-		{
-			title: "Ritual of the Forest"
-			x: 12.5d
-			y: -7.5d
-			dependencies: ["4187F705E4356142"]
-			id: "6AD50F15723B7927"
-			tasks: [
-				{
-					id: "667719DCAABF9464"
-					type: "item"
-					item: "naturesaura:gold_powder"
-					count: 16L
-				}
-				{
-					id: "3B06635E1B7C7118"
-					type: "item"
-					item: "naturesaura:wood_stand"
-					count: 8L
-				}
-			]
-		}
-		{
-			x: 10.5d
-			y: -6.5d
-			dependencies: ["6AD50F15723B7927"]
-			id: "75639B06251CAA16"
-			tasks: [{
-				id: "6EBBBAF37B549654"
+				id: "5B69F014A36AE6FC"
 				type: "item"
-				item: "naturesaura:eye"
+				item: "thermal:phytogro"
+				count: 4
 			}]
 		}
 		{
-			x: 5.5d
-			y: -7.0d
-			dependencies: ["46DC0D67FE1C4C67"]
-			id: "2A97F4CE430A26BC"
+			x: -5.5d
+			y: 5.0d
+			dependencies: ["60CC9D168EA08EDA"]
+			id: "63AB31D5757A0097"
 			tasks: [{
-				id: "276341B53E039140"
-				type: "item"
-				item: "immersiveengineering:alloybrick"
-				count: 8L
-			}]
-		}
-		{
-			title: "Basic Power Generation"
-			x: 2.5d
-			y: 0.5d
-			dependencies: ["39F16774468E59FE"]
-			id: "47910242F4DE9220"
-			tasks: [
-				{
-					id: "1895020E0D74216E"
-					type: "item"
-					item: "powah:furnator_basic"
-				}
-				{
-					id: "3A0881DA9C104671"
-					type: "item"
-					item: "powah:energy_cable_basic"
-				}
-				{
-					id: "13DC6700EE416D18"
-					type: "item"
-					item: "powah:energy_cell_basic"
-				}
-			]
-		}
-		{
-			x: 7.0d
-			y: -9.0d
-			dependencies: ["20FA1AFF0BD65177"]
-			id: "0C62C2532E374205"
-			tasks: [{
-				id: "61E72830C4A6C46D"
+				id: "6899F295A32CD14E"
 				type: "item"
 				item: {
-					id: "forbidden_arcanus:soul_extractor"
+					id: "mna:manaweaver_wand"
 					Count: 1b
 					tag: {
 						Damage: 0
@@ -503,38 +169,245 @@
 			}]
 		}
 		{
-			title: "Tier 2 Powah"
-			x: 4.5d
-			y: 0.5d
-			dependencies: ["47910242F4DE9220"]
-			id: "37610C524354F5F2"
+			x: -1.5d
+			y: 3.0d
+			dependencies: ["3DDDD86ECE49BDDF"]
+			id: "12679B51D93A83D0"
+			tasks: [{
+				id: "78B97DB1F77C5BCA"
+				type: "item"
+				item: "mna:runeforge"
+			}]
+		}
+		{
+			x: -1.5d
+			y: 0.0d
+			dependencies: ["3DDDD86ECE49BDDF"]
+			id: "34BC57F5433AA00D"
+			tasks: [{
+				id: "3CB8584BBC6A01F1"
+				type: "item"
+				item: "mna:manaweaving_altar"
+			}]
+		}
+		{
+			title: "Transmuted Items"
+			x: -4.0d
+			y: 3.5d
+			dependencies: ["63AB31D5757A0097"]
+			id: "3DDDD86ECE49BDDF"
 			tasks: [
 				{
-					id: "3A2BB9386F55B5BC"
+					id: "6E90F9D179A8C200"
 					type: "item"
-					item: "powah:energizing_orb"
+					item: "mna:transmuted_silver"
 				}
 				{
-					id: "1B08B163ECFB54FC"
+					id: "16BD069EA2649DFF"
 					type: "item"
-					item: "powah:energizing_rod_basic"
+					item: "mna:decoration/arcane_stone"
+				}
+			]
+		}
+		{
+			title: "Vinteum Ingots"
+			icon: "mna:vinteum_ingot"
+			x: -7.0d
+			y: 7.5d
+			dependencies: ["03F754FB73DEF8FA"]
+			id: "60CC9D168EA08EDA"
+			tasks: [
+				{
+					id: "20DB0943309EF30B"
+					type: "item"
+					item: "mna:vinteum_dust"
 				}
 				{
-					id: "6F2B9F94B6A66B0A"
+					id: "342C34380BCB2C72"
 					type: "item"
-					item: "powah:steel_energized"
+					item: "mna:vinteum_ingot"
+				}
+			]
+		}
+		{
+			title: "Rituals"
+			x: 0.0d
+			y: 2.5d
+			dependencies: ["12679B51D93A83D0"]
+			id: "1074FABB26C67896"
+			tasks: [
+				{
+					id: "2C249D8F0B4EB797"
+					type: "item"
+					item: {
+						id: "mna:wizard_chalk"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+				{
+					id: "1202246154C13921"
+					type: "item"
+					item: "mna:purified_vinteum_dust"
+				}
+			]
+		}
+		{
+			title: "The Sludge Sifter"
+			icon: "multiblocked:sludge_sifter"
+			x: 3.0d
+			y: 7.0d
+			subtitle: "One way to get Kelp"
+			description: [
+				"The Barrel can replace any of the scaffolding, while the tank can be extended upwards to hold more water."
+				"You'll need to pipe water into the tank!"
+			]
+			dependencies: [
+				"1CC0BFAC83B1134B"
+				"556CB869A6592D68"
+			]
+			id: "4B132B0884AC63AC"
+			tasks: [
+				{
+					id: "560BD3E0E7E41B5E"
+					type: "item"
+					item: "multiblocked:sludge_sifter"
+				}
+				{
+					id: "4F717336160B46AB"
+					type: "item"
+					item: "kubejs:copper_cog_block"
+				}
+				{
+					id: "220F9C80FCA71D91"
+					type: "item"
+					item: "immersiveengineering:treated_scaffold"
+					count: 3L
+				}
+				{
+					id: "3C79506D1717C6BD"
+					type: "item"
+					item: "create:copper_casing"
+					count: 5L
+				}
+				{
+					id: "2D42E3AA6A6A8962"
+					type: "item"
+					item: "create:fluid_tank"
+					count: 2L
+				}
+				{
+					id: "2148606F648EEAC8"
+					type: "item"
+					item: "minecraft:barrel"
+				}
+			]
+			rewards: [
+				{
+					id: "5A45E23A6FD44CA9"
+					type: "item"
+					item: "functionalstorage:void_upgrade"
+				}
+				{
+					id: "0958BA25A2A8EFCE"
+					type: "loot"
+					table_id: 2582656620646881183L
+				}
+			]
+		}
+		{
+			title: "Fluid Transfer"
+			x: -0.5d
+			y: 8.5d
+			description: ["Most fluid handling with Create needs to by done with pipes, rather then buckets."]
+			dependencies: ["273B98D3C35D7356"]
+			id: "1CC0BFAC83B1134B"
+			tasks: [
+				{
+					id: "1BA496B9E29BF928"
+					type: "item"
+					item: "create:fluid_pipe"
+				}
+				{
+					id: "1E4177ED506ACE93"
+					type: "item"
+					item: "create:mechanical_pump"
 				}
 			]
 			rewards: [{
-				id: "2033F9214A46820C"
-				type: "item"
-				item: {
-					id: "powah:wrench"
-					Count: 1b
-					tag: {
-						PowahWrenchNBT: { }
-					}
+				id: "2F3C05323B26EF83"
+				type: "random"
+				table_id: 5216185889486752116L
+			}]
+		}
+		{
+			icon: "create:hose_pulley"
+			x: 2.0d
+			y: 5.5d
+			subtitle: "Infinite Water/Lava"
+			description: ["Used to drain bodies of liquid."]
+			dependencies: ["1CC0BFAC83B1134B"]
+			id: "3F1F7439D1A62976"
+			tasks: [
+				{
+					id: "1064F86A75903471"
+					type: "item"
+					item: "create:hose_pulley"
 				}
+				{
+					id: "02446DCA79283765"
+					type: "item"
+					item: "create:hand_crank"
+				}
+			]
+			rewards: [{
+				id: "6A0A631E301C20A2"
+				type: "random"
+				table_id: 5216185889486752116L
+			}]
+		}
+		{
+			title: "Better Rotational Power"
+			x: 2.5d
+			y: 11.5d
+			dependencies: ["556CB869A6592D68"]
+			id: "6C5CC546B5799587"
+			tasks: [
+				{
+					id: "7803CCF717F4C642"
+					type: "item"
+					item: "create:windmill_bearing"
+				}
+				{
+					id: "1DA69D683191BE27"
+					type: "item"
+					item: "create:white_sail"
+					count: 8L
+				}
+			]
+			rewards: [{
+				id: "7F17F23E447F02C7"
+				type: "random"
+				table_id: 2368795686952639629L
+			}]
+		}
+		{
+			x: 0.5d
+			y: 5.0d
+			subtitle: "One early use for this is to automate Treated Wood."
+			dependencies: ["1CC0BFAC83B1134B"]
+			id: "03FA25E0602E0B32"
+			tasks: [{
+				id: "7E35FE79C6F30C43"
+				type: "item"
+				item: "create:spout"
+			}]
+			rewards: [{
+				id: "3DBA70525D4DD4A2"
+				type: "random"
+				table_id: 5216185889486752116L
 			}]
 		}
 	]

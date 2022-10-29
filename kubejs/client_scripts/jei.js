@@ -26,20 +26,24 @@ onEvent('jei.hide.items', event => {
 })
 
 onEvent('jei.add.items', event => {
-	event.add(Item.of('thermal:ruby'))
-	event.add(Item.of('thermal:ruby_block'))
-	event.add(Item.of('thermal:ruby_ore'))
-	event.add(Item.of('thermal:ruby_dust'))
-	event.add(Item.of('thermal:ruby_gear'))
-  })
-  
-  onEvent('jei.add.items', event => {
-	event.add(Item.of('thermal:sapphire'))
-	event.add(Item.of('thermal:sapphire_block'))
-	event.add(Item.of('thermal:sapphire_ore'))
-	event.add(Item.of('thermal:sapphire_dust'))
-	event.add(Item.of('thermal:sapphire_gear'))
-  })
+	var addItems = [
+		'thermal:ruby',
+		'thermal:ruby_block',
+		'thermal:ruby_ore',
+		'thermal:ruby_dust',
+		'thermal:ruby_gear',
+		'thermal:sapphire',
+		'thermal:sapphire_block',
+		'thermal:sapphire_ore',
+		'thermal:sapphire_dust',
+		'thermal:sapphire_gear',
+		'minecraft:structure_block',
+	]
+
+	addItems.forEach((item) => {
+		event.add(Item.of(item))
+	})
+})
 /*
 onEvent('jei.remove.categories', event => {
 	console.log(event.getCategoryIds()) //log a list of all category ids to logs/kubejs/client.txt

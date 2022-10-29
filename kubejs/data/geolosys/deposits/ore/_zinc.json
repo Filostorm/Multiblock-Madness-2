@@ -3,7 +3,7 @@
   "config": {
     "yMin": -40,
     "yMax": 120,
-    "size": 15,
+    "size": 20,
     "dimensions": {
       "isBlacklist": false,
       "filter": [ "overworld" ]
@@ -12,23 +12,23 @@
     "blocks": {
       "default": [{
         "block": "create:zinc_ore",
-        "chance": 0.8
+        "chance": 0.9
       },{
         "block": "minecraft:iron_ore",
-        "chance": 0.1
+        "chance": 0.05
       },{
         "block": "thermal:sulfur_ore",
-        "chance": 0.1
+        "chance": 0.05
       }],
       "minecraft:deepslate": [{
         "block": "create:deepslate_zinc_ore",
-        "chance": 0.8
+        "chance": 0.9
       },{
         "block": "minecraft:deepslate_iron_ore",
-        "chance": 0.1
+        "chance": 0.05
       },{
         "block": "thermal:deepslate_sulfur_ore",
-        "chance": 0.1
+        "chance": 0.05
       }]
     },
     "samples": [{

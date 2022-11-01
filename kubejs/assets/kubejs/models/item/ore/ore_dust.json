@@ -1,0 +1,8 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "kubejs:item/ore/ore_dust",
+        "layer1": "kubejs:item/ore/ore_dust_overlay"
+    }
+  }
+  

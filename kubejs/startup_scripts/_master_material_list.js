@@ -131,7 +131,8 @@ global.newMaterialParts = [
       'blockParts': [],
       'fluid': 'thick',
       'durability': 1024,
-      'ore': true
+      'ore': true,
+      'raw_ore': true
     },
     {
       'material': 'tungsten',
@@ -142,7 +143,8 @@ global.newMaterialParts = [
       'blockParts': [],
       'fluid': null,
       'durability': 1024,
-      'ore': true
+      'ore': true,
+      'raw_ore': true
     },
     {
       'material': 'platinum',
@@ -153,7 +155,8 @@ global.newMaterialParts = [
       'blockParts': ['storage_block'],
       'fluid': null,
       'durability': 1024,
-      'ore': true
+      'ore': true,
+      'raw_ore': true
     },
     {
       'material': 'uranium',
@@ -189,10 +192,20 @@ global.newMaterialParts = [
     
     {
       'material': 'chromium',
-      'color': 0x3e224d,
+      'color': 0xcfb793,
       'type': 'base_metal',
       'tier': 4,
-      'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire'],
+      'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire', 'dust'],
+      'blockParts': [],
+      'fluid': 'thick',
+      'ore': true
+    },
+    {
+      'material': 'cadmium',
+      'color': 0x97b7bf,
+      'type': 'base_metal',
+      'tier': 4,
+      'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire', 'dust'],
       'blockParts': [],
       'fluid': 'thick',
       'ore': true
@@ -205,7 +218,8 @@ global.newMaterialParts = [
       'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire'],
       'blockParts': [],
       'fluid': 'thick',
-      'ore': true
+      'ore': true,
+      'raw_ore': true
     },
     {
       'material': 'iridium',
@@ -215,7 +229,8 @@ global.newMaterialParts = [
       'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire'],
       'blockParts': [],
       'fluid': 'thick',
-      'ore': true
+      'ore': true,
+      'raw_ore': true
     },
     {
       'material': 'vanadium',
@@ -382,8 +397,8 @@ global.newMaterialParts = [
       'color': 0x9d96b5,
       'type': 'alloy',
       'tier': 1,
-      'itemParts': ['ingot', 'dense_plate', 'plate', 'gear', 'wire', 'dust', 'rod'],
-      'blockParts': [],
+      'itemParts': ['ingot', 'nugget', 'dense_plate', 'plate', 'gear', 'wire', 'dust', 'rod'],
+      'blockParts': ['storage_block'],
       'fluid': null,
       'fluid_id': 'tconstruct:molten_pewter',
       'amount': 4,
@@ -437,7 +452,48 @@ global.newMaterialParts = [
       'blockParts': ['storage_block'],
       'fluid': 'thick'
     },
-    
+    {
+      'material': 'duralumin',
+      'color': 0xa9b0ac,
+      'type': 'alloy',
+      'tier': 2,
+      'itemParts': ['dense_plate', 'plate', 'gear', 'wire', 'dust', 'rod'],
+      'blockParts': [],
+      'fluid': 'thick',
+      'fluid_id': 'kubejs:molten_duralumin',
+      'amount': 4,
+      'dust_input': ['3x #forge:dusts/aluminum','#forge:dusts/copper'],
+      'ingot_input': ['3x #forge:ingots/aluminum','#forge:ingots/copper'],
+      'tinkers_input': [{tag: 'forge:molten_aluminum',amount: 270},{tag: 'forge:molten_copper',amount: 90}]
+    },
+    {
+      'material': 'nicrosil',
+      'color': 0xa9a9b0,
+      'type': 'alloy',
+      'tier': 2,
+      'itemParts': ['dense_plate', 'plate', 'gear', 'wire', 'dust', 'rod'],
+      'blockParts': [],
+      'fluid': 'thick',
+      'fluid_id': 'kubejs:molten_nicrosil',
+      'amount': 4,
+      'dust_input': ['3x #forge:dusts/chromium','#forge:dusts/iron'],
+      'ingot_input': ['3x #forge:ingots/chromium','#forge:ingots/iron'],
+      'tinkers_input': [{tag: 'forge:molten_chromium',amount: 270},{tag: 'forge:molten_iron',amount: 90}]
+    },
+    {
+      'material': 'bendalloy',
+      'color': 0xbab6a2,
+      'type': 'alloy',
+      'tier': 2,
+      'itemParts': ['dense_plate', 'plate', 'gear', 'wire', 'dust', 'rod'],
+      'blockParts': [],
+      'fluid': 'thick',
+      'fluid_id': 'kubejs:molten_bendalloy',
+      'amount': 3,
+      'dust_input': ['2x #forge:dusts/cadmium','#forge:dusts/lead'],
+      'ingot_input': ['2x #forge:ingots/cadmium','#forge:ingots/lead'],
+      'tinkers_input': [{tag: 'forge:molten_cadmium',amount: 180},{tag: 'forge:molten_lead',amount: 90}]
+    },
     
     /////////////// Tier 3 Alloys /////////////////////////////
     {
@@ -497,14 +553,6 @@ global.newMaterialParts = [
       'ore': true
     },*/
     {
-      'material': 'sulfur',
-      'color': 0xe1eb34,
-      'itemParts': [],
-      'blockParts': [],
-      'fluid': null,
-      'ore': true
-    },
-    {
       'material': 'vincyte',
       'color': 0x0046d1,
       'tier': 1,
@@ -513,6 +561,7 @@ global.newMaterialParts = [
       'blockParts': [],
       'fluid': 'thick',
       'ore': true,
+      'raw_ore': true,
       'components': ['tin','nickel'],
     },
     {
@@ -524,6 +573,7 @@ global.newMaterialParts = [
       'blockParts': [],
       'fluid': 'thick',
       'ore': true,
+      'raw_ore': true,
       'components': ['copper','silver'],
     },
     {
@@ -535,6 +585,7 @@ global.newMaterialParts = [
       'blockParts': [],
       'fluid': 'thick',
       'ore': true,
+      'raw_ore': true,
       'components': ['iron','zinc'],
     },
     {
@@ -546,6 +597,7 @@ global.newMaterialParts = [
       'blockParts': [],
       'fluid': 'thick',
       'ore': true,
+      'raw_ore': true,
       'components': ['gold','zinc'],
     },
     {
@@ -557,6 +609,7 @@ global.newMaterialParts = [
       'blockParts': [],
       'fluid': 'thick',
       'ore': true,
+      'raw_ore': true,
       'components': ['lead','zinc'],
     },
     {
@@ -568,6 +621,7 @@ global.newMaterialParts = [
       'blockParts': [],
       'fluid': 'thick',
       'ore': true,
+      'raw_ore': true,
       'components': ['redstone','zinc'],
     },
     
@@ -589,7 +643,7 @@ global.newMaterialParts = [
     {
       'material': 'redstone',
       'color': 0xf54242,
-      'type': 'base_dust',
+      'type': 'dust',
       'tier': 1,
       'itemParts': [],
       'blockParts': [],
@@ -602,6 +656,15 @@ global.newMaterialParts = [
       'blockParts': [],
       'fluid': null
     },
+    {
+      'material': 'sulfur',
+      'color': 0xe1eb34,
+      'type': 'gem',
+      'itemParts': [],
+      'blockParts': [],
+      'fluid': null,
+      'ore': true
+    },
     
     /////////////// Gems /////////////////////////////
     /*
@@ -609,7 +672,7 @@ global.newMaterialParts = [
       'material': 'ruby',
       'gem': true,
       'color': 0xff4f55,
-      'type': 'base_gem',
+      'type': 'gem',
       'itemParts': ['ruby', 'dust'],
       'blockParts': ['storage_block'],
       'ore': true
@@ -618,7 +681,7 @@ global.newMaterialParts = [
       'material': 'sapphire',
       'gem': true,
       'color': 0x7377ff,
-      'type': 'base_gem',
+      'type': 'gem',
       'itemParts': ['sapphire', 'dust'],
       'blockParts': ['storage_block'],
       'ore': true
@@ -665,5 +728,25 @@ global.newMaterialParts = [
         'material': 'andesite',
         'hardness': 3,
         'resistance': 3
+      },
+      {
+        'material': 'moon_stone',
+        'hardness': 4,
+        'resistance': 4
+      },
+      {
+        'material': 'mars_stone',
+        'hardness': 4,
+        'resistance': 4
+      },
+      {
+        'material': 'venus_stone',
+        'hardness': 4,
+        'resistance': 4
+      },
+      {
+        'material': 'glacio_stone',
+        'hardness': 4,
+        'resistance': 4
       }
     ]

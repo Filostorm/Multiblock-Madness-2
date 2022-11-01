@@ -1,7 +1,7 @@
 
 [energy]
 	#Whether to consume energy when performing a scan. Will make the scanner a chargeable item.
-	useEnergy = true
+	useEnergy = false
 	#Amount of energy that can be stored in a scanner.
 	#Range: > 0
 	energyCapacityScanner = 5000

@@ -1,8 +1,8 @@
 {
     "textures": {
-        "ore": "kubejs:block/gem/sapphire_ore",
-        "stone": "kubejs:block/ore/diorite",
-        "particle": "kubejs:block/ore/diorite"
+        "ore": "kubejs:block/ore/rich_ore",
+        "stone": "kubejs:block/ore/mars_stone",
+        "particle": "kubejs:block/ore/mars_stone"
     },
         "display": {
         "gui": {

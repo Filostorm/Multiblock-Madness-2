@@ -1,8 +1,8 @@
 {
     "textures": {
-        "ore": "kubejs:block/gem/sapphire_ore",
-        "stone": "kubejs:block/ore/andesite",
-        "particle": "kubejs:block/ore/andesite"
+        "ore": "kubejs:block/ore/rich_ore",
+        "stone": "kubejs:block/ore/glacio_stone",
+        "particle": "kubejs:block/ore/glacio_stone"
     },
         "display": {
         "gui": {

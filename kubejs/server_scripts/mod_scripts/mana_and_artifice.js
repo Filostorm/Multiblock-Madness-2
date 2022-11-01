@@ -42,5 +42,16 @@ event.shaped('mna:manaweaving_altar', [
 	D: 'mna:decoration/arcane_stone'
   }).id("kubejs:manaweaving_altar")
 
+// [| improvised_manaweaver_wand |] //
+event.remove({id: 'mna:improvised_manaweaver_wand'})
+event.shaped(Item.of('mna:improvised_manaweaver_wand', '{Damage:0}'), [
+	'  B',
+	' C ',
+	'C  '
+  ], {
+B: '#mna:improvised_manaweave_wand_caps',
+C: '#forge:rods/wooden'
+  }).id("kubejs:improvised_manaweaver_wand")
+
 });
 

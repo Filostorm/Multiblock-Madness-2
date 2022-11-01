@@ -53,14 +53,34 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);*/
 onEvent('block.loot_tables', event => {
 	global.newMaterialParts.forEach((item) => {
 		if (item.ore) {
-		  if (item.type == 'base_gem') {
+		  if (item.type == 'gem') {
+			event.addBlock(`kubejs:${item.material}_ore`, table => { // Build loot table manually
+			table.addPool(pool => {
+				pool.rolls = [1, 2]
+				 pool.survivesExplosion()
+				 pool.addItem(`#forge:gems/${item.material}`, 5)
+				 pool.addItem(`#forge:dusts/${item.material}`, 1, [1, 2])
+			})
+		  })
+		  global.stoneTypes.forEach((type) => {
+		  event.addBlock(`kubejs:${type.material}_${item.material}_ore`, table => { // Build loot table manually
+		  table.addPool(pool => {
+			  pool.rolls = [1, 2]
+			   pool.survivesExplosion()
+			   pool.addItem(`#forge:gems/${item.material}`, 5)
+			   pool.addItem(`#forge:dusts/${item.material}`, 1, [1, 2])
+				  })
+				})
+			})
+		  /*
 			event.addSimpleBlock(`kubejs:${item.material}_ore`, `#forge:gems/${item.material}`)
-			event.addSimpleBlock(`kubejs:${item.material}_ore_sample`, `#forge:gems/${item.material}`)
 
 			global.stoneTypes.forEach((type) => {
 				event.addSimpleBlock(`kubejs:${type.material}_${item.material}_ore`, `#forge:gems/${item.material}`)
-			})
-		  } else if (item.type == 'base_dust') {
+			})*/
+			event.addSimpleBlock(`kubejs:${item.material}_ore_sample`, `#forge:gems/${item.material}`)
+			
+		  } else if (item.type == 'dust') {
 			event.addSimpleBlock(`kubejs:poor_${item.material}_ore`, `2x #forge:dusts/${item.material}`)
 			event.addSimpleBlock(`kubejs:${item.material}_ore`, `5x #forge:dusts/${item.material}`)
 			event.addSimpleBlock(`kubejs:rich_${item.material}_ore`, `10x #forge:dusts/${item.material}`)

@@ -1,8 +1,8 @@
 {
     "textures": {
-        "ore": "kubejs:block/gem/sapphire_ore",
-        "stone": "kubejs:block/ore/darkstone",
-        "particle": "kubejs:block/ore/darkstone"
+        "ore": "kubejs:block/gem/ruby_ore",
+        "stone": "kubejs:block/ore/venus_stone",
+        "particle": "kubejs:block/ore/venus_stone"
     },
         "display": {
         "gui": {

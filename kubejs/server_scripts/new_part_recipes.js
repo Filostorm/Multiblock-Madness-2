@@ -1,59 +1,4 @@
-var newParts = {
-	titanium: 0x4668cf,
-	tungsten: 0x282c33,
-	platinum: 0x6be6ff,
-	cobalt: 0x2452c7,
-	aluminum: 0x8c8a89,
-	chromium: 0x3e224d,
-	palladium: 0x522d22,
-	iridium: 0x1942bf,
-	zinc: 0x97c7b3,
-	thorium: 0x543923,
-	magnesium: 0x997996,
-	boron: 0x20293b,
-  
-	brass: 0xe8bd5f,
-	steel: 0xb5b3b3,
-  
-	arcane_gold: 0xc9881e,
-	fluix_steel: 0x792be0,
-	vinteum: 0x7ab1c2,
-	manasteel: 0x69a7ff,
-	terrasteel: 0x63e645,
-	elementium: 0xf569b6,
 
-	desh: 0xf569b6,
-	iron: 0xf569b6,
-	copper: 0xf569b6,
-	gold: 0xf569b6,
-	netherite: 0xf569b6,
-	enderium: 0xf569b6,
-	lumium: 0xf569b6,
-	signalum: 0xf569b6,
-	lead: 0xf569b6,
-	nickel: 0xf569b6,
-	silver: 0xf569b6,
-	tin: 0xf569b6,
-	bronze: 0xf569b6,
-	constantan: 0xf569b6,
-	electrum: 0xf569b6,
-	invar: 0xf569b6,
-	uranium: 0xf569b6,
-	red_alloy: 0xb5b3b3,
-	transmuted_silver: 0xb5b3b3,
-}
-
-var newIngots = {
-	neptunium: 0x5a5863,
-	plutonium: 0x9e785f,
-	americium: 0x4a3a2f,
-	curium: 0x8a3e50,
-	berkelium: 0x755444,
-	californium: 0x966248,
-	einsteinium: 0x4a6da8,
-	boron: 0x20293b,
-	platinum: 0x6be6ff,
-}
 
 /*
 onEvent('tags.items', event => {
@@ -75,218 +20,230 @@ onEvent('recipes', event => {
   
 
 
-	for (var metal in newParts) {
+	global.newMaterialParts.forEach((item) => {
 
 	////////////////HAMMER///////////////
-    if (Item.of(`#forge:hammers/${metal}`) != null) {
-	event.shaped(`#forge:hammers/${metal}`, [
+    if (Item.of(`#forge:hammers/${item.material}`) != null) {
+	event.shaped(`#forge:hammers/${item.material}`, [
 		' IS',
 		' RI',
 		'R  '
 	  ], {
-		I: `#forge:ingots/${metal}`,
+		I: `#forge:ingots/${item.material}`,
 		R: '#forge:rods/wooden',
 		S: '#forge:string',
-	  }).id(`kubejs:crafting/${metal}_hammer`)
+	  }).id(`kubejs:crafting/${item.material}_hammer`)
 	}
 
 
 	
 	////////////////PLATES///////////////
-    if (Item.of(`#forge:plates/${metal}`) != null) {
-	event.shaped(`#forge:plates/${metal}`, [
+    if (Item.of(`#forge:plates/${item.material}`) != null) {
+	event.shaped(`#forge:plates/${item.material}`, [
 		'H',
 		'I',
 		'I'
 	  ], {
-		I: `#forge:ingots/${metal}`,
+		I: `#forge:ingots/${item.material}`,
 		H: Ingredient.of('#forge:hammers'),
-	  }).damageIngredient(Ingredient.of('#forge:hammers')).id(`immersiveengineering:crafting/plate_${metal}_hammering`)
+	  }).damageIngredient(Ingredient.of('#forge:hammers')).id(`immersiveengineering:crafting/plate_${item.material}_hammering`)
 
 	//Plate Casing
-  	global.casingTable(event, 'tconstruct:casts/multi_use/plate', false, `#forge:plates/${metal}`, `forge:molten_${metal}`, 90, 60, `tconstruct:smeltery/casting/metal/${metal}/plate_gold_cast`)
-  	global.casingTable(event, 'tconstruct:casts/single_use/plate', true, `#forge:plates/${metal}`, `forge:molten_${metal}`, 90, 60, `tconstruct:smeltery/casting/metal/${metal}/plate_sand_cast`)
+  	global.casingTable(event, 'tconstruct:casts/multi_use/plate', false, `#forge:plates/${item.material}`, `forge:molten_${item.material}`, 90, 60, `tconstruct:smeltery/casting/metal/${item.material}/plate_gold_cast`)
+  	global.casingTable(event, 'tconstruct:casts/single_use/plate', true, `#forge:plates/${item.material}`, `forge:molten_${item.material}`, 90, 60, `tconstruct:smeltery/casting/metal/${item.material}/plate_sand_cast`)
 
 	//Create Plates
-  	event.recipes.createPressing(`#forge:plates/${metal}`, `#forge:ingots/${metal}`).id(`create:pressing/${metal}_ingot`)
+  	event.recipes.createPressing(`#forge:plates/${item.material}`, `#forge:ingots/${item.material}`).id(`create:pressing/${item.material}_ingot`)
 
 	//Immersive Plates
- 	event.recipes.immersiveengineeringMetalPress(`#forge:plates/${metal}`, `#forge:ingots/${metal}`, 'immersiveengineering:mold_plate').id(`immersiveengineering:metalpress/plate_${metal}`)
+ 	event.recipes.immersiveengineeringMetalPress(`#forge:plates/${item.material}`, `#forge:ingots/${item.material}`, 'immersiveengineering:mold_plate').id(`immersiveengineering:metalpress/plate_${item.material}`)
 
 	//Thermal Plates
-	event.recipes.thermal.press(`2x #forge:plates/${metal}`, `3x #forge:ingots/${metal}`).id(`thermal:machines/press/press_${metal}_ingot_to_plate`)
+	event.recipes.thermal.press(`2x #forge:plates/${item.material}`, `3x #forge:ingots/${item.material}`).id(`thermal:machines/press/press_${item.material}_ingot_to_plate`)
 	
 	////////////////DENSE PLATES///////////////
-    if (Item.of(`#forge:dense_plates/${metal}`) != null) {
+    if (Item.of(`#forge:dense_plates/${item.material}`) != null) {
 
 	//Create Dense Plates
-  	event.recipes.createPressing(`#forge:dense_plates/${metal}`, `#forge:storage_blocks/${metal}`).id(`create:pressing/dense_${metal}_plate`)
+  	event.recipes.createPressing(`#forge:dense_plates/${item.material}`, `#forge:storage_blocks/${item.material}`).id(`create:pressing/dense_${item.material}_plate`)
 
 	//Immersive Dense Plates
- 	event.recipes.immersiveengineeringMetalPress(`#forge:dense_plates/${metal}`, `#forge:storage_blocks/${metal}`, 'immersiveengineering:mold_plate').id(`immersiveengineering:metalpress/dense_plate_${metal}`)
+ 	event.recipes.immersiveengineeringMetalPress(`#forge:dense_plates/${item.material}`, `#forge:storage_blocks/${item.material}`, 'immersiveengineering:mold_plate').id(`immersiveengineering:metalpress/dense_plate_${item.material}`)
 	}
 
 	////////////////SHEETMETAL///////////////
-	if (Item.of(`#forge:sheetmetals/${metal}`) != null) {
-		event.shaped(`4x #forge:sheetmetals/${metal}`, [
+	if (Item.of(`#forge:sheetmetals/${item.material}`) != null) {
+		event.shaped(`4x #forge:sheetmetals/${item.material}`, [
 			' P ',
 			'P P',
 			' P '
 		  ], {
-			P: `#forge:plates/${metal}`,
-		  }).id(`immersiveengineering:crafting/sheetmetal_${metal}`)
+			P: `#forge:plates/${item.material}`,
+		  }).id(`immersiveengineering:crafting/sheetmetal_${item.material}`)
 		  
 		  //Sheetmetal Casing
-	  global.casingBasinCast(event, 'forge:sheetmetal_cast', false, `#forge:sheetmetals/${metal}`, `forge:molten_${metal}`, 90, 80, `tconstruct:smeltery/casting/metal/${metal}/sheetmetal`)
+	  global.casingBasinCast(event, 'forge:sheetmetal_cast', false, `#forge:sheetmetals/${item.material}`, `forge:molten_${item.material}`, 90, 80, `tconstruct:smeltery/casting/metal/${item.material}/sheetmetal`)
 		}
 	}
 	////////////////GEARS///////////////
-    if (Item.of(`#forge:gears/${metal}`) != null) {
-	event.shaped(`#forge:gears/${metal}`, [
+    if (Item.of(`#forge:gears/${item.material}`) != null) {
+	event.shaped(`#forge:gears/${item.material}`, [
 		' P ',
 		'PRP',
 		' P '
 	  ], {
-		P: `#forge:plates/${metal}`,
-		R: `#forge:rods/${metal}`
-	  }).id(`thermal:parts/${metal}_gear`)
+		P: `#forge:plates/${item.material}`,
+		R: `#forge:rods/${item.material}`
+	  }).id(`thermal:parts/${item.material}_gear`)
 
 	//Gear Casing
-  	global.casingTable(event, 'tconstruct:casts/multi_use/gear', false, `#forge:gears/${metal}`, `forge:molten_${metal}`, 360, 120, `tconstruct:smeltery/casting/metal/${metal}/gear_gold_cast`)
-  	global.casingTable(event, 'tconstruct:casts/single_use/gear', true, `#forge:gears/${metal}`, `forge:molten_${metal}`, 360, 120, `tconstruct:smeltery/casting/metal/${metal}/gear_sand_cast`)
+  	global.casingTable(event, 'tconstruct:casts/multi_use/gear', false, `#forge:gears/${item.material}`, `forge:molten_${item.material}`, 360, 120, `tconstruct:smeltery/casting/metal/${item.material}/gear_gold_cast`)
+  	global.casingTable(event, 'tconstruct:casts/single_use/gear', true, `#forge:gears/${item.material}`, `forge:molten_${item.material}`, 360, 120, `tconstruct:smeltery/casting/metal/${item.material}/gear_sand_cast`)
 
 	//Immersive Gears
-	event.recipes.immersiveengineeringMetalPress(`#forge:gears/${metal}`, `4x #forge:ingots/${metal}`, 'immersiveengineering:mold_gear').id(`immersiveengineering:metalpress/gear_${metal}`)
+	event.recipes.immersiveengineeringMetalPress(`#forge:gears/${item.material}`, `4x #forge:ingots/${item.material}`, 'immersiveengineering:mold_gear').id(`immersiveengineering:metalpress/gear_${item.material}`)
 
 	//Thermal Gears
-	event.recipes.thermal.press(`#forge:gears/${metal}`, [`5x #forge:ingots/${metal}`, 'thermal:press_gear_die']).id(`thermal:machines/press/press_${metal}_ingot_to_gear`)
+	event.recipes.thermal.press(`#forge:gears/${item.material}`, [`5x #forge:ingots/${item.material}`, 'thermal:press_gear_die']).id(`thermal:machines/press/press_${item.material}_ingot_to_gear`)
 	
 	//////////////// MECHANICAL PART ///////////////
-    if (Item.of(`#forge:mechanical_components/${metal}`) != null) {
-	event.shaped(`#forge:mechanical_components/${metal}`, [
+    if (Item.of(`#forge:mechanical_components/${item.material}`) != null) {
+	event.shaped(`#forge:mechanical_components/${item.material}`, [
 		'G G',
 		' W ',
 		'G G'
 	  ], {
-		W: `#forge:wires/${metal}`,
-		G: `#forge:gears/${metal}`
-	  }).id(`kubejs:parts/${metal}_mechanical_component`)
+		W: `#forge:wires/${item.material}`,
+		G: `#forge:gears/${item.material}`
+	  }).id(`kubejs:parts/${item.material}_mechanical_component`)
 	}
 
 	//////////////// COG BLOCK ///////////////
-    if (Item.of(`#forge:cog_blocks/${metal}`) != null) {
-		event.shaped(`4x #forge:cog_blocks/${metal}`, [
+    if (Item.of(`#forge:cog_blocks/${item.material}`) != null) {
+		event.shaped(`4x #forge:cog_blocks/${item.material}`, [
 			'RGR',
 			'G G',
 			'RGR'
 		  ], {
-			R: `#forge:rods/${metal}`,
-			G: `#forge:gears/${metal}`
-		  }).id(`kubejs:parts/${metal}_cog_block`)
+			R: `#forge:rods/${item.material}`,
+			G: `#forge:gears/${item.material}`
+		  }).id(`kubejs:parts/${item.material}_cog_block`)
 		}
 	}
 	
 	////////////////RODS///////////////
-    if (Item.of(`#forge:rods/${metal}`) != null) {
+    if (Item.of(`#forge:rods/${item.material}`) != null) {
 		
-	event.shaped(`#forge:rods/${metal}`, [
+	event.shaped(`#forge:rods/${item.material}`, [
 		'H ',
 		' I'
 	  ], {
-		I: `#forge:ingots/${metal}`,
+		I: `#forge:ingots/${item.material}`,
 		H: Ingredient.of('#forge:hammers'),
-	  }).damageIngredient(Ingredient.of('#forge:hammers')).id(`kubejs:parts/${metal}_rod`)
+	  }).damageIngredient(Ingredient.of('#forge:hammers')).id(`kubejs:parts/${item.material}_rod`)
 
 	//Create Rods
-	global.createRolling(event, `#forge:rods/${metal}`, 2, `forge:ingots/${metal}`, `createaddition:rolling/${metal}_ingot`)
+	global.createRolling(event, `#forge:rods/${item.material}`, 2, `forge:ingots/${item.material}`, `createaddition:rolling/${item.material}_ingot`)
 	
 	//Immersive Rods
-	event.recipes.immersiveengineeringMetalPress(`2x #forge:rods/${metal}`, `#forge:ingots/${metal}`, 'immersiveengineering:mold_rod').id(`immersiveengineering:metalpress/rod_${metal}`)
+	event.recipes.immersiveengineeringMetalPress(`2x #forge:rods/${item.material}`, `#forge:ingots/${item.material}`, 'immersiveengineering:mold_rod').id(`immersiveengineering:metalpress/rod_${item.material}`)
 	
-    if (Fluid.of(`forge:molten_${metal}`) != null) {
+    if (Fluid.of(`forge:molten_${item.material}`) != null) {
 	//Rod Casing
-  	global.casingTable(event, 'tconstruct:casts/multi_use/rod', false, `#forge:rods/${metal}`, `forge:molten_${metal}`, 45, 20, `tconstruct:smeltery/casting/metal/${metal}/rod_gold_cast`)
-  	global.casingTable(event, 'tconstruct:casts/single_use/rod', true, `#forge:rods/${metal}`, `forge:molten_${metal}`, 45, 20, `tconstruct:smeltery/casting/metal/${metal}/rod_sand_cast`)
+  	global.casingTable(event, 'tconstruct:casts/multi_use/rod', false, `#forge:rods/${item.material}`, `forge:molten_${item.material}`, 45, 20, `tconstruct:smeltery/casting/metal/${item.material}/rod_gold_cast`)
+  	global.casingTable(event, 'tconstruct:casts/single_use/rod', true, `#forge:rods/${item.material}`, `forge:molten_${item.material}`, 45, 20, `tconstruct:smeltery/casting/metal/${item.material}/rod_sand_cast`)
 
 	//Thermal Rods
-	global.thermalChilling(event, `forge:molten_${metal}`, 60, `#forge:rods/${metal}`, 1, 'thermal:chiller_rod_cast', 5000, `thermal:machines/chiller/chiller_${metal}_rod`)
+	global.thermalChilling(event, `forge:molten_${item.material}`, 60, `#forge:rods/${item.material}`, 1, 'thermal:chiller_rod_cast', 5000, `thermal:machines/chiller/chiller_${item.material}_rod`)
 	}
 	
 		////////////////SCAFFOLDING///////////////
-		if (Item.of(`#immersiveengineering:scaffoldings/${metal}`) != null) {
-			event.shaped(`6x #immersiveengineering:scaffoldings/${metal}`, [
+		if (Item.of(`#immersiveengineering:scaffoldings/${item.material}`) != null) {
+			event.shaped(`6x #immersiveengineering:scaffoldings/${item.material}`, [
 				'III',
 				' R ',
 				'R R'
 			  ], {
-				I: `#forge:ingots/${metal}`,
-				R: `#forge:rods/${metal}`,
-			  }).id(`immersiveengineering:crafting/${metal}_scaffolding_standard`)
+				I: `#forge:ingots/${item.material}`,
+				R: `#forge:rods/${item.material}`,
+			  }).id(`immersiveengineering:crafting/${item.material}_scaffolding_standard`)
 			}
 	}
 	////////////////WIRES///////////////
-    if (Item.of(`#forge:wires/${metal}`) != null) {
+    if (Item.of(`#forge:wires/${item.material}`) != null) {
 
 	//Hand Crafting
-	event.shapeless(`#forge:wires/${metal}`, [`#forge:plates/${metal}`, Item.of('immersiveengineering:wirecutter').ignoreNBT(),]).id(`immersiveengineering:crafting/wire_${metal}`)
+	event.shapeless(`#forge:wires/${item.material}`, [`#forge:plates/${item.material}`, Item.of('immersiveengineering:wirecutter').ignoreNBT(),]).id(`immersiveengineering:crafting/wire_${item.material}`)
 
 	//Create Wire
-	global.createRolling(event, `#forge:wires/${metal}`, 2, `forge:plates/${metal}`, `createaddition:rolling/${metal}_plate`)
+	global.createRolling(event, `#forge:wires/${item.material}`, 2, `forge:plates/${item.material}`, `createaddition:rolling/${item.material}_plate`)
 
 	//Immersive Wire
-  	event.recipes.immersiveengineeringMetalPress(`2x #forge:wires/${metal}`, `#forge:ingots/${metal}`, 'immersiveengineering:mold_wire').id(`immersiveengineering:metalpress/wire_${metal}`)
+  	event.recipes.immersiveengineeringMetalPress(`2x #forge:wires/${item.material}`, `#forge:ingots/${item.material}`, 'immersiveengineering:mold_wire').id(`immersiveengineering:metalpress/wire_${item.material}`)
 	}
 
 	
-    if (Item.of(`#forge:dusts/${metal}`) != null) {
-	event.recipes.createMilling([`#forge:dusts/${metal}`], [`#forge:ingots/${metal}`]).id(`kubejs:${metal}_ingot_2_dust`)
+    if (Item.of(`#forge:dusts/${item.material}`) != null) {
+	event.recipes.createMilling([`#forge:dusts/${item.material}`], [`#forge:ingots/${item.material}`]).id(`kubejs:${item.material}_ingot_2_dust`)
 	}
-}
 
-	for (var metal in newIngots) {
+
 	//Ingots
-	event.shapeless(`9x #forge:nuggets/${metal}`, [`#forge:ingots/${metal}`])
-	event.shaped(`#forge:ingots/${metal}`, [
+      if (item.itemParts.includes("ingot" || "custom_ingot")) {
+	event.shapeless(`9x #forge:nuggets/${item.material}`, [`#forge:ingots/${item.material}`])
+	event.shaped(`#forge:ingots/${item.material}`, [
 		'NNN',
 		'NNN',
 		'NNN'
 	  ], {
-		N: `#forge:nuggets/${metal}`,
+		N: `#forge:nuggets/${item.material}`,
 	  })
 	//Blocks
-	event.shapeless(`9x #forge:ingots/${metal}`, [`#forge:storage_blocks/${metal}`])
-	event.shaped(`#forge:storage_blocks/${metal}`, [
+	event.shapeless(`9x #forge:ingots/${item.material}`, [`#forge:storage_blocks/${item.material}`])
+	event.shaped(`#forge:storage_blocks/${item.material}`, [
 		'III',
 		'III',
 		'III'
 	  ], {
-		I: `#forge:ingots/${metal}`,
+		I: `#forge:ingots/${item.material}`,
 	  })
-
-	//temp recipe for elements
-	event.shaped(`#forge:ingots/${metal}`, [
-		'III',
-		'III',
-		'III'
-	  ], {
-		I: `chemlib:${metal}`,
-	  })
-	  
-	//Ingot Casing
- 	global.casingTable(event, 'tconstruct:casts/multi_use/ingot', false, `#forge:ingots/${metal}`, `forge:molten_${metal}`, 90, 60, `tconstruct:smeltery/casting/metal/${metal}/ingot_gold_cast`)
- 	global.casingTable(event, 'tconstruct:casts/single_use/ingot', true, `#forge:ingots/${metal}`, `forge:molten_${metal}`, 90, 60, `tconstruct:smeltery/casting/metal/${metal}/ingot_sand_cast`)
-
-	//Nugget Casing
- 	global.casingTable(event, 'tconstruct:casts/multi_use/nugget', false, `#forge:nuggets/${metal}`, `forge:molten_${metal}`, 10, 10, `tconstruct:smeltery/casting/metal/${metal}/nugget_gold_cast`)
- 	global.casingTable(event, 'tconstruct:casts/single_use/nugget', true, `#forge:nuggets/${metal}`, `forge:molten_${metal}`, 10, 10, `tconstruct:smeltery/casting/metal/${metal}/nugget_sand_cast`)
-
-	//Block Casing
-	global.casingBasin(event, `#forge:storage_blocks/${metal}`, `forge:molten_${metal}`, 810, 180, `tconstruct:smeltery/casting/metal/${metal}/block`)
+	  }
+	  if (item.fluid != null && (item.type == 'base_metal' || item.type == 'alloy'))
+	  {
+		//Ingot Casing
+		 global.casingTable(event, 'tconstruct:casts/multi_use/ingot', false, `#forge:ingots/${item.material}`, `forge:molten_${item.material}`, 90, 60, `tconstruct:smeltery/casting/metal/${item.material}/ingot_gold_cast`)
+		 global.casingTable(event, 'tconstruct:casts/single_use/ingot', true, `#forge:ingots/${item.material}`, `forge:molten_${item.material}`, 90, 60, `tconstruct:smeltery/casting/metal/${item.material}/ingot_sand_cast`)
+	
+		//Nugget Casing
+		 global.casingTable(event, 'tconstruct:casts/multi_use/nugget', false, `#forge:nuggets/${item.material}`, `forge:molten_${item.material}`, 10, 10, `tconstruct:smeltery/casting/metal/${item.material}/nugget_gold_cast`)
+		 global.casingTable(event, 'tconstruct:casts/single_use/nugget', true, `#forge:nuggets/${item.material}`, `forge:molten_${item.material}`, 10, 10, `tconstruct:smeltery/casting/metal/${item.material}/nugget_sand_cast`)
+	
+		//Block Casing
+		global.casingBasin(event, `#forge:storage_blocks/${item.material}`, `forge:molten_${item.material}`, 810, 180, `tconstruct:smeltery/casting/metal/${item.material}/block`)
 	}
 
-
-
-
+    if (item.type == "base_metal") {
+		//temp recipe for elements
+		event.shaped(`#forge:ingots/${item.material}`, [
+			'III',
+			'III',
+			'III'
+		  ], {
+			I: `chemlib:${item.material}`,
+		  })
+		if (item.raw_ore) {
+		//Raw Blocks
+		event.shapeless(`9x #forge:raw_materials/${item.material}`, [`#forge:storage_blocks/raw_${item.material}`]).id(`kubejs:raw_${item.material}_unpacking`)
+		event.shaped(`#forge:storage_blocks/raw_${item.material}`, [
+			'III',
+			'III',
+			'III'
+		  ], {
+			I: `#forge:raw_materials/${item.material}`,
+		  }).id(`kubejs:raw_${item.material}_packing`)
+		}
+	}
+})
 
 	
 });

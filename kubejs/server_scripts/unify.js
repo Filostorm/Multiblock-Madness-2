@@ -41,6 +41,10 @@ var removeByName = [
 	'quark:tweaks/crafting/utility/bent/paper',
 	'mekanism:paper',
 	'minecraft:sticky_piston',
+	'beyond_earth:desh_plate',
+	'allomancy:duralumin_ingot_from_alloying',
+	'allomancy:nicrosil_ingot_from_alloying',
+	'allomancy:bendalloy_ingot_from_alloying',
 ]
 
 onEvent('recipes', event => {
@@ -54,20 +58,12 @@ onEvent('recipes', event => {
 		event.remove({output: item})
 	})
 
-	event.shapeless('3x minecraft:paper', ['minecraft:sugar_cane','minecraft:sugar_cane','minecraft:sugar_cane']).id('minecraft:paper')
 })
 
 onEvent('tags.items', event => {
 	// Removes all tags from this entry
 	global.removeAndHide.forEach((item) => {
+		console.log(item);
 		event.removeAllTagsFrom(item)
 	})
 })
-/*
-var addItemsJEI = ['thermal:ruby', 'thermal:ruby_dust', 'thermal:ruby_block', 'thermal:ruby_ore', 'thermal:deepslate_ruby_ore']
-
-onEvent('jei.add.items', event => {
-	addItemsJEI.forEach((item) => {
-	event.add(Item.of(item))
-	})
-  })*/

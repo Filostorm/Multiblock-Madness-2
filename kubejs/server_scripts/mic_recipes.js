@@ -45,13 +45,12 @@ onEvent('tags.items', event => {
 
 onEvent('recipes', event => {
 
-	//Nugget Casing
+	//Slag Casing
 	global.casingTable(event, 'tconstruct:casts/multi_use/gem', false, 'thermal:slag', 'forge:molten_slag', 250, 40, 'tconstruct:smeltery/casting/metal/slag/gem_gold_cast')
 	global.casingTable(event, 'tconstruct:casts/single_use/gem', true, 'thermal:slag', 'forge:molten_slag', 250, 40, 'tconstruct:smeltery/casting/metal/slag/gem_sand_cast')
   
 	//Block Casing
 	global.casingBasin(event, 'thermal:slag_block', 'forge:molten_slag', 1000, 120, 'tconstruct:smeltery/casting/metal/slag/block')
-
 
   	//Sheetmetal Cast
 	global.casingBasinCast(event, 'forge:sheetmetals', true, 'kubejs:sheetmetal_cast', 'forge:molten_steel', 180, 200, 'tconstruct:smeltery/casting/sheetmetal_cast')
@@ -65,17 +64,6 @@ event.shaped('3x solarflux:mirror', [
 B: '#forge:glass/colorless',
 C: 'thermal:silver_plate'
   }).id("solarflux:mirror")
-
-// [| improvised_manaweaver_wand |] //
-event.remove({id: 'mna:improvised_manaweaver_wand'})
-event.shaped(Item.of('mna:improvised_manaweaver_wand', '{Damage:0}'), [
-	'  B',
-	' C ',
-	'C  '
-  ], {
-B: '#mna:improvised_manaweave_wand_caps',
-C: '#forge:rods/wooden'
-  }).id("kubejs:improvised_manaweaver_wand")
 
 
 //Chests
@@ -153,11 +141,14 @@ event.shaped('3x kubejs:wood_scaffolding', [
 		F: 'mna:basic_table'
 	  }).id("summoningrituals:altar")
 
-//Sticks
+// Sticks
 event.shaped('16x minecraft:stick', [
 	'L',
 	'L'
   ], {
 	L: '#minecraft:logs',
   }).id("kubejs:sticks_from_logs")
+
+  // Paper
+	event.shapeless('3x minecraft:paper', ['minecraft:sugar_cane','minecraft:sugar_cane','minecraft:sugar_cane']).id('minecraft:paper')
 });

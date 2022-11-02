@@ -23,7 +23,7 @@ onEvent('jei.hide.items', event => {
 	})
 
 	event.hide(Item.of('ae2:facade').ignoreNBT())
-})
+});
 
 onEvent('jei.add.items', event => {
 	var addItems = [
@@ -38,12 +38,21 @@ onEvent('jei.add.items', event => {
 		'thermal:sapphire_dust',
 		'thermal:sapphire_gear',
 		'minecraft:structure_block',
+		'feruchemy:metal_mind'
 	]
 
 	addItems.forEach((item) => {
 		event.add(Item.of(item))
 	})
-})
+});
+onEvent('item.tooltip', tooltip => {
+  // Neat utility to display NBT in the tooltip
+  tooltip.addAdvanced(Ingredient.all, (item, advanced, text) => {
+    if (tooltip.alt && item.nbt) {
+      text.add(Text.of('NBT: ').append(Text.prettyPrintNbt(item.nbt)))
+    }
+  })
+});
 /*
 onEvent('jei.remove.categories', event => {
 	console.log(event.getCategoryIds()) //log a list of all category ids to logs/kubejs/client.txt

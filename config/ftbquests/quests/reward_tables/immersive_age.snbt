@@ -1,0 +1,14 @@
+{
+	id: "6CCF47ADABFB5F3E"
+	order_index: 6
+	title: "Immersive Age"
+	loot_size: 1
+	rewards: [
+		{ item: "mekanism:ingot_steel" }
+		{ item: "kubejs:steel_plate" }
+		{ item: "minecraft:copper_ingot" }
+		{ item: "createaddition:copper_wire" }
+		{ item: "minecraft:iron_ingot" }
+		{ item: "thermal:iron_plate" }
+	]
+}

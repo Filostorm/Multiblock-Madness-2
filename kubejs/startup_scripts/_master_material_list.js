@@ -11,7 +11,9 @@ global.newMaterialParts = [
       'fluid': null,
       'fluid_id': 'tconstruct:molten_iron',
       'durability': 128,
-      'ore': true
+      'ore': true,
+      'allomancy': 'Iron allows you to Pull on metals. For items and other small entities, this means pulling them toward you. For blocks and large metallic entities, this means you move toward them',
+      'feruchemy': 'Weight--Slow + Resist or Feather Fall'
     },
     {
       'material': 'gold',
@@ -22,7 +24,9 @@ global.newMaterialParts = [
       'blockParts': ['cog_block'],
       'fluid': null,
       'fluid_id': 'tconstruct:molten_gold',
-      'ore': true
+      'ore': true,
+      'allomancy': 'Gold lets you see into your "past" by showing you the location you most recently died in this dimension',
+      'feruchemy': 'Health--Regeneration/Instant Health or Health Drains/s'
     },
     {
       'material': 'copper',
@@ -34,7 +38,9 @@ global.newMaterialParts = [
       'fluid': null,
       'fluid_id': 'tconstruct:molten_copper',
       'durability': 128,
-      'ore': true
+      'ore': true,
+      'allomancy': 'Copper hides your Allomancy from detection. When you are burning copper, yourself and other allomancers nearby are cloaked from the senses of a Bronze burner. However, your own ability to use Bronze is nullified when burning Copper',
+      'feruchemy': 'Memories--Stores Experience or Retrieved Stored Experience'
     },
     {
       'material': 'lead',
@@ -82,7 +88,9 @@ global.newMaterialParts = [
       'fluid': null,
       'fluid_id': 'tconstruct:molten_tin',
       'durability': 128,
-      'ore': true
+      'ore': true,
+      'allomancy': 'Tin gives you Night Vision, and allows you to see which direction sounds come from using an indicator particle. This particle is also colored according to the hostility of the sound source. Friendly mobs are green, hostile mobs are red',
+      'feruchemy': 'Sight--Night Vision or Blindness'
     },
     {
       'material': 'zinc',
@@ -93,7 +101,9 @@ global.newMaterialParts = [
       'blockParts': [],
       'fluid': null,
       'fluid_id': 'tconstruct:molten_zinc',
-      'ore': true
+      'ore': true,
+      'allomancy': 'Zinc allows you to Riot the emotions of mobs, making them hostile. This means they will attack anything nearby. Even farm animals can be a threat',
+      'feruchemy': 'Mental Speed--Earn More/Less Experience orbs when Tapping/Storing respectively'
     },
     
     /////////////// Tier 2 Metals /////////////////////////////
@@ -116,7 +126,9 @@ global.newMaterialParts = [
       'itemParts': ['plate', 'dense_plate', 'gear', 'rod'],
       'blockParts': [],
       'fluid': null,
-      'ore': true
+      'ore': true,
+      'allomancy': 'Aluminum is a purifying metal - it removes all metals from your current stock. This may seem useless, but it also removes all potion effects - not a bad trade to remove some Wither or Poison before it kills you',
+      'feruchemy': 'Aluminum and FID: Storing in a metalmind "Keys" it to you, so that only you can tap the power stored within. But if you Store Aluminum first, the metalmind remains "unkeyed", allowing any Feruchemist to Tap is Resouces (good for Co-ops!) (Note this makes the metalmind unable to be keyed, even if all charges are removed)'
     },
     
     
@@ -198,7 +210,9 @@ global.newMaterialParts = [
       'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire', 'dust'],
       'blockParts': [],
       'fluid': 'thick',
-      'ore': true
+      'ore': true,
+      'allomancy': 'Chromium removes all metals from the stock of players you click on, while also removing all potion effects from them',
+      'feruchemy': 'Luck--Good or Bad Luck'
     },
     {
       'material': 'cadmium',
@@ -208,7 +222,9 @@ global.newMaterialParts = [
       'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire', 'dust'],
       'blockParts': [],
       'fluid': 'thick',
-      'ore': true
+      'ore': true,
+      'allomancy': 'Cadmium slows down the mobs in the area around you',
+      'feruchemy': 'Breath--Respiration/Water Breathing or Air Bar when not swimming'
     },
     {
       'material': 'palladium',
@@ -316,7 +332,9 @@ global.newMaterialParts = [
       'amount': 4,
       'dust_input': ['3x #forge:dusts/copper','#forge:dusts/tin'],
       'ingot_input': ['3x #forge:ingots/copper','#forge:ingots/tin'],
-      'tinkers_input': [{tag: 'forge:molten_copper',amount: 270},{tag: 'forge:molten_tin',amount: 90}]
+      'tinkers_input': [{tag: 'forge:molten_copper',amount: 270},{tag: 'forge:molten_tin',amount: 90}],
+      'allomancy': 'Bronze allows you to detect the Allomancy of other players, in much the same way Iron or Steel detects metal or Tin indicates sounds',
+      'feruchemy': 'Wakefulness--Reset Phantom Timer/Switch Day to night or Night to Day or Spawn Phantoms within ~30 of storage (Must store the whole time)'
     },
     {
       'material': 'constantan',
@@ -346,7 +364,9 @@ global.newMaterialParts = [
       'amount': 2,
       'dust_input': ['#forge:dusts/gold','#forge:dusts/silver'],
       'ingot_input': ['#forge:ingots/gold','#forge:ingots/silver'],
-      'tinkers_input': [{tag: 'forge:molten_gold',amount: 90},{tag: 'forge:molten_silver',amount: 90}]
+      'tinkers_input': [{tag: 'forge:molten_gold',amount: 90},{tag: 'forge:molten_silver',amount: 90}],
+      'allomancy': 'Electrum lets you see your "future", showing you the location of your current spawn point',
+      'feruchemy': 'Determination--Gain bonus Hearts or STOP Regenerating'
     },
     {
       'material': 'invar',
@@ -376,7 +396,9 @@ global.newMaterialParts = [
       'amount': 3,
       'dust_input': ['2x #forge:dusts/copper','#forge:dusts/zinc'],
       'ingot_input': ['2x #forge:ingots/copper','#forge:ingots/zinc'],
-      'tinkers_input': [{tag: 'forge:molten_copper',amount: 180},{tag: 'forge:molten_zinc',amount: 90}]
+      'tinkers_input': [{tag: 'forge:molten_copper',amount: 180},{tag: 'forge:molten_zinc',amount: 90}],
+      'allomancy': 'Brass allows you to Soothe the emotions of mobs, making them passive, even fearful. Creepers are your buddies!',
+      'feruchemy': 'Warmth--Melt Snow + Ice/Makes all attacks have Fire Aspect or Fire Resistance'
     },
     {
       'material': 'red_alloy',
@@ -404,7 +426,9 @@ global.newMaterialParts = [
       'amount': 4,
       'dust_input': ['2x #forge:dusts/tin','#forge:dusts/silver','#forge:dusts/lead'],
       'ingot_input': ['2x #forge:ingots/tin','#forge:ingots/silver','#forge:ingots/lead'],
-      'tinkers_input': [{tag: 'forge:molten_tin',amount: 180},{tag: 'forge:molten_silver',amount: 90},{tag: 'forge:molten_lead',amount: 90}]
+      'tinkers_input': [{tag: 'forge:molten_tin',amount: 180},{tag: 'forge:molten_silver',amount: 90},{tag: 'forge:molten_lead',amount: 90}],
+      'allomancy': 'Pewter grants increased speed, jump height, damage, and damage resistance to the player. Be careful, though - Any damage incurred while burning pewter is remembered, and if you stop burning it at the wrong time you could end up being killed by all the built up damage.',
+      'feruchemy': 'Strength--Haste/Strength or Weakness/Mining Fatigue'
     },
     
     
@@ -412,14 +436,20 @@ global.newMaterialParts = [
     {
       'material': 'steel',
       'color': 0xb5b3b3,
+      'type': 'alloy',
+      'tier': 2,
       'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'hammer'],
       'blockParts': [],
       'fluid': null,
-      'durability': 512
+      'durability': 512,
+      'allomancy': 'Steel allows you to Push on metals. This means moving metal items away from you, or pushing yourself off of metal blocks. This can be used as a sort of rudimentary flight, though it is more falling with style than anything else. Steel also allows you to use the Coin Bag item. If you have gold nuggets in your inventory and are burning steel, you can use this as a ranged weapon similar to the old Beta-edition Bow. Iron nuggets can also be used, causing more damage but far less accurately',
+      'feruchemy': 'Speed--Speed Boost or Slowness'
     },
     {
       'material': 'fluix_steel',
       'color': 0x792be0,
+      'type': 'alloy',
+      'tier': 2,
       'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire'],
       'blockParts': ['storage_block'],
       'fluid': 'thick'
@@ -427,6 +457,8 @@ global.newMaterialParts = [
     {
       'material': 'lumium',
       'color': 0xffd894,
+      'type': 'alloy',
+      'tier': 2,
       'itemParts': ['dense_plate', 'rod', 'wire'],
       'blockParts': [],
       'fluid': null
@@ -434,6 +466,8 @@ global.newMaterialParts = [
     {
       'material': 'manasteel',
       'color': 0x69a7ff,
+      'type': 'alloy',
+      'tier': 2,
       'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire'],
       'blockParts': [],
       'fluid': 'thick'
@@ -441,6 +475,8 @@ global.newMaterialParts = [
     {
       'material': 'arcane_gold',
       'color': 0xe8a02a,
+      'type': 'alloy',
+      'tier': 2,
       'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire'],
       'blockParts': [],
       'fluid': 'thick'
@@ -448,6 +484,8 @@ global.newMaterialParts = [
     {
       'material': 'vinteum',
       'color': 0x9be3fa,
+      'type': 'alloy',
+      'tier': 2,
       'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire'],
       'blockParts': ['storage_block'],
       'fluid': 'thick'
@@ -464,7 +502,9 @@ global.newMaterialParts = [
       'amount': 4,
       'dust_input': ['3x #forge:dusts/aluminum','#forge:dusts/copper'],
       'ingot_input': ['3x #forge:ingots/aluminum','#forge:ingots/copper'],
-      'tinkers_input': [{tag: 'forge:molten_aluminum',amount: 270},{tag: 'forge:molten_copper',amount: 90}]
+      'tinkers_input': [{tag: 'forge:molten_aluminum',amount: 270},{tag: 'forge:molten_copper',amount: 90}],
+      'allomancy': 'Duralumin enhances whatever other metal you are using. This may mean pushing harder with steel, speeding things up even more with Bendalloy, or even teleporting to special locations with Gold and Electrum. If this metal burns out (which it does quickly!) or is extinguished, it empties all other burning metals of their stock.',
+      'feruchemy': 'Connection--Hero of the Village or Bad Omen'
     },
     {
       'material': 'nicrosil',
@@ -478,7 +518,9 @@ global.newMaterialParts = [
       'amount': 4,
       'dust_input': ['3x #forge:dusts/chromium','#forge:dusts/iron'],
       'ingot_input': ['3x #forge:ingots/chromium','#forge:ingots/iron'],
-      'tinkers_input': [{tag: 'forge:molten_chromium',amount: 270},{tag: 'forge:molten_iron',amount: 90}]
+      'tinkers_input': [{tag: 'forge:molten_chromium',amount: 270},{tag: 'forge:molten_iron',amount: 90}],
+      'allomancy': 'Nicrosil enhances whatever metal the player you left click on is burning. When you stop enhancing them, they will lose their stock of the currently burning metal.',
+      'feruchemy': 'Pure Power--If you Store here first, any charges gained by Storing other metals gets stored here, albeit at a reduced rate. But if you Tap here first, charges will be consumed here before they are consumed by other metals.'
     },
     {
       'material': 'bendalloy',
@@ -492,7 +534,9 @@ global.newMaterialParts = [
       'amount': 3,
       'dust_input': ['2x #forge:dusts/cadmium','#forge:dusts/lead'],
       'ingot_input': ['2x #forge:ingots/cadmium','#forge:ingots/lead'],
-      'tinkers_input': [{tag: 'forge:molten_cadmium',amount: 180},{tag: 'forge:molten_lead',amount: 90}]
+      'tinkers_input': [{tag: 'forge:molten_cadmium',amount: 180},{tag: 'forge:molten_lead',amount: 90}],
+      'allomancy': 'Bendalloy speeds up everything in a bubble around you. Furnaces, crops, and mobs all go faster!',
+      'feruchemy': 'Nutrition--Gives Saturation(Restores hunger bar) or Drains hunger bar.'
     },
     
     /////////////// Tier 3 Alloys /////////////////////////////

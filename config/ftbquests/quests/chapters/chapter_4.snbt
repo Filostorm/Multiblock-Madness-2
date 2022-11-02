@@ -115,7 +115,7 @@
 			}]
 		}
 		{
-			x: 8.0d
+			x: 7.0d
 			y: 9.0d
 			id: "02E4BADB1F8BEB33"
 			tasks: [{
@@ -125,13 +125,25 @@
 			}]
 		}
 		{
-			x: 7.5d
-			y: 4.0d
+			icon: "immersiveengineering:fermenter"
+			x: 7.0d
+			y: 4.5d
+			repeatable: true
 			id: "6AE6AC04DFC1A75A"
 			tasks: [{
-				id: "63C557A678509630"
-				type: "item"
-				item: "immersiveengineering:fermenter"
+				id: "2A00E372D3F5EB81"
+				type: "questsadditions:structure"
+				name: "Fermenter"
+				hasCustomPicture: false
+				layer: true
+				ignoreState: false
+				rightclick: false
+			}]
+			rewards: [{
+				id: "6C0E3FB474FAA95C"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 7840564287515615038L
 			}]
 		}
 	]

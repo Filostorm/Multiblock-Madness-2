@@ -78,6 +78,7 @@
   "item.tconstruct.round_plate_cast": "Round Plate Brass Cast",
   "item.tconstruct.large_plate_cast": "Large Plate Brass Cast",
   "item.tconstruct.tool_handle_cast": "Tool Handle Brass Cast",
-  "item.tconstruct.tough_handle_cast": "Tough Handle Brass Cast"
+  "item.tconstruct.tough_handle_cast": "Tough Handle Brass Cast",
 
+  "curios.identifier.metal_mind": "Metalmind Slot"
 }

@@ -17,8 +17,10 @@ onEvent('tags.items', event => {
 */
 
 onEvent('recipes', event => {
-  
 
+	global.newMaterialParts.forEach((item) => {
+		console.log(Item.of(`#forge:ingots/${item.material}`) + `: tier ${item.tier} ${item.type}`);
+	})
 
 	global.newMaterialParts.forEach((item) => {
 

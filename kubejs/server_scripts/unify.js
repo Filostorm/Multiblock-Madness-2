@@ -63,7 +63,6 @@ onEvent('recipes', event => {
 onEvent('tags.items', event => {
 	// Removes all tags from this entry
 	global.removeAndHide.forEach((item) => {
-		console.log(item);
 		event.removeAllTagsFrom(item)
 	})
 })

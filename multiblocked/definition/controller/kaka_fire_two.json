@@ -1,0 +1,158 @@
+{
+  "version": 1,
+  "location": "kaka:fire_two",
+  "traits": {},
+  "properties": {
+    "rotationState": "NON_Y_AXIS",
+    "showInJei": true,
+    "isOpaque": false,
+    "hasDynamicShape": true,
+    "hasCollision": true,
+    "destroyTime": 1.5,
+    "explosionResistance": 6.0,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "friction": 0.6,
+    "harvestLevel": 0,
+    "stackSize": 64,
+    "tabGroup": "multiblocked.all"
+  },
+  "status": {
+    "unformed": {
+      "renderer": {
+        "modelLocation": "multiblocked:fire_two",
+        "type": "imodel",
+        "postRenderer": false
+      }
+    },
+    "idle": {
+      "renderer": {
+        "modelName": "fire_furnace",
+        "type": "geo",
+        "postRenderer": false
+      },
+      "shape": [
+        [
+          0.0,
+          0.0,
+          0.7,
+          1.0,
+          1.0,
+          1.0
+        ]
+      ],
+      "parent": "unformed"
+    },
+    "working": {
+      "parent": "idle"
+    },
+    "suspend": {
+      "parent": "working"
+    }
+  },
+  "recipeMap": "baka",
+  "catalyst": "{Count:1b,id:\"minecraft:redstone\"}",
+  "consumeCatalyst": true,
+  "noNeedController": true,
+  "basePattern": {
+    "structureDir": [
+      "FRONT",
+      "UP",
+      "LEFT"
+    ],
+    "pattern": [
+      [
+        "ABA",
+        "ABA",
+        "ABA"
+      ],
+      [
+        "BBB",
+        "BC@",
+        "B B"
+      ],
+      [
+        "ABA",
+        "ABA",
+        "ABA"
+      ]
+    ],
+    "aisleRepetitions": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "predicates": {
+      "A": {
+        "blocks": [
+          {
+            "id": "minecraft:nether_bricks"
+          }
+        ],
+        "type": "blocks",
+        "disableRenderFormed": true,
+        "io": "null"
+      },
+      "controller": {
+        "location": "kaka:fire_two",
+        "type": "component"
+      },
+      "B": {
+        "blocks": [
+          {
+            "id": "minecraft:obsidian"
+          }
+        ],
+        "type": "blocks",
+        "disableRenderFormed": true,
+        "io": "null"
+      },
+      "lava": {
+        "fluids": [
+          {
+            "id": "minecraft:lava"
+          }
+        ],
+        "type": "fluids"
+      },
+      "iron_bar": {
+        "blocks": [
+          {
+            "id": "minecraft:iron_bars"
+          }
+        ],
+        "type": "blocks"
+      },
+      "any": {
+        "type": "any"
+      }
+    },
+    "symbolMap": {
+      "@": [
+        "controller",
+        "iron_bar"
+      ],
+      " ": [
+        "any"
+      ],
+      "A": [
+        "A"
+      ],
+      "B": [
+        "B"
+      ],
+      "C": [
+        "lava"
+      ]
+    }
+  }
+}

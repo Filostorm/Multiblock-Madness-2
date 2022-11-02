@@ -1,0 +1,19 @@
+{
+	id: "4A8A2C0AE01EDDB8"
+	group: "3C8730B42C1725BE"
+	order_index: 4
+	filename: "chapter_5"
+	title: "Chapter 5"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [{
+		x: -4.0d
+		y: 0.5d
+		id: "61B47177E307B079"
+		tasks: [{
+			id: "40A75A68DDC671EB"
+			type: "item"
+			item: "beyond_earth:nasa_workbench"
+		}]
+	}]
+}

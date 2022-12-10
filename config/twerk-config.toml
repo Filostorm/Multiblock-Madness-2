@@ -20,9 +20,4 @@ sprintGrowChance = 0.0
 #The chance of growth effect being applied from any source
 #Range: 0.0 ~ 1.0
 crouchGrowChance = 0.5
-#Allow the player to Hold crouch and things grow per x ticks
-allowHoldCrouchGrowth = false
-#the number of ticks between growths whilst holding crouch
-#Range: 0 ~ 1000
-holdCrouchGrowthAfterTicks = 5
 

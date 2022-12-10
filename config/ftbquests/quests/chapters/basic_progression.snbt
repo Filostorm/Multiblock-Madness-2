@@ -8,65 +8,9 @@
 	default_hide_dependency_lines: false
 	quests: [
 		{
-			x: -2.0d
-			y: -0.5d
-			dependencies: ["32A7F024B311E7C8"]
-			id: "37B7F433FB6802A7"
-			tasks: [
-				{
-					id: "3B12BC0D86C3895A"
-					type: "item"
-					item: "create:andesite_casing"
-				}
-				{
-					id: "49BEC357F8354890"
-					type: "item"
-					item: "create:copper_casing"
-				}
-			]
-		}
-		{
-			x: -2.0d
-			y: 1.0d
-			dependency_requirement: "one_completed"
-			id: "32A7F024B311E7C8"
-			tasks: [{
-				id: "16274015E76AA307"
-				type: "item"
-				item: "create:andesite_alloy"
-			}]
-		}
-		{
-			x: -0.5d
-			y: -0.5d
-			dependencies: [
-				"645E148000874231"
-				"37B7F433FB6802A7"
-			]
-			id: "094EC6941AB8E520"
-			tasks: [{
-				id: "1849CBE0139187EF"
-				type: "item"
-				item: "create:brass_casing"
-			}]
-		}
-		{
-			x: -0.5d
-			y: 1.0d
-			id: "645E148000874231"
-			tasks: [{
-				id: "679B4100273EBE33"
-				type: "item"
-				item: "create:brass_ingot"
-			}]
-		}
-		{
 			x: 1.0d
 			y: -0.5d
-			dependencies: [
-				"26F06D1F05206831"
-				"094EC6941AB8E520"
-			]
+			dependencies: ["26F06D1F05206831"]
 			id: "2B324121F80CA756"
 			tasks: [{
 				id: "22561644486BE7F9"

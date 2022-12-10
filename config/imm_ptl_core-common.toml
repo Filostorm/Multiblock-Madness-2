@@ -1,0 +1,44 @@
+#Check the wiki at https://qouteall.fun/immptl/wiki/Config-Options for more information
+enableWarning = true
+enableMirrowCreation = true
+#Range: > 0
+maxPortalLayer = 5
+sharedBlockMeshBufferOptimization = true
+lagAttackProof = true
+#Range: > 0
+portalRenderLimit = 200
+#Range: > 0
+indirectLoadingRadiusCap = 8
+enableCrossPortalSound = true
+enableModelDataFix = true
+compatibilityRenderMode = false
+doCheckGlError = false
+#Range: > 0
+portalSearchingRange = 128
+renderYourselfInPortal = true
+serverSideNormalChunkLoading = true
+teleportationDebug = false
+correctCrossPortalEntityRendering = true
+looseMovementCheck = false
+pureMirror = false
+enableAlternateDimensions = true
+reducedPortalRendering = false
+visibilityPrediction = true
+netherPortalOverlay = false
+#Range: > -2147483648
+scaleLimit = 30
+easeCreativePermission = true
+easeCommandStickPermission = false
+enableDatapackPortalGen = true
+enableCrossPortalView = true
+enableClippingMechanism = true
+enableDepthClampForPortalRendering = false
+lightVanillaNetherPortalWhenCrouching = false
+enableNetherPortalEffect = true
+enableClientPerformanceAdjustment = true
+enableServerPerformanceAdjustment = true
+#Allowed Values: normal, vanilla, adaptive, disabled
+netherPortalMode = "normal"
+#Allowed Values: normal, toObsidianPlatform, scaledView, vanilla
+endPortalMode = "normal"
+

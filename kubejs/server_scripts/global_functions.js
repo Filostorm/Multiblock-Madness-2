@@ -70,6 +70,27 @@ global.tinkersOreMelting = (event, outputFluid, amount, byproductFluid, byproduc
 	  
 }).id(ID)}
 
+//////// ORE MELTING /////////
+global.tinkersMelting = (event, outputFluid, amount, byproductFluid, byproductAmount, inputItem, temperature, time, ID) => {
+	event.custom({
+		type: 'tconstruct:melting',
+		ingredient: {
+			item: inputItem
+		},
+		result: {
+		  fluid: outputFluid, 
+		  amount: amount //180
+		},
+		temperature: temperature, //700
+		time: time, //142
+		byproducts: [
+		  {
+			fluid: byproductFluid,
+			amount: byproductAmount
+		  }
+		]
+
+}).id(ID)}
 //////// ALLOYING /////////
 global.tinkersAlloying = (event, outputFluid, amount, inputFluids, temperature, ID) => {
 	event.custom({
@@ -128,7 +149,8 @@ global.tinkersAlloying = (event, outputFluid, amount, inputFluids, temperature, 
 		type: 'thermal:chiller',
 		ingredients: [
 		  {
-			fluid_tag: fluid,
+			fluid: fluid,
+			//fluid_tag: fluid,
 			amount: fluidAmount
 		  },
 		  {
@@ -189,3 +211,117 @@ global.tinkersAlloying = (event, outputFluid, amount, inputFluids, temperature, 
 				pedestalItems: extraItems
 			  }).id(ID)}
   ///////////////////////////////////////////////////////////
+
+
+///////////////// COMPRESSING ///////////////////////
+
+global.pressureChamber = (event, output, input, pressure, ID) => {
+	event.custom({
+		type: 'pneumaticcraft:pressure_chamber',
+		inputs: input,
+		pressure: pressure,
+		results: output,
+	  }).id(ID)}
+	  
+///////////////// EXPLODING ///////////////////////
+global.explosionCrafting = (event, output, input, loss_rate, ID) => {
+	event.custom({
+		type: 'pneumaticcraft:explosion_crafting',
+		input: Ingredient.of(input).toJson(),
+		results: [Item.of(output).toResultJson()],
+		loss_rate: loss_rate,
+	  }).id(ID)}
+///////////////////////////////////////////////////////////
+
+
+///////////////// NATURAL ALTAR ///////////////////////
+	  global.naturesauraAltar = (event, output, input, aura_type, aura, time, ID) => {
+		  event.custom({
+			  type: 'naturesaura:altar',
+			  input: {
+				  item: input
+			  },
+			  output: {
+				  item: output
+			  },
+			  aura_type: aura_type, //naturesaura:nether
+			  aura: aura, //15000,
+			  time: time //80
+			}).id(ID)}
+///////////////////////////////////////////////////////////
+
+
+///////////////// MIXER ///////////////////////
+global.ieMixer = (event, fluidOutput, fluidInput, itemInput, energy, ID) => {
+	event.custom({
+		type: 'immersiveengineering:mixer',
+		inputs: [
+			itemInput.toJson()
+		],
+		result: fluidOutput.toJson(),
+		//fluid: fluidInput.toJson(),
+		fluid: fluidInput,
+		energy: energy
+	  }).id(ID)}
+///////////////////////////////////////////////////////////
+
+///////////////// SQUEEZER ///////////////////////
+global.ieSqueezer = (event, fluidOutput, itemInput, energy, ID) => {
+	event.custom({
+		type: 'immersiveengineering:squeezer',
+		input: itemInput.toJson(),
+		fluid: fluidOutput.toJson(),
+		energy: energy
+	  }).id(ID)}
+///////////////////////////////////////////////////////////
+
+
+///////////////// blueprint ///////////////////////
+global.ieBlueprint = (event, category, itemOutput, itemInput, ID) => {
+	event.custom({
+		type: 'immersiveengineering:blueprint',
+		inputs: itemInput, //[{"count":2,"base_ingredient":{"tag":"forge:plates/steel"}},{"tag":"forge:ingots/copper"}]
+		category: category, //"components",
+		result: itemOutput.toResultJson(),
+	  }).id(ID)}
+///////////////////////////////////////////////////////////
+
+
+
+///////////////// Generator Fuel ///////////////////////
+global.ieGeneratorFuel = (event, fluidTag, burnTime) => {
+	event.custom({
+		type: 'immersiveengineering:generator_fuel',
+		fluidTag: fluidTag, //forge:biodiesel
+		burnTime: burnTime //250
+	  })}
+///////////////////////////////////////////////////////////
+
+
+///////////////// pneumaticcraftThermoPlant ///////////////////////
+global.pneumaticcraftThermoPlant = (event, itemOutput, itemInput, fluidInput, temperature, pressure, speed, air_use_multiplier, exothermic, ID) => {
+	event.custom({
+		type: 'pneumaticcraft:thermo_plant',
+		item_input: itemInput.toJson(),
+		fluid_input: fluidInput,
+		item_output: itemOutput.toResultJson(),
+		temperature: {
+			"min_temp": temperature //773
+		  },
+		  "pressure": pressure, //7.5,
+		  "speed": speed, //0.1,
+		  "air_use_multiplier": air_use_multiplier, //10.0,
+		  "exothermic": exothermic //false
+	  }).id(ID)}
+///////////////////////////////////////////////////////////
+
+
+///////////////// Sifting ///////////////////////
+global.createSifting = (event, itemInput, itemOutput, processingTime, ID) => {
+	event.custom({
+		type: 'createsifter:sifting',
+		ingredients: itemInput,
+		results: itemOutput,
+		processingTime: processingTime
+	  }).id(ID)}
+///////////////////////////////////////////////////////////

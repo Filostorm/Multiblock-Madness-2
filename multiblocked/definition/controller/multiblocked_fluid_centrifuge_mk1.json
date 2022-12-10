@@ -1,0 +1,209 @@
+{
+  "version": 1,
+  "location": "multiblocked:fluid_centrifuge_mk1",
+  "traits": {},
+  "properties": {
+    "rotationState": "ALL",
+    "showInJei": true,
+    "isOpaque": true,
+    "hasDynamicShape": false,
+    "hasCollision": true,
+    "destroyTime": 1.5,
+    "explosionResistance": 6.0,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "friction": 0.6,
+    "harvestLevel": 0,
+    "stackSize": 64,
+    "tabGroup": "multiblocked.all"
+  },
+  "status": {
+    "unformed": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/casing",
+        "frontTexture": "multiblocked:overlay/centrifuge",
+        "formedAsController": true,
+        "type": "gregtech",
+        "postRenderer": false
+      }
+    },
+    "idle": {
+      "parent": "unformed"
+    },
+    "working": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/casing",
+        "frontTexture": "multiblocked:overlay/centrifuge_active",
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "lightEmissive": 10,
+      "parent": "idle"
+    },
+    "suspend": {
+      "parent": "working"
+    }
+  },
+  "recipeMap": "fluid_centrifuge_mk1",
+  "basePattern": {
+    "structureDir": [
+      "BACK",
+      "UP",
+      "RIGHT"
+    ],
+    "pattern": [
+      [
+        "  A  ",
+        " ABA ",
+        "  A  "
+      ],
+      [
+        " AAA ",
+        "A C A",
+        " AAA "
+      ],
+      [
+        "@AEAA",
+        "BCFCB",
+        "AAEAA"
+      ],
+      [
+        " AAA ",
+        "A C A",
+        " AAA "
+      ],
+      [
+        "  A  ",
+        " ABA ",
+        "  A  "
+      ]
+    ],
+    "aisleRepetitions": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "predicates": {
+      "A": {
+        "blocks": [
+          {
+            "id": "kubejs:invar_casing"
+          }
+        ],
+        "type": "blocks"
+      },
+      "controller": {
+        "location": "multiblocked:fluid_centrifuge_mk1",
+        "type": "component"
+      },
+      "B": {
+        "blocks": [
+          {
+            "id": "ae2:sky_stone_tank"
+          }
+        ],
+        "type": "blocks",
+        "io": "OUT"
+      },
+      "C": {
+        "blocks": [
+          {
+            "id": "thermal:obsidian_glass"
+          }
+        ],
+        "type": "blocks"
+      },
+      "E": {
+        "capability": "create_stress",
+        "type": "capability",
+        "minCount": 1,
+        "maxCount": 1,
+        "previewCount": 1,
+        "io": "IN"
+      },
+      "G": {
+        "blocks": [
+          {
+            "id": "pneumaticcraft:small_tank"
+          }
+        ],
+        "type": "blocks",
+        "io": "IN"
+      },
+      "H": {
+        "blocks": [
+          {
+            "id": "pneumaticcraft:medium_tank"
+          }
+        ],
+        "type": "blocks",
+        "io": "IN"
+      },
+      "I": {
+        "blocks": [
+          {
+            "id": "pneumaticcraft:large_tank"
+          }
+        ],
+        "type": "blocks",
+        "io": "IN"
+      },
+      "J": {
+        "blocks": [
+          {
+            "id": "pneumaticcraft:huge_tank"
+          }
+        ],
+        "type": "blocks",
+        "io": "IN"
+      },
+      "any": {
+        "type": "any"
+      }
+    },
+    "symbolMap": {
+      "@": [
+        "controller"
+      ],
+      " ": [
+        "any"
+      ],
+      "A": [
+        "A"
+      ],
+      "B": [
+        "B"
+      ],
+      "C": [
+        "C"
+      ],
+      "E": [
+        "E",
+        "any"
+      ],
+      "F": [
+        "G",
+        "H",
+        "I",
+        "J"
+      ]
+    }
+  }
+}

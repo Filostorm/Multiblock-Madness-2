@@ -13,7 +13,8 @@
 		{ item: "create:andesite_tunnel" }
 		{ item: "create:gearbox", weight: 2 }
 		{ item: "create:belt_connector", weight: 2 }
-		{ item: "create:encased_chain_drive", weight: 2 }
+		{ item: "create:encased_chain_drive", count: 2, weight: 2 }
 		{ item: "create:analog_lever", weight: 2 }
+		{ item: "create:adjustable_chain_gearshift" }
 	]
 }

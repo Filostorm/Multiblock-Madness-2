@@ -65,10 +65,10 @@ C: 'thermal:cured_rubber'
 
   
 	
-  //Basic Capacitor
+  // Precision Mechanism
   event.recipes.createSequencedAssembly([ // start the recipe
   'create:precision_mechanism', // have this item be an output
-  ], '#forge:plates/brass', [ // input.
+  ], '#forge:plates/gold', [ // input.
   event.recipes.createDeploying('create:incomplete_precision_mechanism', ['create:incomplete_precision_mechanism', 'create:andesite_alloy']),
   event.recipes.createDeploying('create:incomplete_precision_mechanism', ['create:incomplete_precision_mechanism', '#forge:gears/brass']),
   event.recipes.createDeploying('create:incomplete_precision_mechanism', ['create:incomplete_precision_mechanism', 'create:cogwheel']),
@@ -99,8 +99,13 @@ event.shaped('2x create:sail_frame', [
   B: 'immersiveengineering:stick_treated'
 }).id('kubejs:crafting/sail')
 
+event.remove({id: 'createaddition:compat/immersiveengineering/fabric_sail'})
+event.shapeless('2x create:white_sail', ['create:sail_frame', 'create:sail_frame', 'immersiveengineering:hemp_fabric'])
+
+
 //Treated Slabs for the Factory
 event.recipes.createCutting('2x immersiveengineering:slab_treated_wood_horizontal', 'immersiveengineering:treated_wood_horizontal').id('kubejs:cutting/treated_slabs')
+event.recipes.createCutting('2x immersiveengineering:stick_treated', '#forge:treated_wood_slab').id('kubejs:cutting/treated_sticks')
 
 
 // [| create:andesite_alloy |] //
@@ -114,17 +119,18 @@ event.shaped('create:andesite_alloy', [
   ], {
 	A: 'minecraft:iron_nugget',
 	B: '#forge:stone'
-  }).id("kubejs:andesite_alloy")
-  event.recipes.createMixing([`create:andesite_alloy`], ['#forge:stone', 'minecraft:iron_nugget']).id('kubejs:mixing/andesite_alloy')
+  }).id("mbm2:stone_alloy")
+  event.recipes.createMixing([`create:andesite_alloy`], ['#forge:stone', 'minecraft:iron_nugget']).id('mbm2:mixing/stone_alloy')
 
+  //Double Stone Alloy
 event.shaped('2x create:andesite_alloy', [
 	'AB',
 	'BA'
   ], {
 	A: 'minecraft:iron_nugget',
-	B: 'mna:decoration/arcane_stone',
-  }).id("kubejs:andesite_alloy_x2")
-  event.recipes.createMixing([`2x create:andesite_alloy`], ['mna:decoration/arcane_stone', 'minecraft:iron_nugget']).id(`kubejs:mixing/andesite_alloy_x2`)
+	B: 'elementalcraft:whiterock',
+  }).id("mbm2:stone_alloy_x2")
+  event.recipes.createMixing([`2x create:andesite_alloy`], ['elementalcraft:whiterock', 'minecraft:iron_nugget']).id(`mbm2:mixing/stone_alloy_x2`)
 
 
 /// Hose Pully w/o kelp
@@ -136,18 +142,17 @@ event.shaped('create:hose_pulley', [
 	B: 'create:copper_casing',
 	C: 'minecraft:chain',
 	D: 'kubejs:copper_mechanical_component'
-	  }).id(`kubejs:crafting/hose_pulley`)
+	  }).id(`mbm2:crafting/hose_pulley`)
 
 	  //Brass Upgrades
 	event.shapeless('2x create:brass_funnel', ['#forge:ingots/brass', 'create:electron_tube', 'create:andesite_funnel'])
 	event.shapeless('2x create:brass_tunnel', ['#forge:ingots/brass', '#forge:ingots/brass', 'create:electron_tube', 'create:andesite_tunnel'])
 
+	
+	//Brass Casing
 	event.remove({id: 'create:item_application/brass_casing_from_wood'})
 	event.remove({id: 'create:item_application/brass_casing_from_log'})
-	event.remove({id: 'create:item_application/brass_casing_from_wood_using_deployer'})
-	event.remove({id: 'create:item_application/brass_casing_from_log_using_deployer'})
-	
-	global.createApplying(event, 'create:brass_casing', 'forge:ingots/brass', 'forge:treated_wood', `kubejs:applying/brass_casing`)
+	global.createApplying(event, 'create:brass_casing', 'forge:ingots/brass', 'forge:treated_wood', `mbm2:applying/brass_casing`)
 	//event.recipes.createDeploying('create:brass_casing', ['#forge:treated_wood', '#forge:ingots/brass'])
 	
 	//Gib Saplings
@@ -158,7 +163,45 @@ event.shaped('create:hose_pulley', [
 		Item.of('hexerei:mahogany_sapling').withChance(0.01),
 		Item.of('hexerei:willow_sapling').withChance(0.01),
 		Item.of('forbidden_arcanus:growing_edelwood').withChance(0.01),
-		Item.of('malum:runewood_sapling').withChance(0.01)
-	  ], '#minecraft:leaves')
+		//Item.of('malum:runewood_sapling').withChance(0.01)
+	  ], '#minecraft:leaves').id(`mbm2:crushing/leaves_into_saplings`)
 
+	/// Blaze Burner
+	event.remove({id: 'create:crafting/kinetics/empty_blaze_burner'})
+	event.shaped('create:empty_blaze_burner', [
+		'RRR',
+		'R R',
+		'PNP'
+		  ], {
+		R: '#forge:rods/invar',
+		P: '#forge:plates/invar',
+		N: '#forge:netherrack'
+		  }).id(`kubejs:crafting/empty_blaze_burner`)
+
+	  //Spirit Compat
+	  event.recipes.createHaunting('spirit:soul_powder', 'minecraft:glowstone_dust').id('mbm2:huanting/soul_powder')
+	  event.recipes.createHaunting('spirit:soul_slate', 'minecraft:deepslate').id('mbm2:huanting/soul_slate')
+
+
+	/// Propeller
+	event.remove({id: 'create:crafting/kinetics/propeller'})
+	event.shaped('create:propeller', [
+	  ' A ',
+	  'ACA',
+	  ' A '
+		], {
+	  A: 'create:andesite_alloy',
+	  C: '#forge:gears/iron'
+		}).id(`kubejs:crafting/propeller`)
+
+	//Make some Hot Cream with a bonus chance
+	event.recipes.createMixing([Fluid.of('tconstruct:magma', 1000), Item.of('magma_cream').withChance(0.25)], ['magma_block']).heated().id(`mbm2:mixing/magma_from_block`)
+	event.recipes.createMixing([Fluid.of('tconstruct:magma', 250)], ['magma_cream']).heated().id(`mbm2:mixing/magma_from_ball`)
+
+	//Melt some Clay
+	event.recipes.createMixing([Fluid.of('tconstruct:molten_clay', 1000)], ['clay', Fluid.of('water', 1000)]).id(`mbm2:mixing/clay_from_block`)
+	event.recipes.createMixing([Fluid.of('tconstruct:molten_clay', 250)], ['clay_ball', Fluid.of('water', 250)]).id(`mbm2:mixing/clay_from_ball`)
+
+
+		
 });

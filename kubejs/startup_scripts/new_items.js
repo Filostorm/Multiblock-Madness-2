@@ -12,6 +12,11 @@ var basicItems = [
 	'source_tube',
 	'source_pearl',
 	'blazing_redstone',
+	'carbon_covered_iron',
+	'sandy_brick',
+	'unfired_coke_oven_brick',
+	'coke_oven_brick',
+	'lumite',
 ]
 
 global.transitionalItems = [
@@ -29,8 +34,7 @@ onEvent('item.registry', event => {
 	basicItems.forEach((item) => {
 		event.create(item)
 	})
-	
 	global.transitionalItems.forEach((item) => {
-		event.create(`incomplete_${item}`).texture('kubejs:item/package')
+		event.create(`incomplete_${item}`, 'create:sequenced_assembly').texture('kubejs:item/package')
 	})
   });

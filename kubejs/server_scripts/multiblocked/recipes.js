@@ -1,21 +1,67 @@
 onEvent('recipes', event => {
-	event.recipes.multiblocked.multiblock('baka')
-		.inputItem('minecraft:iron_ore')
-		.outputItem(Item.of('minecraft:enchanted_book').enchant('minecraft:efficiency', 5))
-		.duration(100)
+	// Sludge Sifter
+  event.shaped('multiblocked:sludge_sifter', [
+	'ABA',
+	'CDC',
+	'EFE'
+  ], {
+	A: 'create:cogwheel',
+	B: '#forge:string',
+	C: '#forge:glass/colorless',
+	D: 'create:copper_casing',
+	E: 'thermal:nickel_plate',
+	F: 'thermal:gold_gear'
+  }).id(`kubejs:multiblocked/sludge_sifter`)
 
-	event.recipes.multiblocked.multiblock('baka')
-		.inputItem('minecraft:raw_iron')
-		.outputItems('minecraft:iron_ingot', '3x minecraft:iron_nugget')
-		.duration(100)
+	// Sorter Mk1
+  event.shaped('multiblocked:sorter_mk1', [
+	'QWQ',
+	'RLR',
+	'QWQ'
+  ], {
+	W: '#forge:wires/zinc',
+	R: '#forge:rods/brass',
+	Q: 'create:polished_rose_quartz',
+	L: 'minecraft:redstone_lamp',
+  }).id(`kubejs:multiblocked/sorter_mk1`)
 
-	event.recipes.multiblocked.multiblock('baka')
-		.inputItem('minecraft:raw_gold')
-		.outputItems('minecraft:gold_ingot', '3x minecraft:gold_nugget')
-		.duration(100)
+	// Input Vault
+  event.shaped('multiblocked:create_item_input', [
+	'C',
+	'V',
+  ], {
+	C: '#forge:chests/wooden',
+	V: 'create:item_vault',
+  }).id(`kubejs:multiblocked/create_item_input`)
+  event.shapeless(`multiblocked:create_item_input`, ['multiblocked:create_item_output']).id(`kubejs:multiblocked/create_item_input_switch`)
 
-	event.recipes.multiblocked.multiblock('baka')
-		.inputItem('minecraft:raw_copper')
-		.outputItems('2x minecraft:copper_ingot', '3x #forge:nuggets/copper')
-		.duration(100)
+	// Output Vault
+  event.shaped('multiblocked:create_item_output', [
+	'V',
+	'C',
+  ], {
+	C: '#forge:chests/wooden',
+	V: 'create:item_vault',
+  }).id(`kubejs:multiblocked/create_item_output`)
+  event.shapeless(`multiblocked:create_item_output`, ['multiblocked:create_item_input']).id(`kubejs:multiblocked/create_item_output_switch`)
+
+// Create Output
+event.shaped('multiblocked:create_output', [
+	'C',
+	'G',
+  ], {
+	C: 'create:cogwheel',
+	G: 'create:gearbox',
+  }).id(`kubejs:multiblocked/create_output`)
+  event.shapeless(`multiblocked:create_output`, ['multiblocked:create_input']).id(`kubejs:multiblocked/create_output_switch`)
+// Create Input
+event.shaped('multiblocked:create_input', [
+  'G',
+  'C',
+], {
+  C: 'create:cogwheel',
+  G: 'create:gearbox',
+}).id(`kubejs:multiblocked/create_input`)
+event.shapeless(`multiblocked:create_input`, ['multiblocked:create_output']).id(`kubejs:multiblocked/create_input_switch`)
+
 })

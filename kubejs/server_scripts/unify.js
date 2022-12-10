@@ -45,6 +45,12 @@ var removeByName = [
 	'allomancy:duralumin_ingot_from_alloying',
 	'allomancy:nicrosil_ingot_from_alloying',
 	'allomancy:bendalloy_ingot_from_alloying',
+	'thermal:rockwool/white_rockwool_from_smelting',
+	'malum:magma_cream_from_sapballs',
+	'thermal:bottler_bucket',
+	'minecraft:cut_sandstone',
+	'immersiveengineering:crafting/stick_iron',
+	'minecraft:beacon',
 ]
 
 onEvent('recipes', event => {
@@ -65,4 +71,13 @@ onEvent('tags.items', event => {
 	global.removeAndHide.forEach((item) => {
 		event.removeAllTagsFrom(item)
 	})
+	event.add(`forge:blocks/bronze`, 'thermal:bronze_block')
+	event.add(`forge:blocks/steel`, 'immersiveengineering:storage_steel')
 })
+
+
+onEvent('tags.fluids', event => {
+	event.removeAll('minecraft:water')
+	event.add('minecraft:water', 'minecraft:water')
+})
+

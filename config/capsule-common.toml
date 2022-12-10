@@ -11,7 +11,7 @@
 	#Those structures nbt files can be placed in the folder defined at starterTemplatesPath below.
 	#Possible values : "all", "random", or "none".
 	#Default value: "random"
-	starterMode = "random"
+	starterMode = "none"
 	#Each structure in this folder will be given to the player as standard reusable capsule on game start.
 	#Empty the folder or the value to disable starter capsules.
 	#Default value: "config/capsule/starters"

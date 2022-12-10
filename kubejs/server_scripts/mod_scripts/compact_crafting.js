@@ -22,9 +22,9 @@ event.shaped('4x compactcrafting:base', [
 	'CDC',
 	'EEE'
   ], {
-B: 'minecraft:ender_pearl',
+B: 'minecraft:lightning_rod',
 C: 'minecraft:diamond',
-D: 'mna:decoration/arcane_stone_slab',
+D: 'ars_nouveau:arcane_stone',
 E: 'thermal:invar_plate'
   }).id("kubejs:base")
 

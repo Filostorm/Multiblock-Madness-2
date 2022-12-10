@@ -1,13 +1,33 @@
+
+var basicGens = [
+  'powah:furnator_basic', 
+  'powah:magmator_basic', 
+  'powah:thermo_generator_basic', 
+  'powah:solar_panel_basic'
+]
+
+onEvent('tags.items', event => {
+  basicGens.forEach(gen => {
+  	event.add('powah:generator/basic', gen)
+  });
+  
+	event.add(`forge:ingots`, `powah:steel_energized`)
+	event.add(`forge:ingots/energized_steel`, `powah:steel_energized`)
+	event.add(`forge:storage_blocks`, 'powah:energized_steel_block')
+	event.add(`forge:storage_blocks/energized_steel`, 'powah:energized_steel_block')
+})
+
 onEvent('recipes', event => {
-	/*
-  event.shaped('tconstruct:smeltery_controller', [
-	'AAA',
-	'ABA',
-	'AAA'
+	
+  event.remove({id: 'powah:crafting/capacitor_basic_tiny'})
+  event.shaped('2x powah:capacitor_basic_tiny', [
+	'  C',
+	' I ',
+	'C  '
   ], {
-	A: 'tconstruct:seared_brick',
-	B: '#forge:gears/steel'
-  })*/
+	C: 'powah:dielectric_paste',
+	I: '#forge:ingots/tin'
+  }).id(`mbd2:crafting/capacitor_basic_tiny`)
   
   
   
@@ -20,12 +40,12 @@ onEvent('recipes', event => {
   event.recipes.createDeploying('kubejs:incomplete_basic_capacitor', ['kubejs:incomplete_basic_capacitor', 'powah:dielectric_paste']),
   event.recipes.createDeploying('kubejs:incomplete_basic_capacitor', ['kubejs:incomplete_basic_capacitor', '#forge:dusts/redstone']),
   event.recipes.createDeploying('kubejs:incomplete_basic_capacitor', ['kubejs:incomplete_basic_capacitor', '#forge:dusts/redstone']),
-  ]).transitionalItem('kubejs:incomplete_basic_capacitor').loops(2)
+  ]).transitionalItem('kubejs:incomplete_basic_capacitor').loops(2).id(`mbd2:sequenced_assembly/capacitor_basic`)
 
 //Paste
   event.remove({output: 'powah:dielectric_paste'})
-	event.recipes.createMixing('8x powah:dielectric_paste', ['#minecraft:coals','#forge:clay', Fluid.of('minecraft:lava', 250)]).id(`kubejs:mixing/dielectric_paste`)
-	event.recipes.createMixing('16x powah:dielectric_paste', ['#minecraft:coals','#forge:clay']).superheated().id(`kubejs:mixing/dielectric_paste_heated`)
+	event.recipes.createMixing('8x powah:dielectric_paste', ['#minecraft:coals','#forge:clay', Fluid.of('minecraft:lava', 250)]).id(`mbd2:mixing/dielectric_paste`)
+	event.recipes.createMixing('16x powah:dielectric_paste', ['#minecraft:coals','#forge:clay']).superheated().id(`mbd2:mixing/dielectric_paste_heated`)
 
 
 //Starter tier no longer exsists
@@ -104,7 +124,7 @@ B: 'powah:capacitor_basic',
 C: 'powah:dielectric_casing',
 D: 'minecraft:bucket'
   }).id("powah:crafting/magmator_basic")
-
+/*
 // [| furnator_basic |] //
 event.shaped('powah:furnator_basic', [
   'AAA',
@@ -116,7 +136,7 @@ B: 'powah:capacitor_basic',
 C: 'powah:dielectric_casing',
 D: 'minecraft:furnace'
   }).id("powah:crafting/furnator_basic")
-
+*/
 // [| battery_basic |] //
 event.shaped('powah:battery_basic', [
   'ABA',

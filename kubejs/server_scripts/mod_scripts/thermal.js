@@ -1,3 +1,8 @@
+
+onEvent('tags.items', event => {
+	 event.add(`create:gems/slag`, 'thermal:slag')
+});
+
 onEvent('recipes', event => {
 	
 	var recipeNamesToRemove = [
@@ -200,8 +205,23 @@ event.shaped('thermal:machine_press', [
 	C: 'thermal:silver_ingot'
   })
 
+  // T1 Upgrade//
+  event.remove({id: 'thermal:augments/upgrade_augment_1'})
+  event.shaped('thermal:upgrade_augment_1', [
+	  'ICI',
+	  'RGR',
+	  'ICI'
+	], {
+	  I: '#forge:ingots/invar',
+	  C: 'create:framed_glass',
+	  R: 'minecraft:redstone',
+	  G: 'kubejs:energized_steel_gear',
+	}).id('kubejs:machine_press')
+
  // Latex
  event.recipes.thermal.chiller('thermal:rubber', [Fluid.of('thermal:latex', 250), 'thermal:chiller_ball_cast'])
  event.recipes.thermal.chiller('thermal:rubber_block', [Fluid.of('thermal:latex', 1000)])
     
+ //Magma
+ event.recipes.thermal.crucible(Fluid.of('tconstruct:magma', 250), 'minecraft:magma_cream').id(`kubejs:magma_from_ball`)
 });

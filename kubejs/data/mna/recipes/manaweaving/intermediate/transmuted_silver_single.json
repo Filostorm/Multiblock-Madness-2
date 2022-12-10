@@ -1,0 +1,13 @@
+{
+	"type": "mna:manaweaving-recipe",
+	"tier": 2,
+	"output": "mna:transmuted_silver",
+	"items":
+	[
+		"forge:ingots/pewter"		
+	],
+	"patterns":
+	[
+		"mna:square"
+	]
+}

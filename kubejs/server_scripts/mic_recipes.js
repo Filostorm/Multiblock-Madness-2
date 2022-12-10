@@ -1,47 +1,4 @@
-var bygWood = [
-	'mahogany',
-	'aspen',
-	'baobab',
-	'blue_enchanted',
-	'cherry',
-	'cika',
-	'cypress',
-	'ebony',
-	'nightshade',
-	'palm',
-	'pine',
-	'rainbow_eucalyptus',
-	'redwood',
-	'skyris',
-	'willow',
-	'witch_hazel',
-	'zelkova',
-	'ether',
-	'fir',
-	'green_enchanted',
-	'holly',
-	'jacaranda',
-	'lament',
-	'mangrove',
-	'maple',
-]
-var bygStem = [
-	'sythian',
-//	'embur',
-	'imparius',
-	'bulbis',
-]
-onEvent('tags.items', event => {
-    bygWood.forEach((type) => {
-		event.add(`byg:planks`, `byg:${type}_planks`)
-		event.add(`byg:logs`, `byg:${type}_log`)
-		event.add(`byg:stripped_logs`, `byg:stripped_${type}_log`)
-	})
-    bygStem.forEach((type) => {
-		event.add(`byg:planks`, `byg:${type}_planks`)
-		event.add(`byg:logs`, `byg:${type}_stem`)
-	})
-});
+
 
 onEvent('recipes', event => {
 
@@ -67,27 +24,22 @@ C: 'thermal:silver_plate'
 
 
 //Chests
+/*
 event.shaped('4x minecraft:chest', [
 	'LLL',
 	'L L',
 	'LLL'
   ], {
-	L: '#byg:logs',
-  }).id("kubejs:byg_log_chest")
-event.shaped('4x minecraft:chest', [
-	  'LLL',
-	  'L L',
-	  'LLL'
-	], {
-	  L: '#byg:stripped_logs',
-	}).id("kubejs:byg_stripped_log_chest")
+	L: '#minecraft:logs',
+  }).id("kubejs:log_chest")
+  */
 event.shaped('minecraft:chest', [
 	'PPP',
 	'P P',
 	'PPP'
   ], {
-	P: '#byg:planks',
-  }).id("kubejs:byg_plank_chest")
+	P: '#minecraft:planks',
+  }).id("kubejs:plank_chest")
 //event.shapeless(`minecraft:chest`, ['#forge:chests/wooden']).id("kubejs:default_chest")
 
 
@@ -112,7 +64,7 @@ event.shaped('scannable:scanner', [
   ], {
 	A: 'minecraft:clay_ball',
 	B: 'powah:uraninite',
-	C: 'minecraft:quartz',
+	C: '#forge:gems',
 	D: 'thermal:gold_plate'
   }).id("kubejs:blank_module")
 
@@ -141,14 +93,26 @@ event.shaped('3x kubejs:wood_scaffolding', [
 		F: 'mna:basic_table'
 	  }).id("summoningrituals:altar")
 
-// Sticks
-event.shaped('16x minecraft:stick', [
-	'L',
-	'L'
-  ], {
-	L: '#minecraft:logs',
-  }).id("kubejs:sticks_from_logs")
+	// Sticks
+	event.shaped('16x minecraft:stick', [
+		'L',
+		'L'
+	  ], {
+		L: '#minecraft:logs',
+	  }).id("kubejs:sticks_from_logs")
 
   // Paper
 	event.shapeless('3x minecraft:paper', ['minecraft:sugar_cane','minecraft:sugar_cane','minecraft:sugar_cane']).id('minecraft:paper')
+
+	//Beam
+  	event.remove({id: 'druidcraftrg:beam'})
+	event.shaped('4x druidcraftrg:beam', [
+		' L ',
+		'LSL',
+		' L '
+	  ], {
+		L: '#minecraft:oak_logs',
+		S: '#forge:string',
+	  }).id("kubejs:druidcraftrg/beams")
+
 });

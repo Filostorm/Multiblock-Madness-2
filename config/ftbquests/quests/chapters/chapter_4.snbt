@@ -1,15 +1,57 @@
 {
 	id: "087803A719A3BAA1"
 	group: "3C8730B42C1725BE"
-	order_index: 3
+	order_index: 2
 	filename: "chapter_4"
-	title: "Chapter 4"
+	title: "Chapter 3"
 	default_quest_shape: ""
 	default_hide_dependency_lines: false
 	quests: [
 		{
+			x: 7.5d
+			y: 11.5d
+			description: ["Items must be placed in the shown order."]
+			dependencies: ["391E4F9DA1A3D71B"]
+			id: "6B06707ECFAFD263"
+			tasks: [{
+				id: "6378AF3A0AE6AF58"
+				type: "item"
+				item: "elementalcraft:binder"
+			}]
+		}
+		{
+			x: 9.0d
+			y: 11.5d
+			dependencies: ["6B06707ECFAFD263"]
+			id: "61CCA7FA3C371180"
+			tasks: [
+				{
+					id: "2CFB04C7A08F97D3"
+					type: "item"
+					item: "elementalcraft:swift_alloy_ingot"
+				}
+				{
+					id: "48F4AD547AF2A043"
+					type: "item"
+					item: "elementalcraft:springaline_shard"
+				}
+			]
+		}
+		{
+			x: 10.5d
+			y: 11.5d
+			dependencies: ["61CCA7FA3C371180"]
+			id: "63D72477BB0F83A4"
+			tasks: [{
+				id: "0576FF10B6A77AE8"
+				type: "item"
+				item: "elementalcraft:crystallizer"
+			}]
+		}
+		{
 			x: 12.0d
 			y: 6.5d
+			dependencies: ["3D971E0CF8257193"]
 			id: "0EB55E9BCD6E97C3"
 			tasks: [{
 				id: "4DC15F205A40DB58"
@@ -18,34 +60,90 @@
 			}]
 		}
 		{
+			title: "Basic Engineering Blocks"
 			x: 7.5d
 			y: 6.5d
+			dependencies: ["17F948FD49F0EB33"]
 			id: "3D971E0CF8257193"
-			tasks: [{
-				id: "72A3C1702BFF1BB1"
-				type: "item"
-				item: "immersiveengineering:light_engineering"
-			}]
+			tasks: [
+				{
+					id: "72A3C1702BFF1BB1"
+					type: "item"
+					item: "immersiveengineering:light_engineering"
+				}
+				{
+					id: "699369FF5D953F57"
+					type: "item"
+					item: "immersiveengineering:rs_engineering"
+				}
+			]
 		}
 		{
-			x: 4.5d
-			y: 6.5d
-			id: "158135602875F498"
-			tasks: [{
-				id: "2B2ED94E62B297B1"
-				type: "item"
-				item: "immersiveengineering:rs_engineering"
-			}]
-		}
-		{
+			title: "The Squeezer"
+			icon: "immersiveengineering:squeezer"
 			x: 9.0d
 			y: 5.5d
 			dependencies: ["3D971E0CF8257193"]
+			repeatable: true
 			id: "1A2C95D86B270D15"
-			tasks: [{
-				id: "13B0A2E83BBFB3DD"
-				type: "item"
-				item: "immersiveengineering:squeezer"
+			tasks: [
+				{
+					id: "567D1A4C0D20FCD8"
+					type: "item"
+					item: "immersiveengineering:fluid_pipe"
+					count: 2L
+				}
+				{
+					id: "27780A93CBE1DF13"
+					type: "item"
+					item: "immersiveengineering:wooden_barrel"
+					count: 4L
+				}
+				{
+					id: "42B7A40D8D333AE4"
+					type: "item"
+					item: "immersiveengineering:steel_scaffolding_standard"
+					count: 6L
+				}
+				{
+					id: "1E80B85D952E795E"
+					type: "item"
+					item: "minecraft:piston"
+				}
+				{
+					id: "1E691B1006792703"
+					type: "item"
+					item: "immersiveengineering:light_engineering"
+					count: 2L
+				}
+				{
+					id: "2DA6F4750C12DABE"
+					type: "item"
+					item: "immersiveengineering:steel_fence"
+					count: 3L
+				}
+				{
+					id: "0A811AAB28F006B9"
+					type: "item"
+					item: "immersiveengineering:rs_engineering"
+				}
+				{
+					id: "36C178329782215A"
+					type: "questsadditions:structure"
+					title: "Squeezer"
+					icon: "immersiveengineering:squeezer"
+					name: "squeezer"
+					hasCustomPicture: false
+					layer: true
+					ignoreState: false
+					rightclick: false
+				}
+			]
+			rewards: [{
+				id: "161EA28C4D4CF4B7"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 7840564287515615038L
 			}]
 		}
 		{
@@ -60,14 +158,82 @@
 			}]
 		}
 		{
+			title: "The Arc Furnace"
+			icon: "immersiveengineering:arc_furnace"
 			x: 15.0d
 			y: 6.5d
 			dependencies: ["0EB55E9BCD6E97C3"]
 			id: "75D4FF56D8BBF34A"
-			tasks: [{
-				id: "14A9A37AEEDA8B22"
-				type: "item"
-				item: "immersiveengineering:arc_furnace"
+			tasks: [
+				{
+					id: "18B82EF6ED1B0E26"
+					type: "item"
+					item: "immersiveengineering:heavy_engineering"
+					count: 5L
+				}
+				{
+					id: "4DB96592C885E0D5"
+					type: "item"
+					item: "immersiveengineering:light_engineering"
+					count: 10L
+				}
+				{
+					id: "1C93FD026A9D4C1F"
+					type: "item"
+					item: "immersiveengineering:rs_engineering"
+				}
+				{
+					id: "05BD220E26123647"
+					type: "item"
+					item: "immersiveengineering:blastbrick_reinforced"
+					count: 27L
+				}
+				{
+					id: "2AE50AEC9ED7EA85"
+					type: "item"
+					item: "minecraft:cauldron"
+				}
+				{
+					id: "0A1273AB0C72116D"
+					type: "item"
+					item: "immersiveengineering:storage_steel"
+					count: 6L
+				}
+				{
+					id: "0C60EF655B0FD8F6"
+					type: "item"
+					item: "immersiveengineering:sheetmetal_steel"
+					count: 8L
+				}
+				{
+					id: "5E3859EC4E8B729A"
+					type: "item"
+					item: "immersiveengineering:slab_sheetmetal_steel"
+					count: 14L
+				}
+				{
+					id: "43D701C9064E0553"
+					type: "item"
+					item: "immersiveengineering:steel_scaffolding_standard"
+					count: 5L
+				}
+				{
+					id: "5C5CE8BEA54E1A94"
+					type: "questsadditions:structure"
+					title: "Arc Furnace"
+					icon: "immersiveengineering:arc_furnace"
+					name: "arc_furnace"
+					hasCustomPicture: false
+					layer: true
+					ignoreState: false
+					rightclick: false
+				}
+			]
+			rewards: [{
+				id: "18F5B6CE71684795"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 7840564287515615038L
 			}]
 		}
 		{
@@ -82,14 +248,60 @@
 			}]
 		}
 		{
+			title: "The Crusher"
+			icon: "immersiveengineering:crusher"
 			x: 9.0d
 			y: 8.0d
 			dependencies: ["3D971E0CF8257193"]
+			repeatable: true
 			id: "4489F9C5F2899DFE"
-			tasks: [{
-				id: "35BE374181CBA4CE"
-				type: "item"
-				item: "immersiveengineering:crusher"
+			tasks: [
+				{
+					id: "27ECF4560BB510A0"
+					type: "item"
+					item: "immersiveengineering:steel_scaffolding_standard"
+					count: 10L
+				}
+				{
+					id: "0B02E21E0355E1C0"
+					type: "item"
+					item: "immersiveengineering:light_engineering"
+					count: 10L
+				}
+				{
+					id: "6C22740A39F00131"
+					type: "item"
+					item: "immersiveengineering:rs_engineering"
+				}
+				{
+					id: "7CA85D62EC11E8BE"
+					type: "item"
+					item: "minecraft:hopper"
+					count: 9L
+				}
+				{
+					id: "407E21BCF64D3561"
+					type: "item"
+					item: "immersiveengineering:steel_fence"
+					count: 8L
+				}
+				{
+					id: "1E00C5DCC8507DAB"
+					type: "questsadditions:structure"
+					title: "The Crusher"
+					icon: "immersiveengineering:crusher"
+					name: "crusher"
+					hasCustomPicture: false
+					layer: true
+					ignoreState: false
+					rightclick: false
+				}
+			]
+			rewards: [{
+				id: "34EC7927C46C4155"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 7840564287515615038L
 			}]
 		}
 		{
@@ -115,36 +327,397 @@
 			}]
 		}
 		{
+			title: "The Mixer"
+			icon: "immersiveengineering:mixer"
 			x: 7.0d
-			y: 9.0d
+			y: 8.5d
+			dependencies: ["3D971E0CF8257193"]
+			repeatable: true
 			id: "02E4BADB1F8BEB33"
-			tasks: [{
-				id: "01EE643668CFC143"
-				type: "item"
-				item: "immersiveengineering:mixer"
+			tasks: [
+				{
+					id: "0BF994297B96F7C2"
+					type: "item"
+					item: "immersiveengineering:fluid_pipe"
+					count: 3L
+				}
+				{
+					id: "581CF69583BF4E3E"
+					type: "item"
+					item: "immersiveengineering:steel_scaffolding_standard"
+					count: 5L
+				}
+				{
+					id: "1B604E2ECB58C6AD"
+					type: "item"
+					item: "immersiveengineering:light_engineering"
+					count: 4L
+				}
+				{
+					id: "6F7AFB69C5B7BAAA"
+					type: "item"
+					item: "immersiveengineering:rs_engineering"
+				}
+				{
+					id: "2FC781B08751095E"
+					type: "item"
+					item: "immersiveengineering:sheetmetal_iron"
+					count: 4L
+				}
+				{
+					id: "0FDAFBCCC2775DAB"
+					type: "item"
+					item: "immersiveengineering:steel_fence"
+				}
+				{
+					id: "6DF1AEE76C3A72DB"
+					type: "questsadditions:structure"
+					title: "The Mixer"
+					icon: "immersiveengineering:mixer"
+					name: "mixer"
+					hasCustomPicture: false
+					layer: true
+					ignoreState: false
+					rightclick: false
+				}
+			]
+			rewards: [{
+				id: "2A73284D0CFC7607"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 7840564287515615038L
 			}]
 		}
 		{
+			title: "Fermenting"
 			icon: "immersiveengineering:fermenter"
 			x: 7.0d
 			y: 4.5d
+			dependencies: ["3D971E0CF8257193"]
 			repeatable: true
 			id: "6AE6AC04DFC1A75A"
-			tasks: [{
-				id: "2A00E372D3F5EB81"
-				type: "questsadditions:structure"
-				name: "Fermenter"
-				hasCustomPicture: false
-				layer: true
-				ignoreState: false
-				rightclick: false
-			}]
+			tasks: [
+				{
+					id: "5E03DB7DB8180EBD"
+					type: "item"
+					item: "immersiveengineering:steel_scaffolding_standard"
+					count: 6L
+				}
+				{
+					id: "04563F0BA766ED71"
+					type: "item"
+					item: "immersiveengineering:fluid_pipe"
+					count: 2L
+				}
+				{
+					id: "022E0BE14BA7961A"
+					type: "item"
+					item: "immersiveengineering:light_engineering"
+					count: 2L
+				}
+				{
+					id: "4D5D75D65D76A002"
+					type: "item"
+					item: "immersiveengineering:sheetmetal_iron"
+					count: 4L
+				}
+				{
+					id: "014AA4443E14F2A2"
+					type: "item"
+					item: "immersiveengineering:rs_engineering"
+				}
+				{
+					id: "38159E6C852FE713"
+					type: "item"
+					item: "minecraft:cauldron"
+					count: 4L
+				}
+				{
+					id: "544146C6D9751451"
+					type: "questsadditions:structure"
+					title: "Fermenter"
+					icon: "immersiveengineering:fermenter"
+					name: "fermenter"
+					hasCustomPicture: false
+					layer: true
+					ignoreState: false
+					rightclick: false
+				}
+			]
 			rewards: [{
 				id: "6C0E3FB474FAA95C"
 				type: "random"
 				exclude_from_claim_all: true
 				table_id: 7840564287515615038L
 			}]
+		}
+		{
+			title: "Reinforced Blast Furnace"
+			icon: "immersiveengineering:advanced_blast_furnace"
+			x: 5.0d
+			y: 8.5d
+			dependencies: ["17F948FD49F0EB33"]
+			id: "367CDBB0205D41FB"
+			tasks: [
+				{
+					id: "61E714B4E12BE2C1"
+					type: "item"
+					item: "immersiveengineering:blastbrick_reinforced"
+					count: 27L
+				}
+				{
+					id: "52FA029D82A79A55"
+					type: "item"
+					item: "minecraft:hopper"
+				}
+				{
+					id: "18F0D03A65F1C3F9"
+					type: "questsadditions:structure"
+					title: "Blast Furnace"
+					icon: "immersiveengineering:advanced_blast_furnace"
+					name: "blast_furnace"
+					hasCustomPicture: false
+					layer: true
+					ignoreState: false
+					rightclick: false
+				}
+			]
+			rewards: [{
+				id: "4E516849CA8F7DEF"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 2582656620646881183L
+			}]
+		}
+		{
+			title: "The Industral Metal"
+			x: 4.0d
+			y: 6.5d
+			shape: "circle"
+			id: "17F948FD49F0EB33"
+			tasks: [{
+				id: "6A1342A29C56C67D"
+				type: "item"
+				title: "Any #forge:ingots/steel"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "forge:ingots/steel"
+					}
+				}
+			}]
+		}
+		{
+			x: 5.5d
+			y: 10.0d
+			dependencies: ["367CDBB0205D41FB"]
+			id: "1E47E0235AF25002"
+			tasks: [{
+				id: "41D123875ECB56E7"
+				type: "item"
+				item: "immersiveengineering:blastfurnace_preheater"
+				count: 2L
+			}]
+			rewards: [{
+				id: "529EBD42E8E6CFC1"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 7840564287515615038L
+			}]
+		}
+		{
+			title: "Pressure Chamber"
+			x: 10.5d
+			y: 0.5d
+			dependencies: ["02285A69B0A09A44"]
+			id: "14C449A154C78D7E"
+			tasks: [
+				{
+					id: "35754DEDE8BBF9A5"
+					type: "item"
+					item: "pneumaticcraft:pressure_chamber_wall"
+					count: 21L
+				}
+				{
+					id: "5BBD7F188B0087D2"
+					type: "item"
+					item: "pneumaticcraft:pressure_chamber_interface"
+					count: 2L
+				}
+				{
+					id: "34E8E7C805313302"
+					type: "item"
+					item: "pneumaticcraft:pressure_chamber_valve"
+				}
+				{
+					id: "76A294980B2DAEC3"
+					type: "item"
+					item: "pneumaticcraft:pressure_chamber_glass"
+					count: 2L
+				}
+			]
+		}
+		{
+			title: "Explosions!"
+			x: 6.0d
+			y: 3.0d
+			dependencies: ["17F948FD49F0EB33"]
+			id: "418AC2EB203010CA"
+			tasks: [
+				{
+					id: "3698979CC6D16036"
+					type: "item"
+					item: "pneumaticcraft:ingot_iron_compressed"
+				}
+				{
+					id: "07BDD8890A862CA9"
+					type: "item"
+					item: "pneumaticcraft:reinforced_stone"
+				}
+			]
+		}
+		{
+			title: "Compressing Air"
+			x: 8.5d
+			y: 2.0d
+			dependencies: ["418AC2EB203010CA"]
+			id: "02285A69B0A09A44"
+			tasks: [
+				{
+					id: "63B0B7FC57DC0DFA"
+					type: "item"
+					title: "Any Basic Compressor"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "pneumaticcraft:compressor/basic"
+						}
+					}
+				}
+				{
+					id: "3F4FFF3F8F58CD0A"
+					type: "item"
+					item: "pneumaticcraft:pressure_tube"
+				}
+				{
+					id: "6F6C3A82C1531080"
+					type: "item"
+					item: "pneumaticcraft:safety_tube_module"
+				}
+			]
+		}
+		{
+			title: "The Bottling Machine"
+			icon: "immersiveengineering:bottling_machine"
+			x: 9.0d
+			y: 4.0d
+			dependencies: ["3D971E0CF8257193"]
+			id: "45011E84BFF6E319"
+			tasks: [
+				{
+					id: "61416C16C4181059"
+					type: "item"
+					item: "immersiveengineering:light_engineering"
+					count: 2L
+				}
+				{
+					id: "6035C4EF518B7B2C"
+					type: "item"
+					item: "immersiveengineering:rs_engineering"
+				}
+				{
+					id: "0DB73866E135A373"
+					type: "item"
+					item: "immersiveengineering:steel_scaffolding_standard"
+					count: 3L
+				}
+				{
+					id: "50CE077683BD3DC8"
+					type: "item"
+					item: "immersiveengineering:sheetmetal_iron"
+					count: 2L
+				}
+				{
+					id: "0369E4E7C9A704D4"
+					type: "item"
+					item: "immersiveengineering:conveyor_basic"
+					count: 3L
+				}
+				{
+					id: "296005AB8A23AF62"
+					type: "item"
+					item: "immersiveengineering:fluid_pump"
+				}
+				{
+					id: "24772DFAF2ABB851"
+					type: "questsadditions:structure"
+					title: "Bottling Machine"
+					icon: "immersiveengineering:bottling_machine"
+					name: "bottler"
+					hasCustomPicture: false
+					layer: true
+					ignoreState: false
+					rightclick: false
+				}
+			]
+			rewards: [{
+				id: "646986D9D90F679A"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 7840564287515615038L
+			}]
+		}
+		{
+			title: "Using Heat"
+			x: 11.0d
+			y: 3.0d
+			dependencies: ["418AC2EB203010CA"]
+			id: "2F38722F9A7D89CC"
+			tasks: [
+				{
+					id: "0B794E47450D5ADD"
+					type: "item"
+					item: "pneumaticcraft:vortex_tube"
+				}
+				{
+					id: "77893BABBDB02045"
+					type: "item"
+					item: "pneumaticcraft:heat_sink"
+				}
+				{
+					id: "272259D2D2DF319E"
+					type: "item"
+					item: "pneumaticcraft:heat_frame"
+				}
+			]
+		}
+		{
+			title: "More of that strange oil"
+			x: 13.0d
+			y: 1.5d
+			subtitle: "Its probably nothing"
+			description: ["Use the Sensor on the ground to find an oil deposit, which you can then drill up to the surface with the Gas Lift."]
+			dependencies: ["02285A69B0A09A44"]
+			id: "598DE255BBB061C3"
+			tasks: [
+				{
+					id: "1E0C3A1641C88775"
+					type: "item"
+					item: "pneumaticcraft:seismic_sensor"
+				}
+				{
+					id: "415556D38061EFBB"
+					type: "item"
+					item: "pneumaticcraft:gas_lift"
+				}
+				{
+					id: "629CEA1B669EDAB8"
+					type: "item"
+					item: "pneumaticcraft:drill_pipe"
+				}
+			]
 		}
 	]
 }

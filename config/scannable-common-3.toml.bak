@@ -54,10 +54,10 @@
 	ignoredBlockTags = []
 
 [ores]
-	#Registry names of blocks considered 'common ores', requiring the common ore scanner module. "minecraft:clay"
+	#Registry names of blocks considered 'common ores', requiring the common ore scanner module.
 	commonOreBlocks = []
 	#Block tags of blocks considered 'common ores', requiring the common ore scanner module.
-	commonOreBlockTags = ["forge:ores/iron", "forge:ores/redstone", "forge:ores/coal", "forge:ores/quartz", "forge:ores/tin", "forge:ores/copper"]
+	commonOreBlockTags = [ "forge:ores/coal", "forge:ores/quartz", "forge:ores/iron", "forge:ores/redstone", "forge:ores/tin", "forge:ores/copper", "forge:poor_ores/iron", "forge:poor_ores/redstone", "forge:poor_ores/tin", "forge:poor_ores/copper", "forge:poor_ores/zinc", "forge:poor_ores/lead", "forge:poor_ores/silver"]
 	#Registry names of blocks considered 'rare ores', requiring the rare ore scanner module.
 	rareOreBlocks = ["minecraft:glowstone"]
 	#Block tags of blocks considered 'rare ores', requiring the common ore scanner module.

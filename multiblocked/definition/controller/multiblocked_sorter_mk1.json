@@ -1,0 +1,186 @@
+{
+  "version": 1,
+  "location": "multiblocked:sorter_mk1",
+  "traits": {},
+  "properties": {
+    "rotationState": "ALL",
+    "showInJei": true,
+    "isOpaque": true,
+    "hasDynamicShape": false,
+    "hasCollision": true,
+    "destroyTime": 1.5,
+    "explosionResistance": 6.0,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "friction": 0.6,
+    "harvestLevel": 0,
+    "stackSize": 64,
+    "tabGroup": "multiblocked.all"
+  },
+  "status": {
+    "unformed": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/rose_quartz_lamp",
+        "frontTexture": "multiblocked:casing/lamp_front",
+        "type": "gregtech",
+        "postRenderer": false
+      }
+    },
+    "idle": {
+      "renderer": {
+        "state": {
+          "id": "create:rose_quartz_lamp",
+          "meta": 7
+        },
+        "type": "blockstate",
+        "postRenderer": true
+      },
+      "parent": "unformed"
+    },
+    "working": {
+      "renderer": {
+        "state": {
+          "id": "create:rose_quartz_lamp",
+          "meta": 6
+        },
+        "type": "blockstate",
+        "postRenderer": true
+      },
+      "lightEmissive": 15,
+      "parent": "idle"
+    },
+    "suspend": {
+      "parent": "working"
+    }
+  },
+  "recipeMap": "sorter_mk1",
+  "basePattern": {
+    "structureDir": [
+      "LEFT",
+      "UP",
+      "BACK"
+    ],
+    "pattern": [
+      [
+        "EAAAAAE",
+        " AAAAA ",
+        " B   B "
+      ],
+      [
+        "       ",
+        " CDDDC ",
+        "   @   "
+      ],
+      [
+        "EAAAAAE",
+        " AAAAA ",
+        " B   B "
+      ]
+    ],
+    "aisleRepetitions": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "predicates": {
+      "A": {
+        "blocks": [
+          {
+            "id": "create:brass_casing"
+          }
+        ],
+        "type": "blocks"
+      },
+      "controller": {
+        "location": "multiblocked:sorter_mk1",
+        "type": "component"
+      },
+      "B": {
+        "states": [
+          {
+            "id": "createaddition:connector",
+            "meta": 5
+          }
+        ],
+        "type": "states"
+      },
+      "C": {
+        "location": "multiblocked:create_input",
+        "type": "component",
+        "minCount": 1,
+        "maxCount": 2,
+        "previewCount": 1
+      },
+      "D": {
+        "blocks": [
+          {
+            "id": "kubejs:invar_cog_block"
+          }
+        ],
+        "type": "blocks"
+      },
+      "I": {
+        "location": "multiblocked:create_item_input",
+        "type": "component",
+        "minCount": 1,
+        "maxCount": 1,
+        "previewCount": 1,
+        "io": "IN"
+      },
+      "L": {
+        "blocks": [
+          {
+            "id": "minecraft:redstone_lamp"
+          }
+        ],
+        "type": "blocks",
+        "disableRenderFormed": true
+      },
+      "any": {
+        "type": "any"
+      },
+      "O": {
+        "location": "multiblocked:create_item_output",
+        "type": "component",
+        "minCount": 1,
+        "maxCount": 1,
+        "previewCount": 1
+      }
+    },
+    "symbolMap": {
+      "@": [
+        "controller",
+        "L"
+      ],
+      " ": [
+        "any"
+      ],
+      "A": [
+        "A"
+      ],
+      "B": [
+        "B"
+      ],
+      "C": [
+        "I",
+        "O"
+      ],
+      "D": [
+        "D"
+      ],
+      "E": [
+        "A",
+        "C"
+      ]
+    }
+  }
+}

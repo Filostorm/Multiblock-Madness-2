@@ -10,7 +10,7 @@ onEvent('item.tooltip', tooltip => {
 				if (!tooltip.shift) {
 				  text.add(1, [Text.of('Hold ').gold(), Text.of('Shift ').aqua(), Text.of('to see allomantic uses.').gold()])
 				} else {
-				  text.add(1, Text.aqua(`${toolTip}`))
+				  text.add(1, Text.aqua(toolTip))
 				}
 			})
 		}

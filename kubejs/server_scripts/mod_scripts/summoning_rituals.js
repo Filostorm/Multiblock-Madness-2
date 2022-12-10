@@ -28,18 +28,17 @@ onEvent('recipes', event => {
     .weather('clear')
 	*/
 	event.recipes.summoningrituals
-    .altar('blaze_powder')
+    .altar('forbidden_arcanus:soul')
     .mobOutput(
         SummoningOutput.mob('blaze')
             .count(4)
             .offset(0, 3, 0)
             .spread(4, 0, 4)
 	)
-    .input('amethyst_shard')
-    .input('amethyst_shard')
-    .input('amethyst_shard')
-    .input('amethyst_shard')
-    .input('amethyst_shard')
+    .input('soul_sand')
+    .input('minecraft:obsidian')
+    .input('flint_and_steel')
+    .input('create:cinder_flour')
+    .input('soul_lantern')
     .recipeTime(200).id('kubejs:summoning/4x_blaze')
-
 });

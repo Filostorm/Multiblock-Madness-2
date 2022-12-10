@@ -1,0 +1,12 @@
+{
+	id: "4D8FB070DF5BB95C"
+	order_index: 7
+	title: "Elements"
+	loot_size: 1
+	rewards: [
+		{ item: "elementalcraft:fire_shard", count: 8 }
+		{ item: "elementalcraft:water_shard", count: 8 }
+		{ item: "elementalcraft:earth_shard", count: 8 }
+		{ item: "elementalcraft:air_shard", count: 8 }
+	]
+}

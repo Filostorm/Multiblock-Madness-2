@@ -1,0 +1,10 @@
+
+# 
+#Client-side config for Create Big Cannons.
+[client]
+	# 
+	#Generate cannon plumes when a cannon is fired.
+	#Set to false if cannon plumes cause performance issues, as they generate many particles.
+	#However, it may be harder to detect if a projectile has squibbed in the barrel (no smoke in "pop and no smoke".)
+	showCannonPlumes = true
+

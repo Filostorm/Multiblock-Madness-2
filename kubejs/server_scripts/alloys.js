@@ -8,6 +8,11 @@ onEvent('tags.items', event => {
 		event.add(`mbm2:alloys/dusts/tier_one`, `#forge:dusts/${item.material}`)
 		event.add(`mbm2:alloys/plates/tier_one`, `#forge:plates/${item.material}`)
 		}
+		if (item.type == 'alloy' && item.tier == 2) {
+		event.add(`mbm2:alloys/tier_two`, `#forge:ingots/${item.material}`)
+		event.add(`mbm2:alloys/dusts/tier_two`, `#forge:dusts/${item.material}`)
+		event.add(`mbm2:alloys/plates/tier_two`, `#forge:plates/${item.material}`)
+		}
 	})
 });
 

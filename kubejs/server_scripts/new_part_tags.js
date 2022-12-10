@@ -88,7 +88,7 @@ onEvent('tags.items', event => {
 onEvent('tags.blocks', event => {
   global.newMaterialParts.forEach((item) => {
     if (item.ore) {
-      if (item.type == "base_gem") {
+      if (item.type == "gem") {
         event.add(`forge:ores`, `kubejs:${item.material}_ore`)
         event.add(`forge:ores/${item.material}`, `kubejs:${item.material}_ore`)
       global.stoneTypes.forEach((type) => {

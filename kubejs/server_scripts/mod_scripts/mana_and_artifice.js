@@ -41,7 +41,7 @@ event.shaped('mna:manaweaving_altar', [
 	C: 'mna:ritual_focus_minor',
 	D: 'mna:decoration/arcane_stone'
   }).id("kubejs:manaweaving_altar")
-
+/*
 // [| improvised_manaweaver_wand |] //
 event.remove({id: 'mna:improvised_manaweaver_wand'})
 event.shaped(Item.of('mna:improvised_manaweaver_wand', '{Damage:0}'), [
@@ -52,6 +52,12 @@ event.shaped(Item.of('mna:improvised_manaweaver_wand', '{Damage:0}'), [
 B: '#mna:improvised_manaweave_wand_caps',
 C: '#forge:rods/wooden'
   }).id("kubejs:improvised_manaweaver_wand")
-
+*/
+  // Vinteum Coated Silver
+	event.remove({id: 'mna:vinteum_coated_iron'})
+	event.remove({id: 'mna:vinteum_bar_blast_furnace'})
+	event.remove({id: 'mna:vinteum_bar'})
+	event.recipes.createMixing('mna:vinteum_coated_iron', [`#forge:ingots/silver`, 'mna:vinteum_dust']).heated().id(`kubejs:vinteum_coated_silver`)
+  	global.tinkersMelting(event, 'kubejs:molten_slag', 50, 'kubejs:molten_vinteum', 90, 'mna:vinteum_coated_iron', 1200, 142, `kubejs:smeltery/melting/metal/vinteum_coated_silver`)
 });
 

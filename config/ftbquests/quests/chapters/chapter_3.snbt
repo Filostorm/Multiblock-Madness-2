@@ -1,16 +1,16 @@
 {
 	id: "370D1929712FBFD1"
 	group: "3C8730B42C1725BE"
-	order_index: 2
+	order_index: 1
 	filename: "chapter_3"
-	title: "Chapter 3"
+	title: "Chapter 2"
 	icon: "mekanism:ingot_steel"
 	default_quest_shape: ""
 	default_hide_dependency_lines: false
 	quests: [
 		{
-			x: 0.0d
-			y: 5.0d
+			x: 8.5d
+			y: 7.5d
 			dependencies: ["488E2999C6BE6591"]
 			id: "7B33D4E6ED113E07"
 			tasks: [{
@@ -20,8 +20,10 @@
 			}]
 		}
 		{
-			x: -3.0d
-			y: 6.0d
+			x: 8.5d
+			y: 9.0d
+			subtitle: "Archwood saplings can be aquired through the crushing wheel"
+			description: ["Auxiliary items are not comsumed for crafting."]
 			id: "488E2999C6BE6591"
 			tasks: [{
 				id: "2124621A623FF8EA"
@@ -35,8 +37,8 @@
 			}]
 		}
 		{
-			x: 2.5d
-			y: 5.0d
+			x: 8.5d
+			y: 6.0d
 			dependencies: ["7B33D4E6ED113E07"]
 			id: "050141BF6CD20337"
 			tasks: [{
@@ -46,8 +48,8 @@
 			}]
 		}
 		{
-			x: 5.0d
-			y: 3.0d
+			x: 10.5d
+			y: 3.5d
 			dependencies: ["4479C52D27235BCB"]
 			id: "61807D2D6C850371"
 			tasks: [{
@@ -57,8 +59,8 @@
 			}]
 		}
 		{
-			x: 3.5d
-			y: 3.5d
+			x: 8.5d
+			y: 4.5d
 			description: ["Can be used to generate Lava."]
 			dependencies: ["050141BF6CD20337"]
 			id: "4479C52D27235BCB"
@@ -69,33 +71,11 @@
 			}]
 		}
 		{
-			x: 4.5d
-			y: 5.0d
-			dependencies: ["050141BF6CD20337"]
-			id: "2062C95B0D95BED1"
-			tasks: [{
-				id: "4C8F65457EC814FE"
-				type: "item"
-				item: "thermal:machine_press"
-			}]
-		}
-		{
-			title: "Blast Furnace"
-			x: 10.5d
-			y: -11.5d
-			id: "76EE38A56D68275F"
-			tasks: [{
-				id: "05CAE8F86B8224AA"
-				type: "item"
-				item: "immersiveengineering:blastbrick"
-				count: 27L
-			}]
-		}
-		{
 			title: "The Brass Age"
 			disable_toast: true
-			x: -3.5d
-			y: -4.5d
+			x: 1.5d
+			y: 1.5d
+			description: ["Zinc can be found much more frequently in the Nether."]
 			id: "1A4ED8C40CDFBBE5"
 			tasks: [
 				{
@@ -108,6 +88,11 @@
 					type: "item"
 					item: "create:polished_rose_quartz"
 				}
+				{
+					id: "0576B4EBF1EC60C9"
+					type: "item"
+					item: "immersiveengineering:treated_wood_horizontal"
+				}
 			]
 			rewards: [{
 				id: "62DFB40741BA7C64"
@@ -116,8 +101,8 @@
 			}]
 		}
 		{
-			x: -1.0d
-			y: -3.0d
+			x: 3.5d
+			y: 3.0d
 			dependencies: ["1A4ED8C40CDFBBE5"]
 			id: "50E9DDE83C23EE6E"
 			tasks: [{
@@ -132,9 +117,12 @@
 			}]
 		}
 		{
-			x: 4.5d
-			y: 7.0d
-			dependencies: ["050141BF6CD20337"]
+			x: 6.5d
+			y: 6.0d
+			dependencies: [
+				"050141BF6CD20337"
+				"37610C524354F5F2"
+			]
 			id: "2629908D70EF88F2"
 			tasks: [{
 				id: "344A51103E296EEB"
@@ -143,8 +131,8 @@
 			}]
 		}
 		{
-			x: 0.5d
-			y: -1.5d
+			x: 3.5d
+			y: 4.5d
 			dependencies: ["50E9DDE83C23EE6E"]
 			id: "39F16774468E59FE"
 			tasks: [{
@@ -154,8 +142,8 @@
 			}]
 		}
 		{
-			x: 2.5d
-			y: -4.5d
+			x: 5.0d
+			y: 4.5d
 			description: ["Attaching a large Cog to the top allows you to configure the speed of the attached system."]
 			dependencies: ["1E77F20F773CA050"]
 			id: "7D69D2DC60D8892C"
@@ -172,8 +160,9 @@
 		}
 		{
 			title: "Advanced Logistics"
-			x: -1.0d
-			y: -6.0d
+			x: 3.5d
+			y: 0.0d
+			description: ["Brass Tunnels/Funnels have a filter spot that can be clicked with an item to allow for simple whitelisting, or with a configured Filter for more complex options."]
 			dependencies: ["1A4ED8C40CDFBBE5"]
 			id: "40255F14A4599270"
 			tasks: [
@@ -206,8 +195,8 @@
 			}]
 		}
 		{
-			x: 2.5d
-			y: -3.0d
+			x: 6.5d
+			y: 3.0d
 			dependencies: ["1E77F20F773CA050"]
 			id: "2D4B1C82A8FC7E2E"
 			tasks: [{
@@ -222,8 +211,8 @@
 			}]
 		}
 		{
-			x: 0.5d
-			y: -3.5d
+			x: 5.0d
+			y: 3.0d
 			dependencies: ["50E9DDE83C23EE6E"]
 			id: "1E77F20F773CA050"
 			tasks: [{
@@ -240,8 +229,8 @@
 		{
 			title: "Simple Storage Network"
 			icon: "storagenetwork:master"
-			x: 0.0d
-			y: 7.0d
+			x: 10.0d
+			y: 7.5d
 			dependencies: ["488E2999C6BE6591"]
 			id: "3937FEDD97720117"
 			tasks: [
@@ -262,14 +251,16 @@
 				}
 			]
 			rewards: [{
-				id: "59DF64CECA4C1673"
-				type: "random"
-				table_id: 6530798407416538447L
+				id: "5016A4F742FE08B5"
+				type: "item"
+				item: "storagenetwork:kabel"
+				count: 8
 			}]
 		}
 		{
-			x: 5.5d
-			y: -12.0d
+			x: 8.5d
+			y: -3.5d
+			description: ["Zinc, Nickel, Gold, and Quartz, are all much more common in the Nether, while Cobalt and Blazing Quartz can only be found there. You'll also find Rich Ores, which drop double the amount of Raw Ore."]
 			id: "20FA1AFF0BD65177"
 			tasks: [{
 				id: "318ECF0673D91AB5"
@@ -279,8 +270,8 @@
 			}]
 		}
 		{
-			x: 5.5d
-			y: -8.5d
+			x: 8.5d
+			y: -1.0d
 			dependencies: ["20FA1AFF0BD65177"]
 			id: "46DC0D67FE1C4C67"
 			tasks: [{
@@ -292,8 +283,9 @@
 		{
 			title: "Crushing Wheel"
 			icon: "create:crushing_wheel"
-			x: -1.0d
-			y: -4.5d
+			x: 5.0d
+			y: 1.5d
+			subtitle: "Level 1 Ore Processing"
 			dependencies: ["1A4ED8C40CDFBBE5"]
 			id: "51537052A03715D7"
 			tasks: [
@@ -317,55 +309,11 @@
 			}]
 		}
 		{
-			title: "The Foundry"
-			icon: "tconstruct:foundry_controller"
-			x: 9.5d
-			y: -5.0d
-			id: "10DE68398263BA60"
-			tasks: [
-				{
-					id: "2553888F18F218E3"
-					type: "item"
-					item: "tconstruct:foundry_controller"
-				}
-				{
-					id: "419372151DDAB757"
-					type: "item"
-					item: "tconstruct:scorched_drain"
-				}
-				{
-					id: "622E3846DAFB5459"
-					type: "item"
-					item: "tconstruct:scorched_chute"
-				}
-				{
-					id: "0CDE7E8E6A6B95B6"
-					type: "item"
-					title: "Any #tconstruct:scorched_tanks"
-					item: {
-						id: "itemfilters:tag"
-						Count: 1b
-						tag: {
-							value: "tconstruct:scorched_tanks"
-						}
-					}
-				}
-				{
-					id: "11E486E1EF190836"
-					type: "item"
-					item: "tconstruct:scorched_faucet"
-				}
-				{
-					id: "240A9B2EB7B4D3BF"
-					type: "item"
-					item: "tconstruct:scorched_table"
-				}
-			]
-		}
-		{
 			icon: "naturesaura:nature_altar"
-			x: 2.0d
-			y: -10.5d
+			x: 13.0d
+			y: 1.5d
+			subtitle: "Check out page 2 of the Ponder"
+			dependencies: ["6AD50F15723B7927"]
 			id: "31513AA25B621FD8"
 			tasks: [
 				{
@@ -401,8 +349,9 @@
 		}
 		{
 			title: "Paint the Trees Gold"
-			x: 12.5d
-			y: -9.5d
+			x: 16.5d
+			y: 1.5d
+			description: ["You'll be able to find the Book of Natural Aura in your Akashic Tome."]
 			id: "4187F705E4356142"
 			tasks: [
 				{
@@ -419,8 +368,8 @@
 		}
 		{
 			title: "Ritual of the Forest"
-			x: 12.5d
-			y: -7.5d
+			x: 14.5d
+			y: 1.5d
 			dependencies: ["4187F705E4356142"]
 			id: "6AD50F15723B7927"
 			tasks: [
@@ -439,8 +388,9 @@
 			]
 		}
 		{
-			x: 10.5d
-			y: -6.5d
+			x: 13.5d
+			y: -0.5d
+			description: ["This displays the aura nearby."]
 			dependencies: ["6AD50F15723B7927"]
 			id: "75639B06251CAA16"
 			tasks: [{
@@ -450,8 +400,11 @@
 			}]
 		}
 		{
-			x: 5.5d
-			y: -7.0d
+			title: "Easy Alloys"
+			x: 9.5d
+			y: 0.0d
+			shape: "circle"
+			description: ["Build in a 4x4, then hammer the front with the Engineers Hammer"]
 			dependencies: ["46DC0D67FE1C4C67"]
 			id: "2A97F4CE430A26BC"
 			tasks: [{
@@ -463,15 +416,22 @@
 		}
 		{
 			title: "Basic Power Generation"
-			x: 2.5d
-			y: 0.5d
+			x: 3.5d
+			y: 6.0d
 			dependencies: ["39F16774468E59FE"]
 			id: "47910242F4DE9220"
 			tasks: [
 				{
 					id: "1895020E0D74216E"
 					type: "item"
-					item: "powah:furnator_basic"
+					title: "Any #powah:generator/basic"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "powah:generator/basic"
+						}
+					}
 				}
 				{
 					id: "3A0881DA9C104671"
@@ -487,7 +447,7 @@
 		}
 		{
 			x: 7.0d
-			y: -9.0d
+			y: -2.0d
 			dependencies: ["20FA1AFF0BD65177"]
 			id: "0C62C2532E374205"
 			tasks: [{
@@ -504,8 +464,9 @@
 		}
 		{
 			title: "Tier 2 Powah"
-			x: 4.5d
-			y: 0.5d
+			x: 5.0d
+			y: 6.0d
+			description: ["Connect Rods to Orbs!"]
 			dependencies: ["47910242F4DE9220"]
 			id: "37610C524354F5F2"
 			tasks: [
@@ -535,6 +496,238 @@
 						PowahWrenchNBT: { }
 					}
 				}
+			}]
+		}
+		{
+			x: 6.0d
+			y: -1.0d
+			subtitle: "Can't find Blazes? No problem!"
+			dependencies: ["0C62C2532E374205"]
+			id: "50BD245F65D3A032"
+			tasks: [{
+				id: "25FAB5C043329F35"
+				type: "item"
+				item: "summoningrituals:altar"
+			}]
+		}
+		{
+			title: "Crimson Altar"
+			icon: "naturesaura:tainted_gold"
+			x: 11.5d
+			y: 1.5d
+			dependencies: [
+				"31513AA25B621FD8"
+				"20FA1AFF0BD65177"
+			]
+			id: "72C360D92C26799F"
+			tasks: [
+				{
+					id: "7876A582459B93B1"
+					type: "item"
+					item: "minecraft:warped_planks"
+					count: 20L
+				}
+				{
+					id: "2A05BA81C9D360F3"
+					type: "item"
+					item: "minecraft:red_nether_bricks"
+					count: 4L
+				}
+				{
+					id: "191BAA35843D7391"
+					type: "item"
+					item: "minecraft:nether_bricks"
+					count: 16L
+				}
+				{
+					id: "5418D1554871B886"
+					type: "item"
+					item: "naturesaura:gold_nether_brick"
+					count: 8L
+				}
+			]
+		}
+		{
+			title: "Steel"
+			x: 7.5d
+			y: 0.5d
+			shape: "circle"
+			dependencies: ["729CD1DC498A9130"]
+			id: "35C16B4B5D8C7148"
+			tasks: [
+				{
+					id: "23258E62D7B5AB09"
+					type: "item"
+					item: "kubejs:carbon_covered_iron"
+				}
+				{
+					id: "418726F0FA55D645"
+					type: "item"
+					item: "mekanism:ingot_steel"
+				}
+			]
+		}
+		{
+			title: "Vinteum"
+			x: 9.5d
+			y: 2.5d
+			dependencies: ["729CD1DC498A9130"]
+			id: "243652BEE988A387"
+			tasks: [
+				{
+					id: "38B92A9528D8EDED"
+					type: "item"
+					item: "mna:vinteum_coated_iron"
+				}
+				{
+					id: "5C7A47EDB8AF316E"
+					type: "item"
+					item: "mna:vinteum_ingot"
+				}
+			]
+		}
+		{
+			title: "The Foundry"
+			icon: "tconstruct:foundry_controller"
+			x: 8.5d
+			y: 1.5d
+			shape: "gear"
+			dependencies: [
+				"72C360D92C26799F"
+				"46DC0D67FE1C4C67"
+				"51537052A03715D7"
+				"4479C52D27235BCB"
+			]
+			size: 1.5d
+			id: "729CD1DC498A9130"
+			tasks: [
+				{
+					id: "0E5386262A39DA76"
+					type: "item"
+					item: "tconstruct:foundry_controller"
+				}
+				{
+					id: "01AC14544E982090"
+					type: "item"
+					title: "Any #tconstruct:scorched_tanks"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "tconstruct:scorched_tanks"
+						}
+					}
+				}
+				{
+					id: "01D5525BFB4F899F"
+					type: "item"
+					item: "tconstruct:scorched_drain"
+				}
+				{
+					id: "73C01F853CAEA8F2"
+					type: "item"
+					item: "tconstruct:scorched_chute"
+				}
+				{
+					id: "6622B5FC9735A8C4"
+					type: "item"
+					item: "tconstruct:scorched_table"
+				}
+				{
+					id: "7D26819B9E284A67"
+					type: "item"
+					item: "tconstruct:scorched_faucet"
+				}
+			]
+		}
+		{
+			icon: "multiblocked:sorter_mk1"
+			x: 5.0d
+			y: 0.0d
+			description: ["This is required to extract higher tier Ores from Compound Ore."]
+			dependencies: ["51537052A03715D7"]
+			id: "23C9B04C7E4C834F"
+			tasks: [
+				{
+					id: "07F5942725B1A9D0"
+					type: "item"
+					item: "multiblocked:sorter_mk1"
+				}
+				{
+					id: "38A5F623EA63CE13"
+					type: "item"
+					item: "createaddition:connector"
+					count: 4L
+				}
+				{
+					id: "568791640EED0B18"
+					type: "item"
+					item: "create:brass_casing"
+					count: 23L
+				}
+				{
+					id: "155E46A0A6D296A0"
+					type: "item"
+					item: "kubejs:invar_cog_block"
+					count: 3L
+				}
+				{
+					id: "29A47A274C22D3B9"
+					type: "item"
+					item: "multiblocked:create_item_output"
+				}
+				{
+					id: "088DFFCD93E9C1CC"
+					type: "item"
+					item: "multiblocked:create_item_input"
+				}
+				{
+					id: "3E781A5006CCCF8B"
+					type: "item"
+					item: "multiblocked:create_input"
+				}
+			]
+		}
+		{
+			icon: "createoreexcavation:drilling_machine"
+			x: 6.5d
+			y: 4.5d
+			dependencies: ["1E77F20F773CA050"]
+			id: "7F00F4A7C74AC181"
+			tasks: [
+				{
+					id: "2A3D7C7E0ED5C81E"
+					type: "item"
+					item: "createoreexcavation:drilling_machine"
+				}
+				{
+					id: "4027FC6E64CDC21C"
+					type: "item"
+					title: "Any Drill"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "createoreexcavation:drills"
+						}
+					}
+				}
+			]
+			rewards: [{
+				id: "50232E98C221CFE4"
+				type: "item"
+				item: "createoreexcavation:vein_finder"
+			}]
+		}
+		{
+			x: 12.0d
+			y: 3.0d
+			dependencies: ["31513AA25B621FD8"]
+			id: "193DF7CEBFCB9C41"
+			tasks: [{
+				id: "74DE4F3CEC5A2FCE"
+				type: "item"
+				item: "apotheosis:salvaging_table"
 			}]
 		}
 	]

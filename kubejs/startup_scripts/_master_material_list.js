@@ -6,9 +6,8 @@ global.newMaterialParts = [
       'color': 0xd9d7d7,
       'type': 'base_metal',
       'tier': 1,
-      'itemParts': ['dense_plate', 'hammer', 'mechanical_component'],
+      'itemParts': ['hammer', 'mechanical_component'],
       'blockParts': ['cog_block'],
-      'fluid': null,
       'fluid_id': 'tconstruct:molten_iron',
       'durability': 128,
       'ore': true,
@@ -20,9 +19,8 @@ global.newMaterialParts = [
       'color': 0xffe870,
       'type': 'base_metal',
       'tier': 1,
-      'itemParts': ['dense_plate', 'mechanical_component'],
+      'itemParts': ['mechanical_component'],
       'blockParts': ['cog_block'],
-      'fluid': null,
       'fluid_id': 'tconstruct:molten_gold',
       'ore': true,
       'allomancy': 'Gold lets you see into your "past" by showing you the location you most recently died in this dimension',
@@ -33,9 +31,8 @@ global.newMaterialParts = [
       'color': 0xf7ad63,
       'type': 'base_metal',
       'tier': 1,
-      'itemParts': ['dense_plate', 'hammer', 'mechanical_component'],
+      'itemParts': ['hammer', 'mechanical_component'],
       'blockParts': ['cog_block'],
-      'fluid': null,
       'fluid_id': 'tconstruct:molten_copper',
       'durability': 128,
       'ore': true,
@@ -47,9 +44,8 @@ global.newMaterialParts = [
       'color': 0x4f5a6e,
       'type': 'base_metal',
       'tier': 1,
-      'itemParts': ['dense_plate', 'rod', 'hammer'],
+      'itemParts': ['rod', 'hammer'],
       'blockParts': [],
-      'fluid': null,
       'fluid_id': 'tconstruct:molten_lead',
       'durability': 128,
       'ore': true
@@ -59,9 +55,8 @@ global.newMaterialParts = [
       'color': 0xc2b17a,
       'type': 'base_metal',
       'tier': 1,
-      'itemParts': ['dense_plate', 'rod', 'wire', 'hammer'],
+      'itemParts': ['rod', 'wire', 'hammer'],
       'blockParts': [],
-      'fluid': null,
       'fluid_id': 'tconstruct:molten_nickel',
       'durability': 128,
       'ore': true
@@ -71,9 +66,8 @@ global.newMaterialParts = [
       'color': 0xc7d3d6,
       'type': 'base_metal',
       'tier': 1,
-      'itemParts': ['dense_plate', 'rod', 'wire', 'hammer'],
+      'itemParts': ['rod', 'wire', 'hammer'],
       'blockParts': [],
-      'fluid': null,
       'fluid_id': 'tconstruct:molten_silver',
       'durability': 128,
       'ore': true
@@ -83,9 +77,8 @@ global.newMaterialParts = [
       'color': 0x9dbdc2,
       'type': 'base_metal',
       'tier': 1,
-      'itemParts': ['dense_plate', 'rod', 'wire', 'hammer'],
+      'itemParts': ['rod', 'wire', 'hammer'],
       'blockParts': [],
-      'fluid': null,
       'fluid_id': 'tconstruct:molten_tin',
       'durability': 128,
       'ore': true,
@@ -97,9 +90,8 @@ global.newMaterialParts = [
       'color': 0x97c7b3,
       'type': 'base_metal',
       'tier': 1,
-      'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire'],
+      'itemParts': ['plate', 'gear', 'rod', 'wire'],
       'blockParts': [],
-      'fluid': null,
       'fluid_id': 'tconstruct:molten_zinc',
       'ore': true,
       'allomancy': 'Zinc allows you to Riot the emotions of mobs, making them hostile. This means they will attack anything nearby. Even farm animals can be a threat',
@@ -112,9 +104,8 @@ global.newMaterialParts = [
       'color': 0x2452c7,
       'type': 'base_metal',
       'tier': 2,
-      'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire', 'hammer', 'mechanical_component'],
-      'blockParts': ['cog_block'],
-      'fluid': null,
+      'itemParts': ['plate', 'gear', 'rod', 'wire', 'hammer', 'mechanical_component'],
+      'blockParts': ['cog_block', 'casing'],
       'durability': 256,
       'ore': true
     },
@@ -123,9 +114,8 @@ global.newMaterialParts = [
       'color': 0xb6c2c2,
       'type': 'base_metal',
       'tier': 2,
-      'itemParts': ['plate', 'dense_plate', 'gear', 'rod'],
+      'itemParts': ['plate', 'gear', 'rod'],
       'blockParts': [],
-      'fluid': null,
       'ore': true,
       'allomancy': 'Aluminum is a purifying metal - it removes all metals from your current stock. This may seem useless, but it also removes all potion effects - not a bad trade to remove some Wither or Poison before it kills you',
       'feruchemy': 'Aluminum and FID: Storing in a metalmind "Keys" it to you, so that only you can tap the power stored within. But if you Store Aluminum first, the metalmind remains "unkeyed", allowing any Feruchemist to Tap is Resouces (good for Co-ops!) (Note this makes the metalmind unable to be keyed, even if all charges are removed)'
@@ -139,7 +129,7 @@ global.newMaterialParts = [
       'color': 0x4668cf,
       'type': 'base_metal',
       'tier': 3,
-      'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire', 'hammer'],
+      'itemParts': ['plate', 'gear', 'rod', 'wire', 'hammer'],
       'blockParts': [],
       'fluid': 'thick',
       'durability': 1024,
@@ -151,9 +141,8 @@ global.newMaterialParts = [
       'color': 0x282c33,
       'type': 'base_metal',
       'tier': 3,
-      'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire', 'hammer'],
+      'itemParts': ['plate', 'gear', 'rod', 'wire', 'hammer'],
       'blockParts': [],
-      'fluid': null,
       'durability': 1024,
       'ore': true,
       'raw_ore': true
@@ -163,51 +152,91 @@ global.newMaterialParts = [
       'color': 0x6be6ff,
       'type': 'base_metal',
       'tier': 3,
-      'itemParts': ['ingot', 'nugget', 'dust', 'plate', 'dense_plate', 'gear', 'rod', 'wire', 'hammer'],
+      'itemParts': ['ingot', 'nugget', 'dust', 'plate', 'gear', 'rod', 'wire', 'hammer'],
       'blockParts': ['storage_block'],
-      'fluid': null,
       'durability': 1024,
       'ore': true,
       'raw_ore': true
     },
     {
+      'material': 'osmium',
+      'color': 0xe6f7ff,
+      'type': 'base_metal',
+      'tier': 3,
+      'itemParts': ['plate', 'gear', 'rod', 'wire'],
+      'blockParts': [],
+      'ore': true
+    },
+    {
       'material': 'uranium',
       'color': 0x8be8b0,
-      'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire'],
+      'type': 'base_metal',
+      'tier': 3,
+      'itemParts': ['plate', 'gear', 'rod', 'wire'],
       'blockParts': [],
-      'fluid': null
+      'ore': true
     },
     {
       'material': 'thorium',
       'color': 0x543923,
-      'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire'],
+      'type': 'base_metal',
+      'tier': 3,
+      'itemParts': ['plate', 'gear', 'rod', 'wire'],
       'blockParts': [],
-      'fluid': 'thick'
+      'fluid': 'thick',
+      'ore': true
     },
     {
       'material': 'magnesium',
       'color': 0x997996,
-      'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire'],
+      'itemParts': ['plate', 'gear', 'rod', 'wire'],
       'blockParts': [],
       'fluid': 'thick'
     },
     {
       'material': 'boron',
       'color': 0x20293b,
-      'itemParts': ['ingot', 'nugget', 'dust', 'plate', 'dense_plate', 'gear', 'rod', 'wire'],
+      'itemParts': ['ingot', 'nugget', 'dust', 'plate', 'gear', 'rod', 'wire'],
       'blockParts': ['storage_block'],
       'fluid': 'thick'
+    },
+    {
+      'material': 'ostrum',
+      'color': 0x5e3b3b,
+      'tier': 3,
+      'type': 'base_metal',
+      'itemParts': ['gear', 'rod', 'wire', 'dust', 'plate', 'plating'],
+      'blockParts': [],
+      'ore': true,
     },
     
     /////////////// Tier 4 Metals /////////////////////////////
     
-    
+    {
+      'material': 'calorite',
+      'color': 0xc43b3b,
+      'tier': 4,
+      'type': 'base_metal',
+      'itemParts': ['gear', 'rod', 'wire', 'dust', 'plate', 'plating'],
+      'blockParts': [],
+      'ore': true,
+    },
+    {
+      'material': 'stellarite',
+      'color': 0x858f7c,
+      'tier': 4,
+      'type': 'base_metal',
+      'itemParts': ['ingot', 'gear', 'rod', 'wire', 'dust', 'plating'],
+      'blockParts': [],
+      'ore': true,
+      'raw_ore': true
+    },
     {
       'material': 'chromium',
       'color': 0xcfb793,
       'type': 'base_metal',
       'tier': 4,
-      'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire', 'dust'],
+      'itemParts': ['plate',  'gear', 'rod', 'wire', 'dust'],
       'blockParts': [],
       'fluid': 'thick',
       'ore': true,
@@ -219,7 +248,7 @@ global.newMaterialParts = [
       'color': 0x97b7bf,
       'type': 'base_metal',
       'tier': 4,
-      'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire', 'dust'],
+      'itemParts': ['plate',  'gear', 'rod', 'wire', 'dust'],
       'blockParts': [],
       'fluid': 'thick',
       'ore': true,
@@ -231,7 +260,7 @@ global.newMaterialParts = [
       'color': 0x522d22,
       'type': 'base_metal',
       'tier': 4,
-      'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire'],
+      'itemParts': ['plate',  'gear', 'rod', 'wire'],
       'blockParts': [],
       'fluid': 'thick',
       'ore': true,
@@ -242,7 +271,7 @@ global.newMaterialParts = [
       'color': 0x1942bf,
       'type': 'base_metal',
       'tier': 4,
-      'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire'],
+      'itemParts': ['plate',  'gear', 'rod', 'wire'],
       'blockParts': [],
       'fluid': 'thick',
       'ore': true,
@@ -251,23 +280,24 @@ global.newMaterialParts = [
     {
       'material': 'vanadium',
       'color': 0x464e66,
-      'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire'],
-      'blockParts': [],
-      'fluid': null
+      'itemParts': ['plate',  'gear', 'rod', 'wire'],
+      'blockParts': []
     },
     {
       'material': 'neodymium',
       'color': 0x634d59,
-      'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire'],
+      'itemParts': ['plate',  'gear', 'rod', 'wire'],
       'blockParts': [],
       'fluid': 'thick'
     },
     {
       'material': 'desh',
       'color': 0xffa763,
-      'itemParts': ['dense_plate', 'gear', 'rod', 'wire'],
+      'type': 'base_metal',
+      'tier': 3,
+      'itemParts': ['gear', 'rod', 'wire'],
       'blockParts': [],
-      'fluid': null
+      'ore': true
     },
     {
       'material': 'neptunium',
@@ -318,15 +348,25 @@ global.newMaterialParts = [
       'blockParts': ['storage_block'],
       'fluid': 'thick'
     },
+    {
+      'material': 'uru',
+      'color': 0x1c121c,
+      'tier': 5,
+      'type': 'base_metal',
+      'itemParts': ['ingot', 'nugget', 'gear', 'rod', 'wire', 'dust', 'plating'],
+      'blockParts': ['storage_block'],
+      'ore': true,
+      'raw_ore': true
+    },
+    
     /////////////// Tier 1 Alloys /////////////////////////////
     {
       'material': 'bronze',
       'color': 0xfa7532,
       'type': 'alloy',
       'tier': 1,
-      'itemParts': ['dense_plate','rod', 'wire', 'hammer'],
-      'blockParts': ['sheetmetal'],
-      'fluid': null,
+      'itemParts': ['rod', 'wire', 'hammer', 'mechanical_component', 'plating'],
+      'blockParts': ['sheetmetal', 'cog_block', 'casing'],
       'fluid_id': 'tconstruct:molten_bronze',
       'durability': 256,
       'amount': 4,
@@ -341,9 +381,8 @@ global.newMaterialParts = [
       'color': 0xdbb488,
       'type': 'alloy',
       'tier': 1,
-      'itemParts': ['dense_plate','rod', 'wire', 'hammer'],
+      'itemParts': ['rod', 'wire', 'hammer', 'mechanical_component', 'plating'],
       'blockParts': [],
-      'fluid': null,
       'fluid_id': 'tconstruct:molten_constantan',
       'durability': 256,
       'amount': 2,
@@ -356,9 +395,8 @@ global.newMaterialParts = [
       'color': 0xe6db95,
       'type': 'alloy',
       'tier': 1,
-      'itemParts': ['dense_plate', 'rod', 'hammer'],
+      'itemParts': [ 'rod', 'hammer', 'mechanical_component', 'plating'],
       'blockParts': [],
-      'fluid': null,
       'fluid_id': 'tconstruct:molten_electrum',
       'durability': 256,
       'amount': 2,
@@ -373,9 +411,8 @@ global.newMaterialParts = [
       'color': 0xa4bab5,
       'type': 'alloy',
       'tier': 1,
-      'itemParts': ['dense_plate','rod', 'wire', 'hammer'],
-      'blockParts': ['scaffolding'],
-      'fluid': null,
+      'itemParts': ['rod', 'wire', 'hammer', 'mechanical_component', 'plating'],
+      'blockParts': ['scaffolding', 'cog_block', 'casing'],
       'fluid_id': 'tconstruct:molten_invar',
       'durability': 256,
       'amount': 3,
@@ -388,9 +425,8 @@ global.newMaterialParts = [
       'color': 0xffc96b,
       'type': 'alloy',
       'tier': 1,
-      'itemParts': ['dense_plate', 'gear','wire', 'dust', 'hammer'],
-      'blockParts': [],
-      'fluid': null,
+      'itemParts': ['gear', 'wire', 'dust', 'hammer', 'mechanical_component', 'plating'],
+      'blockParts': ['cog_block', 'casing'],
       'fluid_id': 'tconstruct:molten_brass',
       'durability': 256,
       'amount': 3,
@@ -405,7 +441,7 @@ global.newMaterialParts = [
       'color': 0xff2626,
       'type': 'alloy',
       'tier': 1,
-      'itemParts': ['dense_plate', 'plate', 'gear', 'wire', 'dust', 'rod'],
+      'itemParts': ['plate', 'gear', 'wire', 'dust', 'rod'],
       'blockParts': [],
       'fluid': 'thick',
       'fluid_id': 'kubejs:molten_red_alloy',
@@ -419,9 +455,8 @@ global.newMaterialParts = [
       'color': 0x9d96b5,
       'type': 'alloy',
       'tier': 1,
-      'itemParts': ['ingot', 'nugget', 'dense_plate', 'plate', 'gear', 'wire', 'dust', 'rod'],
+      'itemParts': ['ingot', 'nugget', 'plate', 'gear', 'dust', 'rod'],
       'blockParts': ['storage_block'],
-      'fluid': null,
       'fluid_id': 'tconstruct:molten_pewter',
       'amount': 4,
       'dust_input': ['2x #forge:dusts/tin','#forge:dusts/silver','#forge:dusts/lead'],
@@ -431,16 +466,14 @@ global.newMaterialParts = [
       'feruchemy': 'Strength--Haste/Strength or Weakness/Mining Fatigue'
     },
     
-    
     /////////////// Tier 2 Alloys /////////////////////////////
     {
       'material': 'steel',
       'color': 0xb5b3b3,
       'type': 'alloy',
       'tier': 2,
-      'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'hammer'],
+      'itemParts': ['plate',  'gear', 'rod', 'hammer'],
       'blockParts': [],
-      'fluid': null,
       'durability': 512,
       'allomancy': 'Steel allows you to Push on metals. This means moving metal items away from you, or pushing yourself off of metal blocks. This can be used as a sort of rudimentary flight, though it is more falling with style than anything else. Steel also allows you to use the Coin Bag item. If you have gold nuggets in your inventory and are burning steel, you can use this as a ranged weapon similar to the old Beta-edition Bow. Iron nuggets can also be used, causing more damage but far less accurately',
       'feruchemy': 'Speed--Speed Boost or Slowness'
@@ -450,7 +483,7 @@ global.newMaterialParts = [
       'color': 0x792be0,
       'type': 'alloy',
       'tier': 2,
-      'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire'],
+      'itemParts': ['plate',  'gear', 'rod', 'wire'],
       'blockParts': ['storage_block'],
       'fluid': 'thick'
     },
@@ -459,16 +492,15 @@ global.newMaterialParts = [
       'color': 0xffd894,
       'type': 'alloy',
       'tier': 2,
-      'itemParts': ['dense_plate', 'rod', 'wire'],
-      'blockParts': [],
-      'fluid': null
+      'itemParts': [ 'rod', 'wire'],
+      'blockParts': []
     },
     {
       'material': 'manasteel',
       'color': 0x69a7ff,
       'type': 'alloy',
       'tier': 2,
-      'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire'],
+      'itemParts': ['plate',  'gear', 'rod', 'wire'],
       'blockParts': [],
       'fluid': 'thick'
     },
@@ -477,7 +509,7 @@ global.newMaterialParts = [
       'color': 0xe8a02a,
       'type': 'alloy',
       'tier': 2,
-      'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire'],
+      'itemParts': ['plate',  'gear', 'rod', 'wire'],
       'blockParts': [],
       'fluid': 'thick'
     },
@@ -486,8 +518,8 @@ global.newMaterialParts = [
       'color': 0x9be3fa,
       'type': 'alloy',
       'tier': 2,
-      'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire'],
-      'blockParts': ['storage_block'],
+      'itemParts': ['plate',  'gear', 'rod', 'wire'],
+      'blockParts': [],
       'fluid': 'thick'
     },
     {
@@ -495,7 +527,7 @@ global.newMaterialParts = [
       'color': 0xa9b0ac,
       'type': 'alloy',
       'tier': 2,
-      'itemParts': ['dense_plate', 'plate', 'gear', 'wire', 'dust', 'rod'],
+      'itemParts': [ 'plate', 'gear', 'wire', 'dust', 'rod'],
       'blockParts': [],
       'fluid': 'thick',
       'fluid_id': 'kubejs:molten_duralumin',
@@ -511,7 +543,7 @@ global.newMaterialParts = [
       'color': 0xa9a9b0,
       'type': 'alloy',
       'tier': 2,
-      'itemParts': ['dense_plate', 'plate', 'gear', 'wire', 'dust', 'rod'],
+      'itemParts': [ 'plate', 'gear', 'wire', 'dust', 'rod'],
       'blockParts': [],
       'fluid': 'thick',
       'fluid_id': 'kubejs:molten_nicrosil',
@@ -527,7 +559,7 @@ global.newMaterialParts = [
       'color': 0xbab6a2,
       'type': 'alloy',
       'tier': 2,
-      'itemParts': ['dense_plate', 'plate', 'gear', 'wire', 'dust', 'rod'],
+      'itemParts': [ 'plate', 'gear', 'wire', 'dust', 'rod'],
       'blockParts': [],
       'fluid': 'thick',
       'fluid_id': 'kubejs:molten_bendalloy',
@@ -543,35 +575,32 @@ global.newMaterialParts = [
     {
       'material': 'enderium',
       'color': 0x5fc4d4,
-      'itemParts': ['dense_plate', 'rod', 'wire'],
-      'blockParts': [],
-      'fluid': null
+      'itemParts': [ 'rod', 'wire'],
+      'blockParts': []
     },
     {
       'material': 'signalum',
       'color': 0xff6e4a,
-      'itemParts': ['dense_plate','rod', 'wire'],
-      'blockParts': [],
-      'fluid': null
+      'itemParts': ['rod', 'wire'],
+      'blockParts': []
     },
     {
       'material': 'netherite',
       'color': 0x524c49,
-      'itemParts': ['dense_plate', 'rod', 'wire'],
-      'blockParts': [],
-      'fluid': null
+      'itemParts': [ 'rod', 'wire'],
+      'blockParts': []
     },
     {
       'material': 'terrasteel',
       'color': 0x63e645,
-      'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire'],
+      'itemParts': ['plate',  'gear', 'rod', 'wire'],
       'blockParts': [],
       'fluid': 'thick'
     },
     {
       'material': 'elementium',
       'color': 0xf569b6,
-      'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire'],
+      'itemParts': ['plate',  'gear', 'rod', 'wire'],
       'blockParts': [],
       'fluid': 'thick'
     },
@@ -584,7 +613,6 @@ global.newMaterialParts = [
       'type': 'base_metal',
       'itemParts': ['dust'],
       'blockParts': [],
-      'fluid': null,
       'ore': true
     },
     {
@@ -593,7 +621,6 @@ global.newMaterialParts = [
       'type': 'base_metal',
       'itemParts': ['dust'],
       'blockParts': [],
-      'fluid': null,
       'ore': true
     },*/
     {
@@ -607,6 +634,7 @@ global.newMaterialParts = [
       'ore': true,
       'raw_ore': true,
       'components': ['tin','nickel'],
+      'gem_components': ['apatite'],
     },
     {
       'material': 'imortite',
@@ -618,7 +646,8 @@ global.newMaterialParts = [
       'fluid': 'thick',
       'ore': true,
       'raw_ore': true,
-      'components': ['copper','silver'],
+      'components': ['copper','gold'],
+      'gem_components': ['fluorite'],
     },
     {
       'material': 'densite',
@@ -630,7 +659,8 @@ global.newMaterialParts = [
       'fluid': 'thick',
       'ore': true,
       'raw_ore': true,
-      'components': ['iron','zinc'],
+      'components': ['silver','tin'],
+      'gem_components': ['certus_quartz'],
     },
     {
       'material': 'potentium',
@@ -643,9 +673,10 @@ global.newMaterialParts = [
       'ore': true,
       'raw_ore': true,
       'components': ['gold','zinc'],
+      'gem_components': ['amethyst'],
     },
     {
-      'material': 'tenebrium',
+      'material': 'jimmium',
       'color': 0x270059,
       'tier': 1,
       'type': 'compound_ore',
@@ -654,10 +685,11 @@ global.newMaterialParts = [
       'fluid': 'thick',
       'ore': true,
       'raw_ore': true,
-      'components': ['lead','zinc'],
+      'components': ['lead','iron'],
+      'gem_components': ['niter'],
     },
     {
-      'material': 'furystone',
+      'material': 'kharaxium',
       'color': 0x8f0000,
       'tier': 1,
       'type': 'compound_ore',
@@ -666,7 +698,8 @@ global.newMaterialParts = [
       'fluid': 'thick',
       'ore': true,
       'raw_ore': true,
-      'components': ['redstone','zinc'],
+      'components': ['iron','copper'],
+      'gem_components': ['cinnabar'],
     },
     
     /////////////// Other /////////////////////////////
@@ -678,11 +711,23 @@ global.newMaterialParts = [
       'fluid': 'thick'
     },
     {
+      'material': 'rich_slag',
+      'color': 0x8a472d,
+      'itemParts': ['dust'],
+      'blockParts': [],
+      'fluid': 'thick'
+    },
+    {
       'material': 'wood',
       'color': 0x825c45,
       'itemParts': [],
-      'blockParts': ['scaffolding'],
-      'fluid': null
+      'blockParts': ['scaffolding']
+    },
+    {
+      'material': 'ancient_wood',
+      'color': 0xa86cba,
+      'itemParts': [],
+      'blockParts': ['scaffolding']
     },
     {
       'material': 'redstone',
@@ -694,21 +739,87 @@ global.newMaterialParts = [
       'ore': true
     },
     {
-      'material': 'transmuted_silver',
-      'color': 0xa9d0d9,
-      'itemParts': ['plate', 'dense_plate', 'gear', 'rod', 'wire'],
-      'blockParts': [],
-      'fluid': null
-    },
-    {
       'material': 'sulfur',
       'color': 0xe1eb34,
       'type': 'gem',
       'itemParts': [],
       'blockParts': [],
-      'fluid': null,
       'ore': true
     },
+    {
+      'material': 'transmuted_silver',
+      'color': 0xa9d0d9,
+      'type': 'converted_metal',
+      'itemParts': ['plate', 'gear', 'rod'],
+      'blockParts': []
+    },
+    {
+      'material': 'infused_iron',
+      'color': 0x54b33b,
+      'type': 'converted_metal',
+      'itemParts': ['plate', 'gear', 'rod'],
+      'blockParts': []
+    },
+    {
+      'material': 'tainted_gold',
+      'color': 0xa66032,
+      'type': 'converted_metal',
+      'itemParts': ['plate', 'gear', 'rod', 'dust'],
+      'blockParts': []
+    },
+    {
+      'material': 'sky_metal',
+      'color': 0x83d5de,
+      'type': 'converted_metal',
+      'itemParts': ['plate', 'gear', 'rod'],
+      'blockParts': ['storage_block']
+    },
+    {
+      'material': 'compressed_steel',
+      'color': 0x6b6b6b,
+      'type': 'alloy',
+      'itemParts': ['plate', 'rod', 'component'],
+      'blockParts': [],
+    },
+    {
+      'material': 'energized_steel',
+      'color': 0xd9c380,
+      'type': 'alloy',
+      'itemParts': ['plate', 'rod', 'gear'],
+      'blockParts': [],
+    },
+    /*
+    {
+      'material': 'refined_iron',
+      'color': 0xdbf5ff,
+      'type': 'alloy',
+      'itemParts': ['ingot', 'nugget', 'dust', 'plate', 'gear', 'wire'],
+      'blockParts': ['storage_block'],
+      'fluid': 'thick',
+    },
+    {
+      'material': 'crude_steel',
+      'color': 0x6a7175,
+      'type': 'alloy',
+      'itemParts': ['ingot', 'nugget', 'dust', 'plate', 'gear',],
+      'blockParts': ['storage_block'],
+      'fluid': 'thick',
+    },
+    {
+      'material': 'thermalloy',
+      'color': 0x8b4aed,
+      'type': 'alloy',
+      'tier': 1,
+      'itemParts': ['ingot', 'nugget', 'rod', 'dust', 'plate', 'gear', 'wire', 'mechanical_component'],
+      'blockParts': ['scaffolding','sheetmetal', 'cog_block','storage_block'],
+      'fluid': 'thick',
+      'fluid_id': 'kubejs:molten_thermalloy',
+      'amount': 3,
+      'dust_input': ['#forge:dusts/lumium','#forge:dusts/signalum','#forge:dusts/enderium'],
+      'ingot_input': ['#forge:ingots/lumium','#forge:ingots/signalum','#forge:ingots/enderium'],
+      'tinkers_input': [{tag: 'forge:molten_lumium',amount: 90},{tag: 'forge:molten_signalum',amount: 90},{tag: 'forge:molten_enderium',amount: 90}]
+    },
+    */
     
     /////////////// Gems /////////////////////////////
     /*

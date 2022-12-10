@@ -16,7 +16,7 @@ onEvent('recipes', event => {
 		'C'
 	  ], {
 		B: 'ars_nouveau:source_gem',
-		C: 'kubejs:transmuted_silver_plate'
+		C: '#forge:plates/pewter'
 	  })
 	  global.arsImbument(event, 'minecraft:ender_pearl', 1, '#forge:slimeballs', 1000, [{"item": {"item": "powah:uraninite"}},{"item": {"item": "powah:uraninite"}},{"item": {"item": "powah:uraninite"}},{"item": {"item": "powah:uraninite"}}], 'kubejs:slimy_pearl')
 });

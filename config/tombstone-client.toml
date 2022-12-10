@@ -77,4 +77,6 @@
 	#Defines the font to use in Tombstone's screens (only for english, french and spanish languages) [FANTASY/VANILLA|default:FANTASY]
 	#Allowed Values: FANTASY, VANILLA
 	font_rule = "FANTASY"
+	#Prevent night vision from flashing when less than 5 seconds left [false/true|default:true]
+	no_blinking_nightvision = true
 

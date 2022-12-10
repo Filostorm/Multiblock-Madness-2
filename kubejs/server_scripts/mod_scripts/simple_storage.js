@@ -34,7 +34,7 @@ onEvent('recipes', event => {
   ], {
 	A: 'kubejs:red_alloy_plate',
 	B: 'storagenetwork:kabel',
-	C: 'powah:capacitor_basic_large'
+	C: 'kubejs:source_tube'
   })
 
 });

@@ -51,6 +51,14 @@
     "minecraft:cobblestone",
     "byg:soapstone",
     "minecraft:clay",
-    "byg:dacite"
+    "byg:dacite",
+    "minecraft:cobbled_deepslate",
+    "minecraft:mossy_cobblestone",
+    "minecraft:snow_block",
+    "minecraft:terracotta",
+    "minecraft:brown_terracotta",
+    "minecraft:white_terracotta",
+    "minecraft:light_gray_terracotta",
+    "minecraft:black_terracotta"
   ]
 }

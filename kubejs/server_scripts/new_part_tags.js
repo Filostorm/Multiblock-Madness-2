@@ -5,7 +5,7 @@ onEvent('tags.items', event => {
         event.add(`forge:ingots`, `kubejs:${item.material}_ingot`)
         event.add(`forge:ingots/${item.material}`, `kubejs:${item.material}_ingot`)
 
-      } else if (part == 'ruby' || part == 'sapphire') {
+      } else if (part == 'gem') {
         event.add(`forge:gems`, `kubejs:${item.material}`)
         event.add(`forge:gems/${item.material}`, `kubejs:${item.material}`)
 

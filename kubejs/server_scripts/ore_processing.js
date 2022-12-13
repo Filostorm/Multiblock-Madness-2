@@ -68,17 +68,18 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);*/
 			//Make some dust
 			if (Item.of(`#forge:dusts/${item.material}`) != null) {
 				if (Item.of(`#create:crushed_ores/${item.material}`) != null) {
-				event.recipes.immersiveengineeringCrusher(`#forge:dusts/${item.material}`, `#create:crushed_ores/${item.material}`).id(`mbm2:crushing/crushed_${item.material}`)
+				event.recipes.immersiveengineeringCrusher(`#forge:dusts/${item.material}`, `#create:crushed_ores/${item.material}`).id(`mbm2:immersive/crushing/crushed_${item.material}`)
 				}
 				if (Item.of(`#forge:washed_ores/${item.material}`) != null) {
-				event.recipes.immersiveengineeringCrusher(`#forge:dusts/${item.material}`, `#forge:washed_ores/${item.material}`).id(`mbm2:crushing/washed_${item.material}`)
+				event.recipes.immersiveengineeringCrusher(`#forge:dusts/${item.material}`, `#forge:washed_ores/${item.material}`).id(`mbm2:immersive/crushing/washed_${item.material}`)
+				event.recipes.createMilling([`#forge:dusts/${item.material}`], [`#forge:washed_ores/${item.material}`]).id(`mbm2:create/crushing/washed_${item.material}`)
 				}
 				if (Item.of(`#forge:raw_materials/${item.material}`) != null) {
-				event.recipes.immersiveengineeringCrusher(`#forge:dusts/${item.material}`, `#forge:raw_materials/${item.material}`).id(`mbm2:crushing/raw_${item.material}`)
+				event.recipes.immersiveengineeringCrusher(`#forge:dusts/${item.material}`, `#forge:raw_materials/${item.material}`).id(`mbm2:immersive/crushing/raw_${item.material}`)
 				}
 				//Grit Washing
 				if (Item.of(`#forge:grits/${item.material}`) != null) {
-				event.recipes.createSplashing([Item.of(`#forge:dusts/${item.material}`).withChance(0.75), Item.of('gravel').withChance(0.75)], `#forge:grits/${item.material}`).id(`mbm2:washing/grit_${item.material}`)
+				event.recipes.createSplashing([Item.of(`#forge:dusts/${item.material}`), Item.of('gravel').withChance(0.50)], `#forge:grits/${item.material}`).id(`mbm2:washing/grit_${item.material}`)
 				}
 			}
 			if (item.type == 'base_metal') {

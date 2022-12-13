@@ -1,0 +1,66 @@
+{
+    "textures": {
+        "ore": "kubejs:block/ore/poor_ore",
+        "stone": "kubejs:block/ore/blackstone",
+        "top": "kubejs:block/ore/blackstone_top",
+        "particle": "kubejs:block/ore/blackstone"
+    },
+        "display": {
+        "gui": {
+            "rotation": [ 30, 45, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 0.625, 0.625, 0.625 ]
+        },
+        "ground": {
+            "rotation": [ 0, 0, 0 ],
+            "translation": [ 0, 3, 0 ],
+            "scale": [ 0.25, 0.25, 0.25 ]
+        },
+        "fixed": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 1, 1, 1 ]
+        },
+        "head": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 1, 1, 1 ]
+        },
+        "firstperson_righthand": {
+            "rotation": [ 0, 315, 0 ],
+            "translation": [ 0, 2.5, 0 ],
+            "scale": [ 0.4, 0.4, 0.4 ]
+        },
+        "thirdperson_righthand": {
+            "rotation": [ 75, 315, 0 ],
+            "translation": [ 0, 2.5, 0 ],
+            "scale": [ 0.375, 0.375, 0.375 ]
+        }
+    },
+    "elements": [
+        {
+            "from": [ 0, 0, 0 ], 
+            "to": [ 16, 16, 16 ], 
+            "faces": {
+                "north": { "texture": "#stone", "uv": [ 0, 0, 16, 16 ] },
+                "east": { "texture": "#stone", "uv": [ 0, 0, 16, 16 ] },
+                "south": { "texture": "#stone", "uv": [ 0, 0, 16, 16 ] },
+                "west": { "texture": "#stone", "uv": [ 0, 0, 16, 16 ] },
+                "up": { "texture": "#top", "uv": [ 0, 0, 16, 16 ] },
+                "down": { "texture": "#stone", "uv": [ 0, 0, 16, 16 ] }
+            }
+        },
+    {
+        "from": [ 0, 0, 0 ], 
+        "to": [ 16, 16, 16 ], 
+        "faces": {
+            "north": { "texture": "#ore", "uv": [ 0, 0, 16, 16 ], "tintindex": 0},
+            "east": { "texture": "#ore", "uv": [ 0, 0, 16, 16 ], "tintindex": 0 },
+            "south": { "texture": "#ore", "uv": [ 0, 0, 16, 16 ], "tintindex": 0 },
+            "west": { "texture": "#ore", "uv": [ 0, 0, 16, 16 ], "tintindex": 0 },
+            "up": { "texture": "#ore", "uv": [ 0, 0, 16, 16 ], "tintindex": 0 },
+            "down": { "texture": "#ore", "uv": [ 0, 0, 16, 16 ], "tintindex": 0 }
+        }
+    }
+    ]
+}

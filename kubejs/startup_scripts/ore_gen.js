@@ -8,13 +8,23 @@ onEvent('worldgen.remove', event => {
 
 onEvent('tags.blocks', event => {
 	event.add(`forge:darkstone`, 'forbidden_arcanus:darkstone')
+	event.add(`forge:smooth_basalt`, 'minecraft:smooth_basalt')
+	event.add(`forge:tuff`, 'minecraft:tuff')
 })
 
 onEvent('tags.items', event => {
 	event.add(`forge:darkstone`, 'forbidden_arcanus:darkstone')	  
+	event.add(`forge:smooth_basalt`, 'minecraft:smooth_basalt')
+	event.add(`forge:tuff`, 'minecraft:tuff')
 })
 
 onEvent('worldgen.add', event => {
+
+	
+	const netherSurfaceChance = 0.75
+
+
+
 	// use the anchors helper from the event (NOTE: this requires newer versions of KubeJS)
 	// if you are using an older version of KubeJS, you can use the methods in the ore properties class
 	const {anchors} = event
@@ -49,29 +59,6 @@ onEvent('worldgen.add', event => {
 	})
 
 	
-	// Base Iron Veins
-	event.addOre((ore) => {
-		ore.id = 'kubejs:iron_ore'
-	
-		ore.addTarget('stone', 'minecraft:iron_ore')
-		ore.addTarget('minecraft:deepslate', 'minecraft:deepslate_iron_ore')
-		global.stoneTypes.forEach((type) => {
-			if (type.material != 'deepslate') {
-				ore.addTarget(`#forge:${type.material}`, `kubejs:${type.material}_iron_ore`)
-			}
-		})
-
-		ore.count([6, 10])
-				.squared()
-				.uniformHeight(
-						anchors.aboveBottom(0),
-						anchors.absolute(256)
-				)
-		ore.size = 30
-		ore.noSurface = 0
-		ore.worldgenLayer = "underground_ores"
-		  ore.chance = 0
-	})
 
 	// Base Coal Veins
 	event.addOre((ore) => {
@@ -94,7 +81,7 @@ onEvent('worldgen.add', event => {
 		ore.size = 20
 		ore.noSurface = 0
 		ore.worldgenLayer = "underground_ores"
-		ore.chance = 0				
+		ore.chance = 0
 		ore.biomes = {
 			not: "^nether"
 		}
@@ -123,6 +110,9 @@ onEvent('worldgen.add', event => {
 		ore.noSurface = 0
 		ore.worldgenLayer = "underground_ores"
 		ore.chance = 0
+		ore.biomes = {
+			not: "^nether"
+		  }
 	})
 
 	// Base Tin Veins
@@ -147,48 +137,9 @@ onEvent('worldgen.add', event => {
 		ore.noSurface = 0
 		ore.worldgenLayer = "underground_ores"
 		ore.chance = 0
-	})
-
-	// Base Zinc Veins
-	event.addOre((ore) => {
-		ore.id = 'kubejs:nether_zinc_ore'
-	
-		global.stoneTypes.forEach((type) => {
-				ore.addTarget(`#forge:${type.material}`, `kubejs:${type.material}_zinc_ore`)
-		})
-		    ore.biomes = "^nether"
-
-		ore.count([10, 15])
-				.squared()
-				.uniformHeight(
-						anchors.aboveBottom(0),
-						anchors.absolute(200)
-				)
-		ore.size = 25
-		ore.noSurface = 0
-		ore.worldgenLayer = "underground_ores"
-		ore.chance = 0
-	})
-
-	// Base Nickel Veins
-	event.addOre((ore) => {
-		ore.id = 'kubejs:nether_nickel_ore'
-	
-		global.stoneTypes.forEach((type) => {
-				ore.addTarget(`#forge:${type.material}`, `kubejs:${type.material}_nickel_ore`)
-		})
-		    ore.biomes = "^nether"
-
-		ore.count([10, 15])
-				.squared()
-				.uniformHeight(
-						anchors.aboveBottom(32),
-						anchors.absolute(200)
-				)
-		ore.size = 25
-		ore.noSurface = 0
-		ore.worldgenLayer = "underground_ores"
-		ore.chance = 0
+		ore.biomes = {
+			not: "^nether"
+		  }
 	})
 	
 	// Inserted Apatite Veins to Tin Veins
@@ -328,7 +279,7 @@ onEvent('worldgen.add', event => {
 		ore.chance = 0
 	})
 
-	// Inserted ruby Veins
+	// Inserted Ruby Veins
 	event.addOre((ore) => {
 		ore.id = 'kubejs:ruby_ore'
 
@@ -347,6 +298,166 @@ onEvent('worldgen.add', event => {
 		ore.worldgenLayer = "underground_decoration"
 		  ore.chance = 0
 	})
+
+
+	// Base Iron Veins
+	event.addOre((ore) => {
+		ore.id = 'kubejs:nether_iron_ore'
+	
+		global.stoneTypes.forEach((type) => {
+				ore.addTarget(`#forge:${type.material}`, `kubejs:${type.material}_iron_ore`)
+		})
+		    
+
+		ore.count([1, 6])
+				.squared()
+				.uniformHeight(
+						anchors.aboveBottom(25),
+						anchors.absolute(150)
+				)
+		ore.size = 25
+		ore.noSurface = netherSurfaceChance
+		ore.worldgenLayer = "underground_ores"
+		ore.chance = 0
+		ore.biomes = "^nether"
+	})
+	
+	// Base Zinc Veins
+	event.addOre((ore) => {
+		ore.id = 'kubejs:nether_zinc_ore'
+	
+		global.stoneTypes.forEach((type) => {
+				ore.addTarget(`#forge:${type.material}`, `kubejs:${type.material}_zinc_ore`)
+		})
+		    
+
+		ore.count([1, 5])
+				.squared()
+				.uniformHeight(
+						anchors.aboveBottom(0),
+						anchors.absolute(200)
+				)
+		ore.size = 25
+		ore.noSurface = netherSurfaceChance
+		ore.worldgenLayer = "underground_ores"
+		ore.chance = 0
+		ore.biomes = "^nether"
+	})
+
+	// Base Nickel Veins
+	event.addOre((ore) => {
+		ore.id = 'kubejs:nether_nickel_ore'
+	
+		global.stoneTypes.forEach((type) => {
+				ore.addTarget(`#forge:${type.material}`, `kubejs:${type.material}_nickel_ore`)
+		})
+		    
+
+		ore.count([1, 5])
+				.squared()
+				.uniformHeight(
+						anchors.aboveBottom(32),
+						anchors.absolute(200)
+				)
+		ore.size = 15
+		ore.noSurface = netherSurfaceChance
+		ore.worldgenLayer = "underground_ores"
+		ore.chance = 0
+		ore.biomes = "^nether"
+	})
+
+	// Base Gold Veins
+	event.addOre((ore) => {
+		ore.id = 'kubejs:nether_gold_ore'
+	
+		global.stoneTypes.forEach((type) => {
+				ore.addTarget(`#forge:${type.material}`, `kubejs:${type.material}_gold_ore`)
+		})
+		    
+
+		ore.count([1, 5])
+				.squared()
+				.uniformHeight(
+						anchors.aboveBottom(32),
+						anchors.absolute(200)
+				)
+		ore.size = 25
+		ore.noSurface = netherSurfaceChance
+		ore.worldgenLayer = "underground_ores"
+		ore.chance = 0
+		ore.biomes = "^nether"
+	})
+
+	// Base Silver Veins
+	event.addOre((ore) => {
+		ore.id = 'kubejs:nether_silver_ore'
+	
+		global.stoneTypes.forEach((type) => {
+				ore.addTarget(`#forge:${type.material}`, `kubejs:${type.material}_silver_ore`)
+		})
+		    
+
+		ore.count([1, 5])
+				.squared()
+				.uniformHeight(
+						anchors.aboveBottom(32),
+						anchors.absolute(200)
+				)
+		ore.size = 25
+		ore.noSurface = netherSurfaceChance
+		ore.worldgenLayer = "underground_ores"
+		ore.chance = 0
+		ore.biomes = "^nether"
+	})
+
+	// Base Aluminum Veins
+	event.addOre((ore) => {
+		ore.id = 'kubejs:nether_aluminum_ore'
+	
+		global.stoneTypes.forEach((type) => {
+				ore.addTarget(`#forge:${type.material}`, `kubejs:${type.material}_aluminum_ore`)
+		})
+		    
+
+		ore.count([1, 4])
+				.squared()
+				.uniformHeight(
+						anchors.aboveBottom(75),
+						anchors.absolute(200)
+				)
+		ore.size = 25
+		ore.noSurface = netherSurfaceChance
+		ore.worldgenLayer = "underground_ores"
+		ore.chance = 0
+		ore.biomes = "^nether"
+	})
+
+	// Base Cobalt Veins
+	event.addOre((ore) => {
+		ore.id = 'kubejs:nether_cobalt_ore'
+	
+		ore.addTarget('netherrack', 'tconstruct:cobalt_ore')
+		global.stoneTypes.forEach((type) => {
+			if (type.material != 'netherrack') {
+				ore.addTarget(`#forge:${type.material}`, `kubejs:${type.material}_cobalt_ore`)
+			}
+		})
+		    
+
+		ore.count([1, 4])
+				.squared()
+				.uniformHeight(
+						anchors.aboveBottom(5),
+						anchors.absolute(100)
+				)
+		ore.size = 25
+		ore.noSurface = netherSurfaceChance
+		ore.worldgenLayer = "underground_ores"
+		ore.chance = 0
+		ore.biomes = "^nether"
+	})
+
+	
 
 
 	// Inserted Dense Ore

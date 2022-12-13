@@ -7,8 +7,8 @@ onEvent('item.registry', event => {
       event.create(`${item.material}_${part}`, 'pickaxe').color(0, item.color).parentModel(`kubejs:item/${part}`).texture(`kubejs:item/${part}`).unstackable().tier('iron').maxDamage(item.durability)//.tooltip(`${item.durability} Base Durability`)
     } else {
       if (item.type == 'gem') {
-        if (part == 'ruby' || part == 'sapphire') {
-        event.create(`${part}`).color(0, item.color).texture(`kubejs:item/gem/${part}`)
+        if (part == 'gem') {
+        event.create(`${item.material}`).texture(`kubejs:item/${item.material}`)
         } else {
           event.create(`${item.material}_${part}`).color(0, item.color).texture(`kubejs:item/gem/${part}`)
         }

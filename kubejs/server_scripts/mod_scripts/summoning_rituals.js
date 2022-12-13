@@ -37,7 +37,7 @@ onEvent('recipes', event => {
 	)
     .input('soul_sand')
     .input('minecraft:obsidian')
-    .input('flint_and_steel')
+    .input(Item.of('flint_and_steel').ignoreNBT())
     .input('create:cinder_flour')
     .input('soul_lantern')
     .recipeTime(200).id('kubejs:summoning/4x_blaze')

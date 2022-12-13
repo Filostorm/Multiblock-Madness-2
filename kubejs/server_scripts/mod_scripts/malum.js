@@ -3,6 +3,8 @@
 onEvent('tags.items', event => {
 	event.add(`forge:ores/soulstone`, 'malum:soulstone_ore')
 	event.add(`forge:ores/soulstone`, 'malum:deepslate_soulstone_ore')
+	event.add(`create:crushed_ores`, 'malum:crushed_soulstone')
+	event.add(`create:crushed_ores/soulstone`, 'malum:crushed_soulstone')
  });
  
 onEvent('recipes', event => {

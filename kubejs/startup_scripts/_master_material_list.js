@@ -117,6 +117,7 @@ global.newMaterialParts = [
       'itemParts': ['plate', 'gear', 'rod'],
       'blockParts': [],
       'ore': true,
+      'raw_ore': true,
       'allomancy': 'Aluminum is a purifying metal - it removes all metals from your current stock. This may seem useless, but it also removes all potion effects - not a bad trade to remove some Wither or Poison before it kills you',
       'feruchemy': 'Aluminum and FID: Storing in a metalmind "Keys" it to you, so that only you can tap the power stored within. But if you Store Aluminum first, the metalmind remains "unkeyed", allowing any Feruchemist to Tap is Resouces (good for Co-ops!) (Note this makes the metalmind unable to be keyed, even if all charges are removed)'
     },
@@ -382,7 +383,7 @@ global.newMaterialParts = [
       'type': 'alloy',
       'tier': 1,
       'itemParts': ['rod', 'wire', 'hammer', 'mechanical_component', 'plating'],
-      'blockParts': [],
+      'blockParts': ['cog_block'],
       'fluid_id': 'tconstruct:molten_constantan',
       'durability': 256,
       'amount': 2,
@@ -747,6 +748,14 @@ global.newMaterialParts = [
       'ore': true
     },
     {
+      'material': 'lumite',
+      'color': 0xffed7a,
+      'type': 'gem',
+      'itemParts': ['gem', 'dust'],
+      'blockParts': ['storage_block'],
+      'ore': true
+    },
+    {
       'material': 'transmuted_silver',
       'color': 0xa9d0d9,
       'type': 'converted_metal',
@@ -851,6 +860,21 @@ global.newMaterialParts = [
       },
       {
         'material': 'netherrack',
+        'hardness': 3,
+        'resistance': 3
+      },
+      {
+        'material': 'tuff',
+        'hardness': 3,
+        'resistance': 3
+      },
+      {
+        'material': 'smooth_basalt',
+        'hardness': 3,
+        'resistance': 3
+      },
+      {
+        'material': 'blackstone',
         'hardness': 3,
         'resistance': 3
       },

@@ -109,7 +109,7 @@
 #Everything to do with world generation
 [worldgen]
 	#Generate Cobalt
-	generateCobalt = true
+	generateCobalt = false
 	#Approx Ores per Chunk
 	veinCountCobalt = 8
 

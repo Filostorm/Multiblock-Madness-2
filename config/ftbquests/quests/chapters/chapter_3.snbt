@@ -73,7 +73,7 @@
 		{
 			title: "The Brass Age"
 			disable_toast: true
-			x: 1.5d
+			x: 0.5d
 			y: 1.5d
 			description: ["Zinc can be found much more frequently in the Nether."]
 			id: "1A4ED8C40CDFBBE5"
@@ -101,7 +101,7 @@
 			}]
 		}
 		{
-			x: 3.5d
+			x: 2.5d
 			y: 3.0d
 			dependencies: ["1A4ED8C40CDFBBE5"]
 			id: "50E9DDE83C23EE6E"
@@ -117,7 +117,7 @@
 			}]
 		}
 		{
-			x: 6.5d
+			x: 5.5d
 			y: 6.0d
 			dependencies: [
 				"050141BF6CD20337"
@@ -131,7 +131,7 @@
 			}]
 		}
 		{
-			x: 3.5d
+			x: 2.5d
 			y: 4.5d
 			dependencies: ["50E9DDE83C23EE6E"]
 			id: "39F16774468E59FE"
@@ -142,7 +142,7 @@
 			}]
 		}
 		{
-			x: 5.0d
+			x: 4.0d
 			y: 4.5d
 			description: ["Attaching a large Cog to the top allows you to configure the speed of the attached system."]
 			dependencies: ["1E77F20F773CA050"]
@@ -160,7 +160,7 @@
 		}
 		{
 			title: "Advanced Logistics"
-			x: 3.5d
+			x: 2.5d
 			y: 0.0d
 			description: ["Brass Tunnels/Funnels have a filter spot that can be clicked with an item to allow for simple whitelisting, or with a configured Filter for more complex options."]
 			dependencies: ["1A4ED8C40CDFBBE5"]
@@ -180,11 +180,9 @@
 					id: "1BB36A8FA30A8C5B"
 					type: "item"
 					item: {
-						id: "create:filter"
+						id: "create:attribute_filter"
 						Count: 1b
-						tag: {
-							Items: { }
-						}
+						tag: { }
 					}
 				}
 			]
@@ -195,7 +193,7 @@
 			}]
 		}
 		{
-			x: 6.5d
+			x: 5.5d
 			y: 3.0d
 			dependencies: ["1E77F20F773CA050"]
 			id: "2D4B1C82A8FC7E2E"
@@ -211,7 +209,7 @@
 			}]
 		}
 		{
-			x: 5.0d
+			x: 4.0d
 			y: 3.0d
 			dependencies: ["50E9DDE83C23EE6E"]
 			id: "1E77F20F773CA050"
@@ -272,6 +270,7 @@
 		{
 			x: 8.5d
 			y: -1.0d
+			description: ["You'll need to place these underneath whaever you're trying to heat, and feed them burnable items."]
 			dependencies: ["20FA1AFF0BD65177"]
 			id: "46DC0D67FE1C4C67"
 			tasks: [{
@@ -283,7 +282,7 @@
 		{
 			title: "Crushing Wheel"
 			icon: "create:crushing_wheel"
-			x: 5.0d
+			x: 4.0d
 			y: 1.5d
 			subtitle: "Level 1 Ore Processing"
 			dependencies: ["1A4ED8C40CDFBBE5"]
@@ -416,7 +415,7 @@
 		}
 		{
 			title: "Basic Power Generation"
-			x: 3.5d
+			x: 2.5d
 			y: 6.0d
 			dependencies: ["39F16774468E59FE"]
 			id: "47910242F4DE9220"
@@ -464,7 +463,7 @@
 		}
 		{
 			title: "Tier 2 Powah"
-			x: 5.0d
+			x: 4.0d
 			y: 6.0d
 			description: ["Connect Rods to Orbs!"]
 			dependencies: ["47910242F4DE9220"]
@@ -642,7 +641,7 @@
 		}
 		{
 			icon: "multiblocked:sorter_mk1"
-			x: 5.0d
+			x: 4.0d
 			y: 0.0d
 			description: ["This is required to extract higher tier Ores from Compound Ore."]
 			dependencies: ["51537052A03715D7"]
@@ -690,7 +689,7 @@
 		}
 		{
 			icon: "createoreexcavation:drilling_machine"
-			x: 6.5d
+			x: 5.5d
 			y: 4.5d
 			dependencies: ["1E77F20F773CA050"]
 			id: "7F00F4A7C74AC181"
@@ -729,6 +728,33 @@
 				type: "item"
 				item: "apotheosis:salvaging_table"
 			}]
+		}
+		{
+			title: "Steam Engines!"
+			icon: "create:steam_engine"
+			x: 7.0d
+			y: 3.0d
+			description: ["Once the Steam Engine has been placed, it no longer stores water. Rather it has a flow meter, shown while looking with the Goggles. You'll need one bar of water for each Steam Engine you will be using."]
+			dependencies: ["1E77F20F773CA050"]
+			id: "70F1315477089A27"
+			tasks: [
+				{
+					id: "436CA764388D1EB4"
+					type: "item"
+					item: "create:fluid_tank"
+					count: 4L
+				}
+				{
+					id: "0E3EE6FA3BD9C6DC"
+					type: "item"
+					item: "create:steam_engine"
+				}
+				{
+					id: "252CB50AB80819CF"
+					type: "item"
+					item: "create:shaft"
+				}
+			]
 		}
 	]
 }

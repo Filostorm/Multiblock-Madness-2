@@ -2,6 +2,7 @@
 	"basics": {
 		"favorites": [
 			"{id:\"ftblibrary:toggle.gamemode\",json:'{\"group\":\"ftblibrary:cheat\",\"icon\":[\"ftblibrary:icons/blue_button\",\"ftblibrary:textures/icons/toggle_gamemode.png\"],\"x\":100,\"click\":\"command:/ftblibrary gamemode\",\"hide_with_nei\":true,\"requires_op\":true}',type:\"ftblibrary:sidebar_button\"}",
+			"{id:\"ftblibrary:toggle.rain\",json:'{\"group\":\"ftblibrary:cheat\",\"icon\":[\"ftblibrary:icons/blue_button\",\"ftblibrary:textures/icons/toggle_rain.png\"],\"x\":110,\"click\":\"command:/ftblibrary rain\",\"config\":true,\"hide_with_nei\":true,\"requires_op\":true}',type:\"ftblibrary:sidebar_button\"}",
 			"{id:\"ftbteams:my_team\",json:'{\"group\":\"ftblibrary:info\",\"icon\":\"ftbteams:textures/teams.png\",\"x\":0,\"click\":\"ftbteams:open_gui\",\"loading_screen\":true}',type:\"ftblibrary:sidebar_button\"}",
 			"{id:\"ftbquests:quests\",json:'{\"group\":\"ftblibrary:info\",\"icon\":\"ftbquests:item/book\",\"x\":610,\"click\":\"ftbquests:open_gui\",\"required_server_mods\":[\"ftbquests\"],\"custom_text\":true}',type:\"ftblibrary:sidebar_button\"}",
 			"{id:\"ftbessentials:trash_can\",json:'{\"group\":\"ftblibrary:util\",\"icon\":\"ftblibrary:icons/bin\",\"x\":150,\"click\":\"command:/trashcan\",\"required_server_mods\":[\"ftbessentials\"]}',type:\"ftblibrary:sidebar_button\"}",
@@ -38,12 +39,37 @@
 			"{data:{Count:1b,id:\"create:mechanical_drill\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
 			"{data:{Count:1b,id:\"create:sturdy_sheet\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
 			"{data:{Count:1b,id:\"create:empty_blaze_burner\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
-			"{data:{Count:1b,id:\"forbidden_arcanus:soul_extractor\",tag:{Damage:0},type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}"
+			"{data:{Count:1b,id:\"forbidden_arcanus:soul_extractor\",tag:{Damage:0},type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"create:encased_fan\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"createsifter:sifter\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"immersiveengineering:cokebrick\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"summoningrituals:altar\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"forbidden_arcanus:dark_soul\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"forbidden_arcanus:obsidian_ingot\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"forbidden_arcanus:obsidian_with_iron\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"forbidden_arcanus:corrupti_dust\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"forbidden_arcanus:arcane_crystal_dust\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"spirit:soul_powder\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"mna:basic_table\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"akashictome:tome\",tag:{\"akashictome:data\":{apotheosis:{Count:1b,id:\"patchouli:guide_book\",tag:{\"patchouli:book\":\"apotheosis:apoth_chronicle\"}},ars_nouveau:{Count:1b,id:\"ars_nouveau:worn_notebook\"},botania:{Count:1b,id:\"botania:lexicon\"},cloudstorage:{Count:1b,id:\"cloudstorage:guide_book\"},elementalcraft:{Count:1b,id:\"patchouli:guide_book\",tag:{\"patchouli:book\":\"elementalcraft:element_book\"}},engineersdecor:{Count:1b,id:\"patchouli:guide_book\",tag:{\"patchouli:book\":\"engineersdecor:engineersdecor_manual\"}},ftbquests:{Count:1b,id:\"ftbquests:book\",tag:{\"akashictome:displayName\":{text:'{\"translate\":\"item.ftbquests.book\"}'},\"akashictome:is_morphing\":1b,display:{Name:'{\"translate\":\"akashictome.sudo_name\",\"with\":[{\"color\":\"green\",\"translate\":\"item.ftbquests.book\"}]}'}}},immersiveengineering:{Count:1b,id:\"immersiveengineering:manual\"},industrialforegoing:{Count:1b,id:\"patchouli:guide_book\",tag:{\"patchouli:book\":\"industrialforegoing:industrial_foregoing\"}},malum:{Count:1b,id:\"malum:encyclopedia_arcana\"},naturesaura:{Count:1b,id:\"patchouli:guide_book\",tag:{\"patchouli:book\":\"naturesaura:book\"}},pneumaticcraft:{Count:1b,id:\"patchouli:guide_book\",tag:{\"patchouli:book\":\"pneumaticcraft:book\"}},powah:{Count:1b,id:\"powah:book\",tag:{\"akashictome:displayName\":{text:'{\"translate\":\"item.powah.book\"}'},\"akashictome:is_morphing\":1b,display:{Name:'{\"translate\":\"akashictome.sudo_name\",\"with\":[{\"color\":\"green\",\"translate\":\"item.powah.book\"}]}'}}},tconstruct:{Count:1b,id:\"tconstruct:materials_and_you\"},thermal:{Count:1b,id:\"patchouli:guide_book\",tag:{display:{Name:'{\"text\":\"{\\\\\"translate\\\\\":\\\\\"thermal.book.name\\\\\"}\"}'},\"patchouli:book\":\"thermal:guidebook\"}}},\"akashictome:is_morphing\":1b},type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"minecraft:soul_lantern\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"minecraft:soul_torch\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"create:steam_engine\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"gag:no_solicitors\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"sophisticatedstorage:diamond_chest\",tag:{woodType:\"oak\"},type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"sophisticatedstorage:gold_chest\",tag:{woodType:\"oak\"},type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"sophisticatedstorage:iron_chest\",tag:{woodType:\"oak\"},type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"sophisticatedstorage:chest\",tag:{woodType:\"oak\"},type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"sophisticatedstorage:gold_to_diamond_tier_upgrade\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"sophisticatedstorage:stack_upgrade_tier_1\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"minecraft:redstone_lamp\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"multiblocked:sorter_mk1\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"createaddition:connector\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}"
 		],
 		"hiddenFavorites": [],
 		"displayHistory": [],
 		// Declares whether cheating mode is on.
-		"cheating": true,
+		"cheating": false,
 		"favoritesEnabled": true,
 		"keyBindings": {
 			"recipeKeybind": {
@@ -109,7 +135,8 @@
 			// Declares whether REI should append mod names to entries.
 			"appendModNames": true,
 			// Declares whether favorites tooltip should be displayed.
-			"displayFavoritesTooltip": false
+			"displayFavoritesTooltip": false,
+			"displayIMEHints": true
 		},
 		"layout": {
 			// The ordering of the items on the entry panel.

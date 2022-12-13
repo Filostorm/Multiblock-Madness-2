@@ -48,7 +48,7 @@ global.removeAndHide = [
 	'thermal:press_gear_die', 
 	'thermal:press_coin_die', 
 	'thermal:dynamo_disenchantment',
-	'mna:improvised_manaweaver_wand',
+	//'mna:improvised_manaweaver_wand',
 	'ironfurnaces:augment_generator',
 
 
@@ -360,4 +360,10 @@ global.removeAndHide = [
 	'alloyed:waxed_exposed_bronze_block', 
 	'alloyed:waxed_weathered_bronze_block', 
 	'alloyed:waxed_oxidized_bronze_block',
+	'immersiveengineering:raw_aluminum',
+	'immersiveengineering:raw_block_aluminum',
+	'immersiveengineering:deepslate_ore_aluminum', 
+	'immersiveengineering:ore_aluminum',
+	'geolosys:bauxite_ore', 
+	'geolosys:deepslate_bauxite_ore',
 	]

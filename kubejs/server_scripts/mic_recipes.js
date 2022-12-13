@@ -99,7 +99,7 @@ event.shaped('3x kubejs:wood_scaffolding', [
 		'L'
 	  ], {
 		L: '#minecraft:logs',
-	  }).id("kubejs:sticks_from_logs")
+	  }).id("mbm2:sticks_from_logs")
 
   // Paper
 	event.shapeless('3x minecraft:paper', ['minecraft:sugar_cane','minecraft:sugar_cane','minecraft:sugar_cane']).id('minecraft:paper')
@@ -113,6 +113,8 @@ event.shaped('3x kubejs:wood_scaffolding', [
 	  ], {
 		L: '#minecraft:oak_logs',
 		S: '#forge:string',
-	  }).id("kubejs:druidcraftrg/beams")
+	  }).id("mbm2:druidcraftrg/beams")
 
+  // Soul Torch
+  event.shapeless('4x soul_torch', ['torch','torch','torch','torch','soul_sand']).id('mbm2:soul_torch')
 });

@@ -176,7 +176,7 @@ event.shaped('create:hose_pulley', [
 		R: '#forge:rods/invar',
 		P: '#forge:plates/invar',
 		N: '#forge:netherrack'
-		  }).id(`kubejs:crafting/empty_blaze_burner`)
+		  }).id(`mbm2:crafting/empty_blaze_burner`)
 
 	  //Spirit Compat
 	  event.recipes.createHaunting('spirit:soul_powder', 'minecraft:glowstone_dust').id('mbm2:huanting/soul_powder')
@@ -192,7 +192,24 @@ event.shaped('create:hose_pulley', [
 		], {
 	  A: 'create:andesite_alloy',
 	  C: '#forge:gears/iron'
-		}).id(`kubejs:crafting/propeller`)
+		}).id(`mbm2:crafting/propeller`)
+
+
+	/// Steam Engine
+	event.remove({id: 'create:crafting/kinetics/steam_engine'})
+	event.shaped('create:steam_engine', [
+	  ' A ',
+	  'PMP',
+	  ' B '
+		], {
+	  B: '#forge:cog_blocks/constantan',
+	  M: 'create:precision_mechanism',
+	  P: '#forge:plates/obsidian',
+	  A: 'create:fluid_pipe',
+		}).id(`mbm2:crafting/steam_engine`)
+
+		
+
 
 	//Make some Hot Cream with a bonus chance
 	event.recipes.createMixing([Fluid.of('tconstruct:magma', 1000), Item.of('magma_cream').withChance(0.25)], ['magma_block']).heated().id(`mbm2:mixing/magma_from_block`)

@@ -59,6 +59,9 @@
     "minecraft:brown_terracotta",
     "minecraft:white_terracotta",
     "minecraft:light_gray_terracotta",
-    "minecraft:black_terracotta"
+    "minecraft:black_terracotta",
+    "minecraft:blackstone",
+    "minecraft:magma_block",
+    "minecraft:smooth_basalt"
   ]
 }

@@ -15,8 +15,7 @@ var basicItems = [
 	'carbon_covered_iron',
 	'sandy_brick',
 	'unfired_coke_oven_brick',
-	'coke_oven_brick',
-	'lumite',
+	'coke_oven_brick'
 ]
 
 global.transitionalItems = [

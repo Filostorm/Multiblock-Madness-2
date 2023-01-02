@@ -47,7 +47,7 @@
 
 	[worldgen.blazing_quartz]
 		#Should blaze quartz ore generate?
-		generateBlazeQuartz = true
+		generateBlazeQuartz = false
 		#Size of blaze quartz ore veins.
 		blazeQuartzSize = 14
 		#Amount of blaze quartz ore veins.

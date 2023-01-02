@@ -14,8 +14,26 @@ var basicItems = [
 	'blazing_redstone',
 	'carbon_covered_iron',
 	'sandy_brick',
-	'unfired_coke_oven_brick',
-	'coke_oven_brick'
+	'sturdy_brick',
+	//'unfired_coke_oven_brick',
+	'coke_oven_brick',
+	'steel_scraps',
+	'aerotheum_dust',
+	'cryotheum_dust',
+	'petrotheum_dust',
+	'pyrotheum_dust',
+	't1_blank_board',
+	't1_circuit_board',
+	't1_circuit',
+	't2_blank_board',
+	't2_circuit_board',
+	't2_circuit',
+	't3_blank_board',
+	't3_circuit_board',
+	't3_circuit',
+	't4_blank_board',
+	't4_circuit_board',
+	't4_circuit',
 ]
 
 global.transitionalItems = [
@@ -27,6 +45,13 @@ global.transitionalItems = [
 	'component_electronic',
 	'electron_tube',
 	'component_steel',
+	'printed_calculation_processor',
+	'calculation_processor',
+	'printed_logic_processor',
+	'logic_processor',
+	'printed_engineering_processor',
+	'engineering_processor',
+	'printed_silicon',
 ]
 
 onEvent('item.registry', event => {
@@ -36,4 +61,5 @@ onEvent('item.registry', event => {
 	global.transitionalItems.forEach((item) => {
 		event.create(`incomplete_${item}`, 'create:sequenced_assembly').texture('kubejs:item/package')
 	})
+	event.create(`partially_folded_damascus_steel`, 'create:sequenced_assembly')
   });

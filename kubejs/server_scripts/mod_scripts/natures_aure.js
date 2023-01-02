@@ -1,3 +1,7 @@
+onEvent('tags.blocks', event => {
+	event.add(`minecraft:mineable/pickaxe`, `naturesaura:gold_brick`)
+	event.add(`minecraft:mineable/pickaxe`, 'naturesaura:nature_altar')
+});
 onEvent('tags.items', event => {
 	event.add(`forge:ingots`, `naturesaura:tainted_gold`)
 	event.add(`forge:ingots/tainted_gold`, `naturesaura:tainted_gold`)
@@ -32,8 +36,22 @@ event.shaped('3x kubejs:ancient_wood_scaffolding', [
 	], {
 	A: 'naturesaura:ancient_planks',
   C: 'naturesaura:ancient_stick'
-	}).id("kubejs:ancient_wood_scaffolding")
+	}).id("mbm2:ancient_wood_scaffolding")
+	
+	//Gold Bricks from powder
+	event.shapeless(`naturesaura:gold_brick`, ['minecraft:stone_bricks', 'naturesaura:gold_powder', 'naturesaura:gold_powder', 'naturesaura:gold_powder', 'naturesaura:gold_powder']).id(`mbm2:naturesaura/gold_brick_with_powder`)
 
+	//Nature Altar
+	global.naturesauraTreeRitual(event, 'naturesaura:nature_altar', [
+		Item.of('naturesaura:token_joy').toJson(), 
+		Item.of('#forge:ingots/pewter').toJson(), 
+		Item.of('#forge:ingots/pewter').toJson(), 
+		Item.of('#forge:ingots/pewter').toJson(), 
+		Item.of('forbidden_arcanus:arcane_crystal_dust').toJson(),
+		Item.of('elementalcraft:whiterock').toJson(),
+		Item.of('elementalcraft:whiterock').toJson(),
+		Item.of('elementalcraft:whiterock').toJson(),
+	], 'oak_sapling', 500, 'naturesaura:tree_ritual/nature_altar')
 });
 
 

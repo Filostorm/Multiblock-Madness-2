@@ -1,0 +1,16 @@
+{
+	id: "0B6FC92B7EB7ED57"
+	order_index: 8
+	title: "AE"
+	loot_size: 1
+	rewards: [
+		{ item: "ae2:fluix_glass_cable", count: 8 }
+		{ item: "ae2:fluix_smart_cable", count: 4 }
+		{ item: "ae2:certus_quartz_crystal", count: 4 }
+		{ item: "ae2:charged_certus_quartz_crystal", count: 4 }
+		{ item: "ae2:silicon", count: 4 }
+		{ item: "minecraft:redstone", count: 8 }
+		{ item: "ae2:fluix_crystal", count: 4 }
+		{ item: "minecraft:gold_ingot", count: 4 }
+	]
+}

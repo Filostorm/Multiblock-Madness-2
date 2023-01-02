@@ -1,0 +1,112 @@
+{
+  "mod_id": "beyond_earth",
+  "provided_stones": [
+    {
+      "block_id": "beyond_earth:moon_stone",
+      "types": [
+        "stone"
+      ],
+      "id": "moon_stone",
+      "en_name": "Moon Stone"
+    },
+    {
+      "block_id": "beyond_earth:mars_stone",
+      "types": [
+        "stone"
+      ],
+      "id": "mars_stone",
+      "en_name": "Mars Stone"
+    },
+    {
+      "block_id": "beyond_earth:mercury_stone",
+      "types": [
+        "stone"
+      ],
+      "id": "mercury_stone",
+      "en_name": "Mercury Stone"
+    },
+    {
+      "block_id": "beyond_earth:venus_stone",
+      "types": [
+        "stone"
+      ],
+      "id": "venus_stone",
+      "en_name": "Venus Stone"
+    },
+    {
+      "block_id": "beyond_earth:glacio_stone",
+      "types": [
+        "stone"
+      ],
+      "id": "glacio_stone",
+      "en_name": "Glacio Stone"
+    }
+  ],
+  "provided_ores": [
+    {
+      "block_id": [
+        "beyond_earth:moon_cheese_ore"
+      ],
+      "en_name": "Cheese Ore",
+      "types": [
+        "stone"
+      ],
+      "id": "moon_cheese_ore",
+      "stone": [
+        "moon_stone"
+      ]
+    },
+    {
+      "block_id": [
+        "beyond_earth:moon_desh_ore"
+      ],
+      "en_name": "Desh Ore",
+      "types": [
+        "stone"
+      ],
+      "id": "moon_desh_ore",
+      "stone": [
+        "moon_stone"
+      ]
+    },
+    {
+      "block_id": [
+        "beyond_earth:moon_ice_shard_ore"
+      ],
+      "en_name": "Ice Shard Ore",
+      "types": [
+        "stone"
+      ],
+      "id": "moon_ice_shard_ore",
+      "stone": [
+        "moon_stone"
+      ]
+    },
+    {
+      "block_id": [
+        "beyond_earth:mars_ostrum_ore"
+      ],
+      "en_name": "Ostrum Ore",
+      "types": [
+        "stone"
+      ],
+      "id": "mars_ostrum_ore",
+      "stone": [
+        "mars_stone"
+      ]
+    },
+    {
+      "block_id": [
+        "beyond_earth:venus_calorite_ore"
+      ],
+      "en_name": "Calorite Ore",
+      "types": [
+        "stone"
+      ],
+      "id": "venus_calorite_ore",
+      "stone": [
+        "venus_stone"
+      ]
+    }
+  ]
+}

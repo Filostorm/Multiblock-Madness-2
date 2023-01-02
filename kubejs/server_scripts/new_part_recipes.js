@@ -75,15 +75,15 @@ onEvent('recipes', event => {
     if (Item.of(`#forge:platings/${item.material}`) != null) {
 
 	//Create Plating
-  	event.recipes.createPressing(`#forge:platings/${item.material}`, `#forge:storage_blocks/${item.material}`).id(`kubejs:pressing/${item.material}_plating`)
+  	event.recipes.createPressing(`#forge:platings/${item.material}`, `#forge:storage_blocks/${item.material}`).id(`mbm2:pressing/${item.material}_plating`)
 
 	//Immersive Plating
- 	event.recipes.immersiveengineeringMetalPress(`#forge:platings/${item.material}`, `4x #forge:plates/${item.material}`, 'immersiveengineering:mold_plate').id(`kubejs:metalpress/plating_${item.material}`)
+ 	event.recipes.immersiveengineeringMetalPress(`#forge:platings/${item.material}`, `4x #forge:plates/${item.material}`, 'immersiveengineering:mold_plate').id(`mbm2:metalpress/plating_${item.material}`)
 	}
 
-	////////////////PLATING///////////////
+	////////////////COMPONENTS///////////////
     if (Item.of(`#forge:components/${item.material}`) != null) {
-	global.ieBlueprint(event, 'components', Item.of(`#forge:components/${item.material}`), [{count:2, base_ingredient: {tag: `forge:plates/${item.material}`}}, {tag: `forge:ingots/copper`}], `kubejs:${item.material}_component`)
+	global.ieBlueprint(event, 'components', Item.of(`#forge:components/${item.material}`), [{count:2, base_ingredient: {tag: `forge:plates/${item.material}`}}, {tag: `forge:ingots/copper`}], `mbm2:${item.material}_component`)
 	}
 
 
@@ -146,7 +146,7 @@ onEvent('recipes', event => {
 	  ], {
 		W: `#forge:wires/${item.material}`,
 		G: `#forge:gears/${item.material}`
-	  }).id(`kubejs:parts/${item.material}_mechanical_component`)
+	  }).id(`mbm2:parts/${item.material}_mechanical_component`)
 	}
 
 	//////////////// COG BLOCK ///////////////
@@ -158,7 +158,7 @@ onEvent('recipes', event => {
 		  ], {
 			R: `#forge:rods/${item.material}`,
 			G: `#forge:gears/${item.material}`
-		  }).id(`kubejs:parts/${item.material}_cog_block`)
+		  }).id(`mbm2:parts/${item.material}_cog_block`)
 		}
 	}
 	
@@ -166,15 +166,15 @@ onEvent('recipes', event => {
     if (Item.of(`#forge:rods/${item.material}`) != null) {
 		
 	event.shaped(`#forge:rods/${item.material}`, [
-		'H ',
-		' I'
+		'HI',
+		'I '
 	  ], {
 		I: `#forge:ingots/${item.material}`,
 		H: Ingredient.of('#forge:hammers'),
-	  }).damageIngredient(Ingredient.of('#forge:hammers')).id(`kubejs:parts/${item.material}_rod`)
+	  }).damageIngredient(Ingredient.of('#forge:hammers')).id(`mbm2:parts/${item.material}_rod`)
 
 	//Create Rods
-	global.createRolling(event, `#forge:rods/${item.material}`, 2, `forge:ingots/${item.material}`, `createaddition:rolling/${item.material}_ingot`)
+	global.createRolling(event, `#forge:rods/${item.material}`, 1, `forge:ingots/${item.material}`, `createaddition:rolling/${item.material}_ingot`)
 	
 	//Immersive Rods
 	event.recipes.immersiveengineeringMetalPress(`2x #forge:rods/${item.material}`, `#forge:ingots/${item.material}`, 'immersiveengineering:mold_rod').id(`immersiveengineering:metalpress/rod_${item.material}`)
@@ -207,7 +207,7 @@ onEvent('recipes', event => {
 	event.shapeless(`#forge:wires/${item.material}`, [`#forge:plates/${item.material}`, Item.of('immersiveengineering:wirecutter').ignoreNBT(),]).id(`immersiveengineering:crafting/wire_${item.material}`)
 
 	//Create Wire
-	global.createRolling(event, `#forge:wires/${item.material}`, 2, `forge:plates/${item.material}`, `createaddition:rolling/${item.material}_plate`)
+	global.createRolling(event, `#forge:wires/${item.material}`, 1, `forge:plates/${item.material}`, `createaddition:rolling/${item.material}_plate`)
 
 	//Immersive Wire
   	event.recipes.immersiveengineeringMetalPress(`2x #forge:wires/${item.material}`, `#forge:ingots/${item.material}`, 'immersiveengineering:mold_wire').id(`immersiveengineering:metalpress/wire_${item.material}`)
@@ -216,10 +216,10 @@ onEvent('recipes', event => {
 	
     if (Item.of(`#forge:dusts/${item.material}`) != null) {
 		if (item.type == 'gem') {
-			event.recipes.createMilling([`#forge:dusts/${item.material}`], [`#forge:gems/${item.material}`]).id(`kubejs:${item.material}_gem_2_dust`)
+			event.recipes.createMilling([`#forge:dusts/${item.material}`], [`#forge:gems/${item.material}`]).id(`mbm2:${item.material}_gem_2_dust`)
 		} else {
 			if (Item.of(`#forge:ingots/${item.material}`) != null) {
-			event.recipes.createMilling([`#forge:dusts/${item.material}`], [`#forge:ingots/${item.material}`]).id(`kubejs:${item.material}_ingot_2_dust`)
+			event.recipes.createMilling([`#forge:dusts/${item.material}`], [`#forge:ingots/${item.material}`]).id(`mbm2:${item.material}_ingot_2_dust`)
 			}
 		}
 	}
@@ -239,15 +239,27 @@ onEvent('recipes', event => {
 		}
 
 		if (item.blockParts.includes('storage_block')) {
-		//Blocks
-		event.shapeless(`9x #forge:ingots/${item.material}`, [`#forge:storage_blocks/${item.material}`])
-		event.shaped(`#forge:storage_blocks/${item.material}`, [
-			'III',
-			'III',
-			'III'
-		  ], {
-			I: `#forge:ingots/${item.material}`,
-		  })
+			if(item.type == 'gem') {
+				//Blocks
+				event.shapeless(`9x #forge:gems/${item.material}`, [`#forge:storage_blocks/${item.material}`])
+				event.shaped(`#forge:storage_blocks/${item.material}`, [
+					'III',
+					'III',
+					'III'
+				  ], {
+					I: `#forge:gems/${item.material}`,
+				  })
+			} else {
+					//Blocks
+					event.shapeless(`9x #forge:ingots/${item.material}`, [`#forge:storage_blocks/${item.material}`])
+					event.shaped(`#forge:storage_blocks/${item.material}`, [
+						'III',
+						'III',
+						'III'
+					  ], {
+						I: `#forge:ingots/${item.material}`,
+					  })
+					}
 		}
 	}
 	  if (item.fluid != null && (item.type == 'base_metal' || item.type == 'alloy'))
@@ -267,27 +279,16 @@ onEvent('recipes', event => {
 		global.casingBasin(event, `#forge:storage_blocks/${item.material}`, `forge:molten_${item.material}`, 810, 180, `tconstruct:smeltery/casting/metal/${item.material}/block`)
 	  }
 	}
-/*
-    if (item.type == "base_metal") {
-		//temp recipe for elements
-		event.shaped(`#forge:ingots/${item.material}`, [
-			'III',
-			'III',
-			'III'
-		  ], {
-			I: `chemlib:${item.material}`,
-		  })
-		}*/
 		if (item.raw_ore) {
 		//Raw Blocks
-		event.shapeless(`9x #forge:raw_materials/${item.material}`, [`#forge:storage_blocks/raw_${item.material}`]).id(`kubejs:raw_${item.material}_unpacking`)
+		event.shapeless(`9x #forge:raw_materials/${item.material}`, [`#forge:storage_blocks/raw_${item.material}`]).id(`mbm2:raw_${item.material}_unpacking`)
 		event.shaped(`#forge:storage_blocks/raw_${item.material}`, [
 			'III',
 			'III',
 			'III'
 		  ], {
 			I: `#forge:raw_materials/${item.material}`,
-		  }).id(`kubejs:raw_${item.material}_packing`)
+		  }).id(`mbm2:raw_${item.material}_packing`)
 		}
 })
 

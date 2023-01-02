@@ -1,0 +1,198 @@
+{
+  "version": 3,
+  "location": "mbm2:ebf",
+  "traits": {},
+  "properties": {
+    "rotationState": "ALL",
+    "showInJei": true,
+    "isOpaque": true,
+    "hasDynamicShape": false,
+    "hasCollision": true,
+    "destroyTime": 1.5,
+    "explosionResistance": 6.0,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "friction": 0.6,
+    "harvestLevel": 1,
+    "stackSize": 64,
+    "tabGroup": "multiblocked.all"
+  },
+  "status": {
+    "unformed": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier1_casing",
+        "frontTexture": "multiblocked:overlay/bf_paused",
+        "type": "gregtech",
+        "postRenderer": false
+      }
+    },
+    "idle": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier1_casing",
+        "frontTexture": "multiblocked:overlay/blast_furnace",
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "parent": "unformed"
+    },
+    "working": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier1_casing",
+        "frontTexture": "multiblocked:overlay/bf_active",
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "lightEmissive": 10,
+      "parent": "idle"
+    },
+    "suspend": {
+      "parent": "working"
+    }
+  },
+  "recipeMap": "ebf",
+  "basePattern": {
+    "structureDir": [
+      "LEFT",
+      "UP",
+      "BACK"
+    ],
+    "pattern": [
+      [
+        "A@A",
+        "ABA",
+        "ABA",
+        "AAA"
+      ],
+      [
+        "CCC",
+        "C C",
+        "C C",
+        "CCC"
+      ],
+      [
+        "AAA",
+        "ADA",
+        "ADA",
+        "AAA"
+      ]
+    ],
+    "aisleRepetitions": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "predicates": {
+      "A": {
+        "blocks": [
+          {
+            "id": "kubejs:tier1_casing"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 10,
+        "maxCount": 16,
+        "previewCount": 16
+      },
+      "controller": {
+        "location": "mbm2:ebf",
+        "type": "component"
+      },
+      "B": {
+        "blocks": [
+          {
+            "id": "thermal:obsidian_glass"
+          }
+        ],
+        "type": "blocks"
+      },
+      "C": {
+        "blocks": [
+          {
+            "id": "kubejs:cupronickel_coil"
+          }
+        ],
+        "type": "blocks"
+      },
+      "D": {
+        "blocks": [
+          {
+            "id": "mekanism:superheating_element"
+          }
+        ],
+        "type": "blocks"
+      },
+      "E": {
+        "location": "multiblocked:item_input",
+        "type": "component",
+        "minCount": 1,
+        "maxCount": 2,
+        "previewCount": 1,
+        "io": "IN",
+        "slotName": "input"
+      },
+      "F": {
+        "location": "multiblocked:item_output",
+        "type": "component",
+        "minCount": 1,
+        "maxCount": 1,
+        "previewCount": 1,
+        "io": "OUT",
+        "slotName": "output"
+      },
+      "G": {
+        "location": "multiblocked:energy_input",
+        "type": "component",
+        "minCount": 1,
+        "maxCount": 2,
+        "previewCount": 1,
+        "io": "IN",
+        "slotName": "energy_in"
+      },
+      "H": {
+        "location": "multiblocked:fluid_input",
+        "type": "component",
+        "minCount": 0,
+        "maxCount": 2,
+        "previewCount": 0,
+        "io": "IN",
+        "slotName": "fluid_in"
+      },
+      "any": {
+        "type": "any"
+      }
+    },
+    "symbolMap": {
+      "@": [
+        "controller"
+      ],
+      " ": [
+        "any"
+      ],
+      "A": [
+        "A",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "B": [
+        "B"
+      ],
+      "C": [
+        "C"
+      ],
+      "D": [
+        "D"
+      ]
+    }
+  }
+}

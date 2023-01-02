@@ -1,6 +1,6 @@
 onEvent('recipes', event => {
 	// Sludge Sifter
-  event.shaped('multiblocked:sludge_sifter', [
+  event.shaped('mbm2:sludge_sifter', [
 	'ABA',
 	'CDC',
 	'EFE'
@@ -11,10 +11,10 @@ onEvent('recipes', event => {
 	D: 'create:copper_casing',
 	E: 'thermal:nickel_plate',
 	F: 'thermal:gold_gear'
-  }).id(`kubejs:multiblocked/sludge_sifter`)
+  }).id(`mbm2:multiblocked/sludge_sifter`)
 
 	// Sorter Mk1
-  event.shaped('multiblocked:sorter_mk1', [
+  event.shaped('mbm2:sorter_mk1', [
 	'QWQ',
 	'RLR',
 	'QWQ'
@@ -23,7 +23,7 @@ onEvent('recipes', event => {
 	R: '#forge:rods/brass',
 	Q: 'create:polished_rose_quartz',
 	L: 'minecraft:redstone_lamp',
-  }).id(`kubejs:multiblocked/sorter_mk1`)
+  }).id(`mbm2:multiblocked/sorter_mk1`)
 
 	// Input Vault
   event.shaped('multiblocked:create_item_input', [
@@ -32,8 +32,8 @@ onEvent('recipes', event => {
   ], {
 	C: '#forge:chests/wooden',
 	V: 'create:item_vault',
-  }).id(`kubejs:multiblocked/create_item_input`)
-  event.shapeless(`multiblocked:create_item_input`, ['multiblocked:create_item_output']).id(`kubejs:multiblocked/create_item_input_switch`)
+  }).id(`mbm2:multiblocked/create_item_input`)
+  event.shapeless(`multiblocked:create_item_input`, ['multiblocked:create_item_output']).id(`mbm2:multiblocked/create_item_input_switch`)
 
 	// Output Vault
   event.shaped('multiblocked:create_item_output', [
@@ -42,8 +42,8 @@ onEvent('recipes', event => {
   ], {
 	C: '#forge:chests/wooden',
 	V: 'create:item_vault',
-  }).id(`kubejs:multiblocked/create_item_output`)
-  event.shapeless(`multiblocked:create_item_output`, ['multiblocked:create_item_input']).id(`kubejs:multiblocked/create_item_output_switch`)
+  }).id(`mbm2:multiblocked/create_item_output`)
+  event.shapeless(`multiblocked:create_item_output`, ['multiblocked:create_item_input']).id(`mbm2:multiblocked/create_item_output_switch`)
 
 // Create Output
 event.shaped('multiblocked:create_output', [
@@ -52,8 +52,8 @@ event.shaped('multiblocked:create_output', [
   ], {
 	C: 'create:cogwheel',
 	G: 'create:gearbox',
-  }).id(`kubejs:multiblocked/create_output`)
-  event.shapeless(`multiblocked:create_output`, ['multiblocked:create_input']).id(`kubejs:multiblocked/create_output_switch`)
+  }).id(`mbm2:multiblocked/create_output`)
+  event.shapeless(`multiblocked:create_output`, ['multiblocked:create_input']).id(`mbm2:multiblocked/create_output_switch`)
 // Create Input
 event.shaped('multiblocked:create_input', [
   'G',
@@ -61,7 +61,7 @@ event.shaped('multiblocked:create_input', [
 ], {
   C: 'create:cogwheel',
   G: 'create:gearbox',
-}).id(`kubejs:multiblocked/create_input`)
-event.shapeless(`multiblocked:create_input`, ['multiblocked:create_output']).id(`kubejs:multiblocked/create_input_switch`)
+}).id(`mbm2:multiblocked/create_input`)
+event.shapeless(`multiblocked:create_input`, ['multiblocked:create_output']).id(`mbm2:multiblocked/create_input_switch`)
 
 })

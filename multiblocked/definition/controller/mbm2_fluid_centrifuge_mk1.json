@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "location": "multiblocked:sludge_sifter",
+  "version": 3,
+  "location": "mbm2:fluid_centrifuge_mk1",
   "traits": {},
   "properties": {
     "rotationState": "ALL",
@@ -20,8 +20,9 @@
   "status": {
     "unformed": {
       "renderer": {
-        "baseTexture": "multiblocked:casing/copper",
-        "frontTexture": "multiblocked:overlay/sifter",
+        "baseTexture": "multiblocked:casing/casing",
+        "frontTexture": "multiblocked:overlay/centrifuge",
+        "formedAsController": true,
         "type": "gregtech",
         "postRenderer": false
       }
@@ -31,39 +32,50 @@
     },
     "working": {
       "renderer": {
-        "baseTexture": "multiblocked:casing/copper",
-        "frontTexture": "multiblocked:overlay/sifter_active",
+        "baseTexture": "multiblocked:casing/casing",
+        "frontTexture": "multiblocked:overlay/centrifuge_active",
         "type": "gregtech",
         "postRenderer": false
       },
+      "lightEmissive": 10,
       "parent": "idle"
     },
     "suspend": {
       "parent": "working"
     }
   },
-  "recipeMap": "sludge_pump",
+  "recipeMap": "fluid_centrifuge_mk1",
   "basePattern": {
     "structureDir": [
       "BACK",
-      "RIGHT",
-      "UP"
+      "UP",
+      "RIGHT"
     ],
     "pattern": [
       [
-        "ABA",
-        "@CA",
-        "ABA"
+        "  A  ",
+        " ABA ",
+        "  A  "
       ],
       [
-        " B ",
-        " D ",
-        " B "
+        " AAA ",
+        "A C A",
+        " AAA "
       ],
       [
-        "   ",
-        " E ",
-        "   "
+        "@AEAA",
+        "BCFCB",
+        "AAEAA"
+      ],
+      [
+        " AAA ",
+        "A C A",
+        " AAA "
+      ],
+      [
+        "  A  ",
+        " ABA ",
+        "  A  "
       ]
     ],
     "aisleRepetitions": [
@@ -77,67 +89,87 @@
       ],
       [
         1,
-        4
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
       ]
     ],
     "predicates": {
       "A": {
         "blocks": [
           {
-            "id": "create:copper_casing"
+            "id": "kubejs:invar_casing"
           }
         ],
         "type": "blocks"
       },
       "controller": {
-        "location": "multiblocked:sludge_sifter",
+        "location": "mbm2:fluid_centrifuge_mk1",
         "type": "component"
       },
       "B": {
         "blocks": [
           {
-            "id": "immersiveengineering:treated_scaffold"
+            "id": "ae2:sky_stone_tank"
           }
         ],
-        "type": "blocks"
+        "type": "blocks",
+        "io": "OUT"
       },
       "C": {
         "blocks": [
           {
-            "id": "kubejs:copper_cog_block"
+            "id": "thermal:obsidian_glass"
           }
         ],
         "type": "blocks"
       },
-      "D": {
-        "blocks": [
-          {
-            "id": "create:fluid_tank"
-          }
-        ],
-        "type": "blocks",
-        "minCount": 0,
-        "maxCount": 1
-      },
-      "T": {
-        "blocks": [
-          {
-            "id": "create:fluid_tank"
-          }
-        ],
-        "type": "blocks",
-        "io": "null"
-      },
       "E": {
+        "location": "multiblocked:energy_input",
+        "type": "component",
+        "io": "IN"
+      },
+      "G": {
         "blocks": [
           {
-            "id": "minecraft:barrel"
+            "id": "pneumaticcraft:small_tank"
           }
         ],
         "type": "blocks",
-        "minCount": 1,
-        "maxCount": 1,
-        "previewCount": 1
+        "io": "IN"
+      },
+      "H": {
+        "blocks": [
+          {
+            "id": "pneumaticcraft:medium_tank"
+          }
+        ],
+        "type": "blocks",
+        "io": "IN"
+      },
+      "I": {
+        "blocks": [
+          {
+            "id": "pneumaticcraft:large_tank"
+          }
+        ],
+        "type": "blocks",
+        "io": "IN"
+      },
+      "J": {
+        "blocks": [
+          {
+            "id": "pneumaticcraft:huge_tank"
+          }
+        ],
+        "type": "blocks",
+        "io": "IN"
       },
       "any": {
         "type": "any"
@@ -154,18 +186,20 @@
         "A"
       ],
       "B": [
-        "B",
-        "E"
+        "B"
       ],
       "C": [
         "C"
       ],
-      "D": [
-        "D"
-      ],
       "E": [
-        "T",
+        "E",
         "any"
+      ],
+      "F": [
+        "G",
+        "H",
+        "I",
+        "J"
       ]
     }
   }

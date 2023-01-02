@@ -1,3 +1,10 @@
+
+
+onEvent('tags.items', event => {
+	 event.remove(`forge:rods/wooden`, 'immersiveengineering:stick_treated')
+ });
+
+
 onEvent('recipes', event => {
 
 
@@ -26,9 +33,9 @@ onEvent('recipes', event => {
 
 	event.remove({id: 'immersiveengineering:crafting/cokebrick'})
   event.recipes.createMixing([`kubejs:sandy_brick`], ['kubejs:unfired_clay_brick', 'sand']).id('mbm2:mixing/sandy_brick')
-  event.recipes.createMixing([`kubejs:unfired_coke_oven_brick`], ['kubejs:sandy_brick', 'gravel']).id('mbm2:mixing/unfired_coke_oven_brick')
+  event.recipes.createMixing([`kubejs:sturdy_brick`], ['kubejs:sandy_brick', 'gravel']).id('mbm2:mixing/sturdy_brick')
 	//event.recipes.createFilling(['kubejs:unfired_coke_oven_brick'], [Fluid.of('tconstruct:molten_clay', 250), 'engineersdecor:dense_grit_sand_block']).id('mbm2:immersiveengineering/unfired_coke_oven_brick')
-  event.smelting('kubejs:coke_oven_brick', 'kubejs:unfired_coke_oven_brick').id(`mbm2:smelting/coke_oven_brick`)
+  event.smelting('kubejs:coke_oven_brick', 'kubejs:sturdy_brick').id(`mbm2:smelting/coke_oven_brick`)
 	event.shaped('immersiveengineering:cokebrick', [
 		'AA',
 		'AA'
@@ -83,7 +90,7 @@ event.recipes.createSequencedAssembly([
 event.recipes.createSequencedAssembly([
 'immersiveengineering:component_electronic', // output
   ], 'immersiveengineering:slab_treated_wood_horizontal', [ // input.
-  event.recipes.createDeploying('kubejs:incomplete_component_electronic', ['kubejs:incomplete_component_electronic', 'minecraft:quartz']),
+  event.recipes.createDeploying('kubejs:incomplete_component_electronic', ['kubejs:incomplete_component_electronic', '#forge:gems/quartz']),
   event.recipes.createDeploying('kubejs:incomplete_component_electronic', ['kubejs:incomplete_component_electronic', '#forge:dusts/redstone']),
   event.recipes.createDeploying('kubejs:incomplete_electron_tube', ['kubejs:incomplete_electron_tube', '#forge:wires/electrum']),
   ]).transitionalItem('kubejs:incomplete_component_electronic').loops(1) // transitional item and the loops
@@ -214,4 +221,22 @@ event.shaped('3x immersiveengineering:radiator', [
   P: 'tconstruct:scorched_glass'
     }).id('mbm2:immersiveengineering/radiator')
 
+    //Slag Glass
+	  event.remove({id: 'immersiveengineering:smelting/slag_glass'})
+    event.blasting('immersiveengineering:slag_glass', 'thermal:slag').id(`mbm2:blasting/slag_glass`)
+
+
+    ///////////////// ARC FURNACE TIME ////////////////////////////
+    
+	global.newMaterialParts.forEach((item) => {
+    if(item.type == 'base_metal') {
+      event.remove({id: `immersiveengineering:arcfurnace/raw_block_${item.material}`})
+    }
+})
+
+/*
+event.recipes.immersiveengineeringArcFurnace([outputs], input)
+event.recipes.immersiveengineeringArcFurnace([outputs], input, [additives])
+event.recipes.immersiveengineeringArcFurnace([outputs], input, [additives], slag)
+*/
 });

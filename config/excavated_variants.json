@@ -1,0 +1,17 @@
+{
+  "format": 6,
+  "priority": [
+    "minecraft.json",
+    "mekanism.json",
+    "thermal.json",
+    "geolosys.json"
+  ],
+  "blacklist_ids": [],
+  "blacklist_stones": [],
+  "blacklist_ores": [],
+  "attempt_ore_generation_insertion": false,
+  "attempt_ore_replacement": false,
+  "add_conversion_recipes": false,
+  "jei_rei_compat": false,
+  "unobtainable_variants": false
+}

@@ -9,19 +9,8 @@
 	default_hide_dependency_lines: false
 	quests: [
 		{
-			x: 8.5d
-			y: 7.5d
-			dependencies: ["488E2999C6BE6591"]
-			id: "7B33D4E6ED113E07"
-			tasks: [{
-				id: "5CAD45FAADB8C3F5"
-				type: "item"
-				item: "compactcrafting:field_projector"
-			}]
-		}
-		{
-			x: 8.5d
-			y: 9.0d
+			x: 9.0d
+			y: 6.5d
 			subtitle: "Archwood saplings can be aquired through the crushing wheel"
 			description: ["Auxiliary items are not comsumed for crafting."]
 			id: "488E2999C6BE6591"
@@ -34,40 +23,6 @@
 				id: "38F12EEED5D870B4"
 				type: "item"
 				item: "ars_nouveau:arcane_pedestal"
-			}]
-		}
-		{
-			x: 8.5d
-			y: 6.0d
-			dependencies: ["7B33D4E6ED113E07"]
-			id: "050141BF6CD20337"
-			tasks: [{
-				id: "60797B934CE0E8F6"
-				type: "item"
-				item: "kubejs:bronze_frame"
-			}]
-		}
-		{
-			x: 10.5d
-			y: 3.5d
-			dependencies: ["4479C52D27235BCB"]
-			id: "61807D2D6C850371"
-			tasks: [{
-				id: "757C4BFEBA0AD247"
-				type: "item"
-				item: "thermal:machine_chiller"
-			}]
-		}
-		{
-			x: 8.5d
-			y: 4.5d
-			description: ["Can be used to generate Lava."]
-			dependencies: ["050141BF6CD20337"]
-			id: "4479C52D27235BCB"
-			tasks: [{
-				id: "67EF719B029959A6"
-				type: "item"
-				item: "thermal:machine_crucible"
 			}]
 		}
 		{
@@ -117,22 +72,8 @@
 			}]
 		}
 		{
-			x: 5.5d
-			y: 6.0d
-			dependencies: [
-				"050141BF6CD20337"
-				"37610C524354F5F2"
-			]
-			id: "2629908D70EF88F2"
-			tasks: [{
-				id: "344A51103E296EEB"
-				type: "item"
-				item: "thermal:upgrade_augment_1"
-			}]
-		}
-		{
-			x: 2.5d
-			y: 4.5d
+			x: 4.0d
+			y: 3.0d
 			dependencies: ["50E9DDE83C23EE6E"]
 			id: "39F16774468E59FE"
 			tasks: [{
@@ -193,8 +134,8 @@
 			}]
 		}
 		{
-			x: 5.5d
-			y: 3.0d
+			x: 4.0d
+			y: 6.0d
 			dependencies: ["1E77F20F773CA050"]
 			id: "2D4B1C82A8FC7E2E"
 			tasks: [{
@@ -209,8 +150,8 @@
 			}]
 		}
 		{
-			x: 4.0d
-			y: 3.0d
+			x: 2.5d
+			y: 4.5d
 			dependencies: ["50E9DDE83C23EE6E"]
 			id: "1E77F20F773CA050"
 			tasks: [{
@@ -222,37 +163,6 @@
 				id: "039FAFE1BE502DF5"
 				type: "random"
 				table_id: 1606026794008844755L
-			}]
-		}
-		{
-			title: "Simple Storage Network"
-			icon: "storagenetwork:master"
-			x: 10.0d
-			y: 7.5d
-			dependencies: ["488E2999C6BE6591"]
-			id: "3937FEDD97720117"
-			tasks: [
-				{
-					id: "490BB5DB15F8DCD8"
-					type: "item"
-					item: "storagenetwork:master"
-				}
-				{
-					id: "5F5FAF5B7C2A1356"
-					type: "item"
-					item: "storagenetwork:request"
-				}
-				{
-					id: "68D8DB32D0DC4AE7"
-					type: "item"
-					item: "storagenetwork:storage_kabel"
-				}
-			]
-			rewards: [{
-				id: "5016A4F742FE08B5"
-				type: "item"
-				item: "storagenetwork:kabel"
-				count: 8
 			}]
 		}
 		{
@@ -270,7 +180,7 @@
 		{
 			x: 8.5d
 			y: -1.0d
-			description: ["You'll need to place these underneath whaever you're trying to heat, and feed them burnable items."]
+			description: ["You'll need to place these underneath whatever you're trying to heat, and feed them burnable items."]
 			dependencies: ["20FA1AFF0BD65177"]
 			id: "46DC0D67FE1C4C67"
 			tasks: [{
@@ -312,7 +222,10 @@
 			x: 13.0d
 			y: 1.5d
 			subtitle: "Check out page 2 of the Ponder"
-			dependencies: ["6AD50F15723B7927"]
+			dependencies: [
+				"6AD50F15723B7927"
+				"2E25E6142C8DBE01"
+			]
 			id: "31513AA25B621FD8"
 			tasks: [
 				{
@@ -415,8 +328,8 @@
 		}
 		{
 			title: "Basic Power Generation"
-			x: 2.5d
-			y: 6.0d
+			x: 5.5d
+			y: 3.0d
 			dependencies: ["39F16774468E59FE"]
 			id: "47910242F4DE9220"
 			tasks: [
@@ -463,8 +376,8 @@
 		}
 		{
 			title: "Tier 2 Powah"
-			x: 4.0d
-			y: 6.0d
+			x: 7.0d
+			y: 3.0d
 			description: ["Connect Rods to Orbs!"]
 			dependencies: ["47910242F4DE9220"]
 			id: "37610C524354F5F2"
@@ -544,6 +457,11 @@
 					item: "naturesaura:gold_nether_brick"
 					count: 8L
 				}
+				{
+					id: "2894121D4DCD9343"
+					type: "item"
+					item: "naturesaura:tainted_gold"
+				}
 			]
 		}
 		{
@@ -595,7 +513,7 @@
 				"72C360D92C26799F"
 				"46DC0D67FE1C4C67"
 				"51537052A03715D7"
-				"4479C52D27235BCB"
+				"37610C524354F5F2"
 			]
 			size: 1.5d
 			id: "729CD1DC498A9130"
@@ -640,7 +558,7 @@
 			]
 		}
 		{
-			icon: "multiblocked:sorter_mk1"
+			icon: "mbm2:sorter_mk1"
 			x: 4.0d
 			y: 0.0d
 			description: ["This is required to extract higher tier Ores from Compound Ore."]
@@ -650,7 +568,7 @@
 				{
 					id: "07F5942725B1A9D0"
 					type: "item"
-					item: "multiblocked:sorter_mk1"
+					item: "mbm2:sorter_mk1"
 				}
 				{
 					id: "38A5F623EA63CE13"
@@ -691,6 +609,7 @@
 			icon: "createoreexcavation:drilling_machine"
 			x: 5.5d
 			y: 4.5d
+			description: ["You'll probably need to set up a Steam Engine to generate enough Rotation to power the drill."]
 			dependencies: ["1E77F20F773CA050"]
 			id: "7F00F4A7C74AC181"
 			tasks: [
@@ -712,11 +631,19 @@
 					}
 				}
 			]
-			rewards: [{
-				id: "50232E98C221CFE4"
-				type: "item"
-				item: "createoreexcavation:vein_finder"
-			}]
+			rewards: [
+				{
+					id: "50232E98C221CFE4"
+					type: "item"
+					item: "createoreexcavation:vein_finder"
+				}
+				{
+					id: "094B3B7023D21C1D"
+					type: "random"
+					exclude_from_claim_all: true
+					table_id: 1606026794008844755L
+				}
+			]
 		}
 		{
 			x: 12.0d
@@ -732,8 +659,8 @@
 		{
 			title: "Steam Engines!"
 			icon: "create:steam_engine"
-			x: 7.0d
-			y: 3.0d
+			x: 2.5d
+			y: 6.0d
 			description: ["Once the Steam Engine has been placed, it no longer stores water. Rather it has a flow meter, shown while looking with the Goggles. You'll need one bar of water for each Steam Engine you will be using."]
 			dependencies: ["1E77F20F773CA050"]
 			id: "70F1315477089A27"
@@ -755,6 +682,176 @@
 					item: "create:shaft"
 				}
 			]
+			rewards: [{
+				id: "43A9DF7DFFC45C4E"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 1606026794008844755L
+			}]
+		}
+		{
+			title: "Wood Farm"
+			icon: "malum:runewood_sapling"
+			x: 1.0d
+			y: 4.0d
+			dependencies: ["50E9DDE83C23EE6E"]
+			id: "7E15574E530E5A45"
+			tasks: [
+				{
+					id: "0C17FB72EE645B43"
+					type: "item"
+					title: "Movement Bases"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "create:movement_anchors"
+						}
+					}
+				}
+				{
+					id: "21888F0EC69BDA7E"
+					type: "item"
+					title: "Chassis"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "create:chassis"
+						}
+					}
+					count: 3L
+				}
+				{
+					id: "2E62F64E00AA3502"
+					type: "item"
+					item: {
+						id: "create:super_glue"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+				{
+					id: "4A77864EFAC72310"
+					type: "item"
+					item: "create:mechanical_saw"
+				}
+				{
+					id: "769F5D2A04363CFA"
+					type: "item"
+					item: "create:deployer"
+				}
+				{
+					id: "0C63F343C9866A93"
+					type: "item"
+					item: "create:portable_storage_interface"
+					count: 2L
+				}
+				{
+					id: "6737976599C00075"
+					type: "item"
+					item: "create:clutch"
+				}
+			]
+			rewards: [{
+				id: "6DAD6FB8BFDD7266"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 1606026794008844755L
+			}]
+		}
+		{
+			title: "Bottled Aura"
+			x: 14.5d
+			y: 3.0d
+			dependencies: ["4187F705E4356142"]
+			id: "2E25E6142C8DBE01"
+			tasks: [
+				{
+					id: "42E16D3411C0AB57"
+					type: "item"
+					item: "naturesaura:bottle_two_the_rebottling"
+				}
+				{
+					id: "6B49AB20C14E3ACB"
+					type: "item"
+					item: {
+						id: "naturesaura:aura_bottle"
+						Count: 1b
+						tag: {
+							stored_type: "naturesaura:overworld"
+						}
+					}
+				}
+			]
+		}
+		{
+			title: "Primitive Applied Energistics"
+			x: 10.0d
+			y: 4.5d
+			dependencies: ["338A1AE116F1A652"]
+			id: "704F244888706682"
+			tasks: [
+				{
+					id: "18F13FF3849FAA04"
+					type: "item"
+					item: "ae2:energy_acceptor"
+				}
+				{
+					id: "78C53E28988595A3"
+					type: "item"
+					item: "ae2:fluix_glass_cable"
+				}
+				{
+					id: "3AB21F73DAAECB90"
+					type: "item"
+					item: "ae2:crafting_terminal"
+				}
+				{
+					id: "5B43E4F7C8D0DF57"
+					type: "item"
+					item: "ae2:storage_bus"
+				}
+			]
+			rewards: [{
+				id: "74F359CE95670B49"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 824098445478849879L
+			}]
+		}
+		{
+			title: "Fluix Dust"
+			x: 8.5d
+			y: 4.5d
+			description: ["Throw the quartz and redstone into water to combine into Fluix."]
+			dependencies: ["37610C524354F5F2"]
+			id: "338A1AE116F1A652"
+			tasks: [
+				{
+					id: "42328F4E2C3B7B15"
+					type: "item"
+					item: "ae2:charged_certus_quartz_crystal"
+				}
+				{
+					id: "761A9A75CC0F5A54"
+					type: "item"
+					item: "minecraft:redstone"
+				}
+				{
+					id: "020D64082350FC98"
+					type: "item"
+					item: "minecraft:quartz"
+				}
+				{
+					id: "6D3210A76A983076"
+					type: "item"
+					item: "ae2:fluix_dust"
+				}
+			]
 		}
 	]
+	quest_links: [ ]
 }

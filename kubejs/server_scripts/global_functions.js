@@ -124,12 +124,8 @@ global.tinkersAlloying = (event, outputFluid, amount, inputFluids, temperature, 
 		event.custom({
 			type: 'create:item_application',
 			ingredients: [
-				{
-				  tag: inputBlock
-				},
-				{
-				  tag: inputItem
-				}
+				inputBlock.toJson(),
+				inputItem.toJson()
 			  ],
 		results: [
 			{
@@ -143,7 +139,7 @@ global.tinkersAlloying = (event, outputFluid, amount, inputFluids, temperature, 
 	///////////////////////////////////////////////////////////
 
 ///////////////// THERMAL ///////////////////////
-	////ROLLING////
+	////CHILLING////
 	global.thermalChilling = (event, fluid, fluidAmount, outputItem, amount, cast, energy, ID) => {
 		event.custom({
 		type: 'thermal:chiller',
@@ -163,7 +159,26 @@ global.tinkersAlloying = (event, outputFluid, amount, inputFluids, temperature, 
 		energy: energy
 		
 	}).id(ID)}
+	///////////////////////////////////////
+	
+	////crystallizer////
+	global.thermalCrystallizer = (event, fluid, fluidAmount, outputItem, input, ID) => {
+		event.custom({
+		type: 'thermal:crystallizer',
+		ingredients: [
+		  {
+			fluid: fluid,
+			amount: fluidAmount
+		  },
+		  {
+			tag: input
+		  }
+		],
+		result: outputItem,
+	}).id(ID)}
+	/////////////////////////////////////////
 ///////////////////////////////////////////////////////////
+
 ///////////////// COMPACT CRAFTING ///////////////////////
 	global.compactCrafting = (event, output, amount, catalyst, size, layers, components, ID) => {
 		event.custom({
@@ -249,6 +264,20 @@ global.explosionCrafting = (event, output, input, loss_rate, ID) => {
 			  time: time //80
 			}).id(ID)}
 ///////////////////////////////////////////////////////////
+///////////////// TREE RITUAL ///////////////////////
+	  global.naturesauraTreeRitual = (event, output, input, sapling, time, ID) => {
+		event.custom({
+			type: 'naturesaura:tree_ritual',
+			ingredients: input,
+			sapling: {
+				item: sapling
+			},
+			output: {
+				item: output
+			},
+			time: time //500
+		  }).id(ID)}
+///////////////////////////////////////////////////////////
 
 
 ///////////////// MIXER ///////////////////////
@@ -323,5 +352,27 @@ global.createSifting = (event, itemInput, itemOutput, processingTime, ID) => {
 		ingredients: itemInput,
 		results: itemOutput,
 		processingTime: processingTime
+	  }).id(ID)}
+///////////////////////////////////////////////////////////
+
+
+///////////////// INFUSION ///////////////////////
+global.elementalcraftInfusion = (event, itemInput, itemOutput, element_type, element_amount, ID) => {
+	event.custom({
+		type: 'elementalcraft:infusion',
+		output: itemOutput.toJson(),
+		element_type: element_type, //air
+		element_amount: element_amount, //500
+		input: itemInput.toJson() //tag
+	  }).id(ID)}
+///////////////////////////////////////////////////////////
+
+///////////////// ENERGIZING ///////////////////////
+global.powahEnergizing = (event, itemInput, itemOutput, energy, ID) => {
+	event.custom({
+		type: 'powah:energizing',
+		ingredients: itemInput,
+		energy: energy, //120000
+		result: itemOutput.toJson()
 	  }).id(ID)}
 ///////////////////////////////////////////////////////////

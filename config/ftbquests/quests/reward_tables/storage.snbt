@@ -4,7 +4,15 @@
 	title: "Storage"
 	loot_size: 1
 	rewards: [
-		{ item: "ironchest:wood_to_iron_chest_upgrade" }
-		{ item: "ironchest:wood_to_copper_chest_upgrade" }
+		{
+			item: {
+				id: "sophisticatedstorage:iron_chest"
+				Count: 1b
+				tag: {
+					woodType: "oak"
+				}
+			}
+		}
+		{ item: "sophisticatedstorage:basic_to_iron_tier_upgrade" }
 	]
 }

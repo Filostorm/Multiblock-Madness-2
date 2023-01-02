@@ -59,7 +59,7 @@ onEvent('tags.items', event => {
           event.add(`forge:fine_dusts`, `kubejs:fine_${item.material}_dust`)
           event.add(`forge:fine_dusts/${item.material}`, `kubejs:fine_${item.material}_dust`)
         } 
-        if (item.type != "gem") {
+        if (item.type != "gem" && item.type != "element") {
           event.add(`forge:poor_ores`, `kubejs:poor_${item.material}_ore`)
           event.add(`forge:poor_ores/${item.material}`, `kubejs:poor_${item.material}_ore`)
 
@@ -88,7 +88,7 @@ onEvent('tags.items', event => {
 onEvent('tags.blocks', event => {
   global.newMaterialParts.forEach((item) => {
     if (item.ore) {
-      if (item.type == "gem") {
+      if (item.type == "gem" || item.type == "element") {
         event.add(`forge:ores`, `kubejs:${item.material}_ore`)
         event.add(`forge:ores/${item.material}`, `kubejs:${item.material}_ore`)
       global.stoneTypes.forEach((type) => {

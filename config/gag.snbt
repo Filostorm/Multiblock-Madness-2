@@ -42,6 +42,11 @@
 		# Range: 0 ~ 32767
 		durability: 64
 		
+		# Maximum durability of the energized hearthstone, default is 256
+		# Default: 256
+		# Range: 0 ~ 32767
+		energizedDurability: 256
+		
 		# Whether the stone should ignore checking whether the spawn block is still valid and unobstructed
 		# Default: false
 		ignoreSpawnBlock: false

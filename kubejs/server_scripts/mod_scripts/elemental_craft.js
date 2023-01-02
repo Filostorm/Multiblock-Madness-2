@@ -6,19 +6,10 @@ onEvent('tags.items', event => {
 	event.add(`elementalcraft:basic_infused`, 'elementalcraft:whiterock')
 	event.add(`elementalcraft:basic_infused`, 'elementalcraft:burnt_glass')
 });
- /*
+ 
 onEvent('recipes', event => {
-	event.remove({output: 'tconstruct:smeltery_controller'})
-  	event.shaped('tconstruct:smeltery_controller', [
-		'AAA',
-		'ABA',
-		'AAA'
-  	], {
-		A: 'tconstruct:seared_brick',
-		B: '#forge:gears/steel'
-  	})
-  	event.shapeless(`kubejs:carbon_covered_iron`, [`#forge:ingots/iron`, '#forge:dusts/coal_coke']).id(`kubejs:carbon_covered_iron`)
-	//Item.of(`#forge:grits/${item.material}`).withChance(0.25)
-	event.recipes.createMixing(`${item.amount}x #forge:ingots/${item.material}`, item.ingot_input).heated().id(`create:mixing/${item.material}_ingot`)
+	//Nether Wart
+	global.elementalcraftInfusion(event, Ingredient.of('#forge:mushrooms'), Item.of('minecraft:nether_wart'), 'fire', 1000, 'mbm:infusion/nether_wart')
+	
+	
 });
-*/

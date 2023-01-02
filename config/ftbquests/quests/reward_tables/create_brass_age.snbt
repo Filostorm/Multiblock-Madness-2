@@ -4,12 +4,12 @@
 	title: "Create Brass Age"
 	loot_size: 1
 	rewards: [
-		{ item: "create:brass_ingot", count: 4 }
-		{ item: "create:brass_casing" }
-		{ item: "create:brass_funnel" }
+		{ item: "create:brass_ingot", count: 8 }
+		{ item: "create:brass_casing", count: 2 }
+		{ item: "create:brass_funnel", count: 2 }
 		{ item: "create:brass_tunnel" }
 		{ item: "create:cogwheel", count: 4 }
-		{ item: "create:gearbox" }
-		{ item: "create:electron_tube", count: 2 }
+		{ item: "create:gearbox", count: 2 }
+		{ item: "create:electron_tube", count: 4 }
 	]
 }

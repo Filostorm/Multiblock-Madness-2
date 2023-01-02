@@ -22,6 +22,9 @@ onEvent('recipes', event => {
 		'thermal:bronze_dust_4',
 		'thermal:invar_dust_3',
 		'thermal:electrum_dust_2',
+		'thermal:signalum_dust_4',
+		'thermal:enderium_dust_2',
+		'thermal:lumium_dust_4',
 		'thermal:earth_charge/emerald_dust_from_emerald',
 		'thermal:earth_charge/cinnabar_dust_from_cinnabar',
 		'thermal:earth_charge/niter_dust_from_niter',
@@ -31,6 +34,9 @@ onEvent('recipes', event => {
 		'thermal:earth_charge/apatite_dust_from_apatite',
 		'thermal:earth_charge/quartz_dust_from_quartz',
 		'thermal:earth_charge/diamond_dust_from_diamond',
+		'thermal:machines/crystallizer/crystallizer_amethyst_cluster',
+		'thermal:bottler_bucket',
+		/thermal:bottler_potion_.*/,
 	]
     recipeNamesToRemove.forEach((name) => {
 	event.remove({id: name})
@@ -69,7 +75,7 @@ onEvent('recipes', event => {
 		type: 'compactcrafting:block',
 		block: 'immersiveengineering:sheetmetal_aluminum'
 	  }
-	},  'kubejs:machine_frame')
+	},  'mbm2:machine_frame')
 
 
 	//Bronze Frame
@@ -104,7 +110,7 @@ onEvent('recipes', event => {
 		type: 'compactcrafting:block',
 		block: 'immersiveengineering:sheetmetal_electrum'
 	  }
-	},  'kubejs:bronze_frame')
+	},  'mbm2:bronze_frame')
 	
 	//Latex Extractor
 event.remove({output: 'thermal:device_tree_extractor'})
@@ -118,7 +124,7 @@ event.shaped('thermal:device_tree_extractor', [
 	C: '#forge:glass',
 	D: 'thermal:redstone_servo',
 	E: 'minecraft:bucket'
-  }).id("kubejs:device_tree_extractor")
+  }).id("mbm2:device_tree_extractor")
 
 // [| RF Furnace |] //
 event.remove({output: 'thermal:machine_furnace'})
@@ -131,9 +137,9 @@ event.shaped('thermal:machine_furnace', [
 	B: 'minecraft:redstone',
 	C: 'minecraft:bricks',
 	D: 'kubejs:bronze_frame',
-	E: 'thermal:copper_gear',
+	E: '#forge:gears/copper',
 	F: 'kubejs:silver_coil'
-  }).id("kubejs:machine_furnace")
+  }).id("mbm2:machine_furnace")
 
 // [| Crafter |] //
 event.remove({output: 'thermal:machine_crafter'})
@@ -146,9 +152,9 @@ event.shaped('thermal:machine_crafter', [
 	B: 'minecraft:crafting_table',
 	C: 'thermal:tin_ingot',
 	D: 'kubejs:bronze_frame',
-	E: 'thermal:copper_gear',
+	E: '#forge:gears/copper',
 	F: 'kubejs:silver_coil'
-  }).id("kubejs:machine_crafter")
+  }).id("mbm2:machine_crafter")
 
 // [| Chiller |] //
 event.remove({output: 'thermal:machine_chiller'})
@@ -161,9 +167,9 @@ event.shaped('thermal:machine_chiller', [
 	B: '#forge:glass',
 	C: 'minecraft:packed_ice',
 	D: 'kubejs:bronze_frame',
-	E: 'thermal:invar_gear',
+	E: '#forge:gears/invar',
 	F: 'kubejs:silver_coil'
-  }).id("kubejs:machine_chiller")
+  }).id("mbm2:machine_chiller")
 
 // [| Melter |] //
 event.remove({output: 'thermal:machine_crucible'})
@@ -176,9 +182,9 @@ event.shaped('thermal:machine_crucible', [
 	B: '#forge:glass',
 	C: 'minecraft:nether_bricks',
 	D: 'kubejs:bronze_frame',
-	E: 'thermal:invar_gear',
+	E: '#forge:gears/invar',
 	F: 'kubejs:silver_coil'
-  }).id("kubejs:machine_crucible")
+  }).id("mbm2:machine_crucible")
 
 // [| Press |] //
 event.remove({output: 'thermal:machine_press'})
@@ -189,11 +195,29 @@ event.shaped('thermal:machine_press', [
   ], {
 	A: Item.empty,
 	B: 'minecraft:iron_block',
-	C: 'thermal:bronze_ingot',
+	C: '#forge:ingots/bronze',
 	D: 'kubejs:bronze_frame',
 	E: 'thermal:constantan_gear',
 	F: 'kubejs:silver_coil'
-  }).id('kubejs:machine_press')
+  }).id('mbm2:machine_press')
+
+// [| Press |] //
+event.remove({output: 'thermal:machine_crystallizer'})
+event.shaped('thermal:machine_crystallizer', [
+	'ABA',
+	'CDC',
+	'EFE'
+  ], {
+	A: 'create:framed_glass',
+	B: '#forge:gems/diamond',
+	C: '#forge:plates/red_alloy',
+	D: 'kubejs:bronze_frame',
+	E: '#forge:gears/constantan',
+	F: 'kubejs:silver_coil'
+  }).id('mbm2:machine_press')
+
+
+
 
   //Silver Coil
   event.shaped('kubejs:silver_coil', [
@@ -202,7 +226,7 @@ event.shaped('thermal:machine_press', [
 	'  A'
   ], {
 	A: 'minecraft:redstone',
-	C: 'thermal:silver_ingot'
+	C: '#forge:ingots/silver'
   })
 
   // T1 Upgrade//
@@ -223,5 +247,43 @@ event.shaped('thermal:machine_press', [
  event.recipes.thermal.chiller('thermal:rubber_block', [Fluid.of('thermal:latex', 1000)])
     
  //Magma
- event.recipes.thermal.crucible(Fluid.of('tconstruct:magma', 250), 'minecraft:magma_cream').id(`kubejs:magma_from_ball`)
+ event.recipes.thermal.crucible(Fluid.of('tconstruct:magma', 250), 'minecraft:magma_cream').id(`mbm2:magma_from_ball`)
+
+ ///////////////////// Elemental Stuff /////////////////
+ 
+ //Temp Recipes
+ event.shapeless(`kubejs:petrotheum_dust`, ['thermal:basalz_powder', '#forge:dusts/coal_coke']).id(`mbm2:petrotheum_dust`)
+ event.shapeless(`kubejs:cryotheum_dust`, ['thermal:blizz_powder', 'snowball']).id(`mbm2:petrotheum_dust`)
+ event.shapeless(`kubejs:pyrotheum_dust`, ['minecraft:blaze_powder', 'create:cinder_flour']).id(`mbm2:petrotheum_dust`)
+ event.shapeless(`kubejs:aerotheum_dust`, ['thermal:blitz_powder', 'cloudstorage:cloud']).id(`mbm2:petrotheum_dust`)
+
+ var elementalDusts = [
+	'aerotheum',
+	'cryotheum',
+	'petrotheum',
+	'pyrotheum'
+]
+elementalDusts.forEach((name) => {
+	event.recipes.thermal.crucible(Fluid.of(`kubejs:${name}`, 250), `kubejs:${name}_dust`).id(`mbm2:crucible/${name}`)
+})
+var partAmounts = {
+	'ingot':90,
+	'plate':90,
+	'gear':360,
+	'rod':45,
+	'wire':45,
+	'nugget':10,
+	'coin':30,
+}
+//Meelt that metal down bruh
+global.newMaterialParts.forEach((item) => {
+	if (item.fluid_id != null) {
+		for (var part in partAmounts) {
+			if (Item.of(`#forge:${part}s/${item.material}`) != null) {
+ 				event.recipes.thermal.crucible(Fluid.of(item.fluid_id, partAmounts[part]), `#forge:${part}s/${item.material}`).id(`mbm2:crucible/${item.material}_${part}`)
+			}
+		}
+	}
+})
 });
+

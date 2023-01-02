@@ -1,0 +1,56 @@
+{
+  "mod_id": "geolosys",
+  "provided_stones": [],
+  "provided_ores": [
+    {
+      "block_id": [
+        "geolosys:ancient_debris_ore"
+      ],
+      "en_name": "Ancient Debris",
+      "types": [
+        "nether"
+      ],
+      "id": "ancient_debris_ore",
+      "orename": [
+        "netherite_scrap_ore"
+      ],
+      "stone": [
+        "netherrack"
+      ]
+    },
+    {
+      "block_id": [
+        "geolosys:quartz_ore",
+        "geolosys:deepslate_quartz_ore"
+      ],
+      "en_name": "Quartz",
+      "types": [
+        "stone"
+      ],
+      "id": "quartz_ore",
+      "stone": [
+        "stone",
+        "deepslate"
+      ]
+    },
+    {
+      "block_id": [
+        "geolosys:platinum_ore",
+        "geolosys:deepslate_platinum_ore"
+      ],
+      "en_name": "Platinum",
+      "types": [
+        "stone"
+      ],
+      "id": "platinum_ore",
+      "orename": [
+        "platinum_ore",
+        "osmium_ore"
+      ],
+      "stone": [
+        "stone",
+        "deepslate"
+      ]
+    }
+  ]
+}

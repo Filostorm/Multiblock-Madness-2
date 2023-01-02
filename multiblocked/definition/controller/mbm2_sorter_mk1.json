@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "location": "multiblocked:sorter_mk1",
+  "location": "mbm2:sorter_mk1",
   "traits": {},
   "properties": {
     "rotationState": "ALL",
@@ -101,7 +101,7 @@
         "type": "blocks"
       },
       "controller": {
-        "location": "multiblocked:sorter_mk1",
+        "location": "mbm2:sorter_mk1",
         "type": "component"
       },
       "B": {

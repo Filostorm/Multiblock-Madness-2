@@ -3,17 +3,25 @@
     "create.recipe.rolling": "Rolling Mill",
     "create.recipe.charginf": "Tesla Coil",
 
-    "block.multiblocked.sludge_sifter": "Sludge Sifter",
+    "block.mbm2.sludge_sifter": "Sludge Sifter",
     "multiblocked.recupe_map.sludge_pump": "Sludge Sifting",
-    "multiblocked.sludge_sifter.description": "Sifts several sedimentary materials from water",
+    "mbm2.sludge_sifter.description": "Sifts several sedimentary materials from water",
 
-    "block.multiblocked.sorter_mk1": "Ore Sorting Machine Mk1",
+    "block.mbm2.sorter_mk1": "Ore Sorting Machine Mk1",
     "multiblocked.recupe_map.sorter_mk1": "Mk1 Ore Sorting",
-    "multiblocked.sorter_mk1.description": "Sorts compound ores at a poor rate",
+    "mbm2.sorter_mk1.description": "Sorts compound ores at a poor rate",
 
-    "block.multiblocked.fluid_centrifuge_mk1": "Fluid Centrifuge Mk1",
+    "block.mbm2.fluid_centrifuge_mk1": "Fluid Centrifuge Mk1",
     "multiblocked.recupe_map.fluid_centrifuge_mk1": "Mk1 Fluid Centrifuging",
-    "multiblocked.fluid_centrifuge_mk1.description": "Splits Fluids into their components. The Create input can also be placed on top",
+    "mbm2.fluid_centrifuge_mk1.description": "Splits Fluids into their components. The Create input can also be placed on top",
+
+    "block.mbm2.ebf": "The Electric Blast Furnace",
+    "multiblocked.recupe_map.ebf": "Electric Blast Furnace",
+    "mbm2.ebf.description": "Uses Power to smelt metals and alloys to advanced for regular smelting",
+
+    "block.mbm2.chemical_reactor": "The Chemical Reactor",
+    "multiblocked.recupe_map.chemical_reactor": "Chemical Reactor",
+    "mbm2.chemical_reactor.description": "Uses Power to combine ingredients",
 
     "block.multiblocked.create_item_input": "Input Vault Part",
     "block.multiblocked.create_item_output": "Output Vault Part",
@@ -240,5 +248,8 @@
   "entity.minecraft.villager.immersiveengineering:mechinist" : "Mechinist",
   "entity.minecraft.villager.immersiveengineering:electrician" : "Electrician",
   "entity.minecraft.villager.immersiveengineering:outfitter" : "Outfitter",
-  "entity.minecraft.villager.immersiveengineering:gunsmith" : "Gunsmith"
+  "entity.minecraft.villager.immersiveengineering:gunsmith" : "Gunsmith",
+
+  
+  "block.ae2.sky_stone_tank": "Hardened Tank"
 }

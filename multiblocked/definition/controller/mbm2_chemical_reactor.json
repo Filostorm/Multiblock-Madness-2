@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "location": "multiblocked:fluid_centrifuge_mk1",
+  "version": 3,
+  "location": "mbm2:chemical_reactor",
   "traits": {},
   "properties": {
     "rotationState": "ALL",
@@ -20,9 +20,8 @@
   "status": {
     "unformed": {
       "renderer": {
-        "baseTexture": "multiblocked:casing/casing",
-        "frontTexture": "multiblocked:overlay/centrifuge",
-        "formedAsController": true,
+        "baseTexture": "multiblocked:casing/tier1_casing",
+        "frontTexture": "multiblocked:overlay/chemical_reactor",
         "type": "gregtech",
         "postRenderer": false
       }
@@ -32,8 +31,8 @@
     },
     "working": {
       "renderer": {
-        "baseTexture": "multiblocked:casing/casing",
-        "frontTexture": "multiblocked:overlay/centrifuge_active",
+        "baseTexture": "multiblocked:casing/tier1_casing",
+        "frontTexture": "multiblocked:overlay/chemical_reactor_active",
         "type": "gregtech",
         "postRenderer": false
       },
@@ -44,49 +43,34 @@
       "parent": "working"
     }
   },
-  "recipeMap": "fluid_centrifuge_mk1",
+  "recipeMap": "chemical_reactor",
   "basePattern": {
     "structureDir": [
-      "BACK",
+      "LEFT",
       "UP",
-      "RIGHT"
+      "BACK"
     ],
     "pattern": [
       [
-        "  A  ",
-        " ABA ",
-        "  A  "
+        " E@E ",
+        " EBE ",
+        " EBE ",
+        " EEE "
       ],
       [
-        " AAA ",
-        "A C A",
-        " AAA "
+        "AEEEA",
+        "CBDBC",
+        "CBDBC",
+        "AEEEA"
       ],
       [
-        "@AEAA",
-        "BCFCB",
-        "AAEAA"
-      ],
-      [
-        " AAA ",
-        "A C A",
-        " AAA "
-      ],
-      [
-        "  A  ",
-        " ABA ",
-        "  A  "
+        " EEE ",
+        " EBE ",
+        " EBE ",
+        " EEE "
       ]
     ],
     "aisleRepetitions": [
-      [
-        1,
-        1
-      ],
-      [
-        1,
-        1
-      ],
       [
         1,
         1
@@ -104,25 +88,16 @@
       "A": {
         "blocks": [
           {
-            "id": "kubejs:invar_casing"
+            "id": "kubejs:tier1_casing"
           }
         ],
         "type": "blocks"
       },
       "controller": {
-        "location": "multiblocked:fluid_centrifuge_mk1",
+        "location": "mbm2:chemical_reactor",
         "type": "component"
       },
       "B": {
-        "blocks": [
-          {
-            "id": "ae2:sky_stone_tank"
-          }
-        ],
-        "type": "blocks",
-        "io": "OUT"
-      },
-      "C": {
         "blocks": [
           {
             "id": "thermal:obsidian_glass"
@@ -130,49 +105,58 @@
         ],
         "type": "blocks"
       },
+      "C": {
+        "blocks": [
+          {
+            "id": "create:fluid_tank"
+          }
+        ],
+        "type": "blocks",
+        "io": "IN"
+      },
+      "D": {
+        "blocks": [
+          {
+            "id": "immersiveengineering:coil_mv"
+          }
+        ],
+        "type": "blocks"
+      },
       "E": {
-        "capability": "create_stress",
-        "type": "capability",
+        "blocks": [
+          {
+            "id": "ae2:sky_stone_tank"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 4,
+        "previewCount": 1,
+        "io": "OUT"
+      },
+      "F": {
+        "location": "multiblocked:energy_input",
+        "type": "component",
         "minCount": 1,
         "maxCount": 1,
         "previewCount": 1,
         "io": "IN"
       },
       "G": {
-        "blocks": [
-          {
-            "id": "pneumaticcraft:small_tank"
-          }
-        ],
-        "type": "blocks",
+        "location": "multiblocked:item_input",
+        "type": "component",
+        "minCount": 0,
+        "maxCount": 2,
+        "previewCount": 1,
         "io": "IN"
       },
       "H": {
-        "blocks": [
-          {
-            "id": "pneumaticcraft:medium_tank"
-          }
-        ],
-        "type": "blocks",
-        "io": "IN"
-      },
-      "I": {
-        "blocks": [
-          {
-            "id": "pneumaticcraft:large_tank"
-          }
-        ],
-        "type": "blocks",
-        "io": "IN"
-      },
-      "J": {
-        "blocks": [
-          {
-            "id": "pneumaticcraft:huge_tank"
-          }
-        ],
-        "type": "blocks",
-        "io": "IN"
+        "location": "multiblocked:item_output",
+        "type": "component",
+        "minCount": 0,
+        "maxCount": 1,
+        "previewCount": 1,
+        "io": "OUT"
       },
       "any": {
         "type": "any"
@@ -189,20 +173,20 @@
         "A"
       ],
       "B": [
-        "B"
+        "B",
+        "E"
       ],
       "C": [
         "C"
       ],
-      "E": [
-        "E",
-        "any"
+      "D": [
+        "D"
       ],
-      "F": [
+      "E": [
+        "A",
+        "F",
         "G",
-        "H",
-        "I",
-        "J"
+        "H"
       ]
     }
   }

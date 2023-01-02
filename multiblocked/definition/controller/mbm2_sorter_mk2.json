@@ -1,0 +1,244 @@
+{
+  "version": 3,
+  "location": "mbm2:sorter_mk2",
+  "ui": "auto_hammer.mbdui",
+  "traits": {
+    "fuel_progress": {
+      "cIO": 2,
+      "gIO": 2,
+      "mbdIO": 2,
+      "slotName": "progress",
+      "x": 40,
+      "y": 46,
+      "width": 60,
+      "height": 18,
+      "texture": "multiblocked:textures/gui/energy_bar.png",
+      "fillDirection": "UP_TO_DOWN"
+    },
+    "item": [
+      {
+        "cIO": 0,
+        "gIO": 2,
+        "mIO": 0,
+        "slotName": "input",
+        "x": 24,
+        "y": 50,
+        "autoIO": false
+      },
+      {
+        "cIO": 0,
+        "gIO": 2,
+        "mIO": 0,
+        "slotName": "input2",
+        "x": 48,
+        "y": 53,
+        "autoIO": false
+      },
+      {
+        "cIO": 1,
+        "gIO": 1,
+        "mIO": 1,
+        "slotName": "output2",
+        "x": 33,
+        "y": 5,
+        "autoIO": false
+      },
+      {
+        "cIO": 1,
+        "gIO": 1,
+        "mIO": 1,
+        "slotName": "output3",
+        "x": 6,
+        "y": 30,
+        "autoIO": false
+      },
+      {
+        "cIO": 0,
+        "gIO": 2,
+        "mIO": 0,
+        "slotName": "hammer",
+        "x": 86,
+        "y": 24,
+        "autoIO": false,
+        "valid": [
+          "\"{Count:1b,id:\\\"kubejs:cobalt_hammer\\\",tag:{Damage:0}}\""
+        ]
+      },
+      {
+        "cIO": 0,
+        "gIO": 2,
+        "mIO": 0,
+        "slotName": "input3",
+        "x": 25,
+        "y": 73,
+        "autoIO": false
+      },
+      {
+        "cIO": 0,
+        "gIO": 2,
+        "mIO": 0,
+        "slotName": "input4",
+        "x": 44,
+        "y": 74,
+        "autoIO": false
+      },
+      {
+        "cIO": 1,
+        "gIO": 1,
+        "mIO": 1,
+        "slotName": "output",
+        "x": 6,
+        "y": 7,
+        "autoIO": false
+      },
+      {
+        "cIO": 1,
+        "gIO": 1,
+        "mIO": 1,
+        "slotName": "output4",
+        "x": 30,
+        "y": 31,
+        "autoIO": false
+      }
+    ],
+    "fluid": [
+      {
+        "cIO": 2,
+        "gIO": 2,
+        "mIO": 2,
+        "slotName": "lava",
+        "x": 101,
+        "y": 103,
+        "autoIO": false,
+        "tC": 8000,
+        "w": 18,
+        "h": 18,
+        "fillDir": "DOWN_TO_UP"
+      }
+    ]
+  },
+  "properties": {
+    "rotationState": "ALL",
+    "showInJei": true,
+    "isOpaque": true,
+    "hasDynamicShape": false,
+    "hasCollision": true,
+    "destroyTime": 1.5,
+    "explosionResistance": 6.0,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "friction": 0.6,
+    "harvestLevel": 0,
+    "stackSize": 64,
+    "tabGroup": "multiblocked.all"
+  },
+  "status": {
+    "unformed": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/casing",
+        "frontTexture": "multiblocked:overlay/hammer",
+        "type": "gregtech",
+        "postRenderer": false
+      }
+    },
+    "idle": {
+      "parent": "unformed"
+    },
+    "working": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/casing",
+        "frontTexture": "multiblocked:overlay/hammer_active",
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "parent": "idle"
+    },
+    "suspend": {
+      "parent": "working"
+    }
+  },
+  "recipeMap": "smithing",
+  "basePattern": {
+    "structureDir": [
+      "BACK",
+      "UP",
+      "RIGHT"
+    ],
+    "pattern": [
+      [
+        "AAA",
+        "ABA",
+        "AAA"
+      ],
+      [
+        "AAA",
+        "@ B",
+        "AAA"
+      ],
+      [
+        "AAA",
+        "ABA",
+        "AAA"
+      ]
+    ],
+    "aisleRepetitions": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "predicates": {
+      "A": {
+        "blocks": [
+          {
+            "id": "kubejs:cobalt_casing"
+          }
+        ],
+        "type": "blocks"
+      },
+      "controller": {
+        "location": "mbm2:sorter_mk2",
+        "type": "component"
+      },
+      "B": {
+        "blocks": [
+          {
+            "id": "thermal:obsidian_glass"
+          }
+        ],
+        "type": "blocks"
+      },
+      "air": {
+        "type": "air"
+      },
+      "any": {
+        "type": "any"
+      }
+    },
+    "symbolMap": {
+      "@": [
+        "controller"
+      ],
+      " ": [
+        "any"
+      ],
+      "A": [
+        "A"
+      ],
+      "B": [
+        "B"
+      ],
+      "-": [
+        "air"
+      ]
+    }
+  }
+}

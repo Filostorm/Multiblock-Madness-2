@@ -20,6 +20,7 @@
 			}]
 		}
 		{
+			title: "More Elemental Infused Items"
 			x: 9.0d
 			y: 11.5d
 			dependencies: ["6B06707ECFAFD263"]
@@ -720,4 +721,5 @@
 			]
 		}
 	]
+	quest_links: [ ]
 }

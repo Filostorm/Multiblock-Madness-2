@@ -1,4 +1,4 @@
-const recipeRegistry = [
+var fluidCentrifugeRecipes = [
 	{
 	  input: Fluid.of('kubejs:molten_slag', 200),
 	  output1: Fluid.of('tconstruct:molten_clay', 50),
@@ -10,7 +10,7 @@ const recipeRegistry = [
   ]
   
   onEvent('recipes', event => {
-	recipeRegistry.forEach((r) => {
+	fluidCentrifugeRecipes.forEach((r) => {
 		
 		if (r.output4 != null) {
 			event.recipes.multiblocked.multiblock("fluid_centrifuge_mk1")

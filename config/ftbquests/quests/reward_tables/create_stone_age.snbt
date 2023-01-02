@@ -4,17 +4,18 @@
 	title: "Create Stone Age"
 	loot_size: 1
 	rewards: [
-		{ item: "create:shaft", count: 4, weight: 2 }
-		{ item: "create:cogwheel", count: 2, weight: 2 }
+		{ item: "create:shaft", count: 8, weight: 2 }
+		{ item: "create:cogwheel", count: 4, weight: 2 }
 		{ item: "create:large_cogwheel", weight: 2 }
 		{ item: "create:andesite_casing", weight: 2 }
-		{ item: "create:andesite_alloy", count: 4, weight: 4 }
-		{ item: "create:andesite_funnel", weight: 2 }
+		{ item: "create:andesite_alloy", count: 8, weight: 4 }
+		{ item: "create:andesite_funnel", count: 2, weight: 2 }
 		{ item: "create:andesite_tunnel" }
 		{ item: "create:gearbox", weight: 2 }
-		{ item: "create:belt_connector", weight: 2 }
+		{ item: "create:belt_connector", count: 2, weight: 2 }
 		{ item: "create:encased_chain_drive", count: 2, weight: 2 }
-		{ item: "create:analog_lever", weight: 2 }
+		{ item: "create:analog_lever" }
 		{ item: "create:adjustable_chain_gearshift" }
+		{ item: "create:clutch" }
 	]
 }

@@ -39,7 +39,7 @@ global.removeAndHide = [
 	'thermal:machine_pulverizer', 
 	'thermal:dynamo_stirling', 
 	'thermal:dynamo_magmatic', 
-	'thermal:dynamo_gourmand', 
+	//'thermal:dynamo_gourmand', 
 	'thermal:machine_furnace', 
 	'thermal:machine_press', 
 	'thermal:press_unpacking_die', 
@@ -47,9 +47,12 @@ global.removeAndHide = [
 	'thermal:press_packing_2x2_die', 
 	'thermal:press_gear_die', 
 	'thermal:press_coin_die', 
-	'thermal:dynamo_disenchantment',
+	//'thermal:dynamo_disenchantment',
 	//'mna:improvised_manaweaver_wand',
 	'ironfurnaces:augment_generator',
+	'ironfurnaces:million_furnace',
+	'ironfurnaces:item_linker',
+	'ae2:wireless_terminal',
 
 
 
@@ -366,4 +369,14 @@ global.removeAndHide = [
 	'immersiveengineering:ore_aluminum',
 	'geolosys:bauxite_ore', 
 	'geolosys:deepslate_bauxite_ore',
+	'potionsmaster:bismuth_powder', 
+	'potionsmaster:crimsoniron_powder', 
+	'potionsmaster:allthemodium_powder', 
+	'potionsmaster:unobtainium_powder', 
+	'potionsmaster:calcinatedbismuth_powder', 
+	'potionsmaster:calcinatedcrimsoniron_powder', 
+	'potionsmaster:calcinatedallthemodium_powder', 
+	'potionsmaster:calcinatedvibranium_powder', 
+	'potionsmaster:calcinatedunobtainium_powder',
+	'chemlib:sulfur_dust',
 	]

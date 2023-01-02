@@ -8,8 +8,8 @@
 	default_quest_shape: ""
 	default_hide_dependency_lines: false
 	images: [{
-		x: -13.0d
-		y: 3.0d
+		x: -17.0d
+		y: -2.5d
 		width: 5.0d
 		height: 4.0d
 		rotation: 0.0d
@@ -155,7 +155,7 @@
 		{
 			icon: "create:mechanical_press"
 			x: 1.5d
-			y: 12.0d
+			y: 11.5d
 			subtitle: "Cheaper Plates"
 			description: ["You can rig this up manually with a Depot underneath, or have it above a belt for automation."]
 			dependencies: ["273B98D3C35D7356"]
@@ -227,7 +227,7 @@
 		{
 			title: "The Toolbox"
 			x: -0.5d
-			y: 8.5d
+			y: 8.0d
 			description: ["Hold Alt to access items stored inside the toolbox."]
 			dependencies: ["360253CDEF94C130"]
 			id: "298E404D2803AB20"
@@ -278,7 +278,6 @@
 			]
 			dependencies: [
 				"760223888ADD58B0"
-				"03FA25E0602E0B32"
 				"5DF7F48CFFA43DA8"
 			]
 			size: 1.5d
@@ -681,18 +680,9 @@
 				item: "sophisticatedstorage:basic_to_iron_tier_upgrade"
 			}]
 			rewards: [{
-				id: "351EE8713F5F141F"
+				id: "30AB5177CEA0BE43"
 				type: "item"
-				item: {
-					id: "sophisticatedstorage:crafting_upgrade"
-					Count: 1b
-					tag: {
-						craftingInventory: {
-							Size: 9
-							Items: [ ]
-						}
-					}
-				}
+				item: "sophisticatedstorage:stack_upgrade_tier_1"
 			}]
 		}
 		{
@@ -834,7 +824,7 @@
 		}
 		{
 			title: "The Sludge Sifter"
-			icon: "multiblocked:sludge_sifter"
+			icon: "mbm2:sludge_sifter"
 			x: 7.5d
 			y: 7.0d
 			subtitle: "Some passive resources"
@@ -848,7 +838,8 @@
 				{
 					id: "560BD3E0E7E41B5E"
 					type: "item"
-					item: "multiblocked:sludge_sifter"
+					icon: "mbm2:sludge_sifter"
+					item: "mbm2:sludge_sifter"
 				}
 				{
 					id: "4F717336160B46AB"
@@ -919,11 +910,14 @@
 		}
 		{
 			icon: "create:hose_pulley"
-			x: 1.5d
+			x: 2.5d
 			y: 7.0d
 			subtitle: "Infinite Water/Lava"
 			description: ["Used to drain bodies of liquid."]
-			dependencies: ["1CC0BFAC83B1134B"]
+			dependencies: [
+				"1CC0BFAC83B1134B"
+				"0828BD31B9F3CD36"
+			]
 			id: "3F1F7439D1A62976"
 			tasks: [
 				{
@@ -970,11 +964,14 @@
 			}]
 		}
 		{
-			x: 3.5d
-			y: 8.0d
+			x: 1.0d
+			y: 7.0d
 			subtitle: "This can also be used to automate Treated Wood."
 			description: ["You won't be able to fill the Spout with buckets, so you'll need to rig up the pipes to fill it for you."]
-			dependencies: ["1CC0BFAC83B1134B"]
+			dependencies: [
+				"1CC0BFAC83B1134B"
+				"0828BD31B9F3CD36"
+			]
 			id: "03FA25E0602E0B32"
 			tasks: [{
 				id: "7E35FE79C6F30C43"
@@ -1193,4 +1190,5 @@
 			}]
 		}
 	]
+	quest_links: [ ]
 }

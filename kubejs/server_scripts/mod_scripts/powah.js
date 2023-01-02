@@ -36,7 +36,7 @@ onEvent('recipes', event => {
   event.remove({id: 'powah:crafting/capacitor_basic'})
   event.recipes.createSequencedAssembly([ // start the recipe
 'powah:capacitor_basic', // have this item be an output
-  ], '#forge:ingots/iron', [ // input.
+  ], '#forge:ingots/invar', [ // input.
   event.recipes.createDeploying('kubejs:incomplete_basic_capacitor', ['kubejs:incomplete_basic_capacitor', 'powah:dielectric_paste']),
   event.recipes.createDeploying('kubejs:incomplete_basic_capacitor', ['kubejs:incomplete_basic_capacitor', '#forge:dusts/redstone']),
   event.recipes.createDeploying('kubejs:incomplete_basic_capacitor', ['kubejs:incomplete_basic_capacitor', '#forge:dusts/redstone']),
@@ -45,7 +45,7 @@ onEvent('recipes', event => {
 //Paste
   event.remove({output: 'powah:dielectric_paste'})
 	event.recipes.createMixing('8x powah:dielectric_paste', ['#minecraft:coals','#forge:clay', Fluid.of('minecraft:lava', 250)]).id(`mbd2:mixing/dielectric_paste`)
-	event.recipes.createMixing('16x powah:dielectric_paste', ['#minecraft:coals','#forge:clay']).superheated().id(`mbd2:mixing/dielectric_paste_heated`)
+	event.recipes.createMixing('8x powah:dielectric_paste', ['#minecraft:coals','#forge:clay']).heated().id(`mbd2:mixing/dielectric_paste_heated`)
 
 
 //Starter tier no longer exsists

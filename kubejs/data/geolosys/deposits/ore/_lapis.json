@@ -25,10 +25,7 @@
       }],
       "minecraft:deepslate": [{                                    
         "block": "minecraft:deepslate_lapis_ore",
-        "chance": 0.5
-      },{                                    
-        "block": "evilcraft:dark_ore_deepslate",
-        "chance": 0.3
+        "chance": 0.8
       },{                                    
         "block": "thermal:deepslate_niter_ore",
         "chance": 0.1

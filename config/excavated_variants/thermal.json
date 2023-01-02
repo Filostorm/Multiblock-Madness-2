@@ -1,0 +1,158 @@
+{
+  "mod_id": "thermal",
+  "provided_stones": [
+    {
+      "block_id": "minecraft:netherrack",
+      "types": [
+        "stone"
+      ],
+      "id": "netherrack",
+      "en_name": "Netherrack"
+    },
+    {
+      "block_id": "minecraft:blackstone",
+      "types": [
+        "stone"
+      ],
+      "id": "blackstone",
+      "en_name": "Blackstone"
+    }
+  ],
+  "provided_ores": [
+    {
+      "block_id": [
+        "thermal:silver_ore",
+        "thermal:deepslate_silver_ore"
+      ],
+      "en_name": "Silver Ore",
+      "types": [
+        "stone"
+      ],
+      "id": "silver_ore",
+      "stone": [
+        "stone",
+        "deepslate"
+      ]
+    },
+    {
+      "block_id": [
+        "thermal:lead_ore",
+        "thermal:deepslate_lead_ore"
+      ],
+      "en_name": "Lead Ore",
+      "types": [
+        "stone"
+      ],
+      "id": "lead_ore",
+      "stone": [
+        "stone",
+        "deepslate"
+      ]
+    },
+    {
+      "block_id": [
+        "thermal:nickel_ore",
+        "thermal:deepslate_nickel_ore"
+      ],
+      "en_name": "Nickel Ore",
+      "types": [
+        "stone"
+      ],
+      "id": "nickel_ore",
+      "stone": [
+        "stone",
+        "deepslate"
+      ]
+    },
+    {
+      "block_id": [
+        "thermal:tin_ore",
+        "thermal:deepslate_tin_ore"
+      ],
+      "en_name": "Tin Ore",
+      "types": [
+        "stone"
+      ],
+      "id": "tin_ore",
+      "stone": [
+        "stone",
+        "deepslate"
+      ]
+    },
+    {
+      "block_id": [
+        "thermal:apatite_ore",
+        "thermal:deepslate_apatite_ore"
+      ],
+      "en_name": "Apatite Ore",
+      "types": [
+        "stone"
+      ],
+      "id": "apatite_ore",
+      "stone": [
+        "stone",
+        "deepslate"
+      ]
+    },
+    {
+      "block_id": [
+        "thermal:sulfur_ore",
+        "thermal:deepslate_sulfur_ore"
+      ],
+      "en_name": "Sulfur Ore",
+      "types": [
+        "stone"
+      ],
+      "id": "sulfur_ore",
+      "stone": [
+        "stone",
+        "deepslate"
+      ]
+    },
+    {
+      "block_id": [
+        "thermal:ruby_ore",
+        "thermal:deepslate_ruby_ore"
+      ],
+      "en_name": "Ruby Ore",
+      "types": [
+        "stone"
+      ],
+      "id": "ruby_ore",
+      "stone": [
+        "stone",
+        "deepslate"
+      ]
+    },
+    {
+      "block_id": [
+        "thermal:sapphire_ore",
+        "thermal:deepslate_sapphire_ore"
+      ],
+      "en_name": "Sapphire Ore",
+      "types": [
+        "stone"
+      ],
+      "id": "sapphire_ore",
+      "stone": [
+        "stone",
+        "deepslate"
+      ]
+    },
+    {
+      "block_id": [
+        "thermal:cinnabar_ore",
+        "thermal:deepslate_cinnabar_ore"
+      ],
+      "en_name": "Cinnabar Ore",
+      "types": [
+        "stone"
+      ],
+      "id": "cinnabar_ore",
+      "stone": [
+        "stone",
+        "deepslate"
+      ]
+    }
+  ]
+}

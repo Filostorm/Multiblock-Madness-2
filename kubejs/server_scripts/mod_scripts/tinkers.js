@@ -19,6 +19,15 @@ onEvent('recipes', event => {
 	A: 'tconstruct:seared_brick'
   }).id('mbm2:smeltery/seared/faucet')
   
+//Scorched Faucet nerf
+event.remove({id: 'tconstruct:smeltery/scorched/faucet'})
+event.shaped('tconstruct:scorched_faucet', [
+  'A A',
+  ' A '
+], {
+  A: 'tconstruct:scorched_brick'
+}).id('mbm2:smeltery/scorched/faucet')
+
 	//First Steel
 	event.recipes.createMixing(`kubejs:carbon_covered_iron`, [`#forge:ingots/iron`, '#forge:dusts/coal_coke']).heated().id(`mbm2:carbon_covered_iron`)
   	global.tinkersMelting(event, 'kubejs:molten_slag', 50, 'tconstruct:molten_steel', 90, 'kubejs:carbon_covered_iron', 1200, 142, `mbm2:smeltery/melting/metal/first_steel`)
@@ -32,6 +41,17 @@ onEvent('recipes', event => {
 	
 	//Foundry Controller
 	event.remove({id: 'tconstruct:smeltery/casting/scorched/foundry_controller'})
-	global.naturesauraAltar(event, 'tconstruct:foundry_controller', 'tconstruct:scorched_bricks', 'naturesaura:nether', 30000, 160, 'mbm2:scorched/foundry_controller')
+	//global.naturesauraAltar(event, 'tconstruct:foundry_controller', 'tconstruct:scorched_bricks', 'naturesaura:nether', 30000, 160, 'mbm2:scorched/foundry_controller')
+	event.shaped('tconstruct:foundry_controller', [
+		'PCP',
+		'GBF',
+		'PCP'
+	  ], {
+		B: 'tconstruct:scorched_bricks',
+		P: '#forge:plates/tainted_gold',
+		G: Item.of('naturesaura:aura_bottle', '{stored_type:"naturesaura:nether"}'),
+		C: 'powah:capacitor_hardened',
+		F: 'elementalcraft:firecrystal'
+	  })
 	
 });

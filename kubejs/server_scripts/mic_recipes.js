@@ -117,4 +117,21 @@ event.shaped('3x kubejs:wood_scaffolding', [
 
   // Soul Torch
   event.shapeless('4x soul_torch', ['torch','torch','torch','torch','soul_sand']).id('mbm2:soul_torch')
+
+  //Brik
+  event.smelting('minecraft:brick', 'kubejs:unfired_clay_brick').id(`kubejs:smelting/brick`)
+
+
+  // Damascus Steel
+  event.recipes.createCutting('kubejs:steel_scraps', ['#forge:ingots/steel']).processingTime(200),
+
+  //Swap scraps for stacked iron/steel plating
+  event.recipes.createSequencedAssembly([ // start the recipe
+  'kubejs:damascus_steel_ingot', // have this item be an output
+  ], 'kubejs:steel_scraps', [ // input.
+  event.recipes.createFilling('kubejs:partially_folded_damascus_steel', ['kubejs:partially_folded_damascus_steel', Fluid.of('lava', 50)]),
+  event.recipes.createPressing('kubejs:partially_folded_damascus_steel', ['kubejs:partially_folded_damascus_steel']),
+  event.recipes.createCutting('kubejs:partially_folded_damascus_steel', ['kubejs:partially_folded_damascus_steel']).processingTime(50),
+//  event.recipes.createCutting('kubejs:partially_folded_damascus_steel', 'kubejs:partially_folded_damascus_steel').processingTime(50)
+  ]).transitionalItem('kubejs:partially_folded_damascus_steel').loops(20).id(`mbm2:damascus_steel_ingot`)
 });

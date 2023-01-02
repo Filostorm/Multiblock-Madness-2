@@ -1,7 +1,20 @@
 
 
 onEvent('tags.items', event => {
-		event.add('#forge:slimeballs', 'createaddition:biomass_pellet')
+		event.add('forge:slimeballs', 'createaddition:biomass_pellet')
+		
+		event.add('create:movement_anchors', 'create:mechanical_bearing')
+		event.add('create:movement_anchors', 'create:mechanical_piston')
+		event.add('create:movement_anchors', 'create:gantry_carriage')
+
+		event.add('create:chassis', 'create:linear_chassis')
+		event.add('create:chassis', 'create:radial_chassis')
+
+		event.add('create:sticky', 'create:super_glue')
+		event.add('create:sticky', 'slime_ball')
+
+
+
 });
 onEvent('recipes', event => {
 
@@ -152,9 +165,17 @@ event.shaped('create:hose_pulley', [
 	//Brass Casing
 	event.remove({id: 'create:item_application/brass_casing_from_wood'})
 	event.remove({id: 'create:item_application/brass_casing_from_log'})
-	global.createApplying(event, 'create:brass_casing', 'forge:ingots/brass', 'forge:treated_wood', `mbm2:applying/brass_casing`)
-	//event.recipes.createDeploying('create:brass_casing', ['#forge:treated_wood', '#forge:ingots/brass'])
+	global.createApplying(event, 'create:brass_casing', Ingredient.of('#forge:ingots/brass'), Ingredient.of('#forge:treated_wood'), `mbm2:applying/brass_casing`)
+
+	//Charred Planks for Copper Casing
+	global.elementalcraftInfusion(event, Ingredient.of('#minecraft:planks'), Item.of('kubejs:charred_planks'), 'fire', 250, 'mbm:infusion/copper_casing')
 	
+	//Copper Casing
+	event.remove({id: 'create:item_application/copper_casing_from_wood'})
+	event.remove({id: 'create:item_application/copper_casing_from_log'})
+	global.createApplying(event, 'create:copper_casing', Ingredient.of('#forge:ingots/copper'), Item.of('kubejs:charred_planks'), `mbm2:applying/copper_casing`)
+	
+
 	//Gib Saplings
 	event.recipes.createCrushing([
 		Item.of('minecraft:jungle_sapling').withChance(0.01),
@@ -163,7 +184,7 @@ event.shaped('create:hose_pulley', [
 		Item.of('hexerei:mahogany_sapling').withChance(0.01),
 		Item.of('hexerei:willow_sapling').withChance(0.01),
 		Item.of('forbidden_arcanus:growing_edelwood').withChance(0.01),
-		//Item.of('malum:runewood_sapling').withChance(0.01)
+		Item.of('malum:runewood_sapling').withChance(0.01)
 	  ], '#minecraft:leaves').id(`mbm2:crushing/leaves_into_saplings`)
 
 	/// Blaze Burner
@@ -208,7 +229,9 @@ event.shaped('create:hose_pulley', [
 	  A: 'create:fluid_pipe',
 		}).id(`mbm2:crafting/steam_engine`)
 
-		
+//Clear Filter		
+event.shapeless('create:attribute_filter', [Item.of('create:attribute_filter').ignoreNBT()]).id(`mbm2:create/clear_attribute_filter`)
+event.shapeless('create:filter', [Item.of('create:filter').ignoreNBT()]).id(`mbm2:create/clear_filter`)
 
 
 	//Make some Hot Cream with a bonus chance

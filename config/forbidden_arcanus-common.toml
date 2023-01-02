@@ -22,9 +22,12 @@
 		#Maximum Arcane Crystal Ore veins per chunk [default: 3]
 		#Range: 1 ~ 100
 		count = 3
-		#Maximum height for Arcane Crystal Ore to generate [default: 25]
-		#Range: 1 ~ 256
+		#Maximum height for Arcane Crystal Ore to generate [default: 14]
+		#Range: > -2147483648
 		max_height = 25
+		#Minimum height for Arcane Crystal Ore to generate [default: -40]
+		#Range: > -2147483648
+		min_height = -40
 
 	[world_gen.runestone]
 		#Generate Runestone? [default: true]
@@ -32,12 +35,15 @@
 		#Maximum size of Runestone veins [default: 3]
 		#Range: 0 ~ 100
 		max_vein_size = 3
-		#Maximum Runestone veins per chunk [default: 2]
+		#Maximum Runestone veins per chunk [default: 3]
 		#Range: 1 ~ 100
 		count = 2
-		#Maximum height for the Runestone to generate [default: 20]
-		#Range: 1 ~ 256
+		#Maximum height for the Runestone to generate [default: 2]
+		#Range: > -2147483648
 		max_height = 20
+		#Minimum height for the Runestone to generate [default: -64]
+		#Range: > -2147483648
+		min_height = -64
 
 	[world_gen.darkstone]
 		#Generate Darkstone? [default: true]
@@ -45,12 +51,15 @@
 		#Maximum size of Darkstone veins [default: 20]
 		#Range: 0 ~ 100
 		max_vein_size = 20
-		#Maximum Darkstone veins per chunk [default: 20]
+		#Maximum Darkstone veins per chunk [default: 28]
 		#Range: 1 ~ 100
 		count = 20
-		#Maximum height for Darkstone to generate [default: 8]
-		#Range: 1 ~ 256
+		#Maximum height for Darkstone to generate [default: -51]
+		#Range: > -2147483648
 		max_height = 8
+		#Minimum height for Darkstone to generate [default: -64]
+		#Range: > -2147483648
+		min_height = -64
 
 	[world_gen.arcane_gilded_darkstone]
 		#Generate Arcane Gilded Darkstone? [default: true]
@@ -61,13 +70,28 @@
 		#Maximum Arcane Gilded Darkstone veins per chunk [default: 4]
 		#Range: 1 ~ 100
 		count = 4
-		#Maximum height for Arcane Gilded Darkstone to generate [default: 8]
-		#Range: 1 ~ 256
+		#Maximum height for Arcane Gilded Darkstone to generate [default: -51]
+		#Range: > -2147483648
 		max_height = 8
+		#Mimumum height for Arcane Gilded Darkstone to generate [default: -64]
+		#Range: > -2147483648
+		min_height = -64
 
 	[world_gen.xpetrified_ore]
 		#Generate Xpetrified Ore? [default: true]
 		generate = true
+		#Maximum size of Xpetrified Ore veins [default: 3]
+		#Range: 0 ~ 100
+		max_vein_size = 3
+		#Maximum Xpetrified Ore veins per chunk [default: 18]
+		#Range: 1 ~ 100
+		count = 18
+		#Minumum height for Xpetrified Ore to generate [default: -6]
+		#Range: > -2147483648
+		min_height = -6
+		#Maximum height for Xpetrified Ore to generate [default: 35]
+		#Range: > -2147483648
+		max_height = 35
 
 	[world_gen.stella_arcanum]
 		#Generate Should Stella Arcanum? [default: true]
@@ -78,9 +102,12 @@
 		#Maximum Stella Arcanum veins per chunk [default: 2]
 		#Range: 1 ~ 100
 		count = 2
-		#Maximum height for Stella Arcanum to generate [default: 50]
-		#Range: 1 ~ 256
+		#Maximum height for Stella Arcanum to generate [default: 42]
+		#Range: > -2147483648
 		max_height = 50
+		#Minimum height for Stella Arcanum to generate [default: -44]
+		#Range: > -2147483648
+		min_height = -44
 
 	[world_gen.cherrywood_tree]
 		#Generate Cherrywood Trees? [default: true]
@@ -103,8 +130,6 @@
 		generate = true
 
 	[world_gen.nipa]
-		#Generate Nipas? [default: true]
-		generate = true
 		#Nipa Structure Spacing [default: 35]
 		#Range: > 0
 		spacing = 35

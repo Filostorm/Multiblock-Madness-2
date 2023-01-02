@@ -1,0 +1,73 @@
+
+#A higher spawn weight will make the mob spawn more often.
+#To prevent a certain mob from spawning, set its weight to 0.
+["Mob Spawn Weights"]
+	#Snail spawn weight
+	#Range: 0 ~ 1000
+	snailSpawnWeight = 5
+	#Snake spawn weight
+	#Range: 0 ~ 1000
+	snakeSpawnWeight = 4
+	#Coral Snake spawn weight
+	#Range: 0 ~ 1000
+	coralSnakeSpawnWeight = 4
+	#Rattlesnake spawn weight
+	#Range: 0 ~ 1000
+	rattlesnakeSpawnWeight = 4
+	#Bear spawn weight
+	#Range: 0 ~ 1000
+	bearSpawnWeight = 8
+	#Deer spawn weight
+	#Range: 0 ~ 1000
+	deerSpawnWeight = 8
+	#Firefly spawn weight
+	#Range: 0 ~ 1000
+	fireflySpawnWeight = 8
+	#Bluejay spawn weight
+	#Range: 0 ~ 1000
+	bluejaySpawnWeight = 8
+	#Canary spawn weight
+	#Range: 0 ~ 1000
+	canarySpawnWeight = 8
+	#Cardinal spawn weight
+	#Range: 0 ~ 1000
+	cardinalSpawnWeight = 8
+	#Robin spawn weight
+	#Range: 0 ~ 1000
+	robinSpawnWeight = 8
+	#Butterfly spawn weight
+	#Range: 0 ~ 1000
+	butterflySpawnWeight = 6
+	#Rabbit spawn weight in forest biomes
+	#Range: 0 ~ 1000
+	forestRabbitSpawnWeight = 6
+	#Fox spawn weight in forest biomes
+	#Range: 0 ~ 1000
+	forestFoxSpawnWeight = 6
+	#Rhino spawn weight
+	#Range: 0 ~ 1000
+	rhinoSpawnWeight = 15
+	#Lion spawn weight
+	#Range: 0 ~ 1000
+	lionSpawnWeight = 15
+	#Elephant spawn weight
+	#Range: 0 ~ 1000
+	elephantSpawnWeight = 10
+	#Zebra spawn weight
+	#Range: 0 ~ 1000
+	zebraSpawnWeight = 10
+	#Giraffe spawn weight
+	#Range: 0 ~ 1000
+	giraffeSpawnWeight = 10
+	#Hippo spawn weight
+	#Range: 0 ~ 1000
+	hippoSpawnWeight = 15
+	#Vulture spawn weight
+	#Range: 0 ~ 1000
+	vultureSpawnWeight = 15
+	#Boar spawn weight
+	#Range: 0 ~ 1000
+	boarSpawnWeight = 15
+	#Remove farm animals from savanna biomes (sheep, pig, chicken, cow)
+	removeSavannaFarmAnimals = true
+

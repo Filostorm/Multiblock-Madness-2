@@ -7,7 +7,7 @@ onEvent('tags.items', event => {
  */
 onEvent('recipes', event => {
 	event.remove({id: 'createsifter:sifting/gravel_brass_mesh'})
-	global.createSifting(event, [Item.of('createsifter:brass_mesh').toJson(), Ingredient.of('#forge:gravel').toJson()], [
+	global.createSifting(event, [Item.of('createsifter:brass_mesh').toJson(), Item.of('#forge:gravel').toJson()], [
 		Item.of(`#forge:nuggets/copper`).withChance(0.20).toResultJson(),
 		Item.of(`#forge:nuggets/zinc`).withChance(0.25).toResultJson(),
 		Item.of(`#forge:nuggets/iron`).withChance(0.15).toResultJson(),

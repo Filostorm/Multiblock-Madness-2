@@ -125,7 +125,7 @@ global.newMaterialParts = [
       'color': 0xb6c2c2,
       'type': 'base_metal',
       'tier': 2,
-      'itemParts': ['plate', 'gear', 'rod'],
+      'itemParts': ['plate', 'gear', 'rod', 'plating'],
       'blockParts': [],
       'ore': true,
       'raw_ore': true,
@@ -164,7 +164,7 @@ global.newMaterialParts = [
     },
     {
       'material': 'platinum',
-      'color': 0x6be6ff,
+      'color': 0x91ecff,
       'type': 'base_metal',
       'tier': 3,
       'itemParts': ['ingot', 'nugget', 'dust', 'plate', 'gear', 'rod', 'wire', 'hammer'],
@@ -237,7 +237,7 @@ global.newMaterialParts = [
       'color': 0xc43b3b,
       'tier': 4,
       'type': 'base_metal',
-      'itemParts': ['gear', 'rod', 'wire', 'dust', 'plate', 'plating'],
+      'itemParts': ['gear', 'rod', 'wire', 'dust', 'plate'],
       'blockParts': [],
       'ore': true,
     },
@@ -426,6 +426,17 @@ global.newMaterialParts = [
       'allomancy': 'Pewter grants increased speed, jump height, damage, and damage resistance to the player. Be careful, though - Any damage incurred while burning pewter is remembered, and if you stop burning it at the wrong time you could end up being killed by all the built up damage.',
       'feruchemy': 'Strength--Haste/Strength or Weakness/Mining Fatigue'
     },
+    {
+      'material': 'auric_gold',
+      'color': 0xedd67b,
+      'type': 'alloy',
+      'tier': 1,
+      'itemParts': ['ingot', 'dust'],
+      'blockParts': ['storage_block'],
+      'amount': 1,
+      'dust_input': ['#forge:dusts/arcanite','2x naturesaura:gold_powder'],
+      'ingot_input': ['#forge:ingots/arcanite','2x naturesaura:gold_powder'],
+      },
     
     /////////////// Tier 2 Alloys /////////////////////////////
     {
@@ -462,6 +473,18 @@ global.newMaterialParts = [
       'fluid': 'thick'
     },
     {
+      'material': 'energetic_alloy',
+      'color': 0xff874f,
+      'type': 'alloy',
+      'tier': 2,
+      'itemParts': ['custom_ingot', 'dust', 'nugget', 'plate', 'gear', 'rod', 'wire', 'mechanical_component'],
+      'blockParts': ['storage_block', 'scaffolding'],
+      'amount': 1,
+      'dust_input': ['#forge:dusts/electrum', 'kubejs:energetic_blend'],
+      'ingot_input': ['#forge:ingots/electrum','kubejs:energetic_blend'],
+      'fluid': 'thick'
+    },
+    {
       'material': 'manasteel',
       'color': 0x69a7ff,
       'type': 'alloy',
@@ -490,10 +513,10 @@ global.newMaterialParts = [
     },
     {
       'material': 'duralumin',
-      'color': 0xa9b0ac,
+      'color': 0xbbc9c1,
       'type': 'alloy',
       'tier': 2,
-      'itemParts': [ 'plate', 'gear', 'wire', 'dust', 'rod'],
+      'itemParts': [ 'plate', 'gear', 'plating', 'dust', 'rod'],
       'blockParts': [],
       'fluid': 'thick',
       'fluid_id': 'kubejs:molten_duralumin',
@@ -573,8 +596,8 @@ global.newMaterialParts = [
       'type': 'alloy',
       'fluid_id': 'tconstruct:molten_lumium',
       'amount': 2,
-      'dust_input': ['#forge:dusts/tin','#forge:dusts/electrum','2x #forge:dusts/glowstone'],
-      'ingot_input': ['#forge:ingots/tin','#forge:ingots/electrum','2x #forge:dusts/glowstone'],
+      'dust_input': ['#forge:dusts/aluminum','#forge:dusts/electrum','2x #forge:dusts/glowstone'],
+      'ingot_input': ['#forge:ingots/aluminum','#forge:ingots/electrum','2x #forge:dusts/glowstone'],
     },
     {
       'material': 'damascus_steel',
@@ -875,6 +898,8 @@ global.newMaterialParts = [
       'type': 'alloy',
       'itemParts': ['plate', 'rod', 'component'],
       'blockParts': [],
+      'fluid': 'thick',
+      'fluid_id': 'kubejs:molten_compressed_steel',
     },
     {
       'material': 'energized_steel',
@@ -1051,12 +1076,17 @@ global.newMaterialParts = [
         'resistance': 3
       },
       {
+        'material': 'basalt',
+        'hardness': 3,
+        'resistance': 3
+      },
+      {
         'material': 'blackstone',
         'hardness': 3,
         'resistance': 3
       },
       {
-        'material': 'endstone',
+        'material': 'end_stone',
         'hardness': 4,
         'resistance': 4
       },
@@ -1066,10 +1096,15 @@ global.newMaterialParts = [
         'resistance': 6
       },
       {
+        'material': 'bedrock',
+        'hardness': 10,
+        'resistance': 10
+      },/*
+      {
         'material': 'soapstone',
         'hardness': 3,
         'resistance': 3
-      },
+      },*/
       {
         'material': 'granite',
         'hardness': 3,

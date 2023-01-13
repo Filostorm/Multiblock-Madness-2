@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "excavated_variants:block/moon_stone_certus_quartz_ore27",
+    "up": "excavated_variants:block/moon_stone_certus_quartz_ore27",
+    "north": "excavated_variants:block/moon_stone_certus_quartz_ore27",
+    "east": "excavated_variants:block/moon_stone_certus_quartz_ore27",
+    "south": "excavated_variants:block/moon_stone_certus_quartz_ore27",
+    "west": "excavated_variants:block/moon_stone_certus_quartz_ore27",
+    "particle": "excavated_variants:block/moon_stone_certus_quartz_ore27"
+  }
+}

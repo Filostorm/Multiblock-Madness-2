@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "excavated_variants:block/blackstone_certus_quartz_ore3",
+    "side": "excavated_variants:block/blackstone_certus_quartz_ore7"
+  }
+}

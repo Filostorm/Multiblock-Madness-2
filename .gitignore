@@ -4,6 +4,8 @@
 !/scripts
 !/kubejs
 !/multiblocked
+!/quests_structures
+!/defaultconfigs
 !*.md
 !.gitignore
 .zsrc

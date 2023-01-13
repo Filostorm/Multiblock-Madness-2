@@ -42,13 +42,15 @@ onEvent('recipes', event => {
   event.recipes.createDeploying('kubejs:incomplete_basic_capacitor', ['kubejs:incomplete_basic_capacitor', '#forge:dusts/redstone']),
   ]).transitionalItem('kubejs:incomplete_basic_capacitor').loops(2).id(`mbd2:sequenced_assembly/capacitor_basic`)
 
+  global.ieBlueprint(event, 'components', Item.of(`powah:capacitor_basic`), [{tag: 'forge:rods/invar'}, {tag: 'forge:wires/red_alloy'}, {count:2, base_ingredient: {item: `powah:dielectric_paste`}}], `mbm2:immersive/capacitor_basic`)
+
 //Paste
   event.remove({output: 'powah:dielectric_paste'})
 	event.recipes.createMixing('8x powah:dielectric_paste', ['#minecraft:coals','#forge:clay', Fluid.of('minecraft:lava', 250)]).id(`mbd2:mixing/dielectric_paste`)
 	event.recipes.createMixing('8x powah:dielectric_paste', ['#minecraft:coals','#forge:clay']).heated().id(`mbd2:mixing/dielectric_paste_heated`)
 
 
-//Starter tier no longer exsists
+///////////////// Starter tier no longer exsists //////////////////////
   event.remove({id: 'powah:crafting/cable_basic'})
   event.remove({id: 'powah:crafting/energy_cell_basic_2'})
 

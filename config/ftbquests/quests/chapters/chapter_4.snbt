@@ -4,11 +4,120 @@
 	order_index: 2
 	filename: "chapter_4"
 	title: "Chapter 3"
+	icon: "chemlib:aluminum_ingot"
 	default_quest_shape: ""
 	default_hide_dependency_lines: false
 	quests: [
 		{
+			x: 6.0d
+			y: 13.0d
+			description: [
+				"Flip to the correct book in your Tome to complete this quest."
+				""
+				"You'll need to read it to get started. Following the internal guide for Mana and Artifice will be your best path moving forward with the mod."
+			]
+			id: "47AA157D687A02F7"
+			tasks: [{
+				id: "6652FF81E0985785"
+				type: "item"
+				item: "mna:guide_book"
+			}]
+		}
+		{
 			x: 7.5d
+			y: 13.0d
+			dependencies: [
+				"47AA157D687A02F7"
+				"243652BEE988A387"
+			]
+			id: "7EBE28646422EC18"
+			tasks: [{
+				id: "3483C1EA4FEB42A9"
+				type: "item"
+				item: {
+					id: "mna:manaweaver_wand"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: 9.0d
+			y: 13.0d
+			dependencies: ["7EBE28646422EC18"]
+			id: "0E9C33334120AC94"
+			tasks: [{
+				id: "53D3DF24EA663D62"
+				type: "item"
+				item: "mna:transmuted_silver"
+				count: 9L
+			}]
+		}
+		{
+			x: 10.0d
+			y: 11.5d
+			dependencies: ["0E9C33334120AC94"]
+			id: "098CAF7E91266CDC"
+			tasks: [{
+				id: "6302DA60089BF7CD"
+				type: "item"
+				item: "mna:runeforge"
+			}]
+		}
+		{
+			x: 10.0d
+			y: 14.5d
+			dependencies: ["0E9C33334120AC94"]
+			id: "1BF79E8ACC1F917F"
+			tasks: [{
+				id: "1F4122EFD87E59A3"
+				type: "item"
+				item: "mna:manaweaving_altar"
+			}]
+		}
+		{
+			x: 11.5d
+			y: 13.0d
+			dependencies: ["0E9C33334120AC94"]
+			id: "1FC0519495084939"
+			tasks: [{
+				id: "314EFEAEC1C1D314"
+				type: "item"
+				item: "mna:occulus"
+			}]
+		}
+		{
+			x: 11.5d
+			y: 11.5d
+			dependencies: ["098CAF7E91266CDC"]
+			id: "12DDD9CD9F8B934F"
+			tasks: [{
+				id: "340349797FF371F8"
+				type: "item"
+				item: {
+					id: "mna:wizard_chalk"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: 11.5d
+			y: 14.5d
+			dependencies: ["1BF79E8ACC1F917F"]
+			id: "07A718A55B5A7318"
+			tasks: [{
+				id: "5AE55B859A66458A"
+				type: "item"
+				item: "mna:infused_silk"
+			}]
+		}
+		{
+			x: 5.5d
 			y: 11.5d
 			description: ["Items must be placed in the shown order."]
 			dependencies: ["391E4F9DA1A3D71B"]
@@ -21,7 +130,7 @@
 		}
 		{
 			title: "More Elemental Infused Items"
-			x: 9.0d
+			x: 7.0d
 			y: 11.5d
 			dependencies: ["6B06707ECFAFD263"]
 			id: "61CCA7FA3C371180"
@@ -39,7 +148,7 @@
 			]
 		}
 		{
-			x: 10.5d
+			x: 8.5d
 			y: 11.5d
 			dependencies: ["61CCA7FA3C371180"]
 			id: "63D72477BB0F83A4"
@@ -52,7 +161,10 @@
 		{
 			x: 12.0d
 			y: 6.5d
-			dependencies: ["3D971E0CF8257193"]
+			dependencies: [
+				"3D971E0CF8257193"
+				"14C449A154C78D7E"
+			]
 			id: "0EB55E9BCD6E97C3"
 			tasks: [{
 				id: "4DC15F205A40DB58"
@@ -82,7 +194,7 @@
 		{
 			title: "The Squeezer"
 			icon: "immersiveengineering:squeezer"
-			x: 9.0d
+			x: 8.5d
 			y: 5.5d
 			dependencies: ["3D971E0CF8257193"]
 			repeatable: true
@@ -148,9 +260,10 @@
 			}]
 		}
 		{
-			x: 13.5d
-			y: 7.5d
+			x: 13.0d
+			y: 5.0d
 			dependencies: ["0EB55E9BCD6E97C3"]
+			repeatable: true
 			id: "5F86A5866A68CA6D"
 			tasks: [{
 				id: "21D44B5FB5DA5052"
@@ -163,7 +276,9 @@
 			icon: "immersiveengineering:arc_furnace"
 			x: 15.0d
 			y: 6.5d
+			shape: "gear"
 			dependencies: ["0EB55E9BCD6E97C3"]
+			size: 1.5d
 			id: "75D4FF56D8BBF34A"
 			tasks: [
 				{
@@ -238,9 +353,10 @@
 			}]
 		}
 		{
-			x: 13.5d
-			y: 5.5d
+			x: 11.5d
+			y: 8.5d
 			dependencies: ["0EB55E9BCD6E97C3"]
+			repeatable: true
 			id: "50FBAD99E2875E46"
 			tasks: [{
 				id: "58A4FBA35D5BD872"
@@ -251,8 +367,8 @@
 		{
 			title: "The Crusher"
 			icon: "immersiveengineering:crusher"
-			x: 9.0d
-			y: 8.0d
+			x: 6.5d
+			y: 5.5d
 			dependencies: ["3D971E0CF8257193"]
 			repeatable: true
 			id: "4489F9C5F2899DFE"
@@ -306,9 +422,10 @@
 			}]
 		}
 		{
-			x: 12.5d
-			y: 4.5d
+			x: 10.5d
+			y: 5.5d
 			dependencies: ["0EB55E9BCD6E97C3"]
+			repeatable: true
 			id: "598305F8C2BF7FAF"
 			tasks: [{
 				id: "49A6D04F910CD19C"
@@ -317,21 +434,67 @@
 			}]
 		}
 		{
-			x: 12.5d
-			y: 8.5d
-			dependencies: ["0EB55E9BCD6E97C3"]
+			title: "The Diesel Generator"
+			icon: "immersiveengineering:diesel_generator"
+			x: 14.5d
+			y: 8.0d
+			dependencies: ["758CEB9A27CE3547"]
+			repeatable: true
 			id: "738E3C876E9D4BC6"
-			tasks: [{
-				id: "3921258FA8FACFF4"
-				type: "item"
-				item: "immersiveengineering:diesel_generator"
+			tasks: [
+				{
+					id: "5DFE694BEE3E2EE8"
+					type: "item"
+					item: "immersiveengineering:rs_engineering"
+				}
+				{
+					id: "10A8051B4E8A1211"
+					type: "item"
+					item: "immersiveengineering:radiator"
+					count: 9L
+				}
+				{
+					id: "5B7A7B4557D5BB1D"
+					type: "item"
+					item: "immersiveengineering:heavy_engineering"
+					count: 13L
+				}
+				{
+					id: "73C07D1FBA772433"
+					type: "item"
+					item: "immersiveengineering:fluid_pipe"
+					count: 5L
+				}
+				{
+					id: "2EA7672846359B5C"
+					type: "item"
+					item: "immersiveengineering:steel_scaffolding_standard"
+					count: 6L
+				}
+				{
+					id: "5D94563A8E567AD4"
+					type: "questsadditions:structure"
+					title: "The Diesel Generator"
+					icon: "immersiveengineering:diesel_generator"
+					name: "diesel_gen"
+					hasCustomPicture: false
+					layer: true
+					ignoreState: false
+					rightclick: false
+				}
+			]
+			rewards: [{
+				id: "61CCE114DC289821"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 7840564287515615038L
 			}]
 		}
 		{
 			title: "The Mixer"
 			icon: "immersiveengineering:mixer"
-			x: 7.0d
-			y: 8.5d
+			x: 6.0d
+			y: 7.5d
 			dependencies: ["3D971E0CF8257193"]
 			repeatable: true
 			id: "02E4BADB1F8BEB33"
@@ -392,8 +555,8 @@
 		{
 			title: "Fermenting"
 			icon: "immersiveengineering:fermenter"
-			x: 7.0d
-			y: 4.5d
+			x: 9.0d
+			y: 8.5d
 			dependencies: ["3D971E0CF8257193"]
 			repeatable: true
 			id: "6AE6AC04DFC1A75A"
@@ -492,9 +655,11 @@
 		}
 		{
 			title: "The Industral Metal"
+			disable_toast: true
 			x: 4.0d
 			y: 6.5d
 			shape: "circle"
+			dependencies: ["35C16B4B5D8C7148"]
 			id: "17F948FD49F0EB33"
 			tasks: [{
 				id: "6A1342A29C56C67D"
@@ -530,7 +695,7 @@
 		{
 			title: "Pressure Chamber"
 			x: 10.5d
-			y: 0.5d
+			y: 4.0d
 			dependencies: ["02285A69B0A09A44"]
 			id: "14C449A154C78D7E"
 			tasks: [
@@ -562,7 +727,7 @@
 		{
 			title: "Explosions!"
 			x: 6.0d
-			y: 3.0d
+			y: 4.0d
 			dependencies: ["17F948FD49F0EB33"]
 			id: "418AC2EB203010CA"
 			tasks: [
@@ -581,7 +746,7 @@
 		{
 			title: "Compressing Air"
 			x: 8.5d
-			y: 2.0d
+			y: 4.0d
 			dependencies: ["418AC2EB203010CA"]
 			id: "02285A69B0A09A44"
 			tasks: [
@@ -612,9 +777,10 @@
 		{
 			title: "The Bottling Machine"
 			icon: "immersiveengineering:bottling_machine"
-			x: 9.0d
-			y: 4.0d
+			x: 7.0d
+			y: 9.0d
 			dependencies: ["3D971E0CF8257193"]
+			repeatable: true
 			id: "45011E84BFF6E319"
 			tasks: [
 				{
@@ -672,9 +838,9 @@
 		}
 		{
 			title: "Using Heat"
-			x: 11.0d
-			y: 3.0d
-			dependencies: ["418AC2EB203010CA"]
+			x: 10.5d
+			y: 2.5d
+			dependencies: ["02285A69B0A09A44"]
 			id: "2F38722F9A7D89CC"
 			tasks: [
 				{
@@ -696,8 +862,8 @@
 		}
 		{
 			title: "More of that strange oil"
-			x: 13.0d
-			y: 1.5d
+			x: 8.5d
+			y: 2.5d
 			subtitle: "Its probably nothing"
 			description: ["Use the Sensor on the ground to find an oil deposit, which you can then drill up to the surface with the Gas Lift."]
 			dependencies: ["02285A69B0A09A44"]
@@ -719,6 +885,156 @@
 					item: "pneumaticcraft:drill_pipe"
 				}
 			]
+		}
+		{
+			x: 10.5d
+			y: 10.0d
+			dependencies: [
+				"50FBAD99E2875E46"
+				"6AE6AC04DFC1A75A"
+				"45011E84BFF6E319"
+			]
+			id: "3DB2C9FEEFF74379"
+			tasks: [{
+				id: "559264B1754B6260"
+				type: "item"
+				item: "immersiveengineering:plate_duroplast"
+			}]
+		}
+		{
+			icon: "immersiveengineering:workbench"
+			x: 3.5d
+			y: 8.0d
+			dependencies: ["17F948FD49F0EB33"]
+			id: "1F932299A59D3965"
+			tasks: [
+				{
+					id: "78D5383B893586E4"
+					type: "item"
+					item: "immersiveengineering:workbench"
+				}
+				{
+					id: "0196F2E48C1F2AE3"
+					type: "item"
+					item: {
+						id: "immersiveengineering:blueprint"
+						Count: 1b
+						tag: {
+							blueprint: "components"
+						}
+					}
+				}
+				{
+					id: "368358E52973945C"
+					type: "item"
+					item: {
+						id: "immersiveengineering:blueprint"
+						Count: 1b
+						tag: {
+							blueprint: "molds"
+						}
+					}
+				}
+			]
+		}
+		{
+			x: 12.5d
+			y: 10.0d
+			dependencies: ["3DB2C9FEEFF74379"]
+			id: "0D9ABDE851B5E722"
+			tasks: [{
+				id: "78880C159C9769C6"
+				type: "item"
+				item: "immersiveengineering:component_electronic_adv"
+			}]
+		}
+		{
+			title: "More Engineer's Blocks"
+			x: 13.0d
+			y: 7.5d
+			dependencies: ["0EB55E9BCD6E97C3"]
+			id: "758CEB9A27CE3547"
+			tasks: [
+				{
+					id: "162956343F60020D"
+					type: "item"
+					item: "immersiveengineering:generator"
+				}
+				{
+					id: "1E6DEFBFF902D244"
+					type: "item"
+					item: "immersiveengineering:radiator"
+				}
+			]
+		}
+		{
+			title: "The Excavator"
+			icon: "immersiveengineering:excavator"
+			x: 13.5d
+			y: 9.0d
+			dependencies: ["758CEB9A27CE3547"]
+			repeatable: true
+			id: "043DFE88CE9F4625"
+			tasks: [
+				{
+					id: "0464BA3349A1045A"
+					type: "item"
+					item: "immersiveengineering:radiator"
+					count: 3L
+				}
+				{
+					id: "3BAA57521C2E5187"
+					type: "item"
+					item: "immersiveengineering:rs_engineering"
+				}
+				{
+					id: "0D3E3C51078F7E5D"
+					type: "item"
+					item: "immersiveengineering:light_engineering"
+					count: 9L
+				}
+				{
+					id: "707B2C8B854686D5"
+					type: "item"
+					item: "immersiveengineering:heavy_engineering"
+					count: 4L
+				}
+				{
+					id: "047AB6C06631E984"
+					type: "item"
+					item: "immersiveengineering:sheetmetal_steel"
+					count: 16L
+				}
+				{
+					id: "6DD2DDB52B4EAB50"
+					type: "item"
+					item: "immersiveengineering:steel_scaffolding_standard"
+					count: 26L
+				}
+				{
+					id: "1CEE2146A8ED13DE"
+					type: "item"
+					item: "immersiveengineering:storage_steel"
+					count: 9L
+				}
+				{
+					id: "5EB5A842291D71CA"
+					type: "questsadditions:structure"
+					title: "The Excavator"
+					icon: "immersiveengineering:excavator"
+					name: "excavator"
+					hasCustomPicture: false
+					layer: true
+					ignoreState: false
+					rightclick: false
+				}
+			]
+			rewards: [{
+				id: "2A0C5B5137E032A1"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 7840564287515615038L
+			}]
 		}
 	]
 	quest_links: [ ]

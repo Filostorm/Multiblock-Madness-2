@@ -8,7 +8,7 @@ onEvent('tags.items', event => {
 onEvent('recipes', event => {
 
 
-  global.ieGeneratorFuel(event, 'forge:diesel', 250)
+  global.ieGeneratorFuel(event, 'forge:diesel', 400) //*4096
 
   event.remove({output: 'immersiveengineering:blastbrick'})
   
@@ -211,7 +211,7 @@ event.shaped('4x immersiveengineering:rs_engineering', [
 
 //Radiator
 	event.remove({id: 'immersiveengineering:crafting/radiator'})
-event.shaped('3x immersiveengineering:radiator', [
+event.shaped('immersiveengineering:radiator', [
   'CPC',
   'PBP',
   'CPC'
@@ -221,19 +221,44 @@ event.shaped('3x immersiveengineering:radiator', [
   P: 'tconstruct:scorched_glass'
     }).id('mbm2:immersiveengineering/radiator')
 
+  event.shaped('3x immersiveengineering:radiator', [
+    'CPC',
+    'PBP',
+    'CPC'
+      ], {
+    B: '#elementalcraft:gems/fine_water',
+    C: 'immersiveengineering:sheetmetal_steel',
+    P: 'tconstruct:scorched_glass'
+      }).id('mbm2:immersiveengineering/radiator_x3')
+  
+
     //Slag Glass
 	  event.remove({id: 'immersiveengineering:smelting/slag_glass'})
     event.blasting('immersiveengineering:slag_glass', 'thermal:slag').id(`mbm2:blasting/slag_glass`)
 
+//Radiator
+event.remove({id: 'immersiveengineering:crafting/workbench'})
+event.shaped('immersiveengineering:workbench', [
+  'PTT',
+  'C F'
+    ], {
+  T: '#forge:treated_wood_slab',
+  P: '#forge:plates/steel',
+  C: 'immersiveengineering:craftingtable',
+  F: 'immersiveengineering:treated_fence'
+    }).id('mbm2:immersiveengineering/workbench')
+
+    //Fix Component Bleuprint
+    event.replaceInput({id: 'immersiveengineering:crafting/blueprint_components'}, '#forge:ingots/aluminum', '#forge:ingots/constantan')
 
     ///////////////// ARC FURNACE TIME ////////////////////////////
-    
+    /*
 	global.newMaterialParts.forEach((item) => {
     if(item.type == 'base_metal') {
-      event.remove({id: `immersiveengineering:arcfurnace/raw_block_${item.material}`})
+      
     }
 })
-
+*/
 /*
 event.recipes.immersiveengineeringArcFurnace([outputs], input)
 event.recipes.immersiveengineeringArcFurnace([outputs], input, [additives])

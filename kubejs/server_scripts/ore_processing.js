@@ -45,7 +45,7 @@ onEvent('recipes', event => {
 /*
 //Thanks Nat!
 //Fluid tags for outputs
-fluidTagLookup = {}
+var fluidTagLookup = {}
 Fluid.getTypes().forEach(fluid => {
   Fluid.of(fluid).tags.forEach(tag =>{
     if (tag in fluidTagLookup){
@@ -63,8 +63,25 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);*/
 	global.ieMixer(event, Fluid.of('kubejs:gemstone_catalyst_mixture', 250), {"tag":"forge:experience","amount":250}, Item.of('ars_nouveau:source_gem'), 4000, 'kubejs:mixer/gemstufffluid_source')
 	
 	global.newMaterialParts.forEach((item) => {
+		event.remove({id: `tconstruct:smeltery/melting/metal/${item.material}/raw_block`})
+		event.remove({id: `immersiveengineering:crusher/raw_block_${item.material}`})
+		event.remove({id: `mekanism:processing/${item.material}/slurry/dirty/from_raw_block`})
+		event.remove({id: `mekanism:processing/${item.material}/clump/from_raw_block`})
+		event.remove({id: `mekanism:processing/${item.material}/shard/from_raw_block`})
+		event.remove({id: `immersiveengineering:arcfurnace/raw_block_${item.material}`})
+		event.remove({id: `immersiveengineering:arcfurnace/dust_${item.material}`})
+		
+
+		if (item.tier > 1) {
+			event.remove({id: `tconstruct:smeltery/melting/metal/${item.material}/dust`})
+			event.remove({id: `tconstruct:smeltery/melting/metal/${item.material}/raw`})
+			
+			
+			event.remove({id: `tconstruct:smeltery/melting/metal/${item.material}/ore_singular`})
+			
+		}
 		if (item.ore) {
-			event.remove({id: `tconstruct:smeltery/melting/metal/${item.material}/raw_block`})
+			//event.remove({type: 'minecraft:crafting_shaped'}, {input: `#forge:storage_blocks/raw_${item.material}`})
 			
 
 			//Make some dust
@@ -131,7 +148,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);*/
 				
 				if (item.tier >= 2) {
 				//But they can be Arc Furnaced
-				event.recipes.immersiveengineeringArcFurnace(Item.of(`#forge:ingots/${item.material}`), `#forge:dusts/${item.material}`)
+				event.recipes.immersiveengineeringArcFurnace(Item.of(`#forge:ingots/${item.material}`), `#forge:dusts/${item.material}`).id(`mbm2:arc_furnace/${item.material}_dust`)
 				}
 			}
 			if (item.type == 'compound_ore') {

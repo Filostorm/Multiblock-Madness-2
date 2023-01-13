@@ -31,6 +31,9 @@ global.removeAndHide = [
 
 	'beyond_earth:compressor',
 	'beyond_earth:fuel_refinery',
+	'beyond_earth:coal_generator',
+	'beyond_earth:solar_panel',
+
 	'summoningrituals:indestructible_altar',
 
 	'thermal:machine_crafter', 
@@ -48,11 +51,20 @@ global.removeAndHide = [
 	'thermal:press_gear_die', 
 	'thermal:press_coin_die', 
 	//'thermal:dynamo_disenchantment',
-	//'mna:improvised_manaweaver_wand',
+
+	'mna:improvised_manaweaver_wand', //Might add back at some point
+
 	'ironfurnaces:augment_generator',
 	'ironfurnaces:million_furnace',
 	'ironfurnaces:item_linker',
+
 	'ae2:wireless_terminal',
+	
+	'extendedcrafting:ender_crafter',
+	'extendedcrafting:ender_alternator',
+	'tconstruct:scorched_alloyer',
+	//'tconstruct:seared_melter',
+	//'tconstruct:seared_heater',
 
 
 
@@ -244,11 +256,6 @@ global.removeAndHide = [
 	'thermal:copper_nugget', 
 	'thermal:copper_plate',
 	'quark:gold_bars',
-	'extendedcrafting:ender_crafter',
-	'extendedcrafting:ender_alternator',
-	'tconstruct:scorched_alloyer',
-	//'tconstruct:seared_melter',
-	//'tconstruct:seared_heater',
 	'immersiveengineering:dust_sulfur', 
 	'mekanism:dust_sulfur', 
 	'crossroads:ingot_bronze', 

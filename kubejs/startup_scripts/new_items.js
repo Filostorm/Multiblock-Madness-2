@@ -34,6 +34,7 @@ var basicItems = [
 	't4_blank_board',
 	't4_circuit_board',
 	't4_circuit',
+	'energetic_blend',
 ]
 
 global.transitionalItems = [

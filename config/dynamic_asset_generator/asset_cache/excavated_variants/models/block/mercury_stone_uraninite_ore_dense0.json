@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "excavated_variants:block/mercury_stone_uraninite_ore_dense6",
+    "up": "excavated_variants:block/mercury_stone_uraninite_ore_dense6",
+    "north": "excavated_variants:block/mercury_stone_uraninite_ore_dense6",
+    "east": "excavated_variants:block/mercury_stone_uraninite_ore_dense6",
+    "south": "excavated_variants:block/mercury_stone_uraninite_ore_dense6",
+    "west": "excavated_variants:block/mercury_stone_uraninite_ore_dense6",
+    "particle": "excavated_variants:block/mercury_stone_uraninite_ore_dense6"
+  }
+}

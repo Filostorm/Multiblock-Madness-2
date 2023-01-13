@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "excavated_variants:block/sandstone_certus_quartz_ore1",
+    "bottom": "excavated_variants:block/sandstone_certus_quartz_ore5",
+    "side": "excavated_variants:block/sandstone_certus_quartz_ore9"
+  }
+}

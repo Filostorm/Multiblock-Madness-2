@@ -53,6 +53,10 @@ onEvent('recipes', event => {
 	//Gear Recipe is wrong
 	event.remove({id: 'pneumaticcraft:compressed_iron_gear'})
 	
+	//Lightbock needs rose quartz
+    event.replaceInput({id: 'pneumaticcraft:uv_light_box'}, 'minecraft:redstone_lamp', 'create:rose_quartz_lamp')
+	
+
 /*
   	event.shaped('tconstruct:smeltery_controller', [
 		'AAA',

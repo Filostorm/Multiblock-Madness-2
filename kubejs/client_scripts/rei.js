@@ -2,7 +2,13 @@
 
 console.info('Hello, World! (You will see this line every time client resources reload)')
 
-onEvent('rei.hide.items', event => {			
+onEvent('rei.hide.items', event => {	
+	
+	
+	global.fluidsToRemove.forEach((item) => {
+		event.hide(`${item}_bucket`)
+	})
+
 	global.removeAndHide.forEach((item) => {
 		event.hide(item)
 	})
@@ -50,7 +56,7 @@ onEvent('rei.add.items', event => {
 	})
 });
 onEvent('item.tooltip', tooltip => {
-	/*
+	/* No work with REI? :(
   // Neat utility to display NBT in the tooltip
   tooltip.addAdvanced(Ingredient.all, (item, advanced, text) => {
 
@@ -107,21 +113,48 @@ onEvent("rei.group", (event) => {
     useNbt.forEach((id) => {
         const item = Item.of(id);
         const { namespace, path } = Utils.id(item.id);
-        event.groupSameItem(`kubejs:rei_groups/${namespace}/${path}`, item.getName(), item);
+        event.groupSameItem(`mbm2:rei_groups/${namespace}/${path}`, item.getName(), item);
     });
 
-    event.groupItems(`kubejs:rei_groups/wickerwood_constructs`, "Wickerwood Construct Parts", [/mna:constructs.*_wickerwood/,]);
-    event.groupItems(`kubejs:rei_groups/wood_constructs`, "Wooden Construct Parts", [/mna:constructs.*_wood/,]);
-    event.groupItems(`kubejs:rei_groups/stone_constructs`, "Stone Construct Parts", [/mna:constructs.*_stone/,]);
-    event.groupItems(`kubejs:rei_groups/iron_constructs`, "Iron Construct Parts", [/mna:constructs.*_iron/,]);
-    event.groupItems(`kubejs:rei_groups/gold_constructs`, "Gold Construct Parts", [/mna:constructs.*_gold/,]);
-    event.groupItems(`kubejs:rei_groups/diamond_constructs`, "Diamond Construct Parts", [/mna:constructs.*_diamond/,]);
-    event.groupItems(`kubejs:rei_groups/obsidian_constructs`, "Obsidian Construct Parts", [/mna:constructs.*_obsidian/,]);
+    event.groupItems(`mbm2:rei_groups/wickerwood_constructs`, "Wickerwood Construct Parts", [/mna:constructs.*_wickerwood/]);
+    event.groupItems(`mbm2:rei_groups/wood_constructs`, "Wooden Construct Parts", [/mna:constructs.*_wood/]);
+    event.groupItems(`mbm2:rei_groups/stone_constructs`, "Stone Construct Parts", [/mna:constructs.*_stone/]);
+    event.groupItems(`mbm2:rei_groups/iron_constructs`, "Iron Construct Parts", [/mna:constructs.*_iron/]);
+    event.groupItems(`mbm2:rei_groups/gold_constructs`, "Gold Construct Parts", [/mna:constructs.*_gold/]);
+    event.groupItems(`mbm2:rei_groups/diamond_constructs`, "Diamond Construct Parts", [/mna:constructs.*_diamond/]);
+    event.groupItems(`mbm2:rei_groups/obsidian_constructs`, "Obsidian Construct Parts", [/mna:constructs.*_obsidian/]);
 
+
+
+
+	global.newMaterialParts.forEach((item) => {
+		if (item.ore) {
+			var materialNameUpper = item.material.charAt(0).toUpperCase() + item.material.slice(1)
+			var groupName = materialNameUpper + ' Ore Processing'
+			event.groupItems(`mbm2:rei_groups/${item.material}_ore_items`, groupName, [
+				`#mekanism:crystals/${item.material}`, 
+				`#mekanism:shards/${item.material}`,
+				`#mekanism:dirty_dusts/${item.material}`,
+				`#mekanism:clumps/${item.material}`,
+				`#forge:raw_materials/${item.material}`,
+				`#forge:chunks/${item.material}`,
+				`#forge:grits/${item.material}`,
+				`#forge:clumps/${item.material}`,
+				`#create:crushed_ores/${item.material}`,
+				`#forge:washed_ores/${item.material}`,
+				`#forge:fine_dusts/${item.material}`,
+				`#forge:poor_ores/${item.material}`,
+				`#forge:ores/${item.material}`,
+				`#forge:rich_ores/${item.material}`,
+				Item.of(`elementalcraft:pure_ore`, `{elementalcraft:{ore:"forge:${item.material}"}}`),
+				`#forge:storage_blocks/raw_${item.material}`,
+			])
+		}
+	})
 
     // Items can also be grouped using anything that can be expressed as an IngredientJS,
     // including for example regular expressions or lists of ingredients
-    event.groupItems("kubejs:rei_groups/spawn_eggs", "Spawn Eggs", [
+    event.groupItems("mbm2:rei_groups/spawn_eggs", "Spawn Eggs", [
         /spawn_egg/,
         /^ars_nouveau:.*_se$/,
         "supplementaries:red_merchant_spawn_egg",
@@ -138,13 +171,13 @@ onEvent("rei.group", (event) => {
 });
 
 onEvent('rei.remove.categories', event => {
-	//console.log(event.getCategoryIds()) //log a list of all category ids to logs/kubejs/client.txt
+	console.log(event.getCategoryIds()) //log a list of all category ids to logs/kubejs/client.txt
 	var badCategories = [
-		'thermal:furnace',
 		'ironfurnaces:category_generator_blasting',
 		'ironfurnaces:category_generator_smoking',
 		'ironfurnaces:category_generator_regular',
 		'extendedcrafting:ender_crafting',
+		'thermal:furnace',
 		'thermal:sawmill',
 		'thermal:pulverizer',
 		'thermal:press',
@@ -153,6 +186,9 @@ onEvent('rei.remove.categories', event => {
 		'thermal:pulverizer_catalyst',
 		'thermal:stirling_fuel',
 		'thermal:magmatic_fuel',
+		'beyond_earth:fuel_refinery',
+		'beyond_earth:coal_generator',
+		'beyond_earth:compressor',
 	]
 
 	badCategories.forEach((item) => {
@@ -160,3 +196,9 @@ onEvent('rei.remove.categories', event => {
 	})
 	
   });
+  
+onEvent('rei.hide.fluids', event => {
+	global.fluidsToRemove.forEach((item) => {
+		event.hide(item)
+	})
+});

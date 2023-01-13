@@ -20,6 +20,7 @@ onEvent('recipes', event => {
 
 
 	global.newMaterialParts.forEach((item) => {
+
 		if (item.type == 'alloy') {
 			event.remove({id: `immersiveengineering:alloysmelter/${item.material}`})
 			event.remove({id: `thermal:machines/smelter/smelter_alloy_${item.material}`})

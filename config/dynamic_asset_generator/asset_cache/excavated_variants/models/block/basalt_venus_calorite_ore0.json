@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "excavated_variants:block/basalt_venus_calorite_ore6",
+    "side": "excavated_variants:block/basalt_venus_calorite_ore13"
+  }
+}

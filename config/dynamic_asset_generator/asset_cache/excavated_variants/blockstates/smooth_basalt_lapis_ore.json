@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "excavated_variants:block/smooth_basalt_lapis_ore0",
+        "x": 0,
+        "y": 0
+      }
+    ]
+  }
+}

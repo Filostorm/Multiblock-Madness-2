@@ -24,7 +24,7 @@ onEvent('recipes', event => {
 	'AAA'
   ], {
 	A: 'thermal:cured_rubber'
-  }).id(`kubejs:crafting/rubber/belt_connector`)
+  }).id(`mbm2:crafting/rubber/belt_connector`)
   
 /// Alt Funnel Recipe using Rubber
   event.shaped('2x create:andesite_funnel', [
@@ -33,7 +33,7 @@ onEvent('recipes', event => {
 	  ], {
 	B: 'create:andesite_alloy',
 	C: 'thermal:cured_rubber'
-	  }).id(`kubejs:crafting/rubber/andesite_funnel`)
+	  }).id(`mbm2:crafting/rubber/andesite_funnel`)
 
 /// Alt Brass Funnel Recipe using Rubber
   event.shaped('2x create:brass_funnel', [
@@ -44,7 +44,7 @@ onEvent('recipes', event => {
 	B: 'create:electron_tube',
 	C: 'create:brass_ingot',
 	D: 'thermal:cured_rubber'
-	  }).id(`kubejs:crafting/rubber/brass_funnel`)
+	  }).id(`mbm2:crafting/rubber/brass_funnel`)
 // [| rubber/andesite_tunnel |] //
 event.shaped('2x create:andesite_tunnel', [
 	'AA',
@@ -52,7 +52,7 @@ event.shaped('2x create:andesite_tunnel', [
   ], {
 	A: 'create:andesite_alloy',
 C: 'thermal:cured_rubber'
-  }).id(`kubejs:crafting/rubber/andesite_tunnel`)
+  }).id(`mbm2:crafting/rubber/andesite_tunnel`)
 
 // [| rubber/brass_tunnel |] //
 event.shaped('2x create:brass_tunnel', [
@@ -63,7 +63,7 @@ event.shaped('2x create:brass_tunnel', [
 	A: 'create:electron_tube',
 C: 'create:brass_ingot',
 D: 'thermal:cured_rubber'
-  }).id(`kubejs:crafting/rubber/brass_tunnel`)
+  }).id(`mbm2:crafting/rubber/brass_tunnel`)
 
 // [| rubber/spout |] //
 event.shaped('create:spout', [
@@ -72,7 +72,7 @@ event.shaped('create:spout', [
   ], {
 B: 'create:copper_casing',
 C: 'thermal:cured_rubber'
-  }).id(`kubejs:crafting/rubber/spout`)
+  }).id(`mbm2:crafting/rubber/spout`)
 
 
 
@@ -87,7 +87,7 @@ C: 'thermal:cured_rubber'
   event.recipes.createDeploying('create:incomplete_precision_mechanism', ['create:incomplete_precision_mechanism', 'create:cogwheel']),
   event.recipes.createDeploying('create:incomplete_precision_mechanism', ['create:incomplete_precision_mechanism', 'create:cogwheel']),
 //  event.recipes.createCutting('create:incomplete_precision_mechanism', 'create:incomplete_precision_mechanism').processingTime(50)
-  ]).transitionalItem('create:incomplete_precision_mechanism').loops(1)
+  ]).transitionalItem('create:incomplete_precision_mechanism').loops(1).id('mbm2:create/precision_mechanism')
 
 //Windmill
   event.remove({id: 'create:crafting/kinetics/windmill_bearing'})
@@ -99,7 +99,7 @@ C: 'thermal:cured_rubber'
 	B: 'immersiveengineering:slab_treated_wood_horizontal',
 	C: '#forge:stone',
 	D: 'create:shaft'
-  }).id('kubejs:crafting/windmill_bearing')
+  }).id('mbm2:crafting/windmill_bearing')
 
 //Sail
 event.remove({id: 'create:crafting/kinetics/white_sailfrom_conversion'})
@@ -110,15 +110,15 @@ event.shaped('2x create:sail_frame', [
 ], {
   A: 'create:andesite_alloy',
   B: 'immersiveengineering:stick_treated'
-}).id('kubejs:crafting/sail')
+}).id('mbm2:crafting/sail')
 
 event.remove({id: 'createaddition:compat/immersiveengineering/fabric_sail'})
-event.shapeless('2x create:white_sail', ['create:sail_frame', 'create:sail_frame', 'immersiveengineering:hemp_fabric'])
+event.shapeless('2x create:white_sail', ['create:sail_frame', 'create:sail_frame', 'immersiveengineering:hemp_fabric']).id('mbm2:create/sail_frame')
 
 
 //Treated Slabs for the Factory
-event.recipes.createCutting('2x immersiveengineering:slab_treated_wood_horizontal', 'immersiveengineering:treated_wood_horizontal').id('kubejs:cutting/treated_slabs')
-event.recipes.createCutting('2x immersiveengineering:stick_treated', '#forge:treated_wood_slab').id('kubejs:cutting/treated_sticks')
+event.recipes.createCutting('2x immersiveengineering:slab_treated_wood_horizontal', 'immersiveengineering:treated_wood_horizontal').id('mbm2:cutting/treated_slabs')
+event.recipes.createCutting('2x immersiveengineering:stick_treated', '#forge:treated_wood_slab').id('mbm2:cutting/treated_sticks')
 
 
 // [| create:andesite_alloy |] //
@@ -158,14 +158,19 @@ event.shaped('create:hose_pulley', [
 	  }).id(`mbm2:crafting/hose_pulley`)
 
 	  //Brass Upgrades
-	event.shapeless('2x create:brass_funnel', ['#forge:ingots/brass', 'create:electron_tube', 'create:andesite_funnel'])
-	event.shapeless('2x create:brass_tunnel', ['#forge:ingots/brass', '#forge:ingots/brass', 'create:electron_tube', 'create:andesite_tunnel'])
+	event.shapeless('2x create:brass_funnel', ['#forge:ingots/brass', 'create:electron_tube', 'create:andesite_funnel']).id(`mbm2:create/brass_upgrade_funnel`)
+	event.shapeless('2x create:brass_tunnel', ['#forge:ingots/brass', '#forge:ingots/brass', 'create:electron_tube', 'create:andesite_tunnel']).id(`mbm2:create/brass_upgrade_tunnel`)
 
 	
 	//Brass Casing
 	event.remove({id: 'create:item_application/brass_casing_from_wood'})
 	event.remove({id: 'create:item_application/brass_casing_from_log'})
 	global.createApplying(event, 'create:brass_casing', Ingredient.of('#forge:ingots/brass'), Ingredient.of('#forge:treated_wood'), `mbm2:applying/brass_casing`)
+
+	//Compressed Steel Casing
+	event.remove({id: 'compressedcreativity:item_application/compressed_iron_casing_from_wood'})
+	event.remove({id: 'compressedcreativity:item_application/compressed_iron_casing_from_log'})
+	global.createApplying(event, 'compressedcreativity:compressed_iron_casing', Ingredient.of('#forge:ingots/compressed_steel'), Ingredient.of('#forge:treated_wood'), `mbm2:applying/compressed_steel_casing`)
 
 	//Charred Planks for Copper Casing
 	global.elementalcraftInfusion(event, Ingredient.of('#minecraft:planks'), Item.of('kubejs:charred_planks'), 'fire', 250, 'mbm:infusion/copper_casing')

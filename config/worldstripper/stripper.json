@@ -63,6 +63,9 @@
     "minecraft:blackstone",
     "minecraft:magma_block",
     "minecraft:smooth_basalt",
-    "minecraft:basalt"
+    "minecraft:basalt",
+    "beyond_earth:moon_sand",
+    "beyond_earth:moon_stone",
+    "minecraft:soul_soil"
   ]
 }

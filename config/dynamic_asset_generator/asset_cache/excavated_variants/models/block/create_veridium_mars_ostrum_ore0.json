@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "excavated_variants:block/create_veridium_mars_ostrum_ore6"
+  }
+}

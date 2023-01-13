@@ -9,6 +9,7 @@
 	default_hide_dependency_lines: false
 	quests: [
 		{
+			title: "[move] Imbument Chamber"
 			x: 9.0d
 			y: 6.5d
 			subtitle: "Archwood saplings can be aquired through the crushing wheel"
@@ -31,6 +32,10 @@
 			x: 0.5d
 			y: 1.5d
 			description: ["Zinc can be found much more frequently in the Nether."]
+			dependencies: [
+				"143FA2A8FD6E4E10"
+				"556CB869A6592D68"
+			]
 			id: "1A4ED8C40CDFBBE5"
 			tasks: [
 				{
@@ -188,6 +193,11 @@
 				type: "item"
 				item: "create:blaze_burner"
 			}]
+			rewards: [{
+				id: "07110D4813BE56E9"
+				type: "item"
+				item: "createaddition:straw"
+			}]
 		}
 		{
 			title: "Crushing Wheel"
@@ -264,6 +274,7 @@
 			x: 16.5d
 			y: 1.5d
 			description: ["You'll be able to find the Book of Natural Aura in your Akashic Tome."]
+			dependencies: ["143FA2A8FD6E4E10"]
 			id: "4187F705E4356142"
 			tasks: [
 				{
@@ -619,16 +630,9 @@
 					item: "createoreexcavation:drilling_machine"
 				}
 				{
-					id: "4027FC6E64CDC21C"
+					id: "465D78A09C6A5BA3"
 					type: "item"
-					title: "Any Drill"
-					item: {
-						id: "itemfilters:tag"
-						Count: 1b
-						tag: {
-							value: "createoreexcavation:drills"
-						}
-					}
+					item: "createoreexcavation:drill"
 				}
 			]
 			rewards: [
@@ -788,10 +792,11 @@
 			]
 		}
 		{
-			title: "Primitive Applied Energistics"
+			title: "Basic Digital Storage"
 			x: 10.0d
 			y: 4.5d
 			dependencies: ["338A1AE116F1A652"]
+			size: 1.5d
 			id: "704F244888706682"
 			tasks: [
 				{
@@ -824,6 +829,7 @@
 		}
 		{
 			title: "Fluix Dust"
+			icon: "ae2:fluix_dust"
 			x: 8.5d
 			y: 4.5d
 			description: ["Throw the quartz and redstone into water to combine into Fluix."]

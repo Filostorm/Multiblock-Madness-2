@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "excavated_variants:block/deepslate_uraninite_ore_poor2",
+    "side": "excavated_variants:block/deepslate_uraninite_ore_poor3"
+  }
+}

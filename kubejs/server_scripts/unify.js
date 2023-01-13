@@ -8,6 +8,18 @@ settings.logErroringRecipes = true
 console.info('Hello, World! (You will see this line every time server resources reload)')
 
 
+global.fluidsToRemove = [
+	'createaddition:bioethanol',
+	'createaddition:flowing_bioethanol',
+	'immersiveengineering:ethanol',
+	'createaddition:seed_oil',
+	'createaddition:flowing_seed_oil',
+	'immersiveengineering:plantoil',
+	'thermal:creosote',
+	'pneumaticcraft:biodiesel', //50,000 burn time
+	'thermal:crude_oil',
+]
+
 var removeByName = [
 	'mna:chainmail_chestplate',
 	'mna:chainmail_helmet',
@@ -27,7 +39,6 @@ var removeByName = [
 	'minecraft:cut_sandstone',
 	'immersiveengineering:crafting/stick_iron',
 	'minecraft:beacon',
-	
 ]
 
 onEvent('recipes', event => {
@@ -58,6 +69,9 @@ onEvent('tags.fluids', event => {
 	event.removeAll('minecraft:water')
 	event.add('minecraft:water', 'minecraft:water')
 	event.add('minecraft:water', 'minecraft:flowing_water')
-	
+
+	global.fluidsToRemove.forEach((item) => {
+		event.removeAllTagsFrom(item)
+	})
 })
 

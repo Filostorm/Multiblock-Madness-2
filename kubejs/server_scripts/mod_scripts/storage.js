@@ -5,7 +5,7 @@ event.remove({id: 'functionalstorage:oak_drawer_alternate_x1'})
 event.remove({id: 'functionalstorage:oak_drawer_alternate_x4'})
 event.remove({id: 'functionalstorage:oak_drawer_alternate_x2'})
 
-
+/*
 //Basic Cables
   event.remove({id: 'storagenetwork:kabel'})
   event.shaped('8x storagenetwork:kabel', [
@@ -41,7 +41,7 @@ event.remove({id: 'functionalstorage:oak_drawer_alternate_x2'})
 	A: 'kubejs:red_alloy_plate',
 	B: 'storagenetwork:kabel',
 	C: 'kubejs:source_tube'
-  })
+  })*/
 
   
 

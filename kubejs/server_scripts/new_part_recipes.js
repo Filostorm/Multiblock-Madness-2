@@ -117,19 +117,32 @@ onEvent('recipes', event => {
 	}
 	////////////////GEARS///////////////
     if (Item.of(`#forge:gears/${item.material}`) != null) {
-	event.shaped(`#forge:gears/${item.material}`, [
-		' P ',
-		'PRP',
-		' P '
-	  ], {
-		P: `#forge:plates/${item.material}`,
-		R: `#forge:rods/${item.material}`
-	  }).id(`thermal:parts/${item.material}_gear`)
+		if (Item.of(`#forge:rods/${item.material}`) != null) {
+			event.shaped(`#forge:gears/${item.material}`, [
+				' P ',
+				'PRP',
+				' P '
+			  ], {
+				P: `#forge:plates/${item.material}`,
+				R: `#forge:rods/${item.material}`
+			}).id(`thermal:parts/${item.material}_gear`)
 
+			//////////////// COG BLOCK ///////////////
+			if (Item.of(`#forge:cog_blocks/${item.material}`) != null) {
+				event.shaped(`3x #forge:cog_blocks/${item.material}`, [
+					'RGR',
+					'G G',
+					'RGR'
+				  ], {
+					R: `#forge:rods/${item.material}`,
+					G: `#forge:gears/${item.material}`
+				  }).id(`mbm2:parts/${item.material}_cog_block`)
+			}
+		}
 	  if (item.fluid_id != null) {
-	//Gear Casing
-  	global.casingTable(event, 'tconstruct:casts/multi_use/gear', false, `#forge:gears/${item.material}`, `forge:molten_${item.material}`, 360, 120, `tconstruct:smeltery/casting/metal/${item.material}/gear_gold_cast`)
-  	global.casingTable(event, 'tconstruct:casts/single_use/gear', true, `#forge:gears/${item.material}`, `forge:molten_${item.material}`, 360, 120, `tconstruct:smeltery/casting/metal/${item.material}/gear_sand_cast`)
+		//Gear Casing
+  		global.casingTable(event, 'tconstruct:casts/multi_use/gear', false, `#forge:gears/${item.material}`, `forge:molten_${item.material}`, 360, 120, `tconstruct:smeltery/casting/metal/${item.material}/gear_gold_cast`)
+  		global.casingTable(event, 'tconstruct:casts/single_use/gear', true, `#forge:gears/${item.material}`, `forge:molten_${item.material}`, 360, 120, `tconstruct:smeltery/casting/metal/${item.material}/gear_sand_cast`)
 	  }
 	//Immersive Gears
 	event.recipes.immersiveengineeringMetalPress(`#forge:gears/${item.material}`, `4x #forge:ingots/${item.material}`, 'immersiveengineering:mold_gear').id(`immersiveengineering:metalpress/gear_${item.material}`)
@@ -139,26 +152,19 @@ onEvent('recipes', event => {
 	
 	//////////////// MECHANICAL PART ///////////////
     if (Item.of(`#forge:mechanical_components/${item.material}`) != null) {
-	event.shaped(`#forge:mechanical_components/${item.material}`, [
-		'G G',
-		' W ',
-		'G G'
-	  ], {
-		W: `#forge:wires/${item.material}`,
-		G: `#forge:gears/${item.material}`
-	  }).id(`mbm2:parts/${item.material}_mechanical_component`)
-	}
+		if (Item.of(`#forge:wires/${item.material}`) != null && Item.of(`#forge:gears/${item.material}`) != null) {
+			event.shaped(`#forge:mechanical_components/${item.material}`, [
+				'G G',
+				' W ',
+				'G G'
+			  ], {
+				W: `#forge:wires/${item.material}`,
+				G: `#forge:gears/${item.material}`
+			  }).id(`mbm2:parts/${item.material}_mechanical_component`)
+			//Cheaper recipe
+			global.ieBlueprint(event, 'components', Item.of(`#forge:components/${item.material}`), [{count:3, base_ingredient: {tag: `forge:gears/${item.material}`}}, {tag: `forge:wire/${item.material}`}], `mbm2:${item.material}_mechanical_component`)
 
-	//////////////// COG BLOCK ///////////////
-    if (Item.of(`#forge:cog_blocks/${item.material}`) != null) {
-		event.shaped(`3x #forge:cog_blocks/${item.material}`, [
-			'RGR',
-			'G G',
-			'RGR'
-		  ], {
-			R: `#forge:rods/${item.material}`,
-			G: `#forge:gears/${item.material}`
-		  }).id(`mbm2:parts/${item.material}_cog_block`)
+			} else { console.log(`${item.material}` + "needs wires and gears enabled to make a mechanical component recipe");}
 		}
 	}
 	
@@ -190,6 +196,7 @@ onEvent('recipes', event => {
 	
 		////////////////SCAFFOLDING///////////////
 		if (Item.of(`#immersiveengineering:scaffoldings/${item.material}`) != null) {
+			if (Item.of(`#forge:rods/${item.material}`) != null) {
 			event.shaped(`6x #immersiveengineering:scaffoldings/${item.material}`, [
 				'III',
 				' R ',
@@ -198,6 +205,7 @@ onEvent('recipes', event => {
 				I: `#forge:ingots/${item.material}`,
 				R: `#forge:rods/${item.material}`,
 			  }).id(`immersiveengineering:crafting/${item.material}_scaffolding_standard`)
+			} else { console.log(`${item.material}` + "needs rods enabled to make a scaffolding recipe");}
 			}
 	}
 	////////////////WIRES///////////////

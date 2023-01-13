@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "excavated_variants:block/end_stone_nickel_ore0"
+  }
+}

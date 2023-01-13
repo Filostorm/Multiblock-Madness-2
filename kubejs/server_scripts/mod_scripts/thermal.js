@@ -253,19 +253,18 @@ event.shaped('thermal:machine_crystallizer', [
  
  //Temp Recipes
  event.shapeless(`kubejs:petrotheum_dust`, ['thermal:basalz_powder', '#forge:dusts/coal_coke']).id(`mbm2:petrotheum_dust`)
- event.shapeless(`kubejs:cryotheum_dust`, ['thermal:blizz_powder', 'snowball']).id(`mbm2:petrotheum_dust`)
- event.shapeless(`kubejs:pyrotheum_dust`, ['minecraft:blaze_powder', 'create:cinder_flour']).id(`mbm2:petrotheum_dust`)
- event.shapeless(`kubejs:aerotheum_dust`, ['thermal:blitz_powder', 'cloudstorage:cloud']).id(`mbm2:petrotheum_dust`)
+ event.shapeless(`kubejs:cryotheum_dust`, ['thermal:blizz_powder', 'snowball']).id(`mbm2:cryotheum_dust`)
+ event.shapeless(`kubejs:pyrotheum_dust`, ['minecraft:blaze_powder', 'create:cinder_flour']).id(`mbm2:pyrotheum_dust`)
+ event.shapeless(`kubejs:aerotheum_dust`, ['thermal:blitz_powder', 'cloudstorage:cloud']).id(`mbm2:aerotheum_dust`)
 
- var elementalDusts = [
-	'aerotheum',
-	'cryotheum',
-	'petrotheum',
-	'pyrotheum'
-]
-elementalDusts.forEach((name) => {
-	event.recipes.thermal.crucible(Fluid.of(`kubejs:${name}`, 250), `kubejs:${name}_dust`).id(`mbm2:crucible/${name}`)
-})
+event.recipes.thermal.crucible(Fluid.of(`kubejs:blazing_pyrotheum`, 250), `kubejs:pyrotheum_dust`).id(`mbm2:crucible/pyrotheum`)
+event.recipes.thermal.crucible(Fluid.of(`kubejs:gelid_cryotheum`, 250), `kubejs:cryotheum_dust`).id(`mbm2:crucible/cryotheum`)
+event.recipes.thermal.crucible(Fluid.of(`kubejs:zephyrean_aerotheum`, 250), `kubejs:aerotheum_dust`).id(`mbm2:crucible/aerotheum`)
+event.recipes.thermal.crucible(Fluid.of(`kubejs:tectonic_petrotheum`, 250), `kubejs:petrotheum_dust`).id(`mbm2:crucible/petrotheum`)
+
+
+
+//Meelt that metal down bruh
 var partAmounts = {
 	'ingot':90,
 	'plate':90,
@@ -275,7 +274,6 @@ var partAmounts = {
 	'nugget':10,
 	'coin':30,
 }
-//Meelt that metal down bruh
 global.newMaterialParts.forEach((item) => {
 	if (item.fluid_id != null) {
 		for (var part in partAmounts) {

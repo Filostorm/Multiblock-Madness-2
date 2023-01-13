@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "excavated_variants:block/diorite_certus_quartz_ore0",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "model": "excavated_variants:block/diorite_certus_quartz_ore1",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "model": "excavated_variants:block/diorite_certus_quartz_ore2",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "model": "excavated_variants:block/diorite_certus_quartz_ore3",
+        "x": 0,
+        "y": 0
+      }
+    ]
+  }
+}

@@ -7,7 +7,7 @@
         "stone"
       ],
       "id": "moon_stone",
-      "en_name": "Moon Stone"
+      "en_name": "Moon"
     },
     {
       "block_id": "beyond_earth:mars_stone",
@@ -15,7 +15,7 @@
         "stone"
       ],
       "id": "mars_stone",
-      "en_name": "Mars Stone"
+      "en_name": "Mars"
     },
     {
       "block_id": "beyond_earth:mercury_stone",
@@ -23,7 +23,7 @@
         "stone"
       ],
       "id": "mercury_stone",
-      "en_name": "Mercury Stone"
+      "en_name": "Mercury"
     },
     {
       "block_id": "beyond_earth:venus_stone",
@@ -31,7 +31,7 @@
         "stone"
       ],
       "id": "venus_stone",
-      "en_name": "Venus Stone"
+      "en_name": "Venus"
     },
     {
       "block_id": "beyond_earth:glacio_stone",
@@ -39,7 +39,7 @@
         "stone"
       ],
       "id": "glacio_stone",
-      "en_name": "Glacio Stone"
+      "en_name": "Glacio"
     }
   ],
   "provided_ores": [

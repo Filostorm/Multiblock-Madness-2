@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "excavated_variants:block/quark_shale_uraninite_ore_dense0",
+        "x": 0,
+        "y": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "excavated_variants:block/venus_stone_uranium_ore6",
+    "up": "excavated_variants:block/venus_stone_uranium_ore6",
+    "north": "excavated_variants:block/venus_stone_uranium_ore6",
+    "east": "excavated_variants:block/venus_stone_uranium_ore6",
+    "south": "excavated_variants:block/venus_stone_uranium_ore6",
+    "west": "excavated_variants:block/venus_stone_uranium_ore6",
+    "particle": "excavated_variants:block/venus_stone_uranium_ore6"
+  }
+}

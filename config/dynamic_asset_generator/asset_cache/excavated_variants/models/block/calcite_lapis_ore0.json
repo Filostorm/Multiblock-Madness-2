@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "excavated_variants:block/calcite_lapis_ore0"
+  }
+}

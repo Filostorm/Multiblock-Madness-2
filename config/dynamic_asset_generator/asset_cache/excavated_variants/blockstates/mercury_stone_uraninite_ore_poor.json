@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "excavated_variants:block/mercury_stone_uraninite_ore_poor0",
+        "x": 0,
+        "y": 0
+      }
+    ]
+  }
+}

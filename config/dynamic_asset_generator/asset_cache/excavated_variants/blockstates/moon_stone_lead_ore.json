@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "excavated_variants:block/moon_stone_lead_ore0",
+        "x": 0,
+        "y": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "excavated_variants:block/sandstone_venus_calorite_ore6",
+    "bottom": "excavated_variants:block/sandstone_venus_calorite_ore13",
+    "side": "excavated_variants:block/sandstone_venus_calorite_ore20"
+  }
+}

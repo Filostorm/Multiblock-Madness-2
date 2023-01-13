@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "excavated_variants:block/basalt_nickel_ore0",
+    "side": "excavated_variants:block/basalt_nickel_ore1"
+  }
+}

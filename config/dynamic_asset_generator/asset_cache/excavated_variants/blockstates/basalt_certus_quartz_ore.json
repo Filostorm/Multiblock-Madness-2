@@ -1,0 +1,70 @@
+{
+  "variants": {
+    "axis\u003dz": [
+      {
+        "model": "excavated_variants:block/basalt_certus_quartz_ore0",
+        "x": 90,
+        "y": 0
+      },
+      {
+        "model": "excavated_variants:block/basalt_certus_quartz_ore1",
+        "x": 90,
+        "y": 0
+      },
+      {
+        "model": "excavated_variants:block/basalt_certus_quartz_ore2",
+        "x": 90,
+        "y": 0
+      },
+      {
+        "model": "excavated_variants:block/basalt_certus_quartz_ore3",
+        "x": 90,
+        "y": 0
+      }
+    ],
+    "axis\u003dx": [
+      {
+        "model": "excavated_variants:block/basalt_certus_quartz_ore0",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "excavated_variants:block/basalt_certus_quartz_ore1",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "excavated_variants:block/basalt_certus_quartz_ore2",
+        "x": 90,
+        "y": 90
+      },
+      {
+        "model": "excavated_variants:block/basalt_certus_quartz_ore3",
+        "x": 90,
+        "y": 90
+      }
+    ],
+    "axis\u003dy": [
+      {
+        "model": "excavated_variants:block/basalt_certus_quartz_ore0",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "model": "excavated_variants:block/basalt_certus_quartz_ore1",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "model": "excavated_variants:block/basalt_certus_quartz_ore2",
+        "x": 0,
+        "y": 0
+      },
+      {
+        "model": "excavated_variants:block/basalt_certus_quartz_ore3",
+        "x": 0,
+        "y": 0
+      }
+    ]
+  }
+}

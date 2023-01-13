@@ -7,18 +7,6 @@
 	icon: "create:brass_ingot"
 	default_quest_shape: ""
 	default_hide_dependency_lines: false
-	images: [{
-		x: -17.0d
-		y: -2.5d
-		width: 5.0d
-		height: 4.0d
-		rotation: 0.0d
-		image: "kubejs:textures/quests/parchment.png"
-		hover: [ ]
-		click: ""
-		dev: false
-		corner: false
-	}]
 	quests: [
 		{
 			title: "Collecting some Elemental Juice"
@@ -1040,7 +1028,7 @@
 			x: -5.0d
 			y: 8.5d
 			subtitle: "Check out the Elementopedia in your Akashic Tome!"
-			description: ["Elements! It only takes a few seconds to fill a jar from a wild source, or about 5 elemental shards if you've collected some from mobs."]
+			description: ["Elements! It only takes a few seconds to fill a tiny jar from a wild source, or about 5 elemental shards if you've collected some from drops."]
 			dependencies: ["03F754FB73DEF8FA"]
 			id: "027AD6DB4DE3B445"
 			tasks: [
@@ -1100,8 +1088,8 @@
 		{
 			title: "Upgrades!"
 			icon: "elementalcraft:container"
-			x: 0.0d
-			y: 4.5d
+			x: 0.5d
+			y: 5.0d
 			dependencies: ["391E4F9DA1A3D71B"]
 			id: "1207300474ACF750"
 			tasks: [

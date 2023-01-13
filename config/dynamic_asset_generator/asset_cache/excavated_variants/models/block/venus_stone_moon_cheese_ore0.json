@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "excavated_variants:block/venus_stone_moon_cheese_ore48",
+    "up": "excavated_variants:block/venus_stone_moon_cheese_ore48",
+    "north": "excavated_variants:block/venus_stone_moon_cheese_ore48",
+    "east": "excavated_variants:block/venus_stone_moon_cheese_ore48",
+    "south": "excavated_variants:block/venus_stone_moon_cheese_ore48",
+    "west": "excavated_variants:block/venus_stone_moon_cheese_ore48",
+    "particle": "excavated_variants:block/venus_stone_moon_cheese_ore48"
+  }
+}

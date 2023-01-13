@@ -20,7 +20,20 @@ onEvent('recipes', event => {
 		N: 'minecraft:nether_bricks',
 		Q: '#forge:gems/quartz',
 		J: 'forbidden_arcanus:utrem_jar'
-  	})
+  	}).id(`mbm2:forbidden_arcanus/soul_extractor`)
+
+	//Arcane Gold Ingot
+	event.remove({output: 'forbidden_arcanus:arcane_gold_ingot'})
+  	event.shaped('forbidden_arcanus:arcane_gold_ingot', [
+		'LML',
+		'CIC',
+		'LML'
+  	], {
+		L: 'kubejs:lumite',
+		C: 'forbidden_arcanus:arcane_crystal_dust',
+		M: 'forbidden_arcanus:mundabitur_dust',
+		I: '#forge:ingots/auric_gold'
+  	}).id(`mbm2:forbidden_arcanus/arcane_gold_ingot`)
 
 	//Corrupti Dust
 	event.remove({output: 'forbidden_arcanus:corrupti_dust'})

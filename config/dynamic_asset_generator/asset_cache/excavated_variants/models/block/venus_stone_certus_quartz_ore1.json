@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "excavated_variants:block/venus_stone_certus_quartz_ore25",
+    "up": "excavated_variants:block/venus_stone_certus_quartz_ore25",
+    "north": "excavated_variants:block/venus_stone_certus_quartz_ore25",
+    "east": "excavated_variants:block/venus_stone_certus_quartz_ore25",
+    "south": "excavated_variants:block/venus_stone_certus_quartz_ore25",
+    "west": "excavated_variants:block/venus_stone_certus_quartz_ore25",
+    "particle": "excavated_variants:block/venus_stone_certus_quartz_ore25"
+  }
+}

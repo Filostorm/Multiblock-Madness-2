@@ -117,7 +117,7 @@
       "C": {
         "blocks": [
           {
-            "id": "kubejs:cupronickel_coil"
+            "id": "kubejs:constantan_coil"
           }
         ],
         "type": "blocks"

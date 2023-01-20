@@ -10,7 +10,7 @@
 	quests: [
 		{
 			x: 6.0d
-			y: 13.0d
+			y: 13.5d
 			description: [
 				"Flip to the correct book in your Tome to complete this quest."
 				""
@@ -25,7 +25,7 @@
 		}
 		{
 			x: 7.5d
-			y: 13.0d
+			y: 13.5d
 			dependencies: [
 				"47AA157D687A02F7"
 				"243652BEE988A387"
@@ -45,7 +45,7 @@
 		}
 		{
 			x: 9.0d
-			y: 13.0d
+			y: 13.5d
 			dependencies: ["7EBE28646422EC18"]
 			id: "0E9C33334120AC94"
 			tasks: [{
@@ -57,7 +57,7 @@
 		}
 		{
 			x: 10.0d
-			y: 11.5d
+			y: 12.0d
 			dependencies: ["0E9C33334120AC94"]
 			id: "098CAF7E91266CDC"
 			tasks: [{
@@ -68,7 +68,7 @@
 		}
 		{
 			x: 10.0d
-			y: 14.5d
+			y: 15.0d
 			dependencies: ["0E9C33334120AC94"]
 			id: "1BF79E8ACC1F917F"
 			tasks: [{
@@ -79,7 +79,7 @@
 		}
 		{
 			x: 11.5d
-			y: 13.0d
+			y: 13.5d
 			dependencies: ["0E9C33334120AC94"]
 			id: "1FC0519495084939"
 			tasks: [{
@@ -90,7 +90,7 @@
 		}
 		{
 			x: 11.5d
-			y: 11.5d
+			y: 12.0d
 			dependencies: ["098CAF7E91266CDC"]
 			id: "12DDD9CD9F8B934F"
 			tasks: [{
@@ -107,7 +107,7 @@
 		}
 		{
 			x: 11.5d
-			y: 14.5d
+			y: 15.0d
 			dependencies: ["1BF79E8ACC1F917F"]
 			id: "07A718A55B5A7318"
 			tasks: [{
@@ -118,7 +118,7 @@
 		}
 		{
 			x: 5.5d
-			y: 11.5d
+			y: 12.0d
 			description: ["Items must be placed in the shown order."]
 			dependencies: ["391E4F9DA1A3D71B"]
 			id: "6B06707ECFAFD263"
@@ -131,7 +131,7 @@
 		{
 			title: "More Elemental Infused Items"
 			x: 7.0d
-			y: 11.5d
+			y: 12.0d
 			dependencies: ["6B06707ECFAFD263"]
 			id: "61CCA7FA3C371180"
 			tasks: [
@@ -149,7 +149,7 @@
 		}
 		{
 			x: 8.5d
-			y: 11.5d
+			y: 12.0d
 			dependencies: ["61CCA7FA3C371180"]
 			id: "63D72477BB0F83A4"
 			tasks: [{
@@ -260,15 +260,59 @@
 			}]
 		}
 		{
-			x: 13.0d
+			title: "The Metal Press"
+			icon: "immersiveengineering:metal_press"
+			x: 12.0d
 			y: 5.0d
+			subtitle: "Better part creation"
 			dependencies: ["0EB55E9BCD6E97C3"]
 			repeatable: true
 			id: "5F86A5866A68CA6D"
-			tasks: [{
-				id: "21D44B5FB5DA5052"
-				type: "item"
-				item: "immersiveengineering:metal_press"
+			tasks: [
+				{
+					id: "3730365B7E2F9E15"
+					type: "item"
+					item: "immersiveengineering:heavy_engineering"
+				}
+				{
+					id: "44B323B869C59785"
+					type: "item"
+					item: "immersiveengineering:rs_engineering"
+				}
+				{
+					id: "223E1DC2512D24DE"
+					type: "item"
+					item: "immersiveengineering:steel_scaffolding_standard"
+					count: 2L
+				}
+				{
+					id: "470070F00FE52019"
+					type: "item"
+					item: "minecraft:piston"
+				}
+				{
+					id: "134257F1EC993011"
+					type: "item"
+					item: "immersiveengineering:conveyor_basic"
+					count: 2L
+				}
+				{
+					id: "2AE248E38B5C34AC"
+					type: "questsadditions:structure"
+					title: "The Metal Press"
+					icon: "immersiveengineering:metal_press"
+					name: "metal_press"
+					hasCustomPicture: false
+					layer: true
+					ignoreState: false
+					rightclick: false
+				}
+			]
+			rewards: [{
+				id: "1A46F7443E8AEBEE"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 7840564287515615038L
 			}]
 		}
 		{
@@ -353,15 +397,65 @@
 			}]
 		}
 		{
+			title: "The Refinery"
+			icon: "immersiveengineering:refinery"
 			x: 11.5d
 			y: 8.5d
 			dependencies: ["0EB55E9BCD6E97C3"]
 			repeatable: true
 			id: "50FBAD99E2875E46"
-			tasks: [{
-				id: "58A4FBA35D5BD872"
-				type: "item"
-				item: "immersiveengineering:refinery"
+			tasks: [
+				{
+					id: "15ED7A132A9A082A"
+					type: "item"
+					item: "immersiveengineering:rs_engineering"
+				}
+				{
+					id: "467F1665D1B5ACB3"
+					type: "item"
+					item: "immersiveengineering:heavy_engineering"
+					count: 2L
+				}
+				{
+					id: "1ECF353E15D7EC20"
+					type: "item"
+					item: "immersiveengineering:light_engineering"
+					count: 2L
+				}
+				{
+					id: "2480846094A2FA8C"
+					type: "item"
+					item: "immersiveengineering:steel_scaffolding_standard"
+					count: 8L
+				}
+				{
+					id: "5091F9B6872D3C32"
+					type: "item"
+					item: "immersiveengineering:sheetmetal_iron"
+					count: 16L
+				}
+				{
+					id: "46189983C4531065"
+					type: "item"
+					item: "immersiveengineering:fluid_pipe"
+					count: 5L
+				}
+				{
+					id: "2AAE66E6A1C095BD"
+					type: "questsadditions:structure"
+					icon: "immersiveengineering:refinery"
+					name: "refinery"
+					hasCustomPicture: false
+					layer: true
+					ignoreState: false
+					rightclick: false
+				}
+			]
+			rewards: [{
+				id: "7B1011D384E768BD"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 7840564287515615038L
 			}]
 		}
 		{
@@ -422,15 +516,65 @@
 			}]
 		}
 		{
-			x: 10.5d
-			y: 5.5d
+			title: "The Automated Workbench"
+			icon: "immersiveengineering:auto_workbench"
+			x: 13.5d
+			y: 5.0d
 			dependencies: ["0EB55E9BCD6E97C3"]
 			repeatable: true
 			id: "598305F8C2BF7FAF"
-			tasks: [{
-				id: "49A6D04F910CD19C"
-				type: "item"
-				item: "immersiveengineering:auto_workbench"
+			tasks: [
+				{
+					id: "71559485BF9A9441"
+					type: "item"
+					item: "immersiveengineering:rs_engineering"
+				}
+				{
+					id: "7F4F35825DC422FC"
+					type: "item"
+					item: "immersiveengineering:light_engineering"
+					count: 4L
+				}
+				{
+					id: "33DA2E3AB6CE0088"
+					type: "item"
+					item: "immersiveengineering:heavy_engineering"
+					count: 2L
+				}
+				{
+					id: "241B80A197172242"
+					type: "item"
+					item: "immersiveengineering:steel_scaffolding_standard"
+					count: 5L
+				}
+				{
+					id: "114B3D5787E49ED9"
+					type: "item"
+					item: "immersiveengineering:conveyor_basic"
+					count: 4L
+				}
+				{
+					id: "03AF8805E85A12D2"
+					type: "item"
+					item: "immersiveengineering:slab_treated_wood_horizontal"
+					count: 2L
+				}
+				{
+					id: "46599FB88B452463"
+					type: "questsadditions:structure"
+					icon: "immersiveengineering:auto_workbench"
+					name: "assembler"
+					hasCustomPicture: false
+					layer: true
+					ignoreState: false
+					rightclick: false
+				}
+			]
+			rewards: [{
+				id: "76611D4EEE876285"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 7840564287515615038L
 			}]
 		}
 		{
@@ -938,9 +1082,11 @@
 			]
 		}
 		{
-			x: 12.5d
-			y: 10.0d
+			x: 13.0d
+			y: 10.5d
+			shape: "circle"
 			dependencies: ["3DB2C9FEEFF74379"]
+			size: 1.5d
 			id: "0D9ABDE851B5E722"
 			tasks: [{
 				id: "78880C159C9769C6"
@@ -1034,6 +1180,16 @@
 				type: "random"
 				exclude_from_claim_all: true
 				table_id: 7840564287515615038L
+			}]
+		}
+		{
+			x: 16.5d
+			y: 6.5d
+			id: "4056DE989F8A8E98"
+			tasks: [{
+				id: "4B4295C63D922D71"
+				type: "item"
+				item: "chemlib:aluminum_ingot"
 			}]
 		}
 	]

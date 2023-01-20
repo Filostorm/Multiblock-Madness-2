@@ -1,4 +1,17 @@
+/*
+T1 Moon, Desh, moon_desert
+T2 Mars, Ostrum mars_rocky_plain
+T3 Venus, Calorite
+T3 Mercury
+T4 Glacio, glacio_ice_spikes
+*/
 
+
+
+onEvent('block.loot_tables', event => {
+	//Ore should drop the Cheese
+	event.addSimpleBlock('beyond_earth:moon_cheese_ore', 'beyond_earth:cheese')
+});
 
 onEvent('tags.items', event => {
 
@@ -56,6 +69,21 @@ onEvent('recipes', event => {
 	  //ROTARS
 	  event.replaceInput({mod: 'beyond_earth'}, 'beyond_earth:engine_fan', 'compressedcreativity:engine_rotor')
 
+	  //Aluminum
+	  event.replaceInput({mod: 'beyond_earth'}, '#forge:plates/iron', '#forge:plates/aluminum')
+	  event.replaceInput({mod: 'beyond_earth'}, '#forge:ingots/iron', '#forge:ingots/aluminum')
+
 	  //Temp Engine Frame recipe
 	  event.replaceInput({id: 'beyond_earth:engine_frame'}, '#forge:nuggets/iron', '#forge:rods/compressed_steel')
+	
+	 //fIX oXYGEN
+	event.remove({id: 'beyond_earth:oxygen_loading/from_water'})
+	  event.custom({
+		"type": "beyond_earth:oxygen_loader",
+		"input": {
+			"name": "mekanism:oxygen",
+			"amount": 5
+		},
+		"oxygen": 5
+	}).id('mbm2:beyond_earth/oxygen_converting')
 });

@@ -55,8 +55,8 @@ Fluid.getTypes().forEach(fluid => {
     }
   })
 })
-console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);*/
-
+console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
+*/
 	//XP
 	global.ieSqueezer(event, Fluid.of('pneumaticcraft:memory_essence', 100), Item.of('create:experience_nugget'), 6400, 'kubejs:squeezer/experience')
 	global.ieMixer(event, Fluid.of('kubejs:gemstone_catalyst_mixture', 1000), {"tag":"forge:experience","amount":1000}, Item.of('apotheosis:gem_dust'), 4000, 'kubejs:mixer/gemstufffluid')
@@ -70,19 +70,17 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);*/
 		event.remove({id: `mekanism:processing/${item.material}/shard/from_raw_block`})
 		event.remove({id: `immersiveengineering:arcfurnace/raw_block_${item.material}`})
 		event.remove({id: `immersiveengineering:arcfurnace/dust_${item.material}`})
+
 		
 
 		if (item.tier > 1) {
 			event.remove({id: `tconstruct:smeltery/melting/metal/${item.material}/dust`})
 			event.remove({id: `tconstruct:smeltery/melting/metal/${item.material}/raw`})
-			
-			
 			event.remove({id: `tconstruct:smeltery/melting/metal/${item.material}/ore_singular`})
+			event.remove({id: `tconstruct:common/materials/${item.material}_ingot_smelting`})
 			
 		}
 		if (item.ore) {
-			//event.remove({type: 'minecraft:crafting_shaped'}, {input: `#forge:storage_blocks/raw_${item.material}`})
-			
 
 			//Make some dust
 			if (Item.of(`#forge:dusts/${item.material}`) != null) {

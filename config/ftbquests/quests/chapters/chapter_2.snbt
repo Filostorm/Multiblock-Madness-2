@@ -259,6 +259,7 @@
 			icon: "immersiveengineering:coke_oven"
 			x: 6.0d
 			y: 7.5d
+			shape: "circle"
 			subtitle: "Treated Wood"
 			description: [
 				"Good way to extend your fuel supply, and you'll need Creosote Oil for Treated wood, used in many projects going forward."

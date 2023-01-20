@@ -56,6 +56,16 @@ global.newMaterialParts = [
       'allomancy': 'Copper hides your Allomancy from detection. When you are burning copper, yourself and other allomancers nearby are cloaked from the senses of a Bronze burner. However, your own ability to use Bronze is nullified when burning Copper',
       'feruchemy': 'Memories--Stores Experience or Retrieved Stored Experience'
     },
+    {
+      'material': 'arcanite',
+      'color': 0xe2d4fa,
+      'tier': 1,
+      'type': 'base_metal',
+      'itemParts': ['ingot', 'nugget', 'dust'],
+      'blockParts': ['storage_block'],
+      'ore': true,
+      'raw_ore': true
+    },
     
     /////////////// Tier 1 Metals /////////////////////////////
     {
@@ -115,10 +125,10 @@ global.newMaterialParts = [
       'type': 'base_metal',
       'tier': 2,
       'itemParts': ['plate', 'gear', 'rod', 'wire', 'hammer', 'mechanical_component'],
-      'blockParts': ['cog_block', 'casing'],
+      'blockParts': ['cog_block', 'casing', 'coil'],
       'durability': 256,
       'ore': true,
-      'byproducts': ['gold'],
+      'byproducts': ['gold', 'mithril'],
     },
     {
       'material': 'aluminum',
@@ -133,6 +143,35 @@ global.newMaterialParts = [
       'allomancy': 'Aluminum is a purifying metal - it removes all metals from your current stock. This may seem useless, but it also removes all potion effects - not a bad trade to remove some Wither or Poison before it kills you',
       'feruchemy': 'Aluminum and FID: Storing in a metalmind "Keys" it to you, so that only you can tap the power stored within. But if you Store Aluminum first, the metalmind remains "unkeyed", allowing any Feruchemist to Tap is Resouces (good for Co-ops!) (Note this makes the metalmind unable to be keyed, even if all charges are removed)'
     },
+    {
+      'material': 'uranium',
+      'color': 0x8be8b0,
+      'type': 'base_metal',
+      'tier': 3,
+      'itemParts': ['plate', 'gear', 'rod'],
+      'blockParts': [],
+      'ore': true,
+      'byproducts': ['lead', 'thorium'],
+    },
+    {
+      'material': 'netherite',
+      'color': 0x524c49,
+      'type': 'base_metal',
+      'tier': 2,
+      'itemParts': [],
+      'blockParts': [],
+      'byproducts': ['gold'],
+    },
+    {
+      'material': 'mithril',
+      'color': 0x8a90db,
+      'tier': 2,
+      'type': 'base_metal',
+      'itemParts': ['ingot', 'nugget','dust'],
+      'blockParts': ['storage_block'],
+      'ore': true,
+      'raw_ore': true
+    },
     
     
     /////////////// Tier 3 Metals /////////////////////////////
@@ -142,7 +181,7 @@ global.newMaterialParts = [
       'color': 0x4668cf,
       'type': 'base_metal',
       'tier': 3,
-      'itemParts': ['plate', 'gear', 'rod', 'wire', 'hammer'],
+      'itemParts': ['plate', 'gear', 'rod', 'hammer'],
       'blockParts': [],
       'fluid': 'thick',
       'durability': 1024,
@@ -151,11 +190,77 @@ global.newMaterialParts = [
       'byproducts': ['aluminum'],
     },
     {
+      'material': 'osmium',
+      'color': 0xe6f7ff,
+      'type': 'base_metal',
+      'tier': 3,
+      'itemParts': ['plate', 'gear', 'rod'],
+      'blockParts': [],
+      'ore': true,
+      'byproducts': ['platinum'],
+    },
+    {
+      'material': 'desh',
+      'color': 0xffa34d,
+      'type': 'base_metal',
+      'tier': 3,
+      'itemParts': ['gear', 'rod'],
+      'blockParts': [],
+      'ore': true
+    },
+    {
+      'material': 'rune',
+      'ore_name': 'Runite',
+      'color': 0x73b4bf,
+      'tier': 3,
+      'type': 'base_metal',
+      'itemParts': ['ingot', 'nugget','dust'],
+      'blockParts': ['storage_block'],
+      'ore': true,
+      'raw_ore': true
+    },
+
+    {
+      'material': 'orichalcum',
+      'color': 0xfa6837,
+      'tier': 3,
+      'type': 'base_metal',
+      'itemParts': ['ingot', 'nugget','dust'],
+      'blockParts': ['storage_block'],
+      'ore': true,
+      'raw_ore': true
+    },
+    
+    {
+      'material': 'manganese',
+      'color': 0xb5c7a1,
+      'type': 'base_metal',
+      'tier': 3,
+      'itemParts': [],
+      'blockParts': [],
+      'fluid': 'thick'
+    },
+    {
+      'material': 'chromium',
+      'color': 0xcfb793,
+      'type': 'base_metal',
+      'tier': 3,
+      'itemParts': ['plate', 'gear', 'rod', 'dust'],
+      'blockParts': [],
+      'fluid': 'thick',
+      'ore': true,
+      'allomancy': 'Chromium removes all metals from the stock of players you click on, while also removing all potion effects from them',
+      'feruchemy': 'Luck--Good or Bad Luck'
+    },
+
+    /////////////// Tier 4 Metals /////////////////////////////
+    
+    {
       'material': 'tungsten',
       'color': 0x282c33,
       'type': 'base_metal',
-      'tier': 3,
-      'itemParts': ['plate', 'gear', 'rod', 'wire', 'hammer'],
+      'tier': 4,
+      'itemParts': ['plate', 'gear', 'rod','hammer'],
       'blockParts': [],
       'durability': 1024,
       'ore': true,
@@ -166,8 +271,8 @@ global.newMaterialParts = [
       'material': 'platinum',
       'color': 0x91ecff,
       'type': 'base_metal',
-      'tier': 3,
-      'itemParts': ['ingot', 'nugget', 'dust', 'plate', 'gear', 'rod', 'wire', 'hammer'],
+      'tier': 4,
+      'itemParts': ['ingot', 'nugget', 'dust', 'plate', 'gear', 'rod','hammer'],
       'blockParts': ['storage_block'],
       'durability': 1024,
       'ore': true,
@@ -175,30 +280,47 @@ global.newMaterialParts = [
       'byproducts': ['nickel', 'osmium'],
     },
     {
-      'material': 'osmium',
-      'color': 0xe6f7ff,
+      'material': 'ostrum',
+      'color': 0x73485d,
+      'tier': 4,
       'type': 'base_metal',
-      'tier': 3,
-      'itemParts': ['plate', 'gear', 'rod', 'wire'],
+      'itemParts': ['gear', 'rod', 'dust', 'plate', 'plating'],
       'blockParts': [],
       'ore': true,
-      'byproducts': ['platinum'],
     },
     {
-      'material': 'uranium',
-      'color': 0x8be8b0,
+      'material': 'cadmium',
+      'color': 0x97b7bf,
       'type': 'base_metal',
-      'tier': 3,
-      'itemParts': ['plate', 'gear', 'rod', 'wire'],
+      'tier': 4,
+      'itemParts': ['plate',  'gear', 'rod', 'dust'],
       'blockParts': [],
+      'fluid': 'thick',
       'ore': true,
-      'byproducts': ['lead', 'thorium'],
+      'allomancy': 'Cadmium slows down the mobs in the area around you',
+      'feruchemy': 'Breath--Respiration/Water Breathing or Air Bar when not swimming'
+    },
+    {
+      'material': 'magnesium',
+      'color': 0x997996,
+      'tier': 4,
+      'itemParts': ['plate', 'gear', 'rod'],
+      'blockParts': [],
+      'fluid': 'thick'
+    },
+    {
+      'material': 'boron',
+      'color': 0x20293b,
+      'tier': 4,
+      'itemParts': ['ingot', 'nugget', 'dust'],
+      'blockParts': ['storage_block'],
+      'fluid': 'thick'
     },
     {
       'material': 'thorium',
       'color': 0x543923,
       'type': 'base_metal',
-      'tier': 3,
+      'tier': 4,
       'itemParts': [],
       'blockParts': [],
       'fluid': 'thick',
@@ -207,80 +329,54 @@ global.newMaterialParts = [
       'byproducts': ['uranium'],
     },
     {
-      'material': 'ostrum',
-      'color': 0x73485d,
-      'tier': 3,
-      'type': 'base_metal',
-      'itemParts': ['gear', 'rod', 'dust', 'plate', 'plating'],
-      'blockParts': [],
-      'ore': true,
-    },
-    {
-      'material': 'magnesium',
-      'color': 0x997996,
-      'itemParts': ['plate', 'gear', 'rod', 'wire'],
-      'blockParts': [],
-      'fluid': 'thick'
-    },
-    {
-      'material': 'boron',
-      'color': 0x20293b,
-      'itemParts': ['ingot', 'nugget', 'dust'],
-      'blockParts': ['storage_block'],
-      'fluid': 'thick'
-    },
-    
-    /////////////// Tier 4 Metals /////////////////////////////
-    
-    {
-      'material': 'calorite',
-      'color': 0xc43b3b,
-      'tier': 4,
-      'type': 'base_metal',
-      'itemParts': ['gear', 'rod', 'wire', 'dust', 'plate'],
-      'blockParts': [],
-      'ore': true,
-    },
-    {
       'material': 'stellarite',
       'color': 0x858f7c,
       'tier': 4,
       'type': 'base_metal',
-      'itemParts': ['ingot', 'gear', 'rod', 'wire', 'dust', 'plating'],
+      'itemParts': ['ingot', 'gear', 'rod', 'dust', 'plating'],
       'blockParts': [],
       'ore': true,
       'raw_ore': true
     },
+    
+    /////////////// Tier 5 Metals /////////////////////////////
+
     {
-      'material': 'chromium',
-      'color': 0xcfb793,
+      'material': 'vibranium',
+      'color': 0x7cebbe,
+      'tier': 5,
       'type': 'base_metal',
-      'tier': 4,
-      'itemParts': ['plate',  'gear', 'rod', 'wire', 'dust'],
-      'blockParts': [],
-      'fluid': 'thick',
+      'itemParts': ['ingot', 'nugget','dust'],
+      'blockParts': ['storage_block', 'coil'],
       'ore': true,
-      'allomancy': 'Chromium removes all metals from the stock of players you click on, while also removing all potion effects from them',
-      'feruchemy': 'Luck--Good or Bad Luck'
+      'raw_ore': true
     },
     {
-      'material': 'cadmium',
-      'color': 0x97b7bf,
+      'material': 'adamantium',
+      'ore_name': 'Adamantite',
+      'color': 0xc23c3c,
+      'tier': 5,
       'type': 'base_metal',
-      'tier': 4,
-      'itemParts': ['plate',  'gear', 'rod', 'wire', 'dust'],
-      'blockParts': [],
-      'fluid': 'thick',
+      'itemParts': ['ingot', 'nugget','dust'],
+      'blockParts': ['storage_block'],
       'ore': true,
-      'allomancy': 'Cadmium slows down the mobs in the area around you',
-      'feruchemy': 'Breath--Respiration/Water Breathing or Air Bar when not swimming'
+      'raw_ore': true
+    },
+    {
+      'material': 'calorite',
+      'color': 0xc43b3b,
+      'tier': 5,
+      'type': 'base_metal',
+      'itemParts': ['gear', 'rod', 'dust', 'plate'],
+      'blockParts': [],
+      'ore': true,
     },
     {
       'material': 'palladium',
       'color': 0x522d22,
       'type': 'base_metal',
-      'tier': 4,
-      'itemParts': ['plate',  'gear', 'rod', 'wire'],
+      'tier': 5,
+      'itemParts': ['plate',  'gear', 'rod'],
       'blockParts': [],
       'fluid': 'thick',
       'ore': true,
@@ -290,8 +386,8 @@ global.newMaterialParts = [
       'material': 'iridium',
       'color': 0x1942bf,
       'type': 'base_metal',
-      'tier': 4,
-      'itemParts': ['plate',  'gear', 'rod', 'wire'],
+      'tier': 5,
+      'itemParts': ['plate',  'gear', 'rod'],
       'blockParts': [],
       'fluid': 'thick',
       'ore': true,
@@ -300,26 +396,57 @@ global.newMaterialParts = [
     {
       'material': 'vanadium',
       'color': 0x464e66,
-      'itemParts': ['plate',  'gear', 'rod', 'wire'],
+      'type': 'base_metal',
+      'tier': 5,
+      'itemParts': ['plate',  'gear', 'rod'],
+      'blockParts': []
+    },
+    {
+      'material': 'scandium',
+      'color': 0xd4d2bc,
+      'type': 'base_metal',
+      'tier': 5,
+      'itemParts': [],
       'blockParts': []
     },
     {
       'material': 'neodymium',
       'color': 0x634d59,
-      'itemParts': ['plate',  'gear', 'rod', 'wire'],
+      'type': 'base_metal',
+      'tier': 5,
+      'itemParts': ['plate',  'gear', 'rod'],
       'blockParts': [],
       'fluid': 'thick'
     },
+
+    /////////////// Tier 6 Metals /////////////////////////////
     {
-      'material': 'desh',
-      'color': 0xffa34d,
+      'material': 'draconium',
+      'ore_name': 'Dracolith',
+      'color': 0x421c63,
+      'tier': 6,
       'type': 'base_metal',
-      'tier': 3,
-      'itemParts': ['gear', 'rod', 'wire'],
-      'blockParts': [],
-      'ore': true
+      'itemParts': ['ingot', 'nugget', 'dust'],
+      'blockParts': ['storage_block'],
+      'ore': true,
+      'raw_ore': true,
+      'fluid': 'thick',
+      'fluid_id': 'kubejs:molten_dracolith',
     },
-    
+    {
+      'material': 'uru',
+      'color': 0x1c121c,
+      'tier': 6,
+      'type': 'base_metal',
+      'itemParts': ['ingot', 'nugget', 'dust'],
+      'blockParts': ['storage_block'],
+      'ore': true,
+      'raw_ore': true,
+      'fluid': 'thick',
+      'fluid_id': 'kubejs:molten_uru',
+    },
+
+
     /////////////// Tier 1 Alloys /////////////////////////////
     {
       'material': 'bronze',
@@ -339,11 +466,11 @@ global.newMaterialParts = [
     },
     {
       'material': 'constantan',
-      'color': 0xdbb488,
+      'color': 0xe8a156,
       'type': 'alloy',
       'tier': 1,
       'itemParts': ['rod', 'wire', 'hammer', 'mechanical_component', 'plating'],
-      'blockParts': ['cog_block'],
+      'blockParts': ['cog_block', 'coil'],
       'fluid_id': 'tconstruct:molten_constantan',
       'durability': 256,
       'amount': 2,
@@ -445,7 +572,7 @@ global.newMaterialParts = [
       'type': 'alloy',
       'tier': 2,
       'itemParts': ['plate',  'gear', 'rod', 'hammer'],
-      'blockParts': [],
+      'blockParts': ['casing'],
       'durability': 512,
       'allomancy': 'Steel allows you to Push on metals. This means moving metal items away from you, or pushing yourself off of metal blocks. This can be used as a sort of rudimentary flight, though it is more falling with style than anything else. Steel also allows you to use the Coin Bag item. If you have gold nuggets in your inventory and are burning steel, you can use this as a ranged weapon similar to the old Beta-edition Bow. Iron nuggets can also be used, causing more damage but far less accurately',
       'feruchemy': 'Speed--Speed Boost or Slowness'
@@ -459,7 +586,7 @@ global.newMaterialParts = [
       'amount': 2,
       'dust_input': ['2x #forge:dusts/copper','#forge:dusts/cobalt','4x #forge:gems/quartz'],
       'ingot_input': ['2x #forge:ingots/copper','#forge:ingots/cobalt','4x #forge:gems/quartz'],
-      'tinkers_input': [{tag: 'forge:molten_copper',amount: 180},{tag: 'forge:molten_cobalt',amount: 90},{tag: 'forge:molten_quartz',amount: 400}],
+      'tinkers_input': [{tag: 'forge:molten_copper',amount: 180},{tag: 'forge:molten_cobalt',amount: 90},{tag: 'tconstruct:molten_quartz',amount: 400}],
       'itemParts': ['plate', 'gear', 'rod'],
       'blockParts': [],
     },
@@ -477,7 +604,7 @@ global.newMaterialParts = [
       'color': 0xff874f,
       'type': 'alloy',
       'tier': 2,
-      'itemParts': ['custom_ingot', 'dust', 'nugget', 'plate', 'gear', 'rod', 'wire', 'mechanical_component'],
+      'itemParts': ['custom_ingot', 'dust', 'nugget', 'plate', 'gear', 'rod', 'wire', 'mechanical_component', 'plating'],
       'blockParts': ['storage_block', 'scaffolding'],
       'amount': 1,
       'dust_input': ['#forge:dusts/electrum', 'kubejs:energetic_blend'],
@@ -485,11 +612,25 @@ global.newMaterialParts = [
       'fluid': 'thick'
     },
     {
+      'material': 'cobalt_brass',
+      'color': 0xb8af98,
+      'type': 'alloy',
+      'tier': 2,
+      'itemParts': ['ingot', 'dust', 'nugget', 'plate', 'gear', 'rod',],
+      'blockParts': ['storage_block'],
+      'amount': 6,
+      'dust_input': ['4x #forge:dusts/brass', '#forge:dusts/aluminum', '#forge:dusts/cobalt'],
+      'ingot_input': ['4x #forge:ingots/brass', '#forge:ingots/aluminum', '#forge:ingots/cobalt'],
+      'tinkers_input': [{tag: 'forge:molten_brass',amount: 360},{tag: 'forge:molten_aluminum',amount: 90},{tag: 'forge:molten_cobalt',amount: 90}],
+      'fluid': 'thick',
+      'fluid_id': 'kubejs:molten_cobalt_brass',
+    },
+    {
       'material': 'manasteel',
       'color': 0x69a7ff,
       'type': 'alloy',
       'tier': 2,
-      'itemParts': ['plate',  'gear', 'rod', 'wire'],
+      'itemParts': ['plate', 'gear', 'rod'],
       'blockParts': [],
       'fluid': 'thick'
     },
@@ -498,7 +639,7 @@ global.newMaterialParts = [
       'color': 0xe8a02a,
       'type': 'alloy',
       'tier': 2,
-      'itemParts': ['plate',  'gear', 'rod', 'wire'],
+      'itemParts': ['plate', 'gear', 'rod'],
       'blockParts': [],
       'fluid': 'thick'
     },
@@ -507,7 +648,7 @@ global.newMaterialParts = [
       'color': 0x9be3fa,
       'type': 'alloy',
       'tier': 2,
-      'itemParts': ['plate',  'gear', 'rod', 'wire'],
+      'itemParts': ['plate', 'gear', 'rod'],
       'blockParts': [],
       'fluid': 'thick'
     },
@@ -528,11 +669,41 @@ global.newMaterialParts = [
       'feruchemy': 'Connection--Hero of the Village or Bad Omen'
     },
     {
+      'material': 'lumium',
+      'color': 0xffd894,
+      'type': 'alloy',
+      'tier': 2,
+      'itemParts': ['rod'],
+      'blockParts': [],
+      'type': 'alloy',
+      'fluid_id': 'tconstruct:molten_lumium',
+      'amount': 2,
+      'dust_input': ['#forge:dusts/aluminum','#forge:dusts/electrum','2x #forge:dusts/glowstone'],
+      'ingot_input': ['#forge:ingots/aluminum','#forge:ingots/electrum','2x #forge:dusts/glowstone'],
+    },
+    
+    /////////////// Tier 3 Alloys /////////////////////////////
+    
+
+    {
+      'material': 'aerospace_alloy',
+      'color': 0xe3feff,
+      'type': 'alloy',
+      'tier': 3,
+      'itemParts': ['ingot', 'nugget', 'dust',  'plate', 'gear', 'rod', 'plating', 'rocket_nose_cone', 'rocket_fin'],
+      'blockParts': ['storage_block'],
+      'fluid_id': 'kubejs:molten_aerospace_alloy',
+      'fluid': 'thick',
+      'amount': 3,
+      'dust_input': ['2x #forge:dusts/compressed_aluminum','#forge:dusts/titanium','#forge:dusts/chromium'],
+      'ingot_input': ['2x #forge:ingots/compressed_aluminum','#forge:ingots/titanium','#forge:ingots/chromium'],
+    },
+    {
       'material': 'nicrosil',
       'color': 0xa9a9b0,
       'type': 'alloy',
-      'tier': 2,
-      'itemParts': [ 'plate', 'gear', 'wire', 'dust', 'rod'],
+      'tier': 3,
+      'itemParts': [ 'plate', 'gear', 'dust', 'rod'],
       'blockParts': [],
       'fluid': 'thick',
       'fluid_id': 'kubejs:molten_nicrosil',
@@ -547,8 +718,8 @@ global.newMaterialParts = [
       'material': 'bendalloy',
       'color': 0xbab6a2,
       'type': 'alloy',
-      'tier': 2,
-      'itemParts': [ 'plate', 'gear', 'wire', 'dust', 'rod'],
+      'tier': 3,
+      'itemParts': [ 'plate', 'gear', 'dust', 'rod'],
       'blockParts': [],
       'fluid': 'thick',
       'fluid_id': 'kubejs:molten_bendalloy',
@@ -559,14 +730,11 @@ global.newMaterialParts = [
       'allomancy': 'Bendalloy speeds up everything in a bubble around you. Furnaces, crops, and mobs all go faster!',
       'feruchemy': 'Nutrition--Gives Saturation(Restores hunger bar) or Drains hunger bar.'
     },
-    
-    /////////////// Tier 3 Alloys /////////////////////////////
-    
     {
       'material': 'signalum',
       'color': 0xff6e4a,
       'tier': 3,
-      'itemParts': ['rod', 'wire'],
+      'itemParts': ['rod'],
       'blockParts': [],
       'type': 'alloy',
       'fluid_id': 'tconstruct:molten_signalum',
@@ -578,7 +746,7 @@ global.newMaterialParts = [
       'material': 'enderium',
       'color': 0x5fc4d4,
       'tier': 3,
-      'itemParts': ['rod', 'wire'],
+      'itemParts': ['rod'],
       'blockParts': [],
       'type': 'alloy',
       'fluid_id': 'tconstruct:molten_enderium',
@@ -587,131 +755,31 @@ global.newMaterialParts = [
       'ingot_input': ['2x #forge:ingots/pewter','#forge:ingots/platinum','2x minecraft:ender_pearl'],
     },
     {
-      'material': 'lumium',
-      'color': 0xffd894,
-      'type': 'alloy',
-      'tier': 3,
-      'itemParts': ['rod', 'wire'],
-      'blockParts': [],
-      'type': 'alloy',
-      'fluid_id': 'tconstruct:molten_lumium',
-      'amount': 2,
-      'dust_input': ['#forge:dusts/aluminum','#forge:dusts/electrum','2x #forge:dusts/glowstone'],
-      'ingot_input': ['#forge:ingots/aluminum','#forge:ingots/electrum','2x #forge:dusts/glowstone'],
-    },
-    {
       'material': 'damascus_steel',
       'color': 0x828282,
       'type': 'alloy',
       'tier': 3,
       'itemParts': ['custom_ingot', 'nugget', 'plate', 'gear', 'rod', 'hammer'],
       'blockParts': ['storage_block'],
+      'fluid_id': 'kubejs:molten_damascus_steel',
       'fluid': 'thick',
       'durability': 4096
     },
     {
-      'material': 'netherite',
-      'color': 0x524c49,
-      'itemParts': [ 'rod', 'wire'],
-      'blockParts': []
-    },
-    {
       'material': 'terrasteel',
       'color': 0x63e645,
-      'itemParts': ['plate',  'gear', 'rod', 'wire'],
+      'itemParts': ['plate',  'gear', 'rod'],
       'blockParts': [],
       'fluid': 'thick'
     },
     {
       'material': 'elementium',
       'color': 0xf569b6,
-      'itemParts': ['plate',  'gear', 'rod', 'wire'],
+      'itemParts': ['plate',  'gear', 'rod'],
       'blockParts': [],
       'fluid': 'thick'
     },
-    /////////////// Magical Ore ///////////////////////////////
-    
-    {
-      'material': 'arcanite',
-      'color': 0xe2d4fa,
-      'tier': 1,
-      'type': 'base_metal',
-      'itemParts': ['ingot', 'nugget','dust'],
-      'blockParts': ['storage_block'],
-      'ore': true,
-      'raw_ore': true
-    },
-    {
-      'material': 'mithril',
-      'color': 0x8a90db,
-      'tier': 2,
-      'type': 'base_metal',
-      'itemParts': ['ingot', 'nugget','dust'],
-      'blockParts': ['storage_block'],
-      'ore': true,
-      'raw_ore': true
-    },
-    {
-      'material': 'orichalcum',
-      'color': 0xfa6837,
-      'tier': 3,
-      'type': 'base_metal',
-      'itemParts': ['ingot', 'nugget','dust'],
-      'blockParts': ['storage_block'],
-      'ore': true,
-      'raw_ore': true
-    },
-    {
-      'material': 'runite',
-      'color': 0x73b4bf,
-      'tier': 4,
-      'type': 'base_metal',
-      'itemParts': ['ingot', 'nugget','dust'],
-      'blockParts': ['storage_block'],
-      'ore': true,
-      'raw_ore': true
-    },
-    {
-      'material': 'vibranium',
-      'color': 0x7cebbe,
-      'tier': 5,
-      'type': 'base_metal',
-      'itemParts': ['ingot', 'nugget','dust'],
-      'blockParts': ['storage_block'],
-      'ore': true,
-      'raw_ore': true
-    },
-    {
-      'material': 'adamantite',
-      'color': 0xc23c3c,
-      'tier': 5,
-      'type': 'base_metal',
-      'itemParts': ['ingot', 'nugget','dust'],
-      'blockParts': ['storage_block'],
-      'ore': true,
-      'raw_ore': true
-    },
-    {
-      'material': 'dracolith',
-      'color': 0x421c63,
-      'tier': 6,
-      'type': 'base_metal',
-      'itemParts': ['ingot', 'nugget','dust'],
-      'blockParts': ['storage_block'],
-      'ore': true,
-      'raw_ore': true
-    },
-    {
-      'material': 'uru',
-      'color': 0x1c121c,
-      'tier': 6,
-      'type': 'base_metal',
-      'itemParts': ['ingot', 'nugget','dust'],
-      'blockParts': ['storage_block'],
-      'ore': true,
-      'raw_ore': true
-    },
-    
+
     /////////////// Ore /////////////////////////////
     /*
     {
@@ -740,7 +808,7 @@ global.newMaterialParts = [
       'fluid': 'thick',
       'ore': true,
       'raw_ore': true,
-      'components': ['tin','nickel'],
+      'components': ['tin','nickel',],
       'gem_components': ['lapis', 'apatite'],
     },
     {
@@ -825,6 +893,20 @@ global.newMaterialParts = [
       'fluid': 'thick'
     },
     {
+      'material': 'ferric',
+      'color': 0x87cc81,
+      'itemParts': ['dust','fine_dust','crystal','shard','crushed'],
+      'blockParts': [],
+      'fluid': 'thick',
+    },
+    {
+      'material': 'cupric',
+      'color': 0xe39246,
+      'itemParts': ['dust','fine_dust','crystal','shard','crushed'],
+      'blockParts': [],
+      'fluid': 'thick',
+    },
+    {
       'material': 'wood',
       'color': 0x825c45,
       'itemParts': [],
@@ -867,28 +949,28 @@ global.newMaterialParts = [
     {
       'material': 'transmuted_silver',
       'color': 0xa9d0d9,
-      'type': 'converted_metal',
+      'type': 'alloy',
       'itemParts': ['plate', 'gear', 'rod'],
       'blockParts': []
     },
     {
       'material': 'infused_iron',
       'color': 0x54b33b,
-      'type': 'converted_metal',
+      'type': 'alloy',
       'itemParts': ['plate', 'gear', 'rod'],
       'blockParts': []
     },
     {
       'material': 'tainted_gold',
       'color': 0xa66032,
-      'type': 'converted_metal',
+      'type': 'alloy',
       'itemParts': ['plate', 'gear', 'rod', 'dust'],
       'blockParts': []
     },
     {
       'material': 'sky_metal',
       'color': 0x83d5de,
-      'type': 'converted_metal',
+      'type': 'alloy',
       'itemParts': ['plate', 'gear', 'rod'],
       'blockParts': ['storage_block']
     },
@@ -900,6 +982,16 @@ global.newMaterialParts = [
       'blockParts': [],
       'fluid': 'thick',
       'fluid_id': 'kubejs:molten_compressed_steel',
+    },
+    {
+      'material': 'compressed_aluminum',
+      'color': 0xc8e0e0,
+      'type': 'alloy',
+      'tier': 3,
+      'itemParts': ['ingot', 'nugget', 'dust', 'plate', 'gear', 'rod', 'plating'],
+      'blockParts': ['storage_block'],
+      'fluid_id': 'kubejs:molten_compressed_aluminum',
+      'fluid': 'thick',
     },
     {
       'material': 'energized_steel',

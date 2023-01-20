@@ -66,6 +66,13 @@
     "minecraft:basalt",
     "beyond_earth:moon_sand",
     "beyond_earth:moon_stone",
-    "minecraft:soul_soil"
+    "minecraft:soul_soil",
+    "minecraft:red_sand",
+    "minecraft:red_sandstone",
+    "minecraft:red_terracotta",
+    "beyond_earth:mars_sand",
+    "beyond_earth:mars_stone",
+    "beyond_earth:permafrost",
+    "beyond_earth:glacio_stone"
   ]
 }

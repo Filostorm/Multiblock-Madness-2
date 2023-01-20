@@ -264,7 +264,7 @@ onEvent('worldgen.add', event => {
 		ore.noSurface = 0
 		ore.worldgenLayer = "underground_ores"
 		  ore.chance = 0
-		  ore.biomes = "nether"
+		  ore.biomes = "^nether"
 	})
 	
 
@@ -300,10 +300,7 @@ onEvent('worldgen.add', event => {
 		ore.addTarget(`malum:blazing_quartz_ore`, `kubejs:netherrack_lumite_ore`)
 			global.stoneTypes.forEach((type) => {
 				if (type.material != 'deepslate' && type.material != 'bedrock' && type.material != 'netherrack') {
-				ore.addTarget(`excavated_variants:${type.material}_iron_ore`, `kubejs:${type.material}_lumite_ore`)
 				ore.addTarget(`excavated_variants:${type.material}_gold_ore`, `kubejs:${type.material}_lumite_ore`)
-				ore.addTarget(`excavated_variants:${type.material}_zinc_ore`, `kubejs:${type.material}_lumite_ore`)
-				ore.addTarget(`excavated_variants:${type.material}_nickel_ore`, `kubejs:${type.material}_lumite_ore`)
 				ore.addTarget(`kubejs:${type.material}_aluminum_ore`, `kubejs:${type.material}_lumite_ore`)
 				//ore.addTarget(`excavated_variants:${type.material}_blazing_quartz_ore`, `kubejs:${type.material}_lumite_ore`)
 				}
@@ -351,7 +348,6 @@ onEvent('worldgen.add', event => {
 		global.stoneTypes.forEach((type) => {
 			if (type.material != 'deepslate' && type.material != 'bedrock') {
 			ore.addTarget(`excavated_variants:${type.material}_iron_ore`, `excavated_variants:${type.material}_sulfur_ore`)
-			ore.addTarget(`excavated_variants:${type.material}_gold_ore`, `excavated_variants:${type.material}_sulfur_ore`)
 			ore.addTarget(`excavated_variants:${type.material}_zinc_ore`, `excavated_variants:${type.material}_sulfur_ore`)
 			ore.addTarget(`excavated_variants:${type.material}_nickel_ore`, `excavated_variants:${type.material}_sulfur_ore`)
 			}

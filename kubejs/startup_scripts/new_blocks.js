@@ -1,5 +1,4 @@
 var basicMetalBlocks = [
-	'cupronickel_coil',
 	'tier1_casing',
 	'tier1_machine_block',
 	'tier2_casing',

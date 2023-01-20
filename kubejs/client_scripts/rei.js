@@ -33,6 +33,8 @@ onEvent('rei.hide.items', event => {
 	})
 	
 	event.hide(Item.of('ae2:facade').ignoreNBT())
+	event.hide(Item.of('ae2:wireless_terminal').ignoreNBT())
+	
 });
 
 onEvent('rei.add.items', event => {

@@ -158,14 +158,14 @@ onEvent('recipes', event => {
 	//storage_bus
 	event.remove({id: 'ae2:network/parts/storage_bus'})
 	event.shaped('ae2:storage_bus', [
-	  ' IP',
-	  'GCU',
-	  ' SP'
+	  ' IG',
+	  'CPU',
+	  ' SG'
 	], {
-		P: '#forge:plates/energetic_alloy',
+		P: '#forge:platings/energetic_alloy',
 		U: 'sophisticatedstorage:advanced_pickup_upgrade',
-		G: 'ae2:fluix_glass_cable',
-		C: '#forge:chests',
+		C: 'ae2:fluix_glass_cable',
+		G: 'ae2:quartz_glass',
 		I: 'minecraft:piston',
 		S: 'minecraft:sticky_piston',
 	}).id('mbm2:storage_bus')

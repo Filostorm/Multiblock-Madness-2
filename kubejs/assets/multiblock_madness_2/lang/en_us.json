@@ -26,7 +26,7 @@
     "block.multiblocked.create_item_input": "Input Vault Part",
     "block.multiblocked.create_item_output": "Output Vault Part",
 
-    "item.mna.vinteum_coated_iron": "Vinteum Coated Silver",
+    "item.mna.vinteum_coated_iron": "Vinteum Coated Mithril",
     "block.pneumaticcraft.compressed_iron_block" : "Block of Compressed Steel",
     "item.pneumaticcraft.ingot_iron_compressed" : "Compressed Steel Ingot",
     "item.pneumaticcraft.compressed_iron_boots" : "Compressed Steel Boots",
@@ -35,18 +35,23 @@
     "item.pneumaticcraft.compressed_iron_gear" : "Compressed Steel Gear",
     "item.pneumaticcraft.compressed_iron_leggings" : "Compressed Steel Leggings",
     "item.pneumaticcraft.drill_bit_compressed_iron" : "Compressed Steel Drill Bit",
+    "block.compressedcreativity.compressed_iron_casing": "Compressed Steel Casing",
+
     "item.beyond_earth.compressed_steel": "Compressed Steel Plating",
     "item.beyond_earth.compressed_desh": "Desh Plating",
     "item.beyond_earth.compressed_calorite": "Calorite Plating",
     "item.beyond_earth.compressed_ostrum": "Ostrum Plating",
     "block.beyond_earth.fuel": "Rocket Fuel",
     
+    "block.ae2.sky_stone_tank": "Hardened Tank",
 
     "block.extendedcrafting.redstone_ingot_block": "Red Alloy Block",
     "item.extendedcrafting.redstone_ingot": "Red Alloy",
     "item.extendedcrafting.redstone_nugget": "Red Alloy Nugget",
 
-    
+
+
+
     "block.extendedcrafting.luminessence_block": "Luminessence Block",
     "block.extendedcrafting.black_iron_block": "Black Iron Block",
     "block.extendedcrafting.ender_ingot_block": "Ender Ingot Block",
@@ -238,6 +243,9 @@
   "biome.terralith.cave.crystal_caves": "Crystal Caves",
   "biome.terralith.cave.ice_caves": "Ice Caves",
 
+  "biome.beyond_earth.moon_desert": "Moon Barren",
+  "biome.beyond_earth.mars_rocky_plain": "Mars Plains",
+
   
   "entity.minecraft.villager.pneumaticcraft:mechanic" : "Mechanic",
   "entity.minecraft.villager.spellmonger" : "Spellmonger",
@@ -248,8 +256,5 @@
   "entity.minecraft.villager.immersiveengineering:mechinist" : "Mechinist",
   "entity.minecraft.villager.immersiveengineering:electrician" : "Electrician",
   "entity.minecraft.villager.immersiveengineering:outfitter" : "Outfitter",
-  "entity.minecraft.villager.immersiveengineering:gunsmith" : "Gunsmith",
-
-  
-  "block.ae2.sky_stone_tank": "Hardened Tank"
+  "entity.minecraft.villager.immersiveengineering:gunsmith" : "Gunsmith"
 }

@@ -4,6 +4,7 @@
 	order_index: 3
 	filename: "chapter_5"
 	title: "Chapter 4"
+	icon: "mekanism:ingot_osmium"
 	default_quest_shape: ""
 	default_hide_dependency_lines: false
 	quests: [
@@ -22,8 +23,8 @@
 			}]
 		}
 		{
-			x: 11.5d
-			y: 3.0d
+			x: 15.5d
+			y: 3.5d
 			dependencies: ["12B7444358A1347F"]
 			id: "0B635C1D49C9F9AC"
 			tasks: [{
@@ -33,8 +34,8 @@
 			}]
 		}
 		{
-			x: 13.0d
-			y: 3.0d
+			x: 17.0d
+			y: 3.5d
 			dependencies: ["0B635C1D49C9F9AC"]
 			id: "11D33990B9BC8DDD"
 			tasks: [{
@@ -44,8 +45,8 @@
 			}]
 		}
 		{
-			x: 10.0d
-			y: 3.0d
+			x: 14.0d
+			y: 3.5d
 			dependencies: ["3C2C3C5BED4E830A"]
 			id: "12B7444358A1347F"
 			tasks: [{
@@ -55,8 +56,8 @@
 			}]
 		}
 		{
-			x: 11.0d
-			y: 4.0d
+			x: 15.0d
+			y: 4.5d
 			dependencies: ["12B7444358A1347F"]
 			id: "5986396A93E625F1"
 			tasks: [{
@@ -72,8 +73,8 @@
 			}]
 		}
 		{
-			x: 8.5d
-			y: 3.0d
+			x: 12.5d
+			y: 3.5d
 			dependencies: ["63D72477BB0F83A4"]
 			id: "3C2C3C5BED4E830A"
 			tasks: [
@@ -105,10 +106,11 @@
 			]
 		}
 		{
-			x: 11.0d
+			x: 14.0d
 			y: -3.0d
-			description: ["Place the molten plastic in world to have it solidify into a Plastic Sheet."]
+			description: ["Place the molten plastic in world to have it solidify into a Plastic Sheet, or place inside a chest that has been cooled via Heat Frame."]
 			dependencies: ["444E392EA0BB8807"]
+			dependency_requirement: "one_completed"
 			id: "09B9B831214F6072"
 			tasks: [
 				{
@@ -124,8 +126,10 @@
 			]
 		}
 		{
-			x: 9.0d
+			x: 15.5d
 			y: -3.0d
+			description: ["You can use Bio Diesel or LPG (from Refining Oil) to make Plastic."]
+			dependencies: ["2F38722F9A7D89CC"]
 			id: "444E392EA0BB8807"
 			tasks: [{
 				id: "7DEBD273E3C1AC9F"
@@ -135,8 +139,9 @@
 		}
 		{
 			disable_toast: true
-			x: 11.0d
-			y: -1.5d
+			x: 9.0d
+			y: 0.0d
+			shape: "circle"
 			dependencies: ["75D4FF56D8BBF34A"]
 			id: "43F8546BD8107D1C"
 			tasks: [{
@@ -147,7 +152,7 @@
 		}
 		{
 			x: 14.0d
-			y: -3.0d
+			y: -4.5d
 			dependencies: [
 				"2F38722F9A7D89CC"
 				"09B9B831214F6072"
@@ -167,9 +172,12 @@
 			]
 		}
 		{
-			x: 11.0d
+			x: 15.5d
 			y: -4.5d
-			dependencies: ["02285A69B0A09A44"]
+			dependencies: [
+				"02285A69B0A09A44"
+				"09B9B831214F6072"
+			]
 			id: "01D41BC5B499F063"
 			tasks: [{
 				id: "498221C41233E562"
@@ -179,8 +187,8 @@
 		}
 		{
 			title: "Better Circuits"
-			x: 15.5d
-			y: -4.5d
+			x: 14.0d
+			y: -6.0d
 			dependencies: [
 				"72DC15C390A992F6"
 				"01D41BC5B499F063"
@@ -211,13 +219,20 @@
 				tag: { }
 			}
 			x: 16.0d
-			y: -1.5d
+			y: 0.0d
+			shape: "hexagon"
 			description: [
 				"After placing the Rocket on the 3x3 Launch Pad, shift right click to open the gui for fueling."
 				""
 				"After launching, you'll be given the option of where to land. Your goal is the Moon! Once you get there, you'll need to remove the rocket from the lander and set up a return Launch Pad."
 			]
-			dependencies: ["61B47177E307B079"]
+			dependencies: [
+				"61B47177E307B079"
+				"2DFADAC92EFECDFD"
+				"70A8DBCE5978F640"
+				"5E914AEBF8D378B9"
+			]
+			size: 1.5d
 			id: "06E62336B0646B17"
 			tasks: [
 				{
@@ -230,18 +245,223 @@
 					}
 				}
 				{
-					id: "701A24206CD47731"
-					type: "item"
-					item: "beyond_earth:fuel_bucket"
-					count: 2L
-				}
-				{
 					id: "052D333312782BA8"
 					type: "item"
 					item: "beyond_earth:rocket_launch_pad"
 					count: 18L
 				}
 			]
+		}
+		{
+			x: 14.0d
+			y: 0.0d
+			dependencies: ["519132C8DB85E983"]
+			id: "70A8DBCE5978F640"
+			tasks: [{
+				id: "449C6F6128FBF864"
+				type: "item"
+				item: "beyond_earth:oxygen_loader"
+			}]
+		}
+		{
+			title: "Space Suit"
+			x: 14.0d
+			y: 1.5d
+			description: ["You'll need to fill your suit with Oxygen before heading to space."]
+			dependencies: ["43F8546BD8107D1C"]
+			id: "2DFADAC92EFECDFD"
+			tasks: [
+				{
+					id: "6CDAF8D9119111EB"
+					type: "item"
+					item: {
+						id: "beyond_earth:oxygen_mask"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+				{
+					id: "11DBB30212F63FF0"
+					type: "item"
+					item: {
+						id: "beyond_earth:space_boots"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+				{
+					id: "1C0D9DABABF54C94"
+					type: "item"
+					item: {
+						id: "beyond_earth:space_pants"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+				{
+					id: "7C0466C82BA6F0F9"
+					type: "item"
+					item: {
+						id: "beyond_earth:space_suit"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+					match_nbt: false
+				}
+			]
+		}
+		{
+			x: 11.0d
+			y: 0.0d
+			description: ["Seperate some water into Oxygen and Hydrogen."]
+			dependencies: ["43F8546BD8107D1C"]
+			id: "51FAF657A58A5A7C"
+			tasks: [{
+				id: "4BC31044D992914B"
+				type: "item"
+				item: "mekanism:electrolytic_separator"
+			}]
+		}
+		{
+			x: 12.5d
+			y: 0.0d
+			description: ["You'll need to convert the Oxygen into a liquid to fill the space suit."]
+			dependencies: ["51FAF657A58A5A7C"]
+			id: "519132C8DB85E983"
+			tasks: [{
+				id: "6B2B2DE534421184"
+				type: "item"
+				item: "mekanism:rotary_condensentrator"
+			}]
+		}
+		{
+			x: 17.0d
+			y: -1.5d
+			dependencies: ["591233C3DDD3FE04"]
+			id: "5E914AEBF8D378B9"
+			tasks: [{
+				id: "7122E515F2EA8F1D"
+				type: "item"
+				item: "beyond_earth:fuel_bucket"
+				count: 2L
+			}]
+		}
+		{
+			x: 17.0d
+			y: -3.0d
+			description: ["Stacking up to 4 Refinery Outputs on the top (and insulating them), will allow you to get the maximum amount of products from your Crude Oil."]
+			dependencies: [
+				"598DE255BBB061C3"
+				"2F38722F9A7D89CC"
+			]
+			id: "591233C3DDD3FE04"
+			tasks: [
+				{
+					id: "7C123FCA6BC28F52"
+					type: "item"
+					item: "pneumaticcraft:refinery"
+				}
+				{
+					id: "3EA93D16917DD04B"
+					type: "item"
+					item: "pneumaticcraft:refinery_output"
+					count: 4L
+				}
+			]
+			rewards: [{
+				id: "328155ABF13423B0"
+				type: "item"
+				item: "pneumaticcraft:thermal_lagging"
+				count: 4
+			}]
+		}
+		{
+			icon: "mbm2:ebf"
+			x: 20.0d
+			y: 0.0d
+			id: "4668A1BA6F4E9EC6"
+			tasks: [
+				{
+					id: "7F7A16E72F9150D7"
+					type: "item"
+					item: "mbm2:ebf"
+				}
+				{
+					id: "140CF3E47A38DF1D"
+					type: "item"
+					item: "kubejs:tier1_casing"
+					count: 16L
+				}
+				{
+					id: "6DE3D061DCD0CC28"
+					type: "item"
+					item: "kubejs:constantan_coil"
+					count: 10L
+				}
+				{
+					id: "2AB55F478B77B3EA"
+					type: "item"
+					item: "thermal:obsidian_glass"
+					count: 2L
+				}
+				{
+					id: "6F86490AD83FDD53"
+					type: "item"
+					item: "mekanism:superheating_element"
+					count: 2L
+				}
+				{
+					id: "368CDD4BD3F53E00"
+					type: "item"
+					item: "multiblocked:energy_input"
+				}
+				{
+					id: "1E8529DB991F8F53"
+					type: "item"
+					item: "multiblocked:item_input"
+				}
+				{
+					id: "32A626378D3D83AE"
+					type: "item"
+					item: "multiblocked:item_output"
+				}
+			]
+		}
+		{
+			x: 18.0d
+			y: -0.5d
+			dependencies: [
+				"06E62336B0646B17"
+				"4668A1BA6F4E9EC6"
+			]
+			id: "7005D1345FFE0ACE"
+			tasks: [{
+				id: "3AA5F60349B293FD"
+				type: "item"
+				item: "mekanism:ingot_osmium"
+			}]
+		}
+		{
+			x: 18.0d
+			y: 0.5d
+			dependencies: [
+				"06E62336B0646B17"
+				"4668A1BA6F4E9EC6"
+			]
+			id: "13C4C068E2EB695E"
+			tasks: [{
+				id: "4568F984D87E074C"
+				type: "item"
+				item: "chemlib:titanium_ingot"
+			}]
 		}
 	]
 	quest_links: [ ]

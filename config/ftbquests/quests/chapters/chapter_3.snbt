@@ -185,7 +185,7 @@
 		{
 			x: 8.5d
 			y: -1.0d
-			description: ["You'll need to place these underneath whatever you're trying to heat, and feed them burnable items."]
+			description: ["You'll need to place these underneath whatever you're trying to heat, and feed them burnable items (or fluids)."]
 			dependencies: ["20FA1AFF0BD65177"]
 			id: "46DC0D67FE1C4C67"
 			tasks: [{

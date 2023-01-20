@@ -1,0 +1,8 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "kubejs:item/rocket_nose_cone",
+        "layer1": "kubejs:item/rocket_nose_cone_light"
+    }
+  }
+  

@@ -12,7 +12,6 @@ onEvent('worldgen.remove', event => {
 		'minecraft:diamond_ore', 
 		'minecraft:redstone_ore', 
 		'mna:vinteum_ore',
-		'beyond_earth:moon_iron_ore',
 	]
 	})
 	event.removeFeatureById('top_layer_modification', ['beyond_earth:oil_well'])
@@ -71,7 +70,7 @@ onEvent('worldgen.add', event => {
     		    ore.worldgenLayer = "underground_ores"  // what generation step the ores should be generated in (see below)
     		  	ore.chance = 0							// if != 0 and count is unset, the ore has a 1/n chance to generate per chunk
 				ore.biomes = {
-				  not: ["^nether","^moon"]
+				  not: ["^nether", "^the_end", /^beyond_earth:.*/]
 				}
     		})
 		}
@@ -101,7 +100,7 @@ onEvent('worldgen.add', event => {
 		ore.worldgenLayer = "underground_ores"
 		ore.chance = 0
 		ore.biomes = {
-			not: "^nether"
+			not: ["^nether", "^the_end", /^beyond_earth:.*/]
 		}
 	})
 	
@@ -129,7 +128,7 @@ onEvent('worldgen.add', event => {
 		ore.worldgenLayer = "underground_ores"
 		ore.chance = 0
 		ore.biomes = {
-			not: "^nether"
+			not: ["^nether", "^the_end", /^beyond_earth:.*/]
 		  }
 	})
 
@@ -156,7 +155,7 @@ onEvent('worldgen.add', event => {
 		ore.worldgenLayer = "underground_ores"
 		ore.chance = 0
 		ore.biomes = {
-			not: "^nether"
+			not: ["^nether", "^the_end", /^beyond_earth:.*/]
 		  }
 	})
 
@@ -183,7 +182,7 @@ onEvent('worldgen.add', event => {
 		ore.worldgenLayer = "underground_ores"
 		  ore.chance = 0
 		  ore.biomes = {
-			  not: "^nether"
+			  not: ["^nether", "^the_end", /^beyond_earth:.*/]
 			}
 	})
 
@@ -210,28 +209,7 @@ onEvent('worldgen.add', event => {
 		ore.worldgenLayer = "underground_ores"
 		ore.chance = 0
 		ore.biomes = {
-			not: "^nether"
-		  }
-	})
-
-	// Base Uru Veins
-	event.addOre((ore) => {
-		ore.id = 'kubejs:uru_ore'
-	
-		ore.addTarget('bedrock', 'kubejs:bedrock_uru_ore')
-
-		ore.count([1, 2])
-				.squared()
-				.uniformHeight(
-						anchors.aboveBottom(2),
-						anchors.absolute(-59)
-				)
-		ore.size = 3
-		ore.noSurface = 0.5
-		ore.worldgenLayer = "underground_ores"
-		ore.chance = 0
-		ore.biomes = {
-			not: "^nether"
+			not: ["^nether", "^the_end", /^beyond_earth:.*/]
 		  }
 	})
 

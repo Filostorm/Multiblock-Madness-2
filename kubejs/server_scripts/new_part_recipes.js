@@ -162,7 +162,7 @@ onEvent('recipes', event => {
 				G: `#forge:gears/${item.material}`
 			  }).id(`mbm2:parts/${item.material}_mechanical_component`)
 			//Cheaper recipe
-			global.ieBlueprint(event, 'components', Item.of(`#forge:components/${item.material}`), [{count:3, base_ingredient: {tag: `forge:gears/${item.material}`}}, {tag: `forge:wire/${item.material}`}], `mbm2:${item.material}_mechanical_component`)
+			global.ieBlueprint(event, 'components', Item.of(`#forge:mechanical_components/${item.material}`), [{count:3, base_ingredient: {tag: `forge:gears/${item.material}`}}, {tag: `forge:wires/${item.material}`}], `mbm2:${item.material}_mechanical_component`)
 
 			} else { console.log(`${item.material}` + "needs wires and gears enabled to make a mechanical component recipe");}
 		}

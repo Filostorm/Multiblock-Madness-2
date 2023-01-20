@@ -40,32 +40,45 @@ onEvent('recipes', event => {
 
 	//Compressed Steel
 	event.remove({id: 'pneumaticcraft:pressure_chamber/compressed_iron_ingot'})
-	global.pressureChamber(event, [{"item": "pneumaticcraft:ingot_iron_compressed","count": 1}], [{"tag": "forge:ingots/steel"}], 2.0, 'kubejs:pressure_chamber/compressed_steel_ingot')
+	global.pressureChamber(event, [{"item": "pneumaticcraft:ingot_iron_compressed","count": 1}], [{"tag": "forge:ingots/steel"}], 2.0, 'mbm2:pressure_chamber/compressed_steel_ingot')
 	event.remove({id: 'pneumaticcraft:explosion_crafting/compressed_iron_ingot'})
-	global.explosionCrafting(event, 'pneumaticcraft:ingot_iron_compressed', '#forge:ingots/steel', 20, 'kubejs:explosion_crafting/compressed_steel')
+	global.explosionCrafting(event, 'pneumaticcraft:ingot_iron_compressed', '#forge:ingots/steel', 20, 'mbm2:explosion_crafting/compressed_steel')
 
-	//Compressed Steel Block
 	event.remove({id: 'pneumaticcraft:pressure_chamber/compressed_iron_block'})
-	global.pressureChamber(event, [{"item": "pneumaticcraft:compressed_iron_block","count": 1}], [{"tag": "forge:storage_blocks/steel"}], 2.0, 'kubejs:pressure_chamber/compressed_steel_block')
 	event.remove({id: 'pneumaticcraft:explosion_crafting/compressed_iron_block'})
-	global.explosionCrafting(event, 'pneumaticcraft:compressed_iron_block', '#forge:storage_blocks/steel', 20, 'kubejs:explosion_crafting/compressed_steel_block')
-	
+	//global.pressureChamber(event, [{"item": "pneumaticcraft:compressed_iron_block","count": 1}], [{"tag": "forge:storage_blocks/steel"}], 2.0, 'mbm2:pressure_chamber/compressed_steel_block')
+	//global.explosionCrafting(event, 'pneumaticcraft:compressed_iron_block', '#forge:storage_blocks/steel', 20, 'mbm2:explosion_crafting/compressed_steel_block')
+
+	//Compressed Aluminum
+	global.pressureChamber(event, [Item.of('#forge:ingots/compressed_aluminum')], [{"type": "pneumaticcraft:stacked_item","tag": "forge:ingots/aluminum", "count": 2}], 2.0, 'mbm2:pressure_chamber/compressed_aluminium_ingot')
+
 	//Gear Recipe is wrong
 	event.remove({id: 'pneumaticcraft:compressed_iron_gear'})
 	
 	//Lightbock needs rose quartz
     event.replaceInput({id: 'pneumaticcraft:uv_light_box'}, 'minecraft:redstone_lamp', 'create:rose_quartz_lamp')
 	
-
-/*
-  	event.shaped('tconstruct:smeltery_controller', [
-		'AAA',
-		'ABA',
-		'AAA'
+//PCB Blueprint
+  	event.shaped('pneumaticcraft:pcb_blueprint', [
+		'UEU',
+		'WPW',
+		'UCU'
   	], {
-		A: 'tconstruct:seared_brick',
-		B: '#forge:gears/steel'
-  	})
-  	event.shapeless(`kubejs:carbon_covered_iron`, [`#forge:ingots/iron`, '#forge:dusts/coal_coke']).id(`kubejs:carbon_covered_iron`)
-*/
+		P: 'pneumaticcraft:empty_pcb',
+		E: 'immersiveengineering:component_electronic_adv',
+		W: '#forge:wires/gold',
+		C: 'createaddition:copper_spool',
+		U: '#compressedcreativity:upgrade_components',
+  	}).id('mbm2:pcb_blueprint')
+
+//Reinforced Stone
+	event.remove({id: 'pneumaticcraft:reinforced_stone'})
+	event.shaped('4x pneumaticcraft:reinforced_stone', [
+		'SRS',
+		'R R',
+		'SRS'
+	  ], {
+		S: '#forge:stone',
+		R: '#forge:rods/compressed_steel',
+	  }).id('mbm2:reinforced_stone')
 });

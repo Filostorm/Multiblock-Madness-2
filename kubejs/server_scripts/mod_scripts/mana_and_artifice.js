@@ -57,7 +57,7 @@ C: '#forge:rods/wooden'
 	event.remove({id: 'mna:vinteum_coated_iron'})
 	event.remove({id: 'mna:vinteum_bar_blast_furnace'})
 	event.remove({id: 'mna:vinteum_bar'})
-	event.recipes.createMixing('mna:vinteum_coated_iron', [`#forge:ingots/silver`, 'mna:vinteum_dust']).heated().id(`kubejs:vinteum_coated_silver`)
-  	global.tinkersMelting(event, 'kubejs:molten_slag', 50, 'kubejs:molten_vinteum', 90, 'mna:vinteum_coated_iron', 1200, 142, `kubejs:smeltery/melting/metal/vinteum_coated_silver`)
+	event.recipes.createMixing('mna:vinteum_coated_iron', [`#forge:ingots/mithril`, 'mna:vinteum_dust']).heated().id(`kubejs:vinteum_coated_mithril`)
+  	global.tinkersMelting(event, 'kubejs:molten_slag', 50, 'kubejs:molten_vinteum', 90, 'mna:vinteum_coated_iron', 1200, 142, `kubejs:smeltery/melting/metal/vinteum_coated_mithril`)
 });
 

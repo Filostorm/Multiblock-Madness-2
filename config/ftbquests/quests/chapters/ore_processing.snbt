@@ -6,6 +6,493 @@
 	title: "Ore Processing"
 	default_quest_shape: ""
 	default_hide_dependency_lines: false
-	quests: [ ]
+	quests: [
+		{
+			x: -4.0d
+			y: -1.5d
+			description: ["Found in high quantities in most dimensions, this versitile metal commonly spawns with small amounts of Gold, Nickel, or Earth."]
+			id: "10E206C080D0B7A9"
+			tasks: [{
+				id: "6F4F7F75601CCA89"
+				type: "item"
+				item: "minecraft:raw_iron"
+			}]
+		}
+		{
+			x: 1.0d
+			y: 1.5d
+			description: ["Gold is most commonly found in the Nether in large Veins and can contain Luminite and Air, or in smaller amounts as part of Iron and Copper veins in the overworld."]
+			id: "0576B9C102FC7DF9"
+			tasks: [{
+				id: "27496E10BF7FF3B0"
+				type: "item"
+				item: "minecraft:raw_gold"
+			}]
+		}
+		{
+			x: -4.0d
+			y: 0.5d
+			description: ["Tin is common in the Overworld, and spawns with small amounts of Fluorite, Apatite, and Air."]
+			id: "01548EC2530ED3EB"
+			tasks: [{
+				id: "12F74C078949B15D"
+				type: "item"
+				item: "thermal:raw_tin"
+			}]
+		}
+		{
+			x: -4.0d
+			y: -0.5d
+			description: ["Copper spawns commonly in the Overworld, and veins can contain Gold and Water."]
+			id: "72C587A8EC498BF0"
+			tasks: [{
+				id: "155E3BC3B8ACB3BF"
+				type: "item"
+				item: "minecraft:raw_copper"
+			}]
+		}
+		{
+			x: -4.0d
+			y: 3.5d
+			description: ["Commonly found in the overworld, with diamonds if its deep enough."]
+			id: "6FC338469E52020F"
+			tasks: [{
+				id: "203F688B47EF8269"
+				type: "item"
+				item: "minecraft:coal"
+			}]
+		}
+		{
+			x: -4.0d
+			y: 2.5d
+			description: ["Rare Overworld Vein, found with Vinteum and Sapphire, and can spawn with Niter if below deepslate level."]
+			id: "1F8CDD9ACE48E870"
+			tasks: [{
+				id: "24F6D1B866182C95"
+				type: "item"
+				item: "minecraft:lapis_lazuli"
+			}]
+		}
+		{
+			x: -3.0d
+			y: 3.5d
+			id: "528E2CC9DA56D0A8"
+			tasks: [{
+				id: "464FCD05ABDC3E7C"
+				type: "item"
+				item: "minecraft:diamond"
+			}]
+		}
+		{
+			x: -4.0d
+			y: 4.5d
+			description: ["Uncommonly found in the Overworld or Nether."]
+			id: "092D6A2235FB823E"
+			tasks: [{
+				id: "0ED49090C23E3F36"
+				type: "item"
+				item: "minecraft:redstone"
+			}]
+		}
+		{
+			x: 1.0d
+			y: 4.5d
+			id: "75C07642789ACB12"
+			tasks: [{
+				id: "11C4D997BBF74C30"
+				type: "item"
+				item: "tconstruct:raw_cobalt"
+			}]
+		}
+		{
+			x: 2.0d
+			y: 4.5d
+			id: "496C890684C94C47"
+			tasks: [{
+				id: "7EBA158D8365C316"
+				type: "item"
+				item: "kubejs:raw_mithril"
+			}]
+		}
+		{
+			x: -3.0d
+			y: 1.5d
+			id: "383AED5DC9053909"
+			tasks: [{
+				id: "1F9FCF535984A22B"
+				type: "item"
+				item: "kubejs:raw_arcanite"
+			}]
+		}
+		{
+			x: 1.0d
+			y: 0.5d
+			description: ["Common ore in the Nether, can spawn with Sulfur."]
+			id: "1405FF2C05901533"
+			tasks: [{
+				id: "213C4DF3AA57986E"
+				type: "item"
+				item: "thermal:raw_nickel"
+			}]
+		}
+		{
+			x: 1.0d
+			y: -0.5d
+			description: ["Common ore in the Nether, can spawn with Sulfur and Earth."]
+			id: "055AF757CBBD61CB"
+			tasks: [{
+				id: "047F37742C512155"
+				type: "item"
+				item: "create:raw_zinc"
+			}]
+		}
+		{
+			x: -3.0d
+			y: 4.5d
+			description: ["Spawns as part of Redstone veins."]
+			id: "31E4E00C8803DA63"
+			tasks: [{
+				id: "4587530252854575"
+				type: "item"
+				item: "thermal:ruby"
+			}]
+		}
+		{
+			x: -2.0d
+			y: 4.5d
+			description: ["Spawns as part of Redstone veins."]
+			id: "73B604D13A5FAE52"
+			tasks: [{
+				id: "34C1267F9E84D5C3"
+				type: "item"
+				item: "thermal:cinnabar"
+			}]
+		}
+		{
+			x: -3.0d
+			y: 0.5d
+			description: ["Spawns as part of Overworld Tin veins."]
+			id: "61F516784B649993"
+			tasks: [{
+				id: "1186277C055BDF8A"
+				type: "item"
+				item: "mekanism:fluorite_gem"
+			}]
+		}
+		{
+			x: -2.0d
+			y: 0.5d
+			description: ["Spawns as part of Overworld Tin veins."]
+			id: "077AE9F2753A1217"
+			tasks: [{
+				id: "239ABF4653D3A7DA"
+				type: "item"
+				item: "thermal:apatite"
+			}]
+		}
+		{
+			x: -4.0d
+			y: 1.5d
+			id: "1E84D9A013177358"
+			tasks: [{
+				id: "2A2822BE5AD0A749"
+				type: "item"
+				item: "thermal:raw_lead"
+			}]
+		}
+		{
+			x: -2.0d
+			y: 1.5d
+			id: "3F03F79E1CD352F5"
+			tasks: [{
+				id: "05D40B9270433B82"
+				type: "item"
+				item: "thermal:raw_silver"
+			}]
+		}
+		{
+			title: "Nether Veins"
+			disable_toast: true
+			x: 1.0d
+			y: -2.5d
+			id: "7D8DE6AAFA3EE65C"
+			tasks: [{
+				id: "44F011F7E11573BB"
+				type: "dimension"
+				dimension: "minecraft:the_nether"
+			}]
+		}
+		{
+			title: "Overworld Veins"
+			disable_toast: true
+			x: -4.0d
+			y: -2.5d
+			id: "161CE4353277D490"
+			tasks: [{
+				id: "302E8D0E1D90E550"
+				type: "dimension"
+				dimension: "beyond_earth:moon"
+			}]
+		}
+		{
+			x: -4.0d
+			y: 5.5d
+			description: ["Uncommonly found in the Overworld, along with several other varieties of quartz."]
+			id: "5A79A5ACDB32C01E"
+			tasks: [{
+				id: "44961A5A2A8EA856"
+				type: "item"
+				item: "malum:natural_quartz"
+			}]
+		}
+		{
+			x: -3.0d
+			y: 2.5d
+			id: "4B023EEF48EE4CBD"
+			tasks: [{
+				id: "40388CACF92606FC"
+				type: "item"
+				item: "mna:vinteum_dust"
+			}]
+		}
+		{
+			x: -2.0d
+			y: 5.5d
+			subtitle: "Spawns as part of Overworld Quartz veins."
+			id: "7F721ADE2B2549C2"
+			tasks: [{
+				id: "078F58CE5C9FF00F"
+				type: "item"
+				item: "elementalcraft:inert_crystal"
+			}]
+		}
+		{
+			x: -1.0d
+			y: 5.5d
+			description: ["Spawns as part of Overworld Quartz veins."]
+			id: "570C10EC24040DCB"
+			tasks: [{
+				id: "2472B0C2F5F97EE3"
+				type: "item"
+				item: "forbidden_arcanus:arcane_crystal"
+			}]
+		}
+		{
+			x: -3.0d
+			y: 5.5d
+			description: ["Spawns as part of Quartz veins in the Overworld and Nether."]
+			id: "4595A53F0C326DE7"
+			tasks: [{
+				id: "6A0C0C4C3421F122"
+				type: "item"
+				item: "ae2:certus_quartz_crystal"
+			}]
+		}
+		{
+			x: 1.0d
+			y: -1.5d
+			id: "7265801BB08B2ACF"
+			tasks: [{
+				id: "543E07B62A110654"
+				type: "item"
+				item: "minecraft:quartz"
+			}]
+		}
+		{
+			x: 1.0d
+			y: 2.5d
+			description: ["Common ore in the Nether, can spawn with Luminite."]
+			id: "6816DD41AF8831A9"
+			tasks: [{
+				id: "3E3ACF9D8A059FA5"
+				type: "item"
+				item: "malum:blazing_quartz"
+			}]
+		}
+		{
+			x: 1.0d
+			y: 3.5d
+			description: ["Uncommon ore in the Nether, can spawn with Luminite."]
+			id: "7C740E97145C9174"
+			tasks: [{
+				id: "6F68EB2F9907CF08"
+				type: "item"
+				item: "kubejs:raw_aluminum"
+			}]
+		}
+		{
+			x: 2.0d
+			y: -0.5d
+			id: "12DE1A31A4DB2AD8"
+			tasks: [{
+				id: "49A2BFF67D7AA8DD"
+				type: "item"
+				item: "thermal:sulfur"
+			}]
+		}
+		{
+			x: 2.0d
+			y: 1.5d
+			id: "1BCC347BD5FE95BD"
+			tasks: [{
+				id: "185CB101C73ECCAE"
+				type: "item"
+				item: "kubejs:lumite"
+			}]
+		}
+		{
+			title: "Moon Veins"
+			x: 4.5d
+			y: -2.5d
+			id: "28DF842E25E51E92"
+			tasks: [{
+				id: "2766EF0746ABA7A9"
+				type: "dimension"
+				dimension: "beyond_earth:moon"
+			}]
+		}
+		{
+			x: 4.5d
+			y: -1.5d
+			id: "5A0CAB18859FAEA6"
+			tasks: [{
+				id: "013BA58DF9D161E1"
+				type: "item"
+				item: "beyond_earth:raw_desh"
+			}]
+		}
+		{
+			x: 5.5d
+			y: -1.5d
+			id: "0AC6531AEECA59E5"
+			tasks: [{
+				id: "30089AAEBA5A7B16"
+				type: "item"
+				item: "beyond_earth:cheese"
+			}]
+		}
+		{
+			x: 4.5d
+			y: -0.5d
+			description: ["Common ore on the Moon, can spawn with Aluminum."]
+			id: "6F018B8A17E7CCCA"
+			tasks: [{
+				id: "2F05EA1AA7C2C0DE"
+				type: "item"
+				item: "kubejs:raw_titanium"
+			}]
+		}
+		{
+			x: 4.5d
+			y: 0.5d
+			description: ["common ore on the Moon, can spawn with Runite."]
+			id: "3A97404A93628B41"
+			tasks: [{
+				id: "413C61C0C05B0463"
+				type: "item"
+				item: "mekanism:raw_osmium"
+			}]
+		}
+		{
+			x: -4.0d
+			y: -4.0d
+			id: "0BAC4F3AD0800A45"
+			tasks: [{
+				id: "05C6F2373ED082B7"
+				type: "item"
+				item: "kubejs:raw_potentium"
+			}]
+		}
+		{
+			x: -4.0d
+			y: -5.0d
+			id: "7FA29068486FCB01"
+			tasks: [{
+				id: "05C908B726A9468E"
+				type: "item"
+				item: "kubejs:raw_imortite"
+			}]
+		}
+		{
+			x: -4.0d
+			y: -6.0d
+			id: "59663F168755F312"
+			tasks: [{
+				id: "17D6A9009EC729A0"
+				type: "item"
+				item: "kubejs:raw_kharaxium"
+			}]
+		}
+		{
+			x: -4.0d
+			y: -7.0d
+			id: "4E78300F04776252"
+			tasks: [{
+				id: "5C68FDA94B105BBC"
+				type: "item"
+				item: "kubejs:raw_jimmium"
+			}]
+		}
+		{
+			x: -4.0d
+			y: -8.5d
+			id: "07A0649720C8F7B5"
+			tasks: [{
+				id: "4EBFEC1BC69BB122"
+				type: "item"
+				item: "kubejs:raw_densite"
+			}]
+		}
+		{
+			x: -4.0d
+			y: -9.5d
+			id: "54E7157340600EB6"
+			tasks: [{
+				id: "7E183FF810B98BF3"
+				type: "item"
+				item: "kubejs:raw_vincyte"
+			}]
+		}
+		{
+			x: 5.5d
+			y: 0.5d
+			id: "48996316A1E382C2"
+			tasks: [{
+				id: "39E3A8FB54DD3B94"
+				type: "item"
+				item: "kubejs:raw_rune"
+			}]
+		}
+		{
+			x: 4.5d
+			y: 1.5d
+			id: "76D898F09751FA1B"
+			tasks: [{
+				id: "304FEE4A3AFADBB2"
+				type: "item"
+				item: "mekanism:raw_uranium"
+			}]
+		}
+		{
+			x: -2.0d
+			y: 2.5d
+			id: "29FF83E81F4EF64C"
+			tasks: [{
+				id: "209079F60B320D16"
+				type: "item"
+				item: "thermal:sapphire"
+			}]
+		}
+		{
+			x: -1.0d
+			y: 2.5d
+			id: "61CE7BEBA6005FD2"
+			tasks: [{
+				id: "1E25C194ACC53A73"
+				type: "item"
+				item: "thermal:niter"
+			}]
+		}
+	]
 	quest_links: [ ]
 }

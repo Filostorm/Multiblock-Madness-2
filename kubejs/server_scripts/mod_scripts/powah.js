@@ -15,10 +15,68 @@ onEvent('tags.items', event => {
 	event.add(`forge:ingots/energized_steel`, `powah:steel_energized`)
 	event.add(`forge:storage_blocks`, 'powah:energized_steel_block')
 	event.add(`forge:storage_blocks/energized_steel`, 'powah:energized_steel_block')
+
+	event.add(`forge:rods`, 'powah:dielectric_rod')
+	event.add(`forge:rods`, 'powah:dielectric_rod_horizontal')
+	event.add(`forge:rods/dielectric_alloy`, 'powah:dielectric_rod')
+	event.add(`forge:rods/dielectric_alloy`, 'powah:dielectric_rod_horizontal')
+  
+
 })
 
 onEvent('recipes', event => {
 	
+  //Rods are Rods now
+  event.remove({id: 'powah:crafting/dielectric_rod'})
+  event.remove({id: 'powah:crafting/dielectric_rod_h'})
+  event.remove({id: 'powah:crafting/dielectric_casing'})
+  
+  
+  
+
+	//Bronze Frame
+	global.compactCrafting(event, 'powah:dielectric_casing', 1, 'createaddition:gold_spool',
+	3, [
+	  {
+		  type: 'compactcrafting:mixed',
+		  pattern: [
+			  ['S', 'D','S'],
+			  ['D', '-','D'],
+			  ['S', 'D','S']
+		  ]
+	  },
+	  {
+		  type: 'compactcrafting:mixed',
+		  pattern: [
+			  ['D', '-','D'],
+			  ['-', '-','-'],
+			  ['D', '-','D']
+		  ]
+	  },
+	  {
+		  type: 'compactcrafting:mixed',
+		  pattern: [
+			  ['S', 'D','S'],
+			  ['D', '-','D'],
+			  ['S', 'D','S']
+		  ]
+	  },
+	  ], {
+	  'S': {
+		type: 'compactcrafting:block',
+		block: 'kubejs:pewter_sheetmetal'
+	  },
+	  'D': {
+		type: 'compactcrafting:block',
+		block: 'kubejs:dielectric_alloy_scaffolding'
+	  }
+	},  'mbm2:dielectric_casing')
+	
+
+
+
+
+
   event.remove({id: 'powah:crafting/capacitor_basic_tiny'})
   event.shaped('2x powah:capacitor_basic_tiny', [
 	'  C',

@@ -1,0 +1,193 @@
+{
+  "version": 3,
+  "location": "mbm2:mixer_mk1",
+  "traits": {},
+  "properties": {
+    "rotationState": "ALL",
+    "showInJei": true,
+    "isOpaque": true,
+    "hasDynamicShape": false,
+    "hasCollision": true,
+    "destroyTime": 1.5,
+    "explosionResistance": 6.0,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "friction": 0.6,
+    "harvestLevel": 1,
+    "stackSize": 64,
+    "tabGroup": "multiblocked.all"
+  },
+  "status": {
+    "unformed": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier1_casing",
+        "frontTexture": "multiblocked:overlay/mixer",
+        "type": "gregtech",
+        "postRenderer": false
+      }
+    },
+    "idle": {
+      "parent": "unformed"
+    },
+    "working": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier1_casing",
+        "frontTexture": "multiblocked:overlay/mixer_active",
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "parent": "idle"
+    },
+    "suspend": {
+      "parent": "working"
+    }
+  },
+  "recipeMap": "mixer",
+  "basePattern": {
+    "structureDir": [
+      "BACK",
+      "UP",
+      "RIGHT"
+    ],
+    "pattern": [
+      [
+        "AAA",
+        "BBB",
+        "AAA"
+      ],
+      [
+        "@CA",
+        "B B",
+        "ACA"
+      ],
+      [
+        "AAA",
+        "BBB",
+        "AAA"
+      ]
+    ],
+    "aisleRepetitions": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "predicates": {
+      "A": {
+        "blocks": [
+          {
+            "id": "kubejs:tier1_casing"
+          }
+        ],
+        "type": "blocks"
+      },
+      "controller": {
+        "location": "mbm2:mixer_mk1",
+        "type": "component"
+      },
+      "B": {
+        "blocks": [
+          {
+            "id": "create:brass_casing"
+          }
+        ],
+        "type": "blocks"
+      },
+      "C": {
+        "blocks": [
+          {
+            "id": "kubejs:cobalt_coil"
+          }
+        ],
+        "type": "blocks"
+      },
+      "E": {
+        "location": "multiblocked:energy_input",
+        "type": "component",
+        "minCount": 1,
+        "maxCount": 2,
+        "previewCount": 1,
+        "io": "IN"
+      },
+      "U": {
+        "location": "multiblocked:fluid_output",
+        "type": "component",
+        "minCount": 0,
+        "maxCount": 1,
+        "previewCount": 0,
+        "io": "OUT"
+      },
+      "F": {
+        "location": "multiblocked:fluid_input",
+        "type": "component",
+        "minCount": 0,
+        "maxCount": 4,
+        "previewCount": 0,
+        "io": "IN"
+      },
+      "G": {
+        "blocks": [
+          {
+            "id": "multiblocked:item_input"
+          },
+          {
+            "id": "multiblocked:big_item_input"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 0,
+        "maxCount": 1,
+        "previewCount": 1,
+        "io": "IN"
+      },
+      "H": {
+        "blocks": [
+          {
+            "id": "multiblocked:item_output"
+          },
+          {
+            "id": "multiblocked:big_item_output"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 1,
+        "previewCount": 1,
+        "io": "OUT"
+      },
+      "any": {
+        "type": "any"
+      }
+    },
+    "symbolMap": {
+      "@": [
+        "controller"
+      ],
+      " ": [
+        "any"
+      ],
+      "A": [
+        "A",
+        "E",
+        "U",
+        "F",
+        "G",
+        "H"
+      ],
+      "B": [
+        "B"
+      ],
+      "C": [
+        "C"
+      ]
+    }
+  }
+}

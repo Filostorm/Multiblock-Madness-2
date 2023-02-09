@@ -13,6 +13,8 @@ var basicMetalBlocks = [
 	'uv_casing',
 	'mm_casing',
 	'protype_casing',
+	'high_pressure_casing',
+	'factory_fan',
 ]
 var basicWoodBlocks = [
 	'charred_planks'

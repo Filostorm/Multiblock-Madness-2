@@ -1,7 +1,4 @@
 {
-    "item.create.andesite_alloy": "Stone Alloy",
-    "create.recipe.rolling": "Rolling Mill",
-    "create.recipe.charginf": "Tesla Coil",
 
     "block.mbm2.sludge_sifter": "Sludge Sifter",
     "multiblocked.recupe_map.sludge_pump": "Sludge Sifting",
@@ -15,16 +12,52 @@
     "multiblocked.recupe_map.fluid_centrifuge_mk1": "Mk1 Fluid Centrifuging",
     "mbm2.fluid_centrifuge_mk1.description": "Splits Fluids into their components. The Create input can also be placed on top",
 
-    "block.mbm2.ebf": "The Electric Blast Furnace",
+    "block.mbm2.ebf": "Electric Blast Furnace",
     "multiblocked.recupe_map.ebf": "Electric Blast Furnace",
     "mbm2.ebf.description": "Uses Power to smelt metals and alloys to advanced for regular smelting",
 
-    "block.mbm2.chemical_reactor": "The Chemical Reactor",
+    "block.mbm2.mixer_mk1": "Mk1 Mixer",
+    "multiblocked.recupe_map.mixer": "Industral Mixing",
+    "mbm2.mixer_mk1.description": "Uses Power to mix alloys",
+
+    "block.mbm2.chemical_reactor": "Chemical Reactor",
     "multiblocked.recupe_map.chemical_reactor": "Chemical Reactor",
     "mbm2.chemical_reactor.description": "Uses Power to combine ingredients",
 
+    "block.mbm2.air_collector_mk1": "Air Collector",
+    "multiblocked.recupe_map.air_collector": "Atmosphere Samples",
+    "mbm2.air_collector_mk1.description": "Collects air from the atmosphere",
+
+    "block.mbm2.cast_press": "Cast Press",
+    "multiblocked.recupe_map.cast_press": "Sand Casting",
+    "mbm2.cast_press.description": "Autocrafting Sand Casts for the Casting Machine",
+
+    "block.mbm2.casting_machine": "Casting Machine",
+    "multiblocked.recupe_map.casting": "Part Casting",
+    "mbm2.casting_machine.description": "Uses Sand Casts to craft several basic parts in bulk",
+    
+    "block.mbm2.heater": "Electric Heater",
+    "multiblocked.recupe_map.heater": "Heating",
+    "mbm2.heater.description": "Uses Power to heat stuff",
+
+    "block.mbm2.sorter_mk2": "Ore Sorting Machine Mk2",
+    "multiblocked.recupe_map.sorter_mk2": "Mk2 Ore Sorting",
+    "mbm2.sorter_mk2.description": "Sorts compound ores at a good rate",
+
+    "block.mbm2.flotation": "Flotation Tank",
+    "multiblocked.recupe_map.flotation": "Ore Flotation",
+    "mbm2.flotation.description": "Removes some impurities from partially processed ore",
+
     "block.multiblocked.create_item_input": "Input Vault Part",
     "block.multiblocked.create_item_output": "Output Vault Part",
+
+    "block.multiblocked.big_item_input": "Big Item Input Bus",
+    "block.multiblocked.big_item_output": "Big Item Output Bus",
+
+    "item.create.andesite_alloy": "Stone Alloy",
+    "create.recipe.rolling": "Rolling Mill",
+    "create.recipe.charginf": "Tesla Coil",
+
 
     "item.mna.vinteum_coated_iron": "Vinteum Coated Mithril",
     "block.pneumaticcraft.compressed_iron_block" : "Block of Compressed Steel",

@@ -386,4 +386,5 @@ global.removeAndHide = [
 	'potionsmaster:calcinatedvibranium_powder', 
 	'potionsmaster:calcinatedunobtainium_powder',
 	'chemlib:sulfur_dust',
+	'mekanism:dust_quartz',
 	]

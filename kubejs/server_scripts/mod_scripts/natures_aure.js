@@ -1,6 +1,7 @@
 onEvent('tags.blocks', event => {
 	event.add(`minecraft:mineable/pickaxe`, `naturesaura:gold_brick`)
 	event.add(`minecraft:mineable/pickaxe`, 'naturesaura:nature_altar')
+	event.add(`minecraft:mineable/pickaxe`, 'naturesaura:gold_nether_brick')
 });
 onEvent('tags.items', event => {
 	event.add(`forge:ingots`, `naturesaura:tainted_gold`)
@@ -14,6 +15,11 @@ onEvent('tags.items', event => {
 	event.add(`forge:storage_blocks`, 'naturesaura:infused_iron_block')
 	event.add(`forge:storage_blocks/infused_iron`, 'naturesaura:infused_iron_block')
 	event.remove(`forge:rods/wooden`, 'naturesaura:ancient_stick')
+
+	
+	event.add(`mbm2:naturesaura/crimson_altar`, 'minecraft:warped_planks')
+	event.add(`mbm2:naturesaura/crimson_altar`, 'minecraft:crimson_planks')
+	
 	
  });
 onEvent('recipes', event => {

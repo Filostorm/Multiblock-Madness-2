@@ -131,22 +131,34 @@
         "type": "blocks"
       },
       "E": {
-        "location": "multiblocked:item_input",
-        "type": "component",
-        "minCount": 1,
-        "maxCount": 2,
-        "previewCount": 1,
-        "io": "IN",
-        "slotName": "input"
-      },
-      "F": {
-        "location": "multiblocked:item_output",
-        "type": "component",
+        "blocks": [
+          {
+            "id": "multiblocked:item_input"
+          },
+          {
+            "id": "multiblocked:big_item_input"
+          }
+        ],
+        "type": "blocks",
         "minCount": 1,
         "maxCount": 1,
         "previewCount": 1,
-        "io": "OUT",
-        "slotName": "output"
+        "io": "IN"
+      },
+      "F": {
+        "blocks": [
+          {
+            "id": "multiblocked:item_output"
+          },
+          {
+            "id": "multiblocked:big_item_output"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 1,
+        "previewCount": 1,
+        "io": "OUT"
       },
       "G": {
         "location": "multiblocked:energy_input",

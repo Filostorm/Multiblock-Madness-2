@@ -1,7 +1,8 @@
 	var basicCompressor = [
 		'pneumaticcraft:air_compressor', 
 		'pneumaticcraft:thermal_compressor', 
-		'pneumaticcraft:liquid_compressor'
+		'pneumaticcraft:liquid_compressor',
+		'compressedcreativity:rotational_compressor'
 	  ]
 
 onEvent('tags.items', event => {

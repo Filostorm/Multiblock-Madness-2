@@ -6,6 +6,30 @@ var fluidCentrifugeRecipes = [
 	  output3: Fluid.of('tconstruct:scorched_stone', 50),
 	  output4: Fluid.of('kubejs:molten_rich_slag', 50),
 	  duration: 400
+	},
+	{
+	  input: Fluid.of('kubejs:liquid_air', 200),
+	  output2: Fluid.of('chemlib:nitrogen_fluid', 120),
+	  output1: Fluid.of('mekanism:oxygen', 50),
+	  output3: Fluid.of('chemlib:carbon_dioxide_fluid', 20),
+	  output4: Fluid.of('kubejs:noble_gasses', 10),
+	  duration: 400
+	},
+	{
+	  input: Fluid.of('kubejs:liquid_nether_air', 200),
+	  output1: Fluid.of('mekanism:sulfur_trioxide', 100),
+	  output2: Fluid.of('tconstruct:blazing_blood', 60),
+	  output3: Fluid.of('chemlib:neon_fluid', 20),
+	  output4: Fluid.of('chemlib:helium_fluid', 20),
+	  duration: 400
+	},
+	{
+	  input: Fluid.of('kubejs:liquid_ender_air', 200),
+	  output4: Fluid.of('kubejs:liquid_shadows', 120),
+	  output1: Fluid.of('chemlib:argon_fluid', 20),
+	  output2: Fluid.of('chemlib:xenon_fluid', 20),
+	  output3: Fluid.of('chemlib:krypton_fluid', 20),
+	  duration: 400
 	}
   ]
   

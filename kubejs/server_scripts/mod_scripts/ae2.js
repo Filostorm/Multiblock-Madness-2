@@ -1,10 +1,7 @@
-/*
-
 onEvent('tags.items', event => {
-	event.add(`forge:ingots`, `naturesaura:tainted_gold`)
-	 event.remove(`create:crushed_ores/${item}`, `kubejs:crushed_${item}`)
+	event.add('#forge:seeds/certus_quartz', 'ae2:certus_crystal_seed')
  });
- */
+ 
 onEvent('recipes', event => {
 
 	
@@ -39,7 +36,7 @@ onEvent('recipes', event => {
   	}).id('mbm2:hardened_tank')
 
 	//Charging Quartz wioth Powah
-	global.powahEnergizing(event, [Item.of('ae2:certus_quartz_crystal').toJson()], Item.of('ae2:charged_certus_quartz_crystal'), 15000, 'mbm2:powah/charged_quartz')
+	global.powahEnergizing(event, [Item.of('ae2:certus_quartz_crystal').toJson()], Item.of('ae2:charged_certus_quartz_crystal'), 25000, 'mbm2:powah/charged_quartz')
 
 
   // Printed Silicon
@@ -112,6 +109,14 @@ onEvent('recipes', event => {
   event.remove({output: 'ae2:annihilation_core'})
   global.ieBlueprint(event, 'components', Item.of(`ae2:annihilation_core`), [{item: `ae2:logic_processor`}, {item: 'ae2:fluix_crystal'}, {count:2, base_ingredient:  {tag: 'forge:wires/electrum'}}], `mbm2:immersive/annihilation_core`)
 
+
+//Thermal Quartz
+  global.thermalCrystallizer(event, 'water', 2000, Item.of('ae2:certus_quartz_crystal').toResultJson(), 'forge:dusts/certus_quartz', `mbm2:crystallizer/certus_quartz_from_dust`)
+  global.thermalCrystallizer(event, 'water', 2000, Item.of('ae2:fluix_crystal').toResultJson(), 'forge:dusts/fluix', `mbm2:crystallizer/fluix_from_dust`)
+  //global.thermalCrystallizer(event, 'water', 2000, Item.of('ae2:certus_quartz_crystal').toResultJson(), 'forge:seeds/certus_quartz', `mbm2:crystallizer/certus_quartz_from_seed`)
+
+  //Silicon
+  event.smelting('ae2:silicon', `#forge:dusts/quartz`).id(`mbm2:silicon_from_quartz`)
   
 	//energy_acceptor
 	event.remove({id: 'ae2:network/blocks/energy_energy_acceptor'})
@@ -141,18 +146,33 @@ onEvent('recipes', event => {
 	  	P: '#forge:plates/energetic_alloy',
 	}).id('mbm2:semi_dark_monitor')
   
+	//terminal
+	event.remove({id: 'ae2:network/parts/terminals'})
+	event.shaped('ae2:terminal', [
+	  'PTP',
+	  'ASA',
+	  'PCP'
+	], {
+		A: 'create:display_board',
+	  	S: 'ae2:semi_dark_monitor',
+		C: 'ae2:logic_processor',
+		P: '#forge:plates/energetic_alloy',
+		T: 'kubejs:source_tube'
+	}).id('mbm2:terminal')
+
 	//crafting_terminal
 	event.remove({id: 'ae2:network/parts/terminals_crafting'})
 	event.shaped('ae2:crafting_terminal', [
-	  'PPP',
+	  'PTP',
 	  'ASF',
 	  'PCP'
 	], {
 		A: 'ae2:annihilation_core',
 		F: 'ae2:formation_core',
-	  	S: 'ae2:semi_dark_monitor',
+	  	S: 'ae2:terminal',
 		C: 'ae2:calculation_processor',
-		P: '#forge:plates/energetic_alloy',
+		P: '#forge:plates/rose_gold', //hepatizon, fluix_steel
+		T: 'kubejs:source_tube'
 	}).id('mbm2:crafting_terminal')
   
 	//storage_bus

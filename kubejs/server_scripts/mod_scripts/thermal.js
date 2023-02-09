@@ -42,6 +42,12 @@ onEvent('recipes', event => {
 	event.remove({id: name})
 	})
 
+
+	//Kiln Rubber
+	event.recipes.immersiveengineeringAlloy('3x thermal:cured_rubber', '2x thermal:rubber', ['#forge:dusts/sulfur','#forge:gems/sulfur']).id(`mbm2:kiln/curing_rubber`)	
+
+
+
 	//Machine Frame
 	event.remove({output: 'thermal:machine_frame'})
 	global.compactCrafting(event, 'thermal:machine_frame', 1, 'immersiveengineering:component_electronic_adv',

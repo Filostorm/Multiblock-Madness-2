@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 3,
   "location": "mbm2:sorter_mk1",
   "traits": {},
   "properties": {
@@ -117,8 +117,9 @@
         "location": "multiblocked:create_input",
         "type": "component",
         "minCount": 1,
-        "maxCount": 2,
-        "previewCount": 1
+        "maxCount": 1,
+        "previewCount": 1,
+        "io": "IN"
       },
       "D": {
         "blocks": [

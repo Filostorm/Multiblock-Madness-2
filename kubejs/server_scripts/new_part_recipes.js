@@ -16,11 +16,13 @@ onEvent('tags.items', event => {
   });
 */
 
+
 onEvent('recipes', event => {
 
 	global.newMaterialParts.forEach((item) => {
 		
 		console.log(Item.of(`#forge:ingots/${item.material}`) + `: tier ${item.tier} ${item.type}`);
+		
 
 	////////////////HAMMER///////////////
     if (Item.of(`#forge:hammers/${item.material}`) != null) {
@@ -48,10 +50,22 @@ onEvent('recipes', event => {
 		H: Ingredient.of('#forge:hammers'),
 	  }).damageIngredient(Ingredient.of('#forge:hammers')).id(`immersiveengineering:crafting/plate_${item.material}_hammering`)
 
+
+
 	  if (item.fluid_id != null) {
-	//Plate Casing
-  	global.casingTable(event, 'tconstruct:casts/multi_use/plate', false, `#forge:plates/${item.material}`, `forge:molten_${item.material}`, 90, 60, `tconstruct:smeltery/casting/metal/${item.material}/plate_gold_cast`)
-  	global.casingTable(event, 'tconstruct:casts/single_use/plate', true, `#forge:plates/${item.material}`, `forge:molten_${item.material}`, 90, 60, `tconstruct:smeltery/casting/metal/${item.material}/plate_sand_cast`)
+		//Plate Casing
+		  global.casingTable(event, 'tconstruct:casts/multi_use/plate', false, `#forge:plates/${item.material}`, `forge:molten_${item.material}`, 90, 60, `tconstruct:smeltery/casting/metal/${item.material}/plate_gold_cast`)
+		  global.casingTable(event, 'tconstruct:casts/single_use/plate', true, `#forge:plates/${item.material}`, `forge:molten_${item.material}`, 90, 60, `tconstruct:smeltery/casting/metal/${item.material}/plate_sand_cast`)
+
+		//Mega Plate Casing
+		let plateCasting = 8
+	  event.recipes.multiblocked.multiblock("casting")
+	  	.inputFluid(Fluid.of(`${item.fluid_id}`, plateCasting*90))
+	  	.inputItem(`${plateCasting}x #tconstruct:casts/single_use/plate`)
+	  	.outputItem(`${plateCasting}x #forge:plates/${item.material}`)
+	  	.setPerTick(true)
+	  	.inputFE(1024)
+	  	.duration(100)
 	  }
 	//Create Plates
   	event.recipes.createPressing(`#forge:plates/${item.material}`, `#forge:ingots/${item.material}`).id(`create:pressing/${item.material}_ingot`)
@@ -79,6 +93,34 @@ onEvent('recipes', event => {
 
 	//Immersive Plating
  	event.recipes.immersiveengineeringMetalPress(`#forge:platings/${item.material}`, `4x #forge:plates/${item.material}`, 'immersiveengineering:mold_plate').id(`mbm2:metalpress/plating_${item.material}`)
+
+	
+	////////////////ROCKET FINS///////////////
+	 if (Item.of(`#forge:rocket_fins/${item.material}`) != null) {
+		//Hand Crafted Rocket Fins
+		event.shaped(`#forge:rocket_fins/${item.material}`, [
+			' I ',
+			'PIP',
+			'GIG'
+		  ], {
+			G: `#forge:platings/${item.material}`,
+			I: `#forge:ingots/${item.material}`,
+			P: `#forge:plates/${item.material}`,
+		  }).id(`kubejs:crafting/${item.material}_rocket_fins`)
+		}
+	////////////////NOSE CONES///////////////
+	if (Item.of(`#forge:rocket_nose_cones/${item.material}`) != null) {
+	   //Hand Crafted Rocket Nose Cones
+	   event.shaped(`#forge:rocket_nose_cones/${item.material}`, [
+		   ' T ',
+		   ' I ',
+		   'IGI'
+		 ], {
+		   G: `#forge:platings/${item.material}`,
+		   I: `#forge:ingots/${item.material}`,
+		   T: 'minecraft:redstone_torch',
+		 }).id(`kubejs:crafting/${item.material}_rocket_nose_cones`)
+	   }
 	}
 
 	////////////////COMPONENTS///////////////
@@ -139,10 +181,22 @@ onEvent('recipes', event => {
 				  }).id(`mbm2:parts/${item.material}_cog_block`)
 			}
 		}
+
 	  if (item.fluid_id != null) {
+		
 		//Gear Casing
-  		global.casingTable(event, 'tconstruct:casts/multi_use/gear', false, `#forge:gears/${item.material}`, `forge:molten_${item.material}`, 360, 120, `tconstruct:smeltery/casting/metal/${item.material}/gear_gold_cast`)
-  		global.casingTable(event, 'tconstruct:casts/single_use/gear', true, `#forge:gears/${item.material}`, `forge:molten_${item.material}`, 360, 120, `tconstruct:smeltery/casting/metal/${item.material}/gear_sand_cast`)
+		global.casingTable(event, 'tconstruct:casts/multi_use/gear', false, `#forge:gears/${item.material}`, `forge:molten_${item.material}`, 360, 120, `tconstruct:smeltery/casting/metal/${item.material}/gear_gold_cast`)
+		global.casingTable(event, 'tconstruct:casts/single_use/gear', true, `#forge:gears/${item.material}`, `forge:molten_${item.material}`, 360, 120, `tconstruct:smeltery/casting/metal/${item.material}/gear_sand_cast`)
+
+	//Mega Gear Casing
+		let gearCasting = 4
+	  event.recipes.multiblocked.multiblock("casting")
+	  	.inputFluid(Fluid.of(`${item.fluid_id}`, gearCasting*360))
+	  	.inputItem(`${gearCasting}x #tconstruct:casts/single_use/gear`)
+	  	.outputItem(`${gearCasting}x #forge:gears/${item.material}`)
+	  	.setPerTick(true)
+	  	.inputFE(1024)
+	  	.duration(400)
 	  }
 	//Immersive Gears
 	event.recipes.immersiveengineeringMetalPress(`#forge:gears/${item.material}`, `4x #forge:ingots/${item.material}`, 'immersiveengineering:mold_gear').id(`immersiveengineering:metalpress/gear_${item.material}`)
@@ -167,6 +221,7 @@ onEvent('recipes', event => {
 			} else { console.log(`${item.material}` + "needs wires and gears enabled to make a mechanical component recipe");}
 		}
 	}
+	////////////////END OF GEARS///////////////
 	
 	////////////////RODS///////////////
     if (Item.of(`#forge:rods/${item.material}`) != null) {
@@ -185,14 +240,25 @@ onEvent('recipes', event => {
 	//Immersive Rods
 	event.recipes.immersiveengineeringMetalPress(`2x #forge:rods/${item.material}`, `#forge:ingots/${item.material}`, 'immersiveengineering:mold_rod').id(`immersiveengineering:metalpress/rod_${item.material}`)
 	
-    if (item.fluid_id != null) {
-	//Rod Casing
-  	global.casingTable(event, 'tconstruct:casts/multi_use/rod', false, `#forge:rods/${item.material}`, `forge:molten_${item.material}`, 45, 20, `tconstruct:smeltery/casting/metal/${item.material}/rod_gold_cast`)
-  	global.casingTable(event, 'tconstruct:casts/single_use/rod', true, `#forge:rods/${item.material}`, `forge:molten_${item.material}`, 45, 20, `tconstruct:smeltery/casting/metal/${item.material}/rod_sand_cast`)
 
-	//Thermal Rods
-	global.thermalChilling(event, `${item.fluid_id}`, 60, `#forge:rods/${item.material}`, 1, 'thermal:chiller_rod_cast', 5000, `thermal:machines/chiller/chiller_${item.material}_rod`)
-	}
+    if (item.fluid_id != null) {
+		//Rod Casing
+		global.casingTable(event, 'tconstruct:casts/multi_use/rod', false, `#forge:rods/${item.material}`, `forge:molten_${item.material}`, 45, 20, `tconstruct:smeltery/casting/metal/${item.material}/rod_gold_cast`)
+		global.casingTable(event, 'tconstruct:casts/single_use/rod', true, `#forge:rods/${item.material}`, `forge:molten_${item.material}`, 45, 20, `tconstruct:smeltery/casting/metal/${item.material}/rod_sand_cast`)
+
+		//Thermal Rods
+		global.thermalChilling(event, `${item.fluid_id}`, 60, `#forge:rods/${item.material}`, 1, 'thermal:chiller_rod_cast', 5000, `thermal:machines/chiller/chiller_${item.material}_rod`)
+	
+		//Mega Rod Casing
+		let rodCasting = 16
+		  event.recipes.multiblocked.multiblock("casting")
+			  .inputFluid(Fluid.of(`${item.fluid_id}`, rodCasting*45))
+			  .inputItem(`${rodCasting}x #tconstruct:casts/single_use/rod`)
+			  .outputItem(`${rodCasting}x #forge:rods/${item.material}`)
+			  .setPerTick(true)
+			  .inputFE(1024)
+			  .duration(100)
+		  }
 	
 		////////////////SCAFFOLDING///////////////
 		if (Item.of(`#immersiveengineering:scaffoldings/${item.material}`) != null) {
@@ -219,15 +285,42 @@ onEvent('recipes', event => {
 
 	//Immersive Wire
   	event.recipes.immersiveengineeringMetalPress(`2x #forge:wires/${item.material}`, `#forge:ingots/${item.material}`, 'immersiveengineering:mold_wire').id(`immersiveengineering:metalpress/wire_${item.material}`)
+	
+
+	  if (item.fluid_id != null) {
+		//Mega Wire Casing
+		let wireCasting = 16
+		  event.recipes.multiblocked.multiblock("casting")
+			  .inputFluid(Fluid.of(`${item.fluid_id}`, wireCasting*45))
+			  .inputItem(`${wireCasting}x #tconstruct:casts/single_use/wire`)
+			  .outputItem(`${wireCasting}x #forge:wires/${item.material}`)
+			  .setPerTick(true)
+			  .inputFE(1024)
+			  .duration(100)
+		  }
+
+		/////////////// Spools //////////////////
+    	if (Item.of(`#forge:spools/${item.material}`) != null) {
+		event.shaped(`#forge:spools/${item.material}`, [
+			' W ',
+			'WSW',
+			' W '
+		  ], {
+			W: `#forge:wires/${item.material}`,
+			S: 'createaddition:spool'
+		  }).id(`mbm2:crafting/${item.material}_spool`)
+		}
 	}
 
 	
     if (Item.of(`#forge:dusts/${item.material}`) != null) {
 		if (item.type == 'gem') {
 			event.recipes.createMilling([`#forge:dusts/${item.material}`], [`#forge:gems/${item.material}`]).id(`mbm2:${item.material}_gem_2_dust`)
+			event.recipes.immersiveengineeringCrusher(`#forge:dusts/${item.material}`, `#forge:gems/${item.material}`).id(`mbm2:immersive/crushing/crushing_${item.material}_gem`)
 		} else {
 			if (Item.of(`#forge:ingots/${item.material}`) != null) {
 			event.recipes.createMilling([`#forge:dusts/${item.material}`], [`#forge:ingots/${item.material}`]).id(`mbm2:${item.material}_ingot_2_dust`)
+			event.recipes.immersiveengineeringCrusher(`#forge:dusts/${item.material}`, `#forge:ingots/${item.material}`).id(`mbm2:immersive/crushing/crushing_${item.material}_ingot`)
 			}
 		}
 	}

@@ -20,7 +20,7 @@
     "clearGridOnClose": false
   },
   "terminals": {
-    "terminalStyle": "tall",
+    "terminalStyle": "small",
     "pinAutoCraftedItems_comment": "Pin items that the player auto-crafts to the top of the terminal",
     "pinAutoCraftedItems": true
   },

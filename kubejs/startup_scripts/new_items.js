@@ -18,10 +18,10 @@ var basicItems = [
 	//'unfired_coke_oven_brick',
 	'coke_oven_brick',
 	'steel_scraps',
-	'aerotheum_dust',
-	'cryotheum_dust',
-	'petrotheum_dust',
-	'pyrotheum_dust',
+	//'aerotheum_dust',
+	//'cryotheum_dust',
+	//'petrotheum_dust',
+	//'pyrotheum_dust',
 	't1_blank_board',
 	't1_circuit_board',
 	't1_circuit',
@@ -35,6 +35,7 @@ var basicItems = [
 	't4_circuit_board',
 	't4_circuit',
 	'energetic_blend',
+	'glass_shard',
 ]
 
 global.transitionalItems = [

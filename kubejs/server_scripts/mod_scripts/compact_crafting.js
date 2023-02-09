@@ -12,8 +12,8 @@ event.shaped('4x compactcrafting:projector_dish', [
   ], {
 	A: '#forge:glass_panes/colorless',
 B: 'solarflux:mirror',
-D: 'ars_nouveau:source_gem'
-  }).id("kubejs:projector_dish")
+D: 'kubejs:source_tube'
+  }).id("mbm2:projector_dish")
 
 // [| compactcrafting:base |] //
 event.remove({id: 'compactcrafting:base'})
@@ -26,7 +26,7 @@ B: 'minecraft:lightning_rod',
 C: 'minecraft:diamond',
 D: 'ars_nouveau:arcane_stone',
 E: 'thermal:invar_plate'
-  }).id("kubejs:base")
+  }).id("mbm2:base")
 
 
 

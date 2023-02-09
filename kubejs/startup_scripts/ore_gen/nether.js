@@ -181,15 +181,40 @@ onEvent('worldgen.add', event => {
 		})
 		    
 
-		ore.count([1, 4])
+		ore.count([3, 8])
 				.squared()
 				.uniformHeight(
-						anchors.aboveBottom(5),
-						anchors.absolute(200)
+						anchors.aboveBottom(30),
+						anchors.absolute(150)
 				)
-		ore.size = 25
+		ore.size = 30
 		ore.noSurface = netherSurfaceChance
 		ore.worldgenLayer = "underground_ores"
+		ore.chance = 0
+		ore.biomes = "^nether"
+	})
+
+	// Inserted Certus Quartz
+	event.addOre((ore) => {
+		ore.id = 'kubejs:nether_certus_quartz'
+
+		ore.addTarget(`minecraft:nether_quartz_ore`, `excavated_variants:netherrack_certus_quartz_ore`)
+		
+			global.stoneTypes.forEach((type) => {
+				if (type.material != 'deepslate' && type.material != 'bedrock' && type.material != 'netherrack') {
+				ore.addTarget(`excavated_variants:${type.material}_quartz_ore`, `excavated_variants:${type.material}_certus_quartz_ore`)
+				
+				}
+			})
+		ore.count(300)
+				.squared()
+				.uniformHeight(
+						anchors.aboveBottom(30),
+						anchors.absolute(150)
+				)
+		ore.size = 10
+		ore.noSurface = 0
+		ore.worldgenLayer = "underground_decoration"
 		ore.chance = 0
 		ore.biomes = "^nether"
 	})
@@ -210,7 +235,7 @@ onEvent('worldgen.add', event => {
 				.squared()
 				.uniformHeight(
 						anchors.aboveBottom(5),
-						anchors.absolute(200)
+						anchors.absolute(75)
 				)
 		ore.size = 25
 		ore.noSurface = netherSurfaceChance
@@ -258,7 +283,7 @@ onEvent('worldgen.add', event => {
 				.squared()
 				.uniformHeight(
 						anchors.aboveBottom(0),
-						anchors.absolute(200)
+						anchors.absolute(100)
 				)
 		ore.size = 20
 		ore.noSurface = 0
@@ -268,30 +293,6 @@ onEvent('worldgen.add', event => {
 	})
 	
 
-	// Inserted Certus Quartz
-	event.addOre((ore) => {
-		ore.id = 'kubejs:nether_certus_quartz'
-
-		ore.addTarget(`minecraft:nether_quartz_ore`, `excavated_variants:netherrack_certus_quartz_ore`)
-		
-			global.stoneTypes.forEach((type) => {
-				if (type.material != 'deepslate' && type.material != 'bedrock' && type.material != 'netherrack') {
-				ore.addTarget(`excavated_variants:${type.material}_quartz_ore`, `excavated_variants:${type.material}_certus_quartz_ore`)
-				
-				}
-			})
-		ore.count(300)
-				.squared()
-				.uniformHeight(
-						anchors.aboveBottom(0),
-						anchors.absolute(200)
-				)
-		ore.size = 10
-		ore.noSurface = 0
-		ore.worldgenLayer = "underground_decoration"
-		ore.chance = 0
-		ore.biomes = "^nether"
-	})
 
 	// Inserted Nether Lumite
 	event.addOre((ore) => {

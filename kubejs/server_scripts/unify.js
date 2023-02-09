@@ -43,6 +43,8 @@ var removeByName = [
 
 onEvent('recipes', event => {
 	event.replaceOutput({}, 'mekanism:dust_sulfur', 'thermal:sulfur_dust')
+	event.replaceOutput({}, 'mekanism:dust_quartz', 'thermal:quartz_dust')
+	
 
 	removeByName.forEach((item) => {
 		event.remove({id: item})

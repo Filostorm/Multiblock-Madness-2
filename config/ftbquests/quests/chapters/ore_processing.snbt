@@ -86,7 +86,8 @@
 		{
 			x: -4.0d
 			y: 4.5d
-			description: ["Uncommonly found in the Overworld or Nether."]
+			subtitle: "Y20 - -64"
+			description: ["Uncommonly found in the Overworld or Nether at Y100 - 0."]
 			id: "092D6A2235FB823E"
 			tasks: [{
 				id: "0ED49090C23E3F36"
@@ -97,6 +98,7 @@
 		{
 			x: 1.0d
 			y: 4.5d
+			subtitle: "Y100 - 5"
 			id: "75C07642789ACB12"
 			tasks: [{
 				id: "11C4D997BBF74C30"
@@ -281,16 +283,26 @@
 			x: -3.0d
 			y: 5.5d
 			description: ["Spawns as part of Quartz veins in the Overworld and Nether."]
+			min_required_tasks: 1
 			id: "4595A53F0C326DE7"
-			tasks: [{
-				id: "6A0C0C4C3421F122"
-				type: "item"
-				item: "ae2:certus_quartz_crystal"
-			}]
+			tasks: [
+				{
+					id: "6A0C0C4C3421F122"
+					type: "item"
+					item: "ae2:certus_quartz_crystal"
+				}
+				{
+					id: "0CFB7B7ABFB94ECD"
+					type: "item"
+					item: "ae2:certus_quartz_dust"
+				}
+			]
 		}
 		{
 			x: 1.0d
 			y: -1.5d
+			subtitle: "Y150 - 30"
+			description: ["Certus Quartz has a chance to spawn in these Quartz Veins."]
 			id: "7265801BB08B2ACF"
 			tasks: [{
 				id: "543E07B62A110654"
@@ -301,7 +313,8 @@
 		{
 			x: 1.0d
 			y: 2.5d
-			description: ["Common ore in the Nether, can spawn with Luminite."]
+			subtitle: "Y75 - 5"
+			description: ["Uncommon ore in the Nether, can spawn with Luminite."]
 			id: "6816DD41AF8831A9"
 			tasks: [{
 				id: "3E3ACF9D8A059FA5"
@@ -312,6 +325,7 @@
 		{
 			x: 1.0d
 			y: 3.5d
+			subtitle: "Y200 - 75"
 			description: ["Uncommon ore in the Nether, can spawn with Luminite."]
 			id: "7C740E97145C9174"
 			tasks: [{
@@ -435,7 +449,7 @@
 		}
 		{
 			x: -4.0d
-			y: -8.5d
+			y: -8.0d
 			id: "07A0649720C8F7B5"
 			tasks: [{
 				id: "4EBFEC1BC69BB122"
@@ -445,7 +459,7 @@
 		}
 		{
 			x: -4.0d
-			y: -9.5d
+			y: -9.0d
 			id: "54E7157340600EB6"
 			tasks: [{
 				id: "7E183FF810B98BF3"

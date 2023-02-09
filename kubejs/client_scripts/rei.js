@@ -34,7 +34,26 @@ onEvent('rei.hide.items', event => {
 	
 	event.hide(Item.of('ae2:facade').ignoreNBT())
 	event.hide(Item.of('ae2:wireless_terminal').ignoreNBT())
-	
+
+	let MBDAny = [
+		'multiblocked:bot_mana.any', 
+		'multiblocked:item.any', 
+		'multiblocked:forge_energy.any', 
+		'multiblocked:item_durability.any', 
+		'multiblocked:mek_heat.any', 
+		'multiblocked:pneumatic_pressure.any', 
+		'multiblocked:entity.any', 
+		'multiblocked:mek_pigment.any', 
+		'multiblocked:fluid.any', 
+		'multiblocked:create_stress.any', 
+		'multiblocked:mek_gas.any', 
+		'multiblocked:mek_slurry.any', 
+		'multiblocked:mek_infuse.any', 
+		'multiblocked:natures_aura.any'
+	]
+	MBDAny.forEach((item) => {
+		event.hide(item)
+	})
 });
 
 onEvent('rei.add.items', event => {
@@ -110,6 +129,7 @@ onEvent("rei.group", (event) => {
 	"sophisticatedstorage:limited_barrel_2", "sophisticatedstorage:limited_iron_barrel_2", "sophisticatedstorage:limited_gold_barrel_2", "sophisticatedstorage:limited_diamond_barrel_2", "sophisticatedstorage:limited_netherite_barrel_2",
 	"sophisticatedstorage:limited_barrel_3", "sophisticatedstorage:limited_iron_barrel_3", "sophisticatedstorage:limited_gold_barrel_3", "sophisticatedstorage:limited_diamond_barrel_3", "sophisticatedstorage:limited_netherite_barrel_3",
 	"sophisticatedstorage:limited_barrel_4", "sophisticatedstorage:limited_iron_barrel_4", "sophisticatedstorage:limited_gold_barrel_4", "sophisticatedstorage:limited_diamond_barrel_4", "sophisticatedstorage:limited_netherite_barrel_4",
+	'industrialforegoing:infinity_nuke', 'industrialforegoing:infinity_launcher', 'industrialforegoing:infinity_backpack', 'industrialforegoing:infinity_drill', 'industrialforegoing:infinity_saw', 'industrialforegoing:infinity_hammer', 'industrialforegoing:infinity_trident',
 	];
 
     useNbt.forEach((id) => {

@@ -3,7 +3,7 @@
   "config": {
     "yMin": -60,
     "yMax": 10,
-    "size": 20,
+    "size": 25,
     "dimensions": {
       "isBlacklist": false,
       "filter": [ "overworld" ]
@@ -12,10 +12,10 @@
     "blocks": {
       "default": [{
         "block": "malum:quartz_ore",
-        "chance": 0.7
+        "chance": 0.6
       },{
         "block": "ae2:quartz_ore",
-        "chance": 0.1
+        "chance": 0.2
       },{
         "block": "elementalcraft:inert_crystal_ore",
         "chance": 0.1
@@ -25,13 +25,13 @@
       }],
       "minecraft:deepslate": [{
         "block": "malum:deepslate_quartz_ore",
-        "chance": 0.5
+        "chance": 0.4
       },{
         "block": "ae2:deepslate_quartz_ore",
-        "chance": 0.1
+        "chance": 0.3
       },{
         "block": "elementalcraft:deepslate_inert_crystal_ore",
-        "chance": 0.2
+        "chance": 0.1
       },{
         "block": "forbidden_arcanus:deepslate_arcane_crystal_ore",
         "chance": 0.2

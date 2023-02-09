@@ -251,6 +251,10 @@ event.shaped('immersiveengineering:workbench', [
     //Fix Component Bleuprint
     event.replaceInput({id: 'immersiveengineering:crafting/blueprint_components'}, '#forge:ingots/aluminum', '#forge:ingots/constantan')
 
+
+
+
+    
     ///////////////// ARC FURNACE TIME ////////////////////////////
     /*
 	global.newMaterialParts.forEach((item) => {

@@ -4,7 +4,7 @@
   "recipes": [
     {
       "uid": "b50e36b4-3815-4ff0-855c-d109d8c0bfba",
-      "duration": 100,
+      "duration": 200,
       "inputs": {
         "fluid": [
           {

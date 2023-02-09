@@ -255,7 +255,6 @@
 		{
 			x: 14.0d
 			y: 0.0d
-			dependencies: ["519132C8DB85E983"]
 			id: "70A8DBCE5978F640"
 			tasks: [{
 				id: "449C6F6128FBF864"
@@ -317,30 +316,6 @@
 					match_nbt: false
 				}
 			]
-		}
-		{
-			x: 11.0d
-			y: 0.0d
-			description: ["Seperate some water into Oxygen and Hydrogen."]
-			dependencies: ["43F8546BD8107D1C"]
-			id: "51FAF657A58A5A7C"
-			tasks: [{
-				id: "4BC31044D992914B"
-				type: "item"
-				item: "mekanism:electrolytic_separator"
-			}]
-		}
-		{
-			x: 12.5d
-			y: 0.0d
-			description: ["You'll need to convert the Oxygen into a liquid to fill the space suit."]
-			dependencies: ["51FAF657A58A5A7C"]
-			id: "519132C8DB85E983"
-			tasks: [{
-				id: "6B2B2DE534421184"
-				type: "item"
-				item: "mekanism:rotary_condensentrator"
-			}]
 		}
 		{
 			x: 17.0d

@@ -70,7 +70,7 @@ global.tinkersOreMelting = (event, outputFluid, amount, byproductFluid, byproduc
 	  
 }).id(ID)}
 
-//////// ORE MELTING /////////
+//////// MELTING w/ byproduct /////////
 global.tinkersMelting = (event, outputFluid, amount, byproductFluid, byproductAmount, inputItem, temperature, time, ID) => {
 	event.custom({
 		type: 'tconstruct:melting',
@@ -89,6 +89,22 @@ global.tinkersMelting = (event, outputFluid, amount, byproductFluid, byproductAm
 			amount: byproductAmount
 		  }
 		]
+
+}).id(ID)}
+
+//////// MELTING /////////
+global.tinkersMeltingPlain = (event, outputFluid, amount, inputItem, temperature, time, ID) => {
+	event.custom({
+		type: 'tconstruct:melting',
+		ingredient: {
+			item: inputItem
+		},
+		result: {
+		  fluid: outputFluid, 
+		  amount: amount //180
+		},
+		temperature: temperature, //700
+		time: time, //142
 
 }).id(ID)}
 //////// ALLOYING /////////

@@ -1,10 +1,12 @@
 onEvent('tags.items', event => {
-    global.newMaterialParts.forEach((item) => {
-      item.itemParts.forEach((part) => {
-      if (part == 'custom_ingot') {
-        event.add(`forge:ingots`, `kubejs:${item.material}_ingot`)
-        event.add(`forge:ingots/${item.material}`, `kubejs:${item.material}_ingot`)
 
+    global.newMaterialParts.forEach((item) => {
+      
+      item.itemParts.forEach((part) => {
+
+      if (part.includes('custom')) { //custom ingot tag needs a texture 
+        event.add(`forge:${part.slice(7)}s`, `kubejs:${item.material}_${part.slice(7)}`)
+        event.add(`forge:${part.slice(7)}s/${item.material}`, `kubejs:${item.material}_${part.slice(7)}`)
       } else if (part == 'gem') {
         event.add(`forge:gems`, `kubejs:${item.material}`)
         event.add(`forge:gems/${item.material}`, `kubejs:${item.material}`)
@@ -59,7 +61,7 @@ onEvent('tags.items', event => {
           event.add(`forge:fine_dusts`, `kubejs:fine_${item.material}_dust`)
           event.add(`forge:fine_dusts/${item.material}`, `kubejs:fine_${item.material}_dust`)
         } 
-        if (item.type != "gem" && item.type != "element") {
+        if (item.type != 'gem' && item.type != 'element') {
           event.add(`forge:poor_ores`, `kubejs:poor_${item.material}_ore`)
           event.add(`forge:poor_ores/${item.material}`, `kubejs:poor_${item.material}_ore`)
 

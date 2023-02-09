@@ -30,14 +30,14 @@ event.shaped('tconstruct:scorched_faucet', [
 
 	//First Steel
 	event.recipes.createMixing(`kubejs:carbon_covered_iron`, [`#forge:ingots/iron`, '#forge:dusts/coal_coke']).heated().id(`mbm2:carbon_covered_iron`)
-  	global.tinkersMelting(event, 'kubejs:molten_slag', 50, 'tconstruct:molten_steel', 90, 'kubejs:carbon_covered_iron', 1200, 142, `mbm2:smeltery/melting/metal/first_steel`)
+  	global.tinkersMelting(event, 'kubejs:molten_slag', 50, 'tconstruct:molten_steel', 90, 'kubejs:carbon_covered_iron', 1200, 100, `mbm2:smeltery/melting/metal/first_steel`)
 
 	//Scorched Brick
 	event.remove({id: 'tconstruct:smeltery/casting/scorched/brick_composite'})
 	event.remove({id: 'tconstruct:smeltery/scorched/nether_grout'})
 	
-	event.recipes.createMixing('4x tconstruct:scorched_brick', [Fluid.of('tconstruct:magma', 250),'2x create:cinder_flour', '2x kubejs:sandy_brick', 'spirit:soul_powder']).superheated().id(`mbm2:mixing/scorched_brick`)
-	event.recipes.createMixing('4x tconstruct:nether_grout', [Fluid.of('tconstruct:magma', 250),'2x create:cinder_flour', '2x kubejs:sandy_brick', 'spirit:soul_powder']).heated().id(`mbm2:mixing/nether_grout`)
+	event.recipes.createMixing('4x tconstruct:scorched_brick', [Fluid.of('tconstruct:magma', 250),'2x create:cinder_flour', '2x kubejs:sturdy_brick', 'spirit:soul_powder']).superheated().id(`mbm2:mixing/scorched_brick`)
+	event.recipes.createMixing('4x tconstruct:nether_grout', [Fluid.of('tconstruct:magma', 250),'2x create:cinder_flour', '2x kubejs:sturdy_brick', 'spirit:soul_powder']).heated().id(`mbm2:mixing/nether_grout`)
 	
 	//Foundry Controller
 	event.remove({id: 'tconstruct:smeltery/casting/scorched/foundry_controller'})
@@ -53,5 +53,7 @@ event.shaped('tconstruct:scorched_faucet', [
 		C: 'powah:capacitor_hardened',
 		F: 'elementalcraft:firecrystal'
 	  })
-	
+	  
+
+
 });

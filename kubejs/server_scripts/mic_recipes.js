@@ -121,6 +121,12 @@ event.shaped('3x kubejs:wood_scaffolding', [
   //Brik
   event.smelting('minecraft:brick', 'kubejs:unfired_clay_brick').id(`kubejs:smelting/brick`)
 
+	//Piston not racist anymore
+	event.replaceInput({id: 'minecraft:piston'}, 'cobblestone', '#forge:cobblestone')
+  
+	//So, you made an extra Metal Mind
+	global.tinkersMeltingPlain(event, 'tconstruct:molten_iron', 720, 'feruchemy:metal_mind', 750, 142, `mbm2:smeltery/melting/metalmind`)
+
 
   // Damascus Steel
   event.recipes.createCutting('kubejs:steel_scraps', ['#forge:ingots/steel']).processingTime(200),

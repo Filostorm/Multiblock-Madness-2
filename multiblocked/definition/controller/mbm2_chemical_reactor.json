@@ -143,19 +143,33 @@
         "io": "IN"
       },
       "G": {
-        "location": "multiblocked:item_input",
-        "type": "component",
+        "blocks": [
+          {
+            "id": "multiblocked:item_input"
+          },
+          {
+            "id": "multiblocked:big_item_input"
+          }
+        ],
+        "type": "blocks",
         "minCount": 0,
-        "maxCount": 2,
-        "previewCount": 1,
+        "maxCount": 1,
+        "previewCount": 0,
         "io": "IN"
       },
       "H": {
-        "location": "multiblocked:item_output",
-        "type": "component",
+        "blocks": [
+          {
+            "id": "multiblocked:item_output"
+          },
+          {
+            "id": "multiblocked:big_item_output"
+          }
+        ],
+        "type": "blocks",
         "minCount": 0,
         "maxCount": 1,
-        "previewCount": 1,
+        "previewCount": 0,
         "io": "OUT"
       },
       "any": {

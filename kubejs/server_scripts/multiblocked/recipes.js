@@ -139,4 +139,17 @@ event.shaped('4x kubejs:tier1_casing', [
 	P: '#forge:plates/cobalt_brass',
   }).id(`mbm2:tier1_casing`)
 
+  
+// factory_fan
+event.shaped('kubejs:factory_fan', [
+	'PSP',
+	'PCF',
+	'PSP'
+  ], {
+	C: '#immersiveengineering:scaffoldings/steel',
+	F: 'create:propeller',
+	S: '#forge:spools/red_alloy',
+	P: '#forge:plates/cast_iron',
+  }).id(`mbm2:factory_fan`)
+
 })

@@ -1,0 +1,349 @@
+{
+  "version": 3,
+  "location": "mbm2:casting_machine",
+  "traits": {},
+  "properties": {
+    "rotationState": "ALL",
+    "showInJei": true,
+    "isOpaque": true,
+    "hasDynamicShape": false,
+    "hasCollision": true,
+    "destroyTime": 1.5,
+    "explosionResistance": 6.0,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "friction": 0.6,
+    "harvestLevel": 0,
+    "stackSize": 64,
+    "tabGroup": "multiblocked.all"
+  },
+  "status": {
+    "unformed": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier2_casing",
+        "frontTexture": "multiblocked:overlay/blast_furnace",
+        "type": "gregtech",
+        "postRenderer": false
+      }
+    },
+    "idle": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier2_casing",
+        "frontTexture": "multiblocked:overlay/bf_paused",
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "parent": "unformed"
+    },
+    "working": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier2_casing",
+        "frontTexture": "multiblocked:overlay/bf_active",
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "parent": "idle"
+    },
+    "suspend": {
+      "parent": "working"
+    }
+  },
+  "recipeMap": "casting",
+  "basePattern": {
+    "structureDir": [
+      "FRONT",
+      "UP",
+      "LEFT"
+    ],
+    "pattern": [
+      [
+        " JJJ ",
+        "  J  ",
+        "  B  ",
+        "  C  ",
+        "  C  ",
+        "     ",
+        "     "
+      ],
+      [
+        " JJJ ",
+        " JDJ ",
+        " B B ",
+        " C C ",
+        " CCC ",
+        "  C  ",
+        "     "
+      ],
+      [
+        " JJJ ",
+        "  J  ",
+        "  B  ",
+        "  C  ",
+        " CCC ",
+        "  C  ",
+        "     "
+      ],
+      [
+        "     ",
+        "     ",
+        "     ",
+        "     ",
+        " CCC ",
+        "  C  ",
+        "     "
+      ],
+      [
+        "AAAAA",
+        "EAAAE",
+        "EFFFE",
+        "ECCCE",
+        " CCC ",
+        " CCC ",
+        "     "
+      ],
+      [
+        "AAAAA",
+        "AGGGA",
+        "HGGGH",
+        "CGGGC",
+        "CCCCC",
+        " CCC ",
+        "  C  "
+      ],
+      [
+        "AAAAA",
+        "HGIGH",
+        "HGIG@",
+        "HGIGH",
+        "CCCCC",
+        " CCC ",
+        "  C  "
+      ],
+      [
+        "AAAAA",
+        "AGGGA",
+        "HGGGH",
+        "CGGGC",
+        "CCCCC",
+        " CCC ",
+        "  C  "
+      ],
+      [
+        "AAAAA",
+        "EBBBE",
+        "EFFFE",
+        "EBBBE",
+        " CCC ",
+        "  C  ",
+        "     "
+      ]
+    ],
+    "aisleRepetitions": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "predicates": {
+      "A": {
+        "blocks": [
+          {
+            "id": "kubejs:tier2_casing"
+          }
+        ],
+        "type": "blocks"
+      },
+      "controller": {
+        "location": "mbm2:casting_machine",
+        "type": "component"
+      },
+      "B": {
+        "blocks": [
+          {
+            "id": "thermal:obsidian_glass"
+          }
+        ],
+        "type": "blocks"
+      },
+      "C": {
+        "blocks": [
+          {
+            "id": "tconstruct:seared_bricks"
+          }
+        ],
+        "type": "blocks"
+      },
+      "D": {
+        "blocks": [
+          {
+            "id": "minecraft:cauldron"
+          }
+        ],
+        "type": "blocks"
+      },
+      "E": {
+        "blocks": [
+          {
+            "id": "immersiveengineering:radiator"
+          }
+        ],
+        "type": "blocks"
+      },
+      "F": {
+        "blocks": [
+          {
+            "id": "immersiveengineering:heavy_engineering"
+          }
+        ],
+        "type": "blocks"
+      },
+      "G": {
+        "blocks": [
+          {
+            "id": "kubejs:constantan_coil"
+          }
+        ],
+        "type": "blocks"
+      },
+      "H": {
+        "blocks": [
+          {
+            "id": "immersiveengineering:light_engineering"
+          }
+        ],
+        "type": "blocks"
+      },
+      "I": {
+        "blocks": [
+          {
+            "id": "immersiveengineering:coil_hv"
+          }
+        ],
+        "type": "blocks"
+      },
+      "J": {
+        "location": "multiblocked:energy_input",
+        "type": "component",
+        "minCount": 1,
+        "maxCount": 1,
+        "previewCount": 1,
+        "io": "IN"
+      },
+      "K": {
+        "location": "multiblocked:fluid_input",
+        "type": "component",
+        "minCount": 1,
+        "maxCount": 2,
+        "previewCount": 1,
+        "io": "IN"
+      },
+      "L": {
+        "blocks": [
+          {
+            "id": "multiblocked:item_input"
+          },
+          {
+            "id": "multiblocked:big_item_input"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 1,
+        "previewCount": 1,
+        "io": "IN"
+      },
+      "any": {
+        "type": "any"
+      },
+      "M": {
+        "blocks": [
+          {
+            "id": "multiblocked:item_output"
+          },
+          {
+            "id": "multiblocked:big_item_output"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 1,
+        "previewCount": 1,
+        "io": "OUT"
+      }
+    },
+    "symbolMap": {
+      "@": [
+        "controller"
+      ],
+      " ": [
+        "any"
+      ],
+      "A": [
+        "A",
+        "J",
+        "K",
+        "L"
+      ],
+      "B": [
+        "B"
+      ],
+      "C": [
+        "C"
+      ],
+      "D": [
+        "D"
+      ],
+      "E": [
+        "E"
+      ],
+      "F": [
+        "F"
+      ],
+      "G": [
+        "G"
+      ],
+      "H": [
+        "H"
+      ],
+      "I": [
+        "I"
+      ],
+      "J": [
+        "A",
+        "M"
+      ]
+    }
+  }
+}

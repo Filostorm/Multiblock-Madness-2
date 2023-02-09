@@ -29,8 +29,67 @@ var materialIngots = {
 	'allomancy:bendalloy_ingot': 'Tier 2 Alloy',
 }
 
+var parts = [
+	'ingot',
+	//'gear',
+	//'dust',
+	//'plate',
+	//'rod',
+	//'wire',
+	//'nugget',
+	//'storage_block',
+]
+var mods = [
+	'allomancy',
+	'kubejs',
+	'thermal',
+	'create',
+	'minecraft',
+	'malum', 
+	'tconstruct', 
+	'mythicbotany', 
+	'mna', 
+	'createbigcannons', 
+	'forbidden_arcanus',
+	'extendedcrafting',
+	'pneumaticcraft',
+	'mekanism',
+	'chemlib',
+	'biggerreactors',
+	'beyond_earth',
+	'extendedcrafting'
+	
+]
 onEvent('item.tooltip', tooltip => {
-	for (var ingot in materialIngots) {
-			tooltip.add(ingot, materialIngots[ingot])
+	//for (var ingot in materialIngots) {
+	//		tooltip.add(ingot, materialIngots[ingot])
+	//	}
+	
+	global.newMaterialParts.forEach((item) => {
+		if (item.type == 'base_metal') {
+			mods.forEach((mod) => {
+				parts.forEach((part) => {
+					if (mod == 'pneumaticcraft' || mod == 'mekanism') {
+						tooltip.add(`${mod}:${part}_${item.material}`, `Tier `+item.tier+` Metal`)
+					} else if (mod == 'naturesaura') {
+						tooltip.add(`${mod}:${item.material}`, `Tier `+item.tier+` Metal`)
+					} else {
+						tooltip.add(`${mod}:${item.material}_${part}`, `Tier `+item.tier+` Metal`)
+					}
+				})
+			})
+		} else if (item.type == 'alloy') {
+			mods.forEach((mod) => {
+				parts.forEach((part) => {
+					if (mod == 'pneumaticcraft' || mod == 'mekanism') {
+						tooltip.add(`${mod}:${part}_${item.material}`, `Tier `+item.tier+` Alloy`)
+					} else if (mod == 'naturesaura') {
+						tooltip.add(`${mod}:${item.material}`, `Tier `+item.tier+` Alloy`)
+					} else {
+						tooltip.add(`${mod}:${item.material}_${part}`, `Tier `+item.tier+` Alloy`)
+					}
+				})
+			})
 		}
+	})
 });

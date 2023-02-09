@@ -186,6 +186,11 @@
 			title: "Tinkers Tools"
 			x: -10.0d
 			y: 8.0d
+			description: [
+				"Check the Tinkers Station for which parts you need to make a trusty Pickaxe."
+				""
+				"After placing some blank patterns in the Part Builder, you'll be able to craft the needed parts."
+			]
 			dependencies: ["5FD77AB0F43882B8"]
 			id: "55B6D04F54F29F96"
 			tasks: [
@@ -645,9 +650,16 @@
 					item: "tconstruct:seared_faucet"
 				}
 				{
-					id: "63BFB42730F72898"
+					id: "34C09736F9085277"
 					type: "item"
-					item: "tconstruct:blank_sand_cast"
+					title: "Any #tconstruct:casts/single_use/blank"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "tconstruct:casts/single_use/blank"
+						}
+					}
 				}
 			]
 			rewards: [{

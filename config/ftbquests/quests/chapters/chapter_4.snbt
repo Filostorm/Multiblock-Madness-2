@@ -307,6 +307,17 @@
 					ignoreState: false
 					rightclick: false
 				}
+				{
+					id: "48B3BBE85ED4BD1B"
+					type: "item"
+					item: {
+						id: "immersiveengineering:blueprint"
+						Count: 1b
+						tag: {
+							blueprint: "molds"
+						}
+					}
+				}
 			]
 			rewards: [{
 				id: "1A46F7443E8AEBEE"
@@ -840,6 +851,11 @@
 			title: "Pressure Chamber"
 			x: 10.5d
 			y: 4.0d
+			description: [
+				"You will need to pipe items in and out of the Pressure Chamber for crafting."
+				""
+				"The 4 slots surrounded by blue are for Upgrades."
+			]
 			dependencies: ["02285A69B0A09A44"]
 			id: "14C449A154C78D7E"
 			tasks: [
@@ -891,6 +907,7 @@
 			title: "Compressing Air"
 			x: 8.5d
 			y: 4.0d
+			description: ["Attach the Safety Tube Module to keep your system from exploding if pressure gets too high."]
 			dependencies: ["418AC2EB203010CA"]
 			id: "02285A69B0A09A44"
 			tasks: [
@@ -1068,17 +1085,6 @@
 						}
 					}
 				}
-				{
-					id: "368358E52973945C"
-					type: "item"
-					item: {
-						id: "immersiveengineering:blueprint"
-						Count: 1b
-						tag: {
-							blueprint: "molds"
-						}
-					}
-				}
 			]
 		}
 		{
@@ -1185,11 +1191,57 @@
 		{
 			x: 16.5d
 			y: 6.5d
+			dependencies: ["75D4FF56D8BBF34A"]
 			id: "4056DE989F8A8E98"
 			tasks: [{
 				id: "4B4295C63D922D71"
 				type: "item"
 				item: "chemlib:aluminum_ingot"
+			}]
+		}
+		{
+			title: "The Smeltery, aka tier 2 alloys"
+			x: 3.5d
+			y: 5.0d
+			dependencies: ["17F948FD49F0EB33"]
+			id: "44B029D2AFEC131D"
+			tasks: [
+				{
+					id: "07B16EA6DF6B96DC"
+					type: "item"
+					item: {
+						id: "tconstruct:smeltery_controller"
+						Count: 1b
+						tag: {
+							texture: "tconstruct:seared_bricks"
+						}
+					}
+				}
+				{
+					id: "63CE459BDFAE175D"
+					type: "item"
+					item: "tconstruct:seared_table"
+				}
+				{
+					id: "110F23710198924E"
+					type: "item"
+					item: "tconstruct:seared_faucet"
+				}
+				{
+					id: "5BF972C8FC7D1087"
+					type: "item"
+					item: "tconstruct:seared_fuel_gauge"
+				}
+				{
+					id: "70EC89BD2A5B529D"
+					type: "item"
+					item: "tconstruct:seared_drain"
+				}
+			]
+			rewards: [{
+				id: "4CADBD0D2FE793A3"
+				type: "item"
+				item: "tconstruct:blazing_blood_bucket"
 			}]
 		}
 	]

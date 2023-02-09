@@ -24,50 +24,102 @@ onEvent('recipes', event => {
 		if (item.type == 'alloy') {
 			event.remove({id: `immersiveengineering:alloysmelter/${item.material}`})
 			event.remove({id: `thermal:machines/smelter/smelter_alloy_${item.material}`})
+			event.remove({id: `thermal:smelting/${item.material}_ingot_from_dust_smelting`})
+			event.remove({id: `createaddition:compat/tconstruct/${item.material}`})
+			event.remove({id: `immersiveengineering:arcfurnace/alloy_${item.material}`})
+			event.remove({id: `tconstruct:smeltery/alloys/molten_${item.material}`})
 
+			
+			
+					  
+			//Mixing
+			if (item.dust_input != null && item.tier != null) {
+		 		event.recipes.multiblocked.multiblock('mixer')
+		 		.inputItems(item.dust_input)
+		 		.outputItem(`${item.amount}x #forge:dusts/${item.material}`)
+				.setPerTick(true)
+				.inputFE(256 * (2**item.tier))
+		 		.duration(100 * item.amount)
+				.id(`mbm2:mixer/${item.material}_dust`)
+			}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////// Each Tier check represents the lowest tier an action can be preformed in. ///////////////////
+//// So if you want to add tinkers alloy recipes to any tier 2 or below, it goes in the tier 2 check /////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+			////////////// TIER 1 OR BELOW /////////////////////
 			if (item.tier <= 1) {
 				console.log(`${item.material} can be made by tier 1 machines!`)
 
 				if (item.dust_input != null) {
-				//Mixing Dust
-				event.recipes.createMixing([`${item.amount}x #forge:dusts/${item.material}`], item.dust_input).id(`mbm2:mixing/${item.material}_dust`)
+					//Mixing Dust
+					event.recipes.createMixing([`${item.amount}x #forge:dusts/${item.material}`], item.dust_input).id(`mbm2:create/mixing/${item.material}_dust`)
 				} 
 				if (item.ingot_input != null) {
-				//Mixing Ingots
-				event.recipes.createMixing(`${item.amount}x #forge:ingots/${item.material}`, item.ingot_input).heated().id(`create:mixing/${item.material}_ingot`)					
-				//Kiln
-				if (item.ingot_input.length == 2) {
-					event.recipes.immersiveengineeringAlloy(`${item.amount}x #forge:ingots/${item.material}`, item.ingot_input[0], item.ingot_input[1]).id(`mbm2:kiln/${item.material}_ingot`)	
+					//Mixing Ingots
+					event.recipes.createMixing(`${item.amount}x #forge:ingots/${item.material}`, item.ingot_input).heated().id(`mbm2:create/mixing/${item.material}_ingot`)
+				
+					if (item.ingot_input.length == 2) {
+						//Kiln
+						event.recipes.immersiveengineeringAlloy(`${item.amount}x #forge:ingots/${item.material}`, item.ingot_input[0], item.ingot_input[1]).id(`mbm2:kiln/${item.material}_ingot`)	
+					}
 				}
+
+				//Alloy Dust Smelting
+				if (Item.of(`#forge:dusts/${item.material}`) != null && Item.of(`#forge:ingots/${item.material}`) != null) {
+					event.smelting(`#forge:ingots/${item.material}`, `#forge:dusts/${item.material}`).id(`mbm2:${item.material}_furnace_smelting`)
 				}
 			}
+			////////////// TIER 2 OR BELOW /////////////////////
 			if (item.tier <= 2) {
 				console.log(`${item.material} can be made by tier 2 machines!`);
 				if (item.tinkers_input != null) {
 					//Tinkers Alloy
-					global.tinkersAlloying(event, item.fluid_id, (item.amount*90), item.tinkers_input, 1000, `tconstruct:smeltery/alloys/molten_${item.material}`)
+					global.tinkersAlloying(event, item.fluid_id, (item.amount*90), item.tinkers_input, 1000, `mbm2:smeltery/alloys/molten_${item.material}`)
 				}
 			}
+			////////////// TIER 3 OR BELOW /////////////////////
 			if (item.tier <= 3) {
 				console.log(`${item.material} can be made by tier 3 machines!`);
+
+				//Alloying
 				if (item.ingot_input != null) {
-					//Arc Furnace
-					event.recipes.immersiveengineeringArcFurnace(`${item.amount}x #forge:ingots/${item.material}`, item.ingot_input[0], item.ingot_input.slice(1)).id(`mbm2:arc_furnace/${item.material}_alloying`)
-				}
-				if (item.dust_input != null) {
-					//Arc Furnace
-					event.recipes.immersiveengineeringArcFurnace(`${item.amount}x #forge:ingots/${item.material}`, item.dust_input[0], item.dust_input.slice(1))
-				}
-				//Induction
-				if (item.ingot_input != null) {
+					/*
+					//EBF
+					event.recipes.multiblocked.multiblock("ebf")
+					.inputItems(item.ingot_input)
+					.outputItem(`${item.amount}x #forge:ingots/${item.material}`)
+					.setPerTick(true)
+					.inputFE(512 * (2**item.tier))
+					.duration(200)
+					.id(`mbm2:ebf/alloying/${item.material}_ingot`)
+					*/
+					if (item.ingot_input.length <= 5) {
+						//Arc Furnace
+						event.recipes.immersiveengineeringArcFurnace(`${item.amount}x #forge:ingots/${item.material}`, item.ingot_input[0], item.ingot_input.slice(1)).id(`mbm2:arc_furnace/${item.material}_alloying`)
+					}
 					if (item.ingot_input.length <= 3) {
+						//Induction
 						event.recipes.thermal.smelter(`${item.amount}x #forge:ingots/${item.material}`, item.ingot_input).id(`mbm2:induction/${item.material}_ingot`)
 					}
 				}
-				if (item.dust_input != null) {
-					if (item.dust_input.length <= 3) {
-						event.recipes.thermal.smelter(`${item.amount}x #forge:ingots/${item.material}`, item.dust_input).id(`mbm2:induction/${item.material}_ingot_from_dust`)	
-					}
+
+				//Dust Smelting
+				if (Item.of(`#forge:dusts/${item.material}`) != null && Item.of(`#forge:ingots/${item.material}`) != null) {
+					//Arc Furnace
+					event.recipes.immersiveengineeringArcFurnace(`#forge:ingots/${item.material}`, `#forge:dusts/${item.material}`).id(`mbm2:arc_furnace/${item.material}_ingot_from_dust`)
+					
+					//EBF
+					event.recipes.multiblocked.multiblock("ebf")
+					.inputItem(Ingredient.of(`#forge:dusts/${item.material}`))
+					.outputItem(Item.of(`#forge:ingots/${item.material}`))
+					.setPerTick(true)
+					.inputFE(512 * (2**item.tier))
+					.duration(100)
+					.id(`mbm2:ebf/dusts/${item.material}_ingot`)
 				}
 			}
 			
@@ -76,12 +128,20 @@ onEvent('recipes', event => {
 			console.log(`${item.material} is not an alloy`);
 		}
 	})
-
-	//Missing Ingot Smelting
-		event.smelting(`#forge:ingots/red_alloy`, `#forge:dusts/red_alloy`)
-		event.smelting(`#forge:ingots/brass`, `#forge:dusts/brass`)
-		event.smelting(`#forge:ingots/pewter`, `#forge:dusts/pewter`)
 	
+	//Energetic Alloy
+	event.recipes.tconstruct.casting_table('kubejs:energetic_alloy_ingot', 'tconstruct:molten_electrum', 90).cast('kubejs:energetic_blend').consumeCast().coolingTime(100)
 
+ 
+/*
+	Supported recipe methods:
+	
+	.noCast()
+	
+	.multiUseCast(castType)
+	
+	.singleUseCast(castType)
+	
+	.switchSlots()*/
 });
 	

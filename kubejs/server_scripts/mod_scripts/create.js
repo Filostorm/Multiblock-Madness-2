@@ -27,7 +27,7 @@ onEvent('recipes', event => {
   }).id(`mbm2:crafting/rubber/belt_connector`)
   
 /// Alt Funnel Recipe using Rubber
-  event.shaped('2x create:andesite_funnel', [
+  event.shaped('4x create:andesite_funnel', [
 	'B',
 	'C'
 	  ], {
@@ -36,7 +36,7 @@ onEvent('recipes', event => {
 	  }).id(`mbm2:crafting/rubber/andesite_funnel`)
 
 /// Alt Brass Funnel Recipe using Rubber
-  event.shaped('2x create:brass_funnel', [
+  event.shaped('4x create:brass_funnel', [
 	'B',
 	'C',
 	'D'
@@ -46,7 +46,7 @@ onEvent('recipes', event => {
 	D: 'thermal:cured_rubber'
 	  }).id(`mbm2:crafting/rubber/brass_funnel`)
 // [| rubber/andesite_tunnel |] //
-event.shaped('2x create:andesite_tunnel', [
+event.shaped('4x create:andesite_tunnel', [
 	'AA',
 	'CC',
   ], {
@@ -75,6 +75,16 @@ C: 'thermal:cured_rubber'
   }).id(`mbm2:crafting/rubber/spout`)
 
 
+/// Spools
+  	event.remove({id: 'createaddition:crafting/spool'})
+	event.shaped('4x createaddition:spool', [
+		'P',
+		'S',
+		'P'
+		  ], {
+		P: '#forge:plates/iron',
+		S: 'immersiveengineering:stick_treated'
+	}).id(`mbm2:crafting/spool`)
 
   
 	
@@ -88,6 +98,7 @@ C: 'thermal:cured_rubber'
   event.recipes.createDeploying('create:incomplete_precision_mechanism', ['create:incomplete_precision_mechanism', 'create:cogwheel']),
 //  event.recipes.createCutting('create:incomplete_precision_mechanism', 'create:incomplete_precision_mechanism').processingTime(50)
   ]).transitionalItem('create:incomplete_precision_mechanism').loops(1).id('mbm2:create/precision_mechanism')
+  global.ieBlueprint(event, 'components', Item.of(`create:precision_mechanism`), [{tag: `forge:plates/gold`}, {tag: `forge:gears/brass`}, {item: `create:andesite_alloy`}, {tag: `forge:cogwheels`}], `mbm2:blueprint/precision_mechanism`)
 
 //Windmill
   event.remove({id: 'create:crafting/kinetics/windmill_bearing'})
@@ -247,6 +258,15 @@ event.shapeless('create:filter', [Item.of('create:filter').ignoreNBT()]).id(`mbm
 	event.recipes.createMixing([Fluid.of('tconstruct:molten_clay', 1000)], ['clay', Fluid.of('water', 1000)]).id(`mbm2:mixing/clay_from_block`)
 	event.recipes.createMixing([Fluid.of('tconstruct:molten_clay', 250)], ['clay_ball', Fluid.of('water', 250)]).id(`mbm2:mixing/clay_from_ball`)
 
+
+	event.recipes.createMixing([Fluid.of('immersiveengineering:redstone_acid', 250)], ['redstone', Fluid.of('water', 250)]).id(`mbm2:mixing/redstone_acid`)
+
+	//Temp? Crushing Wheel changes
+    event.replaceInput({id: 'create:mechanical_crafting/crushing_wheel'}, '#minecraft:planks', '#forge:treated_wood')
+    event.replaceInput({id: 'create:mechanical_crafting/crushing_wheel'}, '#forge:stone', 'elementalcraft:whiterock')
+	
+	//Magma balls
+	event.recipes.createMilling(['2x minecraft:magma_cream', Item.of('magma_cream').withChance(0.50), Item.of('magma_cream').withChance(0.50)], ['minecraft:magma_block']).id(`mbm2:create/crushing/magma_block`)
 
 		
 });

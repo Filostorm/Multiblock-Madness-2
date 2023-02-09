@@ -231,11 +231,11 @@ onEvent('worldgen.add', event => {
 		ore.addTarget('minecraft:deepslate_coal_ore', 'kubejs:deepslate_fire_ore')
 		
 
-		ore.count(200)
+		ore.count(300)
 				.squared()
 				.uniformHeight(
 						anchors.aboveBottom(10),
-						anchors.absolute(30)
+						anchors.absolute(100)
 				)
 		ore.size = 10
 		ore.noSurface = 0
@@ -450,11 +450,11 @@ onEvent('worldgen.add', event => {
 			}
 		})
 
-		ore.count(200)
+		ore.count(400)
 				.squared()
 				.uniformHeight(
 						anchors.aboveBottom(0),
-						anchors.absolute(20)
+						anchors.absolute(100)
 				)
 		ore.size = 10
 		ore.noSurface = 0
@@ -475,11 +475,11 @@ onEvent('worldgen.add', event => {
 			}
 		})
 
-		ore.count(200)
+		ore.count(400)
 				.squared()
 				.uniformHeight(
 						anchors.aboveBottom(0),
-						anchors.absolute(20)
+						anchors.absolute(100)
 				)
 		ore.size = 10
 		ore.noSurface = 0

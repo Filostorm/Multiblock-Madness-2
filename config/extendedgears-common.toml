@@ -1,0 +1,76 @@
+
+#Limit the maximum RPM and or SU of cogwheels, by default these values are both set to maximum, this will not overwrite the max RPM set in the create config
+["Cogwheel Limitations"]
+
+	#Limit the maximum RPM of cogwheels, this will not overwrite the max RPM set in the create config
+	["Cogwheel Limitations"."Cogwheel Rotation Limitations"]
+		#Hard limit the ammount of RPM that a birch cogwheel can sustain
+		#Range: > 1
+		maxBirchRPM = 256
+		#Hard limit the ammount of RPM that a oak cogwheel can sustain
+		#Range: > 1
+		maxOakRPM = 256
+		#Hard limit the ammount of RPM that a spruce cogwheel can sustain
+		#Range: > 1
+		maxSpruceRPM = 256
+		#Hard limit the ammount of RPM that a Dark Oak cogwheel can sustain
+		#Range: > 1
+		maxDarkOakRPM = 256
+		#Hard limit the ammount of RPM that a jungle cogwheel can sustain
+		#Range: > 1
+		maxJungleRPM = 256
+		#Hard limit the ammount of RPM that a acacia cogwheel can sustain
+		#Range: > 1
+		maxAcaciaRPM = 256
+		#Hard limit the ammount of RPM that a warped cogwheel can sustain
+		#Range: > 1
+		maxWarpedRPM = 256
+		#Hard limit the ammount of RPM that a crimson cogwheel can sustain
+		#Range: > 1
+		maxCrimsonRPM = 256
+		#Hard limit the ammount of RPM that a copper cogwheel can sustain
+		#Range: > 1
+		maxCopperRPM = 256
+		#Hard limit the ammount of RPM that a iron cogwheel can sustain
+		#Range: > 1
+		maxIronRPM = 256
+		#Hard limit the ammount of RPM that a steel cogwheel can sustain
+		#Range: > 1
+		maxSteelRPM = 256
+
+		#Limit the maximum Stress of cogwheels
+		["Cogwheel Limitations"."Cogwheel Rotation Limitations"."Cogwheel Stress Limitations"]
+			#Hard limit the ammount of SU that a birch cogwheel can sustain
+			#Range: > 1
+			maxBirchSU = 2147483647
+			#Hard limit the ammount of SU that a oak cogwheel can sustain
+			#Range: > 1
+			maxOakSU = 2147483647
+			#Hard limit the ammount of SU that a spruce cogwheel can sustain
+			#Range: > 1
+			maxSpruceSU = 2147483647
+			#Hard limit the ammount of SU that a Dark Oak cogwheel can sustain
+			#Range: > 1
+			maxDarkOakSU = 2147483647
+			#Hard limit the ammount of SU that a jungle cogwheel can sustain
+			#Range: > 1
+			maxJungleSU = 2147483647
+			#Hard limit the ammount of SU that a acacia cogwheel can sustain
+			#Range: > 1
+			maxAcaciaSU = 2147483647
+			#Hard limit the ammount of SU that a warped cogwheel can sustain
+			#Range: > 1
+			maxWarpedSU = 2147483647
+			#Hard limit the ammount of SU that a crimson cogwheel can sustain
+			#Range: > 1
+			maxCrimsonSU = 2147483647
+			#Hard limit the ammount of SU that a copper cogwheel can sustain
+			#Range: > 1
+			maxCopperSU = 2147483647
+			#Hard limit the ammount of SU that a iron cogwheel can sustain
+			#Range: > 1
+			maxIronSU = 2147483647
+			#Hard limit the ammount of SU that a steel cogwheel can sustain
+			#Range: > 1
+			maxSteelSU = 2147483647
+

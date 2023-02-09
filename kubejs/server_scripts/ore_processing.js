@@ -78,6 +78,8 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 			event.remove({id: `tconstruct:smeltery/melting/metal/${item.material}/raw`})
 			event.remove({id: `tconstruct:smeltery/melting/metal/${item.material}/ore_singular`})
 			event.remove({id: `tconstruct:common/materials/${item.material}_ingot_smelting`})
+			event.remove({id: `immersiveengineering:arcfurnace/ore_${item.material}`})
+			event.remove({id: `immersiveengineering:arcfurnace/raw_ore_${item.material}`})
 			
 		}
 		if (item.ore) {
@@ -113,6 +115,24 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				event.remove({input: `#forge:dusts/${item.material}`, type: 'minecraft:blasting'})
 
 				
+
+				//Foundry Processing
+	  			//	if (item.fluid_id != null){
+				//		global.tinkersOreMelting(event, item.fluid_id, 180, 'kubejs:molten_slag', 200, `forge:ores/${item.material}`, 700, 142, `tconstruct:smeltery/melting/metal/${item.material}/ore_singular`)
+				//		global.tinkersOreMelting(event, item.fluid_id, 90, 'kubejs:molten_slag', 100, `forge:raw_materials/${item.material}`, 700, 142, `tconstruct:smeltery/melting/metal/${item.material}/raw`)
+				//	}
+
+				//Create Crushing
+				event.recipes.createCrushing([
+					`#create:crushed_ores/${item.material}`,
+					Item.of(`#forge:grits/${item.material}`).withChance(0.25), 
+					Item.of('create:experience_nugget').withChance(0.5)
+				  ], `#forge:raw_materials/${item.material}`).id(`mbm2:crushing/raw_${item.material}`)
+
+				//Create Washing 
+				event.recipes.createSplashing([`#forge:grits/${item.material}`, Item.of(`#forge:grits/${item.material}`).withChance(0.75), Item.of('gravel').withChance(0.25)], `#create:crushed_ores/${item.material}`).id(`mbm2:washing/crushed_${item.material}`)
+
+				
 				if (item.tier <= 1) {
 					//Make some ingots
 					event.remove({input: `#forge:dusts/${item.material}`, type: 'minecraft:smelting'})
@@ -126,28 +146,27 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 					event.smelting(`#forge:ingots/${item.material}`, `#forge:washed_ores/${item.material}`).id(`mbm2:smelting/washed_${item.material}`)
 					event.blasting(`#forge:ingots/${item.material}`, `#forge:washed_ores/${item.material}`).id(`mbm2:blasting/washed_${item.material}`)
 				}
-				if (item.tier >= 1) {
-				console.log(`${item.material} is at least a Tier 1 Metal!`);
-				//Foundry Processing
-	  			//	if (item.fluid_id != null){
-				//		global.tinkersOreMelting(event, item.fluid_id, 180, 'kubejs:molten_slag', 200, `forge:ores/${item.material}`, 700, 142, `tconstruct:smeltery/melting/metal/${item.material}/ore_singular`)
-				//		global.tinkersOreMelting(event, item.fluid_id, 90, 'kubejs:molten_slag', 100, `forge:raw_materials/${item.material}`, 700, 142, `tconstruct:smeltery/melting/metal/${item.material}/raw`)
-				//	}
 
-				//Create Crushing
-				event.recipes.createCrushing([
-					`#create:crushed_ores/${item.material}`,
-					Item.of(`#forge:grits/${item.material}`).withChance(0.25), 
-					Item.of('create:experience_nugget').withChance(0.5)
-				  ], `#forge:raw_materials/${item.material}`).id(`mbm2:crushing/raw_${item.material}`)
-				//Create Washing
-				event.recipes.createSplashing([`#forge:washed_ores/${item.material}`, Item.of(`#forge:washed_ores/${item.material}`).withChance(0.75), Item.of('gravel').withChance(0.25)], `#create:crushed_ores/${item.material}`).id(`mbm2:washing/crushed_${item.material}`)
+				if (item.tier <= 2) {
+					//But they can be Arc Furnaced
+					if (Item.of(`#forge:ingots/${item.material}`) != null) {
+						event.recipes.immersiveengineeringArcFurnace(Item.of(`#forge:ingots/${item.material}`), `#forge:dusts/${item.material}`).id(`mbm2:arc_furnace/${item.material}_dust`)
+					}
 				}
 				
-				if (item.tier >= 2) {
-				//But they can be Arc Furnaced
-				event.recipes.immersiveengineeringArcFurnace(Item.of(`#forge:ingots/${item.material}`), `#forge:dusts/${item.material}`).id(`mbm2:arc_furnace/${item.material}_dust`)
+				if (item.tier == 3) {
+					//But they can be Blast Furnaced
+					event.recipes.multiblocked.multiblock("ebf")
+					.inputFluid(Fluid.of('mekanism:oxygen', 1000))
+					.inputItem(Ingredient.of(`#forge:dusts/${item.material}`))
+					.outputItem(Item.of(`#forge:ingots/${item.material}`))
+					//.outputFluid(Fluid.of('mekanism:sulfuric_acid', 1000))
+					.setPerTick(true)
+					.inputFE(4096)
+					.duration(200)
+					.id(`mbm2:ebf/base_metals/${item.material}_ingot`)
 				}
+				
 			}
 			if (item.type == 'compound_ore') {
 					console.log(`${item.material} is a compound ore!`);
@@ -161,6 +180,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 						event.smelting(`#forge:ingots/${item.components[0]}`, `#forge:grits/${item.material}`).id(`mbm2:smelting/grit_${item.material}`)
 						event.blasting(`#forge:ingots/${item.components[0]}`, `#forge:grits/${item.material}`).id(`mbm2:blasting/grit_${item.material}`)
 					} else {
+						//For non metalic components
 						event.smelting(`2x #forge:dusts/${item.components[0]}`, `#forge:raw_materials/${item.material}`)
 						event.smelting(`2x #forge:dusts/${item.components[0]}`, `#forge:dusts/${item.material}`)
 						event.blasting(`2x #forge:dusts/${item.components[0]}`, `#forge:raw_materials/${item.material}`)
@@ -173,15 +193,58 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 						Item.of(`#forge:grits/${item.material}`).withChance(0.25),
 						Item.of('create:experience_nugget').withChance(0.5)
 					  ], `#forge:raw_materials/${item.material}`).id(`mbm2:crushing/raw_${item.material}`)
-				  	//Sorting
+
+				  	//Sorting grade 1 at tier 1
 					event.recipes.multiblocked.multiblock('sorter_mk1')
 					.inputItem(`4x #create:crushed_ores/${item.material}`)
 					.inputStress(64)
 					.outputItem(`#create:crushed_ores/${item.components[0]}`)
 					.outputItem(`#create:crushed_ores/${item.components[1]}`)
 					.outputItem('2x thermal:slag')
-					//.outputStress(32)
 					.duration(200)
+
+					//Sorting grade 2 at tier 1
+				  	event.recipes.multiblocked.multiblock('sorter_mk1')
+				  	.inputItem(`8x #forge:chunks/${item.material}`)
+				  	.inputStress(64)
+				  	.outputItem(`2x #forge:chunks/${item.components[0]}`)
+				  	.outputItem(`#forge:chunks/${item.components[1]}`)
+				  	.outputItem(`#forge:chunks/${item.components[2]}`)
+				  	.outputItem('4x thermal:slag')
+				  	.duration(200)
+
+					//Sorting grade 1 at tier 2
+				  	event.recipes.multiblocked.multiblock('sorter_mk2')
+				  	.inputItem(`5x #create:crushed_ores/${item.material}`)
+				  	.outputItem(`2x #create:crushed_ores/${item.components[0]}`)
+				  	.outputItem(`2x #create:crushed_ores/${item.components[1]}`)
+				  	.outputItem('1x thermal:slag')
+						.setPerTick(true)
+					.inputFE(1024)
+				  	.duration(200)
+
+				  //Sorting grade 2 at tier 2
+					event.recipes.multiblocked.multiblock('sorter_mk2')
+					.inputItem(`10x #forge:chunks/${item.material}`)
+					.outputItem(`3x #forge:chunks/${item.components[0]}`)
+					.outputItem(`3x #forge:chunks/${item.components[1]}`)
+					.outputItem(`2x #forge:chunks/${item.components[2]}`)
+					.outputItem('2x thermal:slag')
+						.setPerTick(true)
+					.inputFE(1024)
+					.duration(200)
+
+				  //Sorting grade 3 at tier 2
+				  	event.recipes.multiblocked.multiblock('sorter_mk2')
+				  	.inputItem(`15x #forge:clumps/${item.material}`)
+				  	.outputItem(`4x #forge:clumps/${item.components[0]}`)
+				  	.outputItem(`3x #forge:clumps/${item.components[1]}`)
+				  	.outputItem(`2x #forge:clumps/${item.components[2]}`)
+				  	.outputItem(`2x #forge:clumps/${item.components[3]}`)
+				  	.outputItem('3x thermal:slag')
+						.setPerTick(true)
+					.inputFE(1024)
+				  	.duration(200)
 
 					//Gem Crafting
 					if (item.gem_components != null) {

@@ -139,7 +139,7 @@
       "B": {
         "blocks": [
           {
-            "id": "kubejs:gold_cog_block"
+            "id": "kubejs:cobalt_brass_cog_block"
           }
         ],
         "type": "blocks"
@@ -155,7 +155,7 @@
       "D": {
         "blocks": [
           {
-            "id": "kubejs:energetic_alloy_scaffolding"
+            "id": "kubejs:reinforced_electrum_scaffolding"
           }
         ],
         "type": "blocks"
@@ -163,7 +163,13 @@
       "E": {
         "blocks": [
           {
-            "id": "multiblocked:energy_input"
+            "id": "multiblocked:energy_input_mk1"
+          },
+          {
+            "id": "multiblocked:energy_input_mk2"
+          },
+          {
+            "id": "multiblocked:energy_input_mk3"
           }
         ],
         "type": "blocks",

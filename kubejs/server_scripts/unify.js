@@ -18,6 +18,7 @@ global.fluidsToRemove = [
 	'thermal:creosote',
 	'pneumaticcraft:biodiesel', //50,000 burn time
 	'thermal:crude_oil',
+	'createbigcannons:molten_steel',
 ]
 
 var removeByName = [
@@ -39,11 +40,18 @@ var removeByName = [
 	'minecraft:cut_sandstone',
 	'immersiveengineering:crafting/stick_iron',
 	'minecraft:beacon',
+	'tconstruct:common/flint',
+	'thermal:smelting/netherite_ingot_from_dust_blasting',
 ]
 
 onEvent('recipes', event => {
 	event.replaceOutput({}, 'mekanism:dust_sulfur', 'thermal:sulfur_dust')
 	event.replaceOutput({}, 'mekanism:dust_quartz', 'thermal:quartz_dust')
+	event.replaceOutput({}, 'mekanism:dust_gold', 'thermal:gold_dust')
+	event.replaceOutput({}, 'mekanism:dust_netherite', 'thermal:netherite_dust')
+	event.replaceOutput({}, 'ae2:ender_dust', 'thermal:ender_pearl_dust')
+	event.replaceOutput({}, 'createaddition:diamond_grit', 'thermal:diamond_dust')
+	event.replaceOutput({}, 'mekanism:dust_diamond', 'thermal:diamond_dust')
 	
 
 	removeByName.forEach((item) => {
@@ -53,6 +61,17 @@ onEvent('recipes', event => {
 	global.removeAndHide.forEach((item) => {
 		event.remove({output: item})
 	})
+
+
+	//Steel block crafting
+	event.shaped(`#forge:storage_blocks/steel`, [
+		'III',
+		'III',
+		'III'
+	  ], {
+		I: `#forge:ingots/steel`,
+	  }).id('mbm2:crafting/steel_block')
+
 
 })
 

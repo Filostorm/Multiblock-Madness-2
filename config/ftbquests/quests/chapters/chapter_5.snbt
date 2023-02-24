@@ -24,7 +24,7 @@
 		}
 		{
 			x: 15.5d
-			y: 3.5d
+			y: 4.5d
 			dependencies: ["12B7444358A1347F"]
 			id: "0B635C1D49C9F9AC"
 			tasks: [{
@@ -35,7 +35,7 @@
 		}
 		{
 			x: 17.0d
-			y: 3.5d
+			y: 4.5d
 			dependencies: ["0B635C1D49C9F9AC"]
 			id: "11D33990B9BC8DDD"
 			tasks: [{
@@ -46,7 +46,7 @@
 		}
 		{
 			x: 14.0d
-			y: 3.5d
+			y: 4.5d
 			dependencies: ["3C2C3C5BED4E830A"]
 			id: "12B7444358A1347F"
 			tasks: [{
@@ -57,7 +57,7 @@
 		}
 		{
 			x: 15.0d
-			y: 4.5d
+			y: 5.5d
 			dependencies: ["12B7444358A1347F"]
 			id: "5986396A93E625F1"
 			tasks: [{
@@ -74,7 +74,7 @@
 		}
 		{
 			x: 12.5d
-			y: 3.5d
+			y: 4.5d
 			dependencies: ["63D72477BB0F83A4"]
 			id: "3C2C3C5BED4E830A"
 			tasks: [
@@ -129,7 +129,10 @@
 			x: 15.5d
 			y: -3.0d
 			description: ["You can use Bio Diesel or LPG (from Refining Oil) to make Plastic."]
-			dependencies: ["2F38722F9A7D89CC"]
+			dependencies: [
+				"2F38722F9A7D89CC"
+				"2F6A6631A7BAAE8E"
+			]
 			id: "444E392EA0BB8807"
 			tasks: [{
 				id: "7DEBD273E3C1AC9F"
@@ -139,7 +142,7 @@
 		}
 		{
 			disable_toast: true
-			x: 9.0d
+			x: 10.5d
 			y: 0.0d
 			shape: "circle"
 			dependencies: ["75D4FF56D8BBF34A"]
@@ -147,7 +150,7 @@
 			tasks: [{
 				id: "643843CCC59774D1"
 				type: "item"
-				item: "chemlib:aluminum_ingot"
+				item: "chemlib:titanium_ingot"
 			}]
 		}
 		{
@@ -255,6 +258,7 @@
 		{
 			x: 14.0d
 			y: 0.0d
+			dependencies: ["12523E152182734F"]
 			id: "70A8DBCE5978F640"
 			tasks: [{
 				id: "449C6F6128FBF864"
@@ -267,7 +271,6 @@
 			x: 14.0d
 			y: 1.5d
 			description: ["You'll need to fill your suit with Oxygen before heading to space."]
-			dependencies: ["43F8546BD8107D1C"]
 			id: "2DFADAC92EFECDFD"
 			tasks: [
 				{
@@ -336,6 +339,7 @@
 			dependencies: [
 				"598DE255BBB061C3"
 				"2F38722F9A7D89CC"
+				"2F6A6631A7BAAE8E"
 			]
 			id: "591233C3DDD3FE04"
 			tasks: [
@@ -360,8 +364,12 @@
 		}
 		{
 			icon: "mbm2:ebf"
-			x: 20.0d
-			y: 0.0d
+			x: 16.0d
+			y: 2.0d
+			dependencies: [
+				"75D4FF56D8BBF34A"
+				"43F8546BD8107D1C"
+			]
 			id: "4668A1BA6F4E9EC6"
 			tasks: [
 				{
@@ -394,11 +402,6 @@
 					count: 2L
 				}
 				{
-					id: "368CDD4BD3F53E00"
-					type: "item"
-					item: "multiblocked:energy_input"
-				}
-				{
 					id: "1E8529DB991F8F53"
 					type: "item"
 					item: "multiblocked:item_input"
@@ -408,35 +411,227 @@
 					type: "item"
 					item: "multiblocked:item_output"
 				}
+				{
+					id: "3F30C7D82B2DEFFB"
+					type: "item"
+					item: "multiblocked:energy_input_mk1"
+				}
 			]
 		}
 		{
-			x: 18.0d
-			y: -0.5d
+			x: 18.5d
+			y: 2.0d
 			dependencies: [
 				"06E62336B0646B17"
 				"4668A1BA6F4E9EC6"
+				"0E2B25A2429C9556"
 			]
-			id: "7005D1345FFE0ACE"
+			size: 1.5d
+			id: "13C4C068E2EB695E"
 			tasks: [{
-				id: "3AA5F60349B293FD"
+				id: "4E248D82865F574E"
 				type: "item"
 				item: "mekanism:ingot_osmium"
 			}]
 		}
 		{
-			x: 18.0d
-			y: 0.5d
-			dependencies: [
-				"06E62336B0646B17"
-				"4668A1BA6F4E9EC6"
+			icon: "mbm2:air_collector_mk1"
+			x: 12.5d
+			y: 0.0d
+			description: ["You'll need to craft up some Pressurized Aluminum Alloy in the Pressure Chamber for this multiblock."]
+			dependencies: ["43F8546BD8107D1C"]
+			id: "12523E152182734F"
+			tasks: [
+				{
+					id: "1B182DEA9C15D6E8"
+					type: "item"
+					item: "mbm2:air_collector_mk1"
+				}
+				{
+					id: "76417306060150A0"
+					type: "item"
+					item: "kubejs:high_pressure_casing"
+					count: 17L
+				}
+				{
+					id: "02822C6563033264"
+					type: "item"
+					item: "kubejs:factory_fan"
+					count: 5L
+				}
+				{
+					id: "769DBCC9D0530517"
+					type: "item"
+					item: "kubejs:cobalt_coil"
+					count: 4L
+				}
+				{
+					id: "478D570CCCF43BEA"
+					type: "item"
+					item: "thermal:obsidian_glass"
+					count: 5L
+				}
+				{
+					id: "068F806D357B7727"
+					type: "item"
+					item: "minecraft:blue_ice"
+					count: 3L
+				}
+				{
+					id: "5E7DD4880DB4AF33"
+					type: "item"
+					item: "ae2:sky_stone_tank"
+				}
+				{
+					id: "5E77DC9EBF08C5D5"
+					type: "item"
+					item: "multiblocked:energy_input_mk1"
+				}
 			]
-			id: "13C4C068E2EB695E"
+		}
+		{
+			x: 17.0d
+			y: -4.5d
+			shape: "circle"
+			dependencies: ["5C5CE8BEA54E1A94"]
+			id: "2F6A6631A7BAAE8E"
 			tasks: [{
-				id: "4568F984D87E074C"
+				id: "6B769139B688EB05"
 				type: "item"
-				item: "chemlib:titanium_ingot"
+				item: "chemlib:magnesium_ingot"
 			}]
+		}
+		{
+			icon: "mbm2:flotation"
+			x: 18.5d
+			y: -0.5d
+			description: ["You'll also need to cover the Cog Blocks with water."]
+			dependency_requirement: "one_completed"
+			id: "0E2B25A2429C9556"
+			tasks: [
+				{
+					id: "1895C8D8CBFD568A"
+					type: "item"
+					item: "mbm2:flotation"
+				}
+				{
+					id: "31D74ABF67CE81FC"
+					type: "item"
+					item: "kubejs:tier1_casing"
+					count: 30L
+				}
+				{
+					id: "73F4DCBF3315D024"
+					type: "item"
+					item: "multiblocked:fluid_output"
+				}
+				{
+					id: "77DCAB5A1F3F4EB3"
+					type: "item"
+					item: "multiblocked:item_input"
+				}
+				{
+					id: "3AFAA8E270957739"
+					type: "item"
+					item: "multiblocked:item_output"
+				}
+				{
+					id: "281321760C6C7BB9"
+					type: "item"
+					item: "multiblocked:fluid_input"
+				}
+				{
+					id: "5F4EFE0F907D42CF"
+					type: "item"
+					item: { id: "kubejs:cobalt_brass_cog_block", Count: 10b }
+					count: 10L
+				}
+				{
+					id: "4F65CAF9179DF24C"
+					type: "item"
+					item: { id: "kubejs:reinforced_electrum_scaffolding", Count: 10b }
+					count: 10L
+				}
+				{
+					id: "6104E18271A80AB0"
+					type: "item"
+					item: "multiblocked:energy_input_mk1"
+				}
+			]
+		}
+		{
+			x: 18.5d
+			y: -2.5d
+			dependencies: [
+				"02E4BADB1F8BEB33"
+				"0E2B25A2429C9556"
+				"2F6A6631A7BAAE8E"
+			]
+			id: "31EF1A8086E0512F"
+			tasks: [{
+				id: "1BFD484E2B6A2BBD"
+				type: "item"
+				item: "kubejs:purified_water_bucket"
+			}]
+			rewards: [{
+				id: "572C27C7C2BC58E2"
+				type: "item"
+				item: "kubejs:water_filter"
+				count: 10
+			}]
+		}
+		{
+			icon: "mbm2:sorter_mk2"
+			x: 20.5d
+			y: 2.0d
+			dependencies: ["13C4C068E2EB695E"]
+			id: "67A63CB65FEDF5AC"
+			tasks: [
+				{
+					id: "2F49601B0FD82E7E"
+					type: "item"
+					item: "mbm2:sorter_mk2"
+				}
+				{
+					id: "5AA6BE1B41F7DC36"
+					type: "item"
+					item: "multiblocked:energy_input_mk1"
+				}
+				{
+					id: "6603D86C0F57285F"
+					type: "item"
+					item: "multiblocked:item_input"
+				}
+				{
+					id: "089490B55DC4C334"
+					type: "item"
+					item: "multiblocked:item_output"
+				}
+				{
+					id: "5625AD3018D6A73F"
+					type: "item"
+					item: "kubejs:titanite_scaffolding"
+					count: 8L
+				}
+				{
+					id: "7F0CDDDAF21B3564"
+					type: "item"
+					item: "kubejs:platinum_cog_block"
+					count: 8L
+				}
+				{
+					id: "0EAB3222814360F8"
+					type: "item"
+					item: "kubejs:tier1_casing"
+					count: 36L
+				}
+				{
+					id: "6B830C23204936FD"
+					type: "item"
+					item: "thermal:obsidian_glass"
+					count: 24L
+				}
+			]
 		}
 	]
 	quest_links: [ ]

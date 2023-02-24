@@ -32,6 +32,21 @@ onEvent('recipes', event => {
 	  type: 'compactcrafting:block',
 	  block: 'immersiveengineering:steel_scaffolding_standard'
 	}
-  },  'kubejs:steel_casing')
+  },  'mbm2:steel_casing')
 
+
+
+//Superheating Element
+event.remove({id: 'mekanism:superheating_element'})
+event.shaped('mekanism:superheating_element', [
+	'TPT',
+	'MCM',
+	'TPT'
+  ], {
+	C: 'powah:dielectric_casing',
+	P: '#forge:plates/netherite',
+	M: '#forge:plates/manyullyn',
+	T: 'powah:thermoelectric_plate',
+  }).id('mbm2:mekanism/superheating_element')
+  
 });

@@ -51,7 +51,11 @@ onEvent('recipes', event => {
 	//global.explosionCrafting(event, 'pneumaticcraft:compressed_iron_block', '#forge:storage_blocks/steel', 20, 'mbm2:explosion_crafting/compressed_steel_block')
 
 	//Compressed Aluminum
-	global.pressureChamber(event, [Item.of('#forge:ingots/compressed_aluminum')], [{"type": "pneumaticcraft:stacked_item","tag": "forge:ingots/aluminum", "count": 2}], 2.0, 'mbm2:pressure_chamber/compressed_aluminium_ingot')
+	global.pressureChamber(event, [Item.of('2x #forge:ingots/pressurized_aluminum_alloy')], [{"type": "pneumaticcraft:stacked_item","tag": "forge:ingots/aluminum", "count": 2},{"tag": "forge:ingots/thorium"}, {"tag": "forge:ingots/magnesium"}], 2.0, 'mbm2:pressure_chamber/high_strength_ingot')
+
+	//Turbine Blade
+	event.remove({id: 'pneumaticcraft:pressure_chamber/turbine_blade'})
+	global.pressureChamber(event, [Item.of('pneumaticcraft:turbine_blade').toResultJson()], [{"type": "pneumaticcraft:stacked_item","tag": "forge:ingots/nethersteel", "count": 4},{"tag": "forge:dusts/magnesium"}, {"item": "kubejs:blazing_redstone"}], 2.0, 'mbm2:pressure_chamber/turbine_blade')
 
 	//Gear Recipe is wrong
 	event.remove({id: 'pneumaticcraft:compressed_iron_gear'})
@@ -82,4 +86,73 @@ onEvent('recipes', event => {
 		S: '#forge:stone',
 		R: '#forge:rods/compressed_steel',
 	  }).id('mbm2:reinforced_stone')
+
+	//Casing
+	event.shaped('kubejs:pneumaticcraft_casing', [
+	  'PPP',
+	  'SCS',
+	  'STS'
+	], {
+	  S: 'pneumaticcraft:reinforced_bricks',
+	  P: '#forge:plates/thorium',
+	  C: 'powah:dielectric_casing',
+	  T: 'pneumaticcraft:small_tank',
+	}).id('mbm2:pneumaticcraft_casing')
+
+	//air_compressor
+	event.remove({id: 'pneumaticcraft:air_compressor'})
+	event.shaped('pneumaticcraft:air_compressor', [
+	  ' P ',
+	  'TCT',
+	  'GFG'
+	], {
+	  T: 'pneumaticcraft:pressure_tube',
+	  G: '#forge:gears/thorium',
+	  C: 'kubejs:pneumaticcraft_casing',
+	  F: 'engineersdecor:small_lab_furnace',
+	  P: 'create:propeller',
+	}).id('mbm2:air_compressor')
+
+	//thermopneumatic_processing_plant
+	event.remove({id: 'pneumaticcraft:thermopneumatic_processing_plant'})
+	event.shaped('pneumaticcraft:thermopneumatic_processing_plant', [
+	  'GPG',
+	  'HCH',
+	  'RFR'
+	], {
+	  G: '#forge:gears/reinforced_electrum',
+	  R: 'compressedcreativity:engine_rotor',
+	  C: 'kubejs:pneumaticcraft_casing',
+	  F: 'powah:capacitor_blazing',
+	  P: 'immersiveengineering:component_electronic_adv',
+	  H: 'thermal:obsidian_glass',
+	}).id('mbm2:thermopneumatic_processing_plant')
+	
+	
+	//refinery
+	event.remove({id: 'pneumaticcraft:refinery'})
+	event.shaped('pneumaticcraft:refinery', [
+	  'PEP',
+	  'HCH',
+	  'PFP'
+	], {
+	  E: 'immersiveengineering:component_electronic_adv',
+	  F: 'powah:thermoelectric_plate',
+	  C: 'kubejs:pneumaticcraft_casing',
+	  H: 'thermal:obsidian_glass',
+	  P: '#forge:platings/pressurized_aluminum_alloy',
+	}).id('mbm2:refinery')
+	
+	//refinery_output
+	event.remove({id: 'pneumaticcraft:refinery_output'})
+	event.shaped('pneumaticcraft:refinery_output', [
+	  'RDR',
+	  'HCH',
+	  'RDR'
+	], {
+	  H: 'thermal:obsidian_glass',
+	  R: '#forge:rods/rose_gold',
+	  C: 'kubejs:pneumaticcraft_casing',
+	  D: '#forge:plates/drenched_iron',
+	}).id('mbm2:refinery_output')
 });

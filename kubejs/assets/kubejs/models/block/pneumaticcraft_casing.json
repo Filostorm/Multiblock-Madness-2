@@ -1,0 +1,197 @@
+{
+    "__comment": "Model generated using MrCrayfish's Model Creator (https://mrcrayfish.com/tools?id=mc)",
+    "textures": {
+        "pneumaticcraft_casing": "kubejs:block/pneumaticcraft_casing",
+        "bottom_panel": "kubejs:block/bottom_panel",
+        "top_panel": "kubejs:block/top_panel",
+        "particle": "kubejs:block/top_panel"
+    },
+    "display": {
+        "gui": {
+            "rotation": [ 30, 45, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 0.625, 0.625, 0.625 ]
+        },
+        "ground": {
+            "rotation": [ 0, 0, 0 ],
+            "translation": [ 0, 3, 0 ],
+            "scale": [ 0.25, 0.25, 0.25 ]
+        },
+        "fixed": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 1, 1, 1 ]
+        },
+        "head": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 1, 1, 1 ]
+        },
+        "firstperson_righthand": {
+            "rotation": [ 0, 315, 0 ],
+            "translation": [ 0, 2.5, 0 ],
+            "scale": [ 0.4, 0.4, 0.4 ]
+        },
+        "thirdperson_righthand": {
+            "rotation": [ 75, 315, 0 ],
+            "translation": [ 0, 2.5, 0 ],
+            "scale": [ 0.375, 0.375, 0.375 ]
+        }
+    },
+    "elements": [
+        {
+            "name": "Bottom",
+            "from": [ 0, 12, 0 ], 
+            "to": [ 16, 13, 16 ], 
+            "faces": {
+                "north": { "texture": "#top_panel", "uv": [ 0, 0, 16, 1 ] },
+                "east": { "texture": "#top_panel", "uv": [ 0, 0, 16, 1 ] },
+                "south": { "texture": "#top_panel", "uv": [ 0, 0, 16, 1 ] },
+                "west": { "texture": "#top_panel", "uv": [ 0, 0, 16, 1 ] },
+                "up": { "texture": "#top_panel", "uv": [ 0, 0, 16, 16 ] },
+                "down": { "texture": "#top_panel", "uv": [ 0, 0, 16, 16 ] }
+            }
+        },
+        {
+            "name": "Top",
+            "from": [ 0, 14, 0 ], 
+            "to": [ 16, 16, 16 ], 
+            "faces": {
+                "north": { "texture": "#top_panel", "uv": [ 0, 0, 16, 2 ] },
+                "east": { "texture": "#top_panel", "uv": [ 0, 0, 16, 2 ] },
+                "south": { "texture": "#top_panel", "uv": [ 0, 0, 16, 2 ] },
+                "west": { "texture": "#top_panel", "uv": [ 0, 0, 16, 2 ] },
+                "up": { "texture": "#top_panel", "uv": [ 0, 0, 16, 16 ] },
+                "down": { "texture": "#top_panel", "uv": [ 0, 0, 16, 16 ] }
+            }
+        },
+        {
+            "name": "Top_Insert",
+            "from": [ 1, 13, 1 ], 
+            "to": [ 15, 14, 15 ], 
+            "faces": {
+                "north": { "texture": "#pneumaticcraft_casing", "uv": [ 1, 2, 15, 3 ] },
+                "east": { "texture": "#pneumaticcraft_casing", "uv": [ 1, 2, 15, 3 ] },
+                "south": { "texture": "#pneumaticcraft_casing", "uv": [ 1, 2, 15, 3 ] },
+                "west": { "texture": "#pneumaticcraft_casing", "uv": [ 1, 2, 15, 3 ] }
+            }
+        },
+        {
+            "name": "Bottom_Insert",
+            "from": [ 1, 11, 1 ], 
+            "to": [ 15, 12, 15 ], 
+            "faces": {
+                "north": { "texture": "#pneumaticcraft_casing", "uv": [ 1, 2, 15, 3 ] },
+                "east": { "texture": "#pneumaticcraft_casing", "uv": [ 1, 2, 15, 3 ] },
+                "south": { "texture": "#pneumaticcraft_casing", "uv": [ 1, 2, 15, 3 ] },
+                "west": { "texture": "#pneumaticcraft_casing", "uv": [ 1, 2, 15, 3 ] }
+            }
+        },
+        {
+            "name": "Pillar",
+            "from": [ 0, 2, 0 ], 
+            "to": [ 3, 9, 3 ], 
+            "faces": {
+                "north": { "texture": "#pneumaticcraft_casing", "uv": [ 13, 5, 16, 12 ] },
+                "east": { "texture": "#pneumaticcraft_casing", "uv": [ 0, 5, 3, 12 ] },
+                "south": { "texture": "#pneumaticcraft_casing", "uv": [ 0, 5, 3, 12 ] },
+                "west": { "texture": "#pneumaticcraft_casing", "uv": [ 0, 5, 3, 12 ] }
+            }
+        },
+        {
+            "name": "Pillar",
+            "from": [ 13, 2, 0 ], 
+            "to": [ 16, 9, 3 ], 
+            "faces": {
+                "north": { "texture": "#pneumaticcraft_casing", "uv": [ 0, 5, 3, 12 ] },
+                "east": { "texture": "#pneumaticcraft_casing", "uv": [ 13, 5, 16, 16 ] },
+                "south": { "texture": "#pneumaticcraft_casing", "uv": [ 0, 5, 3, 12 ] },
+                "west": { "texture": "#pneumaticcraft_casing", "uv": [ 0, 5, 3, 12 ] }
+            }
+        },
+        {
+            "name": "Pillar",
+            "from": [ 13, 2, 13 ], 
+            "to": [ 16, 9, 16 ], 
+            "faces": {
+                "north": { "texture": "#pneumaticcraft_casing", "uv": [ 0, 5, 3, 12 ] },
+                "east": { "texture": "#pneumaticcraft_casing", "uv": [ 0, 5, 3, 12 ] },
+                "south": { "texture": "#pneumaticcraft_casing", "uv": [ 13, 5, 16, 12 ] },
+                "west": { "texture": "#pneumaticcraft_casing", "uv": [ 0, 5, 3, 12 ] }
+            }
+        },
+        {
+            "name": "Pillar",
+            "from": [ 0, 2, 13 ], 
+            "to": [ 3, 9, 16 ], 
+            "faces": {
+                "north": { "texture": "#pneumaticcraft_casing", "uv": [ 0, 5, 3, 12 ] },
+                "east": { "texture": "#pneumaticcraft_casing", "uv": [ 0, 5, 3, 12 ] },
+                "south": { "texture": "#pneumaticcraft_casing", "uv": [ 0, 5, 3, 12 ] },
+                "west": { "texture": "#pneumaticcraft_casing", "uv": [ 0, 5, 3, 12 ] }
+            }
+        },
+        {
+            "name": "Bottom_Layer",
+            "from": [ 0, 0, 0 ], 
+            "to": [ 16, 2, 16 ], 
+            "faces": {
+                "north": { "texture": "#pneumaticcraft_casing", "uv": [ 0, 14, 16, 16 ] },
+                "east": { "texture": "#pneumaticcraft_casing", "uv": [ 0, 14, 16, 16 ] },
+                "south": { "texture": "#pneumaticcraft_casing", "uv": [ 0, 14, 16, 16 ] },
+                "west": { "texture": "#pneumaticcraft_casing", "uv": [ 0, 14, 16, 16 ] },
+                "up": { "texture": "#top_panel", "uv": [ 0, 0, 16, 16 ] },
+                "down": { "texture": "#bottom_panel", "uv": [ 0, 0, 16, 16 ] }
+            }
+        },
+        {
+            "name": "Top_Layer",
+            "from": [ 0, 9, 0 ], 
+            "to": [ 16, 11, 16 ], 
+            "faces": {
+                "north": { "texture": "#pneumaticcraft_casing", "uv": [ 0, 14, 16, 16 ] },
+                "east": { "texture": "#pneumaticcraft_casing", "uv": [ 0, 14, 16, 16 ] },
+                "south": { "texture": "#pneumaticcraft_casing", "uv": [ 0, 14, 16, 16 ] },
+                "west": { "texture": "#pneumaticcraft_casing", "uv": [ 0, 14, 16, 16 ] },
+                "up": { "texture": "#top_panel", "uv": [ 0, 0, 16, 16 ] },
+                "down": { "texture": "#bottom_panel", "uv": [ 0, 0, 16, 16 ] }
+            }
+        },
+        {
+            "name": "N_Window",
+            "from": [ 3, 2, 0 ], 
+            "to": [ 13, 9, 1 ], 
+            "faces": {
+                "north": { "texture": "#pneumaticcraft_casing", "uv": [ 3, 7, 13, 14 ] },
+                "south": { "texture": "#pneumaticcraft_casing", "uv": [ 3, 7, 13, 14 ] }
+            }
+        },
+        {
+            "name": "S_Window",
+            "from": [ 3, 2, 15 ], 
+            "to": [ 13, 9, 16 ], 
+            "faces": {
+                "north": { "texture": "#pneumaticcraft_casing", "uv": [ 3, 7, 13, 14 ] },
+                "south": { "texture": "#pneumaticcraft_casing", "uv": [ 3, 7, 13, 14 ] }
+            }
+        },
+        {
+            "name": "W_Window",
+            "from": [ 0, 2, 3 ], 
+            "to": [ 1, 9, 13 ], 
+            "faces": {
+                "east": { "texture": "#pneumaticcraft_casing", "uv": [ 3, 7, 13, 14 ] },
+                "west": { "texture": "#pneumaticcraft_casing", "uv": [ 3, 7, 13, 14 ] }
+            }
+        },
+        {
+            "name": "E_Window",
+            "from": [ 15, 2, 3 ], 
+            "to": [ 16, 9, 13 ], 
+            "faces": {
+                "east": { "texture": "#pneumaticcraft_casing", "uv": [ 3, 7, 13, 14 ] },
+                "west": { "texture": "#pneumaticcraft_casing", "uv": [ 3, 7, 13, 14 ] }
+            }
+        }
+    ]
+}

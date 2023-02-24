@@ -8,12 +8,12 @@
 		{ item: "ironfurnaces:iron_furnace" }
 	]
 	loot_crate: {
-		drops: {
-			boss: 0
-			passive: 0
-			monster: 0
-		}
 		color: 16777215
 		string_id: "iron_furnace"
+		drops: {
+			passive: 0
+			boss: 0
+			monster: 0
+		}
 	}
 }

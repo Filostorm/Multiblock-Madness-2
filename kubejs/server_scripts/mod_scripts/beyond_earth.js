@@ -60,9 +60,9 @@ onEvent('recipes', event => {
 		C: 'compressedcreativity:compressed_iron_casing',
 		U: 'thermal:upgrade_augment_1',
 		E: 'immersiveengineering:component_electronic_adv',
-		R: '#forge:rods/aluminum',
-		P: '#forge:platings/duralumin',
-		M: '#forge:mechanical_components/energetic_alloy',
+		R: '#forge:rods/duralumin',
+		P: '#forge:platings/titanium',
+		M: '#forge:interlocking_components/energetic_alloy',
 		G: '#forge:gears/compressed_steel',
 	  }).id('mbm2:nasa_workbench')
 
@@ -86,4 +86,101 @@ onEvent('recipes', event => {
 		},
 		"oxygen": 5
 	}).id('mbm2:beyond_earth/oxygen_converting')
+	event.custom({
+		"type": "beyond_earth:oxygen_loader",
+		"input": {
+			"name": "kubejs:liquid_air",
+			"amount": 5
+		},
+		"oxygen": 5
+	}).id('mbm2:beyond_earth/liquid_air_converting')
+
+	//Oxygen Loader
+	event.remove({id: 'beyond_earth:oxygen_loader'})
+	event.shaped('beyond_earth:oxygen_loader', [
+		'PAP',
+		'MCM',
+		'PTP'
+	  ], {
+		C: '#forge:casings/titanium',
+		P: `#forge:plates/aluminum`,
+		A: 'immersiveengineering:component_electronic_adv',
+		T: 'beyond_earth:oxygen_tank',
+		M: 'pneumaticcraft:flow_detector_module'
+	  }).id(`mbm2:crafting/oxygen_loader`)
+	
+	  //Tier 2 Rocket
+	  event.remove({id: 'beyond_earth:nasa_workbenching/tier2'})
+	  event.custom({
+		"type":"beyond_earth:nasa_workbench",
+		"input":{
+		   "parts":{
+			  "beyond_earth:nose":[
+				 {
+					"item":"kubejs:aerospace_alloy_rocket_nose_cone"
+				 }
+			  ],
+			  "beyond_earth:body":[
+				 {
+					"tag":"forge:platings/desh"
+				 },
+				 {
+					"tag":"forge:platings/desh"
+				 },
+				 {
+					"tag":"forge:platings/desh"
+				 },
+				 {
+					"tag":"forge:platings/desh"
+				 },
+				 {
+					"tag":"forge:platings/desh"
+				 },
+				 {
+					"tag":"forge:platings/desh"
+				 }
+			  ],
+			  "beyond_earth:tank":[
+				 {
+					"tag":"beyond_earth:tanks/desh"
+				 },
+				 {
+					"tag":"beyond_earth:tanks/desh"
+				 }
+			  ],
+			  "beyond_earth:fin_left":[
+				 {
+					"item":"kubejs:aerospace_alloy_rocket_fin"
+				 },
+				 {
+					"item":"kubejs:aerospace_alloy_rocket_fin"
+				 }
+			  ],
+			  "beyond_earth:fin_right":[
+				 {
+					"item":"kubejs:aerospace_alloy_rocket_fin"
+				 },
+				 {
+					"item":"kubejs:aerospace_alloy_rocket_fin"
+				 }
+			  ],
+			  "beyond_earth:engine":[
+				 {
+					"tag":"beyond_earth:engines/desh"
+				 }
+			  ]
+		   }
+		},
+		"output":{
+		   "item":"beyond_earth:rocket_t2",
+		   "count":1
+		}
+	 }).id('mbm2:tier2_rocket')
+
+
+	  
+
+
 });
+
+

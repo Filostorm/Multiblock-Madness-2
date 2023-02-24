@@ -1,0 +1,12 @@
+{
+	id: "5AC0FF88351AE82F"
+	order_index: 9
+	title: "Drill Augments"
+	loot_size: 1
+	rewards: [
+		{ item: "immersiveengineering:toolupgrade_drill_capacity" }
+		{ item: "immersiveengineering:toolupgrade_drill_damage" }
+		{ item: "immersiveengineering:toolupgrade_drill_waterproof" }
+		{ item: "immersiveengineering:toolupgrade_drill_lube" }
+	]
+}

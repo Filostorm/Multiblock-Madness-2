@@ -171,7 +171,7 @@ onEvent('recipes', event => {
 		F: 'ae2:formation_core',
 	  	S: 'ae2:terminal',
 		C: 'ae2:calculation_processor',
-		P: '#forge:plates/rose_gold', //hepatizon, fluix_steel
+		P: '#forge:plates/hepatizon', //, fluix_steel
 		T: 'kubejs:source_tube'
 	}).id('mbm2:crafting_terminal')
   

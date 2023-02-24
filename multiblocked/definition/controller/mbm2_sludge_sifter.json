@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 3,
   "location": "mbm2:sludge_sifter",
   "traits": {},
   "properties": {
@@ -139,6 +139,14 @@
         "maxCount": 1,
         "previewCount": 1
       },
+      "F": {
+        "location": "multiblocked:create_input",
+        "type": "component",
+        "minCount": 1,
+        "maxCount": 1,
+        "previewCount": 1,
+        "io": "IN"
+      },
       "any": {
         "type": "any"
       }
@@ -151,7 +159,8 @@
         "any"
       ],
       "A": [
-        "A"
+        "A",
+        "F"
       ],
       "B": [
         "B",

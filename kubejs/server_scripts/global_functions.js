@@ -96,9 +96,7 @@ global.tinkersMelting = (event, outputFluid, amount, byproductFluid, byproductAm
 global.tinkersMeltingPlain = (event, outputFluid, amount, inputItem, temperature, time, ID) => {
 	event.custom({
 		type: 'tconstruct:melting',
-		ingredient: {
-			item: inputItem
-		},
+		ingredient: inputItem,
 		result: {
 		  fluid: outputFluid, 
 		  amount: amount //180
@@ -390,5 +388,34 @@ global.powahEnergizing = (event, itemInput, itemOutput, energy, ID) => {
 		ingredients: itemInput,
 		energy: energy, //120000
 		result: itemOutput.toJson()
+	  }).id(ID)}
+///////////////////////////////////////////////////////////
+
+///////////////// DESSOLVING ///////////////////////
+global.alchemistryDissolver = (event, itemOutput, itemInput, itemInputAmount, rolls, weighted, ID) => {
+	event.custom({
+		type: 'alchemistry:dissolver',
+		group: 'alchemistry:dissolver',
+		input: {
+			ingredient: {
+			  item: itemInput
+			},
+			count: itemInputAmount
+		  },
+		output: {
+		  rolls: rolls,
+		  weighted: weighted, //true
+		  groups: itemOutput //[{'probability': 4.0,'results': [{'item': 'chemlib:aluminum_oxide'}]},]
+		}
+	  }).id(ID)}
+///////////////////////////////////////////////////////////
+
+///////////////// COMPACTING ///////////////////////
+global.alchemistryCompacting = (event, itemOutput, itemInput, ID) => {
+	event.custom({
+		type: 'alchemistry:compactor',
+		group: 'alchemistry:compactor',
+		input: itemInput,
+		result: itemOutput
 	  }).id(ID)}
 ///////////////////////////////////////////////////////////

@@ -19,6 +19,11 @@ onEvent('tags.items', event => {
 
 onEvent('recipes', event => {
 
+	var plateCasting = 8
+	var gearCasting = 4
+	var rodCasting = 16
+	var wireCasting = 16
+
 	global.newMaterialParts.forEach((item) => {
 		
 		console.log(Item.of(`#forge:ingots/${item.material}`) + `: tier ${item.tier} ${item.type}`);
@@ -58,7 +63,6 @@ onEvent('recipes', event => {
 		  global.casingTable(event, 'tconstruct:casts/single_use/plate', true, `#forge:plates/${item.material}`, `forge:molten_${item.material}`, 90, 60, `tconstruct:smeltery/casting/metal/${item.material}/plate_sand_cast`)
 
 		//Mega Plate Casing
-		let plateCasting = 8
 	  event.recipes.multiblocked.multiblock("casting")
 	  	.inputFluid(Fluid.of(`${item.fluid_id}`, plateCasting*90))
 	  	.inputItem(`${plateCasting}x #tconstruct:casts/single_use/plate`)
@@ -171,7 +175,7 @@ onEvent('recipes', event => {
 
 			//////////////// COG BLOCK ///////////////
 			if (Item.of(`#forge:cog_blocks/${item.material}`) != null) {
-				event.shaped(`3x #forge:cog_blocks/${item.material}`, [
+				event.shaped(`2x #forge:cog_blocks/${item.material}`, [
 					'RGR',
 					'G G',
 					'RGR'
@@ -189,7 +193,6 @@ onEvent('recipes', event => {
 		global.casingTable(event, 'tconstruct:casts/single_use/gear', true, `#forge:gears/${item.material}`, `forge:molten_${item.material}`, 360, 120, `tconstruct:smeltery/casting/metal/${item.material}/gear_sand_cast`)
 
 	//Mega Gear Casing
-		let gearCasting = 4
 	  event.recipes.multiblocked.multiblock("casting")
 	  	.inputFluid(Fluid.of(`${item.fluid_id}`, gearCasting*360))
 	  	.inputItem(`${gearCasting}x #tconstruct:casts/single_use/gear`)
@@ -204,21 +207,21 @@ onEvent('recipes', event => {
 	//Thermal Gears
 	event.recipes.thermal.press(`#forge:gears/${item.material}`, [`5x #forge:ingots/${item.material}`, 'thermal:press_gear_die']).id(`thermal:machines/press/press_${item.material}_ingot_to_gear`)
 	
-	//////////////// MECHANICAL PART ///////////////
-    if (Item.of(`#forge:mechanical_components/${item.material}`) != null) {
+	//////////////// INTERLOCKING PART ///////////////
+    if (Item.of(`#forge:interlocking_components/${item.material}`) != null) {
 		if (Item.of(`#forge:wires/${item.material}`) != null && Item.of(`#forge:gears/${item.material}`) != null) {
-			event.shaped(`#forge:mechanical_components/${item.material}`, [
+			event.shaped(`#forge:interlocking_components/${item.material}`, [
 				'G G',
 				' W ',
 				'G G'
 			  ], {
 				W: `#forge:wires/${item.material}`,
 				G: `#forge:gears/${item.material}`
-			  }).id(`mbm2:parts/${item.material}_mechanical_component`)
+			  }).id(`mbm2:parts/${item.material}_interlocking_component`)
 			//Cheaper recipe
-			global.ieBlueprint(event, 'components', Item.of(`#forge:mechanical_components/${item.material}`), [{count:3, base_ingredient: {tag: `forge:gears/${item.material}`}}, {tag: `forge:wires/${item.material}`}], `mbm2:${item.material}_mechanical_component`)
+			global.ieBlueprint(event, 'interlocking_components', Item.of(`#forge:interlocking_components/${item.material}`), [{count:3, base_ingredient: {tag: `forge:gears/${item.material}`}}, {tag: `forge:wires/${item.material}`}], `mbm2:${item.material}_interlocking_component`)
 
-			} else { console.log(`${item.material}` + "needs wires and gears enabled to make a mechanical component recipe");}
+			} else { console.log(`${item.material}` + "needs wires and gears enabled to make a interlocking component recipe");}
 		}
 	}
 	////////////////END OF GEARS///////////////
@@ -250,7 +253,6 @@ onEvent('recipes', event => {
 		global.thermalChilling(event, `${item.fluid_id}`, 60, `#forge:rods/${item.material}`, 1, 'thermal:chiller_rod_cast', 5000, `thermal:machines/chiller/chiller_${item.material}_rod`)
 	
 		//Mega Rod Casing
-		let rodCasting = 16
 		  event.recipes.multiblocked.multiblock("casting")
 			  .inputFluid(Fluid.of(`${item.fluid_id}`, rodCasting*45))
 			  .inputItem(`${rodCasting}x #tconstruct:casts/single_use/rod`)
@@ -289,7 +291,6 @@ onEvent('recipes', event => {
 
 	  if (item.fluid_id != null) {
 		//Mega Wire Casing
-		let wireCasting = 16
 		  event.recipes.multiblocked.multiblock("casting")
 			  .inputFluid(Fluid.of(`${item.fluid_id}`, wireCasting*45))
 			  .inputItem(`${wireCasting}x #tconstruct:casts/single_use/wire`)
@@ -310,21 +311,48 @@ onEvent('recipes', event => {
 			S: 'createaddition:spool'
 		  }).id(`mbm2:crafting/${item.material}_spool`)
 		}
-	}
-
-	
-    if (Item.of(`#forge:dusts/${item.material}`) != null) {
-		if (item.type == 'gem') {
-			event.recipes.createMilling([`#forge:dusts/${item.material}`], [`#forge:gems/${item.material}`]).id(`mbm2:${item.material}_gem_2_dust`)
-			event.recipes.immersiveengineeringCrusher(`#forge:dusts/${item.material}`, `#forge:gems/${item.material}`).id(`mbm2:immersive/crushing/crushing_${item.material}_gem`)
-		} else {
-			if (Item.of(`#forge:ingots/${item.material}`) != null) {
-			event.recipes.createMilling([`#forge:dusts/${item.material}`], [`#forge:ingots/${item.material}`]).id(`mbm2:${item.material}_ingot_2_dust`)
-			event.recipes.immersiveengineeringCrusher(`#forge:dusts/${item.material}`, `#forge:ingots/${item.material}`).id(`mbm2:immersive/crushing/crushing_${item.material}_ingot`)
-			}
+		/////////////// Coil Item //////////////////
+    	if (Item.of(`#forge:wire_coils/${item.material}`) != null) {
+		event.shaped(`#forge:wire_coils/${item.material}`, [
+			' W ',
+			'WSW',
+			' W '
+		  ], {
+			S: `#forge:rods/aluminum`,
+			W: `#forge:spools/${item.material}`
+		  }).id(`mbm2:crafting/${item.material}_wire_coil`)
+		}
+		/////////////// Coil Block //////////////////
+    	if (Item.of(`#forge:coils/${item.material}`) != null) {
+		event.shaped(`#forge:coils/${item.material}`, [
+			'PPP',
+			'CCC',
+			'PPP'
+		  ], {
+			P: `#forge:plates/magnesium`,
+			C: `#forge:wire_coils/${item.material}`
+		  }).id(`mbm2:crafting/${item.material}_coil_block`)
 		}
 	}
 
+	////////////////////// DUST //////////////////////
+    if (Item.of(`#forge:dusts/${item.material}`) != null) {
+		if (item.type == 'gem') {
+			event.recipes.createMilling([`#forge:dusts/${item.material}`], [`#forge:gems/${item.material}`]).id(`mbm2:create/crushing/${item.material}_${item.type}`)
+			event.recipes.immersiveengineeringCrusher(`#forge:dusts/${item.material}`, `#forge:gems/${item.material}`).id(`mbm2:immersive/crushing/${item.material}_${item.type}`)
+			event.recipes.mekanismCrushing(`#forge:dusts/${item.material}`, `#forge:gems/${item.material}`).id(`mbm2:mekanism/crushing/${item.material}_${item.type}`)
+		} else if (item.type == 'stone') {
+			event.recipes.createMilling([`#forge:dusts/${item.material}`], [`#forge:${item.material}`]).id(`mbm2:create/crushing/${item.material}_${item.type}`)
+			event.recipes.immersiveengineeringCrusher(`#forge:dusts/${item.material}`, `#forge:${item.material}`).id(`mbm2:immersive/crushing/${item.material}_${item.type}`)
+			event.recipes.mekanismCrushing(`#forge:dusts/${item.material}`, `#forge:${item.material}`).id(`mbm2:mekanism/crushing/${item.material}_${item.type}`)
+		} else {
+			if (Item.of(`#forge:ingots/${item.material}`) != null) {
+			event.recipes.createMilling([`#forge:dusts/${item.material}`], [`#forge:ingots/${item.material}`]).id(`mbm2:create/crushing/${item.material}_${item.type}`)
+			event.recipes.immersiveengineeringCrusher(`#forge:dusts/${item.material}`, `#forge:ingots/${item.material}`).id(`mbm2:immersive/crushing/${item.material}_${item.type}`)
+			event.recipes.mekanismCrushing(`#forge:dusts/${item.material}`, `#forge:ingots/${item.material}`).id(`mbm2:mekanism/crushing/${item.material}_${item.type}`)
+			}
+		}
+	}
 
     if (Item.of(`#forge:ingots/${item.material}`) != null) {
 		//Ingots
@@ -391,8 +419,29 @@ onEvent('recipes', event => {
 			I: `#forge:raw_materials/${item.material}`,
 		  }).id(`mbm2:raw_${item.material}_packing`)
 		}
-})
 
-	
+		//Meelt that metal down bruh
+		var partAmounts = {
+			'ingot':90,
+			'plate':90,
+			'gear':360,
+			'rod':45,
+			'wire':45,
+			'nugget':10,
+			'coin':30,
+		}
+		if (item.fluid_id != null) {
+			for (var part in partAmounts) {
+				if (Item.of(`#forge:${part}s/${item.material}`) != null) {
+					event.recipes.thermal.crucible(Fluid.of(item.fluid_id, partAmounts[part]), `#forge:${part}s/${item.material}`).id(`mbm2:crucible/${item.material}_${part}`)
+				}
+			}
+		}
+		//Chemlib compat
+		if (Item.of(`chemlib:${item.material}`) != null && item.type != 'element') {
+			event.remove({id: `alchemistry:compactor/${item.material}_dust`})
+			global.alchemistryCompacting(event, Item.of(`#forge:dusts/${item.material}`).toJson(), Item.of(`chemlib:${item.material}`, 16).toJson(), `mbm2:alchemistry/${item.material}_compacting`)
+		}
+	})
 });
 	

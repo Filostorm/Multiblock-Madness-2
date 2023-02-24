@@ -89,7 +89,7 @@ onEvent('worldgen.add', event => {
 			}
 		})
 
-		ore.count([6, 10])
+		ore.count([8, 12])
 				.squared()
 				.uniformHeight(
 						anchors.aboveBottom(0),
@@ -103,7 +103,33 @@ onEvent('worldgen.add', event => {
 			not: ["^nether", "^the_end", /^beyond_earth:.*/]
 		}
 	})
+		// Base Iron Veins
+		event.addOre((ore) => {
+			ore.id = 'kubejs:iron_ore'
+		
+			ore.addTarget('stone', 'minecraft:iron_ore')
+			ore.addTarget('minecraft:deepslate', 'minecraft:deepslate_iron_ore')
+			global.stoneTypes.forEach((type) => {
+				if (type.material != 'deepslate' && type.material != 'bedrock') {
+					ore.addTarget(`#forge:${type.material}`, `excavated_variants:${type.material}_iron_ore`)
+				}
+			})
+				
 	
+			ore.count([5, 10])
+					.squared()
+					.uniformHeight(
+							anchors.aboveBottom(10),
+							anchors.absolute(150)
+					)
+			ore.size = 25
+			ore.noSurface = 0
+			ore.worldgenLayer = "underground_ores"
+			ore.chance = 0
+			ore.biomes = {
+				not: ["^nether", "^the_end", /^beyond_earth:.*/]
+			  }
+		})
 
 	// Base Copper Veins
 	event.addOre((ore) => {
@@ -117,7 +143,7 @@ onEvent('worldgen.add', event => {
 			}
 		})
 
-		ore.count([6, 10])
+		ore.count([8, 12])
 				.squared()
 				.uniformHeight(
 						anchors.aboveBottom(0),
@@ -198,7 +224,34 @@ onEvent('worldgen.add', event => {
 			}
 		})
 
-		ore.count([2, 4])
+		ore.count([1, 4])
+				.squared()
+				.uniformHeight(
+						anchors.aboveBottom(16),
+						anchors.absolute(80)
+				)
+		ore.size = 25
+		ore.noSurface = 0
+		ore.worldgenLayer = "underground_ores"
+		ore.chance = 0
+		ore.biomes = {
+			not: ["^nether", "^the_end", /^beyond_earth:.*/]
+		  }
+	})
+
+	// Base lead Veins
+	event.addOre((ore) => {
+		ore.id = 'kubejs:lead_ore'
+	
+		ore.addTarget('stone', 'thermal:lead_ore')
+		ore.addTarget('minecraft:deepslate', 'thermal:deepslate_lead_ore')
+		global.stoneTypes.forEach((type) => {
+			if (type.material != 'deepslate' && type.material != 'bedrock') {
+				ore.addTarget(`#forge:${type.material}`, `excavated_variants:${type.material}_lead_ore`)
+			}
+		})
+
+		ore.count([1, 4])
 				.squared()
 				.uniformHeight(
 						anchors.aboveBottom(16),
@@ -512,6 +565,30 @@ onEvent('worldgen.add', event => {
 		  ore.chance = 0
 	})
 	
+	// Inserted Silver to Lead Veins
+	event.addOre((ore) => {
+		ore.id = 'kubejs:silver_ore'
+
+		ore.addTarget('thermal:silver_ore', 'thermal:silver_ore')
+		ore.addTarget('thermal:deepslate_silver_ore', 'thermal:deepslate_silver_ore')
+		global.stoneTypes.forEach((type) => {
+			if (type.material != 'deepslate' && type.material != 'bedrock') {
+				ore.addTarget(`excavated_variants:${type.material}_lead_ore`, `excavated_variants:${type.material}_silver_ore`)
+			}
+		})
+
+		ore.count(200)
+				.squared()
+				.uniformHeight(
+						anchors.aboveBottom(16),
+						anchors.absolute(80)
+				)
+		ore.size = 15
+		ore.noSurface = 0
+		ore.worldgenLayer = "underground_decoration"
+		  ore.chance = 0
+	})
+	/*
 	// Inserted Arcanite to Silver Veins
 	event.addOre((ore) => {
 		ore.id = 'kubejs:arcanite_ore'
@@ -534,7 +611,7 @@ onEvent('worldgen.add', event => {
 		ore.noSurface = 0
 		ore.worldgenLayer = "underground_decoration"
 		  ore.chance = 0
-	})
+	})*/
 	
 	// Inserted Diamond to Coal Veins
 	event.addOre((ore) => {

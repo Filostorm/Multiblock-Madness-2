@@ -1,0 +1,8 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "kubejs:item/wire_coil",
+        "layer1": "kubejs:item/wire_coil_overlay"
+    }
+  }
+  

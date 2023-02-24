@@ -13,6 +13,10 @@ onEvent('tags.items', event => {
 		event.add('create:sticky', 'create:super_glue')
 		event.add('create:sticky', 'slime_ball')
 
+		event.add('forge:ingots', 'createbigcannons:nethersteel_ingot')
+		event.add('forge:ingots/nethersteel', 'createbigcannons:nethersteel_ingot')
+		
+
 
 
 });
@@ -165,7 +169,7 @@ event.shaped('create:hose_pulley', [
 	  ], {
 	B: 'create:copper_casing',
 	C: 'minecraft:chain',
-	D: 'kubejs:copper_mechanical_component'
+	D: 'kubejs:copper_interlocking_component'
 	  }).id(`mbm2:crafting/hose_pulley`)
 
 	  //Brass Upgrades

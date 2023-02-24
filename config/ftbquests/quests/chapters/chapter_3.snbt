@@ -9,7 +9,7 @@
 	default_hide_dependency_lines: false
 	quests: [
 		{
-			title: "[move] Imbument Chamber"
+			title: "Imbument Chamber"
 			x: 11.5d
 			y: 6.5d
 			subtitle: "Archwood saplings can be aquired through the crushing wheel"
@@ -639,6 +639,12 @@
 					item: "multiblocked:create_input"
 				}
 			]
+			rewards: [{
+				id: "6DA0B6AC640C71C6"
+				type: "item"
+				item: "createaddition:festive_spool"
+				count: 2
+			}]
 		}
 		{
 			icon: "createoreexcavation:drilling_machine"
@@ -920,6 +926,7 @@
 		{
 			x: 7.0d
 			y: 6.5d
+			description: ["Used to craft gems from dust."]
 			dependencies: ["20E99BAA6C9A4913"]
 			id: "651B53F1AFDEB856"
 			tasks: [{

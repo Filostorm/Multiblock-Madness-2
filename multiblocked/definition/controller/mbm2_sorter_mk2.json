@@ -127,7 +127,7 @@
       "C": {
         "blocks": [
           {
-            "id": "kubejs:invar_scaffolding"
+            "id": "kubejs:titanite_scaffolding"
           }
         ],
         "type": "blocks"
@@ -135,16 +135,26 @@
       "D": {
         "blocks": [
           {
-            "id": "kubejs:cobalt_cog_block"
+            "id": "kubejs:platinum_cog_block"
           }
         ],
         "type": "blocks"
       },
       "E": {
-        "location": "multiblocked:energy_input",
-        "type": "component",
+        "blocks": [
+          {
+            "id": "multiblocked:energy_input_mk1"
+          },
+          {
+            "id": "multiblocked:energy_input_mk2"
+          },
+          {
+            "id": "multiblocked:energy_input_mk3"
+          }
+        ],
+        "type": "blocks",
         "minCount": 1,
-        "maxCount": 2,
+        "maxCount": 1,
         "previewCount": 1,
         "io": "IN"
       },

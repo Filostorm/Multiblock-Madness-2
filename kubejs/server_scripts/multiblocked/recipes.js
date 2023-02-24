@@ -105,29 +105,75 @@ event.shaped('multiblocked:fluid_output', [
   event.shapeless(`multiblocked:fluid_output`, ['multiblocked:fluid_input']).id(`mbm2:multiblocked/fluid_output_switch`)
   
 
-// Energy Input
-event.shaped('multiblocked:energy_input', [
+// Energy Input mk1
+event.shaped('multiblocked:energy_input_mk1', [
 	' E ',
 	'PCP',
 	' P '
   ], {
-	C: 'kubejs:steel_casing',
+	C: 'kubejs:tier1_casing',
 	E: 'thermal:energy_cell_frame',
 	P: 'rftoolspower:power_core1'
-  }).id(`mbm2:multiblocked/energy_input`)
-  event.shapeless(`multiblocked:energy_input`, ['multiblocked:energy_output']).id(`mbm2:multiblocked/energy_input_switch`)
-  
-// Energy Output
-event.shaped('multiblocked:energy_output', [
+  }).id(`mbm2:multiblocked/energy_input_mk1`)
+  event.shapeless(`multiblocked:energy_input_mk1`, ['multiblocked:energy_output_mk1']).id(`mbm2:multiblocked/energy_input_mk1_switch`)
+// Energy Output mk1
+event.shaped('multiblocked:energy_output_mk1', [
 	' P ',
 	'PCP',
 	' E '
   ], {
-	C: 'kubejs:steel_casing',
+	C: 'kubejs:tier1_casing',
 	E: 'thermal:energy_cell_frame',
 	P: 'rftoolspower:power_core1'
-  }).id(`mbm2:multiblocked/energy_output`)
-  event.shapeless(`multiblocked:energy_output`, ['multiblocked:energy_input']).id(`mbm2:multiblocked/energy_output_switch`)
+  }).id(`mbm2:multiblocked/energy_output_mk1`)
+  event.shapeless(`multiblocked:energy_output_mk1`, ['multiblocked:energy_input_mk1']).id(`mbm2:multiblocked/energy_output_mk1_switch`)
+
+// Energy Input mk2
+event.shaped('multiblocked:energy_input_mk2', [
+	' E ',
+	'PCP',
+	' P '
+  ], {
+	C: 'kubejs:tier2_casing',
+	E: 'multiblocked:energy_input_mk1',
+	P: 'rftoolspower:power_core2'
+  }).id(`mbm2:multiblocked/energy_input_mk2`)
+  event.shapeless(`multiblocked:energy_input_mk2`, ['multiblocked:energy_output_mk2']).id(`mbm2:multiblocked/energy_input_mk2_switch`)
+// Energy Output mk2
+event.shaped('multiblocked:energy_output_mk2', [
+	' P ',
+	'PCP',
+	' E '
+  ], {
+	C: 'kubejs:tier2_casing',
+	E: 'multiblocked:energy_output_mk1',
+	P: 'rftoolspower:power_core2'
+  }).id(`mbm2:multiblocked/energy_output_mk2`)
+  event.shapeless(`multiblocked:energy_output_mk2`, ['multiblocked:energy_input_mk2']).id(`mbm2:multiblocked/energy_output_mk2_switch`)
+
+// Energy Input mk3
+event.shaped('multiblocked:energy_input_mk3', [
+	' E ',
+	'PCP',
+	' P '
+  ], {
+	C: 'kubejs:tier3_casing',
+	E: 'multiblocked:energy_input_mk2',
+	P: 'rftoolspower:power_core3'
+  }).id(`mbm2:multiblocked/energy_input_mk3`)
+  event.shapeless(`multiblocked:energy_input_mk3`, ['multiblocked:energy_output_mk3']).id(`mbm2:multiblocked/energy_input_mk3_switch`)
+  
+// Energy Output mk3
+event.shaped('multiblocked:energy_output_mk3', [
+	' P ',
+	'PCP',
+	' E '
+  ], {
+	C: 'kubejs:tier3_casing',
+	E: 'multiblocked:energy_output_mk2',
+	P: 'rftoolspower:power_core3'
+  }).id(`mbm2:multiblocked/energy_output_mk3`)
+  event.shapeless(`multiblocked:energy_output_mk3`, ['multiblocked:energy_input_mk3']).id(`mbm2:multiblocked/energy_output_mk3_switch`)
 
 // tier1_casing
 event.shaped('4x kubejs:tier1_casing', [
@@ -140,7 +186,7 @@ event.shaped('4x kubejs:tier1_casing', [
   }).id(`mbm2:tier1_casing`)
 
   
-// factory_fan
+// Factory Fan
 event.shaped('kubejs:factory_fan', [
 	'PSP',
 	'PCF',
@@ -151,5 +197,113 @@ event.shaped('kubejs:factory_fan', [
 	S: '#forge:spools/red_alloy',
 	P: '#forge:plates/cast_iron',
   }).id(`mbm2:factory_fan`)
+
+// High Pressure Casing
+event.shaped('3x kubejs:high_pressure_casing', [
+	' P ',
+	'PCP',
+	' P '
+  ], {
+	C: 'kubejs:tier1_casing',
+	P: '#forge:platings/pressurized_aluminum_alloy',
+  }).id(`mbm2:high_pressure_casing`)
+
+  
+// Air Collector Mk1
+event.shaped('mbm2:air_collector_mk1', [
+	'CPC',
+	'OHO',
+	'CGC'
+  ], {
+	C: '#forge:components/compressed_steel',
+	O: 'thermal:obsidian_glass',
+	P: 'immersiveengineering:component_electronic_adv',
+	H: 'kubejs:high_pressure_casing',
+	G: '#forge:gears/hepatizon',
+  }).id(`mbm2:air_collector_mk1`)
+  
+  
+// Blast Furnace
+event.shaped('mbm2:ebf', [
+	'PAP',
+	'TCG',
+	'PTP'
+  ], {
+	C: 'kubejs:tier1_casing',
+	T: 'powah:thermoelectric_plate',
+	G: 'thermal:obsidian_glass',
+	A: 'immersiveengineering:component_electronic_adv',
+	P: '#forge:platings/titanium',
+  }).id(`mbm2:ebf`)
+  
+// Flotation
+event.shaped('mbm2:flotation', [
+	'PAP',
+	'ECW',
+	'PTP'
+  ], {
+	C: 'kubejs:tier1_casing',
+	T: '#forge:interlocking_components/titanite',
+	E: '#elementalcraft:gems/fine_earth',
+	W: '#elementalcraft:gems/fine_water',
+	A: 'immersiveengineering:component_electronic_adv',
+	P: '#forge:plates/drenched_iron',
+  }).id(`mbm2:flotation`)
+  
+// Mixer
+event.shaped('mbm2:mixer_mk1', [
+	'PMP',
+	'GCA',
+	'PIP'
+  ], {
+	C: 'kubejs:tier1_casing',
+	I: '#forge:interlocking_components/hepatizon',
+	M: 'create:mechanical_mixer',
+	P: '#forge:plates/duralumin',
+	A: 'immersiveengineering:component_electronic',
+	G: '#forge:gears/swift_alloy',
+  }).id(`mbm2:mixer_mk1`)
+
+
+// sorter_mk2
+event.shaped('mbm2:sorter_mk2', [
+	'PTP',
+	'MCA',
+	'PGP'
+  ], {
+	C: 'kubejs:tier1_casing',
+	T: 'pneumaticcraft:printed_circuit_board',
+	M: 'create:precision_mechanism',
+	A: 'create:mechanical_arm',
+	P: '#forge:platings/osmium',
+	G: '#forge:gears/osmium',
+  }).id(`mbm2:sorter_mk2`)
+
+// tier2_casing
+event.shaped('2x kubejs:tier2_casing', [
+	'PTP',
+	'NCN',
+	'PTP'
+  ], {
+	C: 'kubejs:tier1_casing',
+	T: 'mekanism:alloy_reinforced',
+	P: '#forge:platings/platinum',
+	N: 'pneumaticcraft:pneumatic_cylinder',
+  }).id(`mbm2:tier2_casing`)
+
+
+// leaching_vat
+event.shaped('mbm2:leaching_vat', [
+	'PBP',
+	'TCA',
+	'PGP'
+  ], {
+	C: 'kubejs:tier2_casing',
+	B: 'pneumaticcraft:printed_circuit_board',
+	P: '#forge:platings/chemically_inert_alloy',
+	G: '#forge:gears/stainless_steel',
+	T: 'pneumaticcraft:large_tank',
+	A: '#mekanism:alloys/atomic',
+  }).id(`mbm2:leaching_vat`)
 
 })

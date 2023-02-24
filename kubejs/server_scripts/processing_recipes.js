@@ -4,11 +4,10 @@ onEvent('recipes', event => {
 		'#forge:coal_coke':'immersiveengineering:dust_coke'
 	}
 	for (var recipe in crushingRecipes) {
-		event.recipes.mekanismCrushing(crushingRecipes[recipe], recipe)
-		event.recipes.thermal.pulverizer(crushingRecipes[recipe], recipe)
-		event.recipes.createMilling(crushingRecipes[recipe], recipe)
-		event.recipes.immersiveengineeringCrusher(crushingRecipes[recipe], recipe)
+		event.recipes.mekanismCrushing(crushingRecipes[recipe], recipe).id(`mbm2:mekanism/crushing/${recipe.slice(7)}`)
+		event.recipes.createMilling(crushingRecipes[recipe], recipe).id(`mbm2:create/crushing/${recipe.slice(7)}`)
+		event.recipes.immersiveengineeringCrusher(crushingRecipes[recipe], recipe).id(`mbm2:immersiveengineering/crushing/${recipe.slice(7)}`)
 	}
-	event.remove({id: 'immersiveengineering:kjs_1au0vcjqt7wg7xro7gvwmvwnc'})
+	event.remove({id: 'immersiveengineering:crusher/coke'})
 	
 });

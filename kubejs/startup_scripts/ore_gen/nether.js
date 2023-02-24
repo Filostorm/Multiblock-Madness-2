@@ -286,12 +286,35 @@ onEvent('worldgen.add', event => {
 						anchors.absolute(100)
 				)
 		ore.size = 20
-		ore.noSurface = 0
+		ore.noSurface = netherSurfaceChance
 		ore.worldgenLayer = "underground_ores"
 		  ore.chance = 0
 		  ore.biomes = "^nether"
 	})
 	
+	
+	// Nether Thorium Veins
+	event.addOre((ore) => {
+		ore.id = 'kubejs:nether_thorium_ore'
+	 
+		global.stoneTypes.forEach((type) => {
+			if (type.material != 'deepslate' && type.material != 'bedrock') {
+			ore.addTarget(`#forge:${type.material}`, `kubejs:${type.material}_thorium_ore`)
+			}
+		})
+
+		ore.count([1, 4])
+				.squared()
+				.uniformHeight(
+						anchors.aboveBottom(100),
+						anchors.absolute(200)
+				)
+		ore.size = 20
+		ore.noSurface = netherSurfaceChance
+		ore.worldgenLayer = "underground_ores"
+		  ore.chance = 0
+		  ore.biomes = "^nether"
+	})
 
 
 	// Inserted Nether Lumite

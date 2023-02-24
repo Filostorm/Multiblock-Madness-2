@@ -305,7 +305,6 @@
 			title: "Getting Wood"
 			x: -10.0d
 			y: 10.0d
-			subtitle: "We have Vein Miner!"
 			description: [
 				"Welcome to Multiblock Madness 2! "
 				"To convert your Quest Book into a tome containing most manuals needed for the pack, just left click the air with it."
@@ -488,14 +487,14 @@
 					id: "sophisticatedbackpacks:backpack"
 					Count: 1b
 					tag: {
-						inventorySlots: 27
-						upgradeSlots: 1
 						contentsUuid: [I;
 							253092764
 							-1836366034
 							-1113098560
 							-1281562646
 						]
+						inventorySlots: 27
+						upgradeSlots: 1
 					}
 				}
 				match_nbt: false
@@ -511,7 +510,12 @@
 			x: -6.5d
 			y: 10.0d
 			subtitle: "Expect lots of Ore"
-			description: [""]
+			description: [
+				"You'll find large veins of which can include several types of materials."
+				""
+				"In order to attach your drill augment, you'll need to unlock the Engineers Workbench by crafting Treated Wood."
+				"Refill by crafting the drill and fuel together."
+			]
 			dependencies: ["5FD77AB0F43882B8"]
 			id: "03F754FB73DEF8FA"
 			tasks: [{
@@ -538,6 +542,51 @@
 					type: "random"
 					exclude_from_claim_all: true
 					table_id: 2582656620646881183L
+				}
+				{
+					id: "30A33CD2DFB70B09"
+					type: "item"
+					item: {
+						id: "immersiveengineering:drill"
+						Count: 1b
+						tag: {
+							Fluid: {
+								Amount: 2000
+								FluidName: "immersiveengineering:biodiesel"
+							}
+							upgrades: { }
+						}
+						ForgeCaps: {
+							Parent: {
+								Size: 5
+								Items: [{
+									Slot: 0
+									id: "immersiveengineering:drillhead_steel"
+									Count: 1b
+								}]
+							}
+						}
+					}
+				}
+				{
+					id: "448230908D36FBA4"
+					type: "choice"
+					exclude_from_claim_all: true
+					table_id: 6539507619413551151L
+				}
+				{
+					id: "65002A96BA1C130D"
+					type: "item"
+					item: {
+						id: "immersiveengineering:jerrycan"
+						Count: 1b
+						tag: {
+							Fluid: {
+								Amount: 10000
+								FluidName: "immersiveengineering:biodiesel"
+							}
+						}
+					}
 				}
 			]
 		}
@@ -652,7 +701,7 @@
 				{
 					id: "34C09736F9085277"
 					type: "item"
-					title: "Any #tconstruct:casts/single_use/blank"
+					title: "Sand Casts"
 					item: {
 						id: "itemfilters:tag"
 						Count: 1b
@@ -827,7 +876,7 @@
 			title: "The Sludge Sifter"
 			icon: "mbm2:sludge_sifter"
 			x: 7.5d
-			y: 7.0d
+			y: 6.0d
 			subtitle: "Some passive resources"
 			description: [
 				"The Barrel can replace any of the scaffolding, while the tank can be extended upwards to hold more water."
@@ -1078,8 +1127,8 @@
 						BlockEntityTag: {
 							TankInv: [{
 								FluidName: "minecraft:empty"
-								Capacity: 32000
 								Tank: 0b
+								Capacity: 32000
 								Amount: 0
 							}]
 						}
@@ -1174,7 +1223,10 @@
 			title: "Ore Deposits"
 			x: -5.0d
 			y: 14.0d
-			description: ["Beneath the ring of Ore Samples, you'll find a massive vein of whichever ore is displayed by the sample."]
+			description: [
+				"Beneath the ring of Ore Samples, you'll find a massive vein of whichever ore is displayed by the sample."
+				"{image:kubejs:textures/quests/ore_sample.png width:119 height:82 align:1}"
+			]
 			dependencies: ["423438726B049430"]
 			id: "71F53411D675017F"
 			tasks: [{
@@ -1188,6 +1240,17 @@
 						value: "mbm2:ores/compound_ore/raw_materials/tier_one"
 					}
 				}
+			}]
+		}
+		{
+			x: 8.0d
+			y: 7.5d
+			dependencies: ["556CB869A6592D68"]
+			id: "02DE8C27A70C222A"
+			tasks: [{
+				id: "53F026E2743E3876"
+				type: "item"
+				item: "immersiveengineering:workbench"
 			}]
 		}
 	]

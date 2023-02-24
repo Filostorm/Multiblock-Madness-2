@@ -32,6 +32,8 @@ onEvent('rei.hide.items', event => {
 		event.hide(`kubejs:crushed_${item}`)
 	})
 	
+	event.hide(/excavated_variants:*/)
+
 	event.hide(Item.of('ae2:facade').ignoreNBT())
 	event.hide(Item.of('ae2:wireless_terminal').ignoreNBT())
 
@@ -154,20 +156,27 @@ onEvent("rei.group", (event) => {
 			var materialNameUpper = item.material.charAt(0).toUpperCase() + item.material.slice(1)
 			var groupName = materialNameUpper + ' Ore Processing'
 			event.groupItems(`mbm2:rei_groups/${item.material}_ore_items`, groupName, [
-				`#mekanism:crystals/${item.material}`, 
-				`#mekanism:shards/${item.material}`,
-				`#mekanism:dirty_dusts/${item.material}`,
-				`#mekanism:clumps/${item.material}`,
+				`#forge:crystals/${item.material}`, 
+				`#forge:shards/${item.material}`,
+				//`#mekanism:dirty_dusts/${item.material}`,
+				//`#mekanism:clumps/${item.material}`,
 				`#forge:raw_materials/${item.material}`,
 				`#forge:chunks/${item.material}`,
 				`#forge:grits/${item.material}`,
 				`#forge:clumps/${item.material}`,
-				`#create:crushed_ores/${item.material}`,
+				`#forge:crushed_ores/${item.material}`,
 				`#forge:washed_ores/${item.material}`,
 				`#forge:fine_dusts/${item.material}`,
+				`#forge:leached_ores/${item.material}`,
+				`#forge:deposits/${item.material}`,
+				`#forge:clusters/${item.material}`,
+				`#forge:bricks/${item.material}`,
+				`#forge:infused_ores/${item.material}`,
+				`#forge:wet_dusts/${item.material}`,
 				`#forge:poor_ores/${item.material}`,
 				`#forge:ores/${item.material}`,
 				`#forge:rich_ores/${item.material}`,
+
 				Item.of(`elementalcraft:pure_ore`, `{elementalcraft:{ore:"forge:${item.material}"}}`),
 				`#forge:storage_blocks/raw_${item.material}`,
 			])

@@ -23,7 +23,7 @@ onEvent('recipes', event => {
   	}).id(`mbm2:forbidden_arcanus/soul_extractor`)
 
 	//Arcane Gold Ingot
-	event.remove({output: 'forbidden_arcanus:arcane_gold_ingot'})
+	event.remove({output: 'forbidden_arcanus:arcane_gold_ingot'})/*
   	event.shaped('forbidden_arcanus:arcane_gold_ingot', [
 		'LML',
 		'CIC',
@@ -34,7 +34,7 @@ onEvent('recipes', event => {
 		M: 'forbidden_arcanus:mundabitur_dust',
 		I: '#forge:ingots/auric_gold'
   	}).id(`mbm2:forbidden_arcanus/arcane_gold_ingot`)
-
+*/
 	//Corrupti Dust
 	event.remove({output: 'forbidden_arcanus:corrupti_dust'})
 	event.shapeless(`4x forbidden_arcanus:corrupti_dust`, ['forbidden_arcanus:obsidian_ingot', 'forbidden_arcanus:arcane_crystal_dust', 'forbidden_arcanus:ender_pearl_fragment', 'minecraft:blaze_powder', 'malum:hex_ash']).id(`mbm2:forbidden_arcanus/corrupti_dust`)

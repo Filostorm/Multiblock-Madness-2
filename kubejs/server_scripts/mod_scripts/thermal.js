@@ -127,7 +127,7 @@ event.shaped('thermal:device_tree_extractor', [
   ], {
 	A: '#minecraft:planks',
 	B: '#forge:gears/copper',
-	C: '#forge:glass',
+	C: '#forge:cogwheels',
 	D: 'thermal:redstone_servo',
 	E: 'minecraft:bucket'
   }).id("mbm2:device_tree_extractor")
@@ -170,11 +170,11 @@ event.shaped('thermal:machine_chiller', [
 	'EFE'
   ], {
 	A: Item.empty,
-	B: '#forge:glass',
+	F: 'engineersdecor:small_freezer',
 	C: 'minecraft:packed_ice',
 	D: 'kubejs:bronze_frame',
 	E: '#forge:gears/invar',
-	F: 'kubejs:silver_coil'
+	B: 'kubejs:silver_coil'
   }).id("mbm2:machine_chiller")
 
 // [| Melter |] //
@@ -207,7 +207,7 @@ event.shaped('thermal:machine_press', [
 	F: 'kubejs:silver_coil'
   }).id('mbm2:machine_press')
 
-// [| Press |] //
+// [| Crystallizer |] //
 event.remove({output: 'thermal:machine_crystallizer'})
 event.shaped('thermal:machine_crystallizer', [
 	'ABA',
@@ -233,10 +233,10 @@ event.shaped('thermal:machine_crystallizer', [
   ], {
 	A: 'minecraft:redstone',
 	C: '#forge:ingots/silver'
-  })
+  }).id('mbm2:silver_coil')
 
   // T1 Upgrade//
-  event.remove({id: 'thermal:augments/upgrade_augment_1'})
+  //event.remove({id: 'thermal:augments/upgrade_augment_1'})
   event.shaped('thermal:upgrade_augment_1', [
 	  'ICI',
 	  'RGR',
@@ -246,7 +246,7 @@ event.shaped('thermal:machine_crystallizer', [
 	  C: 'create:framed_glass',
 	  R: 'minecraft:redstone',
 	  G: 'kubejs:energized_steel_gear',
-	}).id('kubejs:machine_press')
+	}).id('thermal:augments/upgrade_augment_1')
 
  // Latex
  event.recipes.thermal.chiller('thermal:rubber', [Fluid.of('thermal:latex', 250), 'thermal:chiller_ball_cast'])
@@ -268,26 +268,14 @@ event.recipes.thermal.crucible(Fluid.of(`kubejs:gelid_cryotheum`, 250), `kubejs:
 event.recipes.thermal.crucible(Fluid.of(`kubejs:zephyrean_aerotheum`, 250), `kubejs:aerotheum_dust`).id(`mbm2:crucible/aerotheum`)
 event.recipes.thermal.crucible(Fluid.of(`kubejs:tectonic_petrotheum`, 250), `kubejs:petrotheum_dust`).id(`mbm2:crucible/petrotheum`)
 
+//New Augment code
+//event.shapeless(Item.of('kubejs:shifting_cube', '{AugmentData:{Type: Upgrade, BaseMod:5f}}'), ['create:experience_nugget', '#forge:gears/signalum']).id(`mbm2:shifting_cube_augment`)
 
 
-//Meelt that metal down bruh
-var partAmounts = {
-	'ingot':90,
-	'plate':90,
-	'gear':360,
-	'rod':45,
-	'wire':45,
-	'nugget':10,
-	'coin':30,
-}
-global.newMaterialParts.forEach((item) => {
-	if (item.fluid_id != null) {
-		for (var part in partAmounts) {
-			if (Item.of(`#forge:${part}s/${item.material}`) != null) {
- 				event.recipes.thermal.crucible(Fluid.of(item.fluid_id, partAmounts[part]), `#forge:${part}s/${item.material}`).id(`mbm2:crucible/${item.material}_${part}`)
-			}
-		}
-	}
-})
+
+
+	
+
+
 });
 

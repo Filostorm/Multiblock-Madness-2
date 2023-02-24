@@ -9,6 +9,8 @@ onEvent('recipes', event => {
 
 
   global.ieGeneratorFuel(event, 'forge:diesel', 400) //*4096
+  event.custom({"type":"immersiveengineering:blast_furnace_fuel","input":{"item":"malum:arcane_charcoal"},"time":600})
+  event.custom({"type":"immersiveengineering:blast_furnace_fuel","input":{"item":'malum:block_of_arcane_charcoal'},"time":6000})
 
   event.remove({output: 'immersiveengineering:blastbrick'})
   
@@ -168,19 +170,19 @@ event.shaped('4x immersiveengineering:heavy_engineering', [
   P: 'thermal:invar_gear',
   D: 'thermal:cured_rubber'
     }).id('mbm2:immersiveengineering/heavy_engineering')
-    
+    //Make more expensive, have rubber be a ingredent in a component
 
-//Heavy Engineering
+//Light Engineering
 	event.remove({id: 'immersiveengineering:crafting/light_engineering'})
   event.shaped('4x immersiveengineering:light_engineering', [
-    'PCD',
-    'CBC',
-    'DCP'
+    'PCB',
+    'CEC',
+    'BCP'
       ], {
-    B: 'kubejs:energized_steel_gear',
-    C: 'immersiveengineering:component_steel',
-    P: 'thermal:electrum_plate',
-    D: 'pneumaticcraft:reinforced_bricks'
+    E: '#forge:wire_coils/electrum',
+    C: 'immersiveengineering:component_iron',
+    P: '#forge:plates/energized_steel',
+    B: ['#forge:gears/bronze', '#forge:gears/constantan']
       }).id('mbm2:immersiveengineering/light_engineering')
       
 //Generator
@@ -205,8 +207,8 @@ event.shaped('4x immersiveengineering:rs_engineering', [
     ], {
   B: 'immersiveengineering:component_electronic',
   C: 'immersiveengineering:component_iron',
-  P: 'kubejs:red_alloy_wire',
-  D: 'kubejs:red_alloy_rod'
+  P: '#forge:spools/red_alloy',
+  D: '#forge:rods/duralumin'
     }).id('mbm2:immersiveengineering/rs_engineering')
 
 //Radiator
@@ -220,7 +222,6 @@ event.shaped('immersiveengineering:radiator', [
   C: 'immersiveengineering:sheetmetal_steel',
   P: 'tconstruct:scorched_glass'
     }).id('mbm2:immersiveengineering/radiator')
-
   event.shaped('3x immersiveengineering:radiator', [
     'CPC',
     'PBP',
@@ -236,24 +237,47 @@ event.shaped('immersiveengineering:radiator', [
 	  event.remove({id: 'immersiveengineering:smelting/slag_glass'})
     event.blasting('immersiveengineering:slag_glass', 'thermal:slag').id(`mbm2:blasting/slag_glass`)
 
-//Radiator
+//Workbench
 event.remove({id: 'immersiveengineering:crafting/workbench'})
 event.shaped('immersiveengineering:workbench', [
   'PTT',
   'C F'
     ], {
   T: '#forge:treated_wood_slab',
-  P: '#forge:plates/steel',
+  P: '#forge:plates/invar',
   C: 'immersiveengineering:craftingtable',
   F: 'immersiveengineering:treated_fence'
     }).id('mbm2:immersiveengineering/workbench')
 
     //Fix Component Bleuprint
-    event.replaceInput({id: 'immersiveengineering:crafting/blueprint_components'}, '#forge:ingots/aluminum', '#forge:ingots/constantan')
+    event.remove({id: 'immersiveengineering:crafting/blueprint_components'})
+    event.shaped(Item.of('immersiveengineering:blueprint', '{blueprint:"components"}'), [
+      'IAS',
+      'BBB',
+      'PPP'
+        ], {
+          I: '#forge:ingots/aluminum',
+          A: '#forge:ingots/constantan',
+          S: '#forge:ingots/steel',
+          P: 'paper',
+          B: 'blue_dye'
+        }).id('mbm2:immersiveengineering/components')
+
+//Interlocking Blueprint
+    event.shaped(Item.of('immersiveengineering:blueprint', '{blueprint:"interlocking_components"}'), [
+      ' G ',
+      'BBB',
+      'PPP'
+        ], {
+      G: '#forge:gears/steel',
+      P: 'paper',
+      B: 'blue_dye'
+        }).id('mbm2:immersiveengineering/interlocking_components')
 
 
-
-
+			//Coke
+			global.tinkersMeltingPlain(event, 'kubejs:molten_coal_coke', 100, `#forge:dusts/coal_coke`, 900, 20, `mbm2:smeltery/melting/coal_coke_dust`)
+			global.tinkersMeltingPlain(event, 'kubejs:molten_coal_coke', 100, `#forge:coal_coke`, 900, 20, `mbm2:smeltery/melting/coal_coke`)
     
     ///////////////// ARC FURNACE TIME ////////////////////////////
     /*

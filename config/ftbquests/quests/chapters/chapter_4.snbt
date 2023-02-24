@@ -4,7 +4,7 @@
 	order_index: 2
 	filename: "chapter_4"
 	title: "Chapter 3"
-	icon: "chemlib:aluminum_ingot"
+	icon: "chemlib:titanium_ingot"
 	default_quest_shape: ""
 	default_hide_dependency_lines: false
 	quests: [
@@ -117,8 +117,8 @@
 			}]
 		}
 		{
-			x: 5.5d
-			y: 12.0d
+			x: 4.0d
+			y: 11.0d
 			description: ["Items must be placed in the shown order."]
 			dependencies: ["391E4F9DA1A3D71B"]
 			id: "6B06707ECFAFD263"
@@ -130,8 +130,8 @@
 		}
 		{
 			title: "More Elemental Infused Items"
-			x: 7.0d
-			y: 12.0d
+			x: 5.5d
+			y: 11.0d
 			dependencies: ["6B06707ECFAFD263"]
 			id: "61CCA7FA3C371180"
 			tasks: [
@@ -148,8 +148,8 @@
 			]
 		}
 		{
-			x: 8.5d
-			y: 12.0d
+			x: 7.0d
+			y: 11.0d
 			dependencies: ["61CCA7FA3C371180"]
 			id: "63D72477BB0F83A4"
 			tasks: [{
@@ -176,7 +176,10 @@
 			title: "Basic Engineering Blocks"
 			x: 7.5d
 			y: 6.5d
-			dependencies: ["17F948FD49F0EB33"]
+			dependencies: [
+				"17F948FD49F0EB33"
+				"4056DE989F8A8E98"
+			]
 			id: "3D971E0CF8257193"
 			tasks: [
 				{
@@ -194,8 +197,8 @@
 		{
 			title: "The Squeezer"
 			icon: "immersiveengineering:squeezer"
-			x: 8.5d
-			y: 5.5d
+			x: 9.0d
+			y: 7.0d
 			dependencies: ["3D971E0CF8257193"]
 			repeatable: true
 			id: "1A2C95D86B270D15"
@@ -265,8 +268,8 @@
 			x: 12.0d
 			y: 5.0d
 			subtitle: "Better part creation"
+			description: ["Simple gears, and double production of wires and rods."]
 			dependencies: ["0EB55E9BCD6E97C3"]
-			repeatable: true
 			id: "5F86A5866A68CA6D"
 			tasks: [
 				{
@@ -297,18 +300,7 @@
 					count: 2L
 				}
 				{
-					id: "2AE248E38B5C34AC"
-					type: "questsadditions:structure"
-					title: "The Metal Press"
-					icon: "immersiveengineering:metal_press"
-					name: "metal_press"
-					hasCustomPicture: false
-					layer: true
-					ignoreState: false
-					rightclick: false
-				}
-				{
-					id: "48B3BBE85ED4BD1B"
+					id: "054E43D17EB81AAD"
 					type: "item"
 					item: {
 						id: "immersiveengineering:blueprint"
@@ -317,6 +309,7 @@
 							blueprint: "molds"
 						}
 					}
+					match_nbt: true
 				}
 			]
 			rewards: [{
@@ -573,11 +566,12 @@
 				{
 					id: "46599FB88B452463"
 					type: "questsadditions:structure"
+					title: "Automated Workbench"
 					icon: "immersiveengineering:auto_workbench"
-					name: "assembler"
+					name: "workbench"
 					hasCustomPicture: false
 					layer: true
-					ignoreState: false
+					ignoreState: true
 					rightclick: false
 				}
 			]
@@ -591,8 +585,8 @@
 		{
 			title: "The Diesel Generator"
 			icon: "immersiveengineering:diesel_generator"
-			x: 14.5d
-			y: 8.0d
+			x: 13.5d
+			y: 9.0d
 			dependencies: ["758CEB9A27CE3547"]
 			repeatable: true
 			id: "738E3C876E9D4BC6"
@@ -627,6 +621,12 @@
 					count: 6L
 				}
 				{
+					id: "37B0D67EC0587DA7"
+					type: "item"
+					item: "immersiveengineering:generator"
+					count: 4L
+				}
+				{
 					id: "5D94563A8E567AD4"
 					type: "questsadditions:structure"
 					title: "The Diesel Generator"
@@ -648,8 +648,8 @@
 		{
 			title: "The Mixer"
 			icon: "immersiveengineering:mixer"
-			x: 6.0d
-			y: 7.5d
+			x: 8.5d
+			y: 5.5d
 			dependencies: ["3D971E0CF8257193"]
 			repeatable: true
 			id: "02E4BADB1F8BEB33"
@@ -773,8 +773,8 @@
 		{
 			title: "Reinforced Blast Furnace"
 			icon: "immersiveengineering:advanced_blast_furnace"
-			x: 5.0d
-			y: 8.5d
+			x: 3.5d
+			y: 5.0d
 			dependencies: ["17F948FD49F0EB33"]
 			id: "367CDBB0205D41FB"
 			tasks: [
@@ -811,9 +811,10 @@
 		{
 			title: "The Industral Metal"
 			disable_toast: true
-			x: 4.0d
+			x: 3.5d
 			y: 6.5d
 			shape: "circle"
+			description: [""]
 			dependencies: ["35C16B4B5D8C7148"]
 			id: "17F948FD49F0EB33"
 			tasks: [{
@@ -830,8 +831,8 @@
 			}]
 		}
 		{
-			x: 5.5d
-			y: 10.0d
+			x: 3.5d
+			y: 3.5d
 			dependencies: ["367CDBB0205D41FB"]
 			id: "1E47E0235AF25002"
 			tasks: [{
@@ -850,7 +851,7 @@
 		{
 			title: "Pressure Chamber"
 			x: 10.5d
-			y: 4.0d
+			y: 3.5d
 			description: [
 				"You will need to pipe items in and out of the Pressure Chamber for crafting."
 				""
@@ -887,7 +888,7 @@
 		{
 			title: "Explosions!"
 			x: 6.0d
-			y: 4.0d
+			y: 3.5d
 			dependencies: ["17F948FD49F0EB33"]
 			id: "418AC2EB203010CA"
 			tasks: [
@@ -906,7 +907,7 @@
 		{
 			title: "Compressing Air"
 			x: 8.5d
-			y: 4.0d
+			y: 3.5d
 			description: ["Attach the Safety Tube Module to keep your system from exploding if pressure gets too high."]
 			dependencies: ["418AC2EB203010CA"]
 			id: "02285A69B0A09A44"
@@ -938,7 +939,7 @@
 		{
 			title: "The Bottling Machine"
 			icon: "immersiveengineering:bottling_machine"
-			x: 7.0d
+			x: 7.5d
 			y: 9.0d
 			dependencies: ["3D971E0CF8257193"]
 			repeatable: true
@@ -986,7 +987,7 @@
 					name: "bottler"
 					hasCustomPicture: false
 					layer: true
-					ignoreState: false
+					ignoreState: true
 					rightclick: false
 				}
 			]
@@ -1000,7 +1001,7 @@
 		{
 			title: "Using Heat"
 			x: 10.5d
-			y: 2.5d
+			y: 2.0d
 			dependencies: ["02285A69B0A09A44"]
 			id: "2F38722F9A7D89CC"
 			tasks: [
@@ -1024,7 +1025,7 @@
 		{
 			title: "More of that strange oil"
 			x: 8.5d
-			y: 2.5d
+			y: 2.0d
 			subtitle: "Its probably nothing"
 			description: ["Use the Sensor on the ground to find an oil deposit, which you can then drill up to the surface with the Gas Lift."]
 			dependencies: ["02285A69B0A09A44"]
@@ -1063,29 +1064,29 @@
 			}]
 		}
 		{
-			icon: "immersiveengineering:workbench"
+			title: "Crafting Components"
+			icon: {
+				id: "immersiveengineering:blueprint"
+				Count: 1b
+				tag: {
+					blueprint: "components"
+				}
+			}
 			x: 3.5d
 			y: 8.0d
 			dependencies: ["17F948FD49F0EB33"]
 			id: "1F932299A59D3965"
-			tasks: [
-				{
-					id: "78D5383B893586E4"
-					type: "item"
-					item: "immersiveengineering:workbench"
-				}
-				{
-					id: "0196F2E48C1F2AE3"
-					type: "item"
-					item: {
-						id: "immersiveengineering:blueprint"
-						Count: 1b
-						tag: {
-							blueprint: "components"
-						}
+			tasks: [{
+				id: "0196F2E48C1F2AE3"
+				type: "item"
+				item: {
+					id: "immersiveengineering:blueprint"
+					Count: 1b
+					tag: {
+						blueprint: "components"
 					}
 				}
-			]
+			}]
 		}
 		{
 			x: 13.0d
@@ -1122,8 +1123,8 @@
 		{
 			title: "The Excavator"
 			icon: "immersiveengineering:excavator"
-			x: 13.5d
-			y: 9.0d
+			x: 15.0d
+			y: 8.0d
 			dependencies: ["758CEB9A27CE3547"]
 			repeatable: true
 			id: "043DFE88CE9F4625"
@@ -1189,9 +1190,9 @@
 			}]
 		}
 		{
-			x: 16.5d
-			y: 6.5d
-			dependencies: ["75D4FF56D8BBF34A"]
+			x: 5.5d
+			y: 7.5d
+			dependencies: ["729CD1DC498A9130"]
 			id: "4056DE989F8A8E98"
 			tasks: [{
 				id: "4B4295C63D922D71"
@@ -1201,8 +1202,9 @@
 		}
 		{
 			title: "The Smeltery, aka tier 2 alloys"
-			x: 3.5d
-			y: 5.0d
+			x: 2.0d
+			y: 6.5d
+			description: ["Once you have access to the Smeltery, you can use it to alloy Coke and Iron to make Steel."]
 			dependencies: ["17F948FD49F0EB33"]
 			id: "44B029D2AFEC131D"
 			tasks: [
@@ -1243,6 +1245,201 @@
 				type: "item"
 				item: "tconstruct:blazing_blood_bucket"
 			}]
+		}
+		{
+			title: "Biodesiel"
+			x: 10.5d
+			y: 7.5d
+			description: ["A great sustanable fuel source, and can be used for plastic later on."]
+			dependencies: [
+				"1A2C95D86B270D15"
+				"50FBAD99E2875E46"
+				"6AE6AC04DFC1A75A"
+			]
+			id: "0C98A801E8A7FE66"
+			tasks: [{
+				id: "558EDA07EBC27B43"
+				type: "item"
+				item: "immersiveengineering:biodiesel_bucket"
+			}]
+		}
+		{
+			x: 3.5d
+			y: 9.5d
+			dependencies: [
+				"1F932299A59D3965"
+				"44B029D2AFEC131D"
+				"40CD2EB416C68B70"
+			]
+			size: 1.5d
+			id: "4330D1B18E585E4E"
+			tasks: [{
+				id: "65BAEAC0D2E64797"
+				type: "item"
+				item: "ae2:crafting_terminal"
+			}]
+			rewards: [{
+				id: "63F20E012C2FCA96"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 824098445478849879L
+			}]
+		}
+		{
+			x: 1.5d
+			y: 9.5d
+			description: ["Tier 2 Metals, like Cobalt and Aluminum, require at least processing in the Foundry with a high temperature fuel such as Blazing Blood."]
+			dependencies: ["729CD1DC498A9130"]
+			id: "40CD2EB416C68B70"
+			tasks: [{
+				id: "53766C9CA41DB49E"
+				type: "item"
+				item: "tconstruct:cobalt_ingot"
+			}]
+		}
+		{
+			x: 16.5d
+			y: 6.5d
+			subtitle: "Found in the End"
+			dependencies: [
+				"75D4FF56D8BBF34A"
+				"509A0BA1A97F85A8"
+			]
+			id: "7BB9213CBA0A5FCC"
+			tasks: [{
+				id: "6251911943E07068"
+				type: "item"
+				item: "chemlib:titanium_ingot"
+			}]
+		}
+		{
+			title: "The Assembler"
+			icon: "immersiveengineering:assembler"
+			x: 7.5d
+			y: 5.0d
+			dependencies: ["3D971E0CF8257193"]
+			repeatable: true
+			id: "02527CA184E00FE4"
+			tasks: [
+				{
+					id: "62C5E2EF4B597430"
+					type: "item"
+					item: "immersiveengineering:rs_engineering"
+					count: 2L
+				}
+				{
+					id: "6F4525057E072151"
+					type: "item"
+					item: "immersiveengineering:light_engineering"
+					count: 2L
+				}
+				{
+					id: "0444E1439730420B"
+					type: "item"
+					item: "immersiveengineering:steel_scaffolding_standard"
+					count: 6L
+				}
+				{
+					id: "14E6675B9F9227F5"
+					type: "item"
+					item: "immersiveengineering:sheetmetal_iron"
+					count: 9L
+				}
+				{
+					id: "7A8CC570810563F0"
+					type: "item"
+					item: "immersiveengineering:slab_sheetmetal_iron"
+					count: 6L
+				}
+				{
+					id: "1B4E48BAC60FA57C"
+					type: "item"
+					item: "immersiveengineering:conveyor_basic"
+					count: 2L
+				}
+				{
+					id: "546B762EC4265731"
+					type: "questsadditions:structure"
+					title: "The Assembler"
+					icon: "immersiveengineering:assembler"
+					name: "assembler"
+					hasCustomPicture: false
+					layer: true
+					ignoreState: true
+					rightclick: false
+				}
+			]
+			rewards: [{
+				id: "72791A4132ED37B6"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 7840564287515615038L
+			}]
+		}
+		{
+			title: "Visit The End"
+			disable_toast: true
+			x: 15.0d
+			y: 5.0d
+			description: ["Check the Ore Processing page for a preview of the potential ores you can find."]
+			id: "509A0BA1A97F85A8"
+			tasks: [{
+				id: "7116268B222864B2"
+				type: "dimension"
+				title: "The End"
+				dimension: "minecraft:the_end"
+			}]
+		}
+		{
+			icon: "mbm2:mixer_mk1"
+			x: 5.5d
+			y: 9.5d
+			dependencies: [
+				"40CD2EB416C68B70"
+				"61CCA7FA3C371180"
+			]
+			size: 1.25d
+			id: "627B714B402BEE67"
+			tasks: [
+				{
+					id: "59145A985C609822"
+					type: "item"
+					item: "mbm2:mixer_mk1"
+				}
+				{
+					id: "117EF2B7C7D8DB7B"
+					type: "item"
+					item: "kubejs:tier1_casing"
+					count: 12L
+				}
+				{
+					id: "499D5AF058306438"
+					type: "item"
+					item: "kubejs:cobalt_coil"
+					count: 2L
+				}
+				{
+					id: "1F5EC5D2B1369DA5"
+					type: "item"
+					item: "create:brass_casing"
+					count: 8L
+				}
+				{
+					id: "424D34C2FB632518"
+					type: "item"
+					item: "multiblocked:item_output"
+				}
+				{
+					id: "6232EF0DA3FE1F75"
+					type: "item"
+					item: "multiblocked:item_input"
+				}
+				{
+					id: "0D1BB9657ECE3724"
+					type: "item"
+					item: "multiblocked:energy_input_mk1"
+				}
+			]
 		}
 	]
 	quest_links: [ ]

@@ -254,8 +254,18 @@
         "type": "blocks"
       },
       "J": {
-        "location": "multiblocked:energy_input",
-        "type": "component",
+        "blocks": [
+          {
+            "id": "multiblocked:energy_input_mk1"
+          },
+          {
+            "id": "multiblocked:energy_input_mk2"
+          },
+          {
+            "id": "multiblocked:energy_input_mk3"
+          }
+        ],
+        "type": "blocks",
         "minCount": 1,
         "maxCount": 1,
         "previewCount": 1,

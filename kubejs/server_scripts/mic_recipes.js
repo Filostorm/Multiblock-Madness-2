@@ -119,13 +119,14 @@ event.shaped('3x kubejs:wood_scaffolding', [
   event.shapeless('4x soul_torch', ['torch','torch','torch','torch','soul_sand']).id('mbm2:soul_torch')
 
   //Brik
-  event.smelting('minecraft:brick', 'kubejs:unfired_clay_brick').id(`kubejs:smelting/brick`)
+  	event.remove({id: 'minecraft:brick'})
+  	event.smelting('minecraft:brick', 'kubejs:unfired_clay_brick').id(`kubejs:smelting/brick`)
 
 	//Piston not racist anymore
 	event.replaceInput({id: 'minecraft:piston'}, 'cobblestone', '#forge:cobblestone')
   
 	//So, you made an extra Metal Mind
-	global.tinkersMeltingPlain(event, 'tconstruct:molten_iron', 720, 'feruchemy:metal_mind', 750, 142, `mbm2:smeltery/melting/metalmind`)
+	global.tinkersMeltingPlain(event, 'tconstruct:molten_iron', 720, Item.of('feruchemy:metal_mind').toJson(), 750, 142, `mbm2:smeltery/melting/metalmind`)
 
 
   // Damascus Steel

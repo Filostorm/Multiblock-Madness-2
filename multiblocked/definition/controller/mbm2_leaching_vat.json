@@ -1,0 +1,221 @@
+{
+  "version": 3,
+  "location": "mbm2:leaching_vat",
+  "traits": {},
+  "properties": {
+    "rotationState": "ALL",
+    "showInJei": true,
+    "isOpaque": true,
+    "hasDynamicShape": false,
+    "hasCollision": true,
+    "destroyTime": 1.5,
+    "explosionResistance": 6.0,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "friction": 0.6,
+    "harvestLevel": 0,
+    "stackSize": 64,
+    "tabGroup": "multiblocked.all"
+  },
+  "status": {
+    "unformed": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier2_casing",
+        "frontTexture": "multiblocked:overlay/chemical_reactor",
+        "type": "gregtech",
+        "postRenderer": false
+      }
+    },
+    "idle": {
+      "parent": "unformed"
+    },
+    "working": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier2_casing",
+        "frontTexture": "multiblocked:overlay/chemical_reactor_active",
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "parent": "idle"
+    },
+    "suspend": {
+      "parent": "working"
+    }
+  },
+  "recipeMap": "leaching",
+  "basePattern": {
+    "structureDir": [
+      "BACK",
+      "UP",
+      "RIGHT"
+    ],
+    "pattern": [
+      [
+        " AAA ",
+        " BAB ",
+        " AAA ",
+        "  C  "
+      ],
+      [
+        "AAAAA",
+        "B   B",
+        "A   A",
+        " AAA "
+      ],
+      [
+        "AAAAA",
+        "@   A",
+        "A   A",
+        "CAAAC"
+      ],
+      [
+        "AAAAA",
+        "B   B",
+        "A   A",
+        " AAA "
+      ],
+      [
+        " AAA ",
+        " BAB ",
+        " AAA ",
+        "  C  "
+      ]
+    ],
+    "aisleRepetitions": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "predicates": {
+      "A": {
+        "blocks": [
+          {
+            "id": "kubejs:tier2_casing"
+          }
+        ],
+        "type": "blocks"
+      },
+      "controller": {
+        "location": "mbm2:leaching_vat",
+        "type": "component"
+      },
+      "B": {
+        "blocks": [
+          {
+            "id": "thermal:obsidian_glass"
+          }
+        ],
+        "type": "blocks"
+      },
+      "C": {
+        "blocks": [
+          {
+            "id": "kubejs:alchemistry_frame"
+          }
+        ],
+        "type": "blocks"
+      },
+      "E": {
+        "blocks": [
+          {
+            "id": "ae2:sky_stone_tank"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 3,
+        "maxCount": 3,
+        "previewCount": 3,
+        "io": "IN"
+      },
+      "F": {
+        "blocks": [
+          {
+            "id": "multiblocked:big_item_output"
+          },
+          {
+            "id": "multiblocked:item_output"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 1,
+        "previewCount": 1,
+        "io": "OUT"
+      },
+      "G": {
+        "blocks": [
+          {
+            "id": "multiblocked:item_input"
+          },
+          {
+            "id": "multiblocked:big_item_input"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 1,
+        "previewCount": 1,
+        "io": "IN"
+      },
+      "H": {
+        "blocks": [
+          {
+            "id": "multiblocked:energy_input_mk3"
+          },
+          {
+            "id": "multiblocked:energy_input_mk2"
+          },
+          {
+            "id": "multiblocked:energy_input_mk1"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 1,
+        "previewCount": 1,
+        "io": "IN"
+      },
+      "any": {
+        "type": "any"
+      }
+    },
+    "symbolMap": {
+      "@": [
+        "controller"
+      ],
+      " ": [
+        "any"
+      ],
+      "A": [
+        "A",
+        "F",
+        "G",
+        "H"
+      ],
+      "B": [
+        "B",
+        "E"
+      ],
+      "C": [
+        "C"
+      ]
+    }
+  }
+}

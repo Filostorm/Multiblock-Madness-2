@@ -387,4 +387,11 @@ global.removeAndHide = [
 	'potionsmaster:calcinatedunobtainium_powder',
 	'chemlib:sulfur_dust',
 	'mekanism:dust_quartz',
+	'mekanism:dust_gold',
+	'mekanism:dust_netherite',
+	'ae2:ender_dust',
+	'createaddition:diamond_grit',
+	'mekanism:dust_diamond',
+	'geolosys:platinum_ore',
+	'geolosys:deepslate_platinum_ore',
 	]

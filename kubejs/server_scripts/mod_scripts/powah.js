@@ -21,6 +21,9 @@ onEvent('tags.items', event => {
 	event.add(`forge:rods/dielectric_alloy`, 'powah:dielectric_rod')
 	event.add(`forge:rods/dielectric_alloy`, 'powah:dielectric_rod_horizontal')
   
+	event.add(`forge:gems`, 'powah:uraninite')
+	event.add(`forge:gems/uraninite`, 'powah:uraninite')
+  
 
 })
 
@@ -30,6 +33,12 @@ onEvent('recipes', event => {
   event.remove({id: 'powah:crafting/dielectric_rod'})
   event.remove({id: 'powah:crafting/dielectric_rod_h'})
   event.remove({id: 'powah:crafting/dielectric_casing'})
+
+  //Uranium only
+  event.remove({id: 'powah:energizing/uraninite_from_raw'})
+  event.remove({id: 'powah:energizing/uraninite_from_ore'})
+  event.remove({id: 'powah:energizing/uraninite_from_ore_dense'})
+  event.remove({id: 'powah:energizing/uraninite_from_ore_poor'})
   
   
   
@@ -64,7 +73,7 @@ onEvent('recipes', event => {
 	  ], {
 	  'S': {
 		type: 'compactcrafting:block',
-		block: 'kubejs:pewter_sheetmetal'
+		block: 'kubejs:invar_sheetmetal'
 	  },
 	  'D': {
 		type: 'compactcrafting:block',
@@ -126,11 +135,10 @@ D: 'minecraft:hopper'
 
 // [| player_transmitter_basic |] //
 event.shaped('powah:player_transmitter_basic', [
-  'ABA',
-'CDC',
-'AEA'
+  ' B ',
+  'CDC',
+  ' E '
   ], {
-  A: Item.empty,
 B: 'powah:player_aerial_pearl',
 C: 'powah:capacitor_basic',
 D: 'powah:dielectric_casing',
@@ -220,4 +228,28 @@ C: 'powah:capacitor_basic',
 D: 'powah:dielectric_casing',
 E: 'powah:dielectric_rod'
   }).id("powah:crafting/energizing_rod_basic")
+
+  
+//Blazing Redstone
+	event.recipes.createMixing('kubejs:blazing_redstone', ['minecraft:blaze_powder','#forge:dusts/redstone']).id(`mbd2:create/mixing/blazing_redstone`)
+  event.recipes.multiblocked.multiblock('mixer')
+    .inputItems('minecraft:blaze_powder','#forge:dusts/redstone')
+    .outputItem(`kubejs:blazing_redstone`)
+    .setPerTick(true)
+    .inputFE(512)
+    .duration(100)
+
+  //Thermoelectric Plate
+  event.remove({id: 'powah:crafting/thermoelectric_plate'})
+  event.shaped('powah:thermoelectric_plate', [
+	'RCR',
+	'CGC',
+	'RCR'
+  ], {
+    C: 'powah:capacitor_basic_tiny',
+    G: '#forge:gears/dielectric_alloy',
+	  R: 'kubejs:blazing_redstone'
+  }).id(`mbd2:crafting/thermoelectric_plate`)
+  
+  
 });

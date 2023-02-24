@@ -1,0 +1,57 @@
+{
+  "version": 3,
+  "location": "multiblocked:energy_input_mk2",
+  "traits": {
+    "forge_energy": {
+      "cIO": 0,
+      "gIO": 0,
+      "mbdIO": 0,
+      "slotName": "",
+      "x": 38,
+      "y": 72,
+      "width": 100,
+      "height": 18,
+      "texture": "multiblocked:textures/gui/energy_bar.png",
+      "fillDirection": "LEFT_TO_RIGHT",
+      "capacity": 6553600,
+      "maxReceive": 65536,
+      "maxExtract": 65536
+    }
+  },
+  "properties": {
+    "rotationState": "ALL",
+    "showInJei": true,
+    "isOpaque": true,
+    "hasDynamicShape": false,
+    "hasCollision": true,
+    "destroyTime": 1.5,
+    "explosionResistance": 6.0,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "friction": 0.6,
+    "harvestLevel": 0,
+    "stackSize": 64,
+    "tabGroup": "multiblocked.all"
+  },
+  "status": {
+    "unformed": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier2_casing",
+        "frontTexture": "multiblocked:overlay/energy_in",
+        "formedAsController": true,
+        "type": "gregtech",
+        "postRenderer": false
+      }
+    },
+    "idle": {
+      "parent": "unformed"
+    },
+    "working": {
+      "parent": "idle"
+    },
+    "suspend": {
+      "parent": "working"
+    }
+  },
+  "canShared": true
+}

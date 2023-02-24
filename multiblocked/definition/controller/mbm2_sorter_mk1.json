@@ -108,7 +108,7 @@
         "states": [
           {
             "id": "createaddition:connector",
-            "meta": 5
+            "meta": 22
           }
         ],
         "type": "states"

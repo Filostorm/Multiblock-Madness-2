@@ -44,23 +44,6 @@
 	#Range: 0 ~ 1024
 	rolling_mill_stress = 16
 
-#Heater
-[heater]
-	#Induction Heater max input in FE (Energy transfer, not consumption).
-	#Range: > 0
-	heater_max_input = 256
-	#Induction Heater internal capacity in FE.
-	#Range: > 0
-	heater_capacity = 2048
-	#Induction Heater normal consumption rate in FE/t.
-	#Range: > 0
-	heater_normal_consumption = 96
-	#Induction Heater when attached to a Furnace Engine consumption rate in FE/t.
-	#Range: > 0
-	heater_furnace_engine_consumption = 1024
-	#Enable Induction Heater when attached to a Furnace Engine.
-	heater_furnace_engine_enable = false
-
 #Wires
 [wires]
 	#Connector max input in FE/t (Energy transfer).
@@ -75,6 +58,8 @@
 	#Max wire length in blocks.
 	#Range: 0 ~ 256
 	wire_length = 12
+	#Ignore checking if block face can support connector.
+	connector_ignore_face_check = false
 
 #Accumulator
 [accumulator]
@@ -84,9 +69,15 @@
 	#Accumulator max output in FE/t (Energy transfer).
 	#Range: > 0
 	accumulator_max_output = 512
-	#Accumulator internal capacity in FE.
+	#Accumulator internal capacity per block in FE.
 	#Range: > 0
 	accumulator_capacity = 4196000
+	#Accumulator max multiblock height.
+	#Range: 1 ~ 8
+	accumulator_max_height = 5
+	#Accumulator max multiblock width.
+	#Range: 1 ~ 8
+	accumulator_max_width = 3
 
 #Tesla Coil
 [tesla_coil]
@@ -99,7 +90,7 @@
 	#Tesla Coil charge rate in FE/t for recipes.
 	#Range: > 0
 	tesla_coil_recipe_charge_rate = 1024
-	#Charger internal capacity in FE.
+	#Tesla Coil internal capacity in FE.
 	#Range: > 0
 	tesla_coil_capacity = 32000
 	#Energy consumed when Tesla Coil is fired (in FE).

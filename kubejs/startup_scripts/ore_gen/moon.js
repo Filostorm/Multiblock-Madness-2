@@ -43,13 +43,13 @@ onEvent('worldgen.add', event => {
 	})
 
 
-	// Base Titanium Veins
+	// Base Platinum Veins
 	event.addOre((ore) => {
-		ore.id = 'kubejs:moon_titanium_ore'
+		ore.id = 'kubejs:moon_platinum_ore'
 	
 		global.stoneTypes.forEach((type) => {
 			if (type.material != 'bedrock') {
-				ore.addTarget(`#forge:${type.material}`, `kubejs:${type.material}_titanium_ore`)
+				ore.addTarget(`#forge:${type.material}`, `kubejs:${type.material}_platinum_ore`)
 			}
 		})
 		    
@@ -67,11 +67,13 @@ onEvent('worldgen.add', event => {
 		ore.biomes = "beyond_earth:moon_desert"
 	})
 
-	// Inserted Aluminum
+	// Inserted Runite
 	event.addOre((ore) => {
-		ore.id = 'kubejs:nether_aluminum'
+		ore.id = 'kubejs:nether_rune'
 			global.stoneTypes.forEach((type) => {
-				ore.addTarget(`kubejs:${type.material}_titanium_ore`, `kubejs:${type.material}_aluminum_ore`)
+				if (type.material != 'bedrock' && type.material != 'deepslate') {
+					ore.addTarget(`kubejs:${type.material}_platinum_ore`, `kubejs:${type.material}_rune_ore`)
+				}
 			})
 		ore.count(200)
 				.squared()
@@ -110,12 +112,12 @@ onEvent('worldgen.add', event => {
 		ore.biomes = "beyond_earth:moon_desert"
 	})
 	
-	// Inserted Runite
+	// Inserted Aluminum
 	event.addOre((ore) => {
-		ore.id = 'kubejs:nether_rune'
+		ore.id = 'kubejs:nether_aluminum'
 			global.stoneTypes.forEach((type) => {
 				if (type.material != 'bedrock' && type.material != 'deepslate') {
-					ore.addTarget(`excavated_variants:${type.material}_osmium_ore`, `kubejs:${type.material}_rune_ore`)
+				ore.addTarget(`excavated_variants:${type.material}_osmium_ore`, `kubejs:${type.material}_aluminum_ore`)
 				}
 			})
 		ore.count(200)
@@ -214,12 +216,12 @@ onEvent('worldgen.add', event => {
 		  ore.biomes = "beyond_earth:moon_desert"
 	})
 	
-	// Inserted lead
+	// Inserted thorium
 	event.addOre((ore) => {
-		ore.id = 'kubejs:nether_lead'
+		ore.id = 'kubejs:nether_thorium'
 			global.stoneTypes.forEach((type) => {
 				if (type.material != 'bedrock' && type.material != 'deepslate') {
-					ore.addTarget(`excavated_variants:${type.material}_uranium_ore`, `kubejs:${type.material}_lead_ore`)
+					ore.addTarget(`excavated_variants:${type.material}_uranium_ore`, `excavated_variants:${type.material}_thorium_ore`)
 				}
 			})
 		ore.count(100)

@@ -36,6 +36,7 @@ var basicItems = [
 	't4_circuit',
 	'energetic_blend',
 	'glass_shard',
+	'water_filter',
 ]
 
 global.transitionalItems = [
@@ -64,4 +65,12 @@ onEvent('item.registry', event => {
 		event.create(`incomplete_${item}`, 'create:sequenced_assembly').texture('kubejs:item/package')
 	})
 	event.create(`partially_folded_damascus_steel`, 'create:sequenced_assembly')
+
+	event.create(`washed_thermogenic_blend`).color(0, 0xf06330).texture(`kubejs:item/ore/ore_washed`)
+	event.create(`crushed_thermogenic_blend`).color(0, 0xf06330).texture(`kubejs:item/ore/ore_crushed`)
+	event.create(`fine_thermogenic_dust`).color(0, 0xf06330).texture(`kubejs:item/ore/ore_fine_dust`)
+
+	event.create(`washed_thermolytic_blend`).color(0, 0x42f5da).texture(`kubejs:item/ore/ore_washed`)
+	event.create(`crushed_thermolytic_blend`).color(0, 0x42f5da).texture(`kubejs:item/ore/ore_crushed`)
+	event.create(`fine_thermolytic_dust`).color(0, 0x42f5da).texture(`kubejs:item/ore/ore_fine_dust`)
   });

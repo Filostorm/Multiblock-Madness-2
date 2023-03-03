@@ -19,6 +19,8 @@ global.fluidsToRemove = [
 	'pneumaticcraft:biodiesel', //50,000 burn time
 	'thermal:crude_oil',
 	'createbigcannons:molten_steel',
+	'createbigcannons:molten_bronze',
+	'chemlib:sulfuric_acid_fluid',
 ]
 
 var removeByName = [
@@ -50,8 +52,12 @@ onEvent('recipes', event => {
 	event.replaceOutput({}, 'mekanism:dust_gold', 'thermal:gold_dust')
 	event.replaceOutput({}, 'mekanism:dust_netherite', 'thermal:netherite_dust')
 	event.replaceOutput({}, 'ae2:ender_dust', 'thermal:ender_pearl_dust')
+	//Diamond
 	event.replaceOutput({}, 'createaddition:diamond_grit', 'thermal:diamond_dust')
 	event.replaceOutput({}, 'mekanism:dust_diamond', 'thermal:diamond_dust')
+	//Sawdust
+	event.replaceOutput({}, 'mekanism:sawdust', 'thermal:sawdust')
+	event.replaceOutput({}, 'immersiveengineering:dust_wood', 'thermal:sawdust')
 	
 
 	removeByName.forEach((item) => {

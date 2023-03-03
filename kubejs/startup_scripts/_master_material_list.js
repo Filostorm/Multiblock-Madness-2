@@ -124,7 +124,7 @@ global.newMaterialParts = [
       'color': 0x2e5cd1,
       'type': 'base_metal',
       'tier': 2,
-      'itemParts': ['plate', 'gear', 'rod', 'wire', 'hammer', 'interlocking_component', 'model_spool', 'model_wire_coil'],
+      'itemParts': ['plate', 'gear', 'rod', 'wire', 'hammer', 'interlocking_component', 'model_spool', 'model_wire_coil','reinforced_plating','sheet','hull_pannel'],
       'blockParts': ['cog_block', 'casing', 'coil'],
       'durability': 256,
       'ore': true,
@@ -239,7 +239,7 @@ global.newMaterialParts = [
       'type': 'base_metal',
       'tier': 4,
       'itemParts': ['plate', 'gear', 'rod', 'plating'],
-      'blockParts': [],
+      'blockParts': ['cog_block'],
       'ore': true,
       'byproducts': ['platinum'],
     },
@@ -631,7 +631,7 @@ global.newMaterialParts = [
       'color': 0xffccd8,
       'tier': 2,
       'type': 'alloy',
-      'itemParts': ['dust', 'plate', 'gear', 'rod',],
+      'itemParts': ['dust', 'plate', 'gear', 'rod','wire'],
       'blockParts': [],
       'dust_input': ['#forge:dusts/gold', '#forge:dusts/copper'],
       'ingot_input': ['#forge:ingots/gold', '#forge:ingots/copper'],
@@ -662,7 +662,7 @@ global.newMaterialParts = [
       'blockParts': ['casing'],
       'durability': 512,
       'amount': 1,
-      'tinkers_input': [{tag: 'forge:molten_iron',amount: 90},{tag: 'forge:molten_coal_coke',amount: 100}],
+      'tinkers_input': [{tag: 'forge:molten_iron',amount: 90},{tag: 'forge:molten_carbon',amount: 100}],
       'allomancy': 'Steel allows you to Push on metals. This means moving metal items away from you, or pushing yourself off of metal blocks. This can be used as a sort of rudimentary flight, though it is more falling with style than anything else. Steel also allows you to use the Coin Bag item. If you have gold nuggets in your inventory and are burning steel, you can use this as a ranged weapon similar to the old Beta-edition Bow. Iron nuggets can also be used, causing more damage but far less accurately',
       'feruchemy': 'Speed--Speed Boost or Slowness'
     },
@@ -755,12 +755,15 @@ global.newMaterialParts = [
       'fluid': 'thick',
       'fluid_id': 'kubejs:molten_reinforced_electrum',
     },
+    /////////////// Tier 3 Alloys: Arc Furnace or chapter 3 /////////////////////////////
+    
+    
     {
       'material': 'white_alloy',
       'color': 0xe9f1f5,
       'type': 'alloy',
-      'tier': 2,
-      'itemParts': ['ingot', 'dust', 'nugget', 'plate'],
+      'tier': 3,
+      'itemParts': ['ingot', 'dust', 'nugget', 'plate', 'sheet'],
       'blockParts': ['storage_block'],
       'amount': 3,
       'dust_input': ['2x #forge:dusts/silver', '#forge:dusts/magnesium', '#forge:dusts/quartz'],
@@ -769,16 +772,13 @@ global.newMaterialParts = [
       'fluid': 'thick',
       'fluid_id': 'kubejs:molten_white_alloy',
     },
-    /////////////// Tier 3 Alloys: Arc Furnace or chapter 3 /////////////////////////////
-    
-    
     {
       'material': 'compressed_steel',
       'color': 0x6b6b6b,
       'type': 'alloy',
       'tier': 3,
       'itemParts': ['plate', 'rod', 'component'],
-      'blockParts': [],
+      'blockParts': ['sheetmetal'],
       'fluid': 'thick',
       'fluid_id': 'kubejs:molten_compressed_steel',
     },
@@ -1100,6 +1100,18 @@ global.newMaterialParts = [
       'byproducts': ['kharaxium', 'imortite'],
     },
 
+    {
+      'material': 'thermogenic',
+      'color': 0xf06330,
+      'tier': 3,
+      'type': 'compound_rare_metal',
+      'itemParts': ['dust', 'crystal', 'shard'],
+      'blockParts': [],
+      'fluid': 'thick',
+      'components': ['chromium', 'magnesium', 'oxygen', 'mercury'],
+      'amount': 1,
+      'dust_input': ['#forge:crushed_ores/kharaxium','#forge:crushed_ores/potentium','#forge:crushed_ores/imortite'],
+    },
 //////////////////////// Thermolytic /////////////////////////
     {
       'material': 'vincyte',
@@ -1143,6 +1155,18 @@ global.newMaterialParts = [
       'gem_components': ['emerald', 'niter'],
       'byproducts': ['jimmium', 'vincyte'],
     },
+    {
+      'material': 'thermolytic',
+      'color': 0x42f5da,
+      'tier': 3,
+      'type': 'compound_rare_metal',
+      'itemParts': ['dust', 'crystal', 'shard'],
+      'blockParts': [],
+      'fluid': 'thick',
+      'components': ['manganese', 'thorium', 'hydrogen', 'titanium'],
+      'amount': 1,
+      'dust_input': ['#forge:crushed_ores/jimmium','#forge:crushed_ores/densite','#forge:crushed_ores/vincyte'],
+    },
     
     /////////////// Other /////////////////////////////
     {
@@ -1175,30 +1199,6 @@ global.newMaterialParts = [
     //  'blockParts': [],
     //  'fluid': 'thick'
     //},
-    {
-      'material': 'thermogenic',
-      'color': 0xf06330,
-      'tier': 3,
-      'type': 'compound_rare_metal',
-      'itemParts': ['dust', 'crystal', 'shard'],
-      'blockParts': [],
-      'fluid': 'thick',
-      'components': ['chromium', 'thorium', 'oxygen', 'mercury'],
-      'amount': 1,
-      'dust_input': ['#forge:crushed_ores/kharaxium','#forge:crushed_ores/potentium','#forge:crushed_ores/imortite'],
-    },
-    {
-      'material': 'thermolytic',
-      'color': 0x42f5da,
-      'tier': 3,
-      'type': 'compound_rare_metal',
-      'itemParts': ['dust', 'crystal', 'shard'],
-      'blockParts': [],
-      'fluid': 'thick',
-      'components': ['manganese', 'magnesium', 'hydrogen', 'titanium'],
-      'amount': 1,
-      'dust_input': ['#forge:crushed_ores/jimmium','#forge:crushed_ores/densite','#forge:crushed_ores/vincyte'],
-    },
     {
       'material': 'wood',
       'color': 0x825c45,
@@ -1495,17 +1495,6 @@ global.newMaterialParts = [
       'itemParts': [],
       'blockParts': [],
       'ore': true
-    },
-    {
-      'material': 'coal_coke',
-      //'gem': true,
-      'color': 0x383838,
-      //'type': 'gem',
-      'iconset': 'ruby',
-      'itemParts': [],
-      'blockParts': [],
-      'fluid': 'thick',
-      'fluid_id': 'kubejs:molten_coal_coke',
     },
     ]
     

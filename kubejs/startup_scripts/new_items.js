@@ -37,6 +37,7 @@ var basicItems = [
 	'energetic_blend',
 	'glass_shard',
 	'water_filter',
+	'quicksilver',
 ]
 
 global.transitionalItems = [

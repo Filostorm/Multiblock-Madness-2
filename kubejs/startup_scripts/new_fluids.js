@@ -16,9 +16,9 @@ onEvent('fluid.registry', event => {
     
     event.create(`liquid_shadows`).thickTexture(0x350e5c).bucketColor(0x350e5c)
 
-    event.create(`ferric_slurry`).thinTexture(0x48754e).bucketColor(0x48754e)
-
     event.create(`sludge`).thickTexture(0x6e4210).bucketColor(0x6e4210)
+    
+    event.create(`molten_carbon`).thickTexture(0x383432).bucketColor(0x383432)
   });
   
   

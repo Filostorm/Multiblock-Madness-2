@@ -1,0 +1,20 @@
+{
+	id: "5B83D58DDA0086AE"
+	order_index: 10
+	title: "Elementalcraft t1"
+	loot_size: 1
+	rewards: [
+		{ item: "elementalcraft:elementpipe_impaired", count: 4 }
+		{ item: "elementalcraft:powerful_fire_shard", count: 8 }
+		{ item: "elementalcraft:powerful_air_shard", count: 8 }
+		{ item: "elementalcraft:drenched_iron_ingot", count: 4 }
+		{ item: "elementalcraft:inert_crystal", count: 8 }
+		{ item: "elementalcraft:powerful_water_shard", count: 8 }
+		{ item: "kubejs:charred_planks", count: 4 }
+		{ item: "elementalcraft:air_silk", count: 4 }
+		{ item: "elementalcraft:contained_crystal", count: 4 }
+		{ item: "elementalcraft:powerful_earth_shard", count: 8 }
+		{ item: "elementalcraft:whiterock", count: 4 }
+		{ item: "elementalcraft:burnt_glass", count: 4 }
+	]
+}

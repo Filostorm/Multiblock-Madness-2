@@ -5,7 +5,7 @@
 	#This prevents the last torch in the offhand from being placed.
 	doNotUseLastTorch = false
 	#This option will hide your offhand item. It can be toggled via an optional key binding.
-	hideOffhandItem = true
+	hideOffhandItem = false
 	#This option will hide your own potion particle effects for your client (other players will still see them).
 	hideOwnParticleEffects = true
 	#This option will hide your shield unless you are holding a weapon.

@@ -9,8 +9,8 @@
 	default_hide_dependency_lines: false
 	quests: [
 		{
-			x: 6.0d
-			y: 13.5d
+			x: 5.5d
+			y: -1.0d
 			description: [
 				"Flip to the correct book in your Tome to complete this quest."
 				""
@@ -24,8 +24,8 @@
 			}]
 		}
 		{
-			x: 7.5d
-			y: 13.5d
+			x: 7.0d
+			y: -1.0d
 			dependencies: [
 				"47AA157D687A02F7"
 				"243652BEE988A387"
@@ -44,8 +44,8 @@
 			}]
 		}
 		{
-			x: 9.0d
-			y: 13.5d
+			x: 8.5d
+			y: -1.0d
 			dependencies: ["7EBE28646422EC18"]
 			id: "0E9C33334120AC94"
 			tasks: [{
@@ -56,8 +56,8 @@
 			}]
 		}
 		{
-			x: 10.0d
-			y: 12.0d
+			x: 9.5d
+			y: -2.5d
 			dependencies: ["0E9C33334120AC94"]
 			id: "098CAF7E91266CDC"
 			tasks: [{
@@ -67,8 +67,8 @@
 			}]
 		}
 		{
-			x: 10.0d
-			y: 15.0d
+			x: 9.5d
+			y: 0.5d
 			dependencies: ["0E9C33334120AC94"]
 			id: "1BF79E8ACC1F917F"
 			tasks: [{
@@ -78,8 +78,8 @@
 			}]
 		}
 		{
-			x: 11.5d
-			y: 13.5d
+			x: 11.0d
+			y: -1.0d
 			dependencies: ["0E9C33334120AC94"]
 			id: "1FC0519495084939"
 			tasks: [{
@@ -89,8 +89,8 @@
 			}]
 		}
 		{
-			x: 11.5d
-			y: 12.0d
+			x: 11.0d
+			y: -2.5d
 			dependencies: ["098CAF7E91266CDC"]
 			id: "12DDD9CD9F8B934F"
 			tasks: [{
@@ -106,8 +106,8 @@
 			}]
 		}
 		{
-			x: 11.5d
-			y: 15.0d
+			x: 11.0d
+			y: 0.5d
 			dependencies: ["1BF79E8ACC1F917F"]
 			id: "07A718A55B5A7318"
 			tasks: [{
@@ -156,6 +156,12 @@
 				id: "0576FF10B6A77AE8"
 				type: "item"
 				item: "elementalcraft:crystallizer"
+			}]
+			rewards: [{
+				id: "1A071C495A346567"
+				type: "choice"
+				exclude_from_claim_all: true
+				table_id: 5588879661420231004L
 			}]
 		}
 		{
@@ -466,7 +472,7 @@
 			title: "The Crusher"
 			icon: "immersiveengineering:crusher"
 			x: 6.5d
-			y: 5.5d
+			y: 5.0d
 			dependencies: ["3D971E0CF8257193"]
 			repeatable: true
 			id: "4489F9C5F2899DFE"
@@ -510,6 +516,10 @@
 					layer: true
 					ignoreState: false
 					rightclick: false
+				}
+				{
+					id: "014E1C89C1A51160"
+					type: "checkmark"
 				}
 			]
 			rewards: [{
@@ -649,7 +659,7 @@
 			title: "The Mixer"
 			icon: "immersiveengineering:mixer"
 			x: 8.5d
-			y: 5.5d
+			y: 5.0d
 			dependencies: ["3D971E0CF8257193"]
 			repeatable: true
 			id: "02E4BADB1F8BEB33"
@@ -696,7 +706,7 @@
 					name: "mixer"
 					hasCustomPicture: false
 					layer: true
-					ignoreState: false
+					ignoreState: true
 					rightclick: false
 				}
 			]
@@ -887,7 +897,7 @@
 		}
 		{
 			title: "Explosions!"
-			x: 6.0d
+			x: 5.0d
 			y: 3.5d
 			dependencies: ["17F948FD49F0EB33"]
 			id: "418AC2EB203010CA"
@@ -906,7 +916,7 @@
 		}
 		{
 			title: "Compressing Air"
-			x: 8.5d
+			x: 7.5d
 			y: 3.5d
 			description: ["Attach the Safety Tube Module to keep your system from exploding if pressure gets too high."]
 			dependencies: ["418AC2EB203010CA"]
@@ -940,7 +950,7 @@
 			title: "The Bottling Machine"
 			icon: "immersiveengineering:bottling_machine"
 			x: 7.5d
-			y: 9.0d
+			y: 8.5d
 			dependencies: ["3D971E0CF8257193"]
 			repeatable: true
 			id: "45011E84BFF6E319"
@@ -1000,7 +1010,7 @@
 		}
 		{
 			title: "Using Heat"
-			x: 10.5d
+			x: 8.5d
 			y: 2.0d
 			dependencies: ["02285A69B0A09A44"]
 			id: "2F38722F9A7D89CC"
@@ -1024,7 +1034,7 @@
 		}
 		{
 			title: "More of that strange oil"
-			x: 8.5d
+			x: 6.5d
 			y: 2.0d
 			subtitle: "Its probably nothing"
 			description: ["Use the Sensor on the ground to find an oil deposit, which you can then drill up to the surface with the Gas Lift."]
@@ -1190,7 +1200,7 @@
 			}]
 		}
 		{
-			x: 5.5d
+			x: 6.0d
 			y: 7.5d
 			dependencies: ["729CD1DC498A9130"]
 			id: "4056DE989F8A8E98"
@@ -1313,7 +1323,7 @@
 			}]
 		}
 		{
-			title: "The Assembler"
+			title: "Autocrafting with Fluids"
 			icon: "immersiveengineering:assembler"
 			x: 7.5d
 			y: 5.0d
@@ -1440,6 +1450,237 @@
 					item: "multiblocked:energy_input_mk1"
 				}
 			]
+		}
+		{
+			title: "Fast Multiblock Creation"
+			x: 5.0d
+			y: 5.5d
+			description: [
+				"Select a Schematic for your blueprint in the table, then after placing it in world, load it in your cannon. Make sure it has Gunpowder and a chest nearby with every block needed."
+				""
+				"If using for Compact Crafting, you'll need to use the Rescan Field Proxy before it will allow the craft."
+			]
+			dependencies: [
+				"1A4ED8C40CDFBBE5"
+				"17F948FD49F0EB33"
+			]
+			id: "293350E919B21CDF"
+			tasks: [
+				{
+					id: "122B75BA5F387C82"
+					type: "item"
+					item: "create:schematic_table"
+				}
+				{
+					id: "6F95BF1DA2F6047D"
+					type: "item"
+					item: "create:schematicannon"
+				}
+			]
+			rewards: [
+				{
+					id: "70329C3736FCA8EF"
+					type: "item"
+					item: "create:schematic_and_quill"
+				}
+				{
+					id: "796C71B734014606"
+					type: "item"
+					item: "create:empty_schematic"
+				}
+			]
+		}
+		{
+			x: 2.0d
+			y: 8.0d
+			dependencies: [
+				"1F932299A59D3965"
+				"44B029D2AFEC131D"
+			]
+			id: "7B3DB78D063966D4"
+			tasks: [
+				{
+					id: "3CEB9764CDA99319"
+					type: "item"
+					item: "scannable:scanner"
+				}
+				{
+					id: "35D755B0DB74A309"
+					type: "item"
+					item: "scannable:blank_module"
+				}
+			]
+		}
+		{
+			x: 5.5d
+			y: 12.5d
+			dependencies: ["63D72477BB0F83A4"]
+			id: "6B88E5CD8EC9BE7B"
+			tasks: [
+				{
+					id: "7F86898B2643C4E6"
+					type: "item"
+					item: {
+						id: "elementalcraft:jewel"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								jewel: "elementalcraft:strider"
+							}
+						}
+					}
+				}
+				{
+					id: "185EC521325CAEC0"
+					type: "item"
+					item: {
+						id: "elementalcraft:element_holder_fire"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+						ForgeCaps: {
+							Parent: {
+								element_capacity: 10000
+								element_type: "fire"
+								element_amount: 0
+							}
+						}
+					}
+				}
+			]
+		}
+		{
+			x: 6.5d
+			y: 12.5d
+			dependencies: ["63D72477BB0F83A4"]
+			id: "68E140A5DD8F3F8E"
+			tasks: [
+				{
+					id: "08E4B2A30181E88D"
+					type: "item"
+					item: {
+						id: "elementalcraft:jewel"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								jewel: "elementalcraft:water_strider"
+							}
+						}
+					}
+				}
+				{
+					id: "1DC4319C34318628"
+					type: "item"
+					item: {
+						id: "elementalcraft:element_holder_water"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+						ForgeCaps: {
+							Parent: {
+								element_capacity: 10000
+								element_type: "water"
+								element_amount: 0
+							}
+						}
+					}
+				}
+			]
+		}
+		{
+			x: 7.5d
+			y: 12.5d
+			dependencies: ["63D72477BB0F83A4"]
+			id: "68F646A73B66D82A"
+			tasks: [
+				{
+					id: "70B8FC4CD85C89F8"
+					type: "item"
+					item: {
+						id: "elementalcraft:jewel"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								jewel: "elementalcraft:hawk"
+							}
+						}
+					}
+				}
+				{
+					id: "7A2C33D293723FA2"
+					type: "item"
+					item: {
+						id: "elementalcraft:element_holder_air"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+						ForgeCaps: {
+							Parent: {
+								element_capacity: 10000
+								element_type: "air"
+								element_amount: 0
+							}
+						}
+					}
+				}
+			]
+		}
+		{
+			x: 8.5d
+			y: 12.5d
+			dependencies: ["63D72477BB0F83A4"]
+			id: "4406D31EA06538A1"
+			tasks: [
+				{
+					id: "6547C679B84CD01F"
+					type: "item"
+					item: {
+						id: "elementalcraft:jewel"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								jewel: "elementalcraft:bear"
+							}
+						}
+					}
+				}
+				{
+					id: "48F8474BEDBB4BA2"
+					type: "item"
+					item: {
+						id: "elementalcraft:element_holder_earth"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+						ForgeCaps: {
+							Parent: {
+								element_capacity: 10000
+								element_type: "earth"
+								element_amount: 0
+							}
+						}
+					}
+				}
+			]
+		}
+		{
+			x: 8.5d
+			y: 11.0d
+			description: [
+				"A basic method of in world ore collection."
+				"Earth must be piped directly into the shrine."
+			]
+			dependencies: ["63D72477BB0F83A4"]
+			id: "0F378674EF81D178"
+			tasks: [{
+				id: "4F33E9DF2516BCEA"
+				type: "item"
+				item: "elementalcraft:oreshrine"
+			}]
 		}
 	]
 	quest_links: [ ]

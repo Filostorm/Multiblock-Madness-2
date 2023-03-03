@@ -17,7 +17,7 @@ D: 'kubejs:source_tube'
 
 // [| compactcrafting:base |] //
 event.remove({id: 'compactcrafting:base'})
-event.shaped('4x compactcrafting:base', [
+event.shaped('compactcrafting:base', [
 	' B ',
 	'CDC',
 	'EEE'

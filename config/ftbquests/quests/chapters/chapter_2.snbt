@@ -50,10 +50,10 @@
 				}
 			]
 			rewards: [{
-				id: "1C24B5CE4CFBA2BD"
-				type: "item"
-				item: "elementalcraft:contained_crystal"
-				count: 4
+				id: "5E8D7C40010E1E55"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 6594349084625110702L
 			}]
 		}
 		{
@@ -66,6 +66,12 @@
 				type: "item"
 				item: "elementalcraft:infuser"
 			}]
+			rewards: [{
+				id: "05B7E12B2529672A"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 6594349084625110702L
+			}]
 		}
 		{
 			title: "Elemental Infused Items"
@@ -74,22 +80,15 @@
 			dependencies: ["0828BD31B9F3CD36"]
 			id: "391E4F9DA1A3D71B"
 			tasks: [{
-				id: "435DD677A174405A"
+				id: "26E004E4BD3FFE89"
 				type: "item"
-				title: "Any Basic Infused Items"
-				item: {
-					id: "itemfilters:tag"
-					Count: 1b
-					tag: {
-						value: "elementalcraft:basic_infused"
-					}
-				}
+				item: "elementalcraft:drenched_iron_ingot"
 			}]
 			rewards: [{
-				id: "4EB1CE797C70B289"
-				type: "choice"
+				id: "65AACEB52AC79869"
+				type: "random"
 				exclude_from_claim_all: true
-				table_id: 5588879661420231004L
+				table_id: 6594349084625110702L
 			}]
 		}
 		{
@@ -588,44 +587,18 @@
 						}
 					}
 				}
-			]
-		}
-		{
-			icon: "scannable:scanner"
-			x: -6.5d
-			y: 12.0d
-			dependencies: ["03F754FB73DEF8FA"]
-			id: "3B43853370AE0AA7"
-			tasks: [
 				{
-					id: "315E683C23C63F98"
+					id: "195F678337732A20"
 					type: "item"
 					item: {
-						id: "scannable:scanner"
+						id: "minecraft:potion"
 						Count: 1b
 						tag: {
-							items: {
-								Size: 9
-								Items: [{
-									Slot: 0
-									id: "scannable:common_ores_module"
-									Count: 1b
-								}]
-							}
+							Potion: "potionsmaster:iron_sight"
 						}
 					}
 				}
-				{
-					id: "18219E5DD47A98AE"
-					type: "item"
-					item: "scannable:blank_module"
-				}
 			]
-			rewards: [{
-				id: "07D44957CB37A75E"
-				type: "loot"
-				table_id: 2582656620646881183L
-			}]
 		}
 		{
 			title: "Finding things is fun!"
@@ -1166,6 +1139,12 @@
 					item: "elementalcraft:container"
 				}
 			]
+			rewards: [{
+				id: "61EDA6FADBC5D4F4"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 6594349084625110702L
+			}]
 		}
 		{
 			title: "Hemp"
@@ -1198,12 +1177,18 @@
 				type: "item"
 				item: "farmersdelight:cutting_board"
 			}]
+			rewards: [{
+				id: "4E2D099F1142A318"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 2582656620646881183L
+			}]
 		}
 		{
 			title: "So, you've found some new Ore"
 			x: -6.5d
-			y: 14.0d
-			description: ["These Ores can be processed down into a large array of different materials."]
+			y: 11.5d
+			description: ["These Compound Ores can be processed down into a large array of different materials."]
 			dependencies: ["03F754FB73DEF8FA"]
 			id: "423438726B049430"
 			tasks: [{
@@ -1221,8 +1206,8 @@
 		}
 		{
 			title: "Ore Deposits"
-			x: -5.0d
-			y: 14.0d
+			x: -6.5d
+			y: 13.0d
 			description: [
 				"Beneath the ring of Ore Samples, you'll find a massive vein of whichever ore is displayed by the sample."
 				"{image:kubejs:textures/quests/ore_sample.png width:119 height:82 align:1}"

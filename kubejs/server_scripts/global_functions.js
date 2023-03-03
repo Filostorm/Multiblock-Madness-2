@@ -261,6 +261,16 @@ global.explosionCrafting = (event, output, input, loss_rate, ID) => {
 		loss_rate: loss_rate,
 	  }).id(ID)}
 ///////////////////////////////////////////////////////////
+	  
+///////////////// EXPLODING ///////////////////////
+global.AssemblyLaser = (event, output, input, ID) => {
+	event.custom({
+		type: 'pneumaticcraft:assembly_laser',
+		input: input,
+		result: Item.of(output).toResultJson(),
+		program: 'laser', //laser, drill
+	  }).id(ID)}
+///////////////////////////////////////////////////////////
 
 
 ///////////////// NATURAL ALTAR ///////////////////////

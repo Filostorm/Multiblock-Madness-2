@@ -114,6 +114,13 @@ event.recipes.createSequencedAssembly([
   event.recipes.createDeploying('kubejs:incomplete_component_electronic_adv', ['kubejs:incomplete_component_electronic_adv', '#forge:wires/aluminum']),
   ]).transitionalItem('kubejs:incomplete_component_electronic_adv').loops(2) // transitional item and the loops
 
+  global.AssemblyLaser(event, Item.of('immersiveengineering:component_electronic_adv').toJson(), [
+    {"item": "immersiveengineering:plate_duroplast"}, 
+    {"type": "pneumaticcraft:stacked_item","item": "immersiveengineering:electron_tube", "count": 2}, 
+    {"type": "pneumaticcraft:stacked_item","tag": "forge:wires/aluminum", "count": 2}
+  ], 'mbm2:laser_assembly/component_electronic_adv')
+
+    
 //Belt
   event.shaped('8x immersiveengineering:conveyor_basic', [
   'BBB',
@@ -275,9 +282,14 @@ event.shaped('immersiveengineering:workbench', [
         }).id('mbm2:immersiveengineering/interlocking_components')
 
 
-			//Coke
-			global.tinkersMeltingPlain(event, 'kubejs:molten_coal_coke', 100, `#forge:dusts/coal_coke`, 900, 20, `mbm2:smeltery/melting/coal_coke_dust`)
-			global.tinkersMeltingPlain(event, 'kubejs:molten_coal_coke', 100, `#forge:coal_coke`, 900, 20, `mbm2:smeltery/melting/coal_coke`)
+			//Carbon
+			global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 100, `#forge:dusts/coal_coke`, 900, 20, `mbm2:smeltery/melting/coal_coke_dust`)
+			global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 100, `#forge:coal_coke`, 900, 20, `mbm2:smeltery/melting/coal_coke`)
+
+			global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 50, `#forge:dusts/coal`, 900, 20, `mbm2:smeltery/melting/coal_dust`)
+			global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 50, `#forge:coal`, 900, 20, `mbm2:smeltery/melting/coal`)
+
+			global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 40, `#forge:charcoal`, 900, 20, `mbm2:smeltery/melting/charcoal`)
     
     ///////////////// ARC FURNACE TIME ////////////////////////////
     /*

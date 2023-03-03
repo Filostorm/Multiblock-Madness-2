@@ -50,12 +50,12 @@ event.shaped('scannable:scanner', [
 	'CDC',
 	'EEE'
   ], {
-	A: 'immersiveengineering:stick_iron',
- 	C: 'createaddition:gold_wire',
- 	D: 'minecraft:redstone',
- 	E: 'create:copper_sheet'
+	A: 'immersiveengineering:toolupgrade_shield_flash',
+ 	C: '#forge:wires/gold',
+ 	D: 'create:electron_tube',
+ 	E: '#forge:plates/steel'
   }).id("kubejs:scanner")
-
+  //Cards
   event.remove({id: 'scannable:blank_module'})
   event.shaped('2x scannable:blank_module', [
 	'AAA',
@@ -63,9 +63,9 @@ event.shaped('scannable:scanner', [
 	'CDC'
   ], {
 	A: 'minecraft:clay_ball',
-	B: 'powah:uraninite',
+	B: 'elementalcraft:earthcrystal',
 	C: '#forge:gems',
-	D: 'thermal:gold_plate'
+	D: '#forge:wires/rose_gold'
   }).id("kubejs:blank_module")
 
 

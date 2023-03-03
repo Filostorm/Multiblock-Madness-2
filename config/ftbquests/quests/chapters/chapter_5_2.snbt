@@ -16,7 +16,7 @@
 				tag: { }
 			}
 			x: 0.5d
-			y: -3.0d
+			y: -4.5d
 			dependencies: ["573198C8B96038A8"]
 			id: "1E282A0E8363FD74"
 			tasks: [
@@ -39,7 +39,7 @@
 		}
 		{
 			x: 2.0d
-			y: -3.0d
+			y: -4.5d
 			dependencies: ["1E282A0E8363FD74"]
 			id: "588EC54D514CB640"
 			tasks: [{
@@ -49,8 +49,8 @@
 			}]
 		}
 		{
-			x: -5.0d
-			y: 1.0d
+			x: -3.5d
+			y: -6.0d
 			id: "50780F1D0FC53AB1"
 			tasks: [{
 				id: "43C9087280F64C1A"
@@ -60,7 +60,7 @@
 		}
 		{
 			x: -1.0d
-			y: -3.0d
+			y: -4.5d
 			dependencies: ["1CF39FE5E8135E08"]
 			id: "573198C8B96038A8"
 			tasks: [{
@@ -81,8 +81,8 @@
 			}]
 		}
 		{
-			x: -2.5d
-			y: -1.5d
+			x: -4.0d
+			y: 0.0d
 			dependencies: ["35C4C2060E205DAC"]
 			id: "6D96C22AED8671A4"
 			tasks: [{
@@ -92,6 +92,7 @@
 			}]
 		}
 		{
+			disable_toast: true
 			x: -5.5d
 			y: -1.5d
 			id: "0A0FC4AF714D99F8"
@@ -102,8 +103,8 @@
 			}]
 		}
 		{
-			x: -3.5d
-			y: -4.5d
+			x: -2.5d
+			y: -3.0d
 			dependencies: [
 				"25E6A3906DFF322B"
 				"35C4C2060E205DAC"
@@ -116,8 +117,8 @@
 			}]
 		}
 		{
-			x: -5.5d
-			y: -4.5d
+			x: -4.0d
+			y: -3.0d
 			id: "25E6A3906DFF322B"
 			tasks: [{
 				id: "590A6A071A534CAD"
@@ -126,14 +127,28 @@
 			}]
 		}
 		{
-			x: -2.0d
+			x: -2.5d
 			y: -4.5d
-			dependencies: ["38BEC380C355AB46"]
+			dependencies: [
+				"38BEC380C355AB46"
+				"4191399434B5CC2C"
+			]
 			id: "1CF39FE5E8135E08"
 			tasks: [{
 				id: "3E776AF36F6D6736"
 				type: "item"
 				item: "mbm2:leaching_vat"
+			}]
+		}
+		{
+			x: -5.5d
+			y: -3.0d
+			dependencies: ["0A0FC4AF714D99F8"]
+			id: "4191399434B5CC2C"
+			tasks: [{
+				id: "5B92175592B4D0EB"
+				type: "item"
+				item: "alchemistry:dissolver"
 			}]
 		}
 	]

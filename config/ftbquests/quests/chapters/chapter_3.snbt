@@ -182,6 +182,19 @@
 				title: "The Nether"
 				dimension: "minecraft:the_nether"
 			}]
+			rewards: [
+				{
+					id: "47C4A63C92D308C2"
+					type: "item"
+					item: "tconstruct:magma_bottle"
+				}
+				{
+					id: "0953D563ECC614E4"
+					type: "random"
+					exclude_from_claim_all: true
+					table_id: 2582656620646881183L
+				}
+			]
 		}
 		{
 			x: 8.5d
@@ -389,7 +402,7 @@
 		{
 			title: "Tier 2 Powah"
 			x: 7.0d
-			y: 4.0d
+			y: 4.160714285714292d
 			description: ["Place the Rods near the Orb and fill with crafting materials."]
 			dependencies: [
 				"47910242F4DE9220"
@@ -925,7 +938,7 @@
 		}
 		{
 			x: 7.0d
-			y: 6.5d
+			y: 7.0d
 			description: ["Used to craft gems from dust."]
 			dependencies: ["20E99BAA6C9A4913"]
 			id: "651B53F1AFDEB856"
@@ -954,6 +967,45 @@
 					item: "tconstruct:scorched_brick"
 				}
 			]
+		}
+		{
+			x: 13.0d
+			y: 0.0d
+			dependencies: ["31513AA25B621FD8"]
+			id: "4691F3E2268FD78F"
+			tasks: [{
+				id: "22C1A5DB0AFB31EE"
+				type: "item"
+				item: "naturesaura:infused_iron"
+			}]
+		}
+		{
+			x: 13.0d
+			y: -1.5d
+			description: ["Could be used to automate compact crafting with a bit of tinkering!"]
+			dependencies: ["4691F3E2268FD78F"]
+			id: "4131CBB343346AF0"
+			tasks: [{
+				id: "33309F26286B7D13"
+				type: "item"
+				item: "naturesaura:placer"
+			}]
+			rewards: [{
+				id: "037F18E8C9273261"
+				type: "item"
+				item: "naturesaura:infused_iron"
+			}]
+		}
+		{
+			x: 7.0d
+			y: 6.0d
+			dependencies: ["20E99BAA6C9A4913"]
+			id: "15B1FC183A90145C"
+			tasks: [{
+				id: "73D6EF0CF5688260"
+				type: "item"
+				item: "thermal:machine_crucible"
+			}]
 		}
 	]
 	quest_links: [ ]

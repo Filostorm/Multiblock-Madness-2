@@ -36,7 +36,7 @@ event.shaped('tconstruct:scorched_faucet', [
 	event.remove({id: 'tconstruct:smeltery/casting/scorched/brick_composite'})
 	event.remove({id: 'tconstruct:smeltery/scorched/nether_grout'})
 	
-	event.recipes.createMixing('4x tconstruct:scorched_brick', [Fluid.of('tconstruct:magma', 250),'2x create:cinder_flour', '2x kubejs:sturdy_brick', 'spirit:soul_powder']).superheated().id(`mbm2:mixing/scorched_brick`)
+	event.recipes.createMixing('8x tconstruct:scorched_brick', [Fluid.of('tconstruct:magma', 250),'2x create:cinder_flour', '2x kubejs:sturdy_brick', 'spirit:soul_powder']).superheated().id(`mbm2:mixing/scorched_brick`)
 	event.recipes.createMixing('4x tconstruct:nether_grout', [Fluid.of('tconstruct:magma', 250),'2x create:cinder_flour', '2x kubejs:sturdy_brick', 'spirit:soul_powder']).heated().id(`mbm2:mixing/nether_grout`)
 	
 	//Foundry Controller

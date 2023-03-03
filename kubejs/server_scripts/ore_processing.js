@@ -93,6 +93,8 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 		event.remove({id: `tconstruct:smeltery/melting/metal/${item.material}/raw`})
 
 		if (item.ore) {
+
+
 			//Can't Smelt Complicated Metal
 			event.remove({output: `#forge:ingots/${item.material}`, type: 'minecraft:smelting'})
 			event.remove({output: `#forge:ingots/${item.material}`, type: 'minecraft:blasting'})
@@ -128,17 +130,6 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				//Create Washing 
 				event.recipes.createSplashing([`#forge:grits/${item.material}`, Item.of(`#forge:grits/${item.material}`).withChance(0.75), Item.of('gravel').withChance(0.25)], `#forge:crushed_ores/${item.material}`).id(`mbm2:washing/crushed_${item.material}`)
 
-				
-		///////////////////// ORE PROCESSING STEP 2 w/o byproducts //////////////////
-				//Ore Flotation
-				event.recipes.multiblocked.multiblock("flotation")
-				.inputFluid(Fluid.of('water', 1000))
-				.inputItem(`#forge:crushed_ores/${item.material}`)
-				.outputItem(Item.of(`#forge:chunks/${item.material}`))
-				.outputFluid(Fluid.of('kubejs:sludge', 250))
-				.setPerTick(true)
-				.inputFE(4096)
-				.duration(100)
 
 				if (item.byproducts != null) {
 					/////////////////////////////////////////////////////////
@@ -195,9 +186,18 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				], `#forge:raw_materials/${item.material}`).id(`mbm2:crushing/raw_${item.material}`)
 
 				///////////////////// ORE PROCESSING STEP 2 //////////////////
+				//Ore Flotation
+				event.recipes.multiblocked.multiblock("flotation")
+				.inputFluid(Fluid.of('water', 500))
+				.inputItem(`#forge:crushed_ores/${item.material}`)
+				.outputItem(Item.of(`#forge:chunks/${item.material}`))
+				.outputFluid(Fluid.of('kubejs:sludge', 250))
+				.setPerTick(true)
+				.inputFE(4096)
+				.duration(100)
 				//Ore Flotation w/ Purified Water
 				event.recipes.multiblocked.multiblock("flotation")
-				.inputFluid(Fluid.of('kubejs:purified_water', 1000))
+				.inputFluid(Fluid.of('kubejs:purified_water', 500))
 				.inputItem(`#forge:crushed_ores/${item.material}`)
 				.outputItem(Item.of(`#forge:chunks/${item.material}`))
 				.setChance(0.25)
@@ -297,14 +297,14 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 						orePartsProcessed.forEach((part) => {
 							if (part != 'raw_materials') {
 								//Foundry Processing for ores
-								global.tinkersOreMelting(event, 'kubejs:molten_slag', 50,  item.fluid_id, 90, `forge:${part}/${item.material}`, 1500, 100, `mbm2:foundry/melting/metal/${item.material}/${part}`)
+								global.tinkersOreMelting(event, 'kubejs:molten_slag', 50,  item.fluid_id, 90, `forge:${part}/${item.material}`, 1500, 125, `mbm2:foundry/melting/metal/${item.material}/${part}`)
 							}
 						})
 						//Smeltery Processing for Metal
 						orePartsRefined.forEach((part) => {
-							global.tinkersMeltingPlain(event, item.fluid_id, 90, Ingredient.of(`#forge:${part}/${item.material}`).toJson(), 1200, 50, `mbm2:smeltery/melting/metal/${item.material}/${part}`)
+							global.tinkersMeltingPlain(event, item.fluid_id, 90, Ingredient.of(`#forge:${part}/${item.material}`).toJson(), 1200, 75, `mbm2:smeltery/melting/metal/${item.material}/${part}`)
 						})
-						global.tinkersMeltingPlain(event, item.fluid_id, 90, Ingredient.of(`#forge:ingots/${item.material}`).toJson(), 1000, 75, `mbm2:smeltery/melting/metal/${item.material}/ingot`)
+						global.tinkersMeltingPlain(event, item.fluid_id, 90, Ingredient.of(`#forge:ingots/${item.material}`).toJson(), 1000, 100, `mbm2:smeltery/melting/metal/${item.material}/ingot`)
 					} else {
 						console.log(`ERROR: ${item.material} needs a fluid_id in Master Material List`)
 					}
@@ -402,6 +402,15 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 						.inputItem(tier2Processed)
 						.outputItem(Item.of(`#forge:ingots/${item.material}`))
 						//.outputFluid(Fluid.of('mekanism:sulfuric_acid', 1000))
+						.setPerTick(true)
+						.inputFE(4096)
+						.duration(200)
+
+						//Air
+						event.recipes.multiblocked.multiblock("ebf")
+						.inputFluid(Fluid.of('mekanism:oxygen', 1000))
+						.inputItem(orePartsRefinedItems)
+						.outputItem(Item.of(`#forge:ingots/${item.material}`))
 						.setPerTick(true)
 						.inputFE(4096)
 						.duration(200)

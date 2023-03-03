@@ -1,12 +1,48 @@
 {
 	id: "4D8FB070DF5BB95C"
 	order_index: 7
-	title: "Elements"
+	title: "Element Holders"
 	loot_size: 1
 	rewards: [
-		{ item: "elementalcraft:fire_shard", count: 8 }
-		{ item: "elementalcraft:water_shard", count: 8 }
-		{ item: "elementalcraft:earth_shard", count: 8 }
-		{ item: "elementalcraft:air_shard", count: 8 }
+		{
+			item: {
+				id: "elementalcraft:receptacle"
+				Count: 1b
+				tag: {
+					Damage: 0
+					element_type: "water"
+				}
+			}
+		}
+		{
+			item: {
+				id: "elementalcraft:receptacle"
+				Count: 1b
+				tag: {
+					Damage: 0
+					element_type: "fire"
+				}
+			}
+		}
+		{
+			item: {
+				id: "elementalcraft:receptacle"
+				Count: 1b
+				tag: {
+					Damage: 0
+					element_type: "earth"
+				}
+			}
+		}
+		{
+			item: {
+				id: "elementalcraft:receptacle"
+				Count: 1b
+				tag: {
+					Damage: 0
+					element_type: "air"
+				}
+			}
+		}
 	]
 }

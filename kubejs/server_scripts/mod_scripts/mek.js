@@ -1,36 +1,44 @@
 onEvent('recipes', event => {
   event.remove({output: 'mekanism:steel_casing'})
   
-  global.compactCrafting(event, 'mekanism:steel_casing', 1, 'immersiveengineering:component_electronic_adv',
+  global.compactCrafting(event, 'mekanism:steel_casing', 1, 'pneumaticcraft:printed_circuit_board',
   3, [
 	{
-	type: 'compactcrafting:hollow',
-	wall: 'A'
+		type: 'compactcrafting:mixed',
+		pattern: [
+			['S', 'M','S'],
+			['M', 'S','M'],
+			['S', 'M','S']
+		]
 	},
 	{
 		type: 'compactcrafting:mixed',
 		pattern: [
-			['I', '-','I'],
-			['-', '-','-'],
-			['I', '-','I']
+			['M', 'S','M'],
+			['S', 'C','S'],
+			['M', 'S','M']
 		]
 	},
 	{
-	type: 'compactcrafting:hollow',
-	wall: 'S'
-	}
+		type: 'compactcrafting:mixed',
+		pattern: [
+			['S', 'M','S'],
+			['M', 'S','M'],
+			['S', 'M','S']
+		]
+	},
 	], {
-	'S': {
+	'M': {
 	  type: 'compactcrafting:block',
 	  block: 'immersiveengineering:sheetmetal_steel'
 	},
-	'I': {
+	'S': {
 	  type: 'compactcrafting:block',
 	  block: 'kubejs:invar_scaffolding'
 	},
-	'A': {
+	'C': {
 	  type: 'compactcrafting:block',
-	  block: 'immersiveengineering:steel_scaffolding_standard'
+	  block: 'kubejs:osmium_cog_block'
 	}
   },  'mbm2:steel_casing')
 

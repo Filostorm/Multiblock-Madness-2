@@ -106,8 +106,8 @@
 			]
 		}
 		{
-			x: 14.0d
-			y: -3.0d
+			x: 13.0d
+			y: -2.5d
 			description: ["Place the molten plastic in world to have it solidify into a Plastic Sheet, or place inside a chest that has been cooled via Heat Frame."]
 			dependencies: ["444E392EA0BB8807"]
 			dependency_requirement: "one_completed"
@@ -126,8 +126,8 @@
 			]
 		}
 		{
-			x: 15.5d
-			y: -3.0d
+			x: 14.5d
+			y: -2.5d
 			description: ["You can use Bio Diesel or LPG (from Refining Oil) to make Plastic."]
 			dependencies: [
 				"2F38722F9A7D89CC"
@@ -154,8 +154,8 @@
 			}]
 		}
 		{
-			x: 14.0d
-			y: -4.5d
+			x: 12.0d
+			y: -3.5d
 			dependencies: [
 				"2F38722F9A7D89CC"
 				"09B9B831214F6072"
@@ -175,8 +175,8 @@
 			]
 		}
 		{
-			x: 15.5d
-			y: -4.5d
+			x: 11.0d
+			y: -2.5d
 			dependencies: [
 				"02285A69B0A09A44"
 				"09B9B831214F6072"
@@ -190,8 +190,8 @@
 		}
 		{
 			title: "Better Circuits"
-			x: 14.0d
-			y: -6.0d
+			x: 11.0d
+			y: -4.5d
 			dependencies: [
 				"72DC15C390A992F6"
 				"01D41BC5B499F063"
@@ -321,7 +321,7 @@
 			]
 		}
 		{
-			x: 17.0d
+			x: 16.0d
 			y: -1.5d
 			dependencies: ["591233C3DDD3FE04"]
 			id: "5E914AEBF8D378B9"
@@ -333,7 +333,7 @@
 			}]
 		}
 		{
-			x: 17.0d
+			x: 16.0d
 			y: -3.0d
 			description: ["Stacking up to 4 Refinery Outputs on the top (and insulating them), will allow you to get the maximum amount of products from your Crude Oil."]
 			dependencies: [
@@ -490,8 +490,8 @@
 			]
 		}
 		{
-			x: 17.0d
-			y: -4.5d
+			x: 16.0d
+			y: -5.0d
 			shape: "circle"
 			dependencies: ["5C5CE8BEA54E1A94"]
 			id: "2F6A6631A7BAAE8E"
@@ -504,8 +504,9 @@
 		{
 			icon: "mbm2:flotation"
 			x: 18.5d
-			y: -0.5d
+			y: 0.0d
 			description: ["You'll also need to cover the Cog Blocks with water."]
+			dependencies: ["63D72477BB0F83A4"]
 			dependency_requirement: "one_completed"
 			id: "0E2B25A2429C9556"
 			tasks: [
@@ -560,8 +561,8 @@
 			]
 		}
 		{
-			x: 18.5d
-			y: -2.5d
+			x: 18.0d
+			y: -1.5d
 			dependencies: [
 				"02E4BADB1F8BEB33"
 				"0E2B25A2429C9556"
@@ -582,8 +583,8 @@
 		}
 		{
 			icon: "mbm2:sorter_mk2"
-			x: 20.5d
-			y: 2.0d
+			x: 19.5d
+			y: 3.0d
 			dependencies: ["13C4C068E2EB695E"]
 			id: "67A63CB65FEDF5AC"
 			tasks: [

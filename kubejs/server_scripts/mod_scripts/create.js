@@ -1,5 +1,10 @@
 
 
+onEvent('block.loot_tables', event => {
+	event.addSimpleBlock(`createbigcannons:unbored_very_small_steel_cannon_layer`, `createbigcannons:unbored_very_small_steel_cannon_layer`)
+	event.addSimpleBlock(`createbigcannons:very_small_steel_cannon_layer`, `createbigcannons:very_small_steel_cannon_layer`)
+	event.addSimpleBlock(`createbigcannons:steel_cannon_barrel`, `createbigcannons:steel_cannon_barrel`)
+})	
 onEvent('tags.items', event => {
 		event.add('forge:slimeballs', 'createaddition:biomass_pellet')
 		
@@ -16,10 +21,8 @@ onEvent('tags.items', event => {
 		event.add('forge:ingots', 'createbigcannons:nethersteel_ingot')
 		event.add('forge:ingots/nethersteel', 'createbigcannons:nethersteel_ingot')
 		
-
-
-
-});
+		
+}); 
 onEvent('recipes', event => {
 
 /// Alt Belt Recipe using Rubber
@@ -248,6 +251,35 @@ event.shaped('create:hose_pulley', [
 	  P: '#forge:plates/obsidian',
 	  A: 'create:fluid_pipe',
 		}).id(`mbm2:crafting/steam_engine`)
+
+	/// schematicannon
+	event.remove({id: 'create:crafting/schematics/schematicannon'})
+	event.shaped('create:schematicannon', [
+	  ' C ',
+	  'BEB',
+	  'SPS'
+		], {
+	  S: 'minecraft:smooth_stone',
+	  B: 'create:brass_casing',
+	  C: 'createbigcannons:wrought_iron_cannon_chamber',
+	  E: 'createbigcannons:wrought_iron_cannon_end',
+	  P: 'createbigcannons:powder_charge',
+		}).id(`mbm2:crafting/schematicannon`)
+
+	/// schematicannon HARD MODE
+	event.shaped('create:schematicannon', [
+	  ' C ',
+	  'BEB',
+	  'SPS'
+		], {
+	  S: 'minecraft:smooth_stone',
+	  B: 'create:brass_casing',
+	  C: 'createbigcannons:steel_cannon_barrel',
+	  E: 'createbigcannons:wrought_iron_cannon_end',
+	  P: 'createbigcannons:powder_charge',
+		}).id(`mbm2:crafting/schematicannon_hrd_md`)
+
+
 
 //Clear Filter		
 event.shapeless('create:attribute_filter', [Item.of('create:attribute_filter').ignoreNBT()]).id(`mbm2:create/clear_attribute_filter`)

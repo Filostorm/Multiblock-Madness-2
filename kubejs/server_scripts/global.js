@@ -392,6 +392,10 @@ global.removeAndHide = [
 	'ae2:ender_dust',
 	'createaddition:diamond_grit',
 	'mekanism:dust_diamond',
+	'mekanism:sawdust',
+	'immersiveengineering:dust_wood',
 	'geolosys:platinum_ore',
 	'geolosys:deepslate_platinum_ore',
+	'malum:copper_nugget',
+	'alloyed:bronze_nugget',
 	]

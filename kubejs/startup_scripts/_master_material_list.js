@@ -647,10 +647,10 @@ global.newMaterialParts = [
       'itemParts': ['dust', 'plate', 'gear', 'rod',],
       'blockParts': [],
       'dust_input': ['#forge:dusts/bronze', '#forge:gems/amethyst'],
-      'ingot_input': ['#forge:ingots/bronze', '#forge:gems/ametheyst'],
+      'ingot_input': ['#forge:ingots/bronze', '#forge:gems/amethyst'],
       'amount': 2,
       'fluid_id': 'tconstruct:molten_amethyst_bronze',
-      'tinkers_input': [{tag: 'forge:molten_bronze',amount: 90},{tag: 'forge:molten_amethyst',amount: 100}],
+      'tinkers_input': [{tag: 'forge:molten_bronze',amount: 90},{tag: 'tconstruct:molten_amethyst',amount: 100}],
     },
     {
       'material': 'steel',

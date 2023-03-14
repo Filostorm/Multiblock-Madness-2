@@ -369,11 +369,14 @@
 		}
 		{
 			icon: "functionalstorage:storage_controller"
-			x: -10.5d
-			y: 13.5d
+			x: 6.0d
+			y: 9.5d
 			subtitle: "Does not need to be next to drawers to link"
 			description: ["Use the Linking Tool to connect Drawers to the Controller."]
-			dependencies: ["09785A45FBC8D26F"]
+			dependencies: [
+				"556CB869A6592D68"
+				"143FA2A8FD6E4E10"
+			]
 			id: "0D6A89F8538EA4C6"
 			tasks: [
 				{

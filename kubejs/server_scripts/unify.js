@@ -44,6 +44,8 @@ var removeByName = [
 	'minecraft:beacon',
 	'tconstruct:common/flint',
 	'thermal:smelting/netherite_ingot_from_dust_blasting',
+	'tconstruct:common/materials/netherite_ingot_from_nuggets',
+	'minecraft:netherite_ingot',
 ]
 
 onEvent('recipes', event => {

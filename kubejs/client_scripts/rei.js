@@ -32,7 +32,7 @@ onEvent('rei.hide.items', event => {
 		event.hide(`kubejs:crushed_${item}`)
 	})
 	
-	event.hide(/excavated_variants:*/)
+	//event.hide(/excavated_variants:*/)
 
 	event.hide(Item.of('ae2:facade').ignoreNBT())
 	event.hide(Item.of('ae2:wireless_terminal').ignoreNBT())
@@ -220,6 +220,7 @@ onEvent('rei.remove.categories', event => {
 		'beyond_earth:fuel_refinery',
 		'beyond_earth:coal_generator',
 		'beyond_earth:compressor',
+		'mekanism:combiner'
 	]
 
 	badCategories.forEach((item) => {

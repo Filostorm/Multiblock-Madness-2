@@ -151,6 +151,58 @@
 				item: "alchemistry:dissolver"
 			}]
 		}
+		{
+			title: "Laser Circuit Assembly"
+			x: -5.5d
+			y: -6.0d
+			dependencies: ["281E051C6D348B35"]
+			id: "1F060A2843541330"
+			tasks: [
+				{
+					id: "465E84854E29FC91"
+					type: "item"
+					item: "pneumaticcraft:assembly_controller"
+				}
+				{
+					id: "5E923135629863ED"
+					type: "item"
+					item: "pneumaticcraft:assembly_laser"
+				}
+				{
+					id: "2C84D688B6BDAAEA"
+					type: "item"
+					item: "pneumaticcraft:assembly_io_unit_import"
+				}
+				{
+					id: "282D9CE7FFB1FBE4"
+					type: "item"
+					item: "pneumaticcraft:assembly_io_unit_export"
+				}
+				{
+					id: "634BE93F36FA5B8D"
+					type: "item"
+					item: "pneumaticcraft:assembly_platform"
+				}
+				{
+					id: "33F3AFB97B50C99A"
+					type: "item"
+					item: "pneumaticcraft:assembly_program_laser"
+				}
+			]
+			rewards: [
+				{
+					id: "399834E5793DD286"
+					type: "item"
+					item: "pneumaticcraft:security_upgrade"
+				}
+				{
+					id: "3618C8C1A7575C9F"
+					type: "item"
+					item: "pneumaticcraft:empty_pcb"
+					count: 8
+				}
+			]
+		}
 	]
 	quest_links: [ ]
 }

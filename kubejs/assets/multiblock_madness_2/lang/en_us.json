@@ -48,7 +48,7 @@
     "mbm2.flotation.description": "Removes some impurities from partially processed ore",
     "multiblocked.recipe_map.flotation": "Ore Flotation",
 
-    "block.mbm2.leaching_vat": "Leaching Tank",
+    "block.mbm2.leaching_vat": "Leaching Vat",
     "mbm2.leaching_vat.description": "Removes more impurities from partially processed ore",
     "multiblocked.recipe_map.leaching": "Ore Leaching",
 

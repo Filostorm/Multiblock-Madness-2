@@ -57,4 +57,55 @@ event.shaped('mekanism:superheating_element', [
 	T: 'powah:thermoelectric_plate',
   }).id('mbm2:mekanism/superheating_element')
   
+let tiers = [
+	'basic',
+	'advanced',
+	'elite',
+	'ultimate'
+]
+let machines = [
+	//'combining',
+	'sawing',
+	'enriching',
+	'crushing',
+	'smelting',
+	'purifying',
+	'compressing',
+	'injecting',
+]
+let basicMachines = [
+	'mekanism:precision_sawmill',
+	'mekanism:enrichment_chamber',
+	'mekanism:crusher',
+	'mekanism:energized_smelter',
+	'mekanism:purification_chamber',
+	'mekanism:osmium_compressor',
+	'mekanism:chemical_injection_chamber',
+]
+
+tiers.forEach((tier, index) => {
+	machines.forEach((machine, type) => {
+		event.remove({id: `mekanism:factory/${tier}/${machine}`})
+		if (tier == 'basic') {
+			event.custom({'type':'mekanism:mek_data',
+			'result':{'item':`mekanism:${tier}_${machine}_factory`},
+			'pattern':['UM'],
+			'key':{
+				'M':{'item':basicMachines[type]},
+				'U':{'item':`mekanism:${tier}_tier_installer`}
+			}}).id(`mbm2:${tier}_${machine}_factory`)
+		} else {
+			event.custom({'type':'mekanism:mek_data',
+			'result':{'item':`mekanism:${tier}_${machine}_factory`},
+			'pattern':['UM'],
+			'key':{
+				'M':{'item':`mekanism:${tiers[index-1]}_${machine}_factory`},
+				'U':{'item':`mekanism:${tier}_tier_installer`}
+			}}).id(`mbm2:${tier}_${machine}_factory`)
+		}
+	});
+});
+
+
+
 });

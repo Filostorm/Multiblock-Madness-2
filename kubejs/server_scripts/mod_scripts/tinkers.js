@@ -56,4 +56,17 @@ event.shaped('tconstruct:scorched_faucet', [
 	  
 
 
+		//Carbon
+		global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 150, `#forge:dusts/coal_coke`, 900, 20, `mbm2:smeltery/melting/coal_coke_dust`)
+		global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 150, `#forge:coal_coke`, 900, 20, `mbm2:smeltery/melting/coal_coke`)
+
+		global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 75, `#forge:dusts/coal`, 900, 20, `mbm2:smeltery/melting/coal_dust`)
+		global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 75, `#minecraft:coals`, 900, 20, `mbm2:smeltery/melting/coal`)
+
+		//global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 40, `#forge:charcoal`, 900, 20, `mbm2:smeltery/melting/charcoal`)
+    
+		//Redstone
+		global.tinkersMeltingPlain(event, 'thermal:redstone', 100, `#forge:dusts/redstone`, 900, 20, `mbm2:smeltery/melting/redstone`)
+		global.tinkersMeltingPlain(event, 'thermal:redstone', 900, '#forge:storage_blocks/redstone', 900, 80, `mbm2:smeltery/melting/redstone_block`)
+
 });

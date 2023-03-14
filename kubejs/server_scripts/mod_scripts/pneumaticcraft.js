@@ -129,7 +129,7 @@ onEvent('recipes', event => {
 	}).id('mbm2:thermopneumatic_processing_plant')
 	
 	
-	//refinery
+	//Refinery
 	event.remove({id: 'pneumaticcraft:refinery'})
 	event.shaped('pneumaticcraft:refinery', [
 	  'PEP',
@@ -143,7 +143,7 @@ onEvent('recipes', event => {
 	  P: '#forge:platings/pressurized_aluminum_alloy',
 	}).id('mbm2:refinery')
 	
-	//refinery_output
+	//Refinery Output
 	event.remove({id: 'pneumaticcraft:refinery_output'})
 	event.shaped('pneumaticcraft:refinery_output', [
 	  'RDR',
@@ -155,4 +155,18 @@ onEvent('recipes', event => {
 	  C: 'kubejs:pneumaticcraft_casing',
 	  D: '#forge:plates/drenched_iron',
 	}).id('mbm2:refinery_output')
+
+	//Fluid Mixer
+	event.remove({id: 'pneumaticcraft:fluid_mixer'})
+	event.shaped('pneumaticcraft:fluid_mixer', [
+	  ' R ',
+	  'HCH',
+	  'RPR'
+	], {
+	  H: 'pneumaticcraft:turbine_rotor',
+	  R: 'pneumaticcraft:small_tank',
+	  C: 'kubejs:pneumaticcraft_casing',
+	  P: 'pneumaticcraft:pressure_tube',
+	}).id('mbm2:fluid_mixer')
+
 });

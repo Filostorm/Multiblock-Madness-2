@@ -1,0 +1,21 @@
+{
+  "mod_id": "forbidden_arcanus",
+  "provided_stones": [],
+  "provided_ores": [
+    {
+      "block_id": [
+        "forbidden_arcanus:deepslate_arcane_crystal_ore",
+        "forbidden_arcanus:arcane_crystal_ore"
+      ],
+      "en_name": "Arcane Crystal Ore",
+      "types": [
+        "stone"
+      ],
+      "id": "arcane_crystal_ore",
+      "stone": [
+        "stone",
+        "deepslate"
+      ]
+    }
+  ]
+}

@@ -177,4 +177,5 @@ onEvent('fluid.tags', event => {
       event.add(`forge:molten_${item.material}`, [`kubejs:molten_${item.material}`, `kubejs:flowing_molten_${item.material}`])
     }
   })
+  //event.add(`forge:molten_carbon`, [`kubejs:molten_carbon`, `kubejs:flowing_molten_carbon`])
 });

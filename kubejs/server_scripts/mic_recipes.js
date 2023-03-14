@@ -129,16 +129,30 @@ event.shaped('3x kubejs:wood_scaffolding', [
 	global.tinkersMeltingPlain(event, 'tconstruct:molten_iron', 720, Item.of('feruchemy:metal_mind').toJson(), 750, 142, `mbm2:smeltery/melting/metalmind`)
 
 
-  // Damascus Steel
-  event.recipes.createCutting('kubejs:steel_scraps', ['#forge:ingots/steel']).processingTime(200),
+  //compressed cobble
+  event.shaped('kubejs:1x_compressed_cobblestone', [
+	  'CCC',
+	  'CCC',
+	  'CCC'
+	], {
+	  C: 'cobblestone'
+	}).id("mbm2:1x_compressed_cobblestone")
+	event.shaped('kubejs:2x_compressed_cobblestone', [
+		'CCC',
+		'CCC',
+		'CCC'
+	  ], {
+		C: 'kubejs:1x_compressed_cobblestone'
+	  }).id("mbm2:2x_compressed_cobblestone")
+  	event.shaped('kubejs:3x_compressed_cobblestone', [
+		'CCC',
+		'CCC',
+		'CCC'
+  	], {
+		C: 'kubejs:2x_compressed_cobblestone'
+  	}).id("mbm2:3x_compressed_cobblestone")
 
-  //Swap scraps for stacked iron/steel plating
-  event.recipes.createSequencedAssembly([ // start the recipe
-  'kubejs:damascus_steel_ingot', // have this item be an output
-  ], 'kubejs:steel_scraps', [ // input.
-  event.recipes.createFilling('kubejs:partially_folded_damascus_steel', ['kubejs:partially_folded_damascus_steel', Fluid.of('lava', 50)]),
-  event.recipes.createPressing('kubejs:partially_folded_damascus_steel', ['kubejs:partially_folded_damascus_steel']),
-  event.recipes.createCutting('kubejs:partially_folded_damascus_steel', ['kubejs:partially_folded_damascus_steel']).processingTime(50),
-//  event.recipes.createCutting('kubejs:partially_folded_damascus_steel', 'kubejs:partially_folded_damascus_steel').processingTime(50)
-  ]).transitionalItem('kubejs:partially_folded_damascus_steel').loops(20).id(`mbm2:damascus_steel_ingot`)
+
+	  
+
 });

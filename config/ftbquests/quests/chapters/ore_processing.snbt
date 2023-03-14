@@ -65,6 +65,7 @@
 		{
 			x: -4.0d
 			y: 2.5d
+			subtitle: "Y20 - -60"
 			description: ["Rare Overworld Vein, found with Vinteum and Sapphire, and can spawn with Niter if below deepslate level."]
 			id: "1F8CDD9ACE48E870"
 			tasks: [{
@@ -225,7 +226,8 @@
 				id: "302E8D0E1D90E550"
 				type: "dimension"
 				title: "The Overworld"
-				dimension: "beyond_earth:moon"
+				disable_toast: true
+				dimension: "minecraft:overworld"
 			}]
 		}
 		{
@@ -557,36 +559,6 @@
 			}]
 		}
 		{
-			x: 2.0d
-			y: -10.5d
-			dependencies: [
-				"0BAC4F3AD0800A45"
-				"7FA29068486FCB01"
-				"59663F168755F312"
-			]
-			id: "3D6F5260B3B4242F"
-			tasks: [{
-				id: "1B0F7315F8C1786D"
-				type: "item"
-				item: "kubejs:crushed_thermogenic_blend"
-			}]
-		}
-		{
-			x: 2.0d
-			y: -7.5d
-			dependencies: [
-				"4E78300F04776252"
-				"54E7157340600EB6"
-				"07A0649720C8F7B5"
-			]
-			id: "3D715130569810A9"
-			tasks: [{
-				id: "2DF6D87316B87028"
-				type: "item"
-				item: "kubejs:crushed_thermolytic_blend"
-			}]
-		}
-		{
 			disable_toast: true
 			x: -4.0d
 			y: -4.0d
@@ -741,6 +713,36 @@
 						value: "forge:chunks"
 					}
 				}
+			}]
+		}
+		{
+			x: -1.5d
+			y: -10.5d
+			dependencies: [
+				"0BAC4F3AD0800A45"
+				"7FA29068486FCB01"
+				"59663F168755F312"
+			]
+			id: "3D6F5260B3B4242F"
+			tasks: [{
+				id: "1B0F7315F8C1786D"
+				type: "item"
+				item: "kubejs:crushed_thermogenic_blend"
+			}]
+		}
+		{
+			x: -1.5d
+			y: -7.5d
+			dependencies: [
+				"4E78300F04776252"
+				"54E7157340600EB6"
+				"07A0649720C8F7B5"
+			]
+			id: "3D715130569810A9"
+			tasks: [{
+				id: "2DF6D87316B87028"
+				type: "item"
+				item: "kubejs:crushed_thermolytic_blend"
 			}]
 		}
 	]

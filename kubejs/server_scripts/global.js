@@ -2,11 +2,11 @@
 global.removeAndHide = [
 	'lazierae2:grinder',
 
-	'mekanism:energized_smelter',
-	'mekanism:basic_smelting_factory',
-	'mekanism:elite_smelting_factory',
-	'mekanism:advanced_smelting_factory',
-	'mekanism:ultimate_smelting_factory',
+	//'mekanism:energized_smelter',
+	//'mekanism:basic_smelting_factory',
+	//'mekanism:elite_smelting_factory',
+	//'mekanism:advanced_smelting_factory',
+	//'mekanism:ultimate_smelting_factory',
 
 	'mekanism:combiner', 
 	'mekanism:basic_combining_factory', 

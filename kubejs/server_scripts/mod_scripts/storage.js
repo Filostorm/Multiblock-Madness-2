@@ -5,43 +5,32 @@ event.remove({id: 'functionalstorage:oak_drawer_alternate_x1'})
 event.remove({id: 'functionalstorage:oak_drawer_alternate_x4'})
 event.remove({id: 'functionalstorage:oak_drawer_alternate_x2'})
 
-/*
-//Basic Cables
-  event.remove({id: 'storagenetwork:kabel'})
-  event.shaped('8x storagenetwork:kabel', [
-	'ABA',
-	'CDC',
-	'ABA'
-  ], {
-	A: 'minecraft:stone_slab',
-	B: 'minecraft:redstone',
-	C: 'thermal:electrum_plate',
-	D: 'ae2:quartz_fiber'
-  })
 
 //Controller
-  event.remove({id: 'storagenetwork:master'})
-  event.shaped('storagenetwork:master', [
-	'ABA',
-	'BCB',
-	'ABA'
+  event.remove({id: 'functionalstorage:storage_controller'})
+  event.shaped('functionalstorage:storage_controller', [
+	'CPC',
+	'DUD',
+	'CPC'
   ], {
-	A: 'ars_nouveau:source_gem',
-	B: 'storagenetwork:kabel',
-	C: 'powah:dielectric_casing'
-  })
+	U: ['sophisticatedstorage:gold_to_diamond_tier_upgrade', 'mekanism:enriched_diamond'],
+	D: '#functionalstorage:drawer',
+	C: 'create:brass_casing',
+	P: '#forge:platings/bronze'
+  }).id('mbm2:storage_controller')
 
-//Crafting Terminal
-  event.remove({id: 'storagenetwork:request'})
-  event.shaped('storagenetwork:request', [
-	'ABA',
-	'BCB',
-	'ABA'
-  ], {
-	A: 'kubejs:red_alloy_plate',
-	B: 'storagenetwork:kabel',
-	C: 'kubejs:source_tube'
-  })*/
+//Coompacting
+event.remove({id: 'functionalstorage:compacting_drawer'})
+event.shaped('functionalstorage:compacting_drawer', [
+  'CPC',
+  'UDU',
+  'CPC'
+], {
+  U: 'minecraft:piston',
+  D: '#functionalstorage:drawer',
+  C: 'kubejs:1x_compressed_cobblestone',
+  P: '#forge:platings/iron'
+}).id('mbm2:compacting_drawer')
 
   
 

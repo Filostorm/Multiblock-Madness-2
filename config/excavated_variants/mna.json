@@ -1,0 +1,19 @@
+{
+  "mod_id": "mna",
+  "provided_stones": [],
+  "provided_ores": [
+    {
+      "block_id": [
+        "mna:vinteum_ore"
+      ],
+      "en_name": "Vinteum Ore",
+      "types": [
+        "stone"
+      ],
+      "id": "vinteum_ore",
+      "stone": [
+        "stone"
+      ]
+    }
+  ]
+}

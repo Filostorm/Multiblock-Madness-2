@@ -12,7 +12,6 @@
 			title: "Imbument Chamber"
 			x: 11.5d
 			y: 6.5d
-			subtitle: "Archwood saplings can be aquired through the crushing wheel"
 			description: ["Auxiliary items are not comsumed for crafting."]
 			dependencies: ["4187F705E4356142"]
 			id: "488E2999C6BE6591"

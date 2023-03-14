@@ -37,6 +37,10 @@ onEvent('block.registry', event => {
 	
 	event.create('tier1_casing').displayName('Basic Multiblock Casing').hardness(3).resistance(3).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').material('metal')
 
+	//Compressed Cobble
+	event.create('1x_compressed_cobblestone').hardness(1).resistance(1).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_stone_tool').material('stone')
+	event.create('2x_compressed_cobblestone').hardness(2).resistance(2).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').material('stone')
+	event.create('3x_compressed_cobblestone').hardness(3).resistance(3).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').material('stone')
 
 });
 

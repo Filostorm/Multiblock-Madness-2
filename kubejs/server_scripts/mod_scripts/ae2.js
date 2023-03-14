@@ -4,6 +4,33 @@ onEvent('tags.items', event => {
  
 onEvent('recipes', event => {
 
+	let recipesToRemove = [
+		'ae2things:cells/disk_drive_1k',
+		'ae2:network/cells/item_storage_cell_1k',
+		'ae2:network/cells/fluid_storage_cell_1k',
+		'ae2things:cells/disk_drive_4k',
+		'ae2:network/cells/item_storage_cell_4k',
+		'ae2:network/cells/fluid_storage_cell_4k',
+		'ae2things:cells/disk_drive_16k',
+		'ae2:network/cells/item_storage_cell_16k',
+		'ae2:network/cells/fluid_storage_cell_16k',
+		'ae2things:cells/disk_drive_64k',
+		'ae2:network/cells/item_storage_cell_64k',
+		'ae2:network/cells/fluid_storage_cell_64k',
+		'ae2things:cells/disk_drive_256k',
+		'ae2:network/cells/item_storage_cell_256k',
+		'ae2:network/cells/fluid_storage_cell_256k',
+
+
+		'ae2:network/cells/spatial_storage_cell_2_cubed',
+		'ae2:network/cells/spatial_storage_cell_16_cubed',
+		'ae2:network/cells/spatial_storage_cell_128_cubed',
+	]
+	recipesToRemove.forEach(item => {
+		event.remove({id: item})
+	});
+
+
 	
 	//Energetic Blend
 	global.powahEnergizing(event, [Item.of('#forge:dusts/glowstone').toJson(), Item.of('#forge:dusts/redstone').toJson()], Item.of('kubejs:energetic_blend'), 15000, 'mbm2:powah/energetic_blend')

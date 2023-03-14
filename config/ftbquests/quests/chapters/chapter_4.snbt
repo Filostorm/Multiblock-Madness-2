@@ -9,7 +9,7 @@
 	default_hide_dependency_lines: false
 	quests: [
 		{
-			x: 5.5d
+			x: 11.0d
 			y: -1.0d
 			description: [
 				"Flip to the correct book in your Tome to complete this quest."
@@ -24,8 +24,8 @@
 			}]
 		}
 		{
-			x: 7.0d
-			y: -1.0d
+			x: 11.0d
+			y: 0.5d
 			dependencies: [
 				"47AA157D687A02F7"
 				"243652BEE988A387"
@@ -44,8 +44,8 @@
 			}]
 		}
 		{
-			x: 8.5d
-			y: -1.0d
+			x: 11.0d
+			y: 2.0d
 			dependencies: ["7EBE28646422EC18"]
 			id: "0E9C33334120AC94"
 			tasks: [{
@@ -56,8 +56,8 @@
 			}]
 		}
 		{
-			x: 9.5d
-			y: -2.5d
+			x: 11.0d
+			y: 3.5d
 			dependencies: ["0E9C33334120AC94"]
 			id: "098CAF7E91266CDC"
 			tasks: [{
@@ -67,8 +67,8 @@
 			}]
 		}
 		{
-			x: 9.5d
-			y: 0.5d
+			x: 12.5d
+			y: 2.0d
 			dependencies: ["0E9C33334120AC94"]
 			id: "1BF79E8ACC1F917F"
 			tasks: [{
@@ -78,8 +78,8 @@
 			}]
 		}
 		{
-			x: 11.0d
-			y: -1.0d
+			x: 12.5d
+			y: 3.5d
 			dependencies: ["0E9C33334120AC94"]
 			id: "1FC0519495084939"
 			tasks: [{
@@ -89,8 +89,8 @@
 			}]
 		}
 		{
-			x: 11.0d
-			y: -2.5d
+			x: 9.5d
+			y: 3.5d
 			dependencies: ["098CAF7E91266CDC"]
 			id: "12DDD9CD9F8B934F"
 			tasks: [{
@@ -106,8 +106,8 @@
 			}]
 		}
 		{
-			x: 11.0d
-			y: 0.5d
+			x: 14.0d
+			y: 2.0d
 			dependencies: ["1BF79E8ACC1F917F"]
 			id: "07A718A55B5A7318"
 			tasks: [{
@@ -165,11 +165,12 @@
 			}]
 		}
 		{
-			x: 12.0d
+			x: 13.5d
 			y: 6.5d
 			dependencies: [
 				"3D971E0CF8257193"
-				"14C449A154C78D7E"
+				"04FD40DD2CE51B84"
+				"098CAF7E91266CDC"
 			]
 			id: "0EB55E9BCD6E97C3"
 			tasks: [{
@@ -204,9 +205,9 @@
 			title: "The Squeezer"
 			icon: "immersiveengineering:squeezer"
 			x: 9.0d
-			y: 7.0d
+			y: 6.5d
 			dependencies: ["3D971E0CF8257193"]
-			repeatable: true
+			min_required_tasks: 8
 			id: "1A2C95D86B270D15"
 			tasks: [
 				{
@@ -260,6 +261,10 @@
 					ignoreState: false
 					rightclick: false
 				}
+				{
+					id: "42986DFBF23AEC33"
+					type: "checkmark"
+				}
 			]
 			rewards: [{
 				id: "161EA28C4D4CF4B7"
@@ -271,7 +276,7 @@
 		{
 			title: "The Metal Press"
 			icon: "immersiveengineering:metal_press"
-			x: 12.0d
+			x: 13.5d
 			y: 5.0d
 			subtitle: "Better part creation"
 			description: ["Simple gears, and double production of wires and rods."]
@@ -328,11 +333,15 @@
 		{
 			title: "The Arc Furnace"
 			icon: "immersiveengineering:arc_furnace"
-			x: 15.0d
+			x: 16.5d
 			y: 6.5d
 			shape: "gear"
-			dependencies: ["0EB55E9BCD6E97C3"]
+			dependencies: [
+				"0EB55E9BCD6E97C3"
+				"2265D46C0B449F49"
+			]
 			size: 1.5d
+			min_required_tasks: 10
 			id: "75D4FF56D8BBF34A"
 			tasks: [
 				{
@@ -398,6 +407,10 @@
 					ignoreState: false
 					rightclick: false
 				}
+				{
+					id: "3EB76F8BFB7DE1EC"
+					type: "checkmark"
+				}
 			]
 			rewards: [{
 				id: "18F5B6CE71684795"
@@ -409,10 +422,10 @@
 		{
 			title: "The Refinery"
 			icon: "immersiveengineering:refinery"
-			x: 11.5d
-			y: 8.5d
+			x: 13.5d
+			y: 8.0d
 			dependencies: ["0EB55E9BCD6E97C3"]
-			repeatable: true
+			min_required_tasks: 7
 			id: "50FBAD99E2875E46"
 			tasks: [
 				{
@@ -453,12 +466,17 @@
 				{
 					id: "2AAE66E6A1C095BD"
 					type: "questsadditions:structure"
+					title: "The Refinery"
 					icon: "immersiveengineering:refinery"
 					name: "refinery"
 					hasCustomPicture: false
 					layer: true
 					ignoreState: false
 					rightclick: false
+				}
+				{
+					id: "2D40C71D9E0B0745"
+					type: "checkmark"
 				}
 			]
 			rewards: [{
@@ -474,7 +492,7 @@
 			x: 6.5d
 			y: 5.0d
 			dependencies: ["3D971E0CF8257193"]
-			repeatable: true
+			min_required_tasks: 6
 			id: "4489F9C5F2899DFE"
 			tasks: [
 				{
@@ -532,10 +550,9 @@
 		{
 			title: "The Automated Workbench"
 			icon: "immersiveengineering:auto_workbench"
-			x: 13.5d
+			x: 15.0d
 			y: 5.0d
 			dependencies: ["0EB55E9BCD6E97C3"]
-			repeatable: true
 			id: "598305F8C2BF7FAF"
 			tasks: [
 				{
@@ -595,10 +612,9 @@
 		{
 			title: "The Diesel Generator"
 			icon: "immersiveengineering:diesel_generator"
-			x: 13.5d
-			y: 9.0d
+			x: 15.0d
+			y: 9.5d
 			dependencies: ["758CEB9A27CE3547"]
-			repeatable: true
 			id: "738E3C876E9D4BC6"
 			tasks: [
 				{
@@ -661,7 +677,7 @@
 			x: 8.5d
 			y: 5.0d
 			dependencies: ["3D971E0CF8257193"]
-			repeatable: true
+			min_required_tasks: 6
 			id: "02E4BADB1F8BEB33"
 			tasks: [
 				{
@@ -709,6 +725,10 @@
 					ignoreState: true
 					rightclick: false
 				}
+				{
+					id: "32CF8E067A3BAE6F"
+					type: "checkmark"
+				}
 			]
 			rewards: [{
 				id: "2A73284D0CFC7607"
@@ -720,10 +740,10 @@
 		{
 			title: "Fermenting"
 			icon: "immersiveengineering:fermenter"
-			x: 9.0d
-			y: 8.5d
+			x: 8.5d
+			y: 8.0d
 			dependencies: ["3D971E0CF8257193"]
-			repeatable: true
+			min_required_tasks: 7
 			id: "6AE6AC04DFC1A75A"
 			tasks: [
 				{
@@ -771,6 +791,10 @@
 					layer: true
 					ignoreState: false
 					rightclick: false
+				}
+				{
+					id: "3A9507A2B574EC5F"
+					type: "checkmark"
 				}
 			]
 			rewards: [{
@@ -859,100 +883,12 @@
 			}]
 		}
 		{
-			title: "Pressure Chamber"
-			x: 10.5d
-			y: 3.5d
-			description: [
-				"You will need to pipe items in and out of the Pressure Chamber for crafting."
-				""
-				"The 4 slots surrounded by blue are for Upgrades."
-			]
-			dependencies: ["02285A69B0A09A44"]
-			id: "14C449A154C78D7E"
-			tasks: [
-				{
-					id: "35754DEDE8BBF9A5"
-					type: "item"
-					item: "pneumaticcraft:pressure_chamber_wall"
-					count: 21L
-				}
-				{
-					id: "5BBD7F188B0087D2"
-					type: "item"
-					item: "pneumaticcraft:pressure_chamber_interface"
-					count: 2L
-				}
-				{
-					id: "34E8E7C805313302"
-					type: "item"
-					item: "pneumaticcraft:pressure_chamber_valve"
-				}
-				{
-					id: "76A294980B2DAEC3"
-					type: "item"
-					item: "pneumaticcraft:pressure_chamber_glass"
-					count: 2L
-				}
-			]
-		}
-		{
-			title: "Explosions!"
-			x: 5.0d
-			y: 3.5d
-			dependencies: ["17F948FD49F0EB33"]
-			id: "418AC2EB203010CA"
-			tasks: [
-				{
-					id: "3698979CC6D16036"
-					type: "item"
-					item: "pneumaticcraft:ingot_iron_compressed"
-				}
-				{
-					id: "07BDD8890A862CA9"
-					type: "item"
-					item: "pneumaticcraft:reinforced_stone"
-				}
-			]
-		}
-		{
-			title: "Compressing Air"
-			x: 7.5d
-			y: 3.5d
-			description: ["Attach the Safety Tube Module to keep your system from exploding if pressure gets too high."]
-			dependencies: ["418AC2EB203010CA"]
-			id: "02285A69B0A09A44"
-			tasks: [
-				{
-					id: "63B0B7FC57DC0DFA"
-					type: "item"
-					title: "Any Basic Compressor"
-					item: {
-						id: "itemfilters:tag"
-						Count: 1b
-						tag: {
-							value: "pneumaticcraft:compressor/basic"
-						}
-					}
-				}
-				{
-					id: "3F4FFF3F8F58CD0A"
-					type: "item"
-					item: "pneumaticcraft:pressure_tube"
-				}
-				{
-					id: "6F6C3A82C1531080"
-					type: "item"
-					item: "pneumaticcraft:safety_tube_module"
-				}
-			]
-		}
-		{
 			title: "The Bottling Machine"
 			icon: "immersiveengineering:bottling_machine"
 			x: 7.5d
-			y: 8.5d
+			y: 9.0d
 			dependencies: ["3D971E0CF8257193"]
-			repeatable: true
+			min_required_tasks: 7
 			id: "45011E84BFF6E319"
 			tasks: [
 				{
@@ -1000,6 +936,10 @@
 					ignoreState: true
 					rightclick: false
 				}
+				{
+					id: "129396120DF1F55D"
+					type: "checkmark"
+				}
 			]
 			rewards: [{
 				id: "646986D9D90F679A"
@@ -1009,58 +949,8 @@
 			}]
 		}
 		{
-			title: "Using Heat"
-			x: 8.5d
-			y: 2.0d
-			dependencies: ["02285A69B0A09A44"]
-			id: "2F38722F9A7D89CC"
-			tasks: [
-				{
-					id: "0B794E47450D5ADD"
-					type: "item"
-					item: "pneumaticcraft:vortex_tube"
-				}
-				{
-					id: "77893BABBDB02045"
-					type: "item"
-					item: "pneumaticcraft:heat_sink"
-				}
-				{
-					id: "272259D2D2DF319E"
-					type: "item"
-					item: "pneumaticcraft:heat_frame"
-				}
-			]
-		}
-		{
-			title: "More of that strange oil"
-			x: 6.5d
-			y: 2.0d
-			subtitle: "Its probably nothing"
-			description: ["Use the Sensor on the ground to find an oil deposit, which you can then drill up to the surface with the Gas Lift."]
-			dependencies: ["02285A69B0A09A44"]
-			id: "598DE255BBB061C3"
-			tasks: [
-				{
-					id: "1E0C3A1641C88775"
-					type: "item"
-					item: "pneumaticcraft:seismic_sensor"
-				}
-				{
-					id: "415556D38061EFBB"
-					type: "item"
-					item: "pneumaticcraft:gas_lift"
-				}
-				{
-					id: "629CEA1B669EDAB8"
-					type: "item"
-					item: "pneumaticcraft:drill_pipe"
-				}
-			]
-		}
-		{
-			x: 10.5d
-			y: 10.0d
+			x: 11.0d
+			y: 10.017857142857146d
 			dependencies: [
 				"50FBAD99E2875E46"
 				"6AE6AC04DFC1A75A"
@@ -1099,8 +989,8 @@
 			}]
 		}
 		{
-			x: 13.0d
-			y: 10.5d
+			x: 12.5d
+			y: 10.0d
 			shape: "circle"
 			dependencies: ["3DB2C9FEEFF74379"]
 			size: 1.5d
@@ -1113,8 +1003,8 @@
 		}
 		{
 			title: "More Engineer's Blocks"
-			x: 13.0d
-			y: 7.5d
+			x: 15.0d
+			y: 8.0d
 			dependencies: ["0EB55E9BCD6E97C3"]
 			id: "758CEB9A27CE3547"
 			tasks: [
@@ -1133,10 +1023,9 @@
 		{
 			title: "The Excavator"
 			icon: "immersiveengineering:excavator"
-			x: 15.0d
-			y: 8.0d
+			x: 16.5d
+			y: 9.0d
 			dependencies: ["758CEB9A27CE3547"]
-			repeatable: true
 			id: "043DFE88CE9F4625"
 			tasks: [
 				{
@@ -1200,8 +1089,8 @@
 			}]
 		}
 		{
-			x: 6.0d
-			y: 7.5d
+			x: 5.5d
+			y: 8.0d
 			dependencies: ["729CD1DC498A9130"]
 			id: "4056DE989F8A8E98"
 			tasks: [{
@@ -1258,8 +1147,8 @@
 		}
 		{
 			title: "Biodesiel"
-			x: 10.5d
-			y: 7.5d
+			x: 11.0d
+			y: 8.0d
 			description: ["A great sustanable fuel source, and can be used for plastic later on."]
 			dependencies: [
 				"1A2C95D86B270D15"
@@ -1308,9 +1197,10 @@
 			}]
 		}
 		{
-			x: 16.5d
+			x: 18.0d
 			y: 6.5d
 			subtitle: "Found in the End"
+			min_required_dependencies: 1
 			dependencies: [
 				"75D4FF56D8BBF34A"
 				"509A0BA1A97F85A8"
@@ -1328,7 +1218,7 @@
 			x: 7.5d
 			y: 5.0d
 			dependencies: ["3D971E0CF8257193"]
-			repeatable: true
+			min_required_tasks: 7
 			id: "02527CA184E00FE4"
 			tasks: [
 				{
@@ -1378,6 +1268,10 @@
 					ignoreState: true
 					rightclick: false
 				}
+				{
+					id: "256EB5E2AFF9FCEB"
+					type: "checkmark"
+				}
 			]
 			rewards: [{
 				id: "72791A4132ED37B6"
@@ -1389,7 +1283,7 @@
 		{
 			title: "Visit The End"
 			disable_toast: true
-			x: 15.0d
+			x: 16.5d
 			y: 5.0d
 			description: ["Check the Ore Processing page for a preview of the potential ores you can find."]
 			id: "509A0BA1A97F85A8"
@@ -1680,6 +1574,50 @@
 				id: "4F33E9DF2516BCEA"
 				type: "item"
 				item: "elementalcraft:oreshrine"
+			}]
+		}
+		{
+			x: 12.5d
+			y: 11.5d
+			dependencies: ["0D9ABDE851B5E722"]
+			id: "0BFAF74E6813F17D"
+			tasks: [{
+				id: "011FE858EDE88A1B"
+				type: "item"
+				item: "ae2:interface"
+			}]
+		}
+		{
+			x: 15.0d
+			y: 6.5d
+			dependencies: ["1A2C95D86B270D15"]
+			id: "2265D46C0B449F49"
+			tasks: [{
+				id: "3A3AB773495D5AC3"
+				type: "item"
+				item: {
+					id: "immersiveengineering:graphite_electrode"
+					Count: 1b
+					tag: {
+						graphDmg: 0
+					}
+				}
+				count: 3L
+			}]
+		}
+		{
+			x: 11.0d
+			y: 6.5d
+			dependencies: [
+				"1A2C95D86B270D15"
+				"02E4BADB1F8BEB33"
+			]
+			id: "04FD40DD2CE51B84"
+			tasks: [{
+				id: "77FE5C466581D832"
+				type: "item"
+				item: "kubejs:industrial_alloy_ingot"
+				count: 4L
 			}]
 		}
 	]

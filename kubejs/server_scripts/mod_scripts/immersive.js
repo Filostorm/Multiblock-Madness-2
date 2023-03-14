@@ -1,18 +1,19 @@
 
 
 onEvent('tags.items', event => {
-	 event.remove(`forge:rods/wooden`, 'immersiveengineering:stick_treated')
+  event.remove(`forge:rods/wooden`, 'immersiveengineering:stick_treated')
+  event.remove('minecraft:planks', 'immersiveengineering:fiberboard')
+
+   
  });
 
 
 onEvent('recipes', event => {
 
-
+//Fuels
   global.ieGeneratorFuel(event, 'forge:diesel', 400) //*4096
   event.custom({"type":"immersiveengineering:blast_furnace_fuel","input":{"item":"malum:arcane_charcoal"},"time":600})
   event.custom({"type":"immersiveengineering:blast_furnace_fuel","input":{"item":'malum:block_of_arcane_charcoal'},"time":6000})
-
-  event.remove({output: 'immersiveengineering:blastbrick'})
   
   //Hammer
 	event.remove({input:'immersiveengineering:hammer'}) // Random Crushing etc
@@ -32,7 +33,7 @@ onEvent('recipes', event => {
 	event.remove({id: 'engineersdecor:independent/dense_grit_sand_block_recipe'})
 	event.shapeless('4x engineersdecor:dense_grit_sand_block', ['minecraft:dirt','minecraft:gravel','minecraft:sand','minecraft:sand']).id(`mbm2:crafting/dense_grit_sand_block`)
 
-
+//Coke Bricks
 	event.remove({id: 'immersiveengineering:crafting/cokebrick'})
   event.recipes.createMixing([`kubejs:sandy_brick`], ['kubejs:unfired_clay_brick', 'sand']).id('mbm2:mixing/sandy_brick')
   event.recipes.createMixing([`kubejs:sturdy_brick`], ['kubejs:sandy_brick', 'gravel']).id('mbm2:mixing/sturdy_brick')
@@ -113,13 +114,13 @@ event.recipes.createSequencedAssembly([
   event.recipes.createDeploying('kubejs:incomplete_component_electronic_adv', ['kubejs:incomplete_component_electronic_adv', 'immersiveengineering:electron_tube']),
   event.recipes.createDeploying('kubejs:incomplete_component_electronic_adv', ['kubejs:incomplete_component_electronic_adv', '#forge:wires/aluminum']),
   ]).transitionalItem('kubejs:incomplete_component_electronic_adv').loops(2) // transitional item and the loops
-
+/*
   global.AssemblyLaser(event, Item.of('immersiveengineering:component_electronic_adv').toJson(), [
     {"item": "immersiveengineering:plate_duroplast"}, 
     {"type": "pneumaticcraft:stacked_item","item": "immersiveengineering:electron_tube", "count": 2}, 
     {"type": "pneumaticcraft:stacked_item","tag": "forge:wires/aluminum", "count": 2}
   ], 'mbm2:laser_assembly/component_electronic_adv')
-
+*/
     
 //Belt
   event.shaped('8x immersiveengineering:conveyor_basic', [
@@ -143,6 +144,7 @@ event.shaped('3x immersiveengineering:treated_scaffold', [
   }).id("immersiveengineering:crafting/treated_scaffold")
 
   //Blast Bricks
+  event.remove({output: 'immersiveengineering:blastbrick'})
 	event.remove({id: 'immersiveengineering:crafting/blastbrick_reinforced'})
   event.shaped('immersiveengineering:blastbrick_reinforced', [
     'S',
@@ -167,21 +169,21 @@ event.shaped('3x immersiveengineering:treated_scaffold', [
 
 //Heavy Engineering
 	event.remove({id: 'immersiveengineering:crafting/heavy_engineering'})
-event.shaped('4x immersiveengineering:heavy_engineering', [
+event.shaped('2x immersiveengineering:heavy_engineering', [
   'CDC',
   'PBP',
   'CDC'
     ], {
   B: 'thermal:obsidian_glass',
-  C: 'kubejs:compressed_steel_component',
+  C: '#forge:components/industrial_alloy',
   P: 'thermal:invar_gear',
-  D: 'thermal:cured_rubber'
+  D: 'mna:bone_ash'
     }).id('mbm2:immersiveengineering/heavy_engineering')
     //Make more expensive, have rubber be a ingredent in a component
 
 //Light Engineering
 	event.remove({id: 'immersiveengineering:crafting/light_engineering'})
-  event.shaped('4x immersiveengineering:light_engineering', [
+  event.shaped('2x immersiveengineering:light_engineering', [
     'PCB',
     'CEC',
     'BCP'
@@ -194,7 +196,7 @@ event.shaped('4x immersiveengineering:heavy_engineering', [
       
 //Generator
 	event.remove({id: 'immersiveengineering:crafting/generator'})
-  event.shaped('4x immersiveengineering:generator', [
+  event.shaped('2x immersiveengineering:generator', [
     'PDC',
     'DBD',
     'CDP'
@@ -207,7 +209,7 @@ event.shaped('4x immersiveengineering:heavy_engineering', [
 
 //Redstone Engineering
 	event.remove({id: 'immersiveengineering:crafting/rs_engineering'})
-event.shaped('4x immersiveengineering:rs_engineering', [
+event.shaped('2x immersiveengineering:rs_engineering', [
   'CDC',
   'PBP',
   'CDC'
@@ -281,16 +283,18 @@ event.shaped('immersiveengineering:workbench', [
       B: 'blue_dye'
         }).id('mbm2:immersiveengineering/interlocking_components')
 
+    //Hempcrete, might not use
+    event.remove({id: 'immersiveengineering:crafting/hempcrete'})
+    event.shaped('8x immersiveengineering:hempcrete', [
+      'CCC',
+      'HGH',
+      'CCC'
+        ], {
+          C: 'immersiveengineering:concrete',
+          G: 'immersiveengineering:dust_hop_graphite',
+          H: 'immersiveengineering:hemp_fiber'
+        }).id('mbm2:immersiveengineering/hempcrete')
 
-			//Carbon
-			global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 100, `#forge:dusts/coal_coke`, 900, 20, `mbm2:smeltery/melting/coal_coke_dust`)
-			global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 100, `#forge:coal_coke`, 900, 20, `mbm2:smeltery/melting/coal_coke`)
-
-			global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 50, `#forge:dusts/coal`, 900, 20, `mbm2:smeltery/melting/coal_dust`)
-			global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 50, `#forge:coal`, 900, 20, `mbm2:smeltery/melting/coal`)
-
-			global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 40, `#forge:charcoal`, 900, 20, `mbm2:smeltery/melting/charcoal`)
-    
     ///////////////// ARC FURNACE TIME ////////////////////////////
     /*
 	global.newMaterialParts.forEach((item) => {

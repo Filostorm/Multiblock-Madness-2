@@ -10,6 +10,13 @@ onEvent('tags.items', event => {
 
 onEvent('recipes', event => {
 
+  //No recyclingS
+  //event.custom({
+	//  "type": "immersiveengineering:generated_list",
+	//  "conditions": [ { "type": "forge:false" } ]
+	//})
+
+
 //Fuels
   global.ieGeneratorFuel(event, 'forge:diesel', 400) //*4096
   event.custom({"type":"immersiveengineering:blast_furnace_fuel","input":{"item":"malum:arcane_charcoal"},"time":600})
@@ -31,14 +38,12 @@ onEvent('recipes', event => {
 
 	//Grit
 	event.remove({id: 'engineersdecor:independent/dense_grit_sand_block_recipe'})
-	event.shapeless('4x engineersdecor:dense_grit_sand_block', ['minecraft:dirt','minecraft:gravel','minecraft:sand','minecraft:sand']).id(`mbm2:crafting/dense_grit_sand_block`)
+	event.shapeless('4x engineersdecor:dense_grit_sand_block', ['minecraft:dirt','minecraft:gravel','minecraft:sand','minecraft:sand']).id(`mbm2:shapeless/dense_grit_sand_block`)
 
 //Coke Bricks
 	event.remove({id: 'immersiveengineering:crafting/cokebrick'})
-  event.recipes.createMixing([`kubejs:sandy_brick`], ['kubejs:unfired_clay_brick', 'sand']).id('mbm2:mixing/sandy_brick')
-  event.recipes.createMixing([`kubejs:sturdy_brick`], ['kubejs:sandy_brick', 'gravel']).id('mbm2:mixing/sturdy_brick')
 	//event.recipes.createFilling(['kubejs:unfired_coke_oven_brick'], [Fluid.of('tconstruct:molten_clay', 250), 'engineersdecor:dense_grit_sand_block']).id('mbm2:immersiveengineering/unfired_coke_oven_brick')
-  event.smelting('kubejs:coke_oven_brick', 'kubejs:sturdy_brick').id(`mbm2:smelting/coke_oven_brick`)
+  event.blasting('kubejs:coke_oven_brick', 'kubejs:sturdy_brick').id(`mbm2:blasting/coke_oven_brick`)
 	event.shaped('immersiveengineering:cokebrick', [
 		'AA',
 		'AA'
@@ -49,8 +54,29 @@ onEvent('recipes', event => {
 
 	//Kiln Bricks
 	event.remove({id: 'immersiveengineering:crafting/alloybrick'})
-	event.recipes.createPressing('kubejs:unfired_clay_brick', 'minecraft:clay_ball').id(`kubejs:pressing/unfired_clay_brick`)
 	event.recipes.createCompacting('immersiveengineering:alloybrick', ['2x kubejs:unfired_clay_brick','2x engineersdecor:dense_grit_sand_block']).heated().id(`mbm2:compacting/kiln_bricks`)
+
+
+  //Blast Bricks
+	event.blasting('kubejs:blast_brick', 'kubejs:tough_brick').id(`mbm2:blasting/blast_brick`)
+  event.remove({id: 'immersiveengineering:crafting/blastbrick'})
+  event.shaped('immersiveengineering:blastbrick', [
+		'AA',
+		'AA'
+	], {
+		A: 'kubejs:blast_brick',
+		}).id(`mbm2:crafting/blast_bricks`)
+  
+  //Reinforced Blast Bricks
+	event.remove({id: 'immersiveengineering:crafting/blastbrick_reinforced'})
+  event.recipes.createFilling('immersiveengineering:blastbrick_reinforced', [Fluid.of('tconstruct:molten_steel', 180), 'immersiveengineering:blastbrick']).id('mbm2:filling/blastbrick_reinforced')
+ //event.shaped('immersiveengineering:blastbrick_reinforced', [
+ //  'S',
+ //  'B'
+ //  ], {
+ //  B: 'tconstruct:scorched_bricks',
+ //  S: '#forge:plates/steel'
+ //  }).id("kubejs:blastbrick_reinforced")
 
 
 //Iron Components
@@ -143,16 +169,7 @@ event.shaped('3x immersiveengineering:treated_scaffold', [
   C: 'immersiveengineering:stick_treated'
   }).id("immersiveengineering:crafting/treated_scaffold")
 
-  //Blast Bricks
-  event.remove({output: 'immersiveengineering:blastbrick'})
-	event.remove({id: 'immersiveengineering:crafting/blastbrick_reinforced'})
-  event.shaped('immersiveengineering:blastbrick_reinforced', [
-    'S',
-    'B'
-    ], {
-    B: 'tconstruct:scorched_bricks',
-    S: '#forge:plates/steel'
-    }).id("kubejs:blastbrick_reinforced")
+
 
       /*      
       event.forEachRecipe({mod: 'immersiveengineering', type: 'minecraft:crafting_shaped'}, recipe => {
@@ -189,7 +206,7 @@ event.shaped('2x immersiveengineering:heavy_engineering', [
     'BCP'
       ], {
     E: '#forge:wire_coils/electrum',
-    C: 'immersiveengineering:component_iron',
+    C: 'immersiveengineering:component_steel',
     P: '#forge:plates/energized_steel',
     B: ['#forge:gears/bronze', '#forge:gears/constantan']
       }).id('mbm2:immersiveengineering/light_engineering')
@@ -201,8 +218,8 @@ event.shaped('2x immersiveengineering:heavy_engineering', [
     'DBD',
     'CDP'
       ], {
-    B: 'powah:crystal_blazing',
-    C: 'immersiveengineering:component_steel',
+    B: 'powah:capacitor_blazing',
+    C: '#forge:components/industrial_alloy',
     P: 'powah:thermoelectric_plate',
     D: 'immersiveengineering:coil_mv'
       }).id('mbm2:immersiveengineering/generator')
@@ -215,9 +232,9 @@ event.shaped('2x immersiveengineering:rs_engineering', [
   'CDC'
     ], {
   B: 'immersiveengineering:component_electronic',
-  C: 'immersiveengineering:component_iron',
+  C: 'immersiveengineering:component_steel',
   P: '#forge:spools/red_alloy',
-  D: '#forge:rods/duralumin'
+  D: '#forge:rods/aluminum'
     }).id('mbm2:immersiveengineering/rs_engineering')
 
 //Radiator
@@ -228,7 +245,7 @@ event.shaped('immersiveengineering:radiator', [
   'CPC'
     ], {
   B: 'ars_nouveau:water_essence',
-  C: 'immersiveengineering:sheetmetal_steel',
+  C: '#forge:components/industrial_alloy',
   P: 'tconstruct:scorched_glass'
     }).id('mbm2:immersiveengineering/radiator')
   event.shaped('3x immersiveengineering:radiator', [
@@ -237,7 +254,7 @@ event.shaped('immersiveengineering:radiator', [
     'CPC'
       ], {
     B: '#elementalcraft:gems/fine_water',
-    C: 'immersiveengineering:sheetmetal_steel',
+    C: '#forge:components/industrial_alloy',
     P: 'tconstruct:scorched_glass'
       }).id('mbm2:immersiveengineering/radiator_x3')
   

@@ -31,14 +31,6 @@ onEvent('recipes', event => {
 	});
 
 
-	
-	//Energetic Blend
-	global.powahEnergizing(event, [Item.of('#forge:dusts/glowstone').toJson(), Item.of('#forge:dusts/redstone').toJson()], Item.of('kubejs:energetic_blend'), 15000, 'mbm2:powah/energetic_blend')
-	//event.shapeless(`kubejs:energetic_blend`, [`#forge:dusts/glowstone`, '#forge:dusts/redstone']).id(`mbm2:energetic_blend`)
-
-	//Energetic Alloy
-	//global.powahEnergizing(event, [Item.of('#forge:ingots/electrum').toJson(), Item.of('kubejs:energetic_blend').toJson()], Item.of('kubejs:energetic_alloy_ingot'), 15000, 'mbm2:powah/energetic_alloy')
-
 	//Skystone tank rename
 	event.remove({output: 'ae2:sky_stone_tank'})
   	event.shaped('ae2:sky_stone_tank', [
@@ -142,6 +134,10 @@ onEvent('recipes', event => {
   global.thermalCrystallizer(event, 'water', 2000, Item.of('ae2:fluix_crystal').toResultJson(), 'forge:dusts/fluix', `mbm2:crystallizer/fluix_from_dust`)
   //global.thermalCrystallizer(event, 'water', 2000, Item.of('ae2:certus_quartz_crystal').toResultJson(), 'forge:seeds/certus_quartz', `mbm2:crystallizer/certus_quartz_from_seed`)
 
+//Fluix alt recipe
+ event.recipes.createMixing(['4x ae2:fluix_crystal'], [Fluid.of('immersiveengineering:redstone_acid', 250), '#forge:gems/quartz', 'ae2:charged_certus_quartz_crystal']).id('mbm2:mixing/fluix_crystal')
+
+
   //Silicon
   event.smelting('ae2:silicon', `#forge:dusts/quartz`).id(`mbm2:silicon_from_quartz`)
   
@@ -152,7 +148,7 @@ onEvent('recipes', event => {
 	  'GSG',
 	  'HCH'
 	], {
-	  S: '#immersiveengineering:scaffoldings/energetic_alloy',
+	  S: '#forge:casings/hepatizon',
 	  C: 'immersiveengineering:component_electronic',
 	  H: 'powah:energy_cable_hardened',
 	  G: 'ae2:quartz_glass',
@@ -256,20 +252,84 @@ onEvent('recipes', event => {
 	}).id('mbm2:inscriber')
 
   
-	//interface
+	//Interface
 	event.remove({id: 'ae2:network/blocks/interfaces_interface'})
 	event.shaped('ae2:interface', [
 	  'PQP',
 	  'FEA',
 	  'PQP'
 	], {
-	  P: '#forge:plates/lumium',
+	  P: '#forge:plates/signalum',
 	  A: 'ae2:annihilation_core',
 	  F: 'ae2:formation_core',
 	  Q: 'ae2:quartz_glass',
 	  E: 'immersiveengineering:component_electronic_adv'
 	}).id('mbm2:interface')
 	
+	//Storage Drive
+	event.remove({id: 'ae2:network/blocks/storage_drive'})
+	event.shaped('ae2:drive', [
+	  'PEP',
+	  'CSC',
+	  'PEP'
+	], {
+		S: '#forge:casings/titanium',
+		P: '#forge:platings/hepatizon',
+		E: 'ae2:engineering_processor',
+		C: 'ae2:fluix_glass_cable'
+	}).id('mbm2:drive')
+
+
+	//Crafting Unit
+	event.remove({id: 'ae2:network/crafting/cpu_crafting_unit'})
+	event.shaped('ae2:crafting_unit', [
+	  'PEP',
+	  'CSC',
+	  'PEP'
+	], {
+		S: '#forge:scaffoldings/energetic_alloy',
+		P: '#forge:plates/titanium',
+		E: 'ae2:calculation_processor',
+		C: 'ae2:fluix_smart_cable'
+	}).id('mbm2:crafting_unit')
+  
+	//Fluix Covered Cable
+	event.remove({id: 'ae2:network/cables/covered_fluix'})
+	event.shaped('8x ae2:fluix_covered_cable', [
+	  'CCC',
+	  'CBC',
+	  'CCC'
+	], {
+	  C: 'ae2:fluix_glass_cable',
+	  B: 'thermal:latex_bucket'
+	}).id('mbm2:fluix_covered_cable')
+	global.ieBottling(event, [Item.of('ae2:fluix_covered_cable').toJson()], Item.of('ae2:fluix_glass_cable').toJson(), {"tag":"forge:latex","amount":125}, 'mbm2:bottling/fluix_covered_cable')
+
+	
+
+	//Nore Cable stuff
+	event.remove({id: 'ae2:network/cables/dense_smart_fluix'})
+	event.shapeless('4x ae2:fluix_smart_cable', ['ae2:fluix_smart_dense_cable']).id('mbm2:uncompressing_fluix_smart_cable')
+	event.shapeless('4x ae2:fluix_covered_cable', ['ae2:fluix_covered_dense_cable']).id('mbm2:uncompressing_fluix_covered_cable')
+	
+
+
+
+	//1k Storage Component
+	event.remove({id: 'ae2:network/cells/item_storage_components_cell_1k_part'})
+	event.shaped('ae2:cell_component_1k', [
+	  'SQS',
+	  'QPQ',
+	  'SQS'
+	], {
+		Q: '#forge:gems/certus_quartz',
+		S: '#forge:sheets/energetic_alloy',
+		P: 'ae2:logic_processor',
+	}).id('mbm2:cell_component_1k')
+
+    
+
+
 
 	/*
 	  'ae2:fluix_smart_cable', 

@@ -371,6 +371,7 @@
 			dependencies: [
 				"75D4FF56D8BBF34A"
 				"43F8546BD8107D1C"
+				"2F6A6631A7BAAE8E"
 			]
 			id: "4668A1BA6F4E9EC6"
 			tasks: [
@@ -563,19 +564,28 @@
 			]
 		}
 		{
+			title: "Purifed Water"
 			x: 18.0d
 			y: -1.5d
+			description: ["If used in the Flotation Tank, you'll be able to get some byproducts!"]
 			dependencies: [
 				"02E4BADB1F8BEB33"
 				"0E2B25A2429C9556"
 				"2F6A6631A7BAAE8E"
 			]
 			id: "31EF1A8086E0512F"
-			tasks: [{
-				id: "1BFD484E2B6A2BBD"
-				type: "item"
-				item: "kubejs:purified_water_bucket"
-			}]
+			tasks: [
+				{
+					id: "1BFD484E2B6A2BBD"
+					type: "item"
+					item: "kubejs:purified_water_bucket"
+				}
+				{
+					id: "15EAC8F32089B9AE"
+					type: "item"
+					item: "kubejs:water_filter"
+				}
+			]
 			rewards: [{
 				id: "572C27C7C2BC58E2"
 				type: "item"

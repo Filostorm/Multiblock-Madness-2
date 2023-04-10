@@ -32,8 +32,9 @@ onEvent('item.registry', event => {
         if (item.raw_ore) {
           event.create(`raw_${item.material}`).color(0, item.color).texture(`kubejs:item/ore/raw_ore`)
         }
-        event.create(`crushed_${item.material}`).color(0, item.color).texture(`kubejs:item/ore/ore_crushed`) //E
+        event.create(`crushed_${item.material}`).color(0, item.color).texture(`kubejs:item/ore/ore_crushed`)                                               //F
         event.create(`${item.material}_grit`).color(0, item.color).texture(`kubejs:item/ore/ore_grit`).parentModel(`kubejs:item/ore/ore_grit`) //0
+        event.create(`lump_of_${item.material}`).color(0, item.color).texture(`kubejs:item/ore/ore_lump`).parentModel(`kubejs:item/ore/ore_lump`)         //E
         event.create(`${item.material}_chunk`).color(0, item.color).texture(`kubejs:item/ore/ore_chunk`).parentModel(`kubejs:item/ore/ore_chunk`)         //D
         //event.create(`${item.material}_clump`).color(0, item.color).texture(`kubejs:item/ore/ore_clump`).parentModel(`kubejs:item/ore/ore_clump`)         //D Kill?
         event.create(`leached_${item.material}`).color(0, item.color).texture(`kubejs:item/ore/ore_leached`).parentModel(`kubejs:item/ore/ore_leached`)   //C
@@ -53,6 +54,7 @@ onEvent('item.registry', event => {
       }
       event.create(`crushed_${item.material}`).displayName('Crushed ' + item.ore_name).color(0, item.color).texture(`kubejs:item/ore/ore_crushed`)
       event.create(`${item.material}_grit`).displayName(item.ore_name + ' Grit').color(0, item.color).texture(`kubejs:item/ore/ore_grit`).parentModel(`kubejs:item/ore/ore_grit`)
+      event.create(`lump_of_${item.material}`).displayName('Lump of ' + item.ore_name).color(0, item.color).texture(`kubejs:item/ore/ore_lump`).parentModel(`kubejs:item/ore/ore_lump`)
       event.create(`${item.material}_chunk`).displayName(item.ore_name + ' Chunk').color(0, item.color).texture(`kubejs:item/ore/ore_chunk`).parentModel(`kubejs:item/ore/ore_chunk`)
       //event.create(`${item.material}_clump`).displayName(item.ore_name + ' Clump').color(0, item.color).texture(`kubejs:item/ore/ore_clump`).parentModel(`kubejs:item/ore/ore_clump`)
       event.create(`leached_${item.material}`).displayName('Leached ' + item.ore_name).color(0, item.color).texture(`kubejs:item/ore/ore_leached`).parentModel(`kubejs:item/ore/ore_leached`)
@@ -141,23 +143,25 @@ onEvent('block.registry', event => {
             event.create(`${item.material}_ore`).displayName(item.ore_name + ' Ore').color(0, item.color).material('stone').hardness(4).resistance(4).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').renderType('cutout').defaultCutout().model(`kubejs:block/ore/stone_ore`).requiresTool(true).item(itemForm => {itemForm.color(0, item.color)})
             //event.create(`rich_${item.material}_ore`).displayName('Rich ' + item.ore_name + ' Ore').color(0, item.color).material('stone').hardness(4).resistance(4).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').renderType('cutout').defaultCutout().model(`kubejs:block/ore/rich_stone_ore`).requiresTool(true).item(itemForm => {itemForm.color(0, item.color)})
           
-          global.stoneTypes.forEach((type) => {
-			      let stoneNameUpper = type.material.charAt(0).toUpperCase() + type.material.slice(1)
-			      let oreName = stoneNameUpper + ' ' + item.ore_name + ' Ore'
+            global.stoneTypes.forEach((type) => {
+              if (type != 'bedrock' || type != 'end_stone') {
+			          let stoneNameUpper = type.material.charAt(0).toUpperCase() + type.material.slice(1)
+			          let oreName = stoneNameUpper + ' ' + item.ore_name + ' Ore'   
 
-            event.create(`poor_${type.material}_${item.material}_ore`).displayName(oreName).color(0, item.color).material('stone').hardness(type.hardness).resistance(type.resistance).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_stone_tool').renderType('cutout').defaultCutout().model(`kubejs:block/ore/poor_${type.material}_ore`).requiresTool(true).item(itemForm => {itemForm.color(0, item.color)})
-            event.create(`${type.material}_${item.material}_ore`).displayName(oreName).color(0, item.color).material('stone').hardness(type.hardness).resistance(type.resistance).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').renderType('cutout').defaultCutout().model(`kubejs:block/ore/${type.material}_ore`).requiresTool(true).item(itemForm => {itemForm.color(0, item.color)})
-            //event.create(`rich_${type.material}_${item.material}_ore`).displayName(oreName).color(0, item.color).material('stone').hardness(type.hardness).resistance(type.resistance).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').renderType('cutout').defaultCutout().model(`kubejs:block/ore/rich_${type.material}_ore`).requiresTool(true).item(itemForm => {itemForm.color(0, item.color)})
-          })
+                event.create(`poor_${type.material}_${item.material}_ore`).displayName(oreName).color(0, item.color).material('stone').hardness(type.hardness).resistance(type.resistance).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_stone_tool').renderType('cutout').defaultCutout().model(`kubejs:block/ore/poor_${type.material}_ore`).requiresTool(true).item(itemForm => {itemForm.color(0, item.color)})
+                event.create(`${type.material}_${item.material}_ore`).displayName(oreName).color(0, item.color).material('stone').hardness(type.hardness).resistance(type.resistance).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').renderType('cutout').defaultCutout().model(`kubejs:block/ore/${type.material}_ore`).requiresTool(true).item(itemForm => {itemForm.color(0, item.color)})
+              }
+            })
           } else {
           event.create(`poor_${item.material}_ore`).color(0, item.color).material('stone').hardness(4).resistance(4).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_stone_tool').renderType('cutout').defaultCutout().model(`kubejs:block/ore/poor_stone_ore`).requiresTool(true).item(itemForm => {itemForm.color(0, item.color)})
           event.create(`${item.material}_ore`).color(0, item.color).material('stone').hardness(4).resistance(4).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').renderType('cutout').defaultCutout().model(`kubejs:block/ore/stone_ore`).requiresTool(true).item(itemForm => {itemForm.color(0, item.color)})
-         //event.create(`rich_${item.material}_ore`).color(0, item.color).material('stone').hardness(4).resistance(4).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').renderType('cutout').defaultCutout().model(`kubejs:block/ore/rich_stone_ore`).requiresTool(true).item(itemForm => {itemForm.color(0, item.color)})
-        global.stoneTypes.forEach((type) => {
-          event.create(`poor_${type.material}_${item.material}_ore`).color(0, item.color).material('stone').hardness(type.hardness).resistance(type.resistance).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_stone_tool').renderType('cutout').defaultCutout().model(`kubejs:block/ore/poor_${type.material}_ore`).requiresTool(true).item(itemForm => {itemForm.color(0, item.color)})
-          event.create(`${type.material}_${item.material}_ore`).color(0, item.color).material('stone').hardness(type.hardness).resistance(type.resistance).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').renderType('cutout').defaultCutout().model(`kubejs:block/ore/${type.material}_ore`).requiresTool(true).item(itemForm => {itemForm.color(0, item.color)})
-          //event.create(`rich_${type.material}_${item.material}_ore`).color(0, item.color).material('stone').hardness(type.hardness).resistance(type.resistance).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').renderType('cutout').defaultCutout().model(`kubejs:block/ore/rich_${type.material}_ore`).requiresTool(true).item(itemForm => {itemForm.color(0, item.color)})
-        })}
+          global.stoneTypes.forEach((type) => {
+            if (type != 'bedrock' || type != 'end_stone') {
+              event.create(`poor_${type.material}_${item.material}_ore`).color(0, item.color).material('stone').hardness(type.hardness).resistance(type.resistance).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_stone_tool').renderType('cutout').defaultCutout().model(`kubejs:block/ore/poor_${type.material}_ore`).requiresTool(true).item(itemForm => {itemForm.color(0, item.color)})
+              event.create(`${type.material}_${item.material}_ore`).color(0, item.color).material('stone').hardness(type.hardness).resistance(type.resistance).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').renderType('cutout').defaultCutout().model(`kubejs:block/ore/${type.material}_ore`).requiresTool(true).item(itemForm => {itemForm.color(0, item.color)})
+            }
+          }
+        )}
       }
       event.create(`${item.material}_ore_sample`).color(0, item.color).material('stone').hardness(0.5).resistance(0.5).tagBlock('minecraft:mineable/pickaxe').renderType('cutout').defaultCutout().model(`kubejs:block/ore/ore_sample`).fullBlock(false).notSolid().box(3,0,3,13,3,13, true).item(itemForm => {itemForm.color(0, item.color)})
     }

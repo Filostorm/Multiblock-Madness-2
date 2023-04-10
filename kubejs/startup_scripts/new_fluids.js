@@ -16,6 +16,11 @@ onEvent('fluid.registry', event => {
     
     event.create(`liquid_shadows`).thickTexture(0x350e5c).bucketColor(0x350e5c)
 
+    event.create(`liquid_smoke`).thickTexture(0x46494d).bucketColor(0x46494d)
+
+    event.create(`molten_hardened_glass`).thinTexture(0x7dabbd).bucketColor(0x7dabbd)
+    //event.create(`unfinished_molten_soulsteel`).thickTexture(0x403d3b).bucketColor(0x403d3b)
+
     event.create(`sludge`).thickTexture(0x6e4210).bucketColor(0x6e4210)
     
     event.create(`molten_carbon`).thickTexture(0x383432).bucketColor(0x383432)

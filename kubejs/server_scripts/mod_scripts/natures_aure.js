@@ -61,9 +61,9 @@ event.shaped('3x kubejs:ancient_wood_scaffolding', [
 
 	//Tainted Gold
 	//event.remove({id: 'naturesaura:altar/tainted_gold'})
-	global.naturesauraAltar(event, 'naturesaura:tainted_gold', 'kubejs:auric_gold_ingot', 'naturesaura:nether', 15000, 80, 'naturesaura:altar/tainted_gold')
+	global.naturesauraAltar(event, 'naturesaura:tainted_gold', Item.of('kubejs:auric_gold_ingot').toJson(), 'naturesaura:nether', 15000, 80, 'naturesaura:altar/tainted_gold')
 	//event.remove({id: 'naturesaura:altar/tainted_gold_block'})
-	global.naturesauraAltar(event, 'naturesaura:tainted_gold_block', 'kubejs:auric_gold_storage_block', 'naturesaura:nether', 135000, 700, 'naturesaura:altar/tainted_gold_block')
+	global.naturesauraAltar(event, 'naturesaura:tainted_gold_block', Item.of('kubejs:auric_gold_storage_block').toJson(), 'naturesaura:nether', 135000, 700, 'naturesaura:altar/tainted_gold_block')
 	
 });
 

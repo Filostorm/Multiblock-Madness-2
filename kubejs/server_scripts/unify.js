@@ -21,6 +21,10 @@ global.fluidsToRemove = [
 	'createbigcannons:molten_steel',
 	'createbigcannons:molten_bronze',
 	'chemlib:sulfuric_acid_fluid',
+	//'industrialforegoing:essence',
+	'sophisticatedcore:xp_still',
+	'reliquary:xp_juice_still',
+	'cofh_core:experience',
 ]
 
 var removeByName = [
@@ -54,12 +58,17 @@ onEvent('recipes', event => {
 	event.replaceOutput({}, 'mekanism:dust_gold', 'thermal:gold_dust')
 	event.replaceOutput({}, 'mekanism:dust_netherite', 'thermal:netherite_dust')
 	event.replaceOutput({}, 'ae2:ender_dust', 'thermal:ender_pearl_dust')
+
 	//Diamond
 	event.replaceOutput({}, 'createaddition:diamond_grit', 'thermal:diamond_dust')
 	event.replaceOutput({}, 'mekanism:dust_diamond', 'thermal:diamond_dust')
+
 	//Sawdust
 	event.replaceOutput({}, 'mekanism:sawdust', 'thermal:sawdust')
 	event.replaceOutput({}, 'immersiveengineering:dust_wood', 'thermal:sawdust')
+
+	//Lapis
+	event.replaceOutput({}, 'mekanism:dust_lapis_lazuli', 'thermal:lapis_dust')
 	
 
 	removeByName.forEach((item) => {
@@ -80,7 +89,24 @@ onEvent('recipes', event => {
 		I: `#forge:ingots/steel`,
 	  }).id('mbm2:crafting/steel_block')
 
-
+	//centrifuge/experience_bottle
+	event.remove({id: 'thermal:machines/centrifuge/centrifuge_experience_bottle'})
+	  event.custom({
+		"type": "thermal:centrifuge",
+		"ingredient": {
+		  "item": "minecraft:experience_bottle"
+		},
+		"result": [
+		  {
+			"item": "minecraft:glass_bottle"
+		  },
+		  {
+			"fluid": "pneumaticcraft:memory_essence",
+			"amount": 250
+		  }
+		],
+		"energy": 400
+	  }).id('mbm2:centrifuge/experience_bottle')
 })
 
 onEvent('tags.items', event => {

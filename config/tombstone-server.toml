@@ -133,12 +133,6 @@
 	#Merchant Stone [false/true|default:true]
 	allow_merchant_stone = true
 
-#Allows to change the chance to drop some items
-[loot]
-	#Chance to loot a Lost Tablet by fishing [0..1000|default:100]
-	#Range: 0 ~ 1000
-	chance_loot_lost_tablet = 100
-
 #Allows to enable some features related to others mods
 [compatibility]
 	#fix the custom name with anvil when the string is empty [false/true|default:true]

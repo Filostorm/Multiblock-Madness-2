@@ -216,12 +216,12 @@ onEvent('worldgen.add', event => {
 		  ore.biomes = "beyond_earth:moon_desert"
 	})
 	
-	// Inserted thorium
+	// Inserted palladium
 	event.addOre((ore) => {
-		ore.id = 'kubejs:nether_thorium'
+		ore.id = 'kubejs:nether_palladium'
 			global.stoneTypes.forEach((type) => {
 				if (type.material != 'bedrock' && type.material != 'deepslate') {
-					ore.addTarget(`excavated_variants:${type.material}_uranium_ore`, `excavated_variants:${type.material}_thorium_ore`)
+					ore.addTarget(`excavated_variants:${type.material}_uranium_ore`, `excavated_variants:${type.material}_palladium_ore`)
 				}
 			})
 		ore.count(100)

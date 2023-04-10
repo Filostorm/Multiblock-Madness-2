@@ -80,6 +80,7 @@ onEvent('recipes', event => {
 	//Thermal Plates
 	event.recipes.thermal.press(`2x #forge:plates/${item.material}`, `3x #forge:ingots/${item.material}`).id(`thermal:machines/press/press_${item.material}_ingot_to_plate`)
 	
+	/*
 	////////////////DENSE PLATES///////////////
     if (Item.of(`#forge:dense_plates/${item.material}`) != null) {
 
@@ -88,6 +89,17 @@ onEvent('recipes', event => {
 
 	//Immersive Dense Plates
  	event.recipes.immersiveengineeringMetalPress(`#forge:dense_plates/${item.material}`, `#forge:storage_blocks/${item.material}`, 'immersiveengineering:mold_plate').id(`immersiveengineering:metalpress/dense_plate_${item.material}`)
+	}*/
+
+
+	////////////////SHEETS///////////////
+    if (Item.of(`#forge:sheets/${item.material}`) != null) {
+
+		//Create Sheet
+		event.recipes.createPressing(`#forge:sheets/${item.material}`, `#forge:plates/${item.material}`).id(`mbm2:pressing/${item.material}_sheet`)
+	
+		//Immersive Sheet
+		event.recipes.immersiveengineeringMetalPress(`2x #forge:sheets/${item.material}`, `#forge:plates/${item.material}`, 'immersiveengineering:mold_plate').id(`mbm2:metalpress/sheet_${item.material}`)
 	}
 	////////////////PLATING///////////////
     if (Item.of(`#forge:platings/${item.material}`) != null) {
@@ -98,7 +110,6 @@ onEvent('recipes', event => {
 	//Immersive Plating
  	event.recipes.immersiveengineeringMetalPress(`#forge:platings/${item.material}`, `4x #forge:plates/${item.material}`, 'immersiveengineering:mold_plate').id(`mbm2:metalpress/plating_${item.material}`)
 
-	
 	////////////////ROCKET FINS///////////////
 	 if (Item.of(`#forge:rocket_fins/${item.material}`) != null) {
 		//Hand Crafted Rocket Fins
@@ -219,7 +230,7 @@ onEvent('recipes', event => {
 				G: `#forge:gears/${item.material}`
 			  }).id(`mbm2:parts/${item.material}_interlocking_component`)
 			//Cheaper recipe
-			global.ieBlueprint(event, 'interlocking_components', Item.of(`#forge:interlocking_components/${item.material}`), [{count:3, base_ingredient: {tag: `forge:gears/${item.material}`}}, {tag: `forge:wires/${item.material}`}], `mbm2:${item.material}_interlocking_component`)
+			global.ieBlueprint(event, 'interlocking_components', Item.of(`#forge:interlocking_components/${item.material}`), [{count:4, base_ingredient: {tag: `forge:gears/${item.material}`}}], `mbm2:${item.material}_interlocking_component`)
 
 			} else { console.log(`${item.material}` + "needs wires and gears enabled to make a interlocking component recipe");}
 		}
@@ -263,16 +274,16 @@ onEvent('recipes', event => {
 		  }
 	
 		////////////////SCAFFOLDING///////////////
-		if (Item.of(`#immersiveengineering:scaffoldings/${item.material}`) != null) {
+		if (Item.of(`#forge:scaffoldings/${item.material}`) != null) {
 			if (Item.of(`#forge:rods/${item.material}`) != null) {
-			event.shaped(`6x #immersiveengineering:scaffoldings/${item.material}`, [
+			event.shaped(`6x #forge:scaffoldings/${item.material}`, [
 				'III',
 				' R ',
 				'R R'
 			  ], {
 				I: `#forge:ingots/${item.material}`,
 				R: `#forge:rods/${item.material}`,
-			  }).id(`immersiveengineering:crafting/${item.material}_scaffolding_standard`)
+			  }).id(`mbm2:crafting/${item.material}_scaffolding_standard`)
 			} else { console.log(`${item.material}` + "needs rods enabled to make a scaffolding recipe");}
 			}
 	}
@@ -324,14 +335,25 @@ onEvent('recipes', event => {
 		}
 		/////////////// Coil Block //////////////////
     	if (Item.of(`#forge:coils/${item.material}`) != null) {
-		event.shaped(`#forge:coils/${item.material}`, [
-			'PPP',
-			'CCC',
-			'PPP'
-		  ], {
-			P: `#forge:plates/magnesium`,
-			C: `#forge:wire_coils/${item.material}`
-		  }).id(`mbm2:crafting/${item.material}_coil_block`)
+			if (item.tier <= 2) {
+				event.shaped(`#forge:coils/${item.material}`, [
+					'PPP',
+					'CCC',
+					'PPP'
+				], {
+					P: `#forge:plates/aluminum`,
+					C: `#forge:wire_coils/${item.material}`
+				}).id(`mbm2:crafting/${item.material}_coil_block`)
+			} else if (item.tier > 2) {
+				event.shaped(`#forge:coils/${item.material}`, [
+					'PPP',
+					'CCC',
+					'PPP'
+				], {
+					P: `#forge:plates/magnesium`,
+					C: `#forge:wire_coils/${item.material}`
+				}).id(`mbm2:crafting/${item.material}_coil_block`)
+			}
 		}
 	}
 

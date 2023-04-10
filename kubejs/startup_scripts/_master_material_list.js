@@ -31,7 +31,7 @@ global.newMaterialParts = [
     },
     {
       'material': 'gold',
-      'color': 0xffe870,
+      'color': 0xf5c564,
       'type': 'base_metal',
       'tier': 0,
       'itemParts': [],
@@ -353,20 +353,7 @@ global.newMaterialParts = [
       'raw_ore': true
     },
 
-    /////////////// Tier 7 (8) Metals: Glacio /////////////////////////////
-    {
-      'material': 'draconium',
-      'ore_name': 'Dracolith',
-      'color': 0x421c63,
-      'tier': 7,
-      'type': 'base_metal',
-      'itemParts': ['ingot', 'nugget', 'dust'],
-      'blockParts': ['storage_block'],
-      'ore': true,
-      'raw_ore': true,
-      'fluid': 'thick',
-      'fluid_id': 'kubejs:molten_dracolith',
-    },
+    /////////////// Tier 7 Metals: Glacio /////////////////////////////
     {
       'material': 'uru',
       'color': 0x1c121c,
@@ -378,6 +365,20 @@ global.newMaterialParts = [
       'raw_ore': true,
       'fluid': 'thick',
       'fluid_id': 'kubejs:molten_uru',
+    },
+    /////////////// Tier 8 Metals: Glacio /////////////////////////////
+    {
+      'material': 'draconium',
+      'ore_name': 'Dracolith',
+      'color': 0x421c63,
+      'tier': 8,
+      'type': 'base_metal',
+      'itemParts': ['ingot', 'nugget', 'dust'],
+      'blockParts': ['storage_block'],
+      'ore': true,
+      'raw_ore': true,
+      'fluid': 'thick',
+      'fluid_id': 'kubejs:molten_dracolith',
     },
 
 
@@ -391,6 +392,7 @@ global.newMaterialParts = [
       'blockParts': [],
       'fluid': 'thick',
       'ore': true,
+      'raw_ore': true,
     },
     {
       'material': 'chromium',
@@ -427,6 +429,7 @@ global.newMaterialParts = [
       'blockParts': [],
       'fluid': 'thick',
       'ore': true,
+      'raw_ore': true,
     },
     {
       'material': 'iridium',
@@ -447,6 +450,7 @@ global.newMaterialParts = [
       'itemParts': [],
       'blockParts': [],
       'ore': true,
+      'raw_ore': true,
     },
     {
       'material': 'vanadium',
@@ -456,6 +460,7 @@ global.newMaterialParts = [
       'itemParts': ['plate', 'gear', 'rod'],
       'blockParts': [],
       'ore': true,
+      'raw_ore': true,
     },
     {
       'material': 'neodymium',
@@ -466,6 +471,7 @@ global.newMaterialParts = [
       'blockParts': [],
       'fluid': 'thick',
       'ore': true,
+      'raw_ore': true,
     },
     /*
     {
@@ -592,8 +598,8 @@ global.newMaterialParts = [
       'itemParts': ['ingot', 'dust', 'nugget'],
       'blockParts': ['storage_block'],
       'amount': 1,
-      'dust_input': ['#forge:dusts/pewter','2x naturesaura:gold_powder'],
-      'ingot_input': ['#forge:ingots/pewter','2x naturesaura:gold_powder'],
+      'dust_input': ['#forge:dusts/arcanite','2x naturesaura:gold_powder'],
+      'ingot_input': ['#forge:ingots/arcanite','2x naturesaura:gold_powder'],
       },
       {
         'material': 'cast_iron',
@@ -671,7 +677,7 @@ global.newMaterialParts = [
       'color': 0xff874f,
       'type': 'alloy',
       'tier': 2,
-      'itemParts': ['custom_ingot', 'dust', 'nugget', 'plate', 'gear', 'rod', 'wire', 'interlocking_component', 'plating'],
+      'itemParts': ['custom_ingot', 'dust', 'nugget', 'plate', 'gear', 'rod', 'wire', 'interlocking_component', 'plating', 'sheet'],
       'blockParts': ['storage_block', 'scaffolding'],
       'amount': 1,
       'dust_input': ['#forge:dusts/electrum', 'kubejs:energetic_blend'],
@@ -700,7 +706,7 @@ global.newMaterialParts = [
       'dust_input': ['2x #forge:dusts/copper','#forge:dusts/cobalt','4x #forge:gems/quartz'],
       'ingot_input': ['2x #forge:ingots/copper','#forge:ingots/cobalt','4x #forge:gems/quartz'],
       'tinkers_input': [{tag: 'forge:molten_copper',amount: 180},{tag: 'forge:molten_cobalt',amount: 90},{tag: 'tconstruct:molten_quartz',amount: 400}],
-      'itemParts': ['plate', 'gear', 'rod', 'dust', 'interlocking_component', 'wire'],
+      'itemParts': ['plate', 'gear', 'rod', 'dust', 'interlocking_component', 'wire', 'plating'],
       'blockParts': ['casing'],
     },
     {
@@ -746,7 +752,7 @@ global.newMaterialParts = [
       'color': 0x9c6097,
       'type': 'alloy',
       'tier': 2,
-      'itemParts': ['ingot', 'dust', 'nugget', 'plate', 'gear', 'rod',],
+      'itemParts': ['ingot', 'dust', 'nugget', 'plate', 'gear', 'rod'],
       'blockParts': ['storage_block', 'scaffolding'],
       'amount': 2,
       'dust_input': ['2x #forge:dusts/electrum', '#forge:dusts/thorium'],
@@ -852,12 +858,12 @@ global.newMaterialParts = [
       'color': 0xff6e4a,
       'tier': 3,
       'itemParts': ['rod'],
-      'blockParts': [],
+      'blockParts': ['scaffolding'],
       'type': 'alloy',
       'fluid_id': 'tconstruct:molten_signalum',
-      'amount': 4,
-      'dust_input': ['3x #forge:dusts/bronze','#forge:dusts/silver','4x #forge:dusts/redstone'],
-      'ingot_input': ['3x #forge:ingots/bronze','#forge:ingots/silver','4x #forge:dusts/redstone'],
+      //'amount': 4,
+      //'dust_input': ['3x #forge:dusts/bronze','#forge:dusts/silver','4x #forge:dusts/redstone'],
+      //'ingot_input': ['3x #forge:ingots/bronze','#forge:ingots/silver','4x #forge:dusts/redstone'],
     },
 
     {
@@ -900,6 +906,19 @@ global.newMaterialParts = [
 
 
     {
+      'material': 'soulsteel',
+      'color': 0x5c544d,
+      'type': 'alloy',
+      'tier': 3,
+      'itemParts': ['plate', 'rod', 'gear', 'plating'],
+      'blockParts': [],
+      //'amount': 3,
+      //'dust_input': ['2x #forge:dusts/manyullyn', '#forge:dusts/titanium', '#forge:gems/uraninite'],
+      //'ingot_input': ['2x #forge:ingots/manyullyn', '#forge:ingots/titanium', '#forge:gems/uraninite'],
+      'fluid_id': 'tconstruct:molten_soulsteel',
+    },
+
+    {
       'material': 'titanite',
       'color': 0x9754d1,
       'type': 'alloy',
@@ -925,7 +944,7 @@ global.newMaterialParts = [
       //'ingot_input': ['3x #forge:ingots/cobalt','#forge:ingots/netherite_scrap'],
     },
 
-
+    
     /////////////// Tier 4 Alloys Mixer Only or chapter 4 /////////////////////////////
 
     {
@@ -969,7 +988,7 @@ global.newMaterialParts = [
       'material': 'enderium',
       'color': 0x5fc4d4,
       'tier': 4,
-      'itemParts': ['rod'],
+      'itemParts': ['rod', 'plating'],
       'blockParts': [],
       'type': 'alloy',
       'fluid_id': 'tconstruct:molten_enderium',
@@ -1089,7 +1108,7 @@ global.newMaterialParts = [
       'fluid': 'thick',
       'ore': true,
       'raw_ore': true,
-      'components': ['copper','zinc', 'cobalt', 'desh', 'platinum', 'orichalcum'],
+      'components': ['copper','zinc', 'cobalt', 'uranium', 'platinum', 'orichalcum', 'adamantium', 'neodymium', 'uru'],
       'gem_components': ['sulfur', 'fluorite'],
       'byproducts': ['imortite', 'potentium'],
     },
@@ -1103,7 +1122,7 @@ global.newMaterialParts = [
       'fluid': 'thick',
       'ore': true,
       'raw_ore': true,
-      'components': ['gold','zinc', 'mithril', 'rune', 'desh', 'orichalcum'],
+      'components': ['gold','zinc', 'mithril', 'rune', 'desh', 'orichalcum', 'calorite', 'neodymium', 'draconium'],
       'gem_components': ['diamond', 'amethyst'],
       'byproducts': ['potentium', 'kharaxium'],
     },
@@ -1117,7 +1136,7 @@ global.newMaterialParts = [
       'fluid': 'thick',
       'ore': true,
       'raw_ore': true,
-      'components': ['iron','nickel', 'aluminum', 'magnesium', 'palladium', 'ostrum'],
+      'components': ['iron','nickel', 'aluminum', 'magnesium', 'palladium', 'ostrum', 'adamantium', 'neodymium', 'draconium'],
       'gem_components': ['ruby', 'cinnabar'],
       'byproducts': ['kharaxium', 'imortite'],
     },
@@ -1145,7 +1164,7 @@ global.newMaterialParts = [
       'fluid': 'thick',
       'ore': true,
       'raw_ore': true,
-      'components': ['copper','nickel', 'cobalt', 'titanium', 'platinum', 'tungsten'],
+      'components': ['copper', 'nickel', 'cobalt', 'titanium', 'platinum', 'tungsten', 'iridium', 'vanadium', 'uru'],
       'gem_components': ['lapis', 'apatite'],
       'byproducts': ['vincyte', 'densite'],
     },
@@ -1159,7 +1178,7 @@ global.newMaterialParts = [
       'fluid': 'thick',
       'ore': true,
       'raw_ore': true,
-      'components': ['tin','silver', 'aluminum', 'magnesium', 'osmium', 'ostrum'],
+      'components': ['tin', 'silver', 'aluminum', 'magnesium', 'osmium', 'ostrum', 'vibranium', 'vanadium', 'draconium'],
       'gem_components': ['quartz', 'certus_quartz'],
       'byproducts': ['densite', 'jimmium'],
     },
@@ -1173,7 +1192,7 @@ global.newMaterialParts = [
       'fluid': 'thick',
       'ore': true,
       'raw_ore': true,
-      'components': ['iron','lead', 'thorium', 'titanium', 'osmium', 'tungsten'],
+      'components': ['iron', 'lead', 'thorium', 'titanium', 'osmium', 'tungsten', 'vibranium', 'vanadium', 'uru'],
       'gem_components': ['emerald', 'niter'],
       'byproducts': ['jimmium', 'vincyte'],
     },

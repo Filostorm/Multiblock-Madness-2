@@ -32,6 +32,31 @@ event.shaped('functionalstorage:compacting_drawer', [
   P: '#forge:platings/iron'
 }).id('mbm2:compacting_drawer')
 
-  
+event.remove({id: 'functionalstorage:simple_compacting_drawer'})
+event.shaped('functionalstorage:simple_compacting_drawer', [
+  'CCC',
+  'CDU',
+  'CPC'
+], {
+  U: 'minecraft:piston',
+  D: '#functionalstorage:drawer',
+  C: 'kubejs:1x_compressed_cobblestone',
+  P: '#forge:platings/iron'
+}).id('mbm2:compacting_drawer_simple')
+
+event.remove({id: 'functionalstorage:compacting_framed_drawer'})
+event.shaped('functionalstorage:compacting_framed_drawer', [
+  'CPC',
+  'UDU',
+  'CPC'
+], {
+  U: 'minecraft:piston',
+  D: '#functionalstorage:drawer',
+  C: '#forge:nuggets/iron',
+  P: '#forge:platings/iron'
+}).id('mbm2:compacting_drawer_framed')
+
+
+
 
 });

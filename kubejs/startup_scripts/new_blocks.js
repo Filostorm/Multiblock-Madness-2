@@ -34,6 +34,8 @@ onEvent('block.registry', event => {
 	event.create('bronze_frame').hardness(3).resistance(3).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').model("kubejs:block/thermal_frame").renderType('cutout').defaultCutout().material('metal')
 	event.create('alchemistry_frame').displayName('Alchemical Frame').hardness(3).resistance(3).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').model("kubejs:block/alchemistry_frame").renderType('cutout').defaultCutout().material('metal')
 	event.create('pneumaticcraft_casing').displayName('Pneumatic Casing').hardness(3).resistance(3).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').model("kubejs:block/pneumaticcraft_casing").renderType('cutout').defaultCutout().material('metal')
+	event.create('hostile_casing').displayName('Hostile Casing').hardness(3).resistance(3).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').model("kubejs:block/hostile_casing").renderType('cutout').defaultCutout().material('metal')
+	event.create('haunted_casing').displayName('Haunted Casing').hardness(3).resistance(3).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').model("kubejs:block/haunted_casing").renderType('cutout').defaultCutout().material('metal')
 	
 	event.create('tier1_casing').displayName('Basic Multiblock Casing').hardness(3).resistance(3).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').material('metal')
 

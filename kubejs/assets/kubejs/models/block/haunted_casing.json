@@ -1,0 +1,196 @@
+{
+    "__comment": "Model generated using MrCrayfish's Model Creator (https://mrcrayfish.com/tools?id=mc)",
+    "textures": {
+        "machine_base_up": "kubejs:block/machine_base_haunted",
+        "color_stripes90": "kubejs:block/color_stripes90",
+        "color_stripes": "kubejs:block/color_stripes",
+        "particle": "kubejs:block/machine_base_haunted"
+    },
+    "display": {
+        "gui": {
+            "rotation": [ 30, 45, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 0.625, 0.625, 0.625 ]
+        },
+        "ground": {
+            "rotation": [ 0, 0, 0 ],
+            "translation": [ 0, 3, 0 ],
+            "scale": [ 0.25, 0.25, 0.25 ]
+        },
+        "fixed": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 1, 1, 1 ]
+        },
+        "head": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 1, 1, 1 ]
+        },
+        "firstperson_righthand": {
+            "rotation": [ 0, 315, 0 ],
+            "translation": [ 0, 2.5, 0 ],
+            "scale": [ 0.4, 0.4, 0.4 ]
+        },
+        "thirdperson_righthand": {
+            "rotation": [ 75, 315, 0 ],
+            "translation": [ 0, 2.5, 0 ],
+            "scale": [ 0.375, 0.375, 0.375 ]
+        }
+    },
+    "elements": [
+        {
+            "name": "Cube",
+            "from": [ 1, 1, 1 ], 
+            "to": [ 15, 15, 15 ], 
+            "faces": {
+                "north": { "texture": "#machine_base_up", "uv": [ 1, 1, 15, 15 ] },
+                "east": { "texture": "#machine_base_up", "uv": [ 1, 1, 15, 15 ] },
+                "south": { "texture": "#machine_base_up", "uv": [ 1, 1, 15, 15 ] },
+                "west": { "texture": "#machine_base_up", "uv": [ 1, 1, 15, 15 ] },
+                "up": { "texture": "#machine_base_up", "uv": [ 1, 1, 15, 15 ] },
+                "down": { "texture": "#machine_base_up", "uv": [ 1, 1, 15, 15 ] }
+            }
+        },
+        {
+            "name": "NB Edge",
+            "from": [ 0, 0, 0 ], 
+            "to": [ 16, 1, 1 ], 
+            "faces": {
+                "north": { "texture": "#color_stripes90", "uv": [ 0, 5, 16, 6 ], "rotation": 90 },
+                "east": { "texture": "#color_stripes90", "uv": [ 0, 5, 1, 6 ] },
+                "south": { "texture": "#color_stripes90", "uv": [ 0, 5, 16, 6 ] },
+                "west": { "texture": "#color_stripes90", "uv": [ 0, 5, 1, 6 ] },
+                "up": { "texture": "#color_stripes90", "uv": [ 0, 5, 16, 6 ] },
+                "down": { "texture": "#color_stripes90", "uv": [ 0, 5, 16, 6 ] }
+            }
+        },
+        {
+            "name": "NT Edge",
+            "from": [ 0, 15, 0 ], 
+            "to": [ 16, 16, 1 ], 
+            "faces": {
+                "north": { "texture": "#color_stripes90", "uv": [ 0, 5, 16, 6 ], "rotation": 90 },
+                "east": { "texture": "#color_stripes90", "uv": [ 0, 5, 1, 6 ] },
+                "south": { "texture": "#color_stripes90", "uv": [ 0, 5, 16, 6 ] },
+                "west": { "texture": "#color_stripes90", "uv": [ 0, 5, 1, 6 ] },
+                "up": { "texture": "#color_stripes90", "uv": [ 0, 5, 16, 6 ] },
+                "down": { "texture": "#color_stripes90", "uv": [ 0, 5, 16, 6 ] }
+            }
+        },
+        {
+            "name": "ST Edge",
+            "from": [ 0, 15, 15 ], 
+            "to": [ 16, 16, 16 ], 
+            "faces": {
+                "north": { "texture": "#color_stripes90", "uv": [ 0, 5, 16, 6 ], "rotation": 90 },
+                "east": { "texture": "#color_stripes90", "uv": [ 0, 5, 1, 6 ] },
+                "south": { "texture": "#color_stripes90", "uv": [ 0, 5, 16, 6 ] },
+                "west": { "texture": "#color_stripes90", "uv": [ 0, 5, 1, 6 ] },
+                "up": { "texture": "#color_stripes90", "uv": [ 0, 5, 16, 6 ] },
+                "down": { "texture": "#color_stripes90", "uv": [ 0, 5, 16, 6 ] }
+            }
+        },
+        {
+            "name": "SB Edge",
+            "from": [ 0, 0, 15 ], 
+            "to": [ 16, 1, 16 ], 
+            "faces": {
+                "north": { "texture": "#color_stripes90", "uv": [ 0, 5, 16, 6 ], "rotation": 90 },
+                "east": { "texture": "#color_stripes90", "uv": [ 0, 5, 1, 6 ] },
+                "south": { "texture": "#color_stripes90", "uv": [ 0, 5, 16, 6 ] },
+                "west": { "texture": "#color_stripes90", "uv": [ 0, 5, 1, 6 ] },
+                "up": { "texture": "#color_stripes90", "uv": [ 0, 5, 16, 6 ] },
+                "down": { "texture": "#color_stripes90", "uv": [ 0, 5, 16, 6 ] }
+            }
+        },
+        {
+            "name": "NW Pillar",
+            "from": [ 0, 1, 0 ], 
+            "to": [ 1, 15, 1 ], 
+            "faces": {
+                "north": { "texture": "#color_stripes", "uv": [ 10, 1, 11, 15 ] },
+                "east": { "texture": "#color_stripes", "uv": [ 10, 1, 11, 15 ] },
+                "south": { "texture": "#color_stripes", "uv": [ 10, 1, 11, 15 ] },
+                "west": { "texture": "#color_stripes", "uv": [ 10, 1, 11, 15 ] }
+            }
+        },
+        {
+            "name": "NE Pillar",
+            "from": [ 15, 1, 0 ], 
+            "to": [ 16, 15, 1 ], 
+            "faces": {
+                "north": { "texture": "#color_stripes", "uv": [ 10, 1, 11, 15 ] },
+                "east": { "texture": "#color_stripes", "uv": [ 10, 1, 11, 15 ] },
+                "south": { "texture": "#color_stripes", "uv": [ 10, 1, 11, 15 ] },
+                "west": { "texture": "#color_stripes", "uv": [ 10, 1, 11, 15 ] }
+            }
+        },
+        {
+            "name": "SE Pillar",
+            "from": [ 15, 1, 15 ], 
+            "to": [ 16, 15, 16 ], 
+            "faces": {
+                "north": { "texture": "#color_stripes", "uv": [ 10, 1, 11, 15 ] },
+                "east": { "texture": "#color_stripes", "uv": [ 10, 1, 11, 15 ] },
+                "south": { "texture": "#color_stripes", "uv": [ 10, 1, 11, 15 ] },
+                "west": { "texture": "#color_stripes", "uv": [ 10, 1, 11, 15 ] }
+            }
+        },
+        {
+            "name": "SW Pillar",
+            "from": [ 0, 1, 15 ], 
+            "to": [ 1, 15, 16 ], 
+            "faces": {
+                "north": { "texture": "#color_stripes", "uv": [ 10, 1, 11, 15 ] },
+                "east": { "texture": "#color_stripes", "uv": [ 10, 1, 11, 15 ] },
+                "south": { "texture": "#color_stripes", "uv": [ 10, 1, 11, 15 ] },
+                "west": { "texture": "#color_stripes", "uv": [ 10, 1, 11, 15 ] }
+            }
+        },
+        {
+            "name": "WB Edge",
+            "from": [ 0, 0, 1 ], 
+            "to": [ 1, 1, 15 ], 
+            "faces": {
+                "east": { "texture": "#color_stripes90", "uv": [ 1, 5, 15, 6 ] },
+                "west": { "texture": "#color_stripes90", "uv": [ 1, 5, 15, 6 ] },
+                "up": { "texture": "#color_stripes90", "uv": [ 1, 6, 15, 5 ], "rotation": 90 },
+                "down": { "texture": "#color_stripes90", "uv": [ 1, 5, 15, 6 ] }
+            }
+        },
+        {
+            "name": "WT Edge",
+            "from": [ 0, 15, 1 ], 
+            "to": [ 1, 16, 15 ], 
+            "faces": {
+                "east": { "texture": "#color_stripes90", "uv": [ 1, 5, 15, 6 ] },
+                "west": { "texture": "#color_stripes90", "uv": [ 1, 5, 15, 6 ] },
+                "up": { "texture": "#color_stripes90", "uv": [ 1, 6, 15, 5 ], "rotation": 90 },
+                "down": { "texture": "#color_stripes90", "uv": [ 1, 5, 15, 6 ] }
+            }
+        },
+        {
+            "name": "ET Edge",
+            "from": [ 15, 15, 1 ], 
+            "to": [ 16, 16, 15 ], 
+            "faces": {
+                "east": { "texture": "#color_stripes90", "uv": [ 1, 5, 15, 6 ] },
+                "west": { "texture": "#color_stripes90", "uv": [ 1, 5, 15, 6 ] },
+                "up": { "texture": "#color_stripes90", "uv": [ 1, 6, 15, 5 ], "rotation": 90 },
+                "down": { "texture": "#color_stripes90", "uv": [ 1, 5, 15, 6 ] }
+            }
+        },
+        {
+            "name": "EB Edge",
+            "from": [ 15, 0, 1 ], 
+            "to": [ 16, 1, 15 ], 
+            "faces": {
+                "east": { "texture": "#color_stripes90", "uv": [ 1, 5, 15, 6 ] },
+                "west": { "texture": "#color_stripes90", "uv": [ 1, 5, 15, 6 ] },
+                "up": { "texture": "#color_stripes90", "uv": [ 1, 6, 15, 5 ], "rotation": 90 },
+                "down": { "texture": "#color_stripes90", "uv": [ 1, 5, 15, 6 ] }
+            }
+        }
+    ]
+}

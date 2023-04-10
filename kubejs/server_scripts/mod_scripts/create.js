@@ -285,11 +285,6 @@ event.shaped('create:hose_pulley', [
 event.shapeless('create:attribute_filter', [Item.of('create:attribute_filter').ignoreNBT()]).id(`mbm2:create/clear_attribute_filter`)
 event.shapeless('create:filter', [Item.of('create:filter').ignoreNBT()]).id(`mbm2:create/clear_filter`)
 
-
-	//Make some Hot Cream with a bonus chance
-	event.recipes.createMixing([Fluid.of('tconstruct:magma', 1000), Item.of('magma_cream').withChance(0.25)], ['magma_block']).heated().id(`mbm2:mixing/magma_from_block`)
-	event.recipes.createMixing([Fluid.of('tconstruct:magma', 250)], ['magma_cream']).heated().id(`mbm2:mixing/magma_from_ball`)
-
 	//Melt some Clay
 	event.recipes.createMixing([Fluid.of('tconstruct:molten_clay', 1000)], ['clay', Fluid.of('water', 1000)]).id(`mbm2:mixing/clay_from_block`)
 	event.recipes.createMixing([Fluid.of('tconstruct:molten_clay', 250)], ['clay_ball', Fluid.of('water', 250)]).id(`mbm2:mixing/clay_from_ball`)
@@ -304,5 +299,7 @@ event.shapeless('create:filter', [Item.of('create:filter').ignoreNBT()]).id(`mbm
 	//Magma balls
 	event.recipes.createMilling(['2x minecraft:magma_cream', Item.of('magma_cream').withChance(0.50), Item.of('magma_cream').withChance(0.50)], ['minecraft:magma_block']).id(`mbm2:create/crushing/magma_block`)
 
-		
+	//Magma
+	event.recipes.createFilling('magma_block', [Fluid.of('tconstruct:magma', 500), 'create:scoria']).id('mbm2:filling/magma_block_from_scoria')
+	
 });

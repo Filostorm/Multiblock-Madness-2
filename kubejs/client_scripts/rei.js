@@ -17,6 +17,10 @@ onEvent('rei.hide.items', event => {
 		event.hide(`kubejs:incomplete_${item}`)
 	})
 
+	global.transitionalItemsTexture.forEach((item) => {
+		event.hide(`kubejs:incomplete_${item}`)
+	})
+
 	global.newMaterialParts.forEach((item) => {
 		global.stoneTypes.forEach((type) => {
 			if (item.ore) {
@@ -32,7 +36,8 @@ onEvent('rei.hide.items', event => {
 		event.hide(`kubejs:crushed_${item}`)
 	})
 	
-	//event.hide(/excavated_variants:*/)
+	//Hide ores
+	event.hide(/excavated_variants:*/)
 
 	event.hide(Item.of('ae2:facade').ignoreNBT())
 	event.hide(Item.of('ae2:wireless_terminal').ignoreNBT())
@@ -176,6 +181,7 @@ onEvent("rei.group", (event) => {
 				`#forge:poor_ores/${item.material}`,
 				`#forge:ores/${item.material}`,
 				`#forge:rich_ores/${item.material}`,
+				`#forge:lumps/${item.material}`,
 
 				Item.of(`elementalcraft:pure_ore`, `{elementalcraft:{ore:"forge:${item.material}"}}`),
 				`#forge:storage_blocks/raw_${item.material}`,

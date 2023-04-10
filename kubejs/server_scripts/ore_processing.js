@@ -1,3 +1,24 @@
+
+let orePartsProcessed = [
+	'grits', 			// 0
+	'raw_materials', 	// 1
+	'crushed_ores', 	// 2
+	'chunks', 			// 3
+	'leached_ores', 	// 4
+	'deposits', 		// 5
+	'crystals', 		// 6
+]
+
+let orePartsRefined = [
+	'dusts',			// 0
+	'washed_ores', 		// 1
+	'clusters', 		// 2?
+	'infused_ores', 	// 3?
+	'bricks', 			// 4?
+	'shards', 			// 5?
+]
+
+
 global.createCrushed = [
 	'iron', 
 	'gold', 
@@ -13,19 +34,8 @@ global.createCrushed = [
 	'nickel'
 ]
 
-onEvent('tags.items', event => {
-	global.createCrushed.forEach((item) => {
-		event.add(`forge:crushed_ores/${item}`, `create:crushed_${item}_ore`)
-		event.add(`forge:crushed_ores`, `create:crushed_${item}_ore`)
-	 	event.remove(`forge:crushed_ores/${item}`, `kubejs:crushed_${item}`)
-	 })
-	 global.newMaterialParts.forEach((item) => {
-		if(item.type == 'compound_ore' && item.tier == 1){
-		event.add(`mbm2:ores/compound_ore/grits/tier_one`, `#forge:grits/${item.material}`)
-		event.add(`mbm2:ores/compound_ore/raw_materials/tier_one`, `kubejs:raw_${item.material}`)
-		}
-	 })
- });
+
+
 onEvent('recipes', event => {
 	global.createCrushed.forEach((item) => {
 		event.remove({id: `create:crushing/raw_${item}_ore`})
@@ -62,18 +72,6 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 	global.ieMixer(event, Fluid.of('kubejs:gemstone_catalyst_mixture', 1000), {"tag":"forge:experience","amount":1000}, Item.of('apotheosis:gem_dust'), 4000, 'kubejs:mixer/gemstufffluid')
 	global.ieMixer(event, Fluid.of('kubejs:gemstone_catalyst_mixture', 250), {"tag":"forge:experience","amount":250}, Item.of('ars_nouveau:source_gem'), 4000, 'kubejs:mixer/gemstufffluid_source')
 	
-	//Water Filter
-	event.shaped('4x kubejs:water_filter', [
-		'RWR',
-		'PWP',
-		'RWR'
-	], {
-		W: 'thermal:white_rockwool',
-		P: `#forge:plates/white_alloy`,
-		R: '#forge:rods/iron'
-	}).id(`mbm2:water_filter`)
-	//Filtered Water
-	global.ieMixer(event, Fluid.of('kubejs:purified_water', 2000), {"tag":"minecraft:water","amount":2000}, Item.of('kubejs:water_filter'), 4000, 'mbm2:filtering_water')
 
 
 	global.newMaterialParts.forEach((item) => {
@@ -93,7 +91,58 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 		event.remove({id: `tconstruct:smeltery/melting/metal/${item.material}/raw`})
 
 		if (item.ore) {
+			
+			let tier0Processed = [`#forge:${orePartsProcessed[0]}/${item.material}`, `#forge:${orePartsProcessed[1]}/${item.material}`, `#forge:${orePartsProcessed[2]}/${item.material}`, `#forge:${orePartsProcessed[3]}/${item.material}`, `#forge:${orePartsProcessed[4]}/${item.material}`,`#forge:${orePartsProcessed[5]}/${item.material}`, `#forge:${orePartsProcessed[6]}/${item.material}`]
+			let tier1Processed = [`#forge:${orePartsProcessed[0]}/${item.material}`, `#forge:${orePartsProcessed[2]}/${item.material}`, `#forge:${orePartsProcessed[3]}/${item.material}`, `#forge:${orePartsProcessed[4]}/${item.material}`, `#forge:${orePartsProcessed[5]}/${item.material}`, `#forge:${orePartsProcessed[6]}/${item.material}`]
+			let tier2Processed = [`#forge:${orePartsProcessed[0]}/${item.material}`, `#forge:${orePartsProcessed[3]}/${item.material}`, `#forge:${orePartsProcessed[4]}/${item.material}`, `#forge:${orePartsProcessed[5]}/${item.material}`, `#forge:${orePartsProcessed[6]}/${item.material}`]
+			let tier3Processed = [`#forge:${orePartsProcessed[0]}/${item.material}`, `#forge:${orePartsProcessed[4]}/${item.material}`, `#forge:${orePartsProcessed[5]}/${item.material}`, `#forge:${orePartsProcessed[6]}/${item.material}`]
+			let tier4Processed = [`#forge:${orePartsProcessed[0]}/${item.material}`, `#forge:${orePartsProcessed[5]}/${item.material}`, `#forge:${orePartsProcessed[6]}/${item.material}`]
+			let tier5Processed = [`#forge:${orePartsProcessed[0]}/${item.material}`, `#forge:${orePartsProcessed[6]}/${item.material}`]
+			//Washing
+			let tier1Refining = [`#forge:${orePartsProcessed[2]}/${item.material}`, `#forge:${orePartsProcessed[3]}/${item.material}`, `#forge:${orePartsProcessed[4]}/${item.material}`, `#forge:${orePartsProcessed[5]}/${item.material}`, `#forge:${orePartsProcessed[6]}/${item.material}`]
+			//idk yet tier 2 refining chunk
+			let tier2Refining = [`#forge:${orePartsProcessed[3]}/${item.material}`, `#forge:${orePartsProcessed[4]}/${item.material}`, `#forge:${orePartsProcessed[5]}/${item.material}`, `#forge:${orePartsProcessed[6]}/${item.material}`]
+			let tier3Refining = [`#forge:${orePartsProcessed[4]}/${item.material}`, `#forge:${orePartsProcessed[5]}/${item.material}`, `#forge:${orePartsProcessed[6]}/${item.material}`]
+			let tier4Refining = [`#forge:${orePartsProcessed[5]}/${item.material}`, `#forge:${orePartsProcessed[6]}/${item.material}`]
+			let tier5Refining = [`#forge:${orePartsProcessed[6]}/${item.material}`]
+			
+			let orePartsRefinedItems = [
+				`#forge:${orePartsRefined[0]}/${item.material}`, 
+				`#forge:${orePartsRefined[1]}/${item.material}`,
+				//`#forge:${orePartsRefined[2]}/${item.material}`,
+				//`#forge:${orePartsRefined[3]}/${item.material}`,
+				//`#forge:${orePartsRefined[4]}/${item.material}`,
+				//`#forge:${orePartsRefined[5]}/${item.material}`
+			]
 
+			if (item.byproducts != null) {
+				/////////////////////////////////////////////////////////
+				/////////////////// BYPRODUCT VAR SETUP /////////////////
+				/////////////////////////////////////////////////////////
+
+				///////////////////// BYPRODUCT STEP 1 //////////////////
+				if (Item.of(`#forge:grits/${item.byproducts[0]}`) != null) 
+					{global.Tier1Byproduct = `#forge:grits/${item.byproducts[0]}`}
+				else {global.Tier1Byproduct = `#forge:grits/${item.material}`}
+				///////////////////// BYPRODUCT STEP 2 //////////////////
+				if (Item.of(`#forge:grits/${item.byproducts[1]}`) != null) 
+					{global.Tier2Byproduct = `#forge:grits/${item.byproducts[1]}`} 
+				else if (Item.of(`#forge:grits/${item.byproducts[0]}`) != null) 
+					{global.Tier2Byproduct = `#forge:grits/${item.byproducts[0]}`}
+				else {global.Tier2Byproduct = `#forge:grits/${item.material}`}
+				///////////////////// BYPRODUCT STEP 3 //////////////////
+				if (Item.of(`#forge:grits/${item.byproducts[2]}`) != null) 
+					{global.Tier3Byproduct = `#forge:grits/${item.byproducts[2]}`} 
+				else if (Item.of(`#forge:grits/${item.byproducts[1]}`) != null) 
+					{global.Tier3Byproduct = `#forge:grits/${item.byproducts[1]}`} 
+				else if (Item.of(`#forge:grits/${item.byproducts[0]}`) != null) 
+					{global.Tier3Byproduct = `#forge:grits/${item.byproducts[0]}`}
+				else {global.Tier3Byproduct = `#forge:grits/${item.material}`}
+			} else {	  
+				global.Tier1Byproduct = `#forge:grits/${item.material}`
+				global.Tier2Byproduct = `#forge:grits/${item.material}`
+				global.Tier3Byproduct = `#forge:grits/${item.material}`
+			}
 
 			//Can't Smelt Complicated Metal
 			event.remove({output: `#forge:ingots/${item.material}`, type: 'minecraft:smelting'})
@@ -109,6 +158,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				if (Item.of(`#forge:washed_ores/${item.material}`) != null) {
 				event.recipes.immersiveengineeringCrusher(`#forge:dusts/${item.material}`, `#forge:washed_ores/${item.material}`).id(`mbm2:immersive/crushing/washed_${item.material}`)
 				event.recipes.createMilling([`#forge:dusts/${item.material}`], [`#forge:washed_ores/${item.material}`]).id(`mbm2:create/crushing/washed_${item.material}`)
+				event.recipes.mekanismCrushing(`#forge:dusts/${item.material}`, `#forge:washed_ores/${item.material}`).id(`mbm2:mekanism/crushing/washed_${item.material}`)
 				}
 				//Raw Ore
 				if (Item.of(`#forge:raw_materials/${item.material}`) != null) {
@@ -126,71 +176,51 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 
 			if (item.type == 'base_metal' || item.type == 'compound_ore') {
 
-		///////////////////// ORE REFINING STEP 0.5 //////////////////
-				//Create Washing 
-				event.recipes.createSplashing([`#forge:grits/${item.material}`, Item.of(`#forge:grits/${item.material}`).withChance(0.75), Item.of('gravel').withChance(0.25)], `#forge:crushed_ores/${item.material}`).id(`mbm2:washing/crushed_${item.material}`)
-
-
-				if (item.byproducts != null) {
-					/////////////////////////////////////////////////////////
-					/////////////////// BYPRODUCT VAR SETUP /////////////////
-					/////////////////////////////////////////////////////////
-
-					///////////////////// BYPRODUCT STEP 1 //////////////////
-					if (Item.of(`#forge:grits/${item.byproducts[0]}`) != null) 
-					{
-						global.Tier1Byproduct = `#forge:grits/${item.byproducts[0]}`
-					}
-					else {
-						global.Tier1Byproduct = `#forge:grits/${item.material}`
-					}
-					///////////////////// BYPRODUCT STEP 2 //////////////////
-					if (Item.of(`#forge:grits/${item.byproducts[1]}`) != null) 
-					{
-						global.Tier2Byproduct = `#forge:grits/${item.byproducts[1]}`
-					} 
-					else if (Item.of(`#forge:grits/${item.byproducts[0]}`) != null) 
-					{
-						global.Tier2Byproduct = `#forge:grits/${item.byproducts[0]}`
-					}
-					else {
-						global.Tier2Byproduct = `#forge:grits/${item.material}`
-					}
-					///////////////////// BYPRODUCT STEP 3 //////////////////
-					if (Item.of(`#forge:grits/${item.byproducts[2]}`) != null) 
-					{
-						global.Tier3Byproduct = `#forge:grits/${item.byproducts[2]}`
-					} 
-					else if (Item.of(`#forge:grits/${item.byproducts[1]}`) != null) 
-					{
-						global.Tier3Byproduct = `#forge:grits/${item.byproducts[1]}`
-					} 
-					else if (Item.of(`#forge:grits/${item.byproducts[0]}`) != null) 
-					{
-						global.Tier3Byproduct = `#forge:grits/${item.byproducts[0]}`
-					}
-					else {
-						global.Tier3Byproduct = `#forge:grits/${item.material}`
-					}
-				} else {	  
-					global.Tier1Byproduct = `#forge:grits/${item.material}`
-					global.Tier2Byproduct = `#forge:grits/${item.material}`
-					global.Tier3Byproduct = `#forge:grits/${item.material}`
-				}
 				///////////////////// ORE PROCESSING STEP 1 //////////////////
 				//Create Crushing
 				event.recipes.createCrushing([
 					`#forge:crushed_ores/${item.material}`,
-					Item.of(global.Tier1Byproduct).withChance(0.25), 
-					Item.of('create:experience_nugget').withChance(0.5)
+					Item.of(global.Tier1Byproduct).withChance(0.1), 
+					Item.of('create:experience_nugget').withChance(0.15)
 				], `#forge:raw_materials/${item.material}`).id(`mbm2:crushing/raw_${item.material}`)
 
+				//Ores give more byproduct or something
+				event.recipes.createCrushing([
+					`#forge:crushed_ores/${item.material}`,
+					Item.of(global.Tier1Byproduct).withChance(0.25), 
+					Item.of('create:experience_nugget').withChance(0.25)
+				], `#forge:ores/${item.material}`).id(`mbm2:crushing/ore_${item.material}`)
+
+
+
 				///////////////////// ORE PROCESSING STEP 2 //////////////////
+				//IE Crushing
+				global.ieCrusher(event, 
+					{"count":1,"base_ingredient":{"tag":`forge:chunks/${item.material}`}}, //Output
+					[{'chance': 0.1, 'output': {tag:global.Tier1Byproduct.slice(1)}}, {chance: 0.15, output: {item: 'immersiveengineering:slag_gravel'}}], 
+					{"tag":`forge:crushed_ores/${item.material}`}, //Input
+					6000, `mbm2:immersiveengineering/crushing/crushed_${item.material}`)
+
+				///////////////////// ORE PROCESSING STEP 3 //////////////////
+				//Water Filter
+				event.shaped('4x kubejs:water_filter', [
+					'SWS',
+					'RWR',
+					'SWS'
+				], {
+					W: 'thermal:white_rockwool',
+					S: `#forge:sheets/white_alloy`,
+					R: '#forge:rods/iron'
+				}).id(`mbm2:water_filter`)
+
+				//Filtered Water
+				global.ieMixer(event, Fluid.of('kubejs:purified_water', 2000), {"tag":"minecraft:water","amount":2000}, Item.of('kubejs:water_filter'), 4000, 'mbm2:filtering_water')
+
 				//Ore Flotation
 				event.recipes.multiblocked.multiblock("flotation")
 				.inputFluid(Fluid.of('water', 500))
-				.inputItem(`#forge:crushed_ores/${item.material}`)
-				.outputItem(Item.of(`#forge:chunks/${item.material}`))
+				.inputItem(`#forge:chunks/${item.material}`)
+				.outputItem(Item.of(`#forge:lumps/${item.material}`))
 				.outputFluid(Fluid.of('kubejs:sludge', 250))
 				.setPerTick(true)
 				.inputFE(4096)
@@ -198,8 +228,8 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				//Ore Flotation w/ Purified Water
 				event.recipes.multiblocked.multiblock("flotation")
 				.inputFluid(Fluid.of('kubejs:purified_water', 500))
-				.inputItem(`#forge:crushed_ores/${item.material}`)
-				.outputItem(Item.of(`#forge:chunks/${item.material}`))
+				.inputItem(`#forge:chunks/${item.material}`)
+				.outputItem(Item.of(`#forge:lumps/${item.material}`))
 				.setChance(0.25)
 				.outputItem(Item.of(global.Tier2Byproduct))
 				.setChance(1)
@@ -207,12 +237,12 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				.setPerTick(true)
 				.inputFE(4096)
 				.duration(100)
-				///////////////////// ORE PROCESSING STEP 3 //////////////////
+				///////////////////// ORE PROCESSING STEP 4 //////////////////
 				//Ore Leaching
 				event.recipes.multiblocked.multiblock("leaching")
 				.inputFluid(Fluid.of('mekanism:sulfuric_acid', 100))
 				.inputFluid(Fluid.of('chemlib:nitric_acid_fluid', 100))
-				.inputItem(`#forge:chunks/${item.material}`)
+				.inputItem(`#forge:lumps/${item.material}`)
 				.outputItem(Item.of(`#forge:leached_ores/${item.material}`))
 				.setChance(0.25)
 				.outputItem(Item.of(global.Tier3Byproduct))
@@ -222,42 +252,17 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				.duration(200)
 			}
 			if (item.type == 'base_metal') {
+
+				///////////////////// ORE REFINING STEP 1 //////////////////
+						//Create Washing 
+						event.recipes.createSplashing([`2x #forge:washed_ores/${item.material}`, Item.of('gravel').withChance(0.50)], `#mbm2:ore_part/refinable/${item.material}`).id(`mbm2:washing/${item.material}`)
+						event.recipes.createSplashing([`#forge:washed_ores/${item.material}`], `#forge:clusters/${item.material}`).id(`mbm2:washing/cluster_${item.material}`)
+							
+			
+
+						
 		///////////////////// ORE PROCESSING CASH OUT //////////////////
 
-				let orePartsProcessed = [
-					'raw_materials', 	// 1
-					'crushed_ores', 	// 2
-					'chunks', 			// 3
-					'leached_ores', 	// 4
-					'deposits', 		// 5
-					'crystals', 		// 6
-				]
-				let orePartsRefined = [
-					'grits', 			// 0
-					'dusts',			// 0
-					//'washed_ores', 		// 1?
-					//'clusters', 		// 2?
-					//'infused_ores', 	// 3?
-					//'bricks', 			// 4?
-					//'shards', 			// 5?
-				]
-
-				let tier0Processed = [`#forge:${orePartsProcessed[0]}/${item.material}`, `#forge:${orePartsProcessed[1]}/${item.material}`, `#forge:${orePartsProcessed[2]}/${item.material}`, `#forge:${orePartsProcessed[3]}/${item.material}`, `#forge:${orePartsProcessed[4]}/${item.material}`,`#forge:${orePartsProcessed[5]}/${item.material}`]
-				let tier1Processed = [`#forge:${orePartsProcessed[1]}/${item.material}`, `#forge:${orePartsProcessed[2]}/${item.material}`, `#forge:${orePartsProcessed[3]}/${item.material}`, `#forge:${orePartsProcessed[4]}/${item.material}`, `#forge:${orePartsProcessed[5]}/${item.material}`]
-				let tier2Processed = [`#forge:${orePartsProcessed[2]}/${item.material}`, `#forge:${orePartsProcessed[3]}/${item.material}`, `#forge:${orePartsProcessed[4]}/${item.material}`, `#forge:${orePartsProcessed[5]}/${item.material}`]
-				let tier3Processed = [`#forge:${orePartsProcessed[3]}/${item.material}`, `#forge:${orePartsProcessed[4]}/${item.material}`, `#forge:${orePartsProcessed[5]}/${item.material}`]
-				let tier4Processed = [`#forge:${orePartsProcessed[4]}/${item.material}`, `#forge:${orePartsProcessed[5]}/${item.material}`]
-				let tier5Processed = [`#forge:${orePartsProcessed[5]}/${item.material}`]
-				
-				let orePartsRefinedItems = [
-					`#forge:${orePartsRefined[0]}/${item.material}`, 
-					`#forge:${orePartsRefined[1]}/${item.material}`,
-					//`#forge:${orePartsRefined[2]}/${item.material}`,
-					//`#forge:${orePartsRefined[3]}/${item.material}`,
-					//`#forge:${orePartsRefined[4]}/${item.material}`,
-					//`#forge:${orePartsRefined[5]}/${item.material}`,
-					//`#forge:${orePartsRefined[6]}/${item.material}`
-				]
 				//Cash out at any time after refining
 
 				////////////// TIER 1 OR BELOW /////////////////////
@@ -441,105 +446,127 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 
 
 			/////////////////////////////////////////////////////////////////////////////////////////////
-			// NEED TO REWORK SORTING TIERS SO WE UNLOCK EVERY TIER OF METAL IN 5 GRADES OF PROCESSING //
+			///////////////////////////////////////// SORTING ///////////////////////////////////////////
 			/////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
 				  	//Sorting F grade at tier 1
 					event.recipes.multiblocked.multiblock('sorter_mk1')
-					.inputItem(`4x #forge:crushed_ores/${item.material}`)
-					.inputStress(64)
-					.outputItem(`#forge:crushed_ores/${item.components[0]}`)
-					.outputItem(`#forge:crushed_ores/${item.components[1]}`)
-					.outputItem('2x thermal:slag')
-					.duration(200)
+						.inputItem(`8x #forge:crushed_ores/${item.material}`)
+						.inputStress(64)
+						.outputItem(`2x #forge:crushed_ores/${item.components[0]}`)
+						.outputItem(`2x #forge:crushed_ores/${item.components[1]}`)
+						.outputItem(`#forge:crushed_ores/${item.components[2]}`)
+						.outputItem('3x thermal:slag')
+						.duration(200)
 
 					//Sorting E grade at tier 1
 				  	event.recipes.multiblocked.multiblock('sorter_mk1')
-				  	.inputItem(`8x #forge:chunks/${item.material}`)
-				  	.inputStress(64)
-				  	.outputItem(`2x #forge:chunks/${item.components[0]}`)
-				  	.outputItem(`#forge:chunks/${item.components[1]}`)
-				  	.outputItem(`#forge:chunks/${item.components[2]}`)
-				  	.outputItem('4x thermal:slag')
-				  	.duration(200)
+				  		.inputItem(`12x #forge:chunks/${item.material}`)
+				  		.inputStress(64)
+				  		.outputItem(`3x #forge:chunks/${item.components[0]}`)
+				  		.outputItem(`2x #forge:chunks/${item.components[1]}`)
+				  		.outputItem(`2x #forge:chunks/${item.components[2]}`)
+				  		.outputItem(`#forge:chunks/${item.components[3]}`)
+				  		.outputItem('4x thermal:slag')
+				  		.duration(300)
+
+					//Sorting D grade at tier 1
+					event.recipes.multiblocked.multiblock('sorter_mk1')
+						.inputItem(`16x #forge:lumps/${item.material}`)
+						.inputStress(64)
+						.outputItem(`4x #forge:lumps/${item.components[0]}`)
+						.outputItem(`3x #forge:lumps/${item.components[1]}`)
+						.outputItem(`2x #forge:lumps/${item.components[2]}`)
+						.outputItem(`2x #forge:lumps/${item.components[3]}`)
+						.outputItem(`#forge:lumps/${item.components[4]}`)
+						.outputItem('4x thermal:slag')
+						.duration(400)
+
+			///////////////////////////////////////// TIER 2 SORTING ///////////////////////////////////////////
 
 					//Sorting F grade at tier 2
 				  	event.recipes.multiblocked.multiblock('sorter_mk2')
-				  	.inputItem(`5x #forge:crushed_ores/${item.material}`)
-				  	.outputItem(`2x #forge:crushed_ores/${item.components[0]}`)
-				  	.outputItem(`2x #forge:crushed_ores/${item.components[1]}`)
-				  	.outputItem('1x thermal:slag')
+				  	.inputItem(`16x #forge:crushed_ores/${item.material}`)
+				  	.outputItem(`5x #forge:crushed_ores/${item.components[0]}`)
+				  	.outputItem(`4x #forge:crushed_ores/${item.components[1]}`)
+				  	.outputItem(`3x #forge:crushed_ores/${item.components[2]}`)
+				  	.outputItem('4x thermal:slag')
 						.setPerTick(true)
-					.inputFE(1024)
+					.inputFE(512)
 				  	.duration(200)
 
 				  //Sorting E grade at tier 2
 					event.recipes.multiblocked.multiblock('sorter_mk2')
-					.inputItem(`10x #forge:chunks/${item.material}`)
-					.outputItem(`3x #forge:chunks/${item.components[0]}`)
-					.outputItem(`3x #forge:chunks/${item.components[1]}`)
-					.outputItem(`2x #forge:chunks/${item.components[2]}`)
-					.outputItem('2x thermal:slag')
+					.inputItem(`20x #forge:chunks/${item.material}`)
+					.outputItem(`5x #forge:chunks/${item.components[0]}`)
+					.outputItem(`4x #forge:chunks/${item.components[1]}`)
+					.outputItem(`3x #forge:chunks/${item.components[2]}`)
+					.outputItem(`2x #forge:chunks/${item.components[3]}`)
+					.outputItem('6x thermal:slag')
 						.setPerTick(true)
-					.inputFE(1024*4)
+					.inputFE(512*4)
 					.duration(200)
+
+					//Sorting D grade at tier 2
+					  event.recipes.multiblocked.multiblock('sorter_mk2')
+					  .inputItem(`24x #forge:lumps/${item.material}`)
+					  .outputItem(`6x #forge:lumps/${item.components[0]}`)
+					  .outputItem(`5x #forge:lumps/${item.components[1]}`)
+					  .outputItem(`4x #forge:lumps/${item.components[2]}`)
+					  .outputItem(`3x #forge:lumps/${item.components[3]}`)
+					  .outputItem(`2x #forge:lumps/${item.components[4]}`)
+					  .outputItem('4x thermal:slag')
+						  .setPerTick(true)
+					  .inputFE(512*4)
+					  .duration(200)
 
 				  //Sorting C grade at tier 2
 				  	event.recipes.multiblocked.multiblock('sorter_mk2')
-				  	.inputItem(`15x #forge:leached_ores/${item.material}`)
-				  	.outputItem(`4x #forge:leached_ores/${item.components[0]}`)
-				  	.outputItem(`3x #forge:leached_ores/${item.components[1]}`)
-				  	.outputItem(`2x #forge:leached_ores/${item.components[2]}`)
-				  	.outputItem(`2x #forge:leached_ores/${item.components[3]}`)
-				  	.outputItem('3x thermal:slag')
+				  	.inputItem(`28x #forge:leached_ores/${item.material}`)
+				  	.outputItem(`7x #forge:leached_ores/${item.components[0]}`)
+				  	.outputItem(`6x #forge:leached_ores/${item.components[1]}`)
+				  	.outputItem(`4x #forge:leached_ores/${item.components[2]}`)
+				  	.outputItem(`3x #forge:leached_ores/${item.components[3]}`)
+				  	.outputItem(`2x #forge:leached_ores/${item.components[4]}`)
+				  	.outputItem(`2x #forge:leached_ores/${item.components[5]}`)
+				  	.outputItem('4x thermal:slag')
 						.setPerTick(true)
-					.inputFE(1024*16)
+					.inputFE(512*16)
 				  	.duration(200)
 
 					//Sorting B grade at tier 2
-					  event.recipes.multiblocked.multiblock('sorter_mk2')
-					  .inputItem(`20x #forge:deposits/${item.material}`)
-					  .outputItem(`5x #forge:deposits/${item.components[0]}`)
-					  .outputItem(`4x #forge:deposits/${item.components[1]}`)
-					  .outputItem(`3x #forge:deposits/${item.components[2]}`)
-					  .outputItem(`2x #forge:deposits/${item.components[3]}`)
-					  .outputItem(`2x #forge:deposits/${item.components[4]}`)
-					  .outputItem('4x thermal:slag')
-						.setPerTick(true)
-					.inputFE(1024*64)
-					  .duration(200)
-
-					//Sorting A grade at tier 2
 					event.recipes.multiblocked.multiblock('sorter_mk2')
-					.inputItem(`25x #forge:crystals/${item.material}`)
-					.outputItem(`5x #forge:crystals/${item.components[0]}`)
-					.outputItem(`5x #forge:crystals/${item.components[1]}`)
-					.outputItem(`4x #forge:crystals/${item.components[2]}`)
-					.outputItem(`3x #forge:crystals/${item.components[3]}`)
-					.outputItem(`2x #forge:crystals/${item.components[4]}`)
-					.outputItem(`1x #forge:crystals/${item.components[5]}`)
-					.outputItem('5x thermal:slag')
-					  .setPerTick(true)
-				  .inputFE(1024*256)
+					.inputItem(`32x #forge:deposits/${item.material}`)
+					.outputItem(`7x #forge:deposits/${item.components[0]}`)
+					.outputItem(`6x #forge:deposits/${item.components[1]}`)
+					.outputItem(`5x #forge:deposits/${item.components[2]}`)
+					.outputItem(`4x #forge:deposits/${item.components[3]}`)
+					.outputItem(`2x #forge:deposits/${item.components[4]}`)
+					.outputItem(`2x #forge:deposits/${item.components[5]}`)
+					.outputItem(`2x #forge:deposits/${item.components[6]}`)
+					.outputItem('4x thermal:slag')
+						.setPerTick(true)
+					.inputFE(512*64)
 					.duration(200)
 
 					//Sorting A grade at tier 2
-					//event.recipes.multiblocked.multiblock('sorter_mk2')
-					//.inputItem(`32x #forge:crystals/${item.material}`)
-					//.outputItem(`6x #forge:crystals/${item.components[0]}`)
-					//.outputItem(`5x #forge:crystals/${item.components[1]}`)
-					//.outputItem(`4x #forge:crystals/${item.components[2]}`)
-					//.outputItem(`4x #forge:crystals/${item.components[3]}`)
-					//.outputItem(`3x #forge:crystals/${item.components[4]}`)
-					//.outputItem(`2x #forge:crystals/${item.components[5]}`)
-					//.outputItem(`2x #forge:crystals/${item.components[6]}`)
-					//.outputItem(`1x #forge:crystals/${item.components[7]}`)
-					//.outputItem('5x thermal:slag')
-					//.setPerTick(true)
-				  	//.inputFE(1024*256)
-					//.duration(200)
+					event.recipes.multiblocked.multiblock('sorter_mk2')
+					.inputItem(`36x #forge:crystals/${item.material}`)
+					.outputItem(`7x #forge:crystals/${item.components[0]}`)
+					.outputItem(`6x #forge:crystals/${item.components[1]}`)
+					.outputItem(`5x #forge:crystals/${item.components[2]}`)
+					.outputItem(`4x #forge:crystals/${item.components[3]}`)
+					.outputItem(`3x #forge:crystals/${item.components[4]}`)
+					.outputItem(`3x #forge:crystals/${item.components[5]}`)
+					.outputItem(`2x #forge:crystals/${item.components[6]}`)
+					.outputItem(`2x #forge:crystals/${item.components[7]}`)
+					.outputItem('4x thermal:slag')
+					  .setPerTick(true)
+				  	.inputFE(512*256)
+					.duration(200)
+
 
 					//Gem Crafting
 					if (item.gem_components != null) {
@@ -657,3 +684,70 @@ onEvent('block.loot_tables', event => {
 		}
 	})
   });
+
+
+
+  onEvent('tags.items', event => {
+	global.createCrushed.forEach((item) => {
+		event.add(`forge:crushed_ores/${item}`, `create:crushed_${item}_ore`)
+		event.add(`forge:crushed_ores`, `create:crushed_${item}_ore`)
+		 event.remove(`forge:crushed_ores/${item}`, `kubejs:crushed_${item}`)
+	})
+	global.newMaterialParts.forEach((item) => {
+		if(item.type == 'compound_ore' && item.tier == 1){
+		event.add(`mbm2:ores/compound_ore/grits/tier_one`, `#forge:grits/${item.material}`)
+		event.add(`mbm2:ores/compound_ore/raw_materials/tier_one`, `kubejs:raw_${item.material}`)
+		}
+		if(item.type == 'base_metal'){
+			//if (item.tier <= 1) {
+			//		//Tier 1 Refining
+			//	event.add(`mbm2:ore_part/refinable/${item.material}`, [
+			//		`#forge:${orePartsProcessed[1]}/${item.material}`, 
+			//		`#forge:${orePartsProcessed[2]}/${item.material}`, 
+			//		`#forge:${orePartsProcessed[3]}/${item.material}`, 
+			//		`#forge:${orePartsProcessed[4]}/${item.material}`, 
+			//		`#forge:${orePartsProcessed[5]}/${item.material}`, 
+			//		`#forge:${orePartsProcessed[6]}/${item.material}`
+			//	])
+			//} else 
+			if (item.tier <= 3) {
+				//Tier 0-3 Refining
+				event.add(`mbm2:ore_part/refinable/${item.material}`, [
+					`#forge:${orePartsProcessed[2]}/${item.material}`, 
+					`#forge:${orePartsProcessed[3]}/${item.material}`, 
+					`#forge:${orePartsProcessed[4]}/${item.material}`, 
+					`#forge:${orePartsProcessed[5]}/${item.material}`, 
+					`#forge:${orePartsProcessed[6]}/${item.material}`
+				])
+			} else if (item.tier == 4 || item.tier == 5) {
+				//Tier 4-5 Refining
+				event.add(`mbm2:ore_part/refinable/${item.material}`, [
+					`#forge:${orePartsProcessed[3]}/${item.material}`, 
+					`#forge:${orePartsProcessed[4]}/${item.material}`, 
+					`#forge:${orePartsProcessed[5]}/${item.material}`, 
+					`#forge:${orePartsProcessed[6]}/${item.material}`
+				])
+			} else if (item.tier == 6) {
+				//Tier 6 Refining
+				event.add(`mbm2:ore_part/refinable/${item.material}`, [
+					`#forge:${orePartsProcessed[4]}/${item.material}`, 
+					`#forge:${orePartsProcessed[5]}/${item.material}`, 
+					`#forge:${orePartsProcessed[6]}/${item.material}`
+				])
+			} else if (item.tier == 7) {
+				//Tier 7 Refining
+				event.add(`mbm2:ore_part/refinable/${item.material}`, [
+					`#forge:${orePartsProcessed[5]}/${item.material}`, 
+					`#forge:${orePartsProcessed[6]}/${item.material}`
+				])
+			} else if (item.tier == 8) {
+				//Tier 8 Refining
+				event.add(`mbm2:ore_part/refinable/${item.material}`, [
+					`#forge:${orePartsProcessed[6]}/${item.material}`
+				])
+			}
+		}
+	})
+
+	 
+ });

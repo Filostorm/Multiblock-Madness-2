@@ -9,8 +9,8 @@
 	default_hide_dependency_lines: false
 	quests: [
 		{
-			x: 11.0d
-			y: -1.0d
+			x: 6.5d
+			y: 3.0d
 			description: [
 				"Flip to the correct book in your Tome to complete this quest."
 				""
@@ -24,8 +24,8 @@
 			}]
 		}
 		{
-			x: 11.0d
-			y: 0.5d
+			x: 8.0d
+			y: 3.0d
 			dependencies: [
 				"47AA157D687A02F7"
 				"243652BEE988A387"
@@ -44,8 +44,8 @@
 			}]
 		}
 		{
-			x: 11.0d
-			y: 2.0d
+			x: 9.5d
+			y: 3.0d
 			dependencies: ["7EBE28646422EC18"]
 			id: "0E9C33334120AC94"
 			tasks: [{
@@ -57,7 +57,7 @@
 		}
 		{
 			x: 11.0d
-			y: 3.5d
+			y: 3.0d
 			dependencies: ["0E9C33334120AC94"]
 			id: "098CAF7E91266CDC"
 			tasks: [{
@@ -67,8 +67,8 @@
 			}]
 		}
 		{
-			x: 12.5d
-			y: 2.0d
+			x: 9.5d
+			y: 1.5d
 			dependencies: ["0E9C33334120AC94"]
 			id: "1BF79E8ACC1F917F"
 			tasks: [{
@@ -78,8 +78,8 @@
 			}]
 		}
 		{
-			x: 12.5d
-			y: 3.5d
+			x: 11.0d
+			y: 1.5d
 			dependencies: ["0E9C33334120AC94"]
 			id: "1FC0519495084939"
 			tasks: [{
@@ -89,8 +89,8 @@
 			}]
 		}
 		{
-			x: 9.5d
-			y: 3.5d
+			x: 12.5d
+			y: 3.0d
 			dependencies: ["098CAF7E91266CDC"]
 			id: "12DDD9CD9F8B934F"
 			tasks: [{
@@ -106,8 +106,8 @@
 			}]
 		}
 		{
-			x: 14.0d
-			y: 2.0d
+			x: 9.5d
+			y: 0.0d
 			dependencies: ["1BF79E8ACC1F917F"]
 			id: "07A718A55B5A7318"
 			tasks: [{
@@ -553,6 +553,7 @@
 			x: 15.0d
 			y: 5.0d
 			dependencies: ["0EB55E9BCD6E97C3"]
+			min_required_tasks: 7
 			id: "598305F8C2BF7FAF"
 			tasks: [
 				{
@@ -601,6 +602,10 @@
 					ignoreState: true
 					rightclick: false
 				}
+				{
+					id: "71AFB2459ADA6603"
+					type: "checkmark"
+				}
 			]
 			rewards: [{
 				id: "76611D4EEE876285"
@@ -615,6 +620,7 @@
 			x: 15.0d
 			y: 9.5d
 			dependencies: ["758CEB9A27CE3547"]
+			min_required_tasks: 7
 			id: "738E3C876E9D4BC6"
 			tasks: [
 				{
@@ -662,6 +668,10 @@
 					layer: true
 					ignoreState: false
 					rightclick: false
+				}
+				{
+					id: "6CFC2C420AB53576"
+					type: "checkmark"
 				}
 			]
 			rewards: [{
@@ -1000,6 +1010,12 @@
 				type: "item"
 				item: "immersiveengineering:component_electronic_adv"
 			}]
+			rewards: [{
+				id: "76D14D1E66A87587"
+				type: "item"
+				item: "immersiveengineering:component_electronic_adv"
+				count: 4
+			}]
 		}
 		{
 			title: "More Engineer's Blocks"
@@ -1026,6 +1042,7 @@
 			x: 16.5d
 			y: 9.0d
 			dependencies: ["758CEB9A27CE3547"]
+			min_required_tasks: 8
 			id: "043DFE88CE9F4625"
 			tasks: [
 				{
@@ -1079,6 +1096,10 @@
 					layer: true
 					ignoreState: false
 					rightclick: false
+				}
+				{
+					id: "3C25BE9E071A47C6"
+					type: "checkmark"
 				}
 			]
 			rewards: [{
@@ -1284,8 +1305,9 @@
 			title: "Visit The End"
 			disable_toast: true
 			x: 16.5d
-			y: 5.0d
+			y: 3.0d
 			description: ["Check the Ore Processing page for a preview of the potential ores you can find."]
+			size: 1.5d
 			id: "509A0BA1A97F85A8"
 			tasks: [{
 				id: "7116268B222864B2"
@@ -1404,6 +1426,11 @@
 					item: "scannable:blank_module"
 				}
 			]
+			rewards: [{
+				id: "51118C078744459E"
+				type: "item"
+				item: "scannable:blank_module"
+			}]
 		}
 		{
 			x: 5.5d
@@ -1423,6 +1450,7 @@
 							}
 						}
 					}
+					match_nbt: true
 				}
 				{
 					id: "185EC521325CAEC0"
@@ -1462,6 +1490,7 @@
 							}
 						}
 					}
+					match_nbt: true
 				}
 				{
 					id: "1DC4319C34318628"
@@ -1501,6 +1530,7 @@
 							}
 						}
 					}
+					match_nbt: true
 				}
 				{
 					id: "7A2C33D293723FA2"
@@ -1540,6 +1570,7 @@
 							}
 						}
 					}
+					match_nbt: true
 				}
 				{
 					id: "48F8474BEDBB4BA2"
@@ -1562,29 +1593,44 @@
 			]
 		}
 		{
-			x: 8.5d
-			y: 11.0d
+			title: "Shrines"
+			x: 4.0d
+			y: 12.5d
 			description: [
-				"A basic method of in world ore collection."
-				"Earth must be piped directly into the shrine."
+				"The Ore Shrine is basic method of in world ore collection."
+				"Elements must be piped directly into any shrine."
 			]
-			dependencies: ["63D72477BB0F83A4"]
+			dependencies: ["6B06707ECFAFD263"]
 			id: "0F378674EF81D178"
 			tasks: [{
 				id: "4F33E9DF2516BCEA"
 				type: "item"
-				item: "elementalcraft:oreshrine"
+				item: "elementalcraft:shrinebase"
+			}]
+			rewards: [{
+				id: "5DBD1AD796A3FCEB"
+				type: "item"
+				item: "elementalcraft:shrine_upgrade_core"
 			}]
 		}
 		{
 			x: 12.5d
 			y: 11.5d
-			dependencies: ["0D9ABDE851B5E722"]
+			dependencies: [
+				"0D9ABDE851B5E722"
+				"592A4D0BDEB062DB"
+			]
 			id: "0BFAF74E6813F17D"
 			tasks: [{
 				id: "011FE858EDE88A1B"
 				type: "item"
 				item: "ae2:interface"
+			}]
+			rewards: [{
+				id: "708192448272E3B1"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 824098445478849879L
 			}]
 		}
 		{
@@ -1608,15 +1654,92 @@
 		{
 			x: 11.0d
 			y: 6.5d
+			description: ["The IE Assembler can use fluids that have been piped for bucket recipes."]
 			dependencies: [
-				"1A2C95D86B270D15"
 				"02E4BADB1F8BEB33"
+				"6AE6AC04DFC1A75A"
 			]
 			id: "04FD40DD2CE51B84"
 			tasks: [{
 				id: "77FE5C466581D832"
 				type: "item"
 				item: "kubejs:industrial_alloy_ingot"
+			}]
+			rewards: [{
+				id: "383A9EB2BAA49DF7"
+				type: "item"
+				item: "immersiveengineering:herbicide_bucket"
+			}]
+		}
+		{
+			title: "Signalum"
+			x: 11.0d
+			y: 11.5d
+			dependencies: ["627B714B402BEE67"]
+			id: "592A4D0BDEB062DB"
+			tasks: [
+				{
+					id: "3617876F5A6612CD"
+					type: "item"
+					item: "thermal:signalum_dust"
+				}
+				{
+					id: "7A25F75BC5C09111"
+					type: "item"
+					item: "thermal:signalum_ingot"
+				}
+			]
+		}
+		{
+			x: 19.5d
+			y: 8.0d
+			dependencies: ["7BB9213CBA0A5FCC"]
+			id: "6881A552DF61AD73"
+			tasks: [{
+				id: "5ECBA239A2EB00C8"
+				type: "item"
+				item: "ae2:drive"
+			}]
+		}
+		{
+			x: 19.5d
+			y: 5.0d
+			dependencies: ["7BB9213CBA0A5FCC"]
+			id: "6DEB9BB02E28A823"
+			tasks: [
+				{
+					id: "5C2452A928BCBE27"
+					type: "item"
+					item: "ae2:crafting_unit"
+				}
+				{
+					id: "6591CF4E4F97B357"
+					type: "item"
+					item: "ae2:cell_component_1k"
+				}
+			]
+		}
+		{
+			x: 19.5d
+			y: 6.5d
+			dependencies: ["7BB9213CBA0A5FCC"]
+			size: 1.5d
+			id: "094B760566E1D22C"
+			tasks: [{
+				id: "183F22F63183D508"
+				type: "item"
+				item: "ae2:controller"
+			}]
+		}
+		{
+			x: 2.0d
+			y: 11.0d
+			dependencies: ["40CD2EB416C68B70"]
+			id: "4F570EDAF76DCC20"
+			tasks: [{
+				id: "6A0B60F6C8CF60D3"
+				type: "item"
+				item: "ae2:quartz_growth_accelerator"
 				count: 4L
 			}]
 		}

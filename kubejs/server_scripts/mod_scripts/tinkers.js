@@ -1,4 +1,25 @@
 onEvent('recipes', event => {
+
+	//Seared Brick
+	event.remove({output: 'tconstruct:grout'})
+	event.remove({output: 'tconstruct:seared_brick'})
+	event.smelting('tconstruct:seared_brick', 'kubejs:sturdy_brick').id(`mbm2:smelting/seared_brick`)
+	
+	//Double smelting recipe
+	event.replaceInput({id: 'tconstruct:smeltery/melting/seared/grout'}, 'tconstruct:grout', 'kubejs:sturdy_brick')
+	
+
+	//Scorched Brick
+	event.remove({id: 'tconstruct:smeltery/casting/scorched/brick_composite'})
+	event.remove({id: 'tconstruct:smeltery/scorched/nether_grout'})
+
+	//Double smelting recipe
+	event.replaceInput({id: 'tconstruct:smeltery/melting/scorched/grout'}, 'tconstruct:nether_grout', 'kubejs:tough_brick')
+
+	event.smelting('tconstruct:scorched_brick', 'kubejs:tough_brick').id(`mbm2:smelting/scorched_brick`)
+	
+
+
 	event.remove({output: 'tconstruct:smeltery_controller'})
 	event.remove({output: 'tconstruct:smeltery/melting/metal/copper/smeltery_controller'})
   event.shaped('tconstruct:smeltery_controller', [
@@ -32,16 +53,8 @@ event.shaped('tconstruct:scorched_faucet', [
 	event.recipes.createMixing(`kubejs:carbon_covered_iron`, [`#forge:ingots/iron`, '#forge:dusts/coal_coke']).heated().id(`mbm2:carbon_covered_iron`)
   	global.tinkersMelting(event, 'kubejs:molten_slag', 50, 'tconstruct:molten_steel', 90, 'kubejs:carbon_covered_iron', 1200, 100, `mbm2:smeltery/melting/metal/first_steel`)
 
-	//Scorched Brick
-	event.remove({id: 'tconstruct:smeltery/casting/scorched/brick_composite'})
-	event.remove({id: 'tconstruct:smeltery/scorched/nether_grout'})
-	
-	event.recipes.createMixing('8x tconstruct:scorched_brick', [Fluid.of('tconstruct:magma', 250),'2x create:cinder_flour', '2x kubejs:sturdy_brick', 'spirit:soul_powder']).superheated().id(`mbm2:mixing/scorched_brick`)
-	event.recipes.createMixing('4x tconstruct:nether_grout', [Fluid.of('tconstruct:magma', 250),'2x create:cinder_flour', '2x kubejs:sturdy_brick', 'spirit:soul_powder']).heated().id(`mbm2:mixing/nether_grout`)
-	
 	//Foundry Controller
 	event.remove({id: 'tconstruct:smeltery/casting/scorched/foundry_controller'})
-	//global.naturesauraAltar(event, 'tconstruct:foundry_controller', 'tconstruct:scorched_bricks', 'naturesaura:nether', 30000, 160, 'mbm2:scorched/foundry_controller')
 	event.shaped('tconstruct:foundry_controller', [
 		'PCP',
 		'GBF',
@@ -55,18 +68,5 @@ event.shaped('tconstruct:scorched_faucet', [
 	  })
 	  
 
-
-		//Carbon
-		global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 150, `#forge:dusts/coal_coke`, 900, 20, `mbm2:smeltery/melting/coal_coke_dust`)
-		global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 150, `#forge:coal_coke`, 900, 20, `mbm2:smeltery/melting/coal_coke`)
-
-		global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 75, `#forge:dusts/coal`, 900, 20, `mbm2:smeltery/melting/coal_dust`)
-		global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 75, `#minecraft:coals`, 900, 20, `mbm2:smeltery/melting/coal`)
-
-		//global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 40, `#forge:charcoal`, 900, 20, `mbm2:smeltery/melting/charcoal`)
-    
-		//Redstone
-		global.tinkersMeltingPlain(event, 'thermal:redstone', 100, `#forge:dusts/redstone`, 900, 20, `mbm2:smeltery/melting/redstone`)
-		global.tinkersMeltingPlain(event, 'thermal:redstone', 900, '#forge:storage_blocks/redstone', 900, 80, `mbm2:smeltery/melting/redstone_block`)
 
 });

@@ -37,8 +37,10 @@ onEvent('recipes', event => {
 				event.custom({
 					"type":"immersiveengineering:mineral_mix",
 					"ores":[
-						{"chance":0.75,"output":{"item":`kubejs:crushed_${item.material}`}},
-						{"chance":0.25,"output":{"item":`kubejs:crushed_${item.byproducts[1]}`}}
+						{"chance":0.50,"output":{"item":`kubejs:${item.material}_ore`}},
+						{"chance":0.15,"output":{"item":`kubejs:${item.byproducts[1]}_ore`}},
+						{"chance":0.25,"output":{"item":`kubejs:crushed_${item.material}`}},
+						{"chance":0.10,"output":{"item":`kubejs:crushed_${item.byproducts[1]}`}}
 					],
 					"spoils":[
 						{"chance":0.5,"output":{"item":"minecraft:cobblestone"}},
@@ -46,7 +48,7 @@ onEvent('recipes', event => {
 						{"chance":0.2,"output":{"item":"minecraft:cobbled_deepslate"}}
 					],
 					"dimensions":["minecraft:overworld"],
-					"weight":8,"fail_chance":0.05,}).id(`mbm2:mineral/${item.material}`)
+					"weight":20,"fail_chance":0.05,}).id(`mbm2:mineral/${item.material}`)
 				}
 			})
 			event.forEachRecipe({ type: 'immersiveengineering:mineral_mix' }, recipe => {

@@ -398,4 +398,11 @@ global.removeAndHide = [
 	'geolosys:deepslate_platinum_ore',
 	'malum:copper_nugget',
 	'alloyed:bronze_nugget',
+	'createbigcannons:bronze_scrap',
+	'mekanism:dust_lapis_lazuli',
+	'farmersdelight:wheat_dough',
+	'createbigcannons:steel_scrap',
+	'alloyed:steel_nugget',
+	'tconstruct:nether_grout',
+	'tconstruct:grout',
 	]

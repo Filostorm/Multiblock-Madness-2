@@ -43,6 +43,12 @@ onEvent('recipes', event => {
 			event.remove({id: `immersiveengineering:arcfurnace/alloy_${item.material}`})
 			event.remove({id: `tconstruct:smeltery/alloys/molten_${item.material}`})
 			event.remove({id: `beyond_earth:smeltery/melting/metal/${item.material}/compresseds`})
+
+			
+			event.remove({output: `#forge:ingots/${item.material}`, type: 'minecraft:smelting'})
+			event.remove({output: `#forge:ingots/${item.material}`, type: 'minecraft:blasting'})
+
+			
 			
 
 			
@@ -94,6 +100,7 @@ onEvent('recipes', event => {
 				//Alloy Dust Smelting
 				if (Item.of(`#forge:dusts/${item.material}`) != null && Item.of(`#forge:ingots/${item.material}`) != null) {
 					event.smelting(`#forge:ingots/${item.material}`, `#forge:dusts/${item.material}`).id(`mbm2:${item.material}_furnace_smelting`)
+					event.blasting(`#forge:ingots/${item.material}`, `#forge:dusts/${item.material}`).id(`mbm2:${item.material}_furnace_blasting`)
 				}
 			}
 			////////////// TIER 2 OR BELOW /////////////////////
@@ -110,16 +117,6 @@ onEvent('recipes', event => {
 
 				//Alloying
 				if (item.ingot_input != null) {
-					/*
-					//EBF
-					event.recipes.multiblocked.multiblock("ebf")
-					.inputItems(item.ingot_input)
-					.outputItem(`${item.amount}x #forge:ingots/${item.material}`)
-					.setPerTick(true)
-					.inputFE(512 * (2**item.tier))
-					.duration(200)
-					.id(`mbm2:ebf/alloying/${item.material}_ingot`)
-					*/
 					if (item.ingot_input.length <= 5) {
 						//Arc Furnace
 						event.recipes.immersiveengineeringArcFurnace(`${item.amount}x #forge:ingots/${item.material}`, item.ingot_input[0], item.ingot_input.slice(1)).id(`mbm2:arc_furnace/${item.material}_alloying`)
@@ -162,19 +159,7 @@ onEvent('recipes', event => {
 		}
 	})
 	
-	//Energetic Alloy
-	event.recipes.tconstruct.casting_table('kubejs:energetic_alloy_ingot', 'tconstruct:molten_electrum', 90).cast('kubejs:energetic_blend').consumeCast().coolingTime(100)
 
  
-/*
-	Supported recipe methods:
-	
-	.noCast()
-	
-	.multiUseCast(castType)
-	
-	.singleUseCast(castType)
-	
-	.switchSlots()*/
 });
 	

@@ -121,3 +121,12 @@
 	#Range: > 3
 	diamond_grit_sandpaper_uses = 1024
 
+#Portable Energy Interface
+[portable_energy_interface]
+	#PEI max input in FE/t (Energy transfer).
+	#Range: > 0
+	pei_max_input = 4096
+	#PEI max output in FE/t (Energy transfer).
+	#Range: > 0
+	pei_max_output = 4096
+

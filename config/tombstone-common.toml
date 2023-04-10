@@ -136,6 +136,8 @@
 	#Duration of voodoo poppet's effects in seconds when preventing death [5..60000|default:60]
 	#Range: 5 ~ 60000
 	duration_voodoo_poppet_effects = 60
+	#Allows to disenchant enchanted books with the Book of Disenchantment
+	can_disenchant_enchanted_book = false
 
 #For settings related to decorative tombs and magic items
 [decorative_grave]
@@ -190,23 +192,8 @@
 	#Log when players are automatically back up [false/true|default:false]
 	log_auto_backup = false
 
-#Allows to change the chance to drop some items
+#Options related to looted items
 [loot]
-	#Chance on 1000 to receive a voodoo poppet on undead boss [0..1000|default:100]
-	#Range: 0 ~ 1000
-	chance_voodoo_poppet_on_boss = 100
-	#Chance on 1000 to receive a random scroll on undead boss [0..1000|default:100]
-	#Range: 0 ~ 1000
-	chance_random_scroll_on_boss = 100
-	#Chance on 1000 to receive a familiar receptacle on undead boss [0..1000|default:100]
-	#Range: 0 ~ 1000
-	chance_familiar_receptacle_on_boss = 100
-	#Chance on 1000 to receive a Soul Receptacle on undead boss [0..1000|default:50]
-	#Range: 0 ~ 1000
-	chance_soul_receptacle_on_boss = 50
-	#Chance on 1000 for undead mobs to drop Grave's Dust [0..1000|default:100]
-	#Range: 0 ~ 1000
-	chance_grave_dust = 100
 	#Minimum life for an undead to be considered as a boss for drop [200..MAX|default:200]
 	#Range: > 200
 	undead_boss_life_for_drop = 200
@@ -226,4 +213,6 @@
 	keep_cosmetic_armor = true
 	#Ensure the potion effects to stay on the player after returning from end conquered [false/true|default:true]
 	preserve_effects_on_return_end_conquered = true
+	#Allows to provide a magic book slot in Curio mod used to enchant with a soul [false/true|default:true]
+	curio_magic_book_support = true
 

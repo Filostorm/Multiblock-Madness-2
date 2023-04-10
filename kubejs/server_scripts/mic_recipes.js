@@ -137,13 +137,15 @@ event.shaped('3x kubejs:wood_scaffolding', [
 	], {
 	  C: 'cobblestone'
 	}).id("mbm2:1x_compressed_cobblestone")
+	event.shapeless('9x cobblestone', ['kubejs:1x_compressed_cobblestone']).id('mbm2:1x_uncompressed_cobblestone')
 	event.shaped('kubejs:2x_compressed_cobblestone', [
 		'CCC',
 		'CCC',
 		'CCC'
 	  ], {
 		C: 'kubejs:1x_compressed_cobblestone'
-	  }).id("mbm2:2x_compressed_cobblestone")
+	}).id("mbm2:2x_compressed_cobblestone")
+	event.shapeless('9x kubejs:1x_compressed_cobblestone', ['kubejs:2x_compressed_cobblestone']).id('mbm2:2x_uncompressed_cobblestone')
   	event.shaped('kubejs:3x_compressed_cobblestone', [
 		'CCC',
 		'CCC',
@@ -151,6 +153,7 @@ event.shaped('3x kubejs:wood_scaffolding', [
   	], {
 		C: 'kubejs:2x_compressed_cobblestone'
   	}).id("mbm2:3x_compressed_cobblestone")
+	event.shapeless('9x kubejs:2x_compressed_cobblestone', ['kubejs:3x_compressed_cobblestone']).id('mbm2:3x_uncompressed_cobblestone')
 
 
 	  

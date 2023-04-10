@@ -192,7 +192,7 @@ event.shaped('kubejs:factory_fan', [
 	'PCF',
 	'PSP'
   ], {
-	C: '#immersiveengineering:scaffoldings/steel',
+	C: '#forge:scaffoldings/steel',
 	F: 'create:propeller',
 	S: '#forge:spools/red_alloy',
 	P: '#forge:plates/cast_iron',
@@ -259,7 +259,7 @@ event.shaped('mbm2:mixer_mk1', [
 	C: 'kubejs:tier1_casing',
 	I: '#forge:interlocking_components/hepatizon',
 	M: 'create:mechanical_mixer',
-	P: '#forge:plates/duralumin',
+	P: '#forge:plates/aluminum',
 	A: 'immersiveengineering:component_electronic',
 	G: '#forge:gears/swift_alloy',
   }).id(`mbm2:mixer_mk1`)

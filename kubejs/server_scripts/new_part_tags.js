@@ -55,13 +55,8 @@ onEvent('tags.items', event => {
       })
 
       item.blockParts.forEach((part) => {
-        if (part == 'scaffolding') {
-          event.add(`immersiveengineering:scaffoldings`, `kubejs:${item.material}_scaffolding`)
-          event.add(`immersiveengineering:scaffoldings/${item.material}`, `kubejs:${item.material}_scaffolding`)
-        } else {
         event.add(`forge:${part}s`, `kubejs:${item.material}_${part}`)
         event.add(`forge:${part}s/${item.material}`, `kubejs:${item.material}_${part}`)
-        }
       })
 
 
@@ -82,6 +77,8 @@ onEvent('tags.items', event => {
           event.add(`forge:chunks/${item.material}`, `kubejs:${item.material}_chunk`)
           //event.add(`forge:clumps`, `kubejs:${item.material}_clump`)
           //event.add(`forge:clumps/${item.material}`, `kubejs:${item.material}_clump`)
+          event.add(`forge:lumps`, `kubejs:lump_of_${item.material}`)
+          event.add(`forge:lumps/${item.material}`, `kubejs:lump_of_${item.material}`)
           event.add(`forge:leached_ores`, `kubejs:leached_${item.material}`)
           event.add(`forge:leached_ores/${item.material}`, `kubejs:leached_${item.material}`)
           event.add(`forge:deposits`, `kubejs:${item.material}_deposit`)

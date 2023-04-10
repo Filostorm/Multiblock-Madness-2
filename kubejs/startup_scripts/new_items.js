@@ -38,16 +38,21 @@ var basicItems = [
 	'glass_shard',
 	'water_filter',
 	'quicksilver',
+	'shaped_quartz',
+	'blast_brick',
+	'tough_brick',
+	'captured_soul',
+	'spirited_brick',
+	'heated_brick',
+	'reactive_blend',
+	'deep_learner_base'
 ]
 
 global.transitionalItems = [
 	'basic_capacitor',
 	'circuit_board',
-	'component_electronic_adv',
 	'light_bulb',
 	'component_iron',
-	'component_electronic',
-	'electron_tube',
 	'component_steel',
 	'printed_calculation_processor',
 	'calculation_processor',
@@ -57,6 +62,11 @@ global.transitionalItems = [
 	'engineering_processor',
 	'printed_silicon',
 ]
+global.transitionalItemsTexture = [
+	'component_electronic_adv',
+	'component_electronic',
+	'electron_tube',
+]
 
 onEvent('item.registry', event => {
 	basicItems.forEach((item) => {
@@ -64,6 +74,9 @@ onEvent('item.registry', event => {
 	})
 	global.transitionalItems.forEach((item) => {
 		event.create(`incomplete_${item}`, 'create:sequenced_assembly').texture('kubejs:item/package')
+	})
+	global.transitionalItemsTexture.forEach((item) => {
+		event.create(`incomplete_${item}`, 'create:sequenced_assembly').texture(`kubejs:item/incomplete_${item}`)
 	})
 	event.create(`partially_folded_damascus_steel`, 'create:sequenced_assembly')
 

@@ -277,9 +277,7 @@ global.AssemblyLaser = (event, output, input, ID) => {
 	  global.naturesauraAltar = (event, output, input, aura_type, aura, time, ID) => {
 		  event.custom({
 			  type: 'naturesaura:altar',
-			  input: {
-				  item: input
-			  },
+			  input: input,
 			  output: {
 				  item: output
 			  },
@@ -351,6 +349,28 @@ global.ieGeneratorFuel = (event, fluidTag, burnTime) => {
 ///////////////////////////////////////////////////////////
 
 
+///////////////// Bottling ///////////////////////
+global.ieBottling = (event, itemOutput, itemInput, fluidInput, ID) => {
+	event.custom({
+		type: 'immersiveengineering:bottling_machine',
+		results: itemOutput,
+		input: itemInput,
+		fluid: fluidInput //{"tag":"forge:phenolic_resin","amount":250}
+	  }).id(ID)}
+///////////////////////////////////////////////////////////
+
+///////////////// Crushing ///////////////////////
+global.ieCrusher = (event, itemOutput, secondaries, itemInput, energy, ID) => {
+	event.custom({
+		type: 'immersiveengineering:crusher',
+		secondaries: secondaries, //[{chance:0.1,output:{tag:forge:dusts/nickel}}]
+		result: itemOutput, //{"count":2,"base_ingredient":{"tag":"forge:dusts/platinum"}}
+		input: itemInput, //{"tag":"forge:ores/platinum"}
+		energy: energy //6000
+	  }).id(ID)}
+///////////////////////////////////////////////////////////
+
+
 ///////////////// pneumaticcraftThermoPlant ///////////////////////
 global.pneumaticcraftThermoPlant = (event, itemOutput, itemInput, fluidInput, temperature, pressure, speed, air_use_multiplier, exothermic, ID) => {
 	event.custom({
@@ -399,8 +419,20 @@ global.powahEnergizing = (event, itemInput, itemOutput, energy, ID) => {
 		energy: energy, //120000
 		result: itemOutput.toJson()
 	  }).id(ID)}
-///////////////////////////////////////////////////////////
 
+///////////////////////////////////////////////////////////
+///////////////// ENERGIZING ///////////////////////
+
+global.elementalcraftBinding = (event, element_type, element_amount, itemOutput, itemInput, ID) => {
+event.custom({
+	type: 'elementalcraft:binding',
+	element_type: element_type, //air
+	element_amount: element_amount, //2500
+	ingredients: itemInput,
+	output: itemOutput
+  }).id(ID)}
+
+///////////////////////////////////////////////////////////
 ///////////////// DESSOLVING ///////////////////////
 global.alchemistryDissolver = (event, itemOutput, itemInput, itemInputAmount, rolls, weighted, ID) => {
 	event.custom({

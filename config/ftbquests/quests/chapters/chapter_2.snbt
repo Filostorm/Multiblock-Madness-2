@@ -648,10 +648,10 @@
 		{
 			title: "Metal Tools"
 			icon: "tconstruct:seared_melter"
-			x: -10.0d
-			y: 6.5d
+			x: 3.5d
+			y: 8.5d
 			subtitle: "Reusable Casts are made from Brass"
-			dependencies: ["55B6D04F54F29F96"]
+			dependencies: ["760223888ADD58B0"]
 			id: "23D386A39C0311F4"
 			tasks: [
 				{

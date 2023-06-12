@@ -405,4 +405,6 @@ global.removeAndHide = [
 	'alloyed:steel_nugget',
 	'tconstruct:nether_grout',
 	'tconstruct:grout',
+	'powah:uraninite_raw',
+	'mekanism:dust_coal',
 	]

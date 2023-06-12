@@ -1,0 +1,8 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "kubejs:item/ore/leached",
+        "layer1": "kubejs:item/ore/leached_overlay"
+    }
+  }
+  

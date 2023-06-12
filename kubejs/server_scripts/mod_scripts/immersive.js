@@ -3,14 +3,15 @@
 onEvent('tags.items', event => {
   event.remove(`forge:rods/wooden`, 'immersiveengineering:stick_treated')
   event.remove('minecraft:planks', 'immersiveengineering:fiberboard')
-
-   
+  
+  event.add(`forge:scaffoldings/steel`, 'immersiveengineering:steel_scaffolding_standard')
+  event.add(`forge:scaffoldings/aluminium`, 'immersiveengineering:alu_scaffolding_standard')
  });
 
 
 onEvent('recipes', event => {
 
-  //No recyclingS
+  //No recycling - doesnt work, prob needs to be an actual datapack
   //event.custom({
 	//  "type": "immersiveengineering:generated_list",
 	//  "conditions": [ { "type": "forge:false" } ]
@@ -19,8 +20,6 @@ onEvent('recipes', event => {
 
 //Fuels
   global.ieGeneratorFuel(event, 'forge:diesel', 400) //*4096
-  event.custom({"type":"immersiveengineering:blast_furnace_fuel","input":{"item":"malum:arcane_charcoal"},"time":600})
-  event.custom({"type":"immersiveengineering:blast_furnace_fuel","input":{"item":'malum:block_of_arcane_charcoal'},"time":6000})
   
   //Hammer
 	event.remove({input:'immersiveengineering:hammer'}) // Random Crushing etc
@@ -325,4 +324,14 @@ event.recipes.immersiveengineeringArcFurnace([outputs], input)
 event.recipes.immersiveengineeringArcFurnace([outputs], input, [additives])
 event.recipes.immersiveengineeringArcFurnace([outputs], input, [additives], slag)
 */
+
+
+	//Lots of Sawdust
+	event.remove({id: 'immersiveengineering:crafting/fiberboard'})
+  event.custom({
+    "type":"immersiveengineering:shaped_fluid",
+    "pattern":["www","wbw","www"],
+    "key":{"w":{"item":"thermal:sawdust_block"},
+    "b":{"tag":"forge:phenolic_resin","amount":1000,"type":"immersiveengineering:fluid"}},
+    "result":{"item":"immersiveengineering:fiberboard","count":8}}).id('mbm2:crafting/fiberboard')
 });

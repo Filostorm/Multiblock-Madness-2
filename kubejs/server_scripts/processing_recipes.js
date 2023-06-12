@@ -104,4 +104,10 @@ onEvent('recipes', event => {
 		global.tinkersMeltingPlain(event, 'createbigcannons:molten_nethersteel', 810, Ingredient.of('createbigcannons:nethersteel_block').toJson(), 900, 120, `mbm2:smeltery/melting/nethersteel_block`)
 		global.tinkersMeltingPlain(event, 'createbigcannons:molten_nethersteel', 10, Ingredient.of('createbigcannons:nethersteel_nugget').toJson(), 900, 10, `mbm2:smeltery/melting/nethersteel_nugget`)
 	
+		//Luminite
+		global.tinkersMeltingPlain(event, 'kubejs:molten_luminite', 250, Ingredient.of('#forge:dusts/luminite').toJson(), 900, 80, `mbm2:smeltery/melting/luminite_dust`)
+		global.tinkersMeltingPlain(event, 'kubejs:molten_luminite', 250, Ingredient.of('#forge:gems/luminite').toJson(), 900, 150, `mbm2:smeltery/melting/luminite_gem`)
+		
+		global.casingTable(event, 'tconstruct:casts/multi_use/gem', false, `#forge:gems/luminite`, `forge:molten_luminite`, 90, 60, `tconstruct:smeltery/casting/metal/luminite/gem_gold_cast`)
+		global.casingTable(event, 'tconstruct:casts/single_use/gem', true, `#forge:gems/luminite`, `forge:molten_luminite`, 90, 60, `tconstruct:smeltery/casting/metal/luminite/gem_sand_cast`)
 });

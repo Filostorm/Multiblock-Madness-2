@@ -105,13 +105,12 @@
         "type": "component"
       },
       "B": {
-        "states": [
+        "blocks": [
           {
-            "id": "createaddition:connector",
-            "meta": 22
+            "id": "createaddition:connector"
           }
         ],
-        "type": "states"
+        "type": "blocks"
       },
       "C": {
         "location": "multiblocked:create_input",

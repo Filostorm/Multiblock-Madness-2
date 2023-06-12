@@ -21,6 +21,9 @@ onEvent('tags.items', event => {
 		event.add('forge:ingots', 'createbigcannons:nethersteel_ingot')
 		event.add('forge:ingots/nethersteel', 'createbigcannons:nethersteel_ingot')
 		
+		event.add('forge:ingots', 'createbigcannons:cast_iron_ingot')
+		event.add('forge:ingots/cast_iron', 'createbigcannons:cast_iron_ingot')
+		
 		
 }); 
 onEvent('recipes', event => {
@@ -207,7 +210,7 @@ event.shaped('create:hose_pulley', [
 		Item.of('hexerei:mahogany_sapling').withChance(0.01),
 		Item.of('hexerei:willow_sapling').withChance(0.01),
 		Item.of('forbidden_arcanus:growing_edelwood').withChance(0.01),
-		Item.of('malum:runewood_sapling').withChance(0.01)
+		//Item.of('malum:runewood_sapling').withChance(0.01)
 	  ], '#minecraft:leaves').id(`mbm2:crushing/leaves_into_saplings`)
 
 	/// Blaze Burner

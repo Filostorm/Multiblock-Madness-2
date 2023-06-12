@@ -187,6 +187,14 @@
         "io": "IN",
         "slotName": "fluid_in"
       },
+      "J": {
+        "blocks": [
+          {
+            "id": "kubejs:vibranium_coil"
+          }
+        ],
+        "type": "blocks"
+      },
       "any": {
         "type": "any"
       }
@@ -209,7 +217,8 @@
         "B"
       ],
       "C": [
-        "C"
+        "C",
+        "J"
       ],
       "D": [
         "D"

@@ -67,6 +67,25 @@ event.shaped('tconstruct:scorched_faucet', [
 		F: 'elementalcraft:firecrystal'
 	  })
 	  
-
+	  //Blazing Pyrotheum
+	  event.custom({
+		"type": "tconstruct:melting_fuel",
+		"fluid": {
+		  "name": "kubejs:blazing_pyrotheum",
+		  "amount": 10
+		},
+		"duration": 100,
+		"temperature": 2000
+	  })
+	  //Molten Luminite
+	  event.custom({
+		"type": "tconstruct:melting_fuel",
+		"fluid": {
+		  "name": "kubejs:molten_luminite",
+		  "amount": 50
+		},
+		"duration": 200,
+		"temperature": 1500
+	  })
 
 });

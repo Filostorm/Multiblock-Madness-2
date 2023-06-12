@@ -10,8 +10,8 @@
 	quests: [
 		{
 			title: "Collecting some Elemental Juice"
-			x: -4.0d
-			y: 7.5d
+			x: -5.0d
+			y: 7.0d
 			description: ["Right click the pipe connection to change to extraction mode."]
 			dependencies: ["027AD6DB4DE3B445"]
 			id: "08C3C85483A79429"
@@ -75,8 +75,8 @@
 		}
 		{
 			title: "Elemental Infused Items"
-			x: -1.0d
-			y: 6.0d
+			x: -2.5d
+			y: 5.5d
 			dependencies: ["0828BD31B9F3CD36"]
 			id: "391E4F9DA1A3D71B"
 			tasks: [{
@@ -1011,59 +1011,7 @@
 			}]
 		}
 		{
-			title: "Soulstone"
-			icon: "malum:raw_soulstone"
 			x: -6.5d
-			y: 8.0d
-			subtitle: "Check out the Encyclopedia Arcana in your Akashic Tome!"
-			dependencies: ["03F754FB73DEF8FA"]
-			id: "2163DA8A84BF6CFE"
-			tasks: [
-				{
-					id: "3F3B39AF3DFF5E52"
-					type: "item"
-					item: "malum:raw_soulstone"
-				}
-				{
-					id: "2C7EFB861C7E5112"
-					type: "item"
-					item: "malum:processed_soulstone"
-				}
-			]
-			rewards: [{
-				id: "2B4F9464FD16B589"
-				type: "random"
-				exclude_from_claim_all: true
-				table_id: 2582656620646881183L
-			}]
-		}
-		{
-			x: -6.5d
-			y: 6.5d
-			subtitle: "Time to harvest some Souls"
-			description: ["Killing Mobs with this will cause them to drop Souls, which will be important later on."]
-			dependencies: ["2163DA8A84BF6CFE"]
-			id: "640735039C951CE4"
-			tasks: [{
-				id: "5074DF51938F6C21"
-				type: "item"
-				item: {
-					id: "malum:crude_scythe"
-					Count: 1b
-					tag: {
-						Damage: 0
-					}
-				}
-			}]
-			rewards: [{
-				id: "5BD25CF1CD17863C"
-				type: "random"
-				exclude_from_claim_all: true
-				table_id: 2582656620646881183L
-			}]
-		}
-		{
-			x: -5.0d
 			y: 8.5d
 			subtitle: "Check out the Elementopedia in your Akashic Tome!"
 			description: ["Elements! It only takes a few seconds to fill a tiny jar from a wild source, or about 5 elemental shards if you've collected some from drops."]
@@ -1102,8 +1050,8 @@
 					tag: {
 						BlockEntityTag: {
 							TankInv: [{
-								FluidName: "minecraft:empty"
 								Tank: 0b
+								FluidName: "minecraft:empty"
 								Capacity: 32000
 								Amount: 0
 							}]
@@ -1126,8 +1074,8 @@
 		{
 			title: "Upgrades!"
 			icon: "elementalcraft:container"
-			x: 0.5d
-			y: 5.0d
+			x: -2.5d
+			y: 4.0d
 			dependencies: ["391E4F9DA1A3D71B"]
 			id: "1207300474ACF750"
 			tasks: [
@@ -1202,7 +1150,7 @@
 					id: "itemfilters:tag"
 					Count: 1b
 					tag: {
-						value: "mbm2:ores/compound_ore/grits/tier_one"
+						value: "forge:ores/compound/grit"
 					}
 				}
 			}]
@@ -1225,7 +1173,7 @@
 					id: "itemfilters:tag"
 					Count: 1b
 					tag: {
-						value: "mbm2:ores/compound_ore/raw_materials/tier_one"
+						value: "forge:ores/compound/raw"
 					}
 				}
 			}]

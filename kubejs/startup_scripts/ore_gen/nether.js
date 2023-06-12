@@ -218,7 +218,8 @@ onEvent('worldgen.add', event => {
 		ore.chance = 0
 		ore.biomes = "^nether"
 	})
-
+	
+/*
 	// Base Blazing Quartz Veins
 	event.addOre((ore) => {
 		ore.id = 'kubejs:nether_blazing_quartz_ore'
@@ -243,7 +244,7 @@ onEvent('worldgen.add', event => {
 		ore.chance = 0
 		ore.biomes = "^nether"
 	})
-
+*/
 
 	//// Inserted Dense Ore
 	//event.addOre((ore) => {
@@ -318,10 +319,13 @@ onEvent('worldgen.add', event => {
 
 
 	// Inserted Nether Lumite
+	
+	//Maybe make a seperate vein??
+
 	event.addOre((ore) => {
 		ore.id = 'kubejs:nether_lumite'
 
-		ore.addTarget(`malum:blazing_quartz_ore`, `kubejs:netherrack_lumite_ore`)
+		//ore.addTarget(`malum:blazing_quartz_ore`, `kubejs:netherrack_lumite_ore`)
 			global.stoneTypes.forEach((type) => {
 				if (type.material != 'deepslate' && type.material != 'bedrock' && type.material != 'netherrack') {
 				ore.addTarget(`excavated_variants:${type.material}_gold_ore`, `kubejs:${type.material}_lumite_ore`)

@@ -57,7 +57,7 @@
 	#Points for zombie villager exorcism [0..50|default:3]
 	#Range: 0 ~ 50
 	points_exorcism_zombie_villager = 3
-	#Points for killing a villager (or minecolonies citizen) [-50..0|default:-3]
+	#Points for killing a villager [-50..0|default:-3]
 	#Range: -50 ~ 0
 	points_kill_villager = -3
 	#Points for killing a raider [0..20|default:1]

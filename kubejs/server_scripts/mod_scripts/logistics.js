@@ -151,7 +151,7 @@ onEvent('recipes', event => {
 
 	//Pipez Item Pipe
 	event.remove({output: 'pipez:item_pipe'})
-  	event.shaped('4x pipez:item_pipe', [
+  	event.shaped('8x pipez:item_pipe', [
 		'PPP',
 		'BSB',
 		'PPP'
@@ -163,7 +163,7 @@ onEvent('recipes', event => {
 
 	//Pipez Fluid Pipe
 	event.remove({output: 'pipez:fluid_pipe'})
-  	event.shaped('4x pipez:fluid_pipe', [
+  	event.shaped('8x pipez:fluid_pipe', [
 		'PPP',
 		'BSB',
 		'PPP'
@@ -175,7 +175,7 @@ onEvent('recipes', event => {
 
 	//Pipez Energy Pipe
 	event.remove({output: 'pipez:energy_pipe'})
-  	event.shaped('4x pipez:energy_pipe', [
+  	event.shaped('8x pipez:energy_pipe', [
 		'PPP',
 		'BSB',
 		'PPP'
@@ -187,7 +187,7 @@ onEvent('recipes', event => {
 
 	//Pipez Gas Pipe
 	event.remove({output: 'pipez:gas_pipe'})
-  	event.shaped('4x pipez:gas_pipe', [
+  	event.shaped('8x pipez:gas_pipe', [
 		'PPP',
 		'BSB',
 		'PPP'

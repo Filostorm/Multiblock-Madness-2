@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "excavated_variants:block/calcite_soulstone_ore0"
-  }
-}

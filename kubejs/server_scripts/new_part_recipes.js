@@ -80,17 +80,6 @@ onEvent('recipes', event => {
 	//Thermal Plates
 	event.recipes.thermal.press(`2x #forge:plates/${item.material}`, `3x #forge:ingots/${item.material}`).id(`thermal:machines/press/press_${item.material}_ingot_to_plate`)
 	
-	/*
-	////////////////DENSE PLATES///////////////
-    if (Item.of(`#forge:dense_plates/${item.material}`) != null) {
-
-	//Create Dense Plates
-  	event.recipes.createPressing(`#forge:dense_plates/${item.material}`, `#forge:storage_blocks/${item.material}`).id(`create:pressing/dense_${item.material}_plate`)
-
-	//Immersive Dense Plates
- 	event.recipes.immersiveengineeringMetalPress(`#forge:dense_plates/${item.material}`, `#forge:storage_blocks/${item.material}`, 'immersiveengineering:mold_plate').id(`immersiveengineering:metalpress/dense_plate_${item.material}`)
-	}*/
-
 
 	////////////////SHEETS///////////////
     if (Item.of(`#forge:sheets/${item.material}`) != null) {
@@ -276,16 +265,40 @@ onEvent('recipes', event => {
 		////////////////SCAFFOLDING///////////////
 		if (Item.of(`#forge:scaffoldings/${item.material}`) != null) {
 			if (Item.of(`#forge:rods/${item.material}`) != null) {
-			event.shaped(`6x #forge:scaffoldings/${item.material}`, [
-				'III',
-				' R ',
-				'R R'
+			event.shaped(`2x #forge:scaffoldings/${item.material}`, [
+				'RRR',
+				'R R',
+				'RRR'
 			  ], {
-				I: `#forge:ingots/${item.material}`,
 				R: `#forge:rods/${item.material}`,
-			  }).id(`mbm2:crafting/${item.material}_scaffolding_standard`)
+			  }).id(`mbm2:crafting/${item.material}_scaffolding`)
 			} else { console.log(`${item.material}` + "needs rods enabled to make a scaffolding recipe");}
-			}
+			
+			////////////////FRAME BOXES///////////////
+			if (Item.of(`#forge:frame_boxs/${item.material}`) != null) {
+				event.shaped(`#forge:frame_boxs/${item.material}`, [
+					' P ',
+					'PSP',
+					' P '
+				  ], {
+					S: `#forge:scaffoldings/${item.material}`,
+					P: `#forge:plates/${item.material}`,
+				  }).id(`mbm2:crafting/${item.material}_frame_box`)
+
+				  ////////////////HULL CASINGS///////////////
+				  if (Item.of(`#forge:hull_casings/${item.material}`) != null) {
+					  event.shaped(`#forge:hull_casings/${item.material}`, [
+						  'BPB',
+						  'PFP',
+						  'BPB'
+						], {
+						  F: `#forge:frame_boxs/${item.material}`,
+						  P: `#forge:hull_panels/${item.material}`,
+						  B: `#forge:bolts/${item.material}`,
+						}).id(`mbm2:crafting/${item.material}_hull_casing`)
+					}
+				}
+		}
 	}
 	////////////////WIRES///////////////
     if (Item.of(`#forge:wires/${item.material}`) != null) {
@@ -388,6 +401,7 @@ onEvent('recipes', event => {
 				N: `#forge:nuggets/${item.material}`,
 			})
 		}
+	}
 
 		if (item.blockParts.includes('storage_block')) {
 			if(item.type == 'gem') {
@@ -412,13 +426,12 @@ onEvent('recipes', event => {
 					  })
 					}
 		}
-	}
 	  if (item.fluid != null && (item.type == 'base_metal' || item.type == 'alloy'))
 	  {
     	if (Item.of(`#forge:ingots/${item.material}`) != null) {
 		//Ingot Casing
-		 global.casingTable(event, 'tconstruct:casts/multi_use/ingot', false, `#forge:ingots/${item.material}`, `forge:molten_${item.material}`, 90, 60, `tconstruct:smeltery/casting/metal/${item.material}/ingot_gold_cast`)
 		 global.casingTable(event, 'tconstruct:casts/single_use/ingot', true, `#forge:ingots/${item.material}`, `forge:molten_${item.material}`, 90, 60, `tconstruct:smeltery/casting/metal/${item.material}/ingot_sand_cast`)
+		 global.casingTable(event, 'tconstruct:casts/multi_use/ingot', false, `#forge:ingots/${item.material}`, `forge:molten_${item.material}`, 90, 60, `tconstruct:smeltery/casting/metal/${item.material}/ingot_gold_cast`)
 		}
 		 if (Item.of(`#forge:nuggets/${item.material}`) != null) {
 		//Nugget Casing

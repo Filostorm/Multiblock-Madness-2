@@ -17,4 +17,6 @@
 	#Potion duration, in seconds
 	#Range: > 0
 	potion_time = 30
+	#Make lights created expire after some time.
+	temporary_lights_only = false
 

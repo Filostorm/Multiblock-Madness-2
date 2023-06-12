@@ -737,7 +737,7 @@
 		}
 		{
 			title: "Wood Farm"
-			icon: "malum:runewood_sapling"
+			icon: "minecraft:oak_sapling"
 			x: 1.0d
 			y: 4.0d
 			dependencies: ["50E9DDE83C23EE6E"]
@@ -954,18 +954,11 @@
 			y: 1.5d
 			dependencies: ["51537052A03715D7"]
 			id: "4C7F486D0CCC38E0"
-			tasks: [
-				{
-					id: "752E000F9A15AFDB"
-					type: "item"
-					item: "tconstruct:nether_grout"
-				}
-				{
-					id: "0F1654D64E14ACFE"
-					type: "item"
-					item: "tconstruct:scorched_brick"
-				}
-			]
+			tasks: [{
+				id: "0F1654D64E14ACFE"
+				type: "item"
+				item: "tconstruct:scorched_brick"
+			}]
 		}
 		{
 			x: 13.0d

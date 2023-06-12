@@ -127,7 +127,7 @@ event.shaped('thermal:device_tree_extractor', [
   ], {
 	A: '#minecraft:planks',
 	B: '#forge:gears/copper',
-	C: '#forge:cogwheels',
+	C: '#extendedgears:small_cogwheel',
 	D: 'thermal:redstone_servo',
 	E: 'minecraft:bucket'
   }).id("mbm2:device_tree_extractor")

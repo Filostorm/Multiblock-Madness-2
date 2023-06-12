@@ -27,6 +27,7 @@
  .setPerTick(boolean) // Switch perTick on/off
 */
 
+	//Sulfuric Acid
 	event.recipes.multiblocked.multiblock("chemical_reactor")
 		.inputFluid(Fluid.of('mekanism:oxygen', 1000))
 		//.inputFluid(r.input)
@@ -35,5 +36,15 @@
 		.outputFluid(Fluid.of('mekanism:sulfuric_acid', 1000))
 		.setPerTick(true)
 		.inputFE(1024)
+		.duration(200)
+
+	//Nitric Acid
+	event.recipes.multiblocked.multiblock("chemical_reactor")
+		.inputFluid(Fluid.of('mekanism:oxygen', 300))
+		.inputFluid(Fluid.of('mekanism:hydrogen', 100))
+		.inputFluid(Fluid.of('chemlib:nitrogen_fluid', 100))
+		.outputFluid(Fluid.of('chemlib:nitric_acid_fluid', 400))
+		.setPerTick(true)
+		.inputFE(1024*2)
 		.duration(200)
   })

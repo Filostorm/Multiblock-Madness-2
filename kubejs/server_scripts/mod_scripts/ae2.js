@@ -141,6 +141,20 @@ onEvent('recipes', event => {
   //Silicon
   event.smelting('ae2:silicon', `#forge:dusts/quartz`).id(`mbm2:silicon_from_quartz`)
   
+	//controller
+	event.remove({id: 'ae2:network/blocks/controller'})
+	event.shaped('ae2:controller', [
+	  'HCH',
+	  'GSG',
+	  'HCH'
+	], {
+	  S: '#forge:frame_boxs/titanite',
+	  C: 'pneumaticcraft:printed_circuit_board',
+	  H: '#forge:plates/fluix_steel',
+	  G: 'ae2:quartz_vibrant_glass',
+
+	}).id('mbm2:controller')
+
 	//energy_acceptor
 	event.remove({id: 'ae2:network/blocks/energy_energy_acceptor'})
 	event.shaped('ae2:energy_acceptor', [
@@ -292,6 +306,35 @@ onEvent('recipes', event => {
 		E: 'ae2:calculation_processor',
 		C: 'ae2:fluix_smart_cable'
 	}).id('mbm2:crafting_unit')
+  
+	//Pattern Provider
+	event.remove({id: 'ae2:network/blocks/pattern_providers_interface'})
+	event.shaped('ae2:pattern_provider', [
+	  'PQP',
+	  'FEA',
+	  'PQP'
+	], {
+	  P: '#forge:plates/lumium',
+	  A: 'ae2:annihilation_core',
+	  F: 'ae2:formation_core',
+	  Q: 'ae2:quartz_glass',
+	  E: 'immersiveengineering:component_electronic_adv'
+	}).id('mbm2:pattern_provider')
+	
+	
+	//Pattern
+	event.remove({id: 'ae2:network/crafting/patterns_blank'})
+	event.shaped('ae2:blank_pattern', [
+	  'GEG',
+	  'QFQ',
+	  'PPP'
+	], {
+		F: 'immersiveengineering:fiberboard',
+		P: '#forge:plates/aluminum',
+		Q: 'ae2:quartz_glass',
+		G: 'minecraft:glowstone_dust',
+		E: 'immersiveengineering:component_electronic'
+	}).id('mbm2:blank_pattern')
   
 	//Fluix Covered Cable
 	event.remove({id: 'ae2:network/cables/covered_fluix'})

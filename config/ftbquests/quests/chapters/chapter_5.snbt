@@ -783,6 +783,48 @@
 				}
 			]
 		}
+		{
+			x: 19.5d
+			y: -5.0d
+			id: "6C28DC909024B307"
+			tasks: [{
+				id: "6088ADB207CC8C2F"
+				type: "item"
+				item: "botania:manasteel_ingot"
+			}]
+		}
+		{
+			x: 23.0d
+			y: -1.0d
+			dependencies: ["12B7444358A1347F"]
+			id: "20131C71C11BA473"
+			tasks: [{
+				id: "16772EB2CE632E80"
+				type: "item"
+				item: "elementalcraft:purifier"
+			}]
+		}
+		{
+			x: 9.0d
+			y: -4.5d
+			dependencies: [
+				"43F8546BD8107D1C"
+				"281E051C6D348B35"
+			]
+			size: 1.5d
+			id: "094B760566E1D22C"
+			tasks: [{
+				id: "183F22F63183D508"
+				type: "item"
+				item: "ae2:controller"
+			}]
+			rewards: [{
+				id: "6B6DA48A6E7D9019"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 824098445478849879L
+			}]
+		}
 	]
 	quest_links: [ ]
 }

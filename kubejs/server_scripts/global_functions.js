@@ -52,9 +52,7 @@ global.tinkersOreMelting = (event, outputFluid, amount, byproductFluid, byproduc
 	event.custom({
 		type: 'tconstruct:ore_melting',
 		rate: 'metal',
-		ingredient: {
-			tag: inputItem
-		},
+		ingredient: inputItem,
 		result: {
 		  fluid: outputFluid, 
 		  amount: amount //180
@@ -460,4 +458,26 @@ global.alchemistryCompacting = (event, itemOutput, itemInput, ID) => {
 		input: itemInput,
 		result: itemOutput
 	  }).id(ID)}
+///////////////////////////////////////////////////////////
+
+
+///////////////// INFUSING ///////////////////////
+global.mekanismMetallurgicInfusing = (event, itemOutput, itemInput, chemicalInput, chemicalAmount, ID) => {
+	event.custom({
+		type: 'mekanism:metallurgic_infusing',
+		itemInput: {"ingredient":itemInput.toJson()},
+		chemicalInput: {"amount":chemicalAmount,"tag":chemicalInput},
+		output: itemOutput.toJson()
+	  }).id(ID)}
+
+///////////////////////////////////////////////////////////
+
+///////////////// INFUSE TYPES ///////////////////////
+global.mekanismInfusionConversion = (event, itemInput, infuseOutput, infuseAmount, ID) => {
+	event.custom({
+		type: 'mekanism:infusion_conversion',
+		input:{"ingredient":itemInput.toJson()},
+		output:{"infuse_type":infuseOutput,"amount":infuseAmount}
+	  }).id(ID)}
+
 ///////////////////////////////////////////////////////////

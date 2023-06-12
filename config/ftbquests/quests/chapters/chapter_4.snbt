@@ -1305,7 +1305,7 @@
 			title: "Visit The End"
 			disable_toast: true
 			x: 16.5d
-			y: 3.0d
+			y: 4.5d
 			description: ["Check the Ore Processing page for a preview of the potential ores you can find."]
 			size: 1.5d
 			id: "509A0BA1A97F85A8"
@@ -1323,6 +1323,7 @@
 			dependencies: [
 				"40CD2EB416C68B70"
 				"61CCA7FA3C371180"
+				"4056DE989F8A8E98"
 			]
 			size: 1.25d
 			id: "627B714B402BEE67"
@@ -1615,7 +1616,7 @@
 		}
 		{
 			x: 12.5d
-			y: 11.5d
+			y: 12.5d
 			dependencies: [
 				"0D9ABDE851B5E722"
 				"592A4D0BDEB062DB"
@@ -1672,10 +1673,12 @@
 			}]
 		}
 		{
-			title: "Signalum"
+			title: "Advanced Energetic Alloys"
 			x: 11.0d
-			y: 11.5d
+			y: 12.0d
+			description: ["You might want to set up some good power supply before mass producing AE components."]
 			dependencies: ["627B714B402BEE67"]
+			min_required_tasks: 1
 			id: "592A4D0BDEB062DB"
 			tasks: [
 				{
@@ -1684,15 +1687,15 @@
 					item: "thermal:signalum_dust"
 				}
 				{
-					id: "7A25F75BC5C09111"
+					id: "1460BBB1A47E4503"
 					type: "item"
-					item: "thermal:signalum_ingot"
+					item: "thermal:lumium_dust"
 				}
 			]
 		}
 		{
 			x: 19.5d
-			y: 8.0d
+			y: 7.0d
 			dependencies: ["7BB9213CBA0A5FCC"]
 			id: "6881A552DF61AD73"
 			tasks: [{
@@ -1703,32 +1706,13 @@
 		}
 		{
 			x: 19.5d
-			y: 5.0d
+			y: 6.0d
 			dependencies: ["7BB9213CBA0A5FCC"]
 			id: "6DEB9BB02E28A823"
-			tasks: [
-				{
-					id: "5C2452A928BCBE27"
-					type: "item"
-					item: "ae2:crafting_unit"
-				}
-				{
-					id: "6591CF4E4F97B357"
-					type: "item"
-					item: "ae2:cell_component_1k"
-				}
-			]
-		}
-		{
-			x: 19.5d
-			y: 6.5d
-			dependencies: ["7BB9213CBA0A5FCC"]
-			size: 1.5d
-			id: "094B760566E1D22C"
 			tasks: [{
-				id: "183F22F63183D508"
+				id: "6591CF4E4F97B357"
 				type: "item"
-				item: "ae2:controller"
+				item: "ae2:cell_component_1k"
 			}]
 		}
 		{
@@ -1741,6 +1725,43 @@
 				type: "item"
 				item: "ae2:quartz_growth_accelerator"
 				count: 4L
+			}]
+		}
+		{
+			x: 12.5d
+			y: 11.5d
+			dependencies: [
+				"0D9ABDE851B5E722"
+				"592A4D0BDEB062DB"
+			]
+			id: "6C4354CB6E54A96A"
+			tasks: [
+				{
+					id: "1E3C92E9821492D6"
+					type: "item"
+					item: "ae2:pattern_provider"
+				}
+				{
+					id: "47318DF267287C40"
+					type: "item"
+					item: "ae2:blank_pattern"
+				}
+				{
+					id: "321BF9922838BCE6"
+					type: "item"
+					item: "ae2:pattern_encoding_terminal"
+				}
+				{
+					id: "05BA416531FD19FA"
+					type: "item"
+					item: "ae2:pattern_access_terminal"
+				}
+			]
+			rewards: [{
+				id: "24DDF521273A63F2"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 824098445478849879L
 			}]
 		}
 	]

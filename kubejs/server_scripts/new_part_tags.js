@@ -58,6 +58,8 @@ onEvent('tags.items', event => {
         event.add(`forge:${part}s`, `kubejs:${item.material}_${part}`)
         event.add(`forge:${part}s/${item.material}`, `kubejs:${item.material}_${part}`)
       })
+      
+      
 
 
       if (item.ore) {
@@ -66,60 +68,33 @@ onEvent('tags.items', event => {
           if (item.raw_ore) {
             event.add(`forge:raw_materials`, `kubejs:raw_${item.material}`)
             event.add(`forge:raw_materials/${item.material}`, `kubejs:raw_${item.material}`)
+            
+            if (item.type == 'compound_ore') {
+              event.add(`forge:ores/compound/raw`, `kubejs:raw_${item.material}`)
+            }
         
             event.add(`forge:storage_blocks`, `kubejs:raw_${item.material}_block`)
             event.add(`forge:storage_blocks/raw_${item.material}`, `kubejs:raw_${item.material}_block`)
           }
-          //Processing Parts
-          event.add(`forge:crushed_ores`, `kubejs:crushed_${item.material}`)
-          event.add(`forge:crushed_ores/${item.material}`, `kubejs:crushed_${item.material}`)
-          event.add(`forge:chunks`, `kubejs:${item.material}_chunk`)
-          event.add(`forge:chunks/${item.material}`, `kubejs:${item.material}_chunk`)
-          //event.add(`forge:clumps`, `kubejs:${item.material}_clump`)
-          //event.add(`forge:clumps/${item.material}`, `kubejs:${item.material}_clump`)
-          event.add(`forge:lumps`, `kubejs:lump_of_${item.material}`)
-          event.add(`forge:lumps/${item.material}`, `kubejs:lump_of_${item.material}`)
-          event.add(`forge:leached_ores`, `kubejs:leached_${item.material}`)
-          event.add(`forge:leached_ores/${item.material}`, `kubejs:leached_${item.material}`)
-          event.add(`forge:deposits`, `kubejs:${item.material}_deposit`)
-          event.add(`forge:deposits/${item.material}`, `kubejs:${item.material}_deposit`)
-          event.add('forge:crystals', `kubejs:${item.material}_crystal`)
-          event.add(`forge:crystals/${item.material}`, `kubejs:${item.material}_crystal`)
           
-          //Refining Parts
-          event.add(`forge:shards`, `kubejs:${item.material}_shard`)
-          event.add(`forge:shards/${item.material}`, `kubejs:${item.material}_shard`)
-          event.add('forge:clusters', `kubejs:${item.material}_cluster`)
-          event.add(`forge:clusters/${item.material}`, `kubejs:${item.material}_cluster`)
-          event.add('forge:bricks', `kubejs:${item.material}_brick`)
-          event.add(`forge:bricks/${item.material}`, `kubejs:${item.material}_brick`)
-          event.add(`forge:washed_ores`, `kubejs:washed_${item.material}`)
-          event.add(`forge:washed_ores/${item.material}`, `kubejs:washed_${item.material}`)
-          event.add(`forge:infused_ores`, `kubejs:infused_${item.material}`)
-          event.add(`forge:infused_ores/${item.material}`, `kubejs:infused_${item.material}`)
-          event.add(`forge:wet_dusts`, `kubejs:wet_${item.material}_dust`)
-          event.add(`forge:wet_dusts/${item.material}`, `kubejs:wet_${item.material}_dust`)
-          
-          //Dusts???
-          event.add(`forge:grits`, `kubejs:${item.material}_grit`)
-          event.add(`forge:grits/${item.material}`, `kubejs:${item.material}_grit`)
-          event.add(`forge:fine_dusts`, `kubejs:fine_${item.material}_dust`)
-          event.add(`forge:fine_dusts/${item.material}`, `kubejs:fine_${item.material}_dust`)
+          global.oreParts.forEach((part) => {
+            if (part.name != 'raw'/* && !(part.grade == null && item.type == 'compound_ore')*/) {
+              event.add(`forge:ores/${part.name}`, `kubejs:${part.name}_${item.material}`)
+              event.add(`forge:ores/${part.name}/${item.material}`, `kubejs:${part.name}_${item.material}`)
+              if (item.type == 'compound_ore') {
+                event.add(`forge:ores/compound/${part.name}`, `kubejs:${part.name}_${item.material}`)
+              }
+            }
+          })
 
         } 
         if (item.type != 'gem' && item.type != 'element') {
           event.add(`forge:poor_ores`, `kubejs:poor_${item.material}_ore`)
           event.add(`forge:poor_ores/${item.material}`, `kubejs:poor_${item.material}_ore`)
 
-          //event.add(`forge:rich_ores`, `kubejs:rich_${item.material}_ore`)
-          //event.add(`forge:rich_ores/${item.material}`, `kubejs:rich_${item.material}_ore`)
-
       global.stoneTypes.forEach((type) => {
           event.add(`forge:poor_ores`, `kubejs:poor_${type.material}_${item.material}_ore`)
           event.add(`forge:poor_ores/${item.material}`, `kubejs:poor_${type.material}_${item.material}_ore`)
-      
-          //event.add(`forge:rich_ores`, `kubejs:rich_${type.material}_${item.material}_ore`)
-          //event.add(`forge:rich_ores/${item.material}`, `kubejs:rich_${type.material}_${item.material}_ore`)
       })
         } 
             event.add(`forge:ores`, `kubejs:${item.material}_ore`)
@@ -150,9 +125,6 @@ onEvent('tags.blocks', event => {
           event.add(`forge:poor_ores`, `kubejs:poor_${item.material}_ore`)
           event.add(`forge:poor_ores/${item.material}`, `kubejs:poor_${item.material}_ore`)
 
-          //event.add(`forge:rich_ores`, `kubejs:rich_${item.material}_ore`)
-          //event.add(`forge:rich_ores/${item.material}`, `kubejs:rich_${item.material}_ore`)
-
       global.stoneTypes.forEach((type) => {
           event.add(`forge:ores`, `kubejs:${type.material}_${item.material}_ore`)
           event.add(`forge:ores/${item.material}`, `kubejs:${type.material}_${item.material}_ore`)
@@ -160,8 +132,6 @@ onEvent('tags.blocks', event => {
           event.add(`forge:poor_ores`, `kubejs:poor_${type.material}_${item.material}_ore`)
           event.add(`forge:poor_ores/${item.material}`, `kubejs:poor_${type.material}_${item.material}_ore`)
       
-          //event.add(`forge:rich_ores`, `kubejs:rich_${type.material}_${item.material}_ore`)
-          //event.add(`forge:rich_ores/${item.material}`, `kubejs:rich_${type.material}_${item.material}_ore`)
       })
     }
   }
@@ -174,5 +144,9 @@ onEvent('fluid.tags', event => {
       event.add(`forge:molten_${item.material}`, [`kubejs:molten_${item.material}`, `kubejs:flowing_molten_${item.material}`])
     }
   })
-  //event.add(`forge:molten_carbon`, [`kubejs:molten_carbon`, `kubejs:flowing_molten_carbon`])
+    event.add(`forge:zephyrean_aerotheum`, [`kubejs:zephyrean_aerotheum`, `kubejs:flowing_zephyrean_aerotheum`])
+    event.add(`forge:gelid_cryotheum`, [`kubejs:gelid_cryotheum`, `kubejs:flowing_gelid_cryotheum`])
+    event.add(`forge:tectonic_petrotheum`, [`kubejs:tectonic_petrotheum`, `kubejs:flowing_tectonic_petrotheum`])
+    event.add(`forge:blazing_pyrotheum`, [`kubejs:blazing_pyrotheum`, `kubejs:flowing_blazing_pyrotheum`])
+    event.add(`minecraft:lava`, [`kubejs:blazing_pyrotheum`, `kubejs:flowing_blazing_pyrotheum`])
 });

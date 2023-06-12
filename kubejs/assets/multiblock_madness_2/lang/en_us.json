@@ -52,6 +52,17 @@
     "mbm2.leaching_vat.description": "Removes more impurities from partially processed ore",
     "multiblocked.recipe_map.leaching": "Ore Leaching",
 
+    "block.mbm2.deposition_chamber": "Deposition Chamber",
+    "mbm2.deposition_chamber.description": "Filters highly processed metals from ore slurry",
+    "multiblocked.recipe_map.deposition": "Ore Deposition",
+
+    "block.mbm2.vaccum_chamber": "Vacuum Chamber",
+    "mbm2.vaccum_chamber.description": "Applys a vacuum to materials",
+    "multiblocked.recipe_map.vaccum": "Vacuum Chamber",
+    
+    "block.mbm2.crystal_chamber": "Crystal Growth Chamber",
+    "mbm2.crystal_chamber.description": "Grows metal crystals of the highest purity",
+    "multiblocked.recipe_map.crystallization": "Crystal Growing",
 
     "block.multiblocked.create_item_input": "Input Vault Part",
     "block.multiblocked.create_item_output": "Output Vault Part",

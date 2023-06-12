@@ -1,0 +1,227 @@
+{
+  "version": 3,
+  "location": "mbm2:deposition_chamber",
+  "traits": {},
+  "properties": {
+    "rotationState": "ALL",
+    "showInJei": true,
+    "isOpaque": true,
+    "hasDynamicShape": false,
+    "hasCollision": true,
+    "destroyTime": 1.5,
+    "explosionResistance": 6.0,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "friction": 0.6,
+    "harvestLevel": 0,
+    "stackSize": 64,
+    "tabGroup": "multiblocked.all"
+  },
+  "status": {
+    "unformed": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier3_casing",
+        "frontTexture": "multiblocked:overlay/blast_furnace",
+        "type": "gregtech",
+        "postRenderer": false
+      }
+    },
+    "idle": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier3_casing",
+        "frontTexture": "multiblocked:overlay/bf_paused",
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "parent": "unformed"
+    },
+    "working": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier3_casing",
+        "frontTexture": "multiblocked:overlay/bf_active",
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "parent": "idle"
+    },
+    "suspend": {
+      "parent": "working"
+    }
+  },
+  "recipeMap": "deposition",
+  "basePattern": {
+    "structureDir": [
+      "BACK",
+      "UP",
+      "RIGHT"
+    ],
+    "pattern": [
+      [
+        " AAA ",
+        "  A  ",
+        "  A  ",
+        "  A  "
+      ],
+      [
+        "AAAAA",
+        " AAA ",
+        " A A ",
+        "  B  "
+      ],
+      [
+        "@AAAA",
+        "AACAA",
+        "A   A",
+        "AB BA"
+      ],
+      [
+        "AAAAA",
+        " AAA ",
+        " A A ",
+        "  B  "
+      ],
+      [
+        " AAA ",
+        "  A  ",
+        "  A  ",
+        "  A  "
+      ]
+    ],
+    "aisleRepetitions": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "predicates": {
+      "A": {
+        "blocks": [
+          {
+            "id": "kubejs:tier3_casing"
+          }
+        ],
+        "type": "blocks"
+      },
+      "controller": {
+        "location": "mbm2:deposition_chamber",
+        "type": "component"
+      },
+      "B": {
+        "blocks": [
+          {
+            "id": "tconstruct:scorched_faucet"
+          }
+        ],
+        "type": "blocks"
+      },
+      "C": {
+        "blocks": [
+          {
+            "id": "minecraft:cauldron"
+          }
+        ],
+        "type": "blocks"
+      },
+      "T": {
+        "blocks": [
+          {
+            "id": "ae2:sky_stone_tank"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 2,
+        "previewCount": 1,
+        "nbtParser": ""
+      },
+      "E": {
+        "blocks": [
+          {
+            "id": "multiblocked:energy_input_mk2"
+          },
+          {
+            "id": "multiblocked:energy_input_mk3"
+          },
+          {
+            "id": "multiblocked:energy_input"
+          },
+          {
+            "id": "multiblocked:energy_input_mk1"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 1,
+        "previewCount": 1
+      },
+      "I": {
+        "blocks": [
+          {
+            "id": "multiblocked:item_input"
+          },
+          {
+            "id": "multiblocked:big_item_input"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 1,
+        "previewCount": 1
+      },
+      "any": {
+        "type": "any"
+      },
+      "O": {
+        "blocks": [
+          {
+            "id": "multiblocked:big_item_output"
+          },
+          {
+            "id": "multiblocked:item_output"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 1,
+        "previewCount": 1
+      }
+    },
+    "symbolMap": {
+      "@": [
+        "controller"
+      ],
+      " ": [
+        "any"
+      ],
+      "A": [
+        "A",
+        "T",
+        "E",
+        "I",
+        "O"
+      ],
+      "B": [
+        "B"
+      ],
+      "C": [
+        "C"
+      ]
+    }
+  }
+}

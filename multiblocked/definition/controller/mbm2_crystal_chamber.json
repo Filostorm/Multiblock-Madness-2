@@ -1,0 +1,272 @@
+{
+  "version": 3,
+  "location": "mbm2:crystal_chamber",
+  "traits": {},
+  "properties": {
+    "rotationState": "ALL",
+    "showInJei": true,
+    "isOpaque": true,
+    "hasDynamicShape": false,
+    "hasCollision": true,
+    "destroyTime": 1.5,
+    "explosionResistance": 6.0,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "friction": 0.6,
+    "harvestLevel": 0,
+    "stackSize": 64,
+    "tabGroup": "multiblocked.all"
+  },
+  "status": {
+    "unformed": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier3_casing",
+        "frontTexture": "multiblocked:overlay/chemical_reactor",
+        "type": "gregtech",
+        "postRenderer": false
+      }
+    },
+    "idle": {
+      "parent": "unformed"
+    },
+    "working": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier3_casing",
+        "frontTexture": "multiblocked:overlay/chemical_reactor_active",
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "parent": "idle"
+    },
+    "suspend": {
+      "parent": "working"
+    }
+  },
+  "recipeMap": "crystallization",
+  "basePattern": {
+    "structureDir": [
+      "LEFT",
+      "UP",
+      "BACK"
+    ],
+    "pattern": [
+      [
+        " AA@AA ",
+        " A   A ",
+        " B   B ",
+        " C   C ",
+        " B   B ",
+        " D   D ",
+        "       ",
+        "       "
+      ],
+      [
+        "AAAAAAA",
+        "A AAA A",
+        "B B B B",
+        "C C C C",
+        "B B B B",
+        "D D D D",
+        " D   D ",
+        "       "
+      ],
+      [
+        "AAAAAAA",
+        " AAAAA ",
+        " BDDDB ",
+        " CDDDC ",
+        " BDDDB ",
+        " DDDDD ",
+        "  DDD  ",
+        "   D   "
+      ],
+      [
+        "AAAAAAA",
+        " AA AA ",
+        "  D D  ",
+        "  D D  ",
+        "  D D  ",
+        "  D D  ",
+        "  D D  ",
+        "  DDD  "
+      ],
+      [
+        "AAAAAAA",
+        " AAAAA ",
+        " BDDDB ",
+        " CDDDC ",
+        " BDDDB ",
+        " DDDDD ",
+        "  DDD  ",
+        "   D   "
+      ],
+      [
+        "AAAAAAA",
+        "A AAA A",
+        "B B B B",
+        "C C C C",
+        "B B B B",
+        "D D D D",
+        " D   D ",
+        "       "
+      ],
+      [
+        " AAAAA ",
+        " A   A ",
+        " B   B ",
+        " C   C ",
+        " B   B ",
+        " D   D ",
+        "       ",
+        "       "
+      ]
+    ],
+    "aisleRepetitions": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "predicates": {
+      "A": {
+        "blocks": [
+          {
+            "id": "kubejs:tier3_casing"
+          }
+        ],
+        "type": "blocks"
+      },
+      "controller": {
+        "location": "mbm2:crystal_chamber",
+        "type": "component"
+      },
+      "B": {
+        "blocks": [
+          {
+            "id": "kubejs:cobalt_coil"
+          }
+        ],
+        "type": "blocks"
+      },
+      "C": {
+        "blocks": [
+          {
+            "id": "thermal:obsidian_glass"
+          }
+        ],
+        "type": "blocks"
+      },
+      "T": {
+        "blocks": [
+          {
+            "id": "ae2:sky_stone_tank"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 4,
+        "previewCount": 1,
+        "io": "IN"
+      },
+      "E": {
+        "blocks": [
+          {
+            "id": "multiblocked:energy_input_mk2"
+          },
+          {
+            "id": "multiblocked:energy_input_mk1"
+          },
+          {
+            "id": "multiblocked:energy_input_mk3"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 1,
+        "previewCount": 1,
+        "io": "IN"
+      },
+      "I": {
+        "blocks": [
+          {
+            "id": "multiblocked:item_input"
+          },
+          {
+            "id": "multiblocked:big_item_input"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 1,
+        "previewCount": 1,
+        "io": "IN"
+      },
+      "any": {
+        "type": "any"
+      },
+      "O": {
+        "blocks": [
+          {
+            "id": "multiblocked:big_item_output"
+          },
+          {
+            "id": "multiblocked:item_output"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 1,
+        "previewCount": 1,
+        "io": "OUT"
+      }
+    },
+    "symbolMap": {
+      "@": [
+        "controller"
+      ],
+      " ": [
+        "any"
+      ],
+      "A": [
+        "A",
+        "E",
+        "I",
+        "O"
+      ],
+      "B": [
+        "B"
+      ],
+      "C": [
+        "C",
+        "T"
+      ],
+      "D": [
+        "A"
+      ]
+    }
+  }
+}

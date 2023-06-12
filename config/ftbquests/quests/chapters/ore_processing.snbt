@@ -98,7 +98,7 @@
 		}
 		{
 			x: 1.0d
-			y: 4.5d
+			y: 3.5d
 			subtitle: "Y100 - 5"
 			id: "75C07642789ACB12"
 			tasks: [{
@@ -109,7 +109,7 @@
 		}
 		{
 			x: 2.0d
-			y: 4.5d
+			y: 3.5d
 			id: "496C890684C94C47"
 			tasks: [{
 				id: "7EBA158D8365C316"
@@ -236,9 +236,9 @@
 			description: ["Uncommonly found in the Overworld, along with several other varieties of quartz."]
 			id: "5A79A5ACDB32C01E"
 			tasks: [{
-				id: "44961A5A2A8EA856"
+				id: "1D2006E804885250"
 				type: "item"
-				item: "malum:natural_quartz"
+				item: "minecraft:quartz"
 			}]
 		}
 		{
@@ -294,7 +294,7 @@
 		}
 		{
 			x: 1.0d
-			y: 2.5d
+			y: 1.5d
 			subtitle: "Y150 - 30"
 			description: ["Certus Quartz has a chance to spawn in these Quartz Veins."]
 			id: "7265801BB08B2ACF"
@@ -306,19 +306,7 @@
 		}
 		{
 			x: 1.0d
-			y: 1.5d
-			subtitle: "Y75 - 5"
-			description: ["Uncommon ore in the Nether, can spawn with Luminite."]
-			id: "6816DD41AF8831A9"
-			tasks: [{
-				id: "3E3ACF9D8A059FA5"
-				type: "item"
-				item: "malum:blazing_quartz"
-			}]
-		}
-		{
-			x: 1.0d
-			y: 3.5d
+			y: 2.5d
 			subtitle: "Y200 - 75"
 			description: ["Uncommon ore in the Nether, can spawn with Luminite."]
 			id: "7C740E97145C9174"
@@ -344,9 +332,9 @@
 			y: 0.5d
 			id: "1BCC347BD5FE95BD"
 			tasks: [{
-				id: "185CB101C73ECCAE"
+				id: "210D12BE70E9AB64"
 				type: "item"
-				item: "kubejs:lumite"
+				item: "kubejs:luminite"
 			}]
 		}
 		{
@@ -520,7 +508,7 @@
 		}
 		{
 			x: 1.0d
-			y: 5.5d
+			y: 4.5d
 			id: "735D513D4CE5E0B4"
 			tasks: [{
 				id: "6EF061B7FE987E14"
@@ -620,6 +608,7 @@
 		}
 		{
 			icon: "immersiveengineering:arc_furnace"
+			disable_toast: true
 			x: 4.5d
 			y: -4.5d
 			id: "097A3B834A7D46DD"
@@ -667,27 +656,27 @@
 		}
 		{
 			title: "Crushed Ore"
-			disable_toast: true
 			x: 2.0d
 			y: -6.0d
+			dependencies: ["665C67462A0C8CD1"]
 			id: "21F49B8439E00DAF"
 			tasks: [{
 				id: "35397A50496FED3A"
 				type: "item"
-				title: "Any #forge:crushed_ores"
+				title: "Any Crushed Ore"
 				disable_toast: true
 				item: {
 					id: "itemfilters:tag"
 					Count: 1b
 					tag: {
-						value: "forge:crushed_ores"
+						value: "forge:ores/crushed"
 					}
 				}
 			}]
 		}
 		{
 			disable_toast: true
-			x: 4.5d
+			x: 7.5d
 			y: -6.0d
 			id: "2B17F5722136AB89"
 			tasks: [{
@@ -698,19 +687,18 @@
 		}
 		{
 			title: "Ore Chunks"
-			disable_toast: true
 			x: 5.5d
 			y: -6.0d
 			id: "4DE6A9BF08BD38DD"
 			tasks: [{
 				id: "1605C0BC3B1FD33A"
 				type: "item"
-				title: "Any #forge:chunks"
+				title: "Any Chunks"
 				item: {
 					id: "itemfilters:tag"
 					Count: 1b
 					tag: {
-						value: "forge:chunks"
+						value: "forge:ores/chunk"
 					}
 				}
 			}]
@@ -743,6 +731,36 @@
 				id: "2DF6D87316B87028"
 				type: "item"
 				item: "kubejs:crushed_thermolytic_blend"
+			}]
+		}
+		{
+			title: "Build the Crusher"
+			icon: "immersiveengineering:crusher"
+			disable_toast: true
+			x: 4.5d
+			y: -6.0d
+			id: "24657EDFBAF51873"
+			tasks: [{
+				id: "139E5E075EAEAE34"
+				type: "checkmark"
+			}]
+		}
+		{
+			title: "Lump of Ore"
+			x: 8.5d
+			y: -6.0d
+			id: "4BF0862881DCDE10"
+			tasks: [{
+				id: "443E93A93A0F8207"
+				type: "item"
+				title: "Any #forge:ores/lump"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "forge:ores/lump"
+					}
+				}
 			}]
 		}
 	]

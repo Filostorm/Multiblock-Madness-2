@@ -175,17 +175,17 @@ onEvent('worldgen.add', event => {
 	})*/
 
 /*
-	// Inserted the_end Lumite
+	// Inserted the_end luminite
 	event.addOre((ore) => {
-		ore.id = 'kubejs:the_end_lumite'
+		ore.id = 'kubejs:the_end_luminite'
 
 			global.stoneTypes.forEach((type) => {
 				if (type.material != 'bedrock') {
-				ore.addTarget(`excavated_variants:${type.material}_iron_ore`, `kubejs:${type.material}_lumite_ore`)
-				ore.addTarget(`excavated_variants:${type.material}_gold_ore`, `kubejs:${type.material}_lumite_ore`)
-				ore.addTarget(`excavated_variants:${type.material}_zinc_ore`, `kubejs:${type.material}_lumite_ore`)
-				ore.addTarget(`excavated_variants:${type.material}_nickel_ore`, `kubejs:${type.material}_lumite_ore`)
-				ore.addTarget(`kubejs:${type.material}_aluminum_ore`, `kubejs:${type.material}_lumite_ore`)
+				ore.addTarget(`excavated_variants:${type.material}_iron_ore`, `kubejs:${type.material}_luminite_ore`)
+				ore.addTarget(`excavated_variants:${type.material}_gold_ore`, `kubejs:${type.material}_luminite_ore`)
+				ore.addTarget(`excavated_variants:${type.material}_zinc_ore`, `kubejs:${type.material}_luminite_ore`)
+				ore.addTarget(`excavated_variants:${type.material}_nickel_ore`, `kubejs:${type.material}_luminite_ore`)
+				ore.addTarget(`kubejs:${type.material}_aluminum_ore`, `kubejs:${type.material}_luminite_ore`)
 				}
 			})
 		ore.count(400)

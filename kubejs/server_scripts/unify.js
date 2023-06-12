@@ -21,6 +21,8 @@ global.fluidsToRemove = [
 	'createbigcannons:molten_steel',
 	'createbigcannons:molten_bronze',
 	'chemlib:sulfuric_acid_fluid',
+	'chemlib:oxygen_fluid',
+	'chemlib:hydrogen_fluid',
 	//'industrialforegoing:essence',
 	'sophisticatedcore:xp_still',
 	'reliquary:xp_juice_still',
@@ -69,6 +71,9 @@ onEvent('recipes', event => {
 
 	//Lapis
 	event.replaceOutput({}, 'mekanism:dust_lapis_lazuli', 'thermal:lapis_dust')
+
+	//Coal
+	event.replaceOutput({}, 'mekanism:dust_coal', 'lazierae2:coal_dust')
 	
 
 	removeByName.forEach((item) => {

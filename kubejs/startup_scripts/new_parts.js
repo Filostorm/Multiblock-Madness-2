@@ -1,3 +1,5 @@
+const nameUpper = (name) => {return name.charAt(0).toUpperCase() + name.slice(1)}
+
 onEvent('item.registry', event => {
   global.newMaterialParts.forEach((item) => {
     item.itemParts.forEach((part) => {
@@ -6,7 +8,7 @@ onEvent('item.registry', event => {
     } else if (part.includes('model')) {
       event.create(`${item.material}_${part.slice(6)}`).color(0, item.color).parentModel(`kubejs:item/${part.slice(6)}`).texture(`kubejs:item/${part.slice(6)}`)
     } else {
-      if (item.type == 'gem') { //Gems get special Textures, and always a custom base gem texture
+      if (item.type == 'gem') { //Gem parts get special textures, and always a custom base gem texture
         if (part == 'gem') { //Gems can burn
           if(item.burnTime != null) {
             event.create(`${item.material}`).texture(`kubejs:item/${item.material}`).burnTime(item.burnTime*200)
@@ -22,55 +24,36 @@ onEvent('item.registry', event => {
         if (part.includes('custom')) { //custom ingot tag needs a texture 
           event.create(`${item.material}_${part.slice(7)}`)
         } else {
+          //Main Part creation line
           event.create(`${item.material}_${part}`).color(0, item.color).texture(`kubejs:item/${part}`)
         }
       }
     }
     })
-    if (item.ore && (item.type == 'base_metal' || item.type == 'compound_ore' || item.type == 'rare_metal')) {
-      if (item.ore_name == null) { 
-        if (item.raw_ore) {
-          event.create(`raw_${item.material}`).color(0, item.color).texture(`kubejs:item/ore/raw_ore`)
+
+    //Makes all the ore parts based on the arrays in _ore_part_list
+    if (item.ore) {
+      if (item.type == 'base_metal' || item.type == 'compound_ore' || item.type == 'rare_metal') {
+      global.oreParts.forEach((part) => {
+        //Build the part Name
+        if (item.ore_name == null) { 
+          global.partDisplayName = part.prefix + nameUpper(item.material) + part.suffix
+        } else {
+          global.partDisplayName = part.prefix + nameUpper(item.ore_name) + part.suffix
         }
-        event.create(`crushed_${item.material}`).color(0, item.color).texture(`kubejs:item/ore/ore_crushed`)                                               //F
-        event.create(`${item.material}_grit`).color(0, item.color).texture(`kubejs:item/ore/ore_grit`).parentModel(`kubejs:item/ore/ore_grit`) //0
-        event.create(`lump_of_${item.material}`).color(0, item.color).texture(`kubejs:item/ore/ore_lump`).parentModel(`kubejs:item/ore/ore_lump`)         //E
-        event.create(`${item.material}_chunk`).color(0, item.color).texture(`kubejs:item/ore/ore_chunk`).parentModel(`kubejs:item/ore/ore_chunk`)         //D
-        //event.create(`${item.material}_clump`).color(0, item.color).texture(`kubejs:item/ore/ore_clump`).parentModel(`kubejs:item/ore/ore_clump`)         //D Kill?
-        event.create(`leached_${item.material}`).color(0, item.color).texture(`kubejs:item/ore/ore_leached`).parentModel(`kubejs:item/ore/ore_leached`)   //C
-        event.create(`${item.material}_deposit`).color(0, item.color).texture(`kubejs:item/ore/ore_deposit`).parentModel(`kubejs:item/ore/ore_deposit`)   //B
-        event.create(`${item.material}_crystal`).color(0, item.color).texture(`kubejs:item/ore/ore_crystal`).parentModel(`kubejs:item/ore/ore_crystal`)         //A
-
-        event.create(`${item.material}_shard`).color(0, item.color).texture(`kubejs:item/ore/ore_shard`)
-        event.create(`${item.material}_cluster`).color(0, item.color).texture(`kubejs:item/ore/ore_cluster`)
-        event.create(`${item.material}_brick`).color(0, item.color).texture(`kubejs:item/ore/ore_brick`)
-        event.create(`washed_${item.material}`).color(0, item.color).texture(`kubejs:item/ore/ore_washed`)
-        event.create(`infused_${item.material}`).color(0, item.color).texture(`kubejs:item/ore/ore_infused`)
-        event.create(`fine_${item.material}_dust`).color(0, item.color).texture(`kubejs:item/ore/ore_fine_dust`)
-        event.create(`wet_${item.material}_dust`).color(0, item.color).texture(`kubejs:item/ore/ore_wet_dust`)
-    } else {
-      if (item.raw_ore) {
-        event.create(`raw_${item.material}`).displayName('Raw ' + item.ore_name + ' Ore').color(0, item.color).texture(`kubejs:item/ore/raw_ore`)
-      }
-      event.create(`crushed_${item.material}`).displayName('Crushed ' + item.ore_name).color(0, item.color).texture(`kubejs:item/ore/ore_crushed`)
-      event.create(`${item.material}_grit`).displayName(item.ore_name + ' Grit').color(0, item.color).texture(`kubejs:item/ore/ore_grit`).parentModel(`kubejs:item/ore/ore_grit`)
-      event.create(`lump_of_${item.material}`).displayName('Lump of ' + item.ore_name).color(0, item.color).texture(`kubejs:item/ore/ore_lump`).parentModel(`kubejs:item/ore/ore_lump`)
-      event.create(`${item.material}_chunk`).displayName(item.ore_name + ' Chunk').color(0, item.color).texture(`kubejs:item/ore/ore_chunk`).parentModel(`kubejs:item/ore/ore_chunk`)
-      //event.create(`${item.material}_clump`).displayName(item.ore_name + ' Clump').color(0, item.color).texture(`kubejs:item/ore/ore_clump`).parentModel(`kubejs:item/ore/ore_clump`)
-      event.create(`leached_${item.material}`).displayName('Leached ' + item.ore_name).color(0, item.color).texture(`kubejs:item/ore/ore_leached`).parentModel(`kubejs:item/ore/ore_leached`)
-      event.create(`${item.material}_deposit`).displayName(item.ore_name + ' Deposit').color(0, item.color).texture(`kubejs:item/ore/ore_deposit`).parentModel(`kubejs:item/ore/ore_deposit`)
-      event.create(`${item.material}_crystal`).displayName(item.ore_name + ' Crystal').color(0, item.color).texture(`kubejs:item/ore/ore_crystal`).parentModel(`kubejs:item/ore/ore_crystal`)
-
-      event.create(`${item.material}_shard`).displayName(item.ore_name + ' Shard').color(0, item.color).texture(`kubejs:item/ore/ore_shard`)
-      event.create(`${item.material}_cluster`).displayName(item.ore_name + ' Cluster').color(0, item.color).texture(`kubejs:item/ore/ore_cluster`)
-      event.create(`${item.material}_brick`).displayName(item.ore_name + ' Brick').color(0, item.color).texture(`kubejs:item/ore/ore_brick`)
-      event.create(`washed_${item.material}`).displayName('Washed ' + item.ore_name).color(0, item.color).texture(`kubejs:item/ore/ore_washed`)
-      event.create(`infused_${item.material}`).displayName('Infused ' + item.ore_name).color(0, item.color).texture(`kubejs:item/ore/ore_infused`)
-      event.create(`fine_${item.material}_dust`).displayName('Fine ' + item.ore_name + ' Dust').color(0, item.color).texture(`kubejs:item/ore/ore_fine_dust`)
-      event.create(`wet_${item.material}_dust`).displayName('Wet ' + item.ore_name + ' Dust').color(0, item.color).texture(`kubejs:item/ore/ore_wet_dust`)
-    }
-  }
-})
+        //Make the part items
+        if (item.raw_ore && part.name == 'raw') {
+          event.create(`${part.name}_${item.material}`).displayName(global.partDisplayName).color(0, item.color).texture(`kubejs:item/ore/${part.name}`)
+        } else if (part.name != 'raw' /*&& !(part.grade == null && item.type == 'compound_ore')*/) {
+          if (part.model) {
+            event.create(`${part.name}_${item.material}`).displayName(global.partDisplayName).color(0, item.color).texture(`kubejs:item/ore/${part.name}`).parentModel(`kubejs:item/ore/${part.name}`)  
+          } else {
+            event.create(`${part.name}_${item.material}`).displayName(global.partDisplayName).color(0, item.color).texture(`kubejs:item/ore/${part.name}`)
+          }
+        }
+      })
+    }}
+  })
 });
 /*
 onEvent('item.registry.tool_tiers', event => {
@@ -145,11 +128,8 @@ onEvent('block.registry', event => {
           
             global.stoneTypes.forEach((type) => {
               if (type != 'bedrock' || type != 'end_stone') {
-			          let stoneNameUpper = type.material.charAt(0).toUpperCase() + type.material.slice(1)
-			          let oreName = stoneNameUpper + ' ' + item.ore_name + ' Ore'   
-
-                event.create(`poor_${type.material}_${item.material}_ore`).displayName(oreName).color(0, item.color).material('stone').hardness(type.hardness).resistance(type.resistance).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_stone_tool').renderType('cutout').defaultCutout().model(`kubejs:block/ore/poor_${type.material}_ore`).requiresTool(true).item(itemForm => {itemForm.color(0, item.color)})
-                event.create(`${type.material}_${item.material}_ore`).displayName(oreName).color(0, item.color).material('stone').hardness(type.hardness).resistance(type.resistance).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').renderType('cutout').defaultCutout().model(`kubejs:block/ore/${type.material}_ore`).requiresTool(true).item(itemForm => {itemForm.color(0, item.color)})
+                event.create(`poor_${type.material}_${item.material}_ore`).displayName(nameUpper(type.material)).color(0, item.color).material('stone').hardness(type.hardness).resistance(type.resistance).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_stone_tool').renderType('cutout').defaultCutout().model(`kubejs:block/ore/poor_${type.material}_ore`).requiresTool(true).item(itemForm => {itemForm.color(0, item.color)})
+                event.create(`${type.material}_${item.material}_ore`).displayName(nameUpper(type.material)).color(0, item.color).material('stone').hardness(type.hardness).resistance(type.resistance).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').renderType('cutout').defaultCutout().model(`kubejs:block/ore/${type.material}_ore`).requiresTool(true).item(itemForm => {itemForm.color(0, item.color)})
               }
             })
           } else {
@@ -191,11 +171,14 @@ onEvent('fluid.registry', event => {
     }
 
     if (item.ore & item.type != 'element') {
-      let dirtySlurryColor = newShade(item.color.toString(16), -50)
-      event.create(`dirty_${item.material}_slurry`).thickTexture(dirtySlurryColor).bucketColor(dirtySlurryColor)
+      let slurryColor = newShade(item.color.toString(16), -20)
+      event.create(`${item.material}_slurry`).thinTexture(slurryColor).bucketColor(slurryColor)
 
       let cleanSlurryColor = newShade(item.color.toString(16), 25)
       event.create(`clean_${item.material}_slurry`).thinTexture(cleanSlurryColor).bucketColor(cleanSlurryColor)
+
+      let concentratedSlurryColor = newShade(item.color.toString(16), -50)
+      event.create(`concentrated_${item.material}_slurry`).thickTexture(concentratedSlurryColor).bucketColor(concentratedSlurryColor)
     }
 
     //item.fluids.forEach((fluid) => {
@@ -204,3 +187,29 @@ onEvent('fluid.registry', event => {
   })
 });
 
+/* TO DO ADD SLURRY FOR ORE PROCESSING
+const $EventBuses = Java.loadClass('dev.architectury.platform.forge.EventBuses')
+const $GasDeferredRegister = Java.loadClass('mekanism.common.registration.impl.GasDeferredRegister')
+const $SlurryDeferredRegister = Java.loadClass('mekanism.common.registration.impl.SlurryDeferredRegister')
+const $InfuseTypeDeferredRegister = Java.loadClass('mekanism.common.registration.impl.InfuseTypeDeferredRegister')
+
+const GASES = new $GasDeferredRegister('kubejs')
+const SLURRY = new $SlurryDeferredRegister('kubejs')
+const INFUSETYPE = new $InfuseTypeDeferredRegister('kubejs')
+
+//GASES.register('example_gas', 0xA020F0)
+SLURRY.register('example_slurry', builder => builder.color(0xA020F0))
+//INFUSETYPE.register('example_infuse_type', 0xA020F0)
+
+global.newMaterialParts.forEach((item) => {
+GASES.register($EventBuses.getModEventBus('kubejs').get())
+SLURRY['register(net.minecraftforge.eventbus.api.IEventBus)']($EventBuses.getModEventBus('kubejs').get())
+INFUSETYPE.register($EventBuses.getModEventBus('kubejs').get())
+})
+ClientEvents.highPriorityAssets(event => {
+
+  global.newMaterialParts.forEach((item) => {
+    event.addLang('slurry.kubejs.dirty_example_slurry', `Dirty Example Slurry`)
+  })
+})
+*/

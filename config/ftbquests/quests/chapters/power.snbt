@@ -1,0 +1,195 @@
+{
+	id: "363A4DAFE45399C9"
+	group: "7571E15FFD2D3DD8"
+	order_index: 1
+	filename: "power"
+	title: "Power"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			title: "4096 RF/t for 1 min"
+			x: 0.5d
+			y: -1.0d
+			min_required_dependencies: 1
+			dependencies: [
+				"7FBFB69389B40FE4"
+				"7C99CC5D7B7BDDBD"
+			]
+			id: "684C0738E103969E"
+			tasks: [{
+				id: "4E6B8936C585B721"
+				type: "forge_energy"
+				value: 4915200L
+				max_input: 4096L
+			}]
+		}
+		{
+			title: "Diesel Generator"
+			icon: "immersiveengineering:diesel_generator"
+			x: 0.0d
+			y: -2.5d
+			min_required_tasks: 1
+			id: "7FBFB69389B40FE4"
+			tasks: [
+				{
+					id: "7B8031E3F831B2AD"
+					type: "item"
+					item: "immersiveengineering:biodiesel_bucket"
+				}
+				{
+					id: "336471EC9B4BAED2"
+					type: "item"
+					item: "pneumaticcraft:diesel_bucket"
+				}
+			]
+		}
+		{
+			x: 0.0d
+			y: -6.0d
+			id: "560CC6875A8704A8"
+			tasks: [{
+				id: "1D95F52DFEE6DBC3"
+				type: "item"
+				item: "createaddition:alternator"
+			}]
+		}
+		{
+			x: 1.0d
+			y: -6.0d
+			id: "62FDBB2E767B01A2"
+			tasks: [
+				{
+					id: "3EE24AF86E6D1DD2"
+					type: "item"
+					item: "immersiveengineering:dynamo"
+				}
+				{
+					id: "42D7572F5FC66BA9"
+					type: "item"
+					item: "immersiveengineering:windmill"
+				}
+				{
+					id: "1AA24C4AB86BAFA4"
+					type: "item"
+					item: "immersiveengineering:thermoelectric_generator"
+				}
+			]
+		}
+		{
+			title: "Dynamos"
+			x: -1.0d
+			y: -6.0d
+			min_required_tasks: 1
+			id: "56B7AEF5BFD6939D"
+			tasks: [
+				{
+					id: "0F53D1B600AF6CAA"
+					type: "item"
+					item: "thermal:dynamo_lapidary"
+				}
+				{
+					id: "1E7FB2305F9D2B91"
+					type: "item"
+					item: "thermal:dynamo_compression"
+				}
+				{
+					id: "6E3BB12BC5D4D653"
+					type: "item"
+					item: "thermal:dynamo_numismatic"
+				}
+				{
+					id: "36C1EFED2061362A"
+					type: "item"
+					item: "thermal:dynamo_disenchantment"
+				}
+				{
+					id: "7B4B35FABE98021A"
+					type: "item"
+					item: "thermal:dynamo_gourmand"
+				}
+			]
+		}
+		{
+			title: "1024 RF/t for 1 min"
+			x: 0.5d
+			y: -4.0d
+			min_required_dependencies: 1
+			dependencies: [
+				"560CC6875A8704A8"
+				"56B7AEF5BFD6939D"
+				"62FDBB2E767B01A2"
+				"63769D90E92882C0"
+			]
+			id: "5052F64E077166CB"
+			tasks: [{
+				id: "7CE9A0F66C9E8F04"
+				type: "forge_energy"
+				value: 1228800L
+				max_input: 1024L
+			}]
+			rewards: [{
+				id: "770112E9606FE8CB"
+				type: "item"
+				item: "powah:energy_cell_blazing"
+			}]
+		}
+		{
+			x: 2.0d
+			y: -6.0d
+			min_required_tasks: 1
+			id: "63769D90E92882C0"
+			tasks: [
+				{
+					id: "3D03C082A01BDEC1"
+					type: "item"
+					item: "powah:furnator_blazing"
+				}
+				{
+					id: "2CFFE8EE213894F2"
+					type: "item"
+					item: "powah:magmator_blazing"
+				}
+				{
+					id: "257958079F499A9A"
+					type: "item"
+					item: "powah:thermo_generator_blazing"
+				}
+				{
+					id: "041B87715724577B"
+					type: "item"
+					item: "powah:solar_panel_blazing"
+				}
+			]
+		}
+		{
+			x: 1.0d
+			y: -2.5d
+			min_required_tasks: 1
+			id: "7C99CC5D7B7BDDBD"
+			tasks: [
+				{
+					id: "449C3DBCAC20C3C9"
+					type: "item"
+					item: "powah:furnator_niotic"
+				}
+				{
+					id: "4FB0F7F87C75BA96"
+					type: "item"
+					item: "powah:magmator_niotic"
+				}
+				{
+					id: "53E4796A749CA3F2"
+					type: "item"
+					item: "powah:thermo_generator_niotic"
+				}
+				{
+					id: "71FC79C5B81AB6C7"
+					type: "item"
+					item: "powah:solar_panel_niotic"
+				}
+			]
+		}
+	]
+	quest_links: [ ]
+}

@@ -1,0 +1,267 @@
+{
+  "version": 3,
+  "location": "mbm2:vaccum_chamber",
+  "traits": {},
+  "properties": {
+    "rotationState": "ALL",
+    "showInJei": true,
+    "isOpaque": true,
+    "hasDynamicShape": false,
+    "hasCollision": true,
+    "destroyTime": 1.5,
+    "explosionResistance": 6.0,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "friction": 0.6,
+    "harvestLevel": 0,
+    "stackSize": 64,
+    "tabGroup": "multiblocked.all"
+  },
+  "status": {
+    "unformed": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/vac_casing",
+        "frontTexture": "multiblocked:overlay/air",
+        "type": "gregtech",
+        "postRenderer": false
+      }
+    },
+    "idle": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/vac_casing",
+        "frontTexture": "multiblocked:overlay/air_paused",
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "parent": "unformed"
+    },
+    "working": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/vac_casing",
+        "frontTexture": "multiblocked:overlay/air_active",
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "parent": "idle"
+    },
+    "suspend": {
+      "parent": "working"
+    }
+  },
+  "recipeMap": "vaccum",
+  "basePattern": {
+    "structureDir": [
+      "LEFT",
+      "UP",
+      "BACK"
+    ],
+    "pattern": [
+      [
+        "   AA@AA   ",
+        "   ABBBA   ",
+        "   ABCBA   ",
+        "   ABBBA   ",
+        "    AAA    "
+      ],
+      [
+        "DDDAAAAADDD",
+        "EEEA   AEEE",
+        "DDDA   ADDD",
+        "   A   A   ",
+        "   AAAAA   "
+      ],
+      [
+        "DDDAAAAADDD",
+        "E         E",
+        "DDD     DDD",
+        "   A   A   ",
+        "   AAAAA   "
+      ],
+      [
+        "DDDAAAAADDD",
+        "EEEA   AEEE",
+        "DDDA   ADDD",
+        "   A   A   ",
+        "   AAAAA   "
+      ],
+      [
+        "   AAAAA   ",
+        "   ABBBA   ",
+        "   ABCBA   ",
+        "   ABBBA   ",
+        "    AAA    "
+      ]
+    ],
+    "aisleRepetitions": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "predicates": {
+      "A": {
+        "blocks": [
+          {
+            "id": "kubejs:high_pressure_casing"
+          }
+        ],
+        "type": "blocks"
+      },
+      "controller": {
+        "location": "mbm2:vaccum_chamber",
+        "type": "component"
+      },
+      "B": {
+        "blocks": [
+          {
+            "id": "kubejs:factory_fan"
+          }
+        ],
+        "type": "blocks"
+      },
+      "C": {
+        "blocks": [
+          {
+            "id": "thermal:obsidian_glass"
+          }
+        ],
+        "type": "blocks"
+      },
+      "D": {
+        "blocks": [
+          {
+            "id": "kubejs:tier3_casing"
+          }
+        ],
+        "type": "blocks"
+      },
+      "E": {
+        "blocks": [
+          {
+            "id": "kubejs:constantan_coil"
+          }
+        ],
+        "type": "blocks"
+      },
+      "F": {
+        "blocks": [
+          {
+            "id": "multiblocked:fluid_input"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 0,
+        "maxCount": 4,
+        "previewCount": 1,
+        "io": "IN"
+      },
+      "G": {
+        "blocks": [
+          {
+            "id": "multiblocked:fluid_output"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 0,
+        "maxCount": 1,
+        "previewCount": 1,
+        "io": "OUT"
+      },
+      "H": {
+        "blocks": [
+          {
+            "id": "multiblocked:energy_input_mk3"
+          },
+          {
+            "id": "multiblocked:energy_input_mk1"
+          },
+          {
+            "id": "multiblocked:energy_input_mk2"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 1,
+        "previewCount": 1,
+        "io": "IN"
+      },
+      "I": {
+        "blocks": [
+          {
+            "id": "multiblocked:item_input"
+          },
+          {
+            "id": "multiblocked:big_item_input"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 0,
+        "maxCount": 1,
+        "previewCount": 0,
+        "io": "IN"
+      },
+      "J": {
+        "blocks": [
+          {
+            "id": "multiblocked:item_output"
+          },
+          {
+            "id": "multiblocked:big_item_output"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 0,
+        "maxCount": 1,
+        "previewCount": 0,
+        "io": "OUT"
+      },
+      "any": {
+        "type": "any"
+      }
+    },
+    "symbolMap": {
+      "@": [
+        "controller"
+      ],
+      " ": [
+        "any"
+      ],
+      "A": [
+        "A",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J"
+      ],
+      "B": [
+        "B"
+      ],
+      "C": [
+        "C"
+      ],
+      "D": [
+        "D"
+      ],
+      "E": [
+        "E"
+      ]
+    }
+  }
+}

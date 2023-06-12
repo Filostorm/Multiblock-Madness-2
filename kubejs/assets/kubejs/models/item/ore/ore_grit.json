@@ -1,8 +1,0 @@
-{
-    "parent": "item/generated",
-    "textures": {
-        "layer0": "kubejs:item/ore/ore_grit",
-        "layer1": "kubejs:item/ore/ore_grit_overlay"
-    }
-  }
-  

@@ -1,0 +1,8 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "kubejs:item/ore/deposit",
+        "layer1": "kubejs:item/ore/deposit_overlay"
+    }
+  }
+  

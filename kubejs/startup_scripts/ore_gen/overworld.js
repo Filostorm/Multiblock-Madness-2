@@ -610,7 +610,7 @@ onEvent('worldgen.add', event => {
 		ore.worldgenLayer = "underground_decoration"
 		  ore.chance = 0
 	})
-	
+	/*
 	// Inserted Soulstone to Arcanite Veins
 	event.addOre((ore) => {
 		ore.id = 'kubejs:soulstone_ore'
@@ -634,7 +634,7 @@ onEvent('worldgen.add', event => {
 		ore.worldgenLayer = "underground_decoration"
 		  ore.chance = 0
 	})
-
+*/
 	// Inserted Nickel Veins
 	event.addOre((ore) => {
 		ore.id = 'kubejs:nickel_ore'

@@ -2,34 +2,78 @@
   "version": 1,
   "location": "multiblocked:create_item_output",
   "traits": {
-    "background": "multiblocked:textures/gui/4_slot.png",
+    "background": "multiblocked:textures/gui/9_slot.png",
     "item": [
       {
         "cIO": 1,
         "gIO": 3,
-        "x": 70,
-        "y": 62,
+        "mIO": 1,
+        "x": 61,
+        "y": 53,
         "autoIO": false
       },
       {
         "cIO": 1,
         "gIO": 3,
-        "x": 88,
-        "y": 62,
+        "mIO": 1,
+        "x": 79,
+        "y": 53,
         "autoIO": false
       },
       {
         "cIO": 1,
         "gIO": 3,
-        "x": 70,
-        "y": 80,
+        "mIO": 1,
+        "x": 97,
+        "y": 53,
         "autoIO": false
       },
       {
         "cIO": 1,
         "gIO": 3,
-        "x": 88,
-        "y": 80,
+        "mIO": 1,
+        "x": 61,
+        "y": 71,
+        "autoIO": false
+      },
+      {
+        "cIO": 1,
+        "gIO": 3,
+        "mIO": 1,
+        "x": 79,
+        "y": 71,
+        "autoIO": false
+      },
+      {
+        "cIO": 1,
+        "gIO": 3,
+        "mIO": 1,
+        "x": 97,
+        "y": 71,
+        "autoIO": false
+      },
+      {
+        "cIO": 1,
+        "gIO": 3,
+        "mIO": 1,
+        "x": 61,
+        "y": 89,
+        "autoIO": false
+      },
+      {
+        "cIO": 1,
+        "gIO": 3,
+        "mIO": 1,
+        "x": 79,
+        "y": 89,
+        "autoIO": false
+      },
+      {
+        "cIO": 1,
+        "gIO": 3,
+        "mIO": 1,
+        "x": 97,
+        "y": 89,
         "autoIO": false
       }
     ]

@@ -1,4 +1,4 @@
-
+/*
 
 onEvent('tags.items', event => {
 	event.add(`forge:ores/soulstone`, 'malum:soulstone_ore')
@@ -16,4 +16,8 @@ onEvent('recipes', event => {
 	
 	  //Blazing Quartz
   	global.tinkersMelting(event, 'tconstruct:molten_quartz', 50, 'tconstruct:blazing_blood', 50, 'malum:blazing_quartz', 1000, 142, `mbm2:smeltery/melting/blazing_quartz`)
+	
+  event.custom({"type":"immersiveengineering:blast_furnace_fuel","input":{"item":"malum:arcane_charcoal"},"time":600})
+  event.custom({"type":"immersiveengineering:blast_furnace_fuel","input":{"item":'malum:block_of_arcane_charcoal'},"time":6000})
 });
+*/

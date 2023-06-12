@@ -16,9 +16,18 @@ onEvent('recipes', event => {
 
   //Signalum
   event.recipes.multiblocked.multiblock('mixer')
-  .inputItems('3x #forge:dusts/dielectric_alloy','2x #forge:dusts/energetic_alloy') //,'#forge:fine_dusts/rune'
-  .inputFluid(Fluid.of('pneumaticcraft:memory_essence', 1000))
+  .inputItems('3x #forge:dusts/dielectric_alloy','2x #forge:dusts/energetic_alloy','8x create:experience_nugget') //,'#forge:fine_dusts/rune'
+  .inputFluid(Fluid.of('thermal:redstone', 1000))
   .outputItem(Item.of('4x #forge:dusts/signalum'))
+  .setPerTick(true)
+  .inputFE(2048)
+  .duration(300)
+
+  //Lumium
+  event.recipes.multiblocked.multiblock('mixer')
+  .inputItems('3x #forge:dusts/aluminum','2x #forge:dusts/white_alloy','8x create:experience_nugget') //,'#forge:fine_dusts/rune'
+  .inputFluid(Fluid.of('thermal:glowstone', 1000))
+  .outputItem(Item.of('4x #forge:dusts/lumium'))
   .setPerTick(true)
   .inputFE(2048)
   .duration(300)
@@ -54,7 +63,7 @@ event.shaped('4x kubejs:industrial_alloy_ingot', [
 
   event.recipes.createMixing([`kubejs:sturdy_brick`], ['kubejs:sandy_brick', 'gravel']).id('mbm2:mixing/sturdy_brick')
 
-	event.recipes.createMixing('kubejs:tough_brick', [Fluid.of('kubejs:molten_slag', 125), '2x create:cinder_flour', 'kubejs:sturdy_brick']).heated().id(`mbm2:mixing/tough_brick`)
+	event.recipes.createMixing('kubejs:tough_brick', [Fluid.of('kubejs:molten_slag', 125), 'create:cinder_flour', 'kubejs:sturdy_brick']).heated().id(`mbm2:mixing/tough_brick`)
 	//event.recipes.createMixing('2x tconstruct:scorched_brick', [Fluid.of('kubejs:molten_slag', 125), '2x create:cinder_flour', 'kubejs:sturdy_brick']).superheated().id(`mbm2:mixing/scorched_brick`)
 
   event.recipes.createFilling('kubejs:heated_brick', [Fluid.of('tconstruct:magma', 250), 'kubejs:tough_brick']).id('mbm2:filling/heated_brick')
@@ -82,6 +91,7 @@ event.shaped('kubejs:reactive_blend', [
 
     //Hardened Glass
     global.tinkersAlloying(event, 'kubejs:molten_hardened_glass', 250, [{name: 'tconstruct:molten_quartz',amount: 50}, {name: 'tconstruct:molten_glass',amount: 250}, {name: 'tconstruct:molten_obsidian',amount: 250}], 1000, `mbm2:smeltery/alloys/molten_hardened_glass`)
+    event.recipes.tconstruct.casting_basin('thermal:obsidian_glass', 'kubejs:molten_hardened_glass', 1000).noCast().coolingTime(250).id(`mbm2:casting/hardened_glass`)
  
 
   /*

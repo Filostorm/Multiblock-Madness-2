@@ -30,11 +30,17 @@ onEvent('rei.hide.items', event => {
 				event.hide(`kubejs:${item.material}_ore_sample`)
 				}
 		})
+		global.oreRefiningParts.forEach((part) => {
+			if (part.name != 'fine_dust' && item.type == 'compound_ore') {
+			event.hide(`kubejs:${part.name}_${item.material}`)
+			}
+		})
 	})
 
 	global.createCrushed.forEach((item) => {
 		event.hide(`kubejs:crushed_${item}`)
 	})
+
 	
 	//Hide ores
 	event.hide(/excavated_variants:*/)
@@ -161,30 +167,40 @@ onEvent("rei.group", (event) => {
 			var materialNameUpper = item.material.charAt(0).toUpperCase() + item.material.slice(1)
 			var groupName = materialNameUpper + ' Ore Processing'
 			event.groupItems(`mbm2:rei_groups/${item.material}_ore_items`, groupName, [
-				`#forge:crystals/${item.material}`, 
-				`#forge:shards/${item.material}`,
+				`#forge:raw_materials/${item.material}`,
+				`#forge:poor_ores/${item.material}`,
+				`#forge:storage_blocks/raw_${item.material}`,
+				Item.of(`elementalcraft:pure_ore`, `{elementalcraft:{ore:"forge:${item.material}"}}`),
+
+				///#forge:ores.*/,
+				`#forge:ores/${item.material}`,
+				
+
+				//global.oreParts.forEach((part) => {
+				//	if (part.name != 'raw') {
+				//	`#forge:ores/${part.name}/${item.material}`
+				//	}
+				//})
+				`#forge:ores/grit/${item.material}`,
+				`#forge:ores/clump/${item.material}`,
+				`#forge:ores/crushed/${item.material}`,
+				`#forge:ores/washed/${item.material}`,
+				`#forge:ores/fine_dust/${item.material}`,
+				`#forge:ores/leached/${item.material}`,
+				`#forge:ores/deposit/${item.material}`,
+				`#forge:ores/cluster/${item.material}`,
+				`#forge:ores/brick/${item.material}`,
+				`#forge:ores/infused/${item.material}`,
+				`#forge:ores/wet_dust/${item.material}`,
+				`#forge:ores/lump/${item.material}`,
+				`#forge:ores/crystal/${item.material}`, 
+				`#forge:ores/shard/${item.material}`,
+				`#forge:ores/chunk/${item.material}`,
+				`#forge:ores/imbued/${item.material}`,
+
 				//`#mekanism:dirty_dusts/${item.material}`,
 				//`#mekanism:clumps/${item.material}`,
-				`#forge:raw_materials/${item.material}`,
-				`#forge:chunks/${item.material}`,
-				`#forge:grits/${item.material}`,
-				`#forge:clumps/${item.material}`,
-				`#forge:crushed_ores/${item.material}`,
-				`#forge:washed_ores/${item.material}`,
-				`#forge:fine_dusts/${item.material}`,
-				`#forge:leached_ores/${item.material}`,
-				`#forge:deposits/${item.material}`,
-				`#forge:clusters/${item.material}`,
-				`#forge:bricks/${item.material}`,
-				`#forge:infused_ores/${item.material}`,
-				`#forge:wet_dusts/${item.material}`,
-				`#forge:poor_ores/${item.material}`,
-				`#forge:ores/${item.material}`,
-				`#forge:rich_ores/${item.material}`,
-				`#forge:lumps/${item.material}`,
 
-				Item.of(`elementalcraft:pure_ore`, `{elementalcraft:{ore:"forge:${item.material}"}}`),
-				`#forge:storage_blocks/raw_${item.material}`,
 			])
 		}
 	})

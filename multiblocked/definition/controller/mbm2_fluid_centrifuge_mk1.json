@@ -133,6 +133,9 @@
       "E": {
         "location": "multiblocked:energy_input",
         "type": "component",
+        "minCount": 1,
+        "maxCount": 1,
+        "previewCount": 1,
         "io": "IN"
       },
       "G": {

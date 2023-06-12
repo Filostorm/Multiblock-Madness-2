@@ -105,7 +105,7 @@ global.newMaterialParts = [
       'ore': true,
       'byproducts': ['sulfur'],
       'allomancy': 'Zinc allows you to Riot the emotions of mobs, making them hostile. This means they will attack anything nearby. Even farm animals can be a threat',
-      'feruchemy': 'Mental Speed--Earn More/Less Experience orbs when Tapping/Storing respectively'
+      'feruchemy': 'Mental Speed--Earn Mores/Less Experience orbs when Tapping/Storing respectively'
     },
     {
       'material': 'arcanite',
@@ -124,7 +124,7 @@ global.newMaterialParts = [
       'color': 0x2e5cd1,
       'type': 'base_metal',
       'tier': 2,
-      'itemParts': ['plate', 'gear', 'rod', 'wire', 'hammer', 'interlocking_component', 'model_spool', 'model_wire_coil','reinforced_plating','sheet','hull_panel'],
+      'itemParts': ['plate', 'gear', 'rod', 'wire', 'hammer', 'interlocking_component', 'model_spool', 'model_wire_coil','reinforced_plating','sheet','hull_panel', 'model_robot_arm'],
       'blockParts': ['cog_block', 'casing', 'coil'],
       'durability': 256,
       'ore': true,
@@ -180,7 +180,7 @@ global.newMaterialParts = [
       'type': 'base_metal',
       'tier': 3,
       'itemParts': ['plate', 'gear', 'rod', 'hammer', 'plating'],
-      'blockParts': ['casing'],
+      'blockParts': ['casing', 'scaffolding'],
       'fluid': 'thick',
       'fluid_id': 'kubejs:molten_titanium',
       'durability': 1024,
@@ -833,12 +833,15 @@ global.newMaterialParts = [
     },
     {
       'material': 'fluix_steel',
-      'color': 0x792be0,
+      'color': 0x7e5fb0,
       'type': 'alloy',
       'tier': 3,
-      'itemParts': ['plate',  'gear', 'rod', 'wire'],
+      'itemParts': ['plate', 'gear', 'rod', 'wire'],
       'blockParts': ['storage_block'],
-      'fluid': 'thick'
+      'fluid': 'thick',
+      'amount': 1,
+      'dust_input': ['#forge:dusts/steel', '2x lazierae2:carbonic_fluix_dust'],
+      'ingot_input': ['#forge:ingots/steel', '2x lazierae2:carbonic_fluix_dust'],
     },
     {
       'material': 'lumium',
@@ -849,9 +852,9 @@ global.newMaterialParts = [
       'blockParts': [],
       'type': 'alloy',
       'fluid_id': 'tconstruct:molten_lumium',
-      'amount': 2,
-      'dust_input': ['#forge:dusts/aluminum','#forge:dusts/electrum','2x #forge:dusts/glowstone'],
-      'ingot_input': ['#forge:ingots/aluminum','#forge:ingots/electrum','2x #forge:dusts/glowstone'],
+      //'amount': 2,
+      //'dust_input': ['#forge:dusts/aluminum','#forge:dusts/electrum','2x #forge:dusts/glowstone'],
+      //'ingot_input': ['#forge:ingots/aluminum','#forge:ingots/electrum','2x #forge:dusts/glowstone'],
     },
     {
       'material': 'signalum',
@@ -876,7 +879,7 @@ global.newMaterialParts = [
       'fluid': 'thick',
       'fluid_id': 'kubejs:molten_arcane_gold',
       'amount': 1,
-      'dust_input': ['#forge:dusts/auric_gold', '#forge:gems/lumite', '2x #forge:dusts/arcane_crystal', '2x #forge:dusts/mundabitur'],
+      'dust_input': ['#forge:dusts/auric_gold', '#forge:gems/luminite', '2x #forge:dusts/arcane_crystal', '2x #forge:dusts/mundabitur'],
     },
     {
       'material': 'stainless_steel',
@@ -923,8 +926,8 @@ global.newMaterialParts = [
       'color': 0x9754d1,
       'type': 'alloy',
       'tier': 3,
-      'itemParts': ['ingot', 'dust', 'nugget', 'plate', 'rod', 'gear', 'interlocking_component', 'wire', 'plating'],
-      'blockParts': ['storage_block', 'scaffolding'],
+      'itemParts': ['ingot', 'dust', 'nugget', 'plate', 'rod', 'gear', 'interlocking_component', 'wire', 'plating', 'bolt', 'hull_panel'],
+      'blockParts': ['storage_block', 'scaffolding', 'hull_casing', 'frame_box'],
       'amount': 3,
       'dust_input': ['2x #forge:dusts/manyullyn', '#forge:dusts/titanium', '#forge:gems/uraninite'],
       'ingot_input': ['2x #forge:ingots/manyullyn', '#forge:ingots/titanium', '#forge:gems/uraninite'],
@@ -1151,7 +1154,7 @@ global.newMaterialParts = [
       'fluid': 'thick',
       'components': ['chromium', 'magnesium', 'oxygen', 'mercury'],
       'amount': 1,
-      'dust_input': ['#forge:crushed_ores/kharaxium','#forge:crushed_ores/potentium','#forge:crushed_ores/imortite'],
+      'dust_input': ['#forge:ores/crushed/kharaxium','#forge:ores/crushed/potentium','#forge:ores/crushed/imortite'],
     },
 //////////////////////// Thermolytic /////////////////////////
     {
@@ -1206,7 +1209,7 @@ global.newMaterialParts = [
       'fluid': 'thick',
       'components': ['manganese', 'thorium', 'hydrogen', 'titanium'],
       'amount': 1,
-      'dust_input': ['#forge:crushed_ores/jimmium','#forge:crushed_ores/densite','#forge:crushed_ores/vincyte'],
+      'dust_input': ['#forge:ores/crushed/jimmium','#forge:ores/crushed/densite','#forge:ores/crushed/vincyte'],
     },
     
     /////////////// Other /////////////////////////////
@@ -1271,14 +1274,15 @@ global.newMaterialParts = [
       'ore': true
     },
     {
-      'material': 'lumite',
+      'material': 'luminite',
       'color': 0xffed7a,
       'type': 'gem',
       'iconset': 'sapphire',
       'itemParts': ['gem', 'dust'],
       'blockParts': ['storage_block'],
       'ore': true,
-      'burnTime': 16 //items * 200
+      'burnTime': 16, //items * 200
+      'fluid': 'thick'
     },
     {
       'material': 'manasteel',

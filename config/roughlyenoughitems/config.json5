@@ -2,20 +2,56 @@
 	"basics": {
 		"favorites": [
 			"{id:\"ftblibrary:toggle.gamemode\",json:'{\"group\":\"ftblibrary:cheat\",\"icon\":[\"ftblibrary:icons/blue_button\",\"ftblibrary:textures/icons/toggle_gamemode.png\"],\"x\":100,\"click\":\"command:/ftblibrary gamemode\",\"hide_with_nei\":true,\"requires_op\":true}',type:\"ftblibrary:sidebar_button\"}",
-			"{id:\"ftblibrary:toggle.day\",json:'{\"group\":\"ftblibrary:cheat\",\"icon\":[\"ftblibrary:icons/blue_button\",\"ftblibrary:textures/icons/toggle_day.png\"],\"x\":120,\"click\":\"command:/ftblibrary day\",\"required_server_mods\":[\"ftblibrary\"],\"hide_with_nei\":true,\"requires_op\":true}',type:\"ftblibrary:sidebar_button\"}",
 			"{id:\"ftbteams:my_team\",json:'{\"group\":\"ftblibrary:info\",\"icon\":\"ftbteams:textures/teams.png\",\"x\":0,\"click\":\"ftbteams:open_gui\",\"loading_screen\":true}',type:\"ftblibrary:sidebar_button\"}",
 			"{id:\"ftbquests:quests\",json:'{\"group\":\"ftblibrary:info\",\"icon\":\"ftbquests:item/book\",\"x\":610,\"click\":\"ftbquests:open_gui\",\"required_server_mods\":[\"ftbquests\"],\"custom_text\":true}',type:\"ftblibrary:sidebar_button\"}",
 			"{id:\"ftbessentials:trash_can\",json:'{\"group\":\"ftblibrary:util\",\"icon\":\"ftblibrary:icons/bin\",\"x\":150,\"click\":\"command:/trashcan\",\"required_server_mods\":[\"ftbessentials\"]}',type:\"ftblibrary:sidebar_button\"}",
-			"{id:\"ftbchunks:chunks\",json:'{\"group\":\"ftblibrary:util\",\"icon\":\"ftblibrary:icons/map\",\"x\":310,\"click\":\"ftbchunks:open_gui\"}',type:\"ftblibrary:sidebar_button\"}"
+			"{id:\"ftbchunks:chunks\",json:'{\"group\":\"ftblibrary:util\",\"icon\":\"ftblibrary:icons/map\",\"x\":310,\"click\":\"ftbchunks:open_gui\"}',type:\"ftblibrary:sidebar_button\"}",
+			"{data:{Count:1b,id:\"ae2:controller\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"kubejs:crystal_orichalcum\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"kubejs:deposit_orichalcum\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"minecraft:coal_ore\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Amount:1000,FluidName:\"industrialforegoing:ether_gas\",type:\"minecraft:fluid\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"industrialforegoing:dissolution_chamber\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"industrialforegoing:machine_frame_pity\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Amount:1000,FluidName:\"mekanism:uranium_hexafluoride\",type:\"minecraft:fluid\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"compressedcreativity:mesh_splashing\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"minecraft:spruce_planks\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"compressedcreativity:mesh_dense\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"createsifter:string_mesh\",tag:{},type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Amount:1000,FluidName:\"chemlib:nitric_acid_fluid\",type:\"minecraft:fluid\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{id:\"mekanism:hydrofluoric_acid\",type:\"mekanism:jei_plugin_jei_compat_gasstack\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"mekanism:fluorite_gem\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"chemlib:protein\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"chemlib:graphite_dust\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"mekanism:chemical_crystallizer\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"mekanism:chemical_dissolution_chamber\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{id:\"mekanism:hydrogen_chloride\",type:\"mekanism:jei_plugin_jei_compat_gasstack\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Amount:1000,FluidName:\"mekanism:hydrogen_chloride\",type:\"minecraft:fluid\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"industrialforegoing:black_hole_controller\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"industrialforegoing:supreme_black_hole_tank\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"industrialforegoing:supreme_black_hole_unit\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"kubejs:activated_carbon_mesh\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Amount:1000,FluidName:\"kubejs:uru_slurry\",type:\"minecraft:fluid\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"immersiveengineering:steel_scaffolding_standard\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"multiblocked:energy_input_mk3\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{id:\"mekanism:clean_uranium\",type:\"mekanism:jei_plugin_jei_compat_slurrystack\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{id:\"mekanism:dirty_uranium\",type:\"mekanism:jei_plugin_jei_compat_slurrystack\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"mekanism:chemical_washer\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Amount:1000,FluidName:\"minecraft:water\",type:\"minecraft:fluid\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"thermal:dynamo_lapidary\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"kubejs:crushed_thermogenic_blend\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"multiblocked:fluid_input\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"kubejs:tier3_casing\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}"
 		],
 		"hiddenFavorites": [],
 		"displayHistory": [
+			"{DisplayHistoryCategory:\"multiblocked:multiblock_info\",DisplayHistoryContains:0b,DisplayHistoryUUID:\"048f7c40-691d-420c-b9f6-4890227548c0\"}",
 			"{DisplayHistoryCategory:\"multiblocked:multiblock_info\",DisplayHistoryContains:0b,DisplayHistoryUUID:\"1749c1cc-a77c-406b-976b-8a14f6bb5d77\"}",
 			"{DisplayHistoryCategory:\"multiblocked:multiblock_info\",DisplayHistoryContains:0b,DisplayHistoryUUID:\"a99272c3-ea21-4d91-9e59-4748e9b8fe0e\"}",
 			"{DisplayHistoryCategory:\"multiblocked:smithing\",DisplayHistoryContains:0b,DisplayHistoryUUID:\"0f828f64-cb4f-4769-86a0-4d669c02f667\"}"
 		],
 		// Declares whether cheating mode is on.
-		"cheating": false,
+		"cheating": true,
 		"favoritesEnabled": true,
 		"keyBindings": {
 			"recipeKeybind": {
@@ -138,7 +174,8 @@
 			"clickableRecipeArrows": true,
 			"registerRecipesInAnotherThread": true,
 			"newFastEntryRendering": true,
-			"cachingFastEntryRendering": false
+			"cachingFastEntryRendering": false,
+			"cachingDisplayLookup": true
 		}
 	},
 	"appearance": {

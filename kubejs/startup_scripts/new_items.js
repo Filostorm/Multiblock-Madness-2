@@ -45,7 +45,13 @@ var basicItems = [
 	'spirited_brick',
 	'heated_brick',
 	'reactive_blend',
-	'deep_learner_base'
+	'deep_learner_base',
+	'polymer_clay',
+	'luminite_canister',
+	'mesh',
+	'zinc_mesh',
+	'carbon_mesh',
+	'activated_carbon_mesh',
 ]
 
 global.transitionalItems = [
@@ -80,11 +86,11 @@ onEvent('item.registry', event => {
 	})
 	event.create(`partially_folded_damascus_steel`, 'create:sequenced_assembly')
 
-	event.create(`washed_thermogenic_blend`).color(0, 0xf06330).texture(`kubejs:item/ore/ore_washed`)
-	event.create(`crushed_thermogenic_blend`).color(0, 0xf06330).texture(`kubejs:item/ore/ore_crushed`)
-	event.create(`fine_thermogenic_dust`).color(0, 0xf06330).texture(`kubejs:item/ore/ore_fine_dust`)
+	event.create(`washed_thermogenic_blend`).color(0, 0xf06330).texture(`kubejs:item/ore/washed`)
+	event.create(`crushed_thermogenic_blend`).color(0, 0xf06330).texture(`kubejs:item/ore/crushed`)
+	event.create(`fine_thermogenic_dust`).color(0, 0xf06330).texture(`kubejs:item/ore/fine_dust`)
 
-	event.create(`washed_thermolytic_blend`).color(0, 0x42f5da).texture(`kubejs:item/ore/ore_washed`)
-	event.create(`crushed_thermolytic_blend`).color(0, 0x42f5da).texture(`kubejs:item/ore/ore_crushed`)
-	event.create(`fine_thermolytic_dust`).color(0, 0x42f5da).texture(`kubejs:item/ore/ore_fine_dust`)
+	event.create(`washed_thermolytic_blend`).color(0, 0x42f5da).texture(`kubejs:item/ore/washed`)
+	event.create(`crushed_thermolytic_blend`).color(0, 0x42f5da).texture(`kubejs:item/ore/crushed`)
+	event.create(`fine_thermolytic_dust`).color(0, 0x42f5da).texture(`kubejs:item/ore/fine_dust`)
   });

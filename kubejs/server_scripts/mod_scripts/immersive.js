@@ -11,6 +11,11 @@ onEvent('tags.items', event => {
 
 onEvent('recipes', event => {
 
+  //Replace Scaffolding recipe
+	event.remove({id: 'immersiveengineering:crafting/steel_scaffolding_standard'})
+  
+
+
   //No recycling - doesnt work, prob needs to be an actual datapack
   //event.custom({
 	//  "type": "immersiveengineering:generated_list",

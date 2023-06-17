@@ -176,13 +176,14 @@ event.shaped('multiblocked:energy_output_mk3', [
   event.shapeless(`multiblocked:energy_output_mk3`, ['multiblocked:energy_input_mk3']).id(`mbm2:multiblocked/energy_output_mk3_switch`)
 
 // tier1_casing
-event.shaped('4x kubejs:tier1_casing', [
-	' P ',
+event.shaped('kubejs:tier1_casing', [
+	'RPR',
 	'PCP',
-	' P '
+	'RPR'
   ], {
 	C: 'kubejs:invar_casing',
-	P: '#forge:plates/cobalt_brass',
+	P: '#forge:plates/steel',
+	R: '#forge:rods/cobalt_brass',
   }).id(`mbm2:tier1_casing`)
 
   

@@ -87,9 +87,9 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 					smeltProcessedOre.push(`#forge:ores/${part.name}/${item.material}`)
 				}
 				//Grit can also be smelted
-				//if (part.grade == 0 && item.tier != 0) {
-				//	smeltProcessedOre.push(`#forge:ores/${part.name}/${item.material}`)
-				//}
+				if (part.name == 'grit' /*part.grade == 0 && item.tier != 0*/) {
+					smeltProcessedOre.push(`#forge:ores/${part.name}/${item.material}`)
+				}
 			})
 				//console.log(refineProcessedOre)
 				//console.log(smeltProcessedOre)
@@ -102,14 +102,12 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				let refinableOres = []
 				global.oreParts.forEach((part) => {
 					//processing has grade, refining has level
-					if(part.grade >= tier && part.grade >= item.tier) {
+					if(part.grade >= tier && part.grade >= item.tier-1) {
 						refinableOres.push(`#forge:ores/${part.name}/${item.material}`)
 					}
 				})
 				return refinableOres
 			}
-			console.log('refinableOre(1) ' + refinableOre(1))
-			console.log('refinableOre(2) ' + refinableOre(2))
 			
 
 			//Dust and Tier 1 Refining can be smelted
@@ -154,9 +152,9 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 			if (Item.of(`#forge:dusts/${item.material}`) != null) {
 				//Washed Ore
 				if (Item.of(`#forge:ores/washed/${item.material}`) != null) {
-				event.recipes.immersiveengineeringCrusher(`#forge:ores/grit/${item.material}`, `#forge:ores/washed/${item.material}`).id(`mbm2:immersive/crushing/washed_${item.material}`)
-				event.recipes.createMilling([`#forge:ores/grit/${item.material}`], [`#forge:ores/washed/${item.material}`]).id(`mbm2:create/crushing/washed_${item.material}`)
-				event.recipes.mekanismCrushing(`#forge:ores/grit/${item.material}`, `#forge:ores/washed/${item.material}`).id(`mbm2:mekanism/crushing/washed_${item.material}`)
+				event.recipes.immersiveengineeringCrusher(`#forge:dusts/${item.material}`, `#forge:ores/washed/${item.material}`).id(`mbm2:immersive/crushing/washed_${item.material}`)
+				event.recipes.createMilling([`#forge:dusts/${item.material}`], [`#forge:ores/washed/${item.material}`]).id(`mbm2:create/crushing/washed_${item.material}`)
+				event.recipes.mekanismCrushing(`#forge:dusts/${item.material}`, `#forge:ores/washed/${item.material}`).id(`mbm2:mekanism/crushing/washed_${item.material}`)
 				}
 				//Grit Washing
 				if (Item.of(`#forge:ores/grit/${item.material}`) != null) {
@@ -354,7 +352,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 
 				///////////////////// ORE REFINING STEP 1 //////////////////
 					//Create Washing 
-					event.recipes.createSplashing([`2x #forge:ores/washed/${item.material}`, Item.of('gravel').withChance(0.50)], `#mbm2:ore_part/washable/${item.material}`/*refinableOre(1) in tag form because washing is spechlae*/).id(`mbm2:washing/${item.material}`)
+					event.recipes.createSplashing([`${global.refiningMultiplier[1]}x #forge:ores/washed/${item.material}`, Item.of('gravel').withChance(0.50)], `#mbm2:ore_part/washable/${item.material}`/*refinableOre(1) in tag form because washing is spechlae*/).id(`mbm2:washing/${item.material}`)
 					
 					//Chain recipe
 					event.recipes.createSplashing([`#forge:ores/washed/${item.material}`], `#forge:ores/imbued/${item.material}`).id(`mbm2:washing/imbued_ore_${item.material}`)
@@ -362,15 +360,16 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 
 				///////////////////// ORE REFINING STEP 2 //////////////////
 			
-	 				//Imbuing					
-	 				global.arsImbument(event, `kubejs:imbued_${item.material}`, 3, refinableOre(2), 3000, [], `mbm2:imbuing/${item.material}`)
+	 				//Imbuing
+	 				global.arsImbument(event, `kubejs:imbued_${item.material}`, global.refiningMultiplier[2], refinableOre(2), 3000, [], `mbm2:imbuing/${item.material}`)
 
 					//Chain recipe
-	 				global.arsImbument(event, `kubejs:imbued_${item.material}`, 1, `#forge:ores/cluster/${item.material}`, 1000, [], `mbm2:imbuing/cluster_${item.material}`)
+	 				global.arsImbument(event, `kubejs:imbued_${item.material}`, 1, `#forge:ores/cluster/${item.material}`, 500, [], `mbm2:imbuing/cluster_${item.material}`)
 					
 
-						
+		////////////////////////////////////////////////////////////////
 		///////////////////// ORE PROCESSING CASH OUT //////////////////
+		////////////////////////////////////////////////////////////////
 
 		//Blast Furnace Data
 		let coilHeatValues = [
@@ -422,10 +421,10 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				////////////// TIER 1 OR BELOW /////////////////////
 				if (item.tier <= 1) {
 						//Ore Part Tier 1 Metal Smelting
-						event.smelting(`#forge:ingots/${item.material}`, smeltProcessedOre).id(`mbm2:smelting/t1_ore_part_${item.material}`)
-						event.blasting(`#forge:ingots/${item.material}`, smeltProcessedOre).id(`mbm2:blasting/t1_ore_part_${item.material}`)
-						event.smelting(`#forge:ingots/${item.material}`, smeltRefinedOre).id(`mbm2:smelting/ore_refined_part_${item.material}`)
-						event.blasting(`#forge:ingots/${item.material}`, smeltRefinedOre).id(`mbm2:blasting/ore_refined_part_${item.material}`)
+						event.smelting(`#forge:ingots/${item.material}`, smeltProcessedOre).xp(0.5).id(`mbm2:smelting/t1_ore_part_${item.material}`)
+						event.blasting(`#forge:ingots/${item.material}`, smeltProcessedOre).xp(1.0).id(`mbm2:blasting/t1_ore_part_${item.material}`)
+						event.smelting(`#forge:ingots/${item.material}`, smeltRefinedOre).xp(0.5).id(`mbm2:smelting/ore_refined_part_${item.material}`)
+						event.blasting(`#forge:ingots/${item.material}`, smeltRefinedOre).xp(1.0).id(`mbm2:blasting/ore_refined_part_${item.material}`)
 						
 						//Retro Smeltery
 				  	if (item.fluid_id != null) {

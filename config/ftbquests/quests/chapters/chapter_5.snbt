@@ -216,6 +216,7 @@
 			]
 		}
 		{
+			title: "Destination: Moon"
 			icon: {
 				id: "beyond_earth:rocket_t1"
 				Count: 1b
@@ -357,12 +358,6 @@
 					count: 4L
 				}
 			]
-			rewards: [{
-				id: "328155ABF13423B0"
-				type: "item"
-				item: "pneumaticcraft:thermal_lagging"
-				count: 4
-			}]
 		}
 		{
 			icon: "mbm2:ebf"
@@ -719,6 +714,11 @@
 			title: "Using Heat"
 			x: 13.5d
 			y: -5.0d
+			description: [
+				"The Vortex Tube will passively cool the blue side while heating the red side. If supplied Air Pressure, it will enhance this function significantly. Additionally, by adding a Heat Sink to the hot side, the cold side will be able to go much lower."
+				""
+				"By attaching the Heat Frame to a chest, and heating it, you can make an impromptu furnace! If cooled instead, you will be able to multiply your plastic output from buckets."
+			]
 			dependencies: ["02285A69B0A09A44"]
 			id: "2F38722F9A7D89CC"
 			tasks: [
@@ -736,6 +736,11 @@
 					id: "272259D2D2DF319E"
 					type: "item"
 					item: "pneumaticcraft:heat_frame"
+				}
+				{
+					id: "6BAAB6570CF333AB"
+					type: "item"
+					item: "pneumaticcraft:thermal_lagging"
 				}
 			]
 		}
@@ -807,6 +812,7 @@
 		{
 			x: 9.0d
 			y: -4.5d
+			description: ["Running out of channels yet? Each ME Controller can handle up to 64 Channels per side!"]
 			dependencies: [
 				"43F8546BD8107D1C"
 				"281E051C6D348B35"

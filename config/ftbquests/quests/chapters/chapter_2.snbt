@@ -462,19 +462,11 @@
 					}
 				}
 			}]
-			rewards: [
-				{
-					id: "0478081DF9604AAB"
-					type: "choice"
-					table_id: 5651728752135664854L
-				}
-				{
-					id: "151F0A624A408BB8"
-					type: "item"
-					item: "malum:coal_fragment"
-					count: 64
-				}
-			]
+			rewards: [{
+				id: "0478081DF9604AAB"
+				type: "choice"
+				table_id: 5651728752135664854L
+			}]
 		}
 		{
 			title: "Backpacks have Upgrades now!"

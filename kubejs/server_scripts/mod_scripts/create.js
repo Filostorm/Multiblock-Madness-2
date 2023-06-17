@@ -108,7 +108,7 @@ C: 'thermal:cured_rubber'
   event.recipes.createDeploying('create:incomplete_precision_mechanism', ['create:incomplete_precision_mechanism', 'create:cogwheel']),
 //  event.recipes.createCutting('create:incomplete_precision_mechanism', 'create:incomplete_precision_mechanism').processingTime(50)
   ]).transitionalItem('create:incomplete_precision_mechanism').loops(1).id('mbm2:create/precision_mechanism')
-  global.ieBlueprint(event, 'components', Item.of(`create:precision_mechanism`), [{tag: `forge:plates/gold`}, {tag: `forge:gears/brass`}, {item: `create:andesite_alloy`}, {tag: `forge:cogwheels`}], `mbm2:blueprint/precision_mechanism`)
+  global.ieBlueprint(event, 'components', Item.of(`create:precision_mechanism`), [{tag: `forge:plates/gold`}, {tag: `forge:gears/brass`}, {item: `create:andesite_alloy`}, {tag: `extendedgears:small_cogwheel`}], `mbm2:blueprint/precision_mechanism`)
 
 //Windmill
   event.remove({id: 'create:crafting/kinetics/windmill_bearing'})

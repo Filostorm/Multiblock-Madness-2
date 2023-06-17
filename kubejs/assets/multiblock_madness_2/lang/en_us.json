@@ -9,7 +9,7 @@
     "multiblocked.recipe_map.sorter_mk1": "Mk1 Ore Sorting",
 
     "block.mbm2.fluid_centrifuge_mk1": "Fluid Centrifuge Mk1",
-    "mbm2.fluid_centrifuge_mk1.description": "Splits Fluids into their components. The Create input can also be placed on top",
+    "mbm2.fluid_centrifuge_mk1.description": "Separates Fluids into their components. The Create input can also be placed on top",
     "multiblocked.recipe_map.fluid_centrifuge_mk1": "Mk1 Fluid Centrifuging",
 
     "block.mbm2.ebf": "Electric Blast Furnace",

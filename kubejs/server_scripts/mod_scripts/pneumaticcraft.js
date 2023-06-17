@@ -63,6 +63,12 @@ onEvent('recipes', event => {
 	//Lightbock needs rose quartz
     event.replaceInput({id: 'pneumaticcraft:uv_light_box'}, 'minecraft:redstone_lamp', 'create:rose_quartz_lamp')
 	
+	//Empty PCB
+	event.remove({id: 'pneumaticcraft:pressure_chamber/empty_pcb'})
+	global.pressureChamber(event, [Item.of('pneumaticcraft:empty_pcb').toResultJson()], [{"type": "pneumaticcraft:stacked_item","tag": 'forge:wires/red_alloy', "count": 2},{"type": "pneumaticcraft:stacked_item","tag": 'forge:sheets/electrum', "count": 4}, {"item": 'pneumaticcraft:plastic'}], 2.0, 'mbm2:pressure_chamber/empty_pcb')
+	
+	
+	
 //PCB Blueprint
   	event.shaped('pneumaticcraft:pcb_blueprint', [
 		'UEU',
@@ -168,5 +174,17 @@ onEvent('recipes', event => {
 	  C: 'kubejs:pneumaticcraft_casing',
 	  P: 'pneumaticcraft:pressure_tube',
 	}).id('mbm2:fluid_mixer')
+
+	//Thermal Lagging
+	event.remove({id: 'pneumaticcraft:thermal_lagging'})
+	event.shaped('4x pneumaticcraft:thermal_lagging', [
+	  'WGW',
+	  'GPG',
+	  'WGW'
+	], {
+	  G: 'ae2:quartz_glass',
+	  W: ['#forge:wool','#thermal:rockwool'],
+	  P: '#pneumaticcraft:plastic_sheets',
+	}).id('mbm2:thermal_lagging')
 
 });

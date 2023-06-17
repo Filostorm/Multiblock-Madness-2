@@ -27,4 +27,15 @@ onEvent('recipes', event => {
 		Item.of(`create:cinder_flour`).withChance(0.33).toResultJson(),
 		Item.of(`create:experience_nugget`).withChance(0.15).toResultJson(),
 	], 500, 'mbm2:sifting/netherrack_brass_mesh')
+
+	//Scrap Metal
+	global.createSifting(event, [Item.of('createsifter:brass_mesh').toJson(), Item.of('apotheosis:common_material').toJson()], [
+		Item.of('tconstruct:debris_nugget').withChance(0.90).toResultJson(),
+		Item.of('tconstruct:debris_nugget').withChance(0.75).toResultJson(),
+		Item.of('tconstruct:debris_nugget').withChance(0.50).toResultJson(),
+		Item.of('tconstruct:debris_nugget').withChance(0.25).toResultJson(),
+		Item.of('kubejs:steel_scraps').withChance(0.50).toResultJson(),
+		Item.of('mekanism:dirty_netherite_scrap').withChance(0.25).toResultJson(),
+		Item.of('minecraft:netherite_scrap').withChance(0.15).toResultJson(),
+	], 500, 'mbm2:sifting/common_material_brass_mesh')
 });

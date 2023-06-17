@@ -1168,6 +1168,7 @@
 		}
 		{
 			title: "Biodesiel"
+			icon: "immersiveengineering:biodiesel_bucket"
 			x: 11.0d
 			y: 8.0d
 			description: ["A great sustanable fuel source, and can be used for plastic later on."]
@@ -1176,12 +1177,19 @@
 				"50FBAD99E2875E46"
 				"6AE6AC04DFC1A75A"
 			]
+			min_required_tasks: 1
 			id: "0C98A801E8A7FE66"
-			tasks: [{
-				id: "558EDA07EBC27B43"
-				type: "item"
-				item: "immersiveengineering:biodiesel_bucket"
-			}]
+			tasks: [
+				{
+					id: "558EDA07EBC27B43"
+					type: "item"
+					item: "immersiveengineering:biodiesel_bucket"
+				}
+				{
+					id: "4A8216D6F5840610"
+					type: "checkmark"
+				}
+			]
 		}
 		{
 			x: 3.5d

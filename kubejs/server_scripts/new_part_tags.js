@@ -84,6 +84,9 @@ onEvent('tags.items', event => {
               if (item.type == 'compound_ore') {
                 event.add(`forge:ores/compound/${part.name}`, `kubejs:${part.name}_${item.material}`)
               }
+            } else {
+              event.add(`forge:ores/${part.name}`, `#forge:raw_materials/${item.material}`)
+              event.add(`forge:ores/${part.name}/${item.material}`, `#forge:raw_materials/${item.material}`)
             }
           })
 

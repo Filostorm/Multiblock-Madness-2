@@ -195,6 +195,14 @@
         ],
         "type": "blocks"
       },
+      "K": {
+        "blocks": [
+          {
+            "id": "kubejs:cobalt_coil"
+          }
+        ],
+        "type": "blocks"
+      },
       "any": {
         "type": "any"
       }
@@ -218,7 +226,8 @@
       ],
       "C": [
         "C",
-        "J"
+        "J",
+        "K"
       ],
       "D": [
         "D"

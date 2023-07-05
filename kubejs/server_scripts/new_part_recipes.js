@@ -31,6 +31,7 @@ onEvent('recipes', event => {
 
 	////////////////HAMMER///////////////
     if (Item.of(`#forge:hammers/${item.material}`) != null) {
+		/*
 	event.shaped(`#forge:hammers/${item.material}`, [
 		' IS',
 		' RI',
@@ -40,12 +41,13 @@ onEvent('recipes', event => {
 		R: '#forge:rods/wooden',
 		S: '#forge:string',
 	  }).id(`kubejs:crafting/${item.material}_hammer`)
-	}
+	*/}
 
 
 	
 	////////////////PLATES///////////////
     if (Item.of(`#forge:plates/${item.material}`) != null) {
+/*
 	event.shaped(`#forge:plates/${item.material}`, [
 		'H',
 		'I',
@@ -54,7 +56,7 @@ onEvent('recipes', event => {
 		I: `#forge:ingots/${item.material}`,
 		H: Ingredient.of('#forge:hammers'),
 	  }).damageIngredient(Ingredient.of('#forge:hammers')).id(`immersiveengineering:crafting/plate_${item.material}_hammering`)
-
+*/
 
 
 	  if (item.fluid_id != null) {
@@ -163,7 +165,7 @@ onEvent('recipes', event => {
 	}
 	////////////////GEARS///////////////
     if (Item.of(`#forge:gears/${item.material}`) != null) {
-		if (Item.of(`#forge:rods/${item.material}`) != null) {
+		if (Item.of(`#forge:rods/${item.material}`) != null) {/*
 			event.shaped(`#forge:gears/${item.material}`, [
 				' P ',
 				'PRP',
@@ -172,7 +174,7 @@ onEvent('recipes', event => {
 				P: `#forge:plates/${item.material}`,
 				R: `#forge:rods/${item.material}`
 			}).id(`thermal:parts/${item.material}_gear`)
-
+*/
 			//////////////// COG BLOCK ///////////////
 			if (Item.of(`#forge:cog_blocks/${item.material}`) != null) {
 				event.shaped(`2x #forge:cog_blocks/${item.material}`, [
@@ -209,26 +211,28 @@ onEvent('recipes', event => {
 	
 	//////////////// INTERLOCKING PART ///////////////
     if (Item.of(`#forge:interlocking_components/${item.material}`) != null) {
-		if (Item.of(`#forge:wires/${item.material}`) != null && Item.of(`#forge:gears/${item.material}`) != null) {
-			event.shaped(`#forge:interlocking_components/${item.material}`, [
-				'G G',
-				' W ',
-				'G G'
-			  ], {
-				W: `#forge:wires/${item.material}`,
-				G: `#forge:gears/${item.material}`
-			  }).id(`mbm2:parts/${item.material}_interlocking_component`)
+		if (Item.of(`#forge:gears/${item.material}`) != null) {
+			if (Item.of(`#forge:wires/${item.material}`) != null){ 
+				event.shaped(`#forge:interlocking_components/${item.material}`, [
+					'G G',
+					' W ',
+					'G G'
+				  ], {
+					W: `#forge:wires/${item.material}`,
+					G: `#forge:gears/${item.material}`
+				}).id(`mbm2:parts/${item.material}_interlocking_component`)
+			}
 			//Cheaper recipe
 			global.ieBlueprint(event, 'interlocking_components', Item.of(`#forge:interlocking_components/${item.material}`), [{count:4, base_ingredient: {tag: `forge:gears/${item.material}`}}], `mbm2:${item.material}_interlocking_component`)
 
-			} else { console.log(`${item.material}` + "needs wires and gears enabled to make a interlocking component recipe");}
+			} else { console.log(`${item.material}` + "needs gears enabled to make an interlocking component recipe");}
 		}
 	}
 	////////////////END OF GEARS///////////////
 	
 	////////////////RODS///////////////
     if (Item.of(`#forge:rods/${item.material}`) != null) {
-		
+		/*
 	event.shaped(`#forge:rods/${item.material}`, [
 		'HI',
 		'I '
@@ -236,7 +240,7 @@ onEvent('recipes', event => {
 		I: `#forge:ingots/${item.material}`,
 		H: Ingredient.of('#forge:hammers'),
 	  }).damageIngredient(Ingredient.of('#forge:hammers')).id(`mbm2:parts/${item.material}_rod`)
-
+*/
 	//Create Rods
 	global.createRolling(event, `#forge:rods/${item.material}`, 1, `forge:ingots/${item.material}`, `createaddition:rolling/${item.material}_ingot`)
 	
@@ -282,7 +286,7 @@ onEvent('recipes', event => {
 					' P '
 				  ], {
 					S: `#forge:scaffoldings/${item.material}`,
-					P: `#forge:plates/${item.material}`,
+					P: `#forge:platings/${item.material}`,
 				  }).id(`mbm2:crafting/${item.material}_frame_box`)
 
 				  ////////////////HULL CASINGS///////////////

@@ -18,8 +18,8 @@ global.fluidsToRemove = [
 	'thermal:creosote',
 	'pneumaticcraft:biodiesel', //50,000 burn time
 	'thermal:crude_oil',
-	'createbigcannons:molten_steel',
-	'createbigcannons:molten_bronze',
+	//'createbigcannons:molten_steel',
+	//'createbigcannons:molten_bronze',
 	'chemlib:sulfuric_acid_fluid',
 	'chemlib:oxygen_fluid',
 	'chemlib:hydrogen_fluid',

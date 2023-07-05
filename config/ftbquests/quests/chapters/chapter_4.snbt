@@ -1736,6 +1736,7 @@
 			}]
 		}
 		{
+			title: "Auto Crafting!"
 			x: 12.5d
 			y: 11.5d
 			dependencies: [
@@ -1764,13 +1765,26 @@
 					type: "item"
 					item: "ae2:pattern_access_terminal"
 				}
+				{
+					id: "0D140FFB2F8889D2"
+					type: "item"
+					item: "ae2:crafting_unit"
+				}
 			]
-			rewards: [{
-				id: "24DDF521273A63F2"
-				type: "random"
-				exclude_from_claim_all: true
-				table_id: 824098445478849879L
-			}]
+			rewards: [
+				{
+					id: "24DDF521273A63F2"
+					type: "random"
+					exclude_from_claim_all: true
+					table_id: 824098445478849879L
+				}
+				{
+					id: "71914634C3327663"
+					type: "item"
+					item: "ae2:blank_pattern"
+					count: 8
+				}
+			]
 		}
 	]
 	quest_links: [ ]

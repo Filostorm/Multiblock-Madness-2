@@ -9,9 +9,9 @@
 	default_hide_dependency_lines: false
 	quests: [
 		{
-			title: "Collecting some Elemental Juice"
-			x: -5.0d
-			y: 7.0d
+			title: "Collecting some Element Juice"
+			x: -4.5d
+			y: 7.5d
 			description: ["Right click the pipe connection to change to extraction mode."]
 			dependencies: ["027AD6DB4DE3B445"]
 			id: "08C3C85483A79429"
@@ -58,7 +58,7 @@
 		}
 		{
 			x: -2.5d
-			y: 7.0d
+			y: 6.5d
 			dependencies: ["08C3C85483A79429"]
 			id: "0828BD31B9F3CD36"
 			tasks: [{
@@ -75,7 +75,7 @@
 		}
 		{
 			title: "Elemental Infused Items"
-			x: -2.5d
+			x: -0.5d
 			y: 5.5d
 			dependencies: ["0828BD31B9F3CD36"]
 			id: "391E4F9DA1A3D71B"
@@ -95,7 +95,11 @@
 			title: "Basic Create Components"
 			x: -0.5d
 			y: 10.0d
-			description: ["Large Cogwheels can be used in conjunction with small Cogs to increase rotational speed."]
+			description: [
+				"Large Cogwheels can be used in conjunction with small Cogs to increase rotational speed."
+				""
+				"You'll be needing a lot of these (with the possible exception of the Large Cogwheel) so be sure to craft extra!"
+			]
 			dependencies: ["36F53EFC92FB2CA7"]
 			id: "360253CDEF94C130"
 			tasks: [
@@ -115,15 +119,15 @@
 					item: "create:gearbox"
 				}
 				{
-					id: "6C1909FF963EC075"
-					type: "item"
-					item: "create:large_cogwheel"
-				}
-				{
 					id: "7C78C58B4BF68457"
 					type: "item"
 					item: "create:encased_chain_drive"
 					count: 2L
+				}
+				{
+					id: "3DB1201D3895C921"
+					type: "item"
+					item: "create:large_cogwheel"
 				}
 			]
 			rewards: [
@@ -142,8 +146,8 @@
 		{
 			icon: "create:mechanical_press"
 			x: 1.5d
-			y: 11.5d
-			subtitle: "Cheaper Plates"
+			y: 12.0d
+			subtitle: "Unlocking Upgrades!"
 			description: ["You can rig this up manually with a Depot underneath, or have it above a belt for automation."]
 			dependencies: ["273B98D3C35D7356"]
 			id: "2990DA17B56345DA"
@@ -183,7 +187,7 @@
 		}
 		{
 			title: "Tinkers Tools"
-			x: -10.0d
+			x: -8.5d
 			y: 8.0d
 			description: [
 				"Check the Tinkers Station for which parts you need to make a trusty Pickaxe."
@@ -219,7 +223,7 @@
 		{
 			title: "The Toolbox"
 			x: -0.5d
-			y: 8.0d
+			y: 8.5d
 			description: ["Hold Alt to access items stored inside the toolbox."]
 			dependencies: ["360253CDEF94C130"]
 			id: "298E404D2803AB20"
@@ -267,13 +271,14 @@
 			subtitle: "Treated Wood"
 			description: [
 				"Good way to extend your fuel supply, and you'll need Creosote Oil for Treated wood, used in many projects going forward."
-				"You'll need 108 Coke Oven Bricks for each coke oven you want to build."
+				"You'll need 108 (64 + 44) Coke Oven Bricks for each coke oven you want to build."
 			]
 			dependencies: [
 				"760223888ADD58B0"
 				"5DF7F48CFFA43DA8"
 			]
 			size: 1.5d
+			min_required_tasks: 2
 			id: "556CB869A6592D68"
 			tasks: [
 				{
@@ -293,6 +298,11 @@
 						}
 					}
 				}
+				{
+					id: "652DB37845007A2D"
+					type: "item"
+					item: "immersiveengineering:creosote_bucket"
+				}
 			]
 			rewards: [{
 				id: "1CAF568E8AFE2393"
@@ -302,7 +312,7 @@
 		}
 		{
 			title: "Getting Wood"
-			x: -10.0d
+			x: -8.5d
 			y: 10.0d
 			description: [
 				"Welcome to Multiblock Madness 2! "
@@ -338,7 +348,7 @@
 		}
 		{
 			title: "Deep Storage"
-			x: -10.0d
+			x: -8.5d
 			y: 12.0d
 			subtitle: "Better Drawers?"
 			dependencies: ["5FD77AB0F43882B8"]
@@ -399,11 +409,11 @@
 			]
 		}
 		{
-			title: "Upgrades!"
-			x: -9.0d
-			y: 13.5d
+			title: "Drawer Upgrades!"
+			x: 0.0d
+			y: 13.0d
 			subtitle: "These multiply your total storage"
-			dependencies: ["09785A45FBC8D26F"]
+			dependencies: ["2990DA17B56345DA"]
 			id: "7A3C0E70F10FC88A"
 			tasks: [{
 				id: "7D61863A05280CAE"
@@ -412,7 +422,7 @@
 			}]
 		}
 		{
-			x: -11.5d
+			x: -10.0d
 			y: 11.5d
 			subtitle: "You'll need to head to cloud level to get the parts"
 			description: ["Place one of the ballons on the Cloud Chest, and the other on any other chest to upload it to the cloud."]
@@ -446,9 +456,9 @@
 		{
 			title: "Furnace Upgrades"
 			icon: "ironfurnaces:iron_furnace"
-			x: -5.0d
-			y: 11.5d
-			dependencies: ["03F754FB73DEF8FA"]
+			x: 1.5d
+			y: 13.5d
+			dependencies: ["2990DA17B56345DA"]
 			id: "07A5A4AA9766AC81"
 			tasks: [{
 				id: "648F119E490A167B"
@@ -470,7 +480,7 @@
 		}
 		{
 			title: "Backpacks have Upgrades now!"
-			x: -11.5d
+			x: -10.0d
 			y: 8.5d
 			dependencies: ["5FD77AB0F43882B8"]
 			id: "1C13BCBAB1983C5B"
@@ -597,7 +607,7 @@
 		}
 		{
 			title: "Finding things is fun!"
-			x: -12.5d
+			x: -11.0d
 			y: 10.0d
 			subtitle: "Looking for things, not so much"
 			description: ["Having people find you is even worse."]
@@ -686,11 +696,11 @@
 			}]
 		}
 		{
-			title: "Chest Upgrades"
-			x: -8.5d
-			y: 11.5d
+			title: "Chest Upgrades!"
+			x: 3.0d
+			y: 13.0d
 			description: ["To Diamond Tier and beyond!"]
-			dependencies: ["5FD77AB0F43882B8"]
+			dependencies: ["2990DA17B56345DA"]
 			id: "331A846E2C1269E3"
 			tasks: [{
 				id: "11D331BD622334CE"
@@ -760,7 +770,11 @@
 			x: 7.0d
 			y: 11.0d
 			shape: "gear"
-			description: ["You'll need plenty of Brass to upgrade your Create parts, while Bronze is used in Thermal, and Invar is mostly used in multiblocks."]
+			description: [
+				"You'll need plenty of Brass to upgrade your Create parts, while Bronze is used in Thermal, and Invar is mostly used in multiblocks."
+				""
+				"Nickel and Zinc are most commonly found in the Nether."
+			]
 			dependencies: [
 				"760223888ADD58B0"
 				"1AE07B2CC8D8B725"
@@ -783,7 +797,7 @@
 		{
 			title: "Basic Item Routing"
 			x: -0.5d
-			y: 12.0d
+			y: 11.5d
 			dependencies: ["360253CDEF94C130"]
 			id: "508186DAF72A067F"
 			tasks: [
@@ -904,7 +918,7 @@
 		{
 			title: "Fluid Transfer"
 			x: 1.5d
-			y: 8.5d
+			y: 8.0d
 			description: ["Most fluid handling with Create needs to by done with pipes, rather then buckets."]
 			dependencies: ["273B98D3C35D7356"]
 			id: "1CC0BFAC83B1134B"
@@ -929,7 +943,7 @@
 		{
 			icon: "create:hose_pulley"
 			x: 2.5d
-			y: 7.0d
+			y: 6.5d
 			subtitle: "Infinite Water/Lava"
 			description: ["Used to drain bodies of liquid."]
 			dependencies: [
@@ -983,7 +997,7 @@
 		}
 		{
 			x: 1.0d
-			y: 7.0d
+			y: 6.5d
 			subtitle: "This can also be used to automate Treated Wood."
 			description: ["You won't be able to fill the Spout with buckets, so you'll need to rig up the pipes to fill it for you."]
 			dependencies: [
@@ -1042,8 +1056,8 @@
 					tag: {
 						BlockEntityTag: {
 							TankInv: [{
-								Tank: 0b
 								FluidName: "minecraft:empty"
+								Tank: 0b
 								Capacity: 32000
 								Amount: 0
 							}]
@@ -1055,6 +1069,7 @@
 		{
 			x: -4.5d
 			y: 10.0d
+			description: ["You can use any type of stone to Create \"Stone Alloy\""]
 			dependencies: ["03F754FB73DEF8FA"]
 			id: "4598B96CC8D9CD02"
 			tasks: [{
@@ -1066,8 +1081,8 @@
 		{
 			title: "Upgrades!"
 			icon: "elementalcraft:container"
-			x: -2.5d
-			y: 4.0d
+			x: 1.0d
+			y: 5.5d
 			dependencies: ["391E4F9DA1A3D71B"]
 			id: "1207300474ACF750"
 			tasks: [
@@ -1095,6 +1110,7 @@
 			x: 4.0d
 			y: 6.5d
 			subtitle: "Can be used to craft string"
+			description: ["Found by breaking grass"]
 			id: "5DF7F48CFFA43DA8"
 			tasks: [
 				{
@@ -1110,16 +1126,31 @@
 			]
 		}
 		{
+			icon: "farmersdelight:cutting_board"
 			x: -2.5d
 			y: 11.5d
 			description: ["Easy way to strip wood, and get the bark as a byproduct!"]
 			dependencies: ["36F53EFC92FB2CA7"]
 			id: "4E2670A228CB0F4F"
-			tasks: [{
-				id: "271D7BAD67A40550"
-				type: "item"
-				item: "farmersdelight:cutting_board"
-			}]
+			tasks: [
+				{
+					id: "271D7BAD67A40550"
+					type: "item"
+					item: "farmersdelight:cutting_board"
+				}
+				{
+					id: "613EEAD78F2415EF"
+					type: "item"
+					title: "Any #farmersdelight:tools/knives"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "farmersdelight:tools/knives"
+						}
+					}
+				}
+			]
 			rewards: [{
 				id: "4E2D099F1142A318"
 				type: "random"

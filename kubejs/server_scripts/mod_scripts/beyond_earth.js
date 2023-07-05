@@ -57,7 +57,7 @@ onEvent('recipes', event => {
 		A: 'create:mechanical_arm',
 		B: 'pneumaticcraft:pneumatic_cylinder',
 		H: 'immersiveengineering:coil_hv',
-		C: 'compressedcreativity:compressed_iron_casing',
+		C: 'create:railway_casing', //'compressedcreativity:compressed_iron_casing',
 		U: 'thermal:upgrade_augment_1',
 		E: 'immersiveengineering:component_electronic_adv',
 		R: '#forge:rods/duralumin',
@@ -67,7 +67,7 @@ onEvent('recipes', event => {
 	  }).id('mbm2:nasa_workbench')
 
 	  //ROTARS
-	  event.replaceInput({mod: 'beyond_earth'}, 'beyond_earth:engine_fan', 'compressedcreativity:engine_rotor')
+	  event.replaceInput({mod: 'beyond_earth'}, 'beyond_earth:engine_fan', 'pneumaticcraft:turbine_rotor', )//'compressedcreativity:engine_rotor')
 
 	  //Aluminum
 	  event.replaceInput({mod: 'beyond_earth'}, '#forge:plates/iron', '#forge:plates/aluminum')

@@ -114,12 +114,13 @@
 			title: "1024 RF/t for 1 min"
 			x: 0.5d
 			y: -4.0d
-			min_required_dependencies: 1
+			min_required_dependencies: 2
 			dependencies: [
 				"560CC6875A8704A8"
 				"56B7AEF5BFD6939D"
 				"62FDBB2E767B01A2"
 				"63769D90E92882C0"
+				"245E8F4F1007E57B"
 			]
 			id: "5052F64E077166CB"
 			tasks: [{
@@ -189,6 +190,16 @@
 					item: "powah:solar_panel_niotic"
 				}
 			]
+		}
+		{
+			x: -1.0d
+			y: -4.0d
+			id: "245E8F4F1007E57B"
+			tasks: [{
+				id: "6D9E735DDE25AF5B"
+				type: "item"
+				item: "ftbquests:screen_1"
+			}]
 		}
 	]
 	quest_links: [ ]

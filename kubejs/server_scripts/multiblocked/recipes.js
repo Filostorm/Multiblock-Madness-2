@@ -196,7 +196,7 @@ event.shaped('kubejs:factory_fan', [
 	C: '#forge:scaffoldings/steel',
 	F: 'create:propeller',
 	S: '#forge:spools/red_alloy',
-	P: '#forge:plates/cast_iron',
+	P: '#forge:plates/steel',
   }).id(`mbm2:factory_fan`)
 
 // High Pressure Casing

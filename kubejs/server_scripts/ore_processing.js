@@ -22,9 +22,9 @@ onEvent('recipes', event => {
 		event.remove({id: `create:crushing/raw_${item}_ore`})
 		event.remove({id: `create:crushing/raw_${item}_block`})
 		event.remove({id: `create:crushing/raw_${item}`})
-		event.remove({id: `create:splashing/crushed_${item}_ore`})
-		event.remove({id: `create:splashing/thermal/crushed_${item}_ore`})
-		event.remove({id: `create:splashing/mekanism/crushed_${item}_ore`})
+		event.remove({id: `create:splashing/crushed_raw_${item}`})
+		event.remove({id: `create:splashing/thermal/crushed_raw_${item}`})
+		event.remove({id: `create:splashing/mekanism/crushed_raw_${item}`})
 		event.remove({id: `create:blasting/${item}_ingot_from_crushed`})
 		event.remove({id: `create:smelting/${item}_ingot_from_crushed`})
 		event.remove({id: `create:blasting/${item}_ingot_compat_thermal`})
@@ -50,8 +50,8 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 */
 	//XP
 	global.ieSqueezer(event, Fluid.of('pneumaticcraft:memory_essence', 100), Item.of('create:experience_nugget'), 6400, 'kubejs:squeezer/experience')
-	global.ieMixer(event, Fluid.of('kubejs:gemstone_catalyst_mixture', 1000), {"tag":"forge:experience","amount":1000}, Item.of('apotheosis:gem_dust'), 4000, 'kubejs:mixer/gemstufffluid')
-	global.ieMixer(event, Fluid.of('kubejs:gemstone_catalyst_mixture', 250), {"tag":"forge:experience","amount":250}, Item.of('ars_nouveau:source_gem'), 4000, 'kubejs:mixer/gemstufffluid_source')
+	global.ieMixer(event, Fluid.of('kubejs:gemstone_catalyst_mixture', 1000), {"tag":"forge:experience","amount":1000}, Item.of('apotheosis:gem_dust'), 4000, 'mbm2:mixer/gemstufffluid')
+	global.ieMixer(event, Fluid.of('kubejs:gemstone_catalyst_mixture', 250), {"tag":"forge:experience","amount":250}, Item.of('ars_nouveau:source_gem'), 4000, 'mbm2:mixer/gemstufffluid_source')
 	
 
 
@@ -152,9 +152,18 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 			if (Item.of(`#forge:dusts/${item.material}`) != null) {
 				//Washed Ore
 				if (Item.of(`#forge:ores/washed/${item.material}`) != null) {
-				event.recipes.immersiveengineeringCrusher(`#forge:dusts/${item.material}`, `#forge:ores/washed/${item.material}`).id(`mbm2:immersive/crushing/washed_${item.material}`)
+				//event.recipes.immersiveengineeringCrusher(`#forge:dusts/${item.material}`, `#forge:ores/washed/${item.material}`).id(`mbm2:immersive/crushing/washed_${item.material}`)
 				event.recipes.createMilling([`#forge:dusts/${item.material}`], [`#forge:ores/washed/${item.material}`]).id(`mbm2:create/crushing/washed_${item.material}`)
 				event.recipes.mekanismCrushing(`#forge:dusts/${item.material}`, `#forge:ores/washed/${item.material}`).id(`mbm2:mekanism/crushing/washed_${item.material}`)
+				}
+				//Crush Smetable Ore
+				if (refineProcessedOre != null) {
+					refineProcessedOre.forEach((part) => {
+						let partName = part.split('#forge:ores/')[1]
+						//event.recipes.immersiveengineeringCrusher(`#forge:dusts/${item.material}`, part).id(`mbm2:immersive/crushing/${partName}`)
+						event.recipes.createMilling([`#forge:dusts/${item.material}`], part).id(`mbm2:create/crushing/${partName}`)
+						event.recipes.mekanismCrushing(`#forge:dusts/${item.material}`, part).id(`mbm2:mekanism/crushing/${partName}`)
+					})
 				}
 				//Grit Washing
 				if (Item.of(`#forge:ores/grit/${item.material}`) != null) {
@@ -887,8 +896,8 @@ onEvent('block.loot_tables', event => {
 
   onEvent('tags.items', event => {
 	global.createCrushed.forEach((item) => {
-		event.add(`forge:ores/crushed/${item}`, `create:crushed_${item}_ore`)
-		event.add(`forge:ores/crushed`, `create:crushed_${item}_ore`)
+		event.add(`forge:ores/crushed/${item}`, `create:crushed_raw_${item}`)
+		event.add(`forge:ores/crushed`, `create:crushed_raw_${item}`)
 		 event.remove(`forge:ores/crushed/${item}`, `kubejs:crushed_${item}`)
 	})
 
@@ -900,8 +909,8 @@ onEvent('block.loot_tables', event => {
 		var  refinableOre = (tier) => {
 			let refinableOres = []
 			global.oreParts.forEach((part) => {
-				//processing has grade, refining has level
-				if(part.grade >= tier && part.grade >= item.tier) {
+				//this is just for washing. if an ore can be smelted (tier-1 <= partGrade) then it can be washed
+				if(part.grade >= tier && part.grade >= item.tier-1) {
 					refinableOres.push(`#forge:ores/${part.name}/${item.material}`)
 				}
 			})

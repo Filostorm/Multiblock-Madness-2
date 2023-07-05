@@ -128,6 +128,8 @@ event.shaped('3x kubejs:wood_scaffolding', [
 	//So, you made an extra Metal Mind
 	global.tinkersMeltingPlain(event, 'tconstruct:molten_iron', 720, Item.of('feruchemy:metal_mind').toJson(), 750, 142, `mbm2:smeltery/melting/metalmind`)
 
+	//string from cobweb
+	event.shapeless('3x string', ['cobweb']).id('mbm2:string_from_cobweb')
 
   //compressed cobble
   event.shaped('kubejs:1x_compressed_cobblestone', [

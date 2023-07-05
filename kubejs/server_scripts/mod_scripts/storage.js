@@ -57,6 +57,29 @@ event.shaped('functionalstorage:compacting_framed_drawer', [
 }).id('mbm2:compacting_drawer_framed')
 
 
+//Upgrades require processing, the lazy way
+let upgradeMaterials = [
+  'iron',
+  'gold',
+  'silver',
+  'copper'
+]
+let upgradeMods = [
+  'ironfurnaces',
+  'sophisticatedbackpacks',
+  'sophisticatedstorage',
+  'functionalstorage'
+]
+
+upgradeMods.forEach(modID => {
+  upgradeMaterials.forEach(material => {
+    if (modID == 'functionalstorage') {
+      event.replaceInput({mod: modID}, `#forge:ingots/${material}`, `#forge:platings/${material}`)
+    } else {
+      event.replaceInput({mod: modID}, `#forge:ingots/${material}`, `#forge:plates/${material}`)
+    }
+  });
+});
 
 
 });

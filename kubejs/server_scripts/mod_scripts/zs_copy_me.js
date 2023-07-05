@@ -31,5 +31,24 @@ onEvent('recipes', event => {
 
 	
     event.replaceInput({id: 'immersiveengineering:crafting/blueprint_components'}, '#forge:ingots/aluminum', '#forge:ingots/constantan')
+
+	
+event.remove({id:'sophisticatedbackpacks:gold_backpack'})
+event.shapeless('sophisticatedbackpacks:gold_backpack',[
+    'sophisticatedbackpacks:iron_backpack',
+    'quark:ravager_hide'
+]).modifyResult((inventory, itemstack) => {
+        item = inventory.find(Item.of('sophisticatedbackpacks:iron_backpack').ignoreNBT())
+    if (item.nbt == null) return itemstack
+    nbt = item.nbt
+    nbt.inventorySlots = 54
+    nbt.upgradeSlots = 4
+    return itemstack.withNBT(nbt)
+})
+
+
 });
+
+
+
 */

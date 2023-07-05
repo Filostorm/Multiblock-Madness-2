@@ -1,30 +1,16 @@
-
-
-onEvent('block.loot_tables', event => {
-	event.addSimpleBlock(`createbigcannons:unbored_very_small_steel_cannon_layer`, `createbigcannons:unbored_very_small_steel_cannon_layer`)
-	event.addSimpleBlock(`createbigcannons:very_small_steel_cannon_layer`, `createbigcannons:very_small_steel_cannon_layer`)
-	event.addSimpleBlock(`createbigcannons:steel_cannon_barrel`, `createbigcannons:steel_cannon_barrel`)
-})	
 onEvent('tags.items', event => {
 		event.add('forge:slimeballs', 'createaddition:biomass_pellet')
 		
-		event.add('create:movement_anchors', 'create:mechanical_bearing')
-		event.add('create:movement_anchors', 'create:mechanical_piston')
-		event.add('create:movement_anchors', 'create:gantry_carriage')
+		event.add('mbm2:movement_anchors', 'create:mechanical_bearing')
+		event.add('mbm2:movement_anchors', 'create:mechanical_piston')
+		event.add('mbm2:movement_anchors', 'create:gantry_carriage')
 
-		event.add('create:chassis', 'create:linear_chassis')
-		event.add('create:chassis', 'create:radial_chassis')
+		event.add('mbm2:chassis', 'create:linear_chassis')
+		event.add('mbm2:chassis', 'create:radial_chassis')
 
-		event.add('create:sticky', 'create:super_glue')
-		event.add('create:sticky', 'slime_ball')
+		event.add('mbm2:sticky', 'create:super_glue')
+		event.add('mbm2:sticky', 'slime_ball')
 
-		event.add('forge:ingots', 'createbigcannons:nethersteel_ingot')
-		event.add('forge:ingots/nethersteel', 'createbigcannons:nethersteel_ingot')
-		
-		event.add('forge:ingots', 'createbigcannons:cast_iron_ingot')
-		event.add('forge:ingots/cast_iron', 'createbigcannons:cast_iron_ingot')
-		
-		
 }); 
 onEvent('recipes', event => {
 
@@ -189,9 +175,9 @@ event.shaped('create:hose_pulley', [
 	global.createApplying(event, 'create:brass_casing', Ingredient.of('#forge:ingots/brass'), Ingredient.of('#forge:treated_wood'), `mbm2:applying/brass_casing`)
 
 	//Compressed Steel Casing
-	event.remove({id: 'compressedcreativity:item_application/compressed_iron_casing_from_wood'})
-	event.remove({id: 'compressedcreativity:item_application/compressed_iron_casing_from_log'})
-	global.createApplying(event, 'compressedcreativity:compressed_iron_casing', Ingredient.of('#forge:ingots/compressed_steel'), Ingredient.of('#forge:treated_wood'), `mbm2:applying/compressed_steel_casing`)
+	//event.remove({id: 'compressedcreativity:item_application/compressed_iron_casing_from_wood'})
+	//event.remove({id: 'compressedcreativity:item_application/compressed_iron_casing_from_log'})
+	//global.createApplying(event, 'compressedcreativity:compressed_iron_casing', Ingredient.of('#forge:ingots/compressed_steel'), Ingredient.of('#forge:treated_wood'), `mbm2:applying/compressed_steel_casing`)
 
 	//Charred Planks for Copper Casing
 	global.elementalcraftInfusion(event, Ingredient.of('#minecraft:planks'), Item.of('kubejs:charred_planks'), 'fire', 250, 'mbm:infusion/copper_casing')
@@ -254,7 +240,7 @@ event.shaped('create:hose_pulley', [
 	  P: '#forge:plates/obsidian',
 	  A: 'create:fluid_pipe',
 		}).id(`mbm2:crafting/steam_engine`)
-
+/*
 	/// schematicannon
 	event.remove({id: 'create:crafting/schematics/schematicannon'})
 	event.shaped('create:schematicannon', [
@@ -281,7 +267,7 @@ event.shaped('create:hose_pulley', [
 	  E: 'createbigcannons:wrought_iron_cannon_end',
 	  P: 'createbigcannons:powder_charge',
 		}).id(`mbm2:crafting/schematicannon_hrd_md`)
-
+*/
 
 
 //Clear Filter		
@@ -305,4 +291,10 @@ event.shapeless('create:filter', [Item.of('create:filter').ignoreNBT()]).id(`mbm
 	//Magma
 	event.recipes.createFilling('magma_block', [Fluid.of('tconstruct:magma', 500), 'create:scoria']).id('mbm2:filling/magma_block_from_scoria')
 	
+	//Blood
+	event.recipes.createMixing([Fluid.of('tconstruct:blood', 50)], [Fluid.of('minecraft:water', 50), 'rotten_flesh']).heated().id('mbm2:mixing/blood')
+
+	//Blazing Blood
+	event.recipes.createMixing([Fluid.of('tconstruct:blazing_blood', 500)], [Fluid.of('tconstruct:blood', 500), 'blaze_powder']).superheated().id('mbm2:mixing/blazing_blood')
+
 });

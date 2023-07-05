@@ -2,7 +2,7 @@
 		'pneumaticcraft:air_compressor', 
 		'pneumaticcraft:thermal_compressor', 
 		'pneumaticcraft:liquid_compressor',
-		'compressedcreativity:rotational_compressor'
+		//'compressedcreativity:rotational_compressor'
 	  ]
 
 onEvent('tags.items', event => {
@@ -79,7 +79,7 @@ onEvent('recipes', event => {
 		E: 'immersiveengineering:component_electronic_adv',
 		W: '#forge:wires/gold',
 		C: 'createaddition:copper_spool',
-		U: '#compressedcreativity:upgrade_components',
+		U: '#forge:gems/lapis', //'#compressedcreativity:upgrade_components',
   	}).id('mbm2:pcb_blueprint')
 
 //Reinforced Stone
@@ -127,7 +127,7 @@ onEvent('recipes', event => {
 	  'RFR'
 	], {
 	  G: '#forge:gears/reinforced_electrum',
-	  R: 'compressedcreativity:engine_rotor',
+	  R: 'pneumaticcraft:turbine_rotor', //'compressedcreativity:engine_rotor',
 	  C: 'kubejs:pneumaticcraft_casing',
 	  F: 'powah:capacitor_blazing',
 	  P: 'immersiveengineering:component_electronic_adv',

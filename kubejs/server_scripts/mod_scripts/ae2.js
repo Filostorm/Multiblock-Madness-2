@@ -208,7 +208,7 @@ onEvent('recipes', event => {
 		F: 'ae2:formation_core',
 	  	S: 'ae2:terminal',
 		C: 'ae2:calculation_processor',
-		P: '#forge:plates/hepatizon', //, fluix_steel
+		P: '#forge:plates/cobalt', //hepatizon, fluix_steel
 		T: 'kubejs:source_tube'
 	}).id('mbm2:crafting_terminal')
   
@@ -320,6 +320,20 @@ onEvent('recipes', event => {
 	  Q: 'ae2:quartz_glass',
 	  E: 'immersiveengineering:component_electronic_adv'
 	}).id('mbm2:pattern_provider')
+	
+	//Molecular Assembler
+	event.remove({id: 'ae2:network/crafting/molecular_assembler'})
+	event.shaped('ae2:molecular_assembler', [
+	  'CQC',
+	  'FEA',
+	  'CQC'
+	], {
+	  C: 'create:mechanical_crafter',
+	  A: 'ae2:annihilation_core',
+	  F: 'ae2:formation_core',
+	  Q: 'ae2:quartz_glass',
+	  E: '#forge:frame_boxs/titanium'
+	}).id('mbm2:molecular_assembler')
 	
 	
 	//Pattern

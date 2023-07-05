@@ -119,7 +119,7 @@ onEvent('worldgen.add', event => {
 			ore.count([5, 10])
 					.squared()
 					.uniformHeight(
-							anchors.aboveBottom(10),
+							anchors.aboveBottom(0),
 							anchors.absolute(150)
 					)
 			ore.size = 25
@@ -146,7 +146,7 @@ onEvent('worldgen.add', event => {
 		ore.count([8, 12])
 				.squared()
 				.uniformHeight(
-						anchors.aboveBottom(0),
+						anchors.aboveBottom(49),
 						anchors.absolute(256)
 				)
 		ore.size = 25
@@ -173,7 +173,7 @@ onEvent('worldgen.add', event => {
 		ore.count([6, 10])
 				.squared()
 				.uniformHeight(
-						anchors.aboveBottom(32),
+						anchors.aboveBottom(64),
 						anchors.absolute(256)
 				)
 		ore.size = 25
@@ -306,13 +306,13 @@ onEvent('worldgen.add', event => {
 			}
 		})
 
-		ore.count([2, 4])
+		ore.count([2, 6])
 				.squared()
 				.uniformHeight(
-						anchors.aboveBottom(60),
-						anchors.absolute(80)
+						anchors.aboveBottom(32),
+						anchors.absolute(100)
 				)
-		ore.size = 25
+		ore.size = 20
 		ore.noSurface = 0
 		ore.worldgenLayer = "underground_ores"
 		ore.chance = 0
@@ -578,8 +578,8 @@ onEvent('worldgen.add', event => {
 		ore.count(200)
 				.squared()
 				.uniformHeight(
-						anchors.aboveBottom(60),
-						anchors.absolute(40)
+						anchors.aboveBottom(32),
+						anchors.absolute(100)
 				)
 		ore.size = 15
 		ore.noSurface = 0
@@ -602,8 +602,8 @@ onEvent('worldgen.add', event => {
 		ore.count(200)
 				.squared()
 				.uniformHeight(
-						anchors.aboveBottom(60),
-						anchors.absolute(40)
+						anchors.aboveBottom(32),
+						anchors.absolute(100)
 				)
 		ore.size = 15
 		ore.noSurface = 0

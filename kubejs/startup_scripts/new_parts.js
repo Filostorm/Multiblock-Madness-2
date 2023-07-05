@@ -3,11 +3,11 @@ const nameUpper = (name) => {return name.charAt(0).toUpperCase() + name.slice(1)
 onEvent('item.registry', event => {
   global.newMaterialParts.forEach((item) => {
     item.itemParts.forEach((part) => {
-    if (part == 'hammer') {
+    if (part == 'hammer') { // Need to handle tools better
       event.create(`${item.material}_${part}`, 'pickaxe').color(0, item.color).parentModel(`kubejs:item/${part}`).texture(`kubejs:item/${part}`).unstackable().tier('iron').maxDamage(item.durability)//.tooltip(`${item.durability} Base Durability`)
-    } else if (part.includes('model')) {
+    } else if (part.includes('model')) { // this does everything with a model
       event.create(`${item.material}_${part.slice(6)}`).color(0, item.color).parentModel(`kubejs:item/${part.slice(6)}`).texture(`kubejs:item/${part.slice(6)}`)
-    } else {
+    } else { // if it doesn't have a custom model or is a tool
       if (item.type == 'gem') { //Gem parts get special textures, and always a custom base gem texture
         if (part == 'gem') { //Gems can burn
           if(item.burnTime != null) {
@@ -20,9 +20,11 @@ onEvent('item.registry', event => {
         } else {
             event.create(`${item.material}_${part}`).color(0, item.color).texture(`kubejs:item/gem/${part}`)
         }
-      } else { //Metal cant burn (yet)
-        if (part.includes('custom')) { //custom ingot tag needs a texture 
+      } else { //if its not a gem
+        if (part.includes('custom')) { //if custom is part of the name, then it removes it and looks for the material name + part name 
           event.create(`${item.material}_${part.slice(7)}`)
+        } else if (item.iconset != null && part == 'ingot') { //only ingots for now, but this gives custom colored textures
+          event.create(`${item.material}_${part}`).color(0, item.color).texture(`kubejs:item/${part}_${item.iconset}`)
         } else {
           //Main Part creation line
           event.create(`${item.material}_${part}`).color(0, item.color).texture(`kubejs:item/${part}`)

@@ -1,4 +1,4 @@
-var parts = [
+var parts = [ //this list is used to label parts the metal tier
 	'ingot',
 	//'gear',
 	//'dust',
@@ -7,29 +7,7 @@ var parts = [
 	//'wire',
 	//'nugget',
 	//'storage_block',
-]/*
-var oreProcessingParts = [
-	'grit',
-	'raw',
-	'crushed',
-	'chunk',
-	//'clump',
-	'leached',
-	'deposit',
-	'crystal',
-	'washed',
-	'cluster',
-	'lump_of',
-	'imbued',
 ]
-var oreRefiningParts = [
-	'washed',
-	'cluster',
-	'infused',
-	'brick',
-	'shard',
-]*/
-
 
 var mods = [
 	'allomancy',
@@ -41,7 +19,7 @@ var mods = [
 	'tconstruct', 
 	'mythicbotany', 
 	'mna', 
-	'createbigcannons', 
+	//'createbigcannons', 
 	'forbidden_arcanus',
 	'extendedcrafting',
 	'pneumaticcraft',
@@ -49,11 +27,12 @@ var mods = [
 	'chemlib',
 	'biggerreactors',
 	'beyond_earth',
-	'extendedcrafting'
+	'extendedcrafting',
+	'elementalcraft'
 ]
 
 var smeltingList = [
-	'Furnace',
+	'Furnace', //this is just to take up the 0 slot
 	'Furnace',
 	'Foundry',
 	'Arc Furnace',
@@ -63,8 +42,9 @@ var smeltingList = [
 	'Blast Furnace 4000 Heat',
 	'Blast Furnace 5000 Heat',
 ]
+
 var gradeLetter = [
-	`G`,
+	`G`, //this is just to take up the 0 slot
 	`F`,
 	`E`,
 	`D`,
@@ -74,7 +54,7 @@ var gradeLetter = [
 ]
 
 var gradeLetterColor = [
-	Text.gray(`[G]`),
+	Text.gray(`[G]`), //this is just to take up the 0 slot
 	Text.darkGray(`[F]`),
 	Text.white(`[E]`),
 	Text.green(`[D]`),
@@ -93,7 +73,14 @@ global.refiningMultiplier = [
 	64,
 ]
 
-const nameUpper = (name) => {return name.charAt(0).toUpperCase() + name.slice(1)}
+//Function that capitilizes the first leter
+const nameUpper = (name) => {
+	if(name != null) {
+		return name.charAt(0).toUpperCase() + name.slice(1)
+	} else {
+		return 'null'
+	}
+}
 
 var oreProcessingPartList = []
 global.oreProcessingParts.forEach((part) => {
@@ -110,7 +97,42 @@ global.oreRefiningParts.forEach((part) => {
 
 onEvent('item.tooltip', tooltip => {
 	
+	
+	//Multiblocked Tooltips
+	
+	tooltip.addAdvanced(`multiblocked:energy_input_mk1`, (item, advanced, text) => {
+		text.add(1, [Text.of('Max transfer: ').gold(), Text.of('16,384').green()])
+  })
+  tooltip.addAdvanced(`multiblocked:energy_input_mk2`, (item, advanced, text) => {
+		text.add(1, [Text.of('Max transfer: ').gold(), Text.of('65,536').green()])
+  })
+  tooltip.addAdvanced(`multiblocked:energy_input_mk3`, (item, advanced, text) => {
+		text.add(1, [Text.of('Max transfer: ').gold(), Text.of('262,144').green()])
+  })
+
+
+
 	global.newMaterialParts.forEach((item) => {
+		//Allomantic Tooltips for flakes
+		if (item.allomancy != null) {
+			console.log(`${item.material} is allomantic`);
+			let allomancyToolTip = item.allomancy
+			let feruchemyToolTip = item.feruchemy
+			tooltip.addAdvanced(`allomancy:${item.material}_flakes`, (item, advanced, text) => {
+				if (!tooltip.shift) {
+				  text.add(1, [Text.of('Hold ').gold(), Text.of('Shift ').aqua(), Text.of('to see allomantic uses.').gold()])
+				} else {
+				  text.add(1, Text.aqua(allomancyToolTip))
+				}
+				if (!tooltip.ctrl) {
+				  text.add(2, [Text.of('Hold ').gold(), Text.of('Ctrl ').green(), Text.of('to see feruchemy uses.').gold()])
+				} else {
+				  text.add(2, Text.green(feruchemyToolTip))
+				}
+			})
+		}
+
+
 		//Adds Metal Tier labels
 		if (item.type == 'base_metal') {
 			mods.forEach((mod) => {
@@ -182,7 +204,7 @@ onEvent('item.tooltip', tooltip => {
 						if (tier-1 > part.grade && part.name != 'grit') {
 							smeltingTooltip = Text.of(`Must be processed further to be smelted or refined.`).red()
 						} else {
-							smeltingTooltip = [Text.of(`Can smelted in: `).white(), Text.of(`${smeltingList[tier]}`).yellow()]
+							smeltingTooltip = [Text.of(`Can be smelted in: `).white(), Text.of(`${smeltingList[tier]}`).yellow()]
 						}
 						return smeltingTooltip
 					}
@@ -318,14 +340,6 @@ onEvent('item.tooltip', tooltip => {
 
 			let compoundLine = (line) => {
 				let tooltipLine = ""
-				//if we are at the part then place the text, if we are after the part, move everything down a row
-					//if (part.grade == 0) { //dealing with raw ore
-					//	if ( line == 0) {
-					//		tooltipLine = Text.white(`Can be processed further before sorting for these ores:`)
-					//	} else {
-					//		tooltipLine = Text.gray(`- ${nameUpper(item.components[line-1])}`) //skip tier 0 ore cause we smelt it
-					//	}
-					//} else { //every other part
 						if (line <= part.grade + 1) {
 							if (part.grade == 0) {
 								tooltipLine = Text.white(`- ${nameUpper(item.components[line])}`)
@@ -341,15 +355,6 @@ onEvent('item.tooltip', tooltip => {
 						} else { 
 							tooltipLine = [gradeLetterColor[line-2], Text.gray(` ${nameUpper(item.components[line-1])}`)]
 						}
-					//}
-					/*
-					if (line < part.grade) {
-					tooltipLine = Text.white(`- ${item.components[line+2]}`)
-					} else if (line > part.grade) {
-						tooltipLine = Text.gray(`- ${item.components[line-1]}`)
-					} else {
-						tooltipLine = Text.gold(`Can be processed further before sorting for these ores:`)
-					}*/
 				return tooltipLine
 			}
 			let compoundToolTipCreation = (name) => {
@@ -360,7 +365,7 @@ onEvent('item.tooltip', tooltip => {
 							text.add(1, [compoundSmeltingFunction(part.grade)])
 							text.add(2, [Text.of('Hold ').gray(), Text.of('Shift ').gold(), Text.of('for sorting information.').gray()])
 						} else {
-							text.add(1, [Text.gold('Sort at this grade for these ores:')])
+							text.add(1, [Text.gold('Sort at this grade for:')])
 							text.add(2, compoundLine(0))
 							text.add(3, compoundLine(1))
 							text.add(4, compoundLine(2))
@@ -376,18 +381,6 @@ onEvent('item.tooltip', tooltip => {
 					}
 				})
 			}
-/*
-			Crushed Vincyte
-			
-			Hold Shift for sorting info:
-			(
-			(White)      tier 0 metal
-			(White)      tier 1 metal
-			(White) 	tier 2 metal
-			(White)      "Can be processed further for these ores:"
-			(Gray)      tier 3 metal
-			)*/
-			
 			//Finds the exact items then runs the tooltip creation function
 				let partName = ""
 				if (Item.of(`kubejs:${part.name}_${item.material}`) != null) {
@@ -483,306 +476,11 @@ onEvent('item.tooltip', tooltip => {
 					}
 			//Finds the exact items then runs the tooltip creation function
 			let partName = ""
-			if (Item.of(`kubejs:${part.name}_${item.material}`) != null) {
+			if (Item.of(`kubejs:${part.name}_${item.material}`) != null && part.name != 'fine_dust') {
 				partName = `kubejs:${part.name}_${item.material}`
 				refiningToolTipCreation(partName)
 			}
 		})
-		
-	
-
-
-
 		}
-
-
-/*
-
-
-
-
-
-
-		if (item.type == 'base_metal' || item.type == 'compound_ore') { //Any metal can be processed, only normal can be refined
-			mods.forEach((mod) => {
-			oreProcessingParts.forEach((part) => {
-				if (part == 'raw') { // tier 0 processed
-					if (Item.of(`${mod}:${part}_${item.material}`) != null)
-					tooltip.addAdvanced(`${mod}:${part}_${item.material}`, (items, advanced, text) => {
-							text.add(1, [Text.of(`Metal Tier: `).white(), Text.of(`${item.tier}`).gold()])
-							//text.add(2, [Text.of(`Processing Grade: `).white(),Text.of(`F`).gray()])
-						if (!tooltip.ctrl) {
-							  text.add(2, [Text.of('Hold ').gold(), Text.of('Ctrl ').green(), Text.of('to see processing information.').gold()])
-						} else {
-							text.add(2, [Text.of(`Next processing step:`).white(), Text.of(` Crushing Wheel`).green()])
-							if (item.tier <= 1) {
-								text.add(3, [Text.of(`Can smelted in:`).white(), Text.of(` Furnace`).yellow()])
-								//text.add(5, [Text.of(`Can be refined for up to:`).white(), Text.of(` 2x`).aqua(), Text.of(` yield`).white()])
-							} else if (item.tier > 1) {
-								text.add(3, [Text.of(`Must be processed further to be smelted or refined`).red()])
-							}
-						}
-					})
-				} else if (part == 'crushed') { // tier 1 processed
-					if (mod == 'create') {
-						if (Item.of(`${mod}:${part}_${item.material}_ore`) != null)
-					tooltip.addAdvanced(`${mod}:${part}_${item.material}_ore`, (items, advanced, text) => {
-						text.add(1, [Text.of(`Metal Tier: `).white(),Text.of(`${item.tier}`).gold()])
-						text.add(2, [Text.of(`Processing Grade: `).white(),Text.of(`F`).gray()])
-						if (!tooltip.ctrl) {
-							  text.add(3, [Text.of('Hold ').gold(), Text.of('Ctrl ').green(), Text.of('to see processing information.').gold()])
-						} else {
-							text.add(3, [Text.of(`Next processing step:`).white(), Text.of(` Crusher`).green()])
-							if (item.tier <= 1) {
-								text.add(4, [Text.of(`Can smelted in:`).white(), Text.of(` Furnace`).yellow()])
-							} else if (item.tier == 2) {
-								text.add(4, [Text.of(`Can smelted in:`).white(), Text.of(` Foundry`).yellow()])
-							} else if (item.tier > 2) {
-								text.add(4, [Text.of(`Must be processed further to be smelted or refined.`).red()])
-							}
-							if (item.tier <= 2 && item.type != 'compound_ore') {
-							text.add(5, [Text.of(`Can be refined for up to:`).white(), Text.of(` 2x`).aqua(), Text.of(` yield`).white()])
-							}
-						}
-					})
-					} else  {
-						if (Item.of(`${mod}:${part}_${item.material}`) != null)
-						tooltip.addAdvanced(`${mod}:${part}_${item.material}`, (items, advanced, text) => {
-							text.add(1, [Text.of(`Metal Tier: `).white(),Text.of(`${item.tier}`).gold()])
-							text.add(2, [Text.of(`Processing Grade: `).white(),Text.of(`F`).gray()])
-							if (!tooltip.ctrl) {
-								  text.add(3, [Text.of('Hold ').gold(), Text.of('Ctrl ').green(), Text.of('to see processing information.').gold()])
-							} else {
-								text.add(3, [Text.of(`Next processing step:`).white(), Text.of(` Crusher`).green()])
-								if (item.tier <= 1) {
-									text.add(4, [Text.of(`Can smelted in:`).white(), Text.of(` Furnace`).yellow()])
-								} else if (item.tier == 2) {
-									text.add(4, [Text.of(`Can smelted in:`).white(), Text.of(` Foundry`).yellow()])
-								} else if (item.tier > 2) {
-									text.add(4, [Text.of(`Must be processed further to be smelted or refined.`).red()])
-								}
-								if (item.tier <= 2 && item.type != 'compound_ore') {
-								text.add(5, [Text.of(`Can be refined for up to:`).white(), Text.of(` 2x`).aqua(), Text.of(` yield`).white()])
-								}
-							}
-						})
-					} 
-				} else if (part == 'chunk') { // tier 2 processed
-					if (Item.of(`${mod}:${item.material}_${part}`) != null)
-					tooltip.addAdvanced(`${mod}:${item.material}_${part}`, (items, advanced, text) => {
-						text.add(1, [Text.of(`Metal Tier: `).white(),Text.of(`${item.tier}`).gold()])
-						text.add(2, [Text.of(`Processing Grade: `).white(),Text.of(`E`).white()])
-						if (!tooltip.ctrl) {
-							  text.add(3, [Text.of('Hold ').gold(), Text.of('Ctrl ').green(), Text.of('to see processing information.').gold()])
-						} else {
-							text.add(3, [Text.of(`Next processing step:`).white(), Text.of(` Washing`).green()])
-							if (item.tier <= 1) {
-								text.add(4, [Text.of(`Can smelted in:`).white(), Text.of(` Furnace`).yellow()])
-							}  else if (item.tier == 2) {
-								text.add(4, [Text.of(`Can smelted in:`).white(), Text.of(` Foundry`).yellow()])
-							}  else if (item.tier == 3) {
-								text.add(4, [Text.of(`Can smelted in:`).white(), Text.of(` Arc Furnace`).yellow()])
-							}  else if (item.tier > 3) {
-								text.add(4, [Text.of(`Must be processed further to be smelted or refined.`).red()])
-							}
-							if (item.tier <= 3 && item.type != 'compound_ore') {
-							text.add(5, [Text.of(`Can be refined for up to:`).white(), Text.of(` 3x`).aqua(), Text.of(` yield`).white()])
-							}
-						}
-					})
-				} else if (part == 'lump_of') { // tier 3 processed
-					if (Item.of(`${mod}:${part}_${item.material}`) != null)
-					tooltip.addAdvanced(`${mod}:${part}_${item.material}`, (items, advanced, text) => {
-						text.add(1, [Text.of(`Metal Tier: `).white(),Text.of(`${item.tier}`).gold()])
-						text.add(2, [Text.of(`Processing Grade: `).white(),Text.of(`D`).green()])
-						if (!tooltip.ctrl) {
-							  text.add(3, [Text.of('Hold ').gold(), Text.of('Ctrl ').green(), Text.of('to see processing information.').gold()])
-						} else {
-							text.add(3, [Text.of(`Next processing step:`).white(), Text.of(` Leaching`).green()])
-							if (item.tier <= 1) {
-								text.add(4, [Text.of(`Can smelted in:`).white(), Text.of(` Furnace`).yellow()])
-							}  else if (item.tier == 2) {
-								text.add(4, [Text.of(`Can smelted in:`).white(), Text.of(` Foundry`).yellow()])
-							}  else if (item.tier == 3) {
-								text.add(4, [Text.of(`Can smelted in:`).white(), Text.of(` Arc Furnace`).yellow()])
-							}  else if (item.tier == 4) {
-								text.add(4, [Text.of(`Can smelted in:`).white(), Text.of(` Blast Furnace`).yellow()])
-							}  else if (item.tier > 4) {
-								text.add(4, [Text.of(`Must be processed further to be smelted or refined.`).red()])
-							}
-							if (item.tier <= 4 && item.type != 'compound_ore') {
-							text.add(5, [Text.of(`Can be refined for up to:`).white(), Text.of(` 4x`).aqua(), Text.of(` yield`).white()])
-							}
-						}
-					})
-				}  else if (part == 'leached') { // tier 3 processed
-					if (Item.of(`${mod}:${part}_${item.material}`) != null)
-					tooltip.addAdvanced(`${mod}:${part}_${item.material}`, (items, advanced, text) => {
-						text.add(1, [Text.of(`Metal Tier: `).white(),Text.of(`${item.tier}`).gold()])
-						text.add(2, [Text.of(`Processing Grade: `).white(),Text.of(`C`).green()])
-						if (!tooltip.ctrl) {
-							  text.add(3, [Text.of('Hold ').gold(), Text.of('Ctrl ').green(), Text.of('to see processing information.').gold()])
-						} else {
-							text.add(3, [Text.of(`Next processing step:`).white(), Text.of(` Depositing`).green()])
-							if (item.tier <= 1) {
-								text.add(4, [Text.of(`Can smelted in:`).white(), Text.of(` Furnace`).yellow()])
-							}  else if (item.tier == 2) {
-								text.add(4, [Text.of(`Can smelted in:`).white(), Text.of(` Foundry`).yellow()])
-							}  else if (item.tier == 3) {
-								text.add(4, [Text.of(`Can smelted in:`).white(), Text.of(` Arc Furnace`).yellow()])
-							}  else if (item.tier == 4) {
-								text.add(4, [Text.of(`Can smelted in:`).white(), Text.of(` Blast Furnace`).yellow()])
-							}  else if (item.tier == 5) {
-								text.add(4, [Text.of(`Can smelted in:`).white(), Text.of(` Blast Furnace 2000k`).yellow()])
-							}  else if (item.tier > 5) {
-								text.add(4, [Text.of(`Must be processed further to be smelted or refined.`).red()])
-							}
-							if (item.tier <= 5 && item.type != 'compound_ore') {
-							text.add(5, [Text.of(`Can be refined for up to:`).white(), Text.of(` 5x`).aqua(), Text.of(` yield`).white()])
-							}
-						}
-					})
-				} else if (part == 'deposit') { // tier 4 processed
-					if (Item.of(`${mod}:${item.material}_${part}`) != null)
-					tooltip.addAdvanced(`${mod}:${item.material}_${part}`, (items, advanced, text) => {
-						text.add(1, [Text.of(`Metal Tier: `).white(),Text.of(`${item.tier}`).gold()])
-						text.add(2, [Text.of(`Processing Grade: `).white(),Text.of(`B`).green()])
-						if (!tooltip.ctrl) {
-							  text.add(3, [Text.of('Hold ').gold(), Text.of('Ctrl ').green(), Text.of('to see processing information.').gold()])
-						} else {
-							text.add(3, [Text.of(`Next processing step:`).white(), Text.of(` Crystalizing`).green()])
-							if (item.tier <= 1) {
-								text.add(4, [Text.of(`Can smelted in:`).white(), Text.of(` Furnace`).yellow()])
-							}  else if (item.tier == 2) {
-								text.add(4, [Text.of(`Can smelted in:`).white(), Text.of(` Foundry`).yellow()])
-							}  else if (item.tier == 3) {
-								text.add(4, [Text.of(`Can smelted in:`).white(), Text.of(` Arc Furnace`).yellow()])
-							}  else if (item.tier == 4) {
-								text.add(4, [Text.of(`Can smelted in:`).white(), Text.of(` Blast Furnace`).yellow()])
-							}  else if (item.tier == 5) {
-								text.add(4, [Text.of(`Can smelted in:`).white(), Text.of(` Blast Furnace 2000k`).yellow()])
-							}  else if (item.tier == 6) {
-								text.add(4, [Text.of(`Can smelted in:`).white(), Text.of(` Blast Furnace 3000k`).yellow()])
-							}  else if (item.tier > 6) {
-								text.add(4, [Text.of(`Must be processed further to be smelted or refined.`).red()])
-							}
-							if (item.tier <= 6 && item.type != 'compound_ore') {
-							text.add(5, [Text.of(`Can be refined for up to:`).white(), Text.of(` 6x`).aqua(), Text.of(` yield`).white()])
-							}
-						}
-					})
-				} else if (part == 'crystal') { // tier 5 processed
-					if (Item.of(`${mod}:${item.material}_${part}`) != null)
-					tooltip.addAdvanced(`${mod}:${item.material}_${part}`, (items, advanced, text) => {
-						text.add(1, [Text.of(`Metal Tier: `).white(),Text.of(`${item.tier}`).gold()])
-						text.add(2, [Text.of(`Processing Grade: `).white(),Text.of(`A`).green()])
-						if (!tooltip.ctrl) {
-							  text.add(3, [Text.of('Hold ').gold(), Text.of('Ctrl ').green(), Text.of('to see processing information.').gold()])
-						} else {
-							text.add(3, [Text.of(`Next processing step:`).white(), Text.of(` MAX`).green()])
-							if (item.tier <= 1) {
-								text.add(4, [Text.of(`Can smelted in:`).white(), Text.of(` Furnace`).yellow()])
-							}  else if (item.tier == 2) {
-								text.add(4, [Text.of(`Can smelted in:`).white(), Text.of(` Foundry`).yellow()])
-							}  else if (item.tier == 3) {
-								text.add(4, [Text.of(`Can smelted in:`).white(), Text.of(` Arc Furnace`).yellow()])
-							}  else if (item.tier == 4) {
-								text.add(4, [Text.of(`Can smelted in:`).white(), Text.of(` Blast Furnace`).yellow()])
-							}  else if (item.tier == 5) {
-								text.add(4, [Text.of(`Can smelted in:`).white(), Text.of(` Blast Furnace 2000k`).yellow()])
-							}  else if (item.tier == 6) {
-								text.add(4, [Text.of(`Can smelted in:`).white(), Text.of(` Blast Furnace 3000k`).yellow()])
-							}  else if (item.tier == 7) {
-								text.add(4, [Text.of(`Can smelted in:`).white(), Text.of(` Blast Furnace 4000k`).yellow()])
-							}  else if (item.tier > 7) {
-								text.add(4, [Text.of(`Must be processed further to be smelted or refined.`).red()])
-							}
-							if (item.tier <= 7 && item.type != 'compound_ore') {
-							text.add(5, [Text.of(`Can be refined for up to:`).white(), Text.of(` 7x`).aqua(), Text.of(` yield`).white()])
-							}
-						}
-					})
-				} else if (part == 'grit') { // Grit
-					if (Item.of(`${mod}:${item.material}_${part}`) != null)
-					tooltip.addAdvanced(`${mod}:${item.material}_${part}`, (items, advanced, text) => {
-						text.add(1, [Text.of(`Metal Tier: `).white(),Text.of(`${item.tier}`).gold()])
-						if (!tooltip.ctrl) {
-							  text.add(2, [Text.of('Hold ').gold(), Text.of('Ctrl ').green(), Text.of('to see processing information.').gold()])
-						} else {
-							text.add(2, [Text.of(`Unable to be processed further`).white()])
-							if (item.tier <= 1) {
-								text.add(3, [Text.of(`Can smelted in:`).white(), Text.of(` Furnace`).yellow()])
-							}  else if (item.tier == 2) {
-								text.add(3, [Text.of(`Can smelted in:`).white(), Text.of(` Foundry`).yellow()])
-							}  else if (item.tier == 3) {
-								text.add(3, [Text.of(`Can smelted in:`).white(), Text.of(` Arc Furnace`).yellow()])
-							}  else if (item.tier == 4) {
-								text.add(3, [Text.of(`Can smelted in:`).white(), Text.of(` Blast Furnace`).yellow()])
-							}  else if (item.tier == 5) {
-								text.add(3, [Text.of(`Can smelted in:`).white(), Text.of(` Blast Furnace 2000k`).yellow()])
-							}  else if (item.tier == 6) {
-								text.add(3, [Text.of(`Can smelted in:`).white(), Text.of(` Blast Furnace 3000k`).yellow()])
-							}  else if (item.tier == 7) {
-								text.add(3, [Text.of(`Can smelted in:`).white(), Text.of(` Blast Furnace 4000k`).yellow()])
-							}  else if (item.tier == 8) {
-								text.add(3, [Text.of(`Can smelted in:`).white(), Text.of(` Blast Furnace 5000k`).yellow()])
-							}  else if (item.tier > 8) {
-								text.add(3, [Text.of(`Must be processed further to be smelted or refined.`).red()])
-							}
-						}
-					})
-				} else if (part == 'washed') { // tier 1 refined
-					if (Item.of(`${mod}:${part}_${item.material}`) != null)
-					tooltip.addAdvanced(`${mod}:${part}_${item.material}`, (items, advanced, text) => {
-						text.add(1, [Text.of(`Metal Tier: `).white(),Text.of(`${item.tier}`).gold()])
-						text.add(2, [Text.of(`Refining Level: `).white(),Text.of(`1`).aqua()])
-						if (!tooltip.ctrl) {
-							  text.add(3, [Text.of('Hold ').gold(), Text.of('Ctrl ').aqua(), Text.of('to see refining information.').gold()])
-						} else {
-							if (item.tier <= 1) {
-								text.add(3, [Text.of(`Can smelted in:`).white(), Text.of(` Furnace`).yellow()])
-							}  else if (item.tier == 2) {
-								text.add(3, [Text.of(`Can smelted in:`).white(), Text.of(` Foundry`).yellow()])
-							}  else if (item.tier == 3) {
-								text.add(3, [Text.of(`Can smelted in:`).white(), Text.of(` Arc Furnace`).yellow()])
-							}  else if (item.tier == 4) {
-								text.add(3, [Text.of(`Can smelted in:`).white(), Text.of(` Blast Furnace`).yellow()])
-							}  else if (item.tier == 5) {
-								text.add(3, [Text.of(`Can smelted in:`).white(), Text.of(` Blast Furnace 2000k`).yellow()])
-							}  else if (item.tier == 6) {
-								text.add(3, [Text.of(`Can smelted in:`).white(), Text.of(` Blast Furnace 3000k`).yellow()])
-							}  else if (item.tier == 7) {
-								text.add(3, [Text.of(`Can smelted in:`).white(), Text.of(` Blast Furnace 4000k`).yellow()])
-							}  else if (item.tier == 8) {
-								text.add(3, [Text.of(`Can smelted in:`).white(), Text.of(` Blast Furnace 5000k`).yellow()])
-							}  
-						}
-					})
-				} else if (part == 'imbued') { // tier 2 refined
-					if (Item.of(`${mod}:${part}_${item.material}`) != null)
-					tooltip.addAdvanced(`${mod}:${part}_${item.material}`, (items, advanced, text) => {
-						text.add(1, [Text.of(`Metal Tier: `).white(),Text.of(`${item.tier}`).gold()])
-						text.add(2, [Text.of(`Refining Level: `).white(),Text.of(`2`).aqua()])
-						if (!tooltip.ctrl) {
-							  text.add(3, [Text.of('Hold ').gold(), Text.of('Ctrl ').aqua(), Text.of('to see refining information.').gold()])
-						} else {
-							text.add(3, [Text.of(`Next refining step:`).white(), Text.of(` Washing`).aqua()])
-						}
-					})
-				} else if (part == 'cluster') { // tier 3 refined
-					if (Item.of(`${mod}:${item.material}_${part}`) != null)
-					tooltip.addAdvanced(`${mod}:${item.material}_${part}`, (items, advanced, text) => {
-						text.add(1, [Text.of(`Metal Tier: `).white(),Text.of(`${item.tier}`).gold()])
-						text.add(2, [Text.of(`Refining Level: `).white(),Text.of(`3`).aqua()])
-						if (!tooltip.ctrl) {
-							  text.add(3, [Text.of('Hold ').gold(), Text.of('Ctrl ').aqua(), Text.of('to see refining information.').gold()])
-						} else {
-							text.add(3, [Text.of(`Next refining step:`).white(), Text.of(` Imbuing`).aqua()])
-						}
-					})
-				}   
-			})
-		})
-		*/
 	})
 });

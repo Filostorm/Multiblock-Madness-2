@@ -386,6 +386,12 @@ onEvent('recipes', event => {
 
     
 
+	//Resonating Crystal
+	global.mekanismMetallurgicInfusing(event, Item.of('lazierae2:resonating_crystal'), Item.of('mna:resonating_dust'), 'mekanism:diamond', 20, `mbm2:infusing/resonating_crystal`)
+	
+	event.recipes.createFilling('mna:resonating_dust', [Fluid.of('thermal:ender', 250), 'ae2:sky_dust']).id('mbm2:filling/resonating_dust')
+	event.recipes.tconstruct.casting_table('mna:resonating_dust', 'thermal:ender', 250).cast('ae2:sky_dust').consumeCast().coolingTime(100).id(`mbm2:casting/resonating_dust`)
+	
 
 
 	/*

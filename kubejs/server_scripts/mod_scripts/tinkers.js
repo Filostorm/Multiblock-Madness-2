@@ -1,5 +1,9 @@
 onEvent('recipes', event => {
 
+	//Puny Smelting Guide Book
+	event.shapeless(Item.of('tconstruct:puny_smelting', '{mantle:{book:{current_page:""}}}'), ['minecraft:book', 'kubejs:unfired_clay_brick']).id(`mbm2:puny_smelting`)
+	
+
 	//Seared Brick
 	event.remove({output: 'tconstruct:grout'})
 	event.remove({output: 'tconstruct:seared_brick'})
@@ -19,17 +23,17 @@ onEvent('recipes', event => {
 	event.smelting('tconstruct:scorched_brick', 'kubejs:tough_brick').id(`mbm2:smelting/scorched_brick`)
 	
 
-
+	//Controller
 	event.remove({output: 'tconstruct:smeltery_controller'})
 	event.remove({output: 'tconstruct:smeltery/melting/metal/copper/smeltery_controller'})
-  event.shaped('tconstruct:smeltery_controller', [
-	'AAA',
-	'ABA',
-	'AAA'
-  ], {
-	A: 'tconstruct:seared_brick',
-	B: '#forge:gears/steel'
-  })
+  	event.shaped('tconstruct:smeltery_controller', [
+		'AAA',
+		'ABA',
+		'AAA'
+  	], {
+		A: 'tconstruct:seared_brick',
+		B: '#forge:gears/steel'
+  	})
 
 //Seared Faucet nerf
   event.remove({id: 'tconstruct:smeltery/seared/faucet'})
@@ -48,10 +52,6 @@ event.shaped('tconstruct:scorched_faucet', [
 ], {
   A: 'tconstruct:scorched_brick'
 }).id('mbm2:smeltery/scorched/faucet')
-
-	//First Steel
-	event.recipes.createMixing(`kubejs:carbon_covered_iron`, [`#forge:ingots/iron`, '#forge:dusts/coal_coke']).heated().id(`mbm2:carbon_covered_iron`)
-  	global.tinkersMelting(event, 'kubejs:molten_slag', 50, 'tconstruct:molten_steel', 90, 'kubejs:carbon_covered_iron', 1200, 100, `mbm2:smeltery/melting/metal/first_steel`)
 
 	//Foundry Controller
 	event.remove({id: 'tconstruct:smeltery/casting/scorched/foundry_controller'})
@@ -87,5 +87,6 @@ event.shaped('tconstruct:scorched_faucet', [
 		"duration": 200,
 		"temperature": 1500
 	  })
+
 
 });

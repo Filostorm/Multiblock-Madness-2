@@ -63,15 +63,6 @@ var gradeLetterColor = [
 	Text.gold(`[A]`),
 ]
 
-global.refiningMultiplier = [
-	1, //this is just to take up the 0 slot
-	2,
-	4,
-	8,
-	16,
-	32,
-	64,
-]
 
 //Function that capitilizes the first leter
 const nameUpper = (name) => {

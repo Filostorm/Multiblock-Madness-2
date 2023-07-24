@@ -1,5 +1,11 @@
 onEvent('recipes', event => {
 	
+
+	//First Steel
+	event.recipes.createMixing(`kubejs:carbon_covered_iron`, [`#forge:ingots/iron`, '#forge:dusts/coal_coke']).heated().id(`mbm2:carbon_covered_iron`)
+  	global.tinkersMelting(event, 'kubejs:molten_slag', 50, 'tconstruct:molten_steel', 90, 'kubejs:carbon_covered_iron', 1200, 100, `mbm2:smeltery/melting/metal/first_steel`)
+
+
   // Damascus Steel
   event.recipes.createCutting('kubejs:steel_scraps', ['#forge:ingots/steel']).processingTime(400).id(`mbm2:cutting/steel_scraps`)
 
@@ -51,7 +57,7 @@ event.shaped('4x kubejs:industrial_alloy_ingot', [
 	event.recipes.tconstruct.casting_table('kubejs:energetic_alloy_ingot', 'tconstruct:molten_electrum', 90).cast('kubejs:energetic_blend').consumeCast().coolingTime(100).id(`mbm2:energetic_alloy_ingot`)
   
   //Soul Steel (tinkers)
-   global.tinkersAlloying(event, 'tconstruct:molten_soulsteel', 90, [{name: 'createbigcannons:molten_nethersteel',amount: 90}, {name: 'kubejs:liquid_smoke',amount: 100}, {name: 'tconstruct:liquid_soul',amount: 500}], 1000, `mbm2:smeltery/alloys/molten_soulsteel`)
+   global.tinkersAlloying(event, 'tconstruct:molten_soulsteel', 90, [{name: 'kubejs:molten_nethersteel',amount: 90}, {name: 'kubejs:liquid_smoke',amount: 100}, {name: 'tconstruct:liquid_soul',amount: 500}], 1000, `mbm2:smeltery/alloys/molten_soulsteel`)
   
 	//global.createApplying(event, 'compressedcreativity:compressed_iron_casing', Ingredient.of('#forge:ingots/compressed_steel'), Ingredient.of('#forge:treated_wood'), `mbm2:applying/compressed_steel_casing`)
 
@@ -63,7 +69,11 @@ event.shaped('4x kubejs:industrial_alloy_ingot', [
 
   event.recipes.createMixing([`kubejs:sturdy_brick`], ['kubejs:sandy_brick', 'gravel']).id('mbm2:mixing/sturdy_brick')
 
+  //Tough Bricks
+	event.recipes.createMixing('kubejs:tough_brick', ['#forge:dusts/slag', 'create:cinder_flour', 'kubejs:sturdy_brick']).heated().id(`mbm2:mixing/tough_brick`)
+  //Tough Bricks, molten slag
 	event.recipes.createMixing('kubejs:tough_brick', [Fluid.of('kubejs:molten_slag', 125), 'create:cinder_flour', 'kubejs:sturdy_brick']).heated().id(`mbm2:mixing/tough_brick`)
+
 	//event.recipes.createMixing('2x tconstruct:scorched_brick', [Fluid.of('kubejs:molten_slag', 125), '2x create:cinder_flour', 'kubejs:sturdy_brick']).superheated().id(`mbm2:mixing/scorched_brick`)
 
   event.recipes.createFilling('kubejs:heated_brick', [Fluid.of('tconstruct:magma', 250), 'kubejs:tough_brick']).id('mbm2:filling/heated_brick')

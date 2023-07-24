@@ -972,23 +972,6 @@
 			}]
 		}
 		{
-			x: 13.0d
-			y: -1.5d
-			description: ["Could be used to automate compact crafting with a bit of tinkering!"]
-			dependencies: ["4691F3E2268FD78F"]
-			id: "4131CBB343346AF0"
-			tasks: [{
-				id: "33309F26286B7D13"
-				type: "item"
-				item: "naturesaura:placer"
-			}]
-			rewards: [{
-				id: "037F18E8C9273261"
-				type: "item"
-				item: "naturesaura:infused_iron"
-			}]
-		}
-		{
 			x: 7.0d
 			y: 6.0d
 			dependencies: ["20E99BAA6C9A4913"]
@@ -997,6 +980,24 @@
 				id: "73D6EF0CF5688260"
 				type: "item"
 				item: "thermal:machine_crucible"
+			}]
+		}
+		{
+			x: 13.0d
+			y: -1.5d
+			description: ["By eating the moss off stones nearby, this is one simple (if ineffective) way to refill the Aura."]
+			dependencies: ["4691F3E2268FD78F"]
+			id: "1D7CB78AC32EAFC0"
+			tasks: [{
+				id: "4D2D4F7C4D71D5AC"
+				type: "item"
+				item: "naturesaura:moss_generator"
+			}]
+			rewards: [{
+				id: "290FC635B1E0980E"
+				type: "item"
+				item: "minecraft:mossy_cobblestone"
+				count: 64
 			}]
 		}
 	]

@@ -52,6 +52,8 @@ var basicItems = [
 	'zinc_mesh',
 	'carbon_mesh',
 	'activated_carbon_mesh',
+	'standard_dyson_panel',
+	'hull_panel_sand_cast',
 ]
 
 global.transitionalItems = [
@@ -74,9 +76,37 @@ global.transitionalItemsTexture = [
 	'electron_tube',
 ]
 
+var batteryItems = [
+	'small_battery',
+	'large_battery',
+	'energy_crystal',
+	'energy_orb',
+	'lapatron_crystal',
+	'lapatron_orb',
+]
+var batteryStorage = [
+	4096,
+	65536,
+	1048576,
+	16777216,
+	268435456,
+	4294967296,
+]
+
+var nameUpperWSpace = (name, status) => {
+	let partOne = name.split('_')[0]
+	let partTwo = name.split('_')[1]
+	let fullName = partOne.charAt(0).toUpperCase() + partOne.slice(1) + ' ' + partTwo.charAt(0).toUpperCase() + partTwo.slice(1) + ` (${status})`
+	return fullName
+}
+
 onEvent('item.registry', event => {
 	basicItems.forEach((item) => {
 		event.create(item)
+	})
+	batteryItems.forEach((item) => {
+		event.create(`${item}_empty`).displayName(nameUpperWSpace(item, 'Empty')).texture(`kubejs:item/battery/${item}_empty`)
+		event.create(`${item}_full`).displayName(nameUpperWSpace(item, 'Full')).texture(`kubejs:item/battery/${item}_full`)
 	})
 	global.transitionalItems.forEach((item) => {
 		event.create(`incomplete_${item}`, 'create:sequenced_assembly').texture('kubejs:item/package')
@@ -93,4 +123,12 @@ onEvent('item.registry', event => {
 	event.create(`washed_thermolytic_blend`).color(0, 0x42f5da).texture(`kubejs:item/ore/washed`)
 	event.create(`crushed_thermolytic_blend`).color(0, 0x42f5da).texture(`kubejs:item/ore/crushed`)
 	event.create(`fine_thermolytic_dust`).color(0, 0x42f5da).texture(`kubejs:item/ore/fine_dust`)
+
+	event.create(`solar_chip_blue`).displayName('Dyson Tracking Chip (1)').texture(`kubejs:item/solar_chip_blue`)
+	event.create(`solar_chip_red`).displayName('Dyson Tracking Chip (8)').texture(`kubejs:item/solar_chip_red`)
+	event.create(`solar_chip_green`).displayName('Dyson Tracking Chip (64)').texture(`kubejs:item/solar_chip_green`)
+	event.create(`solar_chip_purple`).displayName('Dyson Tracking Chip (4096)').texture(`kubejs:item/solar_chip_purple`)
+
+
+
   });

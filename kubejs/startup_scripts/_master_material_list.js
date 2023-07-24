@@ -668,7 +668,7 @@ global.newMaterialParts = [
       'blockParts': ['casing'],
       'durability': 512,
       'amount': 1,
-      'tinkers_input': [{tag: 'forge:molten_iron',amount: 90},{name: 'kubejs:molten_carbon',amount: 100}],
+      'tinkers_input': [{tag: 'forge:molten_iron',amount: 90},{name: 'kubejs:molten_carbon',amount: 90}],
       'allomancy': 'Steel allows you to Push on metals. This means moving metal items away from you, or pushing yourself off of metal blocks. This can be used as a sort of rudimentary flight, though it is more falling with style than anything else. Steel also allows you to use the Coin Bag item. If you have gold nuggets in your inventory and are burning steel, you can use this as a ranged weapon similar to the old Beta-edition Bow. Iron nuggets can also be used, causing more damage but far less accurately',
       'feruchemy': 'Speed--Speed Boost or Slowness'
     },
@@ -819,6 +819,8 @@ global.newMaterialParts = [
       'amount': 8,
       'dust_input': ['8x #forge:dusts/steel', '#forge:ingots/netherite_scrap'],
       'ingot_input': ['8x #forge:ingots/steel', '#forge:ingots/netherite_scrap'],
+      'fluid': 'thick',
+      'fluid_id': 'kubejs:molten_nethersteel',
     },
     {
       'material': 'industrial_alloy',

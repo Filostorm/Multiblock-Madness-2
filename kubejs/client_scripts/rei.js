@@ -135,6 +135,7 @@ onEvent("rei.group", (event) => {
 	'mna:runescribing_recipe_paper', 'mna:manaweaving_pattern_recipe_paper', 'mna:thaumaturgic_link', 'immersiveengineering:shader', 
 	'tconstruct:repair_kit', 'tconstruct:pick_head', 'tconstruct:hammer_head', 'tconstruct:small_axe_head', 'tconstruct:small_blade', 'tconstruct:broad_axe_head', 'tconstruct:round_plate', 'tconstruct:large_plate', 'tconstruct:tool_binding', 'tconstruct:broad_blade', 'tconstruct:tool_handle', 'tconstruct:tough_handle', 
 	'tconstruct:kama', 'tconstruct:scythe', 'tconstruct:dagger', 'tconstruct:sword', 'tconstruct:cleaver', 'tconstruct:pickaxe', 'tconstruct:sledge_hammer', 'tconstruct:vein_hammer', 'tconstruct:mattock', 'tconstruct:pickadze', 'tconstruct:excavator', 'tconstruct:hand_axe', 'tconstruct:broad_axe', 
+	'tconstruct:bow_limb', 'tconstruct:bow_grip', 'tconstruct:bowstring', 'tconstruct:crossbow', 'tconstruct:longbow', 
 	"sophisticatedstorage:chest", "sophisticatedstorage:iron_chest", "sophisticatedstorage:gold_chest", "sophisticatedstorage:diamond_chest", "sophisticatedstorage:netherite_chest",
 	"sophisticatedstorage:shulker_box", "sophisticatedstorage:iron_shulker_box", "sophisticatedstorage:gold_shulker_box", "sophisticatedstorage:diamond_shulker_box", "sophisticatedstorage:netherite_shulker_box",
 	"sophisticatedstorage:barrel", "sophisticatedstorage:iron_barrel", "sophisticatedstorage:gold_barrel", "sophisticatedstorage:diamond_barrel", "sophisticatedstorage:netherite_barrel",

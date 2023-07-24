@@ -15,7 +15,7 @@ onEvent('recipes', event => {
 		A: 'tconstruct:seared_brick',
 		B: '#forge:gears/steel'
   	}).id('mbm2:hardened_tank')
-  	event.shapeless(`kubejs:carbon_covered_iron`, [`#forge:ingots/iron`, '#forge:dusts/coal_coke']).id(`mbm2:carbon_covered_iron`).id('mbm2:hardened_tank')
+  	event.shapeless(`kubejs:carbon_covered_iron`, [`#forge:ingots/iron`, '#forge:dusts/coal_coke']).id(`mbm2:carbon_covered_iron`)
 	//Item.of(`#forge:grits/${item.material}`).withChance(0.25)
 	event.recipes.createMixing(`${item.amount}x #forge:ingots/${item.material}`, item.ingot_input).heated().id(`create:mixing/${item.material}_ingot`).id('mbm2:hardened_tank')
 		

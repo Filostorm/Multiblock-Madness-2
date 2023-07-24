@@ -23,6 +23,7 @@ onEvent('recipes', event => {
 	var gearCasting = 4
 	var rodCasting = 16
 	var wireCasting = 16
+	var hullCasting = 1
 
 	global.newMaterialParts.forEach((item) => {
 		
@@ -290,7 +291,7 @@ onEvent('recipes', event => {
 				  }).id(`mbm2:crafting/${item.material}_frame_box`)
 
 				  ////////////////HULL CASINGS///////////////
-				  if (Item.of(`#forge:hull_casings/${item.material}`) != null) {
+				  if (Item.of(`#forge:hull_casings/${item.material}`) != null && Item.of(`#forge:hull_panels/${item.material}`) != null) {
 					  event.shaped(`#forge:hull_casings/${item.material}`, [
 						  'BPB',
 						  'PFP',
@@ -303,6 +304,17 @@ onEvent('recipes', event => {
 					}
 				}
 		}
+	}
+	
+	if (Item.of(`#forge:hull_panels/${item.material}`) != null) {
+		//Mega Hull Panels
+		  event.recipes.multiblocked.multiblock("casting")
+		  .inputFluid(Fluid.of(`${item.fluid_id}`, hullCasting*900))
+		  .inputItem(`${hullCasting}x kubejs:hull_panel_sand_cast`)
+		  .outputItem(`${hullCasting}x #forge:hull_panels/${item.material}`)
+		  .setPerTick(true)
+		  .inputFE(1024)
+		  .duration(100)
 	}
 	////////////////WIRES///////////////
     if (Item.of(`#forge:wires/${item.material}`) != null) {

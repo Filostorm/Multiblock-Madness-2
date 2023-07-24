@@ -83,7 +83,38 @@ global.oreRefiningParts.forEach((part) => {
 	oreRefiningPartList.push(nameUpper(part.name))
 })
 
+var partColor = [
+	'§f', //Raw ore
+	'§8',
+	'§f',
+	'§a',
+	'§9',
+	'§d',
+	'§6',
+]
 
+
+onEvent('client.generate_assets', event => {
+	global.newMaterialParts.forEach((item) => {
+		if (item.ore) {
+			global.oreProcessingParts.forEach((part) => {
+				if (part.name != 'grit') {
+					global.partDisplayName = ""
+					if (item.ore_name == null) { 
+					  global.partDisplayName = part.prefix + nameUpper(item.material) + part.suffix
+					} else {
+					  global.partDisplayName = part.prefix + nameUpper(item.ore_name) + part.suffix
+					}
+						//Color the ore part names based on the grade
+    					event.addLang(`item.kubejs.${part.name}_${item.material}`, `${partColor[part.grade]}${global.partDisplayName}`)
+					if (part.name == 'crushed') {
+    					event.addLang(`item.create.crushed_raw_${item.material}`, `${partColor[part.grade]}${global.partDisplayName}`)
+					}
+				}
+			})
+		}
+	})
+})
 
 
 onEvent('item.tooltip', tooltip => {

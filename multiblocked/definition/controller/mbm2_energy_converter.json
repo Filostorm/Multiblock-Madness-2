@@ -1,0 +1,166 @@
+{
+  "version": 3,
+  "location": "mbm2:energy_converter",
+  "traits": {},
+  "properties": {
+    "rotationState": "ALL",
+    "showInJei": true,
+    "isOpaque": true,
+    "hasDynamicShape": false,
+    "hasCollision": true,
+    "destroyTime": 1.5,
+    "explosionResistance": 6.0,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "friction": 0.6,
+    "harvestLevel": 0,
+    "stackSize": 64,
+    "tabGroup": "multiblocked.all"
+  },
+  "status": {
+    "unformed": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier2_casing",
+        "frontTexture": "multiblocked:overlay/blast_furnace",
+        "type": "gregtech",
+        "postRenderer": false
+      }
+    },
+    "idle": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier2_casing",
+        "frontTexture": "multiblocked:overlay/bf_paused",
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "parent": "unformed"
+    },
+    "working": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier2_casing",
+        "frontTexture": "multiblocked:overlay/bf_active",
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "parent": "idle"
+    },
+    "suspend": {
+      "parent": "working"
+    }
+  },
+  "recipeMap": "battery_converter",
+  "basePattern": {
+    "structureDir": [
+      "BACK",
+      "UP",
+      "RIGHT"
+    ],
+    "pattern": [
+      [
+        "AAA",
+        "BBB",
+        "AAA"
+      ],
+      [
+        "@AA",
+        "B B",
+        "AAA"
+      ],
+      [
+        "AAA",
+        "BBB",
+        "AAA"
+      ]
+    ],
+    "aisleRepetitions": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "predicates": {
+      "A": {
+        "blocks": [
+          {
+            "id": "kubejs:tier2_casing"
+          }
+        ],
+        "type": "blocks"
+      },
+      "controller": {
+        "location": "mbm2:energy_converter",
+        "type": "component"
+      },
+      "B": {
+        "blocks": [
+          {
+            "id": "immersiveengineering:coil_hv"
+          }
+        ],
+        "type": "blocks"
+      },
+      "C": {
+        "blocks": [
+          {
+            "id": "multiblocked:item_output"
+          },
+          {
+            "id": "multiblocked:item_input"
+          },
+          {
+            "id": "multiblocked:big_item_input"
+          },
+          {
+            "id": "multiblocked:big_item_output"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 2
+      },
+      "D": {
+        "blocks": [
+          {
+            "id": "multiblocked:energy_input_mk1"
+          },
+          {
+            "id": "multiblocked:energy_input_mk2"
+          },
+          {
+            "id": "multiblocked:energy_input_mk3"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 2
+      },
+      "any": {
+        "type": "any"
+      }
+    },
+    "symbolMap": {
+      "@": [
+        "controller"
+      ],
+      " ": [
+        "any"
+      ],
+      "A": [
+        "A",
+        "C",
+        "D"
+      ],
+      "B": [
+        "B"
+      ]
+    }
+  }
+}

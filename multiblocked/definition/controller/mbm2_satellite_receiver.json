@@ -1,0 +1,252 @@
+{
+  "version": 3,
+  "location": "mbm2:satellite_receiver",
+  "traits": {},
+  "properties": {
+    "rotationState": "ALL",
+    "showInJei": true,
+    "isOpaque": true,
+    "hasDynamicShape": false,
+    "hasCollision": true,
+    "destroyTime": 1.5,
+    "explosionResistance": 6.0,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "friction": 0.6,
+    "harvestLevel": 0,
+    "stackSize": 64,
+    "tabGroup": "multiblocked.all"
+  },
+  "status": {
+    "unformed": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier3_casing",
+        "frontTexture": "multiblocked:overlay/blast_furnace",
+        "type": "gregtech",
+        "postRenderer": false
+      }
+    },
+    "idle": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier3_casing",
+        "frontTexture": "multiblocked:overlay/bf_paused",
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "parent": "unformed"
+    },
+    "working": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier3_casing",
+        "frontTexture": "multiblocked:overlay/bf_active",
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "parent": "idle"
+    },
+    "suspend": {
+      "parent": "working"
+    }
+  },
+  "recipeMap": "receiver",
+  "basePattern": {
+    "structureDir": [
+      "BACK",
+      "UP",
+      "RIGHT"
+    ],
+    "pattern": [
+      [
+        "       ",
+        "       ",
+        "       ",
+        "       ",
+        "       ",
+        "       ",
+        " AAAAA ",
+        "       "
+      ],
+      [
+        "  BBB  ",
+        "       ",
+        "       ",
+        "       ",
+        "   A   ",
+        "  AAA  ",
+        "AA   AA",
+        "       "
+      ],
+      [
+        " BBBBB ",
+        "  BBB  ",
+        "   B   ",
+        "   B   ",
+        "  AAA  ",
+        " A   A ",
+        "A     A",
+        "       "
+      ],
+      [
+        " @BBBB ",
+        "  BBB  ",
+        "  BBB  ",
+        "  BBB  ",
+        " AABAA ",
+        " A C A ",
+        "A  C  A",
+        "   D   "
+      ],
+      [
+        " BBBBB ",
+        "  BBB  ",
+        "   B   ",
+        "   B   ",
+        "  AAA  ",
+        " A   A ",
+        "A     A",
+        "       "
+      ],
+      [
+        "  BBB  ",
+        "       ",
+        "       ",
+        "       ",
+        "   A   ",
+        "  AAA  ",
+        "AA   AA",
+        "       "
+      ],
+      [
+        "       ",
+        "       ",
+        "       ",
+        "       ",
+        "       ",
+        "       ",
+        " AAAAA ",
+        "       "
+      ]
+    ],
+    "aisleRepetitions": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "predicates": {
+      "A": {
+        "blocks": [
+          {
+            "id": "forbidden_arcanus:stellarite_block"
+          }
+        ],
+        "type": "blocks"
+      },
+      "controller": {
+        "location": "mbm2:satellite_receiver",
+        "type": "component"
+      },
+      "B": {
+        "blocks": [
+          {
+            "id": "kubejs:tier3_casing"
+          }
+        ],
+        "type": "blocks"
+      },
+      "C": {
+        "blocks": [
+          {
+            "id": "kubejs:white_alloy_storage_block"
+          }
+        ],
+        "type": "blocks"
+      },
+      "D": {
+        "blocks": [
+          {
+            "id": "thermal:signalum_block"
+          }
+        ],
+        "type": "blocks"
+      },
+      "E": {
+        "blocks": [
+          {
+            "id": "multiblocked:item_output"
+          },
+          {
+            "id": "multiblocked:big_item_output"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 1,
+        "io": "OUT"
+      },
+      "F": {
+        "blocks": [
+          {
+            "id": "multiblocked:item_input"
+          },
+          {
+            "id": "multiblocked:big_item_input"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 1,
+        "io": "IN"
+      },
+      "any": {
+        "type": "any"
+      }
+    },
+    "symbolMap": {
+      "@": [
+        "controller"
+      ],
+      " ": [
+        "any"
+      ],
+      "A": [
+        "A"
+      ],
+      "B": [
+        "B",
+        "E",
+        "F"
+      ],
+      "C": [
+        "C"
+      ],
+      "D": [
+        "D"
+      ]
+    }
+  }
+}

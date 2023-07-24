@@ -14,7 +14,7 @@ onEvent('recipes', event => {
 
 //Living Wood Twig
 event.remove({id: 'botania:livingwood_twig'})
-global.naturesauraAltar(event, 'botania:livingwood_twig', Ingredient.of('#botania:livingwood_logs').toJson(), 'naturesaura:overworld', 15000, 80, 'mbm2:altar/livingwood_twig')
+global.naturesauraAltar(event, 'botania:livingwood_twig', '#botania:livingwood_logs', 'normal', 'overworld', 15000, 80, 'mbm2:altar/livingwood_twig')
 //event.shaped('botania:livingwood_twig', [
 //  ' A',
 //  'A '

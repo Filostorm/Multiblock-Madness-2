@@ -74,8 +74,8 @@ global.oreRefiningParts = [
         'level': 1,
     },
     {
-        'name': `imbued`,
-        'prefix': `Imbued `,
+        'name': `crumbled`,
+        'prefix': `Crumbled `,
         'suffix': ``,
         'model': false,
         'level': 2,

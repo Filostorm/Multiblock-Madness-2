@@ -183,9 +183,6 @@ onEvent('fluid.registry', event => {
       event.create(`concentrated_${item.material}_slurry`).thickTexture(concentratedSlurryColor).bucketColor(concentratedSlurryColor)
     }
 
-    //item.fluids.forEach((fluid) => {
-    //  newFluid(event, item.material, fluid[0], fluid[1], fluid[2], item.color, fluid[3])
-    //})
   })
 });
 

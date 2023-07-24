@@ -370,19 +370,25 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 
 				///////////////////// ORE REFINING STEP 1 //////////////////
 					//Create Washing 
-					event.recipes.createSplashing([`${global.refiningMultiplier[1]}x #forge:ores/washed/${item.material}`, Item.of('gravel').withChance(0.50)], `#mbm2:ore_part/washable/${item.material}`/*refinableOre(1) in tag form because washing is spechlae*/).id(`mbm2:washing/${item.material}`)
+					event.recipes.createSplashing([`${global.refiningMultiplier[1]}x #forge:ores/washed/${item.material}`, Item.of('gravel').withChance(0.50)], `#mbm2:ore_part/refinable_tier_1/${item.material}`/*refinableOre(1) in tag form because washing is spechlae*/).id(`mbm2:washing/${item.material}`)
 					
 					//Chain recipe
-					event.recipes.createSplashing([`#forge:ores/washed/${item.material}`], `#forge:ores/imbued/${item.material}`).id(`mbm2:washing/imbued_ore_${item.material}`)
+					event.recipes.createSplashing([`#forge:ores/washed/${item.material}`], `#forge:ores/${global.oreRefiningParts[2].name}/${item.material}`).id(`mbm2:washing/${global.oreRefiningParts[2].name}_ore_${item.material}`)
 							
 
 				///////////////////// ORE REFINING STEP 2 //////////////////
 			
-	 				//Imbuing
-	 				global.arsImbument(event, `kubejs:imbued_${item.material}`, global.refiningMultiplier[2], refinableOre(2), 3000, [], `mbm2:imbuing/${item.material}`)
-
+					//NA Crushing
+					global.naturesauraAltar(event, `${global.refiningMultiplier[2]}x kubejs:${global.oreRefiningParts[2].name}_${item.material}`, `#mbm2:ore_part/refinable_tier_2/${item.material}`, 'crushing', 'overworld', 10000, 80, `mbm2:${global.oreRefiningParts[2].name}/${item.material}`)
 					//Chain recipe
-	 				global.arsImbument(event, `kubejs:imbued_${item.material}`, 1, `#forge:ores/cluster/${item.material}`, 500, [], `mbm2:imbuing/cluster_${item.material}`)
+					global.naturesauraAltar(event, `kubejs:${global.oreRefiningParts[2].name}_${item.material}`, `kubejs:${global.oreRefiningParts[3].name}_${item.material}`, 'crushing', 'overworld', 2000, 40, `mbm2:chain_recipe/${global.oreRefiningParts[2].name}/${item.material}`)
+
+	 				////Imbuing
+	 				//global.arsImbument(event, `kubejs:${global.oreRefiningParts[2]}_${item.material}`, global.refiningMultiplier[2], refinableOre(2), 3000, [], `mbm2:${global.oreRefiningParts[2]}/${item.material}`)
+//
+					////Chain recipe
+	 				//global.arsImbument(event, `kubejs:${global.oreRefiningParts[2]}_${item.material}`, 1, `#forge:ores/cluster/${item.material}`, 500, [], `mbm2:${global.oreRefiningParts[2]}/${global.oreRefiningParts[3]}_${item.material}`)
+					 
 					
 
 		////////////////////////////////////////////////////////////////
@@ -928,7 +934,8 @@ onEvent('block.loot_tables', event => {
 
 		if(item.type == 'base_metal') {
 
-			event.add(`mbm2:ore_part/washable/${item.material}`, refinableOre(1))
+			event.add(`mbm2:ore_part/refinable_tier_1/${item.material}`, refinableOre(1))
+			event.add(`mbm2:ore_part/refinable_tier_2/${item.material}`, refinableOre(2))
 			
 			//let refineProcessedOre = [] // this needs to be redone so that you're required to process to a certain grade before unlocking the next level of refining
 			//global.oreProcessingParts.forEach((part) => {

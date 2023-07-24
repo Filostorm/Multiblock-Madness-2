@@ -1,0 +1,370 @@
+{
+  "version": 3,
+  "location": "mbm2:railgun",
+  "traits": {},
+  "properties": {
+    "rotationState": "ALL",
+    "showInJei": true,
+    "isOpaque": true,
+    "hasDynamicShape": false,
+    "hasCollision": true,
+    "destroyTime": 1.5,
+    "explosionResistance": 6.0,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "friction": 0.6,
+    "harvestLevel": 0,
+    "stackSize": 64,
+    "tabGroup": "multiblocked.all"
+  },
+  "status": {
+    "unformed": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier3_casing",
+        "frontTexture": "multiblocked:overlay/blast_furnace",
+        "type": "gregtech",
+        "postRenderer": false
+      }
+    },
+    "idle": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier3_casing",
+        "frontTexture": "multiblocked:overlay/bf_paused",
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "parent": "unformed"
+    },
+    "working": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier3_casing",
+        "frontTexture": "multiblocked:overlay/bf_active",
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "parent": "idle"
+    },
+    "suspend": {
+      "parent": "working"
+    }
+  },
+  "recipeMap": "railgun",
+  "basePattern": {
+    "structureDir": [
+      "LEFT",
+      "UP",
+      "BACK"
+    ],
+    "pattern": [
+      [
+        "  AA@AA  ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         "
+      ],
+      [
+        " AAAAAAA ",
+        "  AABAA  ",
+        "    B    ",
+        "   BBB   ",
+        "    B    ",
+        "    B    ",
+        "   BBB   ",
+        "    B    ",
+        "    B    ",
+        "   BBB   ",
+        "    B    ",
+        "    B    ",
+        "   BBB   ",
+        "         ",
+        "         ",
+        "         "
+      ],
+      [
+        "AAAAAAAAA",
+        " AACCCAA ",
+        "  ACCCA  ",
+        "  BCCCB  ",
+        "   CCC   ",
+        "   CCC   ",
+        "  BCCCB  ",
+        "   CCC   ",
+        "   CCC   ",
+        "  BCCCB  ",
+        "   CCC   ",
+        "   CCC   ",
+        "  BCCCB  ",
+        "   CCC   ",
+        "         ",
+        "         "
+      ],
+      [
+        "AAAAAAAAA",
+        " ACCDCCA ",
+        "  CCDCC  ",
+        " BCCDCCB ",
+        "  CCDCC  ",
+        "  CCDCC  ",
+        " BCCDCCB ",
+        "  CCDCC  ",
+        "  CCDCC  ",
+        " BCCDCCB ",
+        "  CCDCC  ",
+        "  CCDCC  ",
+        " BCCDCCB ",
+        "  CCDCC  ",
+        "    D    ",
+        "    D    "
+      ],
+      [
+        "AAAAAAAAA",
+        " BCD DCB ",
+        " BCD DCB ",
+        " BCD DCB ",
+        " BCD DCB ",
+        " BCD DCB ",
+        " BCD DCB ",
+        " BCD DCB ",
+        " BCD DCB ",
+        " BCD DCB ",
+        " BCD DCB ",
+        " BCD DCB ",
+        " BCD DCB ",
+        "  CD DC  ",
+        "   D D   ",
+        "   D D   "
+      ],
+      [
+        "AAAAAAAAA",
+        " ACCDCCA ",
+        "  CCDCC  ",
+        " BCCDCCB ",
+        "  CCDCC  ",
+        "  CCDCC  ",
+        " BCCDCCB ",
+        "  CCDCC  ",
+        "  CCDCC  ",
+        " BCCDCCB ",
+        "  CCDCC  ",
+        "  CCDCC  ",
+        " BCCDCCB ",
+        "  CCDCC  ",
+        "    D    ",
+        "    D    "
+      ],
+      [
+        "AAAAAAAAA",
+        " AACCCAA ",
+        "  ACCCA  ",
+        "  BCCCB  ",
+        "   CCC   ",
+        "   CCC   ",
+        "  BCCCB  ",
+        "   CCC   ",
+        "   CCC   ",
+        "  BCCCB  ",
+        "   CCC   ",
+        "   CCC   ",
+        "  BCCCB  ",
+        "   CCC   ",
+        "         ",
+        "         "
+      ],
+      [
+        " AAAAAAA ",
+        "  AABAA  ",
+        "    B    ",
+        "   BBB   ",
+        "    B    ",
+        "    B    ",
+        "   BBB   ",
+        "    B    ",
+        "    B    ",
+        "   BBB   ",
+        "    B    ",
+        "    B    ",
+        "   BBB   ",
+        "         ",
+        "         ",
+        "         "
+      ],
+      [
+        "  AAAAA  ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         "
+      ]
+    ],
+    "aisleRepetitions": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "predicates": {
+      "A": {
+        "blocks": [
+          {
+            "id": "kubejs:tier3_casing"
+          }
+        ],
+        "type": "blocks"
+      },
+      "controller": {
+        "location": "mbm2:railgun",
+        "type": "component"
+      },
+      "B": {
+        "blocks": [
+          {
+            "id": "kubejs:titanite_hull_casing"
+          }
+        ],
+        "type": "blocks"
+      },
+      "C": {
+        "blocks": [
+          {
+            "id": "thermal:obsidian_glass"
+          }
+        ],
+        "type": "blocks"
+      },
+      "D": {
+        "blocks": [
+          {
+            "id": "kubejs:high_pressure_casing"
+          }
+        ],
+        "type": "blocks"
+      },
+      "E": {
+        "blocks": [
+          {
+            "id": "multiblocked:item_input"
+          },
+          {
+            "id": "multiblocked:big_item_input"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 1,
+        "io": "IN"
+      },
+      "F": {
+        "blocks": [
+          {
+            "id": "multiblocked:item_output"
+          },
+          {
+            "id": "multiblocked:big_item_output"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 1,
+        "io": "OUT"
+      },
+      "G": {
+        "blocks": [
+          {
+            "id": "multiblocked:energy_input_mk1"
+          },
+          {
+            "id": "multiblocked:energy_input_mk3"
+          },
+          {
+            "id": "multiblocked:energy_input_mk2"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 1,
+        "io": "IN"
+      },
+      "any": {
+        "type": "any"
+      }
+    },
+    "symbolMap": {
+      "@": [
+        "controller"
+      ],
+      " ": [
+        "any"
+      ],
+      "A": [
+        "A",
+        "E",
+        "F",
+        "G"
+      ],
+      "B": [
+        "B"
+      ],
+      "C": [
+        "C"
+      ],
+      "D": [
+        "D"
+      ]
+    }
+  }
+}

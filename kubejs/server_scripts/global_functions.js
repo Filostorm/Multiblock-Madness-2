@@ -272,17 +272,32 @@ global.AssemblyLaser = (event, output, input, ID) => {
 
 
 ///////////////// NATURAL ALTAR ///////////////////////
-	  global.naturesauraAltar = (event, output, input, aura_type, aura, time, ID) => {
-		  event.custom({
-			  type: 'naturesaura:altar',
-			  input: input,
-			  output: {
-				  item: output
-			  },
-			  aura_type: aura_type, //naturesaura:nether
-			  aura: aura, //15000,
-			  time: time //80
-			}).id(ID)}
+	global.naturesauraAltar = (event, output, input, catalyst, aura_type, aura, time, ID) => {
+		if (catalyst == 'crushing' || catalyst == 'conversion') {
+			event.custom({
+				type: 'naturesaura:altar',
+				input: Ingredient.of(input).toJson(),
+				output: Item.of(output).toResultJson(),
+				aura_type: `naturesaura:${aura_type}`,
+				catalyst: {
+					item: `naturesaura:${catalyst}_catalyst`
+				},
+				aura: aura, //2000,
+				time: time //20
+			}).id(ID)
+		} else {
+			event.custom({
+				type: 'naturesaura:altar',
+				input: Ingredient.of(input).toJson(),
+				output: Item.of(output).toResultJson(),
+				aura_type: `naturesaura:${aura_type}`,
+				aura: aura, //15000,
+				time: time //80
+			}).id(ID)
+		}
+	}
+
+
 ///////////////////////////////////////////////////////////
 ///////////////// TREE RITUAL ///////////////////////
 	  global.naturesauraTreeRitual = (event, output, input, sapling, time, ID) => {

@@ -27,6 +27,7 @@ global.fluidsToRemove = [
 	'sophisticatedcore:xp_still',
 	'reliquary:xp_juice_still',
 	'cofh_core:experience',
+	'tconstruct:molten_ender',
 ]
 
 var removeByName = [
@@ -112,7 +113,43 @@ onEvent('recipes', event => {
 		],
 		"energy": 400
 	  }).id('mbm2:centrifuge/experience_bottle')
+	  
+	  //Ender Fluid Unify
+	  event.custom({
+		"type": "tconstruct:entity_melting",
+		"entity": {
+		  "types": [
+			"minecraft:enderman",
+			"minecraft:endermite",
+			"minecraft:ender_dragon"
+		  ]
+		},
+		"result": {
+		  "fluid": "thermal:ender",
+		  "amount": 25
+		},
+		"damage": 2
+	  })
+	  event.custom({
+		"type": "tconstruct:melting",
+		"ingredient": [
+		  {
+			"tag": "forge:ender_pearls"
+		  },
+		  {
+			"item": "minecraft:ender_eye"
+		  }
+		],
+		"result": {
+		  "fluid": "thermal:ender",
+		  "amount": 250
+		},
+		"temperature": 477,
+		"time": 49
+	  })
+
 })
+
 
 onEvent('tags.items', event => {
 	// Removes all tags from this entry

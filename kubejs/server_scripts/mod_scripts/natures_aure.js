@@ -22,6 +22,8 @@ onEvent('tags.items', event => {
 	
 	
  });
+
+
 onEvent('recipes', event => {
 	event.remove({id: 'naturesaura:gold_fiber'})
   	event.shaped('4x naturesaura:gold_fiber', [
@@ -33,6 +35,10 @@ onEvent('recipes', event => {
 		L: '#minecraft:leaves',
 		E: '#forge:nuggets/electrum'
   	}).id('naturesaura:gold_fiber')
+
+	//Wood Stand
+	event.remove({id: 'naturesaura:wood_stand'})
+ 	global.createApplying(event, 'naturesaura:wood_stand', Ingredient.of('naturesaura:gold_leaf'), Ingredient.of('#forge:stripped_logs'), `mbm2:applying/wood_stand`)
 
 // [| Ancient Wood Scaffolding |] //
 event.shaped('3x kubejs:ancient_wood_scaffolding', [
@@ -61,9 +67,9 @@ event.shaped('3x kubejs:ancient_wood_scaffolding', [
 
 	//Tainted Gold
 	//event.remove({id: 'naturesaura:altar/tainted_gold'})
-	global.naturesauraAltar(event, 'naturesaura:tainted_gold', Item.of('kubejs:auric_gold_ingot').toJson(), 'naturesaura:nether', 15000, 80, 'naturesaura:altar/tainted_gold')
+	global.naturesauraAltar(event, 'naturesaura:tainted_gold', 'kubejs:auric_gold_ingot', 'normal', 'nether', 15000, 80, 'naturesaura:altar/tainted_gold')
 	//event.remove({id: 'naturesaura:altar/tainted_gold_block'})
-	global.naturesauraAltar(event, 'naturesaura:tainted_gold_block', Item.of('kubejs:auric_gold_storage_block').toJson(), 'naturesaura:nether', 135000, 700, 'naturesaura:altar/tainted_gold_block')
+	global.naturesauraAltar(event, 'naturesaura:tainted_gold_block', 'kubejs:auric_gold_storage_block', 'normal', 'nether', 135000, 700, 'naturesaura:altar/tainted_gold_block')
 	
 });
 

@@ -1,6 +1,7 @@
 {
 	"basics": {
 		"favorites": [
+			"{mode:\"NOON\",type:\"roughlyenoughitems:time\"}",
 			"{id:\"ftblibrary:toggle.gamemode\",json:'{\"group\":\"ftblibrary:cheat\",\"icon\":[\"ftblibrary:icons/blue_button\",\"ftblibrary:textures/icons/toggle_gamemode.png\"],\"x\":100,\"click\":\"command:/ftblibrary gamemode\",\"hide_with_nei\":true,\"requires_op\":true}',type:\"ftblibrary:sidebar_button\"}",
 			"{id:\"ftbteams:my_team\",json:'{\"group\":\"ftblibrary:info\",\"icon\":\"ftbteams:textures/teams.png\",\"x\":0,\"click\":\"ftbteams:open_gui\",\"loading_screen\":true}',type:\"ftblibrary:sidebar_button\"}",
 			"{id:\"ftbquests:quests\",json:'{\"group\":\"ftblibrary:info\",\"icon\":\"ftbquests:item/book\",\"x\":610,\"click\":\"ftbquests:open_gui\",\"required_server_mods\":[\"ftbquests\"],\"custom_text\":true}',type:\"ftblibrary:sidebar_button\"}",

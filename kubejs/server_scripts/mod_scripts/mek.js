@@ -57,6 +57,9 @@ event.shaped('mekanism:superheating_element', [
 	T: 'powah:thermoelectric_plate',
   }).id('mbm2:mekanism/superheating_element')
   
+
+
+  /////////crafting to upgrade the machines///////////
 let tiers = [
 	'basic',
 	'advanced',
@@ -106,6 +109,7 @@ tiers.forEach((tier, index) => {
 	});
 });
 
+//global.mekanismMetallurgicInfusing(event, Item.of('kubejs:carbon_mesh'), Item.of('kubejs:zinc_mesh'), 'mekanism:diamond', 20, `mbm2:carbon_mesh`)
 
 
 });

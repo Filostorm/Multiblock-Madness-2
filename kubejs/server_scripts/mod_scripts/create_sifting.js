@@ -1,7 +1,7 @@
 onEvent('recipes', event => {
 
 	
-	event.replaceInput({id: 'createsifter:sifter'}, 'create:cogwheel', '#extendedgears:small_cogwheel')
+	event.replaceInput({id: 'createsifter:sifter'}, 'create:cogwheel', '#mbm2:small_cogs')
 
 	//Gravel
 	event.remove({id: 'createsifter:sifting/gravel_brass_mesh'})

@@ -206,11 +206,19 @@
 				type: "item"
 				item: "create:blaze_burner"
 			}]
-			rewards: [{
-				id: "07110D4813BE56E9"
-				type: "item"
-				item: "createaddition:straw"
-			}]
+			rewards: [
+				{
+					id: "07110D4813BE56E9"
+					type: "item"
+					item: "createaddition:straw"
+				}
+				{
+					id: "12F3899FBB38EFD1"
+					type: "random"
+					exclude_from_claim_all: true
+					table_id: 2582656620646881183L
+				}
+			]
 		}
 		{
 			title: "Crushing Wheel"
@@ -336,7 +344,7 @@
 			}]
 		}
 		{
-			title: "Easy Alloys"
+			title: "Easy(er) Alloys"
 			x: 9.5d
 			y: 0.0d
 			shape: "circle"
@@ -348,6 +356,12 @@
 				type: "item"
 				item: "immersiveengineering:alloybrick"
 				count: 8L
+			}]
+			rewards: [{
+				id: "2C033181A25D4541"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 2582656620646881183L
 			}]
 		}
 		{
@@ -396,6 +410,12 @@
 						Damage: 0
 					}
 				}
+			}]
+			rewards: [{
+				id: "0FA6B568ED889EF8"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 2582656620646881183L
 			}]
 		}
 		{
@@ -447,6 +467,12 @@
 				id: "25FAB5C043329F35"
 				type: "item"
 				item: "summoningrituals:altar"
+			}]
+			rewards: [{
+				id: "3A36D498198324DA"
+				type: "item"
+				item: "forbidden_arcanus:soul"
+				count: 8
 			}]
 		}
 		{
@@ -707,7 +733,11 @@
 			icon: "create:steam_engine"
 			x: 2.5d
 			y: 6.0d
-			description: ["Once the Steam Engine has been placed, it no longer stores water. Rather it has a flow meter, shown while looking with the Goggles. You'll need one bar of water for each Steam Engine you will be using."]
+			description: [
+				"Once the Steam Engine has been placed, it no longer stores water. Rather it has a flow meter, shown while looking with the Goggles. You'll need one bar of water for each Steam Engine you will be using."
+				""
+				"Its more water then you expect."
+			]
 			dependencies: ["1E77F20F773CA050"]
 			id: "70F1315477089A27"
 			tasks: [
@@ -927,6 +957,7 @@
 			title: "Energetic Alloy"
 			x: 8.5d
 			y: 3.5d
+			description: ["Can be crafted by casting molten Electrum onto Energetic Blend."]
 			dependencies: ["37610C524354F5F2"]
 			id: "059414648F84FC52"
 			tasks: [{

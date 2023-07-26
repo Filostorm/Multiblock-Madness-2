@@ -38,7 +38,7 @@ onEvent('recipes', event => {
 		event.recipes.multiblocked.multiblock("railgun")
 		.inputItem('kubejs:standard_dyson_panel')
 		.outputItem('kubejs:solar_chip_blue')
-		.inputFE(4096*(16**2)) //1048576
+		.inputFE(4000*(16**2)) //1048576
 		//.setPerTick(true)
 		//.inputFE(4096*16)
 		.duration(50)
@@ -66,6 +66,10 @@ onEvent('recipes', event => {
 		.outputItem('kubejs:solar_chip_blue')
 		.outputItem('kubejs:energy_orb_empty')
 		.duration(5)
+
+		//Small Battery
+		event.shaped('kubejs:small_battery_empty', ['ABA','BCB','ABA'], {A: 'mna:arcane_ash',B: 'kubejs:tier_1_electrical_alloy_plate',C: 'powah:battery_basic'})
+
 	/*
 	event.remove({output: 'tconstruct:smeltery_controller'})
   	event.shaped('tconstruct:smeltery_controller', [

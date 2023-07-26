@@ -54,6 +54,7 @@ var basicItems = [
 	'activated_carbon_mesh',
 	'standard_dyson_panel',
 	'hull_panel_sand_cast',
+	'logic_component',
 ]
 
 global.transitionalItems = [
@@ -85,12 +86,12 @@ var batteryItems = [
 	'lapatron_orb',
 ]
 var batteryStorage = [
-	4096,
-	65536,
-	1048576,
-	16777216,
-	268435456,
-	4294967296,
+	2097152,	//**8 	//1048576,	**4	//4096, **16	//500,
+	16777216,			//4194304,		//65536,		//4000,
+	134217728,			//16777216,		//1048576,		//32000,
+	1073741824,			//67108864,		//16777216,		//256000,
+	8589934592,			//268435456,	//268435456,	//2048000,
+	68719476736,		//1073741824,	//4294967296,	//16384000,
 ]
 
 var nameUpperWSpace = (name, status) => {

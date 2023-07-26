@@ -235,7 +235,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				.outputItem(Item.of(`#forge:ores/lump/${item.material}`))
 				.outputFluid(Fluid.of('kubejs:sludge', 250))
 				.setPerTick(true)
-				.inputFE(4096)
+				.inputFE(4000)
 				.duration(100)
 				//Ore Flotation w/ Purified Water
 				event.recipes.multiblocked.multiblock("flotation")
@@ -247,7 +247,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				.setChance(1)
 				.outputFluid(Fluid.of('kubejs:sludge', 250))
 				.setPerTick(true)
-				.inputFE(4096)
+				.inputFE(4000)
 				.duration(100)
 				///////////////////// ORE PROCESSING STEP 4 //////////////////
 				//Ore Leaching
@@ -257,7 +257,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				.inputItem(`#forge:ores/lump/${item.material}`)
 				.outputItem(Item.of(`#forge:ores/leached/${item.material}`))
 				.setPerTick(true)
-				.inputFE(4096*4)
+				.inputFE(4000*4)
 				.duration(200)
 				//Ore Leaching w/ Hydroflouric Acid
 				event.recipes.multiblocked.multiblock("leaching")
@@ -269,7 +269,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				.outputItem(Item.of(byproduct('grit', 2)))
 				.setChance(1)
 				.setPerTick(true)
-				.inputFE(4096*4)
+				.inputFE(4000*4)
 				.duration(200)
 
 				///////////////////// ORE PROCESSING STEP 5 //////////////////
@@ -325,7 +325,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				.inputItem('kubejs:zinc_mesh')
 				.outputItem(Item.of(`#forge:ores/deposit/${item.material}`))
 				.setPerTick(true)
-				.inputFE(4096*8)
+				.inputFE(4000*8)
 				.duration(200)
 				//Ore Deposting
 				event.recipes.multiblocked.multiblock("deposition")
@@ -336,7 +336,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				.outputItem(Item.of(byproduct('brick', 2)))
 				.setChance(1)
 				.setPerTick(true)
-				.inputFE(4096*8)
+				.inputFE(4000*8)
 				.duration(150)
 				
 				//Vaccum Chamber
@@ -344,7 +344,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				.inputFluid(Fluid.of(`kubejs:${item.material}_slurry`, 200))
 				.outputFluid(Fluid.of(`kubejs:concentrated_${item.material}_slurry`, 20))
 				.setPerTick(true)
-				.inputFE(4096*4)
+				.inputFE(4000*4)
 				.duration(40)
 
 
@@ -353,7 +353,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				//.inputFluid(Fluid.of(`kubejs:${item.material}_slurry`, 1000))
 				//.outputItem(Item.of(`#forge:ores/crystal/${item.material}`))
 				//.setPerTick(true)
-				//.inputFE(4096*12)
+				//.inputFE(4000*12)
 				//.duration(250)
 
 				//Crystal Growing
@@ -363,7 +363,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				.outputItem(Item.of(`#forge:ores/crystal/${item.material}`))
 				//.outputFluid(Fluid.of(`kubejs:${item.material}_slurry`, 250))
 				.setPerTick(true)
-				.inputFE(4096*16)
+				.inputFE(4000*16)
 				.duration(200)
 			}
 			if (item.type == 'base_metal') {
@@ -466,7 +466,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 						.inputItem(smeltProcessedOre)
 						.outputItem(Item.of(`#forge:ingots/${item.material}`))
 						.setPerTick(true)
-						.inputFE(4096)
+						.inputFE(4000)
 						.duration(150)
 						//Retro Blasting air
 						event.recipes.multiblocked.multiblock("ebf")
@@ -474,7 +474,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 						.inputItem(smeltProcessedOre)
 						.outputItem(Item.of(`#forge:ingots/${item.material}`))
 						.setPerTick(true)
-						.inputFE(4096)
+						.inputFE(4000)
 						.duration(200)
 					
 				}
@@ -505,7 +505,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 					.inputItem(smeltProcessedOre)
 					.outputItem(Item.of(`#forge:ingots/${item.material}`))
 					.setPerTick(true)
-					.inputFE(4096)
+					.inputFE(4000)
 					.duration(200)
 					//Oxygen
 					event.recipes.multiblocked.multiblock("ebf")
@@ -513,7 +513,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 					.inputItem(smeltProcessedOre)
 					.outputItem(Item.of(`#forge:ingots/${item.material}`))
 					.setPerTick(true)
-					.inputFE(4096)
+					.inputFE(4000)
 					.duration(150)
 				}
 				
@@ -527,7 +527,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 						.inputItem(smeltProcessedOre)
 						.outputItem(Item.of(`#forge:ingots/${item.material}`))
 						.setPerTick(true)
-						.inputFE(4096)
+						.inputFE(4000)
 						.duration(200)
 						//Oxygen
 						event.recipes.multiblocked.multiblock("ebf")
@@ -535,7 +535,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 						.inputItem(smeltProcessedOre)
 						.outputItem(Item.of(`#forge:ingots/${item.material}`))
 						.setPerTick(true)
-						.inputFE(4096)
+						.inputFE(4000)
 						.duration(150)
 				}
 				
@@ -551,7 +551,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 					.inputItem(smeltProcessedOre)
 					.outputItem(Item.of(`#forge:ingots/${item.material}`))
 					.setPerTick(true)
-					.inputFE(4096)
+					.inputFE(4000)
 					.duration(150)
 
 					//Air
@@ -560,7 +560,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 					.inputItem(smeltProcessedOre)
 					.outputItem(Item.of(`#forge:ingots/${item.material}`))
 					.setPerTick(true)
-					.inputFE(4096)
+					.inputFE(4000)
 					.duration(200)
 				}
 				if (item.tier <= 4) {
@@ -570,7 +570,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 					.inputItem(smeltRefinedOre)
 					.outputItem(Item.of(`#forge:ingots/${item.material}`))
 					.setPerTick(true)
-					.inputFE(4096)
+					.inputFE(4000)
 					.duration(150)
 
 					//Air
@@ -579,7 +579,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 					.inputItem(smeltRefinedOre)
 					.outputItem(Item.of(`#forge:ingots/${item.material}`))
 					.setPerTick(true)
-					.inputFE(4096)
+					.inputFE(4000)
 					.duration(200)
 				}
 
@@ -591,7 +591,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 							.inputItem(smeltProcessedOre)
 							.outputItem(Item.of(`#forge:ingots/${item.material}`))
 							.setPerTick(true)
-							.inputFE(4096)
+							.inputFE(4000)
 							.duration(200)
 							.data({ temperature: tier5Temp })
 							.text(`    Heat: §6${tier5Temp}`)
@@ -624,7 +624,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 						.outputItem(Item.of(`#forge:ingots/${item.material}`))
 						//.outputFluid(Fluid.of('mekanism:sulfuric_acid', 1000))
 						.setPerTick(true)
-						.inputFE(4096)
+						.inputFE(4000)
 						.duration(200)
 
 						//Air
@@ -633,7 +633,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 						.inputItem(smeltRefinedOre)
 						.outputItem(Item.of(`#forge:ingots/${item.material}`))
 						.setPerTick(true)
-						.inputFE(4096)
+						.inputFE(4000)
 						.duration(200)*/
 				}
 

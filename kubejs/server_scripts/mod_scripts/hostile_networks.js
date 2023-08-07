@@ -22,7 +22,7 @@ onEvent('recipes', event => {
 	event.recipes.tconstruct.casting_basin('kubejs:hostile_casing', 'tconstruct:blood', 500).cast('kubejs:haunted_casing').consumeCast().coolingTime(250).id(`mbm2:casting/hostile_casing`)
 
 	//Sim chamber
-	event.remove({id: 'hostilenetworks:living_matter/sim_chamber'})
+	event.remove({output: 'hostilenetworks:sim_chamber'})
 	event.shaped('hostilenetworks:sim_chamber', [
 	  'CEC',
 	  'PHG',
@@ -37,7 +37,7 @@ onEvent('recipes', event => {
 	  }).id(`mbm2:sim_chamber`)
 	  
 	//Loot Fab
-	event.remove({id: 'hostilenetworks:living_matter/loot_fabricator'})
+	event.remove({output: 'hostilenetworks:loot_fabricator'})
 	event.shaped('hostilenetworks:loot_fabricator', [
 		'PEP',
 		'CHG',
@@ -55,7 +55,7 @@ onEvent('recipes', event => {
 	event.recipes.createPressing('tconstruct:obsidian_pane', 'obsidian').id(`kubejs:pressing/obsidian_pane`)
 	event.recipes.createCutting('kubejs:deep_learner_base', ['tconstruct:obsidian_pane']).processingTime(400).id(`kubejs:cutting/deep_learner_base`)
 
-	event.remove({id: 'hostilenetworks:living_matter/deep_learner'})
+	event.remove({output: 'hostilenetworks:deep_learner'})
 	event.shaped('hostilenetworks:deep_learner', [
 		'ORO',
 		'RBG',
@@ -95,7 +95,7 @@ onEvent('recipes', event => {
 
 	
 	//Empty Prediction
-	event.remove({id: 'hostilenetworks:living_matter/matrix'})
+	event.remove({output: 'hostilenetworks:empty_prediction'})
 	event.shaped('8x hostilenetworks:empty_prediction', [
 		'DGB',
 		'GPG',
@@ -107,10 +107,6 @@ onEvent('recipes', event => {
 			P: Item.of('tconstruct:round_plate', '{Material:"tconstruct:silver"}'),
 		}).id(`mbm2:crafting/empty_prediction`)
 	
-
-//Round Silver Plate
-event.recipes.thermal.chiller(Item.of('tconstruct:round_plate', '{Material:"tconstruct:silver"}'), [Fluid.of('tconstruct:molten_silver', 180), 'thermal:chiller_ball_cast'])
-
 
 
 });

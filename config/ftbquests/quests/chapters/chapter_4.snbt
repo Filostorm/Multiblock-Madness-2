@@ -1786,6 +1786,17 @@
 				}
 			]
 		}
+		{
+			x: 6.5d
+			y: 8.0d
+			dependencies: ["4056DE989F8A8E98"]
+			id: "070F35D0E7EF8EAC"
+			tasks: [{
+				id: "794856709109639B"
+				type: "item"
+				item: "thermal:machine_frame"
+			}]
+		}
 	]
 	quest_links: [ ]
 }

@@ -16,6 +16,7 @@ onEvent('tags.items', event => {
 	event.add(`forge:gears/compressed_steel`, 'pneumaticcraft:compressed_iron_gear')
 	event.add(`forge:storage_blocks`, 'pneumaticcraft:compressed_iron_block')
 	event.add(`forge:storage_blocks/compressed_steel`, 'pneumaticcraft:compressed_iron_block')
+	event.add(`forge:plastic`, 'pneumaticcraft:plastic')
 	event.remove(`forge:stone`, 'pneumaticcraft:reinforced_stone')
 	event.remove(`forge:stone`, 'pneumaticcraft:compressed_stone')
 	
@@ -67,6 +68,7 @@ onEvent('recipes', event => {
 	event.remove({id: 'pneumaticcraft:pressure_chamber/empty_pcb'})
 	global.pressureChamber(event, [Item.of('pneumaticcraft:empty_pcb').toResultJson()], [{"type": "pneumaticcraft:stacked_item","tag": 'forge:wires/red_alloy', "count": 2},{"type": "pneumaticcraft:stacked_item","tag": 'forge:sheets/electrum', "count": 4}, {"item": 'pneumaticcraft:plastic'}], 2.0, 'mbm2:pressure_chamber/empty_pcb')
 	
+	//global.AssemblyLaser(event, output, input, ID)
 	
 	
 //PCB Blueprint

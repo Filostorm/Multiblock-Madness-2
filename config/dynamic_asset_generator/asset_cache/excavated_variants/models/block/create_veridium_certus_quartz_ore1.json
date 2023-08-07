@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "excavated_variants:block/create_veridium_certus_quartz_ore1"
+    "all": "excavated_variants:block/create_veridium_certus_quartz_ore13"
   }
 }

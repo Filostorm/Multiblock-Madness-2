@@ -15,8 +15,8 @@
 				Count: 1b
 				tag: { }
 			}
-			x: 0.5d
-			y: -4.5d
+			x: 2.5d
+			y: 4.5d
 			dependencies: ["573198C8B96038A8"]
 			id: "1E282A0E8363FD74"
 			tasks: [
@@ -38,9 +38,12 @@
 			]
 		}
 		{
-			x: 2.0d
-			y: -4.5d
-			dependencies: ["1E282A0E8363FD74"]
+			x: 2.5d
+			y: 3.0d
+			dependencies: [
+				"1E282A0E8363FD74"
+				"4DF4B182488F2DFB"
+			]
 			id: "588EC54D514CB640"
 			tasks: [{
 				id: "087AB94947300812"
@@ -49,19 +52,8 @@
 			}]
 		}
 		{
-			x: -3.5d
-			y: -6.0d
-			id: "50780F1D0FC53AB1"
-			tasks: [{
-				id: "43C9087280F64C1A"
-				type: "item"
-				item: "powah:reactor_spirited"
-			}]
-		}
-		{
-			x: -1.0d
-			y: -4.5d
-			dependencies: ["1CF39FE5E8135E08"]
+			x: 2.5d
+			y: 6.0d
 			id: "573198C8B96038A8"
 			tasks: [{
 				id: "710836FC21B9AF12"
@@ -70,8 +62,8 @@
 			}]
 		}
 		{
-			x: -4.0d
-			y: -1.5d
+			x: -5.0d
+			y: 7.5d
 			dependencies: ["0A0FC4AF714D99F8"]
 			id: "35C4C2060E205DAC"
 			tasks: [{
@@ -81,9 +73,13 @@
 			}]
 		}
 		{
-			x: -4.0d
-			y: 0.0d
-			dependencies: ["35C4C2060E205DAC"]
+			x: -3.5d
+			y: 9.0d
+			description: ["This is primarily used for more efficient Metalurgic Infuser recipes."]
+			dependencies: [
+				"35C4C2060E205DAC"
+				"1F060A2843541330"
+			]
 			id: "6D96C22AED8671A4"
 			tasks: [{
 				id: "2EF8AE94CE2F2D52"
@@ -93,8 +89,8 @@
 		}
 		{
 			disable_toast: true
-			x: -5.5d
-			y: -1.5d
+			x: -6.5d
+			y: 7.5d
 			id: "0A0FC4AF714D99F8"
 			tasks: [{
 				id: "0F1302AB83884482"
@@ -103,8 +99,8 @@
 			}]
 		}
 		{
-			x: -2.5d
-			y: -3.0d
+			x: -5.0d
+			y: 4.5d
 			dependencies: [
 				"25E6A3906DFF322B"
 				"35C4C2060E205DAC"
@@ -117,8 +113,8 @@
 			}]
 		}
 		{
-			x: -4.0d
-			y: -3.0d
+			x: -6.5d
+			y: 4.5d
 			id: "25E6A3906DFF322B"
 			tasks: [{
 				id: "590A6A071A534CAD"
@@ -127,23 +123,9 @@
 			}]
 		}
 		{
-			x: -2.5d
-			y: -4.5d
-			dependencies: [
-				"38BEC380C355AB46"
-				"4191399434B5CC2C"
-			]
-			id: "1CF39FE5E8135E08"
-			tasks: [{
-				id: "3E776AF36F6D6736"
-				type: "item"
-				item: "mbm2:leaching_vat"
-			}]
-		}
-		{
-			x: -5.5d
-			y: -3.0d
-			dependencies: ["0A0FC4AF714D99F8"]
+			x: 2.5d
+			y: 1.5d
+			dependencies: ["588EC54D514CB640"]
 			id: "4191399434B5CC2C"
 			tasks: [{
 				id: "5B92175592B4D0EB"
@@ -153,8 +135,8 @@
 		}
 		{
 			title: "Laser Circuit Assembly"
-			x: -5.5d
-			y: -6.0d
+			x: -5.0d
+			y: 9.0d
 			dependencies: ["281E051C6D348B35"]
 			id: "1F060A2843541330"
 			tasks: [
@@ -202,6 +184,383 @@
 					count: 8
 				}
 			]
+		}
+		{
+			x: -3.5d
+			y: 6.0d
+			dependencies: ["35C4C2060E205DAC"]
+			id: "2A3A54D05C769435"
+			tasks: [{
+				id: "38BA49BA69FD6DA7"
+				type: "item"
+				item: "mekanism:thermal_evaporation_controller"
+			}]
+		}
+		{
+			x: -3.5d
+			y: 7.5d
+			dependencies: ["35C4C2060E205DAC"]
+			id: "457FD6C86076D5EC"
+			tasks: [{
+				id: "11C80FF1B59C1211"
+				type: "item"
+				item: "mekanism:electrolytic_separator"
+			}]
+		}
+		{
+			x: -2.0d
+			y: 7.5d
+			dependencies: ["457FD6C86076D5EC"]
+			id: "39107F36A3069811"
+			tasks: [{
+				id: "385C3A0519722373"
+				type: "item"
+				item: "mekanism:pressurized_reaction_chamber"
+			}]
+		}
+		{
+			x: -0.5d
+			y: 7.5d
+			dependencies: ["39107F36A3069811"]
+			id: "37DCEC6850D52142"
+			tasks: [{
+				id: "6C16633D05FD775A"
+				type: "item"
+				item: "mekanism:hdpe_pellet"
+			}]
+		}
+		{
+			x: -2.0d
+			y: 6.0d
+			dependencies: [
+				"2A3A54D05C769435"
+				"457FD6C86076D5EC"
+			]
+			id: "36A0369CEDD44BB6"
+			tasks: [{
+				id: "46BFD8F66356B7D7"
+				type: "item"
+				item: "mekanism:hydrogen_chloride_bucket"
+			}]
+		}
+		{
+			x: -5.0d
+			y: 0.0d
+			dependencies: ["4007E77C425C976E"]
+			id: "2AEABA9499A68184"
+			tasks: [{
+				id: "312DCEFE1A3DF59D"
+				type: "item"
+				item: "industrialforegoing:sewer"
+			}]
+		}
+		{
+			x: -3.5d
+			y: 0.0d
+			dependencies: ["4007E77C425C976E"]
+			id: "23E75CBC9844F00E"
+			tasks: [{
+				id: "5B5FC89E6EC9FB99"
+				type: "item"
+				item: "industrialforegoing:sewage_composter"
+			}]
+		}
+		{
+			x: -5.0d
+			y: 1.5d
+			dependencies: [
+				"23E75CBC9844F00E"
+				"2AEABA9499A68184"
+			]
+			id: "4E9E527D477017AC"
+			tasks: [{
+				id: "1F9546CABF9B11EA"
+				type: "item"
+				item: "industrialforegoing:fertilizer"
+			}]
+		}
+		{
+			x: -2.0d
+			y: -1.5d
+			dependencies: ["4007E77C425C976E"]
+			id: "54AC66A499DB68CF"
+			tasks: [{
+				id: "1DDAE0946E504632"
+				type: "item"
+				item: "industrialforegoing:mob_slaughter_factory"
+			}]
+		}
+		{
+			x: -2.0d
+			y: 0.0d
+			dependencies: ["4007E77C425C976E"]
+			id: "139950A28F2CB6B9"
+			tasks: [{
+				id: "1CC233BE9B2C9170"
+				type: "item"
+				item: "industrialforegoing:dissolution_chamber"
+			}]
+		}
+		{
+			x: -3.5d
+			y: -1.5d
+			id: "4007E77C425C976E"
+			tasks: [{
+				id: "1867F635409F5561"
+				type: "item"
+				item: "industrialforegoing:machine_frame_pity"
+			}]
+		}
+		{
+			x: -0.5d
+			y: -1.5d
+			dependencies: ["54AC66A499DB68CF"]
+			id: "6033214E0C26DFA0"
+			tasks: [{
+				id: "01437014DE106BFF"
+				type: "item"
+				item: "industrialforegoing:meat_bucket"
+			}]
+		}
+		{
+			x: -0.5d
+			y: 0.0d
+			dependencies: ["54AC66A499DB68CF"]
+			id: "34A861977367F4EA"
+			tasks: [{
+				id: "2D1184CF4E7A3BA3"
+				type: "item"
+				item: "industrialforegoing:pink_slime_bucket"
+			}]
+		}
+		{
+			x: 1.0d
+			y: 0.0d
+			dependencies: [
+				"34A861977367F4EA"
+				"139950A28F2CB6B9"
+			]
+			id: "01869927B4F41EFF"
+			tasks: [{
+				id: "1A308F207740378D"
+				type: "item"
+				item: "industrialforegoing:pink_slime"
+			}]
+		}
+		{
+			x: -5.0d
+			y: -3.0d
+			dependencies: ["4007E77C425C976E"]
+			id: "6F2D20CFF0DF5F75"
+			tasks: [{
+				id: "1216CC155A8DB070"
+				type: "item"
+				item: "industrialforegoing:plant_gatherer"
+			}]
+		}
+		{
+			x: -5.0d
+			y: -4.5d
+			dependencies: ["6F2D20CFF0DF5F75"]
+			id: "42249C449A0A5825"
+			tasks: [{
+				id: "5F5406D2EB482E7D"
+				type: "item"
+				item: "industrialforegoing:sludge_bucket"
+			}]
+		}
+		{
+			x: -2.0d
+			y: -3.0d
+			dependencies: ["4007E77C425C976E"]
+			id: "7E8398FD2D6CF30B"
+			tasks: [{
+				id: "577F5C98000A7351"
+				type: "item"
+				item: "industrialforegoing:bioreactor"
+			}]
+		}
+		{
+			x: -2.0d
+			y: -4.5d
+			dependencies: ["7E8398FD2D6CF30B"]
+			id: "362E4FDAD6061142"
+			tasks: [{
+				id: "772D98C90DA92EE3"
+				type: "item"
+				item: "industrialforegoing:biofuel_bucket"
+			}]
+		}
+		{
+			x: -6.5d
+			y: 0.0d
+			dependencies: ["4007E77C425C976E"]
+			id: "1902A89183894D86"
+			tasks: [{
+				id: "1CE077BF770EC1B9"
+				type: "item"
+				item: "industrialforegoing:animal_rancher"
+			}]
+		}
+		{
+			x: -6.5d
+			y: 1.5d
+			dependencies: ["1902A89183894D86"]
+			id: "208A18358D0CA810"
+			tasks: [{
+				id: "3AB101F4650F3728"
+				type: "item"
+				item: "minecraft:milk_bucket"
+			}]
+		}
+		{
+			x: -2.0d
+			y: 1.5d
+			dependencies: [
+				"139950A28F2CB6B9"
+				"5AB0ED73545E6581"
+			]
+			id: "11ECD8E1D88C1DF5"
+			tasks: [{
+				id: "3251425936358836"
+				type: "item"
+				item: "industrialforegoing:machine_frame_simple"
+			}]
+		}
+		{
+			title: "Alternative Plastic from Latex"
+			x: -3.5d
+			y: -3.0d
+			dependencies: ["4007E77C425C976E"]
+			id: "07A173CCEB148AD4"
+			tasks: [
+				{
+					id: "0745FE30543BEEBC"
+					type: "item"
+					item: "industrialforegoing:fluid_extractor"
+				}
+				{
+					id: "4A5039246D1975B9"
+					type: "item"
+					item: "industrialforegoing:latex_processing_unit"
+				}
+			]
+		}
+		{
+			x: -3.5d
+			y: 1.5d
+			dependencies: [
+				"4E9E527D477017AC"
+				"11ECD8E1D88C1DF5"
+			]
+			id: "3700357068818E2F"
+			tasks: [{
+				id: "362FEB78955E330A"
+				type: "item"
+				item: "industrialforegoing:hydroponic_bed"
+			}]
+		}
+		{
+			x: 1.0d
+			y: -1.5d
+			dependencies: ["6033214E0C26DFA0"]
+			id: "26FBF22972815A83"
+			tasks: [{
+				id: "4491769368841FD0"
+				type: "item"
+				item: "industrialforegoing:mechanical_dirt"
+			}]
+		}
+		{
+			x: -5.0d
+			y: -6.0d
+			dependencies: ["42249C449A0A5825"]
+			id: "76E0CB65FC0BFD3E"
+			tasks: [{
+				id: "2086316761B27328"
+				type: "item"
+				item: "industrialforegoing:sludge_refiner"
+			}]
+		}
+		{
+			x: 0.5d
+			y: 3.0d
+			dependencies: [
+				"38BEC380C355AB46"
+				"36A0369CEDD44BB6"
+				"34A861977367F4EA"
+			]
+			size: 1.25d
+			id: "4DF4B182488F2DFB"
+			tasks: [{
+				id: "3BD5AF6477B10C6D"
+				type: "item"
+				item: "mbm2:deposition_chamber"
+			}]
+		}
+		{
+			x: -2.0d
+			y: 9.0d
+			dependencies: ["6D96C22AED8671A4"]
+			id: "15EDB164447E3DF9"
+			tasks: [{
+				id: "68DF314AE34925DD"
+				type: "item"
+				item: "mekanism:purification_chamber"
+			}]
+		}
+		{
+			title: "Stainless Steel"
+			x: -3.5d
+			y: 3.0d
+			dependencies: [
+				"41ADD92F106996A9"
+				"604C6C3C046A8476"
+			]
+			id: "5AB0ED73545E6581"
+			tasks: [
+				{
+					id: "670326A5E245B209"
+					type: "item"
+					item: "kubejs:stainless_steel_ingot"
+				}
+				{
+					id: "2288632B0F50BB4B"
+					type: "item"
+					item: "kubejs:stainless_steel_dust"
+				}
+			]
+		}
+		{
+			x: -5.0d
+			y: 2.5d
+			id: "41ADD92F106996A9"
+			tasks: [{
+				id: "2CB79F3C4806BBCD"
+				type: "item"
+				item: "kubejs:chromium_dust"
+			}]
+		}
+		{
+			x: -5.0d
+			y: 3.5d
+			id: "604C6C3C046A8476"
+			tasks: [{
+				id: "20527C21D7C0954B"
+				type: "item"
+				item: "chemlib:manganese_dust"
+			}]
+		}
+		{
+			x: -0.5d
+			y: 9.0d
+			dependencies: ["15EDB164447E3DF9"]
+			id: "1ACB934A3D13E310"
+			tasks: [{
+				id: "7B696C942D474A98"
+				type: "item"
+				item: "kubejs:activated_carbon_mesh"
+			}]
 		}
 	]
 	quest_links: [ ]

@@ -55,6 +55,10 @@ var basicItems = [
 	'standard_dyson_panel',
 	'hull_panel_sand_cast',
 	'logic_component',
+	'unfinished_basic_control_circuit',
+	'unfinished_advanced_control_circuit',
+	'unfinished_elite_control_circuit',
+	'unfinished_ultimate_control_circuit',
 ]
 
 global.transitionalItems = [
@@ -78,20 +82,20 @@ global.transitionalItemsTexture = [
 ]
 
 var batteryItems = [
-	'small_battery',
-	'large_battery',
+	//'small_battery',
+	//'large_battery',
 	'energy_crystal',
 	'energy_orb',
 	'lapatron_crystal',
 	'lapatron_orb',
 ]
 var batteryStorage = [
-	2097152,	//**8 	//1048576,	**4	//4096, **16	//500,
-	16777216,			//4194304,		//65536,		//4000,
-	134217728,			//16777216,		//1048576,		//32000,
-	1073741824,			//67108864,		//16777216,		//256000,
-	8589934592,			//268435456,	//268435456,	//2048000,
-	68719476736,		//1073741824,	//4294967296,	//16384000,
+	//500*1*20, /**power per tick */
+	//4000*1*20,
+	32000*((2*60)*20),
+	256000*((2*60)*20),
+	2048000*((4*60)*20),
+	16384000*((4*60)*20),
 ]
 
 var nameUpperWSpace = (name, status) => {

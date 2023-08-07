@@ -57,6 +57,12 @@ global.removeAndHide = [
 	'ironfurnaces:augment_generator',
 	'ironfurnaces:million_furnace',
 	'ironfurnaces:item_linker',
+	'ironfurnaces:allthemodium_furnace',
+	'ironfurnaces:vibranium_furnace',
+	'ironfurnaces:unobtainium_furnace',
+	'ironfurnaces:upgrade_unobtainium', 
+	'ironfurnaces:upgrade_vibranium', 
+	'ironfurnaces:upgrade_allthemodium',
 
 	'ae2:wireless_terminal',
 	
@@ -66,7 +72,9 @@ global.removeAndHide = [
 	//'tconstruct:seared_melter',
 	//'tconstruct:seared_heater',
 
-
+	'industrialforegoing:fluid_sieving_machine',
+	'industrialforegoing:washing_factory',
+	'industrialforegoing:fermentation_station',
 
 //////////// MATERIAL PARTS ///////////////////
 	'beyond_earth:iron_plate', 
@@ -390,9 +398,41 @@ global.removeAndHide = [
 	'tconstruct:grout',
 	'powah:uraninite_raw',
 	'mekanism:dust_coal',
-	'ironfurnaces:upgrade_unobtainium', 
-	'ironfurnaces:upgrade_vibranium', 
-	'ironfurnaces:upgrade_allthemodium',
+	'mekanism:dust_lithium',
+	'industrialforegoing:plastic',
+
+	'mekanism:shard_iron', 
+	'mekanism:shard_gold', 
+	'mekanism:shard_osmium', 
+	'mekanism:shard_copper', 
+	'mekanism:shard_tin', 
+	'mekanism:shard_lead', 
+	'mekanism:shard_uranium',
+
+	'mekanism:crystal_iron', 
+	'mekanism:crystal_gold', 
+	'mekanism:crystal_osmium', 
+	'mekanism:crystal_copper', 
+	'mekanism:crystal_tin', 
+	'mekanism:crystal_lead', 
+	'mekanism:crystal_uranium',
+
+	'mekanism:clump_iron', 
+	'mekanism:clump_gold', 
+	'mekanism:clump_osmium', 
+	'mekanism:clump_copper', 
+	'mekanism:clump_tin', 
+	'mekanism:clump_lead', 
+	'mekanism:clump_uranium',
+
+	'mekanism:dirty_dust_iron', 
+	'mekanism:dirty_dust_gold', 
+	'mekanism:dirty_dust_osmium', 
+	'mekanism:dirty_dust_copper', 
+	'mekanism:dirty_dust_tin', 
+	'mekanism:dirty_dust_lead', 
+	'mekanism:dirty_dust_uranium',
+
 	//'alloyed:steel_ingot',
 	//'alloyed:steel_sheet',
 	//'alloyed:steel_block', 

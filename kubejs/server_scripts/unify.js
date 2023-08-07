@@ -28,6 +28,7 @@ global.fluidsToRemove = [
 	'reliquary:xp_juice_still',
 	'cofh_core:experience',
 	'tconstruct:molten_ender',
+	'industrialforegoing:latex',
 ]
 
 var removeByName = [
@@ -75,6 +76,10 @@ onEvent('recipes', event => {
 
 	//Coal
 	event.replaceOutput({}, 'mekanism:dust_coal', 'lazierae2:coal_dust')
+
+	//Lithium Dust
+	event.replaceOutput({}, 'mekanism:dust_lithium', 'chemlib:lithium_dust')
+	
 	
 
 	removeByName.forEach((item) => {

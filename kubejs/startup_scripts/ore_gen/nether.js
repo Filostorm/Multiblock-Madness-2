@@ -219,56 +219,6 @@ onEvent('worldgen.add', event => {
 		ore.biomes = "^nether"
 	})
 	
-/*
-	// Base Blazing Quartz Veins
-	event.addOre((ore) => {
-		ore.id = 'kubejs:nether_blazing_quartz_ore'
-	
-		ore.addTarget('netherrack', 'malum:blazing_quartz_ore')
-		global.stoneTypes.forEach((type) => {
-			if (type.material != 'netherrack' && type.material != 'bedrock') {
-				ore.addTarget(`#forge:${type.material}`, `excavated_variants:${type.material}_blazing_quartz_ore`)
-			}
-		})
-		    
-
-		ore.count([1, 4])
-				.squared()
-				.uniformHeight(
-						anchors.aboveBottom(5),
-						anchors.absolute(75)
-				)
-		ore.size = 25
-		ore.noSurface = netherSurfaceChance
-		ore.worldgenLayer = "underground_ores"
-		ore.chance = 0
-		ore.biomes = "^nether"
-	})
-*/
-
-	//// Inserted Dense Ore
-	//event.addOre((ore) => {
-	//	ore.id = 'kubejs:dense_ores'
-//
-	//	global.newMaterialParts.forEach((item) => {
-	//		global.stoneTypes.forEach((type) => {
-	//			if (item.ore) {
-	//				ore.addTarget(`excavated_variants:${type.material}_${item.material}_ore`, `kubejs:rich_${type.material}_${item.material}_ore`)
-	//			}
-	//		})
-	//	})
-//
-	//	ore.count(200)
-	//			.squared()
-	//			.uniformHeight(
-	//					anchors.aboveBottom(0),
-	//					anchors.absolute(256)
-	//			)
-	//	ore.size = 10
-	//	ore.noSurface = 0
-	//	ore.worldgenLayer = "underground_decoration"
-	//	  ore.chance = 0
-	//})
 	
 	// Nether Redstone Veins
 	event.addOre((ore) => {
@@ -318,19 +268,17 @@ onEvent('worldgen.add', event => {
 	})
 
 
-	// Inserted Nether Lumite
+	// Inserted Nether luminite
 	
 	//Maybe make a seperate vein??
 
 	event.addOre((ore) => {
-		ore.id = 'kubejs:nether_lumite'
+		ore.id = 'kubejs:nether_luminite'
 
-		//ore.addTarget(`malum:blazing_quartz_ore`, `kubejs:netherrack_lumite_ore`)
 			global.stoneTypes.forEach((type) => {
-				if (type.material != 'deepslate' && type.material != 'bedrock' && type.material != 'netherrack') {
-				ore.addTarget(`excavated_variants:${type.material}_gold_ore`, `kubejs:${type.material}_lumite_ore`)
-				ore.addTarget(`kubejs:${type.material}_aluminum_ore`, `kubejs:${type.material}_lumite_ore`)
-				//ore.addTarget(`excavated_variants:${type.material}_blazing_quartz_ore`, `kubejs:${type.material}_lumite_ore`)
+				if (type.material != 'deepslate' && type.material != 'bedrock') {
+					ore.addTarget(`excavated_variants:${type.material}_gold_ore`, `kubejs:${type.material}_luminite_ore`)
+					ore.addTarget(`kubejs:${type.material}_aluminum_ore`, `kubejs:${type.material}_luminite_ore`)
 				}
 			})
 		ore.count(400)

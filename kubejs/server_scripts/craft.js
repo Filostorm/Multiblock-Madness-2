@@ -175,13 +175,3 @@ function buildString(index, output, recipe, type, removal){
 	return textOutput
 
 }
-
-onEvent('recipes', event =>{
-
-	event.remove({output: 'minecraft:cut_copper'})
-	event.shapeless('minecraft:cut_copper', ['minecraft:iron_ingot','minecraft:nether_star','minecraft:oak_planks','minecraft:nether_star','minecraft:iron_block','minecraft:nether_star','minecraft:birch_log','minecraft:nether_star','minecraft:oak_log'])
-	event.smelting('minecraft:chest', 'minecraft:oak_log')
-	event.blasting('minecraft:oak_log', 'minecraft:iron_ingot')
-	event.remove({type: 'Blasting', output: '4x minecraft:chest'})
-	event.shaped('4x minecraft:chest', ['A A','A A','AAA'], {A: 'minecraft:oak_log'})
-})

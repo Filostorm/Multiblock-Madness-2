@@ -271,8 +271,8 @@ event.recipes.thermal.crucible(Fluid.of(`kubejs:tectonic_petrotheum`, 250), `kub
 //New Augment code
 //event.shapeless(Item.of('kubejs:shifting_cube', '{AugmentData:{Type: Upgrade, BaseMod:5f}}'), ['create:experience_nugget', '#forge:gears/signalum']).id(`mbm2:shifting_cube_augment`)
 
-
-
+//Quicksilver, no reason for it yet
+event.smelting('kubejs:quicksilver', 'thermal:cinnabar')
 
 	
 

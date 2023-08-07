@@ -15,6 +15,7 @@ global.createCrushed = [
 ]
 
 
+//This is also in material_tooltips
 global.refiningMultiplier = [
 	1, //this is just to take up the 0 slot
 	2,
@@ -84,7 +85,15 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 		event.remove({id: `mekanism:processing/${item.material}/clump/from_raw_block`})
 		event.remove({id: `mekanism:processing/${item.material}/shard/from_raw_block`})
 		event.remove({id: `mekanism:processing/${item.material}/slurry/dirty/from_raw_block`})
+		event.remove({id: `mekanism:processing/${item.material}/dust/from_raw_ore`})
+		event.remove({id: `mekanism:processing/${item.material}/dust/from_dirty_dust`})
+		event.remove({id: `mekanism:processing/${item.material}/dust/from_raw_block`})
+		event.remove({id: `elementalcraft:pure_ore/mekanism/processing/${item.material}/dust/from_ore`})
 
+		
+		
+		
+		
 		if (item.ore) {
 			
 			//This makes a list of every smeltable/refinable part based on the grade 
@@ -130,18 +139,18 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 
 
 			
-			//New Function that makes a byproduct! Exsample use: byproduct('washed', 0)
+			//New Function that makes a byproduct! Exsample use: byproduct('washed', 1)
 			var  byproduct = (type, tier) => {
 				if (item.byproducts != null) {
 					if (item.type != 'compound_ore') {
-						if (Item.of(`#forge:ores/${type}/${item.byproducts[tier]}`) != null) {
-							return `#forge:ores/${type}/${item.byproducts[tier]}`
+						if (Item.of(`#forge:ores/${type}/${item.byproducts[tier-1]}`) != null) {
+							return `#forge:ores/${type}/${item.byproducts[tier-1]}`
 						} else {
 							return `#forge:ores/${type}/${item.material}`
 						}
 					} else {
-						if (Item.of(`#forge:ores/${type}/${item.components[tier]}`) != null) {
-							return `#forge:ores/${type}/${item.components[tier]}`
+						if (Item.of(`#forge:ores/${type}/${item.components[tier-1]}`) != null) {
+							return `#forge:ores/${type}/${item.components[tier-1]}`
 						} else {
 							return `#forge:ores/grit/${item.material}`
 						}
@@ -190,14 +199,14 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				//Create Crushing
 				event.recipes.createCrushing([
 					`#forge:ores/crushed/${item.material}`,
-					Item.of(byproduct('grit', 0)).withChance(0.1), 
+					Item.of(byproduct('grit', 1)).withChance(0.1), 
 					Item.of('create:experience_nugget').withChance(0.15)
 				], `#forge:raw_materials/${item.material}`).id(`mbm2:crushing/raw_${item.material}`)
 
 				//Ores give more byproduct or something
 				event.recipes.createCrushing([
 					`#forge:ores/crushed/${item.material}`,
-					Item.of(byproduct('grit', 0)).withChance(0.25), 
+					Item.of(byproduct('grit', 1)).withChance(0.25), 
 					Item.of('create:experience_nugget').withChance(0.25)
 				], `#forge:ores/${item.material}`).id(`mbm2:crushing/ore_${item.material}`)
 
@@ -207,7 +216,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				//IE Crushing
 				global.ieCrusher(event, 
 					{"count":1,"base_ingredient":Item.of(`#forge:ores/chunk/${item.material}`).toJson()}, //Output
-					[{'chance': 0.1, 'output': Item.of(byproduct('grit', 0)).toJson()}, {chance: 0.15, output: {"item": 'immersiveengineering:slag_gravel'}}], 
+					[{'chance': 0.1, 'output': Item.of(byproduct('grit', 2)).toJson()}, {chance: 0.15, output: {"item": 'immersiveengineering:slag_gravel'}}], 
 					{"tag":`forge:ores/crushed/${item.material}`}, //Input
 					6000, `mbm2:immersiveengineering/crushing/crushed_${item.material}`)
 
@@ -243,48 +252,24 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				.inputItem(`#forge:ores/chunk/${item.material}`)
 				.outputItem(Item.of(`#forge:ores/lump/${item.material}`))
 				.setChance(0.25)
-				.outputItem(Item.of(byproduct('washed', 1)))
+				.outputItem(Item.of(byproduct('washed', 3)))
 				.setChance(1)
 				.outputFluid(Fluid.of('kubejs:sludge', 250))
 				.setPerTick(true)
 				.inputFE(4000)
 				.duration(100)
+
 				///////////////////// ORE PROCESSING STEP 4 //////////////////
-				//Ore Leaching
-				event.recipes.multiblocked.multiblock("leaching")
-				.inputFluid(Fluid.of('mekanism:sulfuric_acid', 100))
-				.inputFluid(Fluid.of('chemlib:nitric_acid_fluid', 100))
-				.inputItem(`#forge:ores/lump/${item.material}`)
-				.outputItem(Item.of(`#forge:ores/leached/${item.material}`))
-				.setPerTick(true)
-				.inputFE(4000*4)
-				.duration(200)
-				//Ore Leaching w/ Hydroflouric Acid
-				event.recipes.multiblocked.multiblock("leaching")
-				.inputFluid(Fluid.of('mekanism:hydrofluoric_acid', 100))
-				.inputFluid(Fluid.of('chemlib:nitric_acid_fluid', 100))
-				.inputItem(`#forge:ores/lump/${item.material}`)
-				.outputItem(Item.of(`#forge:ores/leached/${item.material}`))
-				.setChance(0.25)
-				.outputItem(Item.of(byproduct('grit', 2)))
-				.setChance(1)
-				.setPerTick(true)
-				.inputFE(4000*4)
-				.duration(200)
-
-				///////////////////// ORE PROCESSING STEP 5 //////////////////
-
-
 				//Slurry
 				let slurry = `kubejs:${item.material}_slurry`
 				let quotedSlurry = "'" +slurry+"'"
 				event.custom({
 					"input": [
 						{
-							'item': `kubejs:leached_${item.material}`
+							'item': `kubejs:lump_${item.material}`
 						}
 					],
-					"inputFluid": `{FluidName:'industrialforegoing:meat',Amount:200}`,
+					"inputFluid": `{FluidName:'mekanism:hydrogen_chloride',Amount:200}`,
 					"processingTime": 200,
 					"output": {
 					  "item": 'chemlib:protein',
@@ -292,7 +277,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 					},
 					"outputFluid": `{FluidName:${quotedSlurry},Amount:1000}`,
 					"type": "industrialforegoing:dissolution_chamber"
-				  }).id(`mbm2:${item.material}_slurry_from_leached`)
+				  }).id(`mbm2:${item.material}_slurry_from_lump`)
 
 				//Mesh
 				event.shaped('2x kubejs:mesh', [
@@ -333,16 +318,44 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				.inputItem('kubejs:activated_carbon_mesh')
 				.outputItem(Item.of(`#forge:ores/deposit/${item.material}`))
 				.setChance(0.15)
-				.outputItem(Item.of(byproduct('brick', 2)))
+				.outputItem(Item.of(byproduct('brick', 4)))
 				.setChance(1)
 				.setPerTick(true)
 				.inputFE(4000*8)
 				.duration(150)
 				
+				///////////////////// ORE PROCESSING STEP 5 //////////////////
+
+
+				//Ore Leaching
+				event.recipes.multiblocked.multiblock("leaching")
+				.inputFluid(Fluid.of('mekanism:sulfuric_acid', 100))
+				.inputFluid(Fluid.of('chemlib:nitric_acid_fluid', 100))
+				.inputItem(`#forge:ores/deposit/${item.material}`)
+				.outputItem(Item.of(`#forge:ores/leached/${item.material}`))
+				.setPerTick(true)
+				.inputFE(4000*4)
+				.duration(200)
+				//Ore Leaching w/ Hydroflouric Acid
+				event.recipes.multiblocked.multiblock("leaching")
+				.inputFluid(Fluid.of('mekanism:hydrofluoric_acid', 100))
+				.inputFluid(Fluid.of('chemlib:nitric_acid_fluid', 100))
+				.inputItem(`#forge:ores/deposit/${item.material}`)
+				.outputItem(Item.of(`#forge:ores/leached/${item.material}`))
+				.setChance(0.25)
+				.outputItem(Item.of(byproduct('grit', 5)))
+				.setChance(1)
+				.setPerTick(true)
+				.inputFE(4000*4)
+				.duration(200)
+
+
+				///////////////////// ORE PROCESSING STEP 6 //////////////////
 				//Vaccum Chamber
 				event.recipes.multiblocked.multiblock("vaccum")
-				.inputFluid(Fluid.of(`kubejs:${item.material}_slurry`, 200))
-				.outputFluid(Fluid.of(`kubejs:concentrated_${item.material}_slurry`, 20))
+				.inputFluid(Fluid.of(`industrialforegoing:ether_gas`, 200))
+				.inputItem(Item.of(`#forge:ores/leached/${item.material}`))
+				.outputFluid(Fluid.of(`kubejs:concentrated_${item.material}_slurry`, 100))
 				.setPerTick(true)
 				.inputFE(4000*4)
 				.duration(40)

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "excavated_variants:block/create_veridium_uraninite_ore_dense0"
+    "all": "excavated_variants:block/create_veridium_uraninite_ore_dense3"
   }
 }

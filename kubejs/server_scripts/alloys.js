@@ -61,7 +61,7 @@ onEvent('recipes', event => {
 		 			.inputItems(item.dust_input)
 		 			.outputItem(`${item.amount}x #forge:dusts/${item.material}`)
 					.setPerTick(true)
-					.inputFE(256 * (2**item.tier))
+					.inputFE(250 * (2**item.tier))
 		 			.duration(100 * item.amount)
 				} else {
 					console.log(`ERROR: ${item.material} needs an amount in MML to get a mixer recipe!`)
@@ -148,7 +148,7 @@ onEvent('recipes', event => {
 					.inputItem(Ingredient.of(`#forge:dusts/${item.material}`))
 					.outputItem(Item.of(`#forge:ingots/${item.material}`))
 					.setPerTick(true)
-					.inputFE(512 * (2**item.tier))
+					.inputFE(500 * (2**item.tier))
 					.duration(100)
 					.id(`mbm2:ebf/dusts/${item.material}_ingot`)
 				}

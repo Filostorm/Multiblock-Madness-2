@@ -307,4 +307,10 @@ event.shaped('mbm2:leaching_vat', [
 	A: '#mekanism:alloys/atomic',
   }).id(`mbm2:leaching_vat`)
 
+
+// deposition_chamber
+  event.shaped('mbm2:deposition_chamber', ['ABA','CDC','AEA'], {A: 'mekanism:hdpe_sheet',B: 'mekanism:advanced_control_circuit',C: 'kubejs:osmium_gear',D: 'kubejs:tier2_casing',E: 'industrialforegoing:pink_slime_ingot'})
+
+
+
 })

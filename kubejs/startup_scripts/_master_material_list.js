@@ -11,7 +11,7 @@ global.newMaterialParts = [
       'fluid_id': 'tconstruct:molten_iron',
       'durability': 128,
       'ore': true,
-      'byproducts': ['nickel', 'chromium'],
+      'byproducts': ['nickel'],
       'allomancy': 'Iron allows you to Pull on metals. For items and other small entities, this means pulling them toward you. For blocks and large metallic entities, this means you move toward them',
       'feruchemy': 'Weight--Slow + Resist or Feather Fall',
     },
@@ -241,7 +241,7 @@ global.newMaterialParts = [
       'itemParts': ['plate', 'gear', 'rod', 'plating'],
       'blockParts': ['cog_block'],
       'ore': true,
-      'byproducts': ['platinum'],
+      'byproducts': ['silver', 'platinum', 'manganese'],
     },
     {
       'material': 'platinum',
@@ -253,7 +253,7 @@ global.newMaterialParts = [
       'durability': 1024,
       'ore': true,
       'raw_ore': true,
-      'byproducts': ['nickel', 'osmium'],
+      'byproducts': ['nickel', 'osmium', 'chromium'],
     },
     {
       'material': 'desh',
@@ -293,7 +293,7 @@ global.newMaterialParts = [
       'color': 0x282c33,
       'type': 'base_metal',
       'tier': 5,
-      'itemParts': ['plate', 'gear', 'rod','hammer'],
+      'itemParts': ['plate', 'gear', 'rod','hammer', 'plating', 'reinforced_plating'],
       'blockParts': [],
       'durability': 1024,
       'ore': true,
@@ -386,7 +386,7 @@ global.newMaterialParts = [
     {
       'material': 'manganese',
       'color': 0xb5c7a1,
-      'type': 'base_metal',
+      'type': 'rare_metal',
       'tier': 4,
       'itemParts': [],
       'blockParts': [],
@@ -397,7 +397,7 @@ global.newMaterialParts = [
     {
       'material': 'chromium',
       'color': 0xcfb793,
-      'type': 'base_metal',
+      'type': 'rare_metal',
       'tier': 4,
       'itemParts': ['plate', 'gear', 'rod', 'dust'],
       'blockParts': [],
@@ -408,9 +408,17 @@ global.newMaterialParts = [
       'ore': true,
     },
     {
+      'material': 'lithium',
+      'color': 0xab4154,
+      'type': 'rare_metal',
+      'tier': 5,
+      'itemParts': ['plating'],
+      'blockParts': [],
+    },
+    {
       'material': 'cadmium',
       'color': 0x97b7bf,
-      'type': 'base_metal',
+      'type': 'rare_metal',
       'tier': 5,
       'itemParts': ['plate',  'gear', 'rod', 'dust'],
       'blockParts': [],
@@ -423,7 +431,7 @@ global.newMaterialParts = [
     {
       'material': 'molybdenum',
       'color': 0x78c4b6,
-      'type': 'base_metal',
+      'type': 'rare_metal',
       'tier': 5,
       'itemParts': ['plate', 'gear', 'rod'],
       'blockParts': [],
@@ -434,7 +442,7 @@ global.newMaterialParts = [
     {
       'material': 'iridium',
       'color': 0x1942bf,
-      'type': 'base_metal',
+      'type': 'rare_metal',
       'tier': 6,
       'itemParts': ['plate',  'gear', 'rod'],
       'blockParts': [],
@@ -445,7 +453,7 @@ global.newMaterialParts = [
     {
       'material': 'scandium',
       'color': 0xd4d2bc,
-      'type': 'base_metal',
+      'type': 'rare_metal',
       'tier': 6,
       'itemParts': [],
       'blockParts': [],
@@ -455,7 +463,7 @@ global.newMaterialParts = [
     {
       'material': 'vanadium',
       'color': 0x464e66,
-      'type': 'base_metal',
+      'type': 'rare_metal',
       'tier': 7,
       'itemParts': ['plate', 'gear', 'rod'],
       'blockParts': [],
@@ -465,7 +473,7 @@ global.newMaterialParts = [
     {
       'material': 'neodymium',
       'color': 0x634d59,
-      'type': 'base_metal',
+      'type': 'rare_metal',
       'tier': 7,
       'itemParts': ['plate', 'gear', 'rod'],
       'blockParts': [],
@@ -838,7 +846,7 @@ global.newMaterialParts = [
       'color': 0x7e5fb0,
       'type': 'alloy',
       'tier': 3,
-      'itemParts': ['plate', 'gear', 'rod', 'wire'],
+      'itemParts': ['dust', 'plate', 'gear', 'rod', 'wire'],
       'blockParts': ['storage_block'],
       'fluid': 'thick',
       'amount': 1,
@@ -889,7 +897,7 @@ global.newMaterialParts = [
       'type': 'alloy',
       'tier': 3,
       'itemParts': ['ingot', 'nugget', 'dust',  'plate', 'gear', 'rod', 'plating'],
-      'blockParts': ['storage_block'],
+      'blockParts': ['storage_block', 'scaffolding'],
       'fluid_id': 'kubejs:molten_stainless_steel',
       'fluid': 'thick',
       'amount': 9,
@@ -1517,6 +1525,12 @@ global.newMaterialParts = [
       'blockParts': [],
       'dust_input': ['minecraft:blaze_powder','#forge:dusts/redstone', '#forge:gems/sulfur', 'ars_nouveau:fire_essence'],
       'amount': 2,
+    },
+    {
+      'material': 'plastic',
+      'color': 0xe8e8e8,
+      'itemParts': [],
+      'blockParts': ['scaffolding']
     },
     /*
     {

@@ -103,6 +103,11 @@ onEvent('recipes', event => {
  	event.recipes.immersiveengineeringMetalPress(`#forge:platings/${item.material}`, `4x #forge:plates/${item.material}`, 'immersiveengineering:mold_plate').id(`mbm2:metalpress/plating_${item.material}`)
 
 	////////////////ROCKET FINS///////////////
+	if (Item.of(`#forge:reinforced_platings/${item.material}`) != null) {
+		//reinforced_platings
+		event.recipes.immersiveengineeringMetalPress(`#forge:reinforced_platings/${item.material}`, `4x #forge:platings/${item.material}`, 'immersiveengineering:mold_plate').id(`mbm2:metalpress/reinforced_platings_${item.material}`)
+	}
+	////////////////ROCKET FINS///////////////
 	 if (Item.of(`#forge:rocket_fins/${item.material}`) != null) {
 		//Hand Crafted Rocket Fins
 		event.shaped(`#forge:rocket_fins/${item.material}`, [

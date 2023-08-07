@@ -8,7 +8,7 @@
 	default_hide_dependency_lines: false
 	quests: [
 		{
-			title: "4096 RF/t for 1 min"
+			title: "4000 RF/t for 1 min"
 			x: 0.5d
 			y: -1.0d
 			min_required_dependencies: 1
@@ -20,8 +20,8 @@
 			tasks: [{
 				id: "4E6B8936C585B721"
 				type: "forge_energy"
-				value: 4915200L
-				max_input: 4096L
+				value: 4800000L
+				max_input: 4000L
 			}]
 		}
 		{
@@ -111,7 +111,7 @@
 			]
 		}
 		{
-			title: "1024 RF/t for 1 min"
+			title: "500 RF/t for 1 min"
 			x: 0.5d
 			y: -4.0d
 			min_required_dependencies: 2
@@ -126,8 +126,8 @@
 			tasks: [{
 				id: "7CE9A0F66C9E8F04"
 				type: "forge_energy"
-				value: 1228800L
-				max_input: 1024L
+				value: 600000L
+				max_input: 500L
 			}]
 			rewards: [{
 				id: "770112E9606FE8CB"

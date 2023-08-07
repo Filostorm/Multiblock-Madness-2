@@ -271,7 +271,7 @@
 		}
 		{
 			x: 2.0d
-			y: 1.5d
+			y: 2.5d
 			description: ["Spawns as part of Quartz veins in the Nether."]
 			min_required_tasks: 1
 			id: "4595A53F0C326DE7"
@@ -290,7 +290,7 @@
 		}
 		{
 			x: 1.0d
-			y: 1.5d
+			y: 2.5d
 			subtitle: "Y150 - 30"
 			description: ["Certus Quartz has a chance to spawn in these Quartz Veins."]
 			id: "7265801BB08B2ACF"
@@ -302,7 +302,7 @@
 		}
 		{
 			x: 1.0d
-			y: 2.5d
+			y: 1.5d
 			subtitle: "Y200 - 75"
 			description: ["Uncommon ore in the Nether, can spawn with Luminite."]
 			id: "7C740E97145C9174"
@@ -314,7 +314,7 @@
 		}
 		{
 			x: 2.0d
-			y: -1.5d
+			y: -1.0d
 			description: ["Spawns in Zinc, Iron, and Nickel veins."]
 			id: "12DE1A31A4DB2AD8"
 			tasks: [{
@@ -325,7 +325,7 @@
 		}
 		{
 			x: 2.0d
-			y: 0.5d
+			y: 1.0d
 			id: "1BCC347BD5FE95BD"
 			tasks: [{
 				id: "210D12BE70E9AB64"

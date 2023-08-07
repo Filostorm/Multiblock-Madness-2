@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "excavated_variants:block/create_asurine_arcane_crystal_ore0",
+    "all": "excavated_variants:block/create_asurine_arcane_crystal_ore2",
     "exc_var_overlay0": "forbidden_arcanus:block/arcane_crystal_ore/deepslate_arcane_crystal_ore",
     "exc_var_overlay1": "forbidden_arcanus:block/arcane_crystal_ore/arcane_crystal_ore_layer"
   },

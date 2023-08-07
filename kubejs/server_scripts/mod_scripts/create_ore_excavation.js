@@ -1,9 +1,30 @@
 onEvent('recipes', event => {
+
+	let veinsToRemove = [
+		'createoreexcavation:drilling/gold',
+		'createoreexcavation:drilling/quartz',
+		'createoreexcavation:drilling/emerald',
+		'createoreexcavation:drilling/hardened_diamond',
+		'createoreexcavation:drilling/iron',
+		'createoreexcavation:drilling/zinc',
+		'createoreexcavation:drilling/glowstone',
+		'createoreexcavation:drilling/coal',
+		'createoreexcavation:drilling/diamond',
+		'createoreexcavation:drilling/redstone',
+		'createoreexcavation:drilling/copper',
+	]
+
+	veinsToRemove.forEach(item => {
+		event.remove({id: item})
+	});
+
+
 	//Drilling recipes (Items)
 	//Spawning weight the bigger the number the higher chance to spawn.
 	//See server config for empty chunk weight.
 	//Arguments: output item(s), ore vein name in Text Component, spawning weight, extraction time in ticks at 32 RPM.
 	
+
 	global.newMaterialParts.forEach((item) => {
 		if (item.type == "compound_ore") {
 			const materialNameUpper = item.material.charAt(0).toUpperCase() + item.material.slice(1)

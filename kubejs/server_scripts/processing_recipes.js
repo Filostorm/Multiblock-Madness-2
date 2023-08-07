@@ -47,41 +47,7 @@ onEvent('recipes', event => {
 	//Make some Hot Cream with a bonus chance
 	event.recipes.createMixing([Fluid.of('tconstruct:magma', 1000), Item.of('magma_cream').withChance(0.50)], ['magma_block']).heated().id(`mbm2:create/mixing/magma_from_block`)
 	event.recipes.createMixing([Fluid.of('tconstruct:magma', 250)], ['magma_cream']).heated().id(`mbm2:create/mixing/magma_from_ball`)
-/*
-	//Make some Hot Cream withOUT a bonus chance
-	event.custom({
-		"type": "createbigcannons:melting",
-		"ingredients": [
-		  {
-			"item": 'minecraft:magma_block'
-		  }
-		],
-		"results": [
-		  {
-			"fluid": "tconstruct:magma",
-			"amount": 1000
-		  }
-		],
-		"processingTime": 200,
-		"heatRequirement": "heated"
-	  }).id(`mbm2:create/melting/magma_from_block`)
-	  event.custom({
-		  "type": "createbigcannons:melting",
-		  "ingredients": [
-			{
-			  "item": 'minecraft:magma_cream'
-			}
-		  ],
-		  "results": [
-			{
-			  "fluid": "tconstruct:magma",
-			  "amount": 250
-			}
-		  ],
-		  "processingTime": 80,
-		  "heatRequirement": "heated"
-		}).id(`mbm2:create/melting/magma`)
-*/
+
 
 		//Carbon
 		global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 180, `#forge:dusts/coal_coke`, 900, 20, `mbm2:smeltery/melting/coal_coke_dust`)
@@ -115,4 +81,10 @@ onEvent('recipes', event => {
 		
 		global.casingTable(event, 'tconstruct:casts/multi_use/gem', false, `#forge:gems/luminite`, `forge:molten_luminite`, 90, 60, `tconstruct:smeltery/casting/metal/luminite/gem_gold_cast`)
 		global.casingTable(event, 'tconstruct:casts/single_use/gem', true, `#forge:gems/luminite`, `forge:molten_luminite`, 90, 60, `tconstruct:smeltery/casting/metal/luminite/gem_sand_cast`)
+
+		
+		//Round Silver Plate
+		event.recipes.thermal.chiller(Item.of('tconstruct:round_plate', '{Material:"tconstruct:silver"}'), [Fluid.of('tconstruct:molten_silver', 180), 'thermal:chiller_ball_cast'])
+
+
 });

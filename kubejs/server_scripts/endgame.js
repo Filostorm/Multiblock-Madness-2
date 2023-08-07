@@ -67,9 +67,7 @@ onEvent('recipes', event => {
 		.outputItem('kubejs:energy_orb_empty')
 		.duration(5)
 
-		//Small Battery
-		event.shaped('kubejs:small_battery_empty', ['ABA','BCB','ABA'], {A: 'mna:arcane_ash',B: 'kubejs:tier_1_electrical_alloy_plate',C: 'powah:battery_basic'})
-
+		
 	/*
 	event.remove({output: 'tconstruct:smeltery_controller'})
   	event.shaped('tconstruct:smeltery_controller', [

@@ -63,6 +63,16 @@ var gradeLetterColor = [
 	Text.gold(`[A]`),
 ]
 
+//This is also in ore_processing
+global.refiningMultiplier = [
+	1, //this is just to take up the 0 slot
+	2,
+	4,
+	8,
+	16,
+	32,
+	64,
+]
 
 //Function that capitilizes the first leter
 const nameUpper = (name) => {
@@ -188,7 +198,7 @@ onEvent('item.tooltip', tooltip => {
 				})
 			})
 		} else if (item.type == 'rare_metal') {
-			//Adds Rare Metal Tier labels (this isn't a thing atm)
+			//Adds Rare Metal Tier labels
 			mods.forEach((mod) => {
 				parts.forEach((part) => {
 					if (mod == 'pneumaticcraft' || mod == 'mekanism') {

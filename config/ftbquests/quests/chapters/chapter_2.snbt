@@ -491,14 +491,14 @@
 					id: "sophisticatedbackpacks:backpack"
 					Count: 1b
 					tag: {
+						inventorySlots: 27
+						upgradeSlots: 1
 						contentsUuid: [I;
 							253092764
 							-1836366034
 							-1113098560
 							-1281562646
 						]
-						inventorySlots: 27
-						upgradeSlots: 1
 					}
 				}
 				match_nbt: false
@@ -554,11 +554,11 @@
 						id: "immersiveengineering:drill"
 						Count: 1b
 						tag: {
-							Fluid: {
-								Amount: 2000
-								FluidName: "immersiveengineering:biodiesel"
-							}
 							upgrades: { }
+							Fluid: {
+								FluidName: "immersiveengineering:biodiesel"
+								Amount: 2000
+							}
 						}
 						ForgeCaps: {
 							Parent: {
@@ -586,8 +586,8 @@
 						Count: 1b
 						tag: {
 							Fluid: {
-								Amount: 10000
 								FluidName: "immersiveengineering:biodiesel"
+								Amount: 10000
 							}
 						}
 					}
@@ -1056,8 +1056,8 @@
 					tag: {
 						BlockEntityTag: {
 							TankInv: [{
-								Tank: 0b
 								FluidName: "minecraft:empty"
+								Tank: 0b
 								Capacity: 32000
 								Amount: 0
 							}]

@@ -1,0 +1,128 @@
+{
+	id: "6780F8F8D361F6CB"
+	group: "3C8730B42C1725BE"
+	order_index: 5
+	filename: "chapter_6"
+	title: "Chapter 6"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			x: -2.0d
+			y: -1.5d
+			id: "248A48AB03F59D80"
+			tasks: [{
+				id: "6E3E7705A24C5E4D"
+				type: "item"
+				item: "mekanism:osmium_compressor"
+			}]
+		}
+		{
+			x: -0.5d
+			y: -1.5d
+			dependencies: ["248A48AB03F59D80"]
+			id: "34F1D7C257F4D2FD"
+			tasks: [{
+				id: "5AEDB110B71CE138"
+				type: "item"
+				item: "mekanism:ingot_refined_obsidian"
+			}]
+		}
+		{
+			x: -2.0d
+			y: -0.5d
+			id: "6E0C90037432031C"
+			tasks: [{
+				id: "0B8B8696DA34C7BB"
+				type: "item"
+				item: "mekanism:chemical_oxidizer"
+			}]
+		}
+		{
+			x: -0.5d
+			y: 0.0d
+			dependencies: [
+				"6E0C90037432031C"
+				"73DF8FC5E3617792"
+			]
+			id: "13A76B63A6E8833D"
+			tasks: [{
+				id: "44DB0705142EC8D1"
+				type: "item"
+				item: "mekanism:sulfuric_acid_bucket"
+			}]
+		}
+		{
+			x: -2.0d
+			y: 0.5d
+			id: "73DF8FC5E3617792"
+			tasks: [{
+				id: "73D3664FE5D09CDF"
+				type: "item"
+				item: "mekanism:chemical_infuser"
+			}]
+		}
+		{
+			x: 1.5d
+			y: 0.0d
+			dependencies: ["13A76B63A6E8833D"]
+			id: "1CF39FE5E8135E08"
+			tasks: [{
+				id: "3E776AF36F6D6736"
+				type: "item"
+				item: "mbm2:leaching_vat"
+			}]
+		}
+		{
+			x: -0.5d
+			y: 1.5d
+			dependencies: ["64E2B67C0B0AB9E4"]
+			id: "4EEBD21943C92471"
+			tasks: [{
+				id: "1927F2BCB967D815"
+				type: "item"
+				item: "chemlib:lithium_dust"
+			}]
+		}
+		{
+			title: "Multiblock Power Storage"
+			x: 1.0d
+			y: 1.5d
+			dependencies: ["4EEBD21943C92471"]
+			id: "1F35BD186E84BA9C"
+			tasks: [
+				{
+					id: "79B967A81BB3F0D5"
+					type: "item"
+					item: "mekanism:induction_casing"
+				}
+				{
+					id: "10A6C237A714F6C4"
+					type: "item"
+					item: "mekanism:induction_port"
+				}
+				{
+					id: "7EBBF47373C1F6E0"
+					type: "item"
+					item: "mekanism:basic_induction_cell"
+				}
+				{
+					id: "4CF364AF2231B662"
+					type: "item"
+					item: "mekanism:basic_induction_provider"
+				}
+			]
+		}
+		{
+			x: -2.0d
+			y: 1.5d
+			id: "64E2B67C0B0AB9E4"
+			tasks: [{
+				id: "2111FC063DA2B19D"
+				type: "item"
+				item: "mekanism:chemical_crystallizer"
+			}]
+		}
+	]
+	quest_links: [ ]
+}

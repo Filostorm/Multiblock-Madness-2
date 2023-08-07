@@ -23,8 +23,8 @@
 			}]
 		}
 		{
-			x: 23.5d
-			y: 0.0d
+			x: 12.0d
+			y: 3.5d
 			dependencies: ["12B7444358A1347F"]
 			id: "0B635C1D49C9F9AC"
 			tasks: [{
@@ -34,8 +34,8 @@
 			}]
 		}
 		{
-			x: 25.0d
-			y: 0.0d
+			x: 13.5d
+			y: 3.5d
 			dependencies: ["0B635C1D49C9F9AC"]
 			id: "11D33990B9BC8DDD"
 			tasks: [{
@@ -45,8 +45,8 @@
 			}]
 		}
 		{
-			x: 22.0d
-			y: 0.0d
+			x: 10.5d
+			y: 3.5d
 			dependencies: ["3C2C3C5BED4E830A"]
 			id: "12B7444358A1347F"
 			tasks: [{
@@ -56,8 +56,8 @@
 			}]
 		}
 		{
-			x: 23.0d
-			y: 1.0d
+			x: 11.5d
+			y: 4.5d
 			dependencies: ["12B7444358A1347F"]
 			id: "5986396A93E625F1"
 			tasks: [{
@@ -73,8 +73,8 @@
 			}]
 		}
 		{
-			x: 20.5d
-			y: 0.0d
+			x: 9.0d
+			y: 3.5d
 			dependencies: ["63D72477BB0F83A4"]
 			id: "3C2C3C5BED4E830A"
 			tasks: [
@@ -590,8 +590,8 @@
 		}
 		{
 			icon: "mbm2:sorter_mk2"
-			x: 19.5d
-			y: 3.0d
+			x: 20.0d
+			y: 3.5d
 			dependencies: ["13C4C068E2EB695E"]
 			id: "67A63CB65FEDF5AC"
 			tasks: [
@@ -772,8 +772,9 @@
 		}
 		{
 			title: "Explosions!"
-			x: 8.5d
+			x: 9.5d
 			y: -6.0d
+			dependencies: ["35C16B4B5D8C7148"]
 			id: "418AC2EB203010CA"
 			tasks: [
 				{
@@ -789,18 +790,8 @@
 			]
 		}
 		{
-			x: 19.5d
-			y: -5.0d
-			id: "6C28DC909024B307"
-			tasks: [{
-				id: "6088ADB207CC8C2F"
-				type: "item"
-				item: "botania:manasteel_ingot"
-			}]
-		}
-		{
-			x: 23.0d
-			y: -1.0d
+			x: 11.5d
+			y: 2.5d
 			dependencies: ["12B7444358A1347F"]
 			id: "20131C71C11BA473"
 			tasks: [{

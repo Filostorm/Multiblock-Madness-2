@@ -20,7 +20,7 @@
   "status": {
     "unformed": {
       "renderer": {
-        "baseTexture": "multiblocked:casing/tier3_casing",
+        "baseTexture": "multiblocked:casing/tier2_casing",
         "frontTexture": "multiblocked:overlay/blast_furnace",
         "type": "gregtech",
         "postRenderer": false
@@ -28,7 +28,7 @@
     },
     "idle": {
       "renderer": {
-        "baseTexture": "multiblocked:casing/tier3_casing",
+        "baseTexture": "multiblocked:casing/tier2_casing",
         "frontTexture": "multiblocked:overlay/bf_paused",
         "type": "gregtech",
         "postRenderer": false
@@ -37,7 +37,7 @@
     },
     "working": {
       "renderer": {
-        "baseTexture": "multiblocked:casing/tier3_casing",
+        "baseTexture": "multiblocked:casing/tier2_casing",
         "frontTexture": "multiblocked:overlay/bf_active",
         "type": "gregtech",
         "postRenderer": false
@@ -113,7 +113,7 @@
       "A": {
         "blocks": [
           {
-            "id": "kubejs:tier3_casing"
+            "id": "kubejs:tier2_casing"
           }
         ],
         "type": "blocks"

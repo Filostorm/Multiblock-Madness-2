@@ -264,7 +264,7 @@ global.explosionCrafting = (event, output, input, loss_rate, ID) => {
 global.AssemblyLaser = (event, output, input, ID) => {
 	event.custom({
 		type: 'pneumaticcraft:assembly_laser',
-		input: input,
+		input: Item.of(input).toResultJson(),
 		result: Item.of(output).toResultJson(),
 		program: 'laser', //laser, drill
 	  }).id(ID)}

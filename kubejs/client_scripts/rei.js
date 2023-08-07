@@ -197,7 +197,7 @@ onEvent("rei.group", (event) => {
 				`#forge:ores/crystal/${item.material}`, 
 				`#forge:ores/shard/${item.material}`,
 				`#forge:ores/chunk/${item.material}`,
-				`#forge:ores/imbued/${item.material}`,
+				`#forge:ores/crumbled/${item.material}`,
 
 				//`#mekanism:dirty_dusts/${item.material}`,
 				//`#mekanism:clumps/${item.material}`,
@@ -243,7 +243,10 @@ onEvent('rei.remove.categories', event => {
 		'beyond_earth:fuel_refinery',
 		'beyond_earth:coal_generator',
 		'beyond_earth:compressor',
-		'mekanism:combiner'
+		'mekanism:combiner',
+		'industrialforegoing:ore_washer',
+		'industrialforegoing:fermenter',
+		'industrialforegoing:ore_sieve',
 	]
 
 	badCategories.forEach((item) => {

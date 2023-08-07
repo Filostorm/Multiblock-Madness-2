@@ -89,12 +89,19 @@ event.custom({
 		  "item": "chemlib:carbon_dust"
 		}
 	  })
-//Temp recipes
-event.replaceInput({id: 'alchemistry:atomizer'}, '#forge:dusts/redstone', 'kubejs:alchemistry_frame')
-event.replaceInput({id: 'alchemistry:combiner'}, '#forge:dusts/redstone', 'kubejs:alchemistry_frame')
-event.replaceInput({id: 'alchemistry:dissolver'}, '#forge:dusts/redstone', 'kubejs:alchemistry_frame')
-event.replaceInput({id: 'alchemistry:liquifier'}, '#forge:dusts/redstone', 'kubejs:alchemistry_frame')
-event.replaceInput({id: 'alchemistry:compactor'}, '#forge:dusts/redstone', 'kubejs:alchemistry_frame')
+
+
+//Machine Recipes
+event.remove({output: 'alchemistry:compactor'})
+event.shaped('alchemistry:compactor', ['ABA','CDC','ABA'], {A: 'kubejs:platinum_plating',B: 'minecraft:piston',C: 'mekanism:advanced_control_circuit',D: 'kubejs:alchemistry_frame'})
+event.remove({output: 'alchemistry:dissolver'})
+event.shaped('alchemistry:dissolver', ['ABA','CDC','AEA'], {A: 'kubejs:tungsten_reinforced_plating',B: 'chemlib:nitric_acid',C: 'mekanism:elite_control_circuit',D: 'kubejs:alchemistry_frame',E: 'chemlib:sulfuric_acid'})
+event.remove({output: 'alchemistry:atomizer'})
+event.shaped('alchemistry:atomizer', ['ABA','CDC','ABA'], {A: 'kubejs:platinum_plating',B: 'mekanism:advanced_fluid_tank',C: 'mekanism:advanced_control_circuit',D: 'kubejs:alchemistry_frame'})
+event.remove({output: 'alchemistry:combiner'})
+event.shaped('alchemistry:combiner', ['ABA','CDC','ABA'], {A: 'kubejs:tungsten_reinforced_plating',B: 'mekanism:elite_control_circuit',C: 'kubejs:alchemistry_frame',D: 'thermal:enderium_block'})
+event.remove({output: 'alchemistry:liquifier'})
+event.shaped('alchemistry:liquifier', ['ABA','CDC','ABA'], {A: 'kubejs:platinum_plating',B: 'mekanism:advanced_control_circuit',C: 'mekanism:personal_barrel',D: 'kubejs:alchemistry_frame'})
 
 //Carbon
 global.mekanismInfusionConversion(event, Item.of('chemlib:carbon'), 'mekanism:carbon', 10, 'mbm2:infuse/carbon_from_carbon')

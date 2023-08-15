@@ -400,6 +400,11 @@ global.removeAndHide = [
 	'mekanism:dust_coal',
 	'mekanism:dust_lithium',
 	'industrialforegoing:plastic',
+	'immersiveengineering:storage_electrum',
+	'createaddition:electrum_wire',
+	'createaddition:electrum_ingot',
+	'createaddition:electrum_nugget',
+	'createaddition:electrum_sheet',
 
 	'mekanism:shard_iron', 
 	'mekanism:shard_gold', 

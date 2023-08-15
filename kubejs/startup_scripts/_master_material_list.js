@@ -265,17 +265,17 @@ global.newMaterialParts = [
       'ore': true
     },
     {
-      'material': 'palladium',
-      'color': 0x4f2237,
+      'material': 'cadmium',
+      'color': 0x97b7bf,
       'type': 'base_metal',
       'tier': 4,
-      'itemParts': ['plate',  'gear', 'rod'],
+      'itemParts': ['plate',  'gear', 'rod', 'dust'],
       'blockParts': [],
       'fluid': 'thick',
       'ore': true,
-      'raw_ore': true
-    },
-    
+      'allomancy': 'Cadmium slows down the mobs in the area around you',
+      'feruchemy': 'Breath--Respiration/Water Breathing or Air Bar when not swimming',
+    },    
     {
       'material': 'stellarite',
       'color': 0x858f7c,
@@ -322,22 +322,13 @@ global.newMaterialParts = [
 
     /////////////// Tier 6 Metals: Venus /////////////////////////////
     {
-      'material': 'calorite',
-      'color': 0xc43b3b,
-      'tier': 6,
+      'material': 'iridium',
+      'color': 0x1942bf,
       'type': 'base_metal',
-      'itemParts': ['gear', 'rod', 'dust', 'plate'],
+      'tier': 6,
+      'itemParts': ['plate',  'gear', 'rod'],
       'blockParts': [],
-      'ore': true,
-    },
-    
-    {
-      'material': 'vibranium',
-      'color': 0x7cebbe,
-      'tier': 6,
-      'type': 'base_metal',
-      'itemParts': ['ingot', 'nugget','dust', 'wire', 'model_spool', 'model_wire_coil'],
-      'blockParts': ['storage_block', 'coil'],
+      'fluid': 'thick',
       'ore': true,
       'raw_ore': true
     },
@@ -352,8 +343,28 @@ global.newMaterialParts = [
       'ore': true,
       'raw_ore': true
     },
+    {
+      'material': 'calorite',
+      'color': 0xc43b3b,
+      'tier': 6,
+      'type': 'base_metal',
+      'itemParts': ['gear', 'rod', 'dust', 'plate'],
+      'blockParts': [],
+      'ore': true,
+    },
 
     /////////////// Tier 7 Metals: Glacio /////////////////////////////
+    
+    {
+      'material': 'vibranium',
+      'color': 0x7cebbe,
+      'tier': 7,
+      'type': 'base_metal',
+      'itemParts': ['ingot', 'nugget','dust', 'wire', 'model_spool', 'model_wire_coil'],
+      'blockParts': ['storage_block', 'coil'],
+      'ore': true,
+      'raw_ore': true
+    },
     {
       'material': 'uru',
       'color': 0x1c121c,
@@ -378,7 +389,7 @@ global.newMaterialParts = [
       'ore': true,
       'raw_ore': true,
       'fluid': 'thick',
-      'fluid_id': 'kubejs:molten_dracolith',
+      'fluid_id': 'kubejs:molten_draconium',
     },
 
 
@@ -402,32 +413,19 @@ global.newMaterialParts = [
       'itemParts': ['plate', 'gear', 'rod', 'dust'],
       'blockParts': [],
       'fluid': 'thick',
-      //'ore': true,
       'allomancy': 'Chromium removes all metals from the stock of players you click on, while also removing all potion effects from them',
       'feruchemy': 'Luck--Good or Bad Luck',
       'ore': true,
     },
-    {
-      'material': 'lithium',
-      'color': 0xab4154,
-      'type': 'rare_metal',
-      'tier': 5,
-      'itemParts': ['plating'],
-      'blockParts': [],
-    },
-    {
-      'material': 'cadmium',
-      'color': 0x97b7bf,
-      'type': 'rare_metal',
-      'tier': 5,
-      'itemParts': ['plate',  'gear', 'rod', 'dust'],
-      'blockParts': [],
-      'fluid': 'thick',
-      'ore': true,
-      'allomancy': 'Cadmium slows down the mobs in the area around you',
-      'feruchemy': 'Breath--Respiration/Water Breathing or Air Bar when not swimming',
-      'ore': true,
-    },
+    //{
+    //  'material': 'lithium',
+    //  'color': 0xab4154,
+    //  'type': 'rare_metal',
+    //  'tier': 4,
+    //  'itemParts': ['plating'],
+    //  'blockParts': [],
+    //},
+    
     {
       'material': 'molybdenum',
       'color': 0x78c4b6,
@@ -440,15 +438,12 @@ global.newMaterialParts = [
       'raw_ore': true,
     },
     {
-      'material': 'iridium',
-      'color': 0x1942bf,
-      'type': 'rare_metal',
-      'tier': 6,
-      'itemParts': ['plate',  'gear', 'rod'],
-      'blockParts': [],
-      'fluid': 'thick',
-      'ore': true,
-      'raw_ore': true
+      'material': 'boron',
+      'color': 0x20293b,
+      'tier': 5,
+      'itemParts': ['ingot', 'nugget', 'dust'],
+      'blockParts': ['storage_block'],
+      'fluid': 'thick'
     },
     {
       'material': 'scandium',
@@ -459,6 +454,17 @@ global.newMaterialParts = [
       'blockParts': [],
       'ore': true,
       'raw_ore': true,
+    },
+    {
+      'material': 'palladium',
+      'color': 0x4f2237,
+      'type': 'base_metal',
+      'tier': 6,
+      'itemParts': ['plate',  'gear', 'rod'],
+      'blockParts': [],
+      'fluid': 'thick',
+      'ore': true,
+      'raw_ore': true
     },
     {
       'material': 'vanadium',
@@ -481,15 +487,7 @@ global.newMaterialParts = [
       'ore': true,
       'raw_ore': true,
     },
-    /*
-    {
-      'material': 'boron',
-      'color': 0x20293b,
-      'tier': 4,
-      'itemParts': ['ingot', 'nugget', 'dust'],
-      'blockParts': ['storage_block'],
-      'fluid': 'thick'
-    },*/
+
 
 
     /////////////// Tier 1 Alloys: Create Mixer /////////////////////////////
@@ -528,7 +526,7 @@ global.newMaterialParts = [
       'color': 0xe6db95,
       'type': 'alloy',
       'tier': 1,
-      'itemParts': [ 'rod', 'hammer', 'plating', 'model_spool', 'model_wire_coil', 'sheet'],
+      'itemParts': ['hammer', 'plating', 'model_wire_coil', 'sheet'],
       'blockParts': [],
       'fluid_id': 'tconstruct:molten_electrum',
       'durability': 256,
@@ -551,7 +549,7 @@ global.newMaterialParts = [
       'amount': 3,
       'dust_input': ['2x #forge:dusts/iron','#forge:dusts/nickel'],
       'ingot_input': ['2x #forge:ingots/iron','#forge:ingots/nickel'],
-      'tinkers_input': [{tag: 'forge:molten_iron',amount: 180},{tag: 'forge:molten_tin',amount: 90}]
+      'tinkers_input': [{tag: 'forge:molten_iron',amount: 180},{tag: 'forge:molten_nickel',amount: 90}]
     },
     {
       'material': 'brass',
@@ -1100,7 +1098,7 @@ global.newMaterialParts = [
       'iconset': 'mechanical',
       'itemParts': ['ingot', 'nugget', 'dust',   'plate', 'gear', 'interlocking_component', 'rod', 'model_robot_arm'],
       'blockParts': ['storage_block', 'cog_block',],
-      'fluid_id': 'kubejs:molten_mechanical_alloy',
+      'fluid_id': 'kubejs:molten_tier_1_mechanical_alloy',
       'fluid': 'thick',
       'amount': 4,
       'dust_input': ['4x #forge:dusts/iron','#forge:dusts/nickel','#forge:dusts/zinc','ars_nouveau:earth_essence'],
@@ -1114,7 +1112,7 @@ global.newMaterialParts = [
       'iconset': 'electrical',
       'itemParts': ['ingot', 'nugget', 'dust',  'plate', 'wire', 'model_spool', 'model_wire_coil', 'sheet', 'model_dual_coil'],
       'blockParts': ['storage_block', 'coil'],
-      'fluid_id': 'kubejs:molten_electrical_alloy',
+      'fluid_id': 'kubejs:molten_tier_1_electrical_alloy',
       'fluid': 'thick',
       'amount': 4,
       'dust_input': ['4x #forge:dusts/gold','#forge:dusts/silver','#forge:dusts/lead','ars_nouveau:fire_essence'],
@@ -1128,7 +1126,7 @@ global.newMaterialParts = [
       'iconset': 'magical',
       'itemParts': ['ingot', 'nugget', 'dust',  'plate', 'sheet'],
       'blockParts': ['storage_block'],
-      'fluid_id': 'kubejs:molten_magical_alloy',
+      'fluid_id': 'kubejs:molten_tier_1_magical_alloy',
       'fluid': 'thick',
       'amount': 4,
       'dust_input': ['4x #forge:dusts/copper','#forge:dusts/silver','#forge:dusts/zinc','ars_nouveau:water_essence'],
@@ -1142,7 +1140,7 @@ global.newMaterialParts = [
       'iconset': 'structural',
       'itemParts': ['ingot', 'nugget', 'dust', 'plate', 'rod', 'plating', 'reinforced_plating', 'hull_panel',],
       'blockParts': ['storage_block', 'casing', 'scaffolding', 'hull_casing', 'frame_box'],
-      'fluid_id': 'kubejs:molten_structural_alloy',
+      'fluid_id': 'kubejs:molten_tier_1_structural_alloy',
       'fluid': 'thick',
       'amount': 4,
       'dust_input': ['4x #forge:dusts/tin','#forge:dusts/nickel','#forge:dusts/lead','ars_nouveau:air_essence'],
@@ -1206,7 +1204,7 @@ global.newMaterialParts = [
       'fluid': 'thick',
       'ore': true,
       'raw_ore': true,
-      'components': ['iron','nickel', 'aluminum', 'magnesium', 'palladium', 'ostrum', 'adamantium', 'neodymium', 'draconium'],
+      'components': ['iron','nickel', 'aluminum', 'magnesium', 'cadmium', 'ostrum', 'adamantium', 'neodymium', 'draconium'],
       'gem_components': ['ruby', 'cinnabar'],
       'byproducts': ['kharaxium', 'imortite'],
     },
@@ -1219,7 +1217,7 @@ global.newMaterialParts = [
       'itemParts': ['dust', 'crystal', 'shard'],
       'blockParts': [],
       'fluid': 'thick',
-      'components': ['chromium', 'magnesium', 'oxygen', 'mercury'],
+      'components': ['uranium', 'chromium', 'magnesium', 'oxygen'],
       'amount': 1,
       'dust_input': ['#forge:ores/crushed/kharaxium','#forge:ores/crushed/potentium','#forge:ores/crushed/imortite'],
     },
@@ -1274,7 +1272,7 @@ global.newMaterialParts = [
       'itemParts': ['dust', 'crystal', 'shard'],
       'blockParts': [],
       'fluid': 'thick',
-      'components': ['manganese', 'thorium', 'hydrogen', 'titanium'],
+      'components': ['titanium', 'manganese', 'thorium', 'hydrogen'],
       'amount': 1,
       'dust_input': ['#forge:ores/crushed/jimmium','#forge:ores/crushed/densite','#forge:ores/crushed/vincyte'],
     },

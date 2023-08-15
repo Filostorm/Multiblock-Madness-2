@@ -171,6 +171,7 @@ onEvent('recipes', event => {
 	}
 	////////////////GEARS///////////////
     if (Item.of(`#forge:gears/${item.material}`) != null) {
+		event.remove({id:`thermal:parts/${item.material}_gear`})
 		if (Item.of(`#forge:rods/${item.material}`) != null) {/*
 			event.shaped(`#forge:gears/${item.material}`, [
 				' P ',

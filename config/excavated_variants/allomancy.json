@@ -1,0 +1,22 @@
+{
+  "mod_id": "allomancy",
+  "provided_stones": [
+  ],
+  "provided_ores": [
+    {
+      "block_id": [
+        "allomancy:cadmium_ore",
+        "allomancy:deepslate_cadmium_ore"
+      ],
+      "en_name": "Cadmium Ore",
+      "types": [
+        "stone"
+      ],
+      "id": "cadmium_ore",
+      "stone": [
+        "stone",
+        "deepslate"
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 // priority: 0
 
-settings.logAddedRecipes = true
+settings.logAddedRecipes = false
 settings.logRemovedRecipes = true
 settings.logSkippedRecipes = false
 settings.logErroringRecipes = true
@@ -80,6 +80,8 @@ onEvent('recipes', event => {
 	//Lithium Dust
 	event.replaceOutput({}, 'mekanism:dust_lithium', 'chemlib:lithium_dust')
 	
+	//Electrum Block
+	event.replaceOutput({}, 'immersiveengineering:storage_electrum', 'thermal:electrum_block')
 	
 
 	removeByName.forEach((item) => {
@@ -134,7 +136,7 @@ onEvent('recipes', event => {
 		  "amount": 25
 		},
 		"damage": 2
-	  })
+	  }).id('tconstruct:smeltery/entity_melting/ender')
 	  event.custom({
 		"type": "tconstruct:melting",
 		"ingredient": [
@@ -151,8 +153,60 @@ onEvent('recipes', event => {
 		},
 		"temperature": 477,
 		"time": 49
-	  })
+	  }).id('tconstruct:smeltery/melting/pearl')
 
+	  //Farmers Delight Unifie
+	  event.custom({
+		"conditions": [
+		  {
+			"type": "forge:mod_loaded",
+			"modid": "immersiveengineering"
+		  }
+		],
+		"type": "immersiveengineering:fermenter",
+		"fluid": {
+		  "fluid": "pneumaticcraft:ethanol",
+		  "amount": 80
+		},
+		"input": {
+		  "tag": "forge:crops/tomato"
+		},
+		"energy": 6400
+	  }).id('farmersdelight:recipes/integration/immersiveengineering/fermenter/tomato')
+	  event.custom({
+		"conditions": [
+		  {
+			"type": "forge:mod_loaded",
+			"modid": "immersiveengineering"
+		  }
+		],
+		"type": "immersiveengineering:squeezer",
+		"fluid": {
+		  "fluid": "pneumaticcraft:vegetable_oil",
+		  "amount": 80
+		},
+		"input": {
+		  "item": "farmersdelight:cabbage_seeds"
+		},
+		"energy": 6400
+	  }).id('farmersdelight:recipes/integration/immersiveengineering/squeezer/cabbage_seeds')
+	  event.custom({
+		"conditions": [
+		  {
+			"type": "forge:mod_loaded",
+			"modid": "immersiveengineering"
+		  }
+		],
+		"type": "immersiveengineering:squeezer",
+		"fluid": {
+		  "fluid": "pneumaticcraft:vegetable_oil",
+		  "amount": 60
+		},
+		"input": {
+		  "item": "farmersdelight:tomato_seeds"
+		},
+		"energy": 6400
+	  }).id('farmersdelight:recipes/integration/immersiveengineering/squeezer/tomato_seeds')
 })
 
 

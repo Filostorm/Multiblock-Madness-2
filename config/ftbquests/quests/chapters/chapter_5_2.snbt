@@ -100,7 +100,7 @@
 		}
 		{
 			x: -5.0d
-			y: 4.5d
+			y: 6.0d
 			dependencies: [
 				"25E6A3906DFF322B"
 				"35C4C2060E205DAC"
@@ -114,7 +114,7 @@
 		}
 		{
 			x: -6.5d
-			y: 4.5d
+			y: 6.0d
 			id: "25E6A3906DFF322B"
 			tasks: [{
 				id: "590A6A071A534CAD"
@@ -489,6 +489,7 @@
 				"38BEC380C355AB46"
 				"36A0369CEDD44BB6"
 				"34A861977367F4EA"
+				"37DCEC6850D52142"
 			]
 			size: 1.25d
 			id: "4DF4B182488F2DFB"
@@ -534,6 +535,7 @@
 		{
 			x: -5.0d
 			y: 2.5d
+			dependencies: ["7CDED25654D18562"]
 			id: "41ADD92F106996A9"
 			tasks: [{
 				id: "2CB79F3C4806BBCD"
@@ -544,6 +546,7 @@
 		{
 			x: -5.0d
 			y: 3.5d
+			dependencies: ["7CDED25654D18562"]
 			id: "604C6C3C046A8476"
 			tasks: [{
 				id: "20527C21D7C0954B"
@@ -561,6 +564,24 @@
 				type: "item"
 				item: "kubejs:activated_carbon_mesh"
 			}]
+		}
+		{
+			title: "Washed Byproducts"
+			x: -6.5d
+			y: 2.5d
+			id: "7CDED25654D18562"
+			tasks: [
+				{
+					id: "552F36CFC2175A89"
+					type: "item"
+					item: "kubejs:washed_chromium"
+				}
+				{
+					id: "6420E5A4867108E7"
+					type: "item"
+					item: "kubejs:washed_manganese"
+				}
+			]
 		}
 	]
 	quest_links: [ ]

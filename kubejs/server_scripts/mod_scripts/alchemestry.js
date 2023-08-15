@@ -88,7 +88,7 @@ event.custom({
 		"result": {
 		  "item": "chemlib:carbon_dust"
 		}
-	  })
+	  }).id('mbm2:compactor/carbon')
 
 
 //Machine Recipes

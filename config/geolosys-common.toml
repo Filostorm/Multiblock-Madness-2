@@ -2,7 +2,7 @@
 #Feature Control
 ["feature control"]
 	#Output info into the logs when generating Geolosys deposits
-	debugWorldgen = true
+	debugWorldgen = false
 	#Outputs really advanced info when generating deposits.
 	advancedDebugWorldGen = false
 	#Disable generation of Vanilla ores
@@ -18,16 +18,16 @@
 [prospecting]
 	#Maximum samples that can generate with each pluton within a chunk
 	#Range: 1 ~ 256
-	maxSamplesPerChunk = 1
+	maxSamplesPerChunk = 5
 	#The number of times Geolosys will attempt to place plutons in a given chunk
 	#Range: > 1
-	numPlutonsPerChunk = 2
+	numPlutonsPerChunk = 1
 	#The upper limit of RNG for generating any pluton in a given chunk.
 	#Larger values indicate further distance between plutons.
 	#Range: 0.0 ~ 1.0
-	chunkSkipChance = 0.0
+	chunkSkipChance = 0.5
 	#Whether or not Samples randomly tick (like crops). This can be bad for performance but fixes waterlogging issues on worldgen
-	shouldSamplesTick = true
+	shouldSamplesTick = false
 	#Enable the prospector's pickaxe
 	enableProPick = true
 	#Allow the prospector's pick to get damaged

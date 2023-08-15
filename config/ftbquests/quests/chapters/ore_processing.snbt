@@ -535,11 +535,12 @@
 		{
 			x: 7.5d
 			y: 1.5d
+			description: ["Spawns in Uranium Veins"]
 			id: "519BC8708D266F3E"
 			tasks: [{
-				id: "5097644ED9D64076"
+				id: "25A83951D2400A39"
 				type: "item"
-				item: "kubejs:raw_palladium"
+				item: "allomancy:raw_cadmium"
 			}]
 		}
 		{

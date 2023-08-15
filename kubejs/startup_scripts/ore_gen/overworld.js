@@ -497,8 +497,8 @@ onEvent('worldgen.add', event => {
 	event.addOre((ore) => {
 		ore.id = 'kubejs:vinteum_ore'
 
-		ore.addTarget('minecraft:lapis_ore', 'thermal:vinteum_ore')
-		ore.addTarget('minecraft:deepslate_lapis_ore', 'thermal:deepslate_vinteum_ore')
+		ore.addTarget('minecraft:lapis_ore', 'mna:vinteum_ore')
+		ore.addTarget('minecraft:deepslate_lapis_ore', 'mna:deepslate_vinteum_ore')
 		global.stoneTypes.forEach((type) => {
 			if (Item.of(`excavated_variants:${type.material}_lapis_ore`) != null) {
 				ore.addTarget(`excavated_variants:${type.material}_lapis_ore`, `excavated_variants:${type.material}_vinteum_ore`)

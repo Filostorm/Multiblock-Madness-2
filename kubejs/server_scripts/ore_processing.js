@@ -837,6 +837,15 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				{'probability': 1.0,'results': [{'item': `chemlib:${item.components[2]}`,'count': 4}]},
 				{'probability': 1.0,'results': [{'item': `chemlib:${item.components[3]}`,'count': 4}]},
 			], `kubejs:crushed_${item.material}_blend`, 1, 4, true, `mbm2:dissolving/crushed_${item.material}_blend`)
+
+
+			event.recipes.thermal.centrifuge([
+				Item.of(`#forge:dusts/${item.components[0]}`).withChance(0.75),
+				Item.of(`#forge:dusts/${item.components[1]}`).withChance(0.50),
+				Item.of(`#forge:dusts/${item.components[2]}`).withChance(0.25),
+				Fluid.of(`mekanism:${item.components[3]}`, 250)
+			], `kubejs:crushed_${item.material}_blend`).id(`mbm2:centrifuge/crushed_${item.material}_blend`)
+
 		}
 	})
 	  
@@ -844,83 +853,150 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 
 });
 
-
-onEvent('block.loot_tables', event => {
-	
-	//Copper only drops one
-	event.addSimpleBlock(`copper_ore`, `raw_copper`)
-	event.addSimpleBlock(`deepslate_copper_ore`, `raw_copper`)
-
-	global.newMaterialParts.forEach((item) => {
-		if (item.ore) {
-		  if (item.type == 'gem') {
-			event.addBlock(`kubejs:${item.material}_ore`, table => { // Build loot table manually
-			table.addPool(pool => {
-				pool.rolls = [1, 2]
-				 pool.survivesExplosion()
-				 pool.addItem(`#forge:gems/${item.material}`, 5)
-				 pool.addItem(`#forge:dusts/${item.material}`, 1, [1, 2])
-			})
-		  })
-		  	global.stoneTypes.forEach((type) => {
-			 	event.addBlock(`kubejs:${type.material}_${item.material}_ore`, table => { // Build loot table manually
-					table.addPool(pool => {
-					  	pool.rolls = [1, 2]
-					   	pool.survivesExplosion()
-					   	pool.addItem(`#forge:gems/${item.material}`, 5)
-					   	pool.addItem(`#forge:dusts/${item.material}`, 1, [1, 2])
+onEvent("lootjs", (event) => {
+	event.enableLogging();
+    event.addBlockLootModifier("#forge:ores/copper")
+        .removeLoot("raw_copper")
+        .apply((ctx) => {
+            let player = ctx.player;
+            if (!player) return;
+            if (ItemFilter.hasEnchantment("minecraft:silk_touch").test(player.mainHandItem)) {
+                //ctx.addLoot("copper_ore");
+                return;
+            }
+            let oreDrop = LootEntry.of("raw_copper");
+            if (ItemFilter.hasEnchantment("minecraft:fortune").test(player.mainHandItem)) {
+                oreDrop.applyOreBonus("minecraft:fortune");
+            }
+            ctx.addLoot(oreDrop);
+        });
+		
+		
+		global.newMaterialParts.forEach((item) => {
+			if (item.ore) {
+				////////////ORE DROPS//////////////////
+				event.addBlockLootModifier(`#forge:ores/${item.material}`)
+					.pool((pool) => {
+						if (item.type == 'gem') {
+							//Gems
+							pool.addWeightedLoot([
+								Item.of(`#forge:gems/${item.material}`).withChance(90),
+								Item.of(`#forge:dusts/${item.material}`).withChance(10),
+							])
+						} else if (item.type == 'element') {
+							//Element
+							pool.addWeightedLoot([1, 3], [
+								Item.of(`elementalcraft:${item.material}_shard`).withChance(55),
+								Item.of(`elementalcraft:powerful_${item.material}_shard`).withChance(30),
+								Item.of(`elementalcraft:${item.material}crystal`).withChance(12),
+								Item.of(`elementalcraft:crude_${item.material}_gem`).withChance(3)
+							])
+						} else if (item.type == 'dust') {
+							//Dust
+							pool.addWeightedLoot([3, 6], [
+								Item.of(`#forge:dusts/${item.material}`).withChance(50),
+							])
+						} else {
+							//Normal Ores
+							pool.addLoot(`#forge:ores/raw/${item.material}`);
+						}
+						pool.applyOreBonus("minecraft:fortune");
 					})
-				})
-			})
-			event.addSimpleBlock(`kubejs:${item.material}_ore_sample`, `#forge:gems/${item.material}`)
+					.apply((ctx) => {
+						let player = ctx.player;
+						if (!player) return;
+						if (ItemFilter.hasEnchantment("minecraft:silk_touch").test(player.mainHandItem)) {
+							ctx.removeLoot(Ingredient.getAll().filter(Ingredient.of(`#forge:ores/${item.material}`).not()))
+						} else {
+							ctx.removeLoot(`#forge:ores/${item.material}`)
+						}
+					});
+
+					/////////Poor Ores///////////
+					if (Item.of(`#forge:poor_ores/${item.material}`) != null) {
+						event.addBlockLootModifier(`#forge:poor_ores/${item.material}`)
+							.pool((pool) => {
+								if (item.type == 'dust') {
+									//Dust
+									pool.addWeightedLoot([1, 2], [
+										Item.of(`#forge:dusts/${item.material}`),
+									])
+								} else {
+									//Normal Ores
+									pool.addLoot(`#forge:ores/grit/${item.material}`);
+								}
+								pool.applyOreBonus("minecraft:fortune");
+							})
+							.apply((ctx) => {
+								let player = ctx.player;
+								if (!player) return;
+								if (ItemFilter.hasEnchantment("minecraft:silk_touch").test(player.mainHandItem)) {
+									ctx.removeLoot(Ingredient.getAll().filter(Ingredient.of(`#forge:poor_ores/${item.material}`).not()))
+								} else {
+									ctx.removeLoot(`#forge:poor_ores/${item.material}`)
+								}
+							});
+					}
+					//Samples (only the raw one actually spawns but still)
+					if (item.type == 'gem') {
+						event.addBlockLootModifier(`kubejs:${item.material}_ore_sample`)
+       						.replaceLoot(`kubejs:${item.material}_ore_sample`, `#forge:gems/${item.material}`);
+					} else if (item.type == 'dust') {
+						event.addBlockLootModifier(`kubejs:${item.material}_ore_sample`)
+       						.replaceLoot(`kubejs:${item.material}_ore_sample`, `#forge:dusts/${item.material}`);
+					} else {
+						event.addBlockLootModifier(`kubejs:${item.material}_ore_sample`)
+       						.replaceLoot(`kubejs:${item.material}_ore_sample`, `#forge:raw_materials/${item.material}`);
+					}
+				
+			  } 
+		})
+
+
+});
+/*
+onEvent("lootjs", (event) => {
+    event.addBlockLootModifier("#forge:ores/copper")
+	.removeLoot("raw_copper")
+	//.removeLoot("copper_ore")
+        .apply((lootContext) => {
+            let player = lootContext.player;
+            if (!player) return;
 			
-		  } else if (item.type == 'element') {
-			event.addBlock(`kubejs:${item.material}_ore`, table => { // Build loot table manually
-				table.addPool(pool => {
-					//pool.rolls = [1, 2]
-					pool.survivesExplosion()
-					pool.addItem(`elementalcraft:${item.material}_shard`, 50, [4, 8])
-					pool.addItem(`elementalcraft:powerful_${item.material}_shard`, 30, [2, 4])
-					pool.addItem(`elementalcraft:${item.material}crystal`, 15)
-					pool.addItem(`elementalcraft:crude_${item.material}_gem`, 5)
-				})
-		  })
-		  global.stoneTypes.forEach((type) => {
-			event.addBlock(`kubejs:${type.material}_${item.material}_ore`, table => { // Build loot table manually
-				table.addPool(pool => {
-					//pool.rolls = [1, 2]
-					pool.survivesExplosion()
-					pool.addItem(`elementalcraft:${item.material}_shard`, 50, [2, 4])
-					pool.addItem(`elementalcraft:powerful_${item.material}_shard`, 30, [2, 4])
-					pool.addItem(`elementalcraft:${item.material}crystal`, 15)
-					pool.addItem(`elementalcraft:crude_${item.material}_gem`, 5)
-					})
-				})
-			})
 			
-		  } else if (item.type == 'dust') {
-			event.addSimpleBlock(`kubejs:poor_${item.material}_ore`, `2x #forge:dusts/${item.material}`)
-			event.addSimpleBlock(`kubejs:${item.material}_ore`, `5x #forge:dusts/${item.material}`)
-			event.addSimpleBlock(`kubejs:${item.material}_ore_sample`, `#forge:dusts/${item.material}`)
 
-			global.stoneTypes.forEach((type) => {
-				event.addSimpleBlock(`kubejs:poor_${type.material}_${item.material}_ore`, `2x #forge:dusts/${item.material}`)
-				event.addSimpleBlock(`kubejs:${type.material}_${item.material}_ore`, `5x #forge:dusts/${item.material}`)
-			})
-		  } else {
-			event.addSimpleBlock(`kubejs:poor_${item.material}_ore`, `#forge:ores/grit/${item.material}`)
-			event.addSimpleBlock(`kubejs:${item.material}_ore`, `#forge:raw_materials/${item.material}`)
-			event.addSimpleBlock(`kubejs:${item.material}_ore_sample`, `#forge:raw_materials/${item.material}`)
+            if (ItemFilter.hasEnchantment("minecraft:silk_touch").test(player.mainHandItem)) {
+                //lootContext.addLoot("copper_ore");
+                return;
+            }
 
-			global.stoneTypes.forEach((type) => {
-				event.addSimpleBlock(`kubejs:poor_${type.material}_${item.material}_ore`, `#forge:ores/grit/${item.material}`)
-				event.addSimpleBlock(`kubejs:${type.material}_${item.material}_ore`, `#forge:raw_materials/${item.material}`)
-			})
-		  }
-		}
-	})
-  });
+            let copperItem = LootEntry.of("raw_copper");
+            if (ItemFilter.hasEnchantment("minecraft:fortune").test(player.mainHandItem)) {
+                copperItem.applylootContextBonus("minecraft:fortune");
+            }
+			let isMekFake = lootContext.entity && lootContext.entity.minecraftEntity.class.simpleName === "MekFakePlayer"
+			console.log('lootContext.entity = ' + lootContext.entity)
+			console.log('lootContext.entity.class.simpleName = ' + lootContext.entity.class.simpleName)
+			console.log('isMekFake = ' + isMekFake)
+			//let miner = lootContext.getLevel().minecraftLevel.getBlockEntity(lootContext.getPosition());
+			console.log(lootContext.getPosition() + ' = world pos') 
+			//console.log(lootContext.getPlayer().getData() +' = player data') 
+			//console.log(miner +' = miner data') 
+			
 
+			//if (!miner) {
+			//  	console.log('miner could not be found');
+			//} else {
+			//	console.log('miner is found!');
+			//}
+			//if (miner.getSilkTouch()) {
+			//	console.log('miner has silk touch active');
+			//  // miner has silk touch active, do whatever you want here
+			//  	return;
+			//}
+			lootContext.addLoot(copperItem);
+        });
+});*/
 
   onEvent('tags.items', event => {
 	global.createCrushed.forEach((item) => {

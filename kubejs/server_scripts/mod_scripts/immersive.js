@@ -339,4 +339,22 @@ event.recipes.immersiveengineeringArcFurnace([outputs], input, [additives], slag
     "key":{"w":{"item":"thermal:sawdust_block"},
     "b":{"tag":"forge:phenolic_resin","amount":1000,"type":"immersiveengineering:fluid"}},
     "result":{"item":"immersiveengineering:fiberboard","count":8}}).id('mbm2:crafting/fiberboard')
+
+		//event.custom({"type":"immersiveengineering:sawmill",
+		//	"secondaries":[
+		//		{"output":{"tag":"forge:dusts/wood"}, "stripping":true},
+		//		{"output":{"tag":"forge:dusts/wood"}, "stripping":false}
+		//	],
+		//	"result":{"item":"minecraft:acacia_planks","count":6},
+		//	"energy":1600,
+		//	"input":[
+		//		{"item":"minecraft:acacia_log"},
+		//		{"item":"minecraft:acacia_wood"}
+		//	],
+		//	"stripped":{
+		//		"item":"minecraft:stripped_acacia_log"
+		//	}
+		//})
+
+
 });

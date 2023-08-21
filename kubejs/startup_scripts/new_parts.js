@@ -3,9 +3,7 @@ const nameUpper = (name) => {return name.charAt(0).toUpperCase() + name.slice(1)
 onEvent('item.registry', event => {
   global.newMaterialParts.forEach((item) => {
     item.itemParts.forEach((part) => {
-    if (part == 'hammer') { // Need to handle tools better
-      event.create(`${item.material}_${part}`, 'pickaxe').color(0, item.color).parentModel(`kubejs:item/${part}`).texture(`kubejs:item/${part}`).unstackable().tier('iron').maxDamage(item.durability)//.tooltip(`${item.durability} Base Durability`)
-    } else if (part.includes('model')) { // this does everything with a model
+    if (part.includes('model')) { // this does everything with a model
       event.create(`${item.material}_${part.slice(6)}`).color(0, item.color).parentModel(`kubejs:item/${part.slice(6)}`).texture(`kubejs:item/${part.slice(6)}`)
     } else { // if it doesn't have a custom model or is a tool
       if (item.type == 'gem') { //Gem parts get special textures, and always a custom base gem texture

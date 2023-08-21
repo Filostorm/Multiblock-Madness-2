@@ -1,5 +1,15 @@
 onEvent('tags.items', event => {
 		event.add('forge:slimeballs', 'createaddition:biomass_pellet')
+
+
+		event.add('forge:spools', 'createaddition:electrum_spool')
+		event.add('forge:spools/electrum', 'createaddition:electrum_spool')
+		event.add('forge:spools', 'createaddition:gold_spool')
+		event.add('forge:spools/gold', 'createaddition:gold_spool')
+		event.add('forge:spools', 'createaddition:copper_spool')
+		event.add('forge:spools/copper', 'createaddition:copper_spool')
+		
+
 		
 		event.add('mbm2:movement_anchors', 'create:mechanical_bearing')
 		event.add('mbm2:movement_anchors', 'create:mechanical_piston')
@@ -175,12 +185,7 @@ event.shaped('create:hose_pulley', [
 	event.remove({id: 'create:item_application/brass_casing_from_wood'})
 	event.remove({id: 'create:item_application/brass_casing_from_log'})
 	global.createApplying(event, 'create:brass_casing', Ingredient.of('#forge:ingots/brass'), Ingredient.of('#forge:treated_wood'), `mbm2:applying/brass_casing`)
-
-	//Compressed Steel Casing
-	//event.remove({id: 'compressedcreativity:item_application/compressed_iron_casing_from_wood'})
-	//event.remove({id: 'compressedcreativity:item_application/compressed_iron_casing_from_log'})
-	//global.createApplying(event, 'compressedcreativity:compressed_iron_casing', Ingredient.of('#forge:ingots/compressed_steel'), Ingredient.of('#forge:treated_wood'), `mbm2:applying/compressed_steel_casing`)
-
+	
 	//Charred Planks for Copper Casing
 	global.elementalcraftInfusion(event, Ingredient.of('#minecraft:planks'), Item.of('kubejs:charred_planks'), 'fire', 250, 'mbm:infusion/copper_casing')
 	

@@ -59,7 +59,7 @@ event.shaped('4x kubejs:industrial_alloy_ingot', [
   //Soul Steel (tinkers)
    global.tinkersAlloying(event, 'tconstruct:molten_soulsteel', 90, [{name: 'kubejs:molten_nethersteel',amount: 90}, {name: 'kubejs:liquid_smoke',amount: 100}, {name: 'tconstruct:liquid_soul',amount: 500}], 1000, `mbm2:smeltery/alloys/molten_soulsteel`)
   
-	//global.createApplying(event, 'compressedcreativity:compressed_iron_casing', Ingredient.of('#forge:ingots/compressed_steel'), Ingredient.of('#forge:treated_wood'), `mbm2:applying/compressed_steel_casing`)
+
 
   
   //Brick Chain

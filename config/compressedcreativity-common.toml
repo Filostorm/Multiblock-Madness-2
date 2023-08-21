@@ -141,3 +141,27 @@
 			#Range: 0.0 ~ 20.0
 			critical_pressure = 2.0
 
+	#Heater
+	[machines.heater]
+		#At what temperature the heater will start cooling down
+		#Range: > 0
+		starting_temperature = 100
+		#Temperature coefficient increase, this much heat is consumed for each degree over starting temperature
+		#Range: 0.0 ~ 100.0
+		temperature_coefficient = 0.1
+		#At what temperature the heater will be considered as passive heat source for Steam Engine (like a campfire)
+		#Range: > 0
+		temperature_passive = 100
+		#At what temperature the heater will be considered as active heat source for Steam Engine and Basin recipes (like a fueled Blaze Burner)
+		#Range: > 0
+		temperature_kindled = 200
+		#At what temperature the heater will be considered as seething (like a Blaze Burner fed with Blaze Cake)
+		#Range: > 0
+		temperature_seething = 300
+		#Thermal capacity of a Heater
+		#Range: 0.0 ~ 100.0
+		thermal_capacity = 2.0
+		#Thermal resistance of a Heater
+		#Range: 0.0 ~ 100.0
+		thermal_resistance = 1.0
+

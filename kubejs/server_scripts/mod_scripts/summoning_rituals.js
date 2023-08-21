@@ -41,4 +41,19 @@ onEvent('recipes', event => {
     .input('create:cinder_flour')
     .input('soul_lantern')
     .recipeTime(200).id('kubejs:summoning/4x_blaze')
+    
+	event.recipes.summoningrituals
+    .altar('forbidden_arcanus:soul')
+    .mobOutput(
+        SummoningOutput.mob('phantom')
+            .count(4)
+            .offset(0, 3, 0)
+            .spread(4, 0, 4)
+	)
+    .input('#forge:leather')
+    .input('#forge:dyes/light_gray')
+    .input('#minecraft:beds')
+    .input(Item.of('naturesaura:aura_bottle', '{stored_type:"naturesaura:overworld"}'))
+    .input('soul_lantern')
+    .recipeTime(200).id('kubejs:summoning/4x_phantom')
 });

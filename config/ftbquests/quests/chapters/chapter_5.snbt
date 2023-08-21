@@ -414,6 +414,11 @@
 					type: "item"
 					item: "multiblocked:energy_input_mk1"
 				}
+				{
+					id: "658A8A401DD5319A"
+					type: "item"
+					item: "multiblocked:fluid_input"
+				}
 			]
 		}
 		{
@@ -491,7 +496,7 @@
 			x: 16.0d
 			y: -5.0d
 			shape: "circle"
-			dependencies: ["5C5CE8BEA54E1A94"]
+			dependencies: ["75D4FF56D8BBF34A"]
 			id: "2F6A6631A7BAAE8E"
 			tasks: [{
 				id: "6B769139B688EB05"
@@ -737,12 +742,13 @@
 					type: "item"
 					item: "pneumaticcraft:heat_frame"
 				}
-				{
-					id: "6BAAB6570CF333AB"
-					type: "item"
-					item: "pneumaticcraft:thermal_lagging"
-				}
 			]
+			rewards: [{
+				id: "3B56C14689E00EBE"
+				type: "item"
+				item: "pneumaticcraft:thermal_lagging"
+				count: 2
+			}]
 		}
 		{
 			title: "More of that strange oil"

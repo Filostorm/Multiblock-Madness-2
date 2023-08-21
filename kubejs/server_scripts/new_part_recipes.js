@@ -30,35 +30,10 @@ onEvent('recipes', event => {
 		console.log(Item.of(`#forge:ingots/${item.material}`) + `: tier ${item.tier} ${item.type}`);
 		
 
-	////////////////HAMMER///////////////
-    if (Item.of(`#forge:hammers/${item.material}`) != null) {
-		/*
-	event.shaped(`#forge:hammers/${item.material}`, [
-		' IS',
-		' RI',
-		'R  '
-	  ], {
-		I: `#forge:ingots/${item.material}`,
-		R: '#forge:rods/wooden',
-		S: '#forge:string',
-	  }).id(`kubejs:crafting/${item.material}_hammer`)
-	*/}
-
 
 	
 	////////////////PLATES///////////////
-    if (Item.of(`#forge:plates/${item.material}`) != null) {
-/*
-	event.shaped(`#forge:plates/${item.material}`, [
-		'H',
-		'I',
-		'I'
-	  ], {
-		I: `#forge:ingots/${item.material}`,
-		H: Ingredient.of('#forge:hammers'),
-	  }).damageIngredient(Ingredient.of('#forge:hammers')).id(`immersiveengineering:crafting/plate_${item.material}_hammering`)
-*/
-
+    if (Item.of(`#forge:plates/${item.material}`) != null && item.material != 'plastic') {
 
 	  if (item.fluid_id != null) {
 		//Plate Casing
@@ -88,10 +63,22 @@ onEvent('recipes', event => {
     if (Item.of(`#forge:sheets/${item.material}`) != null) {
 
 		//Create Sheet
-		event.recipes.createPressing(`#forge:sheets/${item.material}`, `#forge:plates/${item.material}`).id(`mbm2:pressing/${item.material}_sheet`)
+		event.recipes.createCutting(`12x #forge:sheets/${item.material}`, `#forge:storage_blocks/${item.material}`).id(`mbm2:create_cutting/${item.material}_sheet`)
 	
 		//Immersive Sheet
-		event.recipes.immersiveengineeringMetalPress(`2x #forge:sheets/${item.material}`, `#forge:plates/${item.material}`, 'immersiveengineering:mold_plate').id(`mbm2:metalpress/sheet_${item.material}`)
+		event.custom({type:'immersiveengineering:sawmill',
+			secondaries:[
+				{output:{tag:`forge:dusts/${item.material}`}, stripping:'false'}
+			],
+			result:Item.of(`16x #forge:sheets/${item.material}`).toResultJson(),
+			input:Ingredient.of(`#forge:storage_blocks/${item.material}`).toJson(),
+			energy:1000
+		}).id(`mbm2:ie_sawmill/sheet_${item.material}`)
+		//event.recipes.immersiveengineeringMetalPress(`2x #forge:sheets/${item.material}`, `#forge:plates/${item.material}`, 'immersiveengineering:mold_plate').id(`mbm2:metalpress/sheet_${item.material}`)
+
+		//Mek Sheets
+		event.recipes.mekanismSawing(`12x #forge:sheets/${item.material}`, `#forge:storage_blocks/${item.material}`).id(`mbm2:mek_sawmill/sheet_${item.material}`)
+
 	}
 	////////////////PLATING///////////////
     if (Item.of(`#forge:platings/${item.material}`) != null) {
@@ -157,14 +144,28 @@ onEvent('recipes', event => {
 
 	////////////////SHEETMETAL///////////////
 	if (Item.of(`#forge:sheetmetals/${item.material}`) != null) {
-		event.shaped(`4x #forge:sheetmetals/${item.material}`, [
+		//event.remove({id:`tconstruct:smeltery/melting/metal/${item.material}/sheetmetal`})
+
+		
+		event.shaped(`2x #forge:sheetmetals/${item.material}`, [
 			' P ',
 			'P P',
 			' P '
 		  ], {
 			P: `#forge:plates/${item.material}`,
 		  }).id(`immersiveengineering:crafting/sheetmetal_${item.material}`)
-		  
+
+		  if (Item.of(`#forge:sheets/${item.material}`) != null) {
+			event.shaped(`2x #forge:sheetmetals/${item.material}`, [
+				' P ',
+				'P P',
+				' P '
+			  ], {
+				P: `#forge:sheets/${item.material}`,
+			  }).id(`mbm2:crafting/sheetmetal_from_sheets_${item.material}`)
+		  }
+
+
 		  //Sheetmetal Casing
 	  global.casingBasinCast(event, 'forge:sheetmetal_cast', false, `#forge:sheetmetals/${item.material}`, `forge:molten_${item.material}`, 90, 80, `tconstruct:smeltery/casting/metal/${item.material}/sheetmetal`)
 		}
@@ -239,15 +240,6 @@ onEvent('recipes', event => {
 	
 	////////////////RODS///////////////
     if (Item.of(`#forge:rods/${item.material}`) != null) {
-		/*
-	event.shaped(`#forge:rods/${item.material}`, [
-		'HI',
-		'I '
-	  ], {
-		I: `#forge:ingots/${item.material}`,
-		H: Ingredient.of('#forge:hammers'),
-	  }).damageIngredient(Ingredient.of('#forge:hammers')).id(`mbm2:parts/${item.material}_rod`)
-*/
 	//Create Rods
 	global.createRolling(event, `#forge:rods/${item.material}`, 1, `forge:ingots/${item.material}`, `createaddition:rolling/${item.material}_ingot`)
 	

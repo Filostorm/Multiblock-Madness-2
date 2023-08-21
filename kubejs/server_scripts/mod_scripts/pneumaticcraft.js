@@ -2,7 +2,7 @@
 		'pneumaticcraft:air_compressor', 
 		'pneumaticcraft:thermal_compressor', 
 		'pneumaticcraft:liquid_compressor',
-		//'compressedcreativity:rotational_compressor'
+		'compressedcreativity:rotational_compressor'
 	  ]
 
 onEvent('tags.items', event => {
@@ -70,7 +70,10 @@ onEvent('recipes', event => {
 	
 	//global.AssemblyLaser(event, output, input, ID)
 	
-	
+	//Compressed Steel Casing
+	event.remove({output: 'compressedcreativity:compressed_iron_casing'})
+	global.createApplying(event, 'compressedcreativity:compressed_iron_casing', Ingredient.of('#forge:ingots/compressed_steel'), Ingredient.of('#forge:treated_wood'), `mbm2:applying/compressed_steel_casing`)
+
 //PCB Blueprint
   	event.shaped('pneumaticcraft:pcb_blueprint', [
 		'UEU',
@@ -81,7 +84,7 @@ onEvent('recipes', event => {
 		E: 'immersiveengineering:component_electronic_adv',
 		W: '#forge:wires/gold',
 		C: 'createaddition:copper_spool',
-		U: '#forge:gems/lapis', //'#compressedcreativity:upgrade_components',
+		U: '#compressedcreativity:upgrade_components',
   	}).id('mbm2:pcb_blueprint')
 
 //Reinforced Stone
@@ -129,7 +132,7 @@ onEvent('recipes', event => {
 	  'RFR'
 	], {
 	  G: '#forge:gears/reinforced_electrum',
-	  R: 'pneumaticcraft:turbine_rotor', //'compressedcreativity:engine_rotor',
+	  R: 'compressedcreativity:engine_rotor',
 	  C: 'kubejs:pneumaticcraft_casing',
 	  F: 'powah:capacitor_blazing',
 	  P: 'immersiveengineering:component_electronic_adv',

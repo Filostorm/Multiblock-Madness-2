@@ -71,6 +71,16 @@ event.shaped('3x kubejs:ancient_wood_scaffolding', [
 	//event.remove({id: 'naturesaura:altar/tainted_gold_block'})
 	global.naturesauraAltar(event, 'naturesaura:tainted_gold_block', 'kubejs:auric_gold_storage_block', 'normal', 'nether', 135000, 700, 'naturesaura:altar/tainted_gold_block')
 	
+	event.custom({
+		"type": "naturesaura:offering",
+		"input": Ingredient.of('#forge:leather').toJson(),
+		"start_item": {
+			"item": "naturesaura:calling_spirit"
+		},
+		"output": Item.of('minecraft:phantom_membrane').toResultJson()
+	}).id(`mbm2:phantom_membrane`)
+
+
 });
 
 

@@ -1,0 +1,28 @@
+[
+  {
+    "user": {
+      "type": "player",
+      "name": "Filostorm",
+      "uniqueId": "d1717768-0172-49ab-aec1-454f6a362e3f"
+    },
+    "time": 1692614459492,
+    "type": "Profiler (live)",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/BldCIFJSue"
+    }
+  },
+  {
+    "user": {
+      "type": "player",
+      "name": "Filostorm",
+      "uniqueId": "d1717768-0172-49ab-aec1-454f6a362e3f"
+    },
+    "time": 1692614401671,
+    "type": "Profiler (live)",
+    "data": {
+      "type": "url",
+      "value": "https://spark.lucko.me/ziifiZTGoL"
+    }
+  }
+]

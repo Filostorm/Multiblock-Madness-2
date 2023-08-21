@@ -437,6 +437,7 @@ global.removeAndHide = [
 	'mekanism:dirty_dust_tin', 
 	'mekanism:dirty_dust_lead', 
 	'mekanism:dirty_dust_uranium',
+	'beyond_earth:hammer',
 
 	//'alloyed:steel_ingot',
 	//'alloyed:steel_sheet',

@@ -1374,6 +1374,11 @@
 					type: "item"
 					item: "multiblocked:energy_input_mk1"
 				}
+				{
+					id: "38E14EB30AA0AA78"
+					type: "item"
+					item: "multiblocked:fluid_input"
+				}
 			]
 		}
 		{

@@ -2,7 +2,8 @@
     "parent": "item/generated",
     "textures": {
         "layer0": "kubejs:item/ore/chunk",
-        "layer1": "kubejs:item/ore/chunk_overlay"
+        "layer1": "kubejs:item/ore/chunk_overlay",
+        "particle": "kubejs:item/ore/chunk"
     }
   }
   

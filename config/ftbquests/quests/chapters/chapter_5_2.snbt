@@ -63,7 +63,7 @@
 		}
 		{
 			x: -5.0d
-			y: 7.5d
+			y: 8.0d
 			dependencies: ["0A0FC4AF714D99F8"]
 			id: "35C4C2060E205DAC"
 			tasks: [{
@@ -74,7 +74,7 @@
 		}
 		{
 			x: -3.5d
-			y: 9.0d
+			y: 9.5d
 			description: ["This is primarily used for more efficient Metalurgic Infuser recipes."]
 			dependencies: [
 				"35C4C2060E205DAC"
@@ -90,7 +90,7 @@
 		{
 			disable_toast: true
 			x: -6.5d
-			y: 7.5d
+			y: 8.0d
 			id: "0A0FC4AF714D99F8"
 			tasks: [{
 				id: "0F1302AB83884482"
@@ -100,7 +100,7 @@
 		}
 		{
 			x: -5.0d
-			y: 6.0d
+			y: 6.5d
 			dependencies: [
 				"25E6A3906DFF322B"
 				"35C4C2060E205DAC"
@@ -114,7 +114,7 @@
 		}
 		{
 			x: -6.5d
-			y: 6.0d
+			y: 6.5d
 			id: "25E6A3906DFF322B"
 			tasks: [{
 				id: "590A6A071A534CAD"
@@ -136,7 +136,7 @@
 		{
 			title: "Laser Circuit Assembly"
 			x: -5.0d
-			y: 9.0d
+			y: 9.5d
 			dependencies: ["281E051C6D348B35"]
 			id: "1F060A2843541330"
 			tasks: [
@@ -187,7 +187,7 @@
 		}
 		{
 			x: -3.5d
-			y: 6.0d
+			y: 6.5d
 			dependencies: ["35C4C2060E205DAC"]
 			id: "2A3A54D05C769435"
 			tasks: [{
@@ -198,7 +198,7 @@
 		}
 		{
 			x: -3.5d
-			y: 7.5d
+			y: 8.0d
 			dependencies: ["35C4C2060E205DAC"]
 			id: "457FD6C86076D5EC"
 			tasks: [{
@@ -209,7 +209,7 @@
 		}
 		{
 			x: -2.0d
-			y: 7.5d
+			y: 8.0d
 			dependencies: ["457FD6C86076D5EC"]
 			id: "39107F36A3069811"
 			tasks: [{
@@ -220,7 +220,7 @@
 		}
 		{
 			x: -0.5d
-			y: 7.5d
+			y: 8.0d
 			dependencies: ["39107F36A3069811"]
 			id: "37DCEC6850D52142"
 			tasks: [{
@@ -231,7 +231,7 @@
 		}
 		{
 			x: -2.0d
-			y: 6.0d
+			y: 6.5d
 			dependencies: [
 				"2A3A54D05C769435"
 				"457FD6C86076D5EC"
@@ -490,6 +490,7 @@
 				"36A0369CEDD44BB6"
 				"34A861977367F4EA"
 				"37DCEC6850D52142"
+				"5AB0ED73545E6581"
 			]
 			size: 1.25d
 			id: "4DF4B182488F2DFB"
@@ -501,7 +502,7 @@
 		}
 		{
 			x: -2.0d
-			y: 9.0d
+			y: 9.5d
 			dependencies: ["6D96C22AED8671A4"]
 			id: "15EDB164447E3DF9"
 			tasks: [{
@@ -513,7 +514,7 @@
 		{
 			title: "Stainless Steel"
 			x: -3.5d
-			y: 3.0d
+			y: 4.0d
 			dependencies: [
 				"41ADD92F106996A9"
 				"604C6C3C046A8476"
@@ -534,8 +535,12 @@
 		}
 		{
 			x: -5.0d
-			y: 2.5d
-			dependencies: ["7CDED25654D18562"]
+			y: 3.5d
+			min_required_dependencies: 1
+			dependencies: [
+				"7CDED25654D18562"
+				"7A946D11CADF573B"
+			]
 			id: "41ADD92F106996A9"
 			tasks: [{
 				id: "2CB79F3C4806BBCD"
@@ -545,8 +550,12 @@
 		}
 		{
 			x: -5.0d
-			y: 3.5d
-			dependencies: ["7CDED25654D18562"]
+			y: 4.5d
+			min_required_dependencies: 1
+			dependencies: [
+				"7CDED25654D18562"
+				"7A946D11CADF573B"
+			]
 			id: "604C6C3C046A8476"
 			tasks: [{
 				id: "20527C21D7C0954B"
@@ -556,7 +565,7 @@
 		}
 		{
 			x: -0.5d
-			y: 9.0d
+			y: 9.5d
 			dependencies: ["15EDB164447E3DF9"]
 			id: "1ACB934A3D13E310"
 			tasks: [{
@@ -568,7 +577,7 @@
 		{
 			title: "Washed Byproducts"
 			x: -6.5d
-			y: 2.5d
+			y: 3.5d
 			id: "7CDED25654D18562"
 			tasks: [
 				{
@@ -580,6 +589,23 @@
 					id: "6420E5A4867108E7"
 					type: "item"
 					item: "kubejs:washed_manganese"
+				}
+			]
+		}
+		{
+			x: -6.5d
+			y: 4.5d
+			id: "7A946D11CADF573B"
+			tasks: [
+				{
+					id: "50B7BE29F438D1CF"
+					type: "item"
+					item: "kubejs:crushed_thermogenic_blend"
+				}
+				{
+					id: "4934CD54BDA53D16"
+					type: "item"
+					item: "kubejs:crushed_thermolytic_blend"
 				}
 			]
 		}

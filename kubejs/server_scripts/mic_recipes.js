@@ -118,9 +118,6 @@ event.shaped('3x kubejs:wood_scaffolding', [
   // Soul Torch
   event.shapeless('4x soul_torch', ['torch','torch','torch','torch','soul_sand']).id('mbm2:soul_torch')
 
-  //Brik
-  	event.remove({id: 'minecraft:brick'})
-  	event.smelting('minecraft:brick', 'kubejs:unfired_clay_brick').id(`kubejs:smelting/brick`)
 
 	//Piston not racist anymore
 	event.replaceInput({id: 'minecraft:piston'}, 'cobblestone', '#forge:cobblestone')

@@ -773,7 +773,7 @@ global.newMaterialParts = [
       'color': 0x6b6b6b,
       'type': 'alloy',
       'tier': 3,
-      'itemParts': ['plate', 'rod', 'component', 'sheet'],
+      'itemParts': ['dust', 'plate', 'rod', 'component', 'sheet'],
       'blockParts': ['sheetmetal'],
       'fluid': 'thick',
       'fluid_id': 'kubejs:molten_compressed_steel',
@@ -1203,6 +1203,7 @@ global.newMaterialParts = [
       'components': ['uranium', 'chromium', 'magnesium', 'oxygen'],
       'amount': 1,
       'dust_input': ['#forge:ores/crushed/kharaxium','#forge:ores/crushed/potentium','#forge:ores/crushed/imortite'],
+      'ore': true
     },
 //////////////////////// Thermolytic /////////////////////////
     {
@@ -1258,6 +1259,7 @@ global.newMaterialParts = [
       'components': ['titanium', 'manganese', 'thorium', 'hydrogen'],
       'amount': 1,
       'dust_input': ['#forge:ores/crushed/jimmium','#forge:ores/crushed/densite','#forge:ores/crushed/vincyte'],
+      'ore': true
     },
     
 

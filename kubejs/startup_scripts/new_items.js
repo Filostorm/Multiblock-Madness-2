@@ -82,16 +82,16 @@ global.transitionalItemsTexture = [
 ]
 
 var batteryItems = [
-	//'small_battery',
-	//'large_battery',
+	'small_battery',
+	'large_battery',
 	'energy_crystal',
 	'energy_orb',
 	'lapatron_crystal',
 	'lapatron_orb',
 ]
 var batteryStorage = [
-	//500*1*20, /**power per tick */
-	//4000*1*20,
+	500*60*20, /**power per tick */
+	4000*60*20,
 	32000*((2*60)*20),
 	256000*((2*60)*20),
 	2048000*((4*60)*20),
@@ -124,15 +124,17 @@ onEvent('item.registry', event => {
 	event.create(`washed_thermogenic_blend`).color(0, 0xf06330).texture(`kubejs:item/ore/washed`)
 	event.create(`crushed_thermogenic_blend`).color(0, 0xf06330).texture(`kubejs:item/ore/crushed`)
 	event.create(`fine_thermogenic_dust`).color(0, 0xf06330).texture(`kubejs:item/ore/fine_dust`)
+	event.create(`thermogenic_chunk`).color(0, 0xf06330).texture(`kubejs:item/ore/chunk`).parentModel(`kubejs:item/ore/chunk`) 
 
 	event.create(`washed_thermolytic_blend`).color(0, 0x42f5da).texture(`kubejs:item/ore/washed`)
 	event.create(`crushed_thermolytic_blend`).color(0, 0x42f5da).texture(`kubejs:item/ore/crushed`)
 	event.create(`fine_thermolytic_dust`).color(0, 0x42f5da).texture(`kubejs:item/ore/fine_dust`)
+	event.create(`thermolytic_chunk`).color(0, 0x42f5da).texture(`kubejs:item/ore/chunk`).parentModel(`kubejs:item/ore/chunk`) 
 
 	event.create(`solar_chip_blue`).displayName('Dyson Tracking Chip (1)').texture(`kubejs:item/solar_chip_blue`)
 	event.create(`solar_chip_red`).displayName('Dyson Tracking Chip (8)').texture(`kubejs:item/solar_chip_red`)
 	event.create(`solar_chip_green`).displayName('Dyson Tracking Chip (64)').texture(`kubejs:item/solar_chip_green`)
-	event.create(`solar_chip_purple`).displayName('Dyson Tracking Chip (4096)').texture(`kubejs:item/solar_chip_purple`)
+	event.create(`solar_chip_purple`).displayName('Dyson Tracking Chip (512)').texture(`kubejs:item/solar_chip_purple`)
 
 
 

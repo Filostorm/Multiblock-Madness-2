@@ -64,6 +64,24 @@
     "mbm2.crystal_chamber.description": "Grows metal crystals of the highest purity",
     "multiblocked.recipe_map.crystallization": "Crystal Growing",
 
+
+    "block.mbm2.energy_converter": "Battery Interface",
+    "mbm2.energy_converter.description": "Fills or empties batteries",
+    "multiblocked.recipe_map.battery_converter": "Battery Interface",
+
+    "block.mbm2.railgun": "Railgun",
+    "mbm2.railgun.description": "Launches satellites and other things into space",
+    "multiblocked.recipe_map.railgun": "Space Launching",
+
+    "block.mbm2.satellite_receiver": "Satellite Receiver",
+    "mbm2.satellite_receiver.description": "Receives signals from space",
+    "multiblocked.recipe_map.satellite_receiver": "Signal Receiving",
+
+    "block.mbm2.energy_receiver": "Energy Receiver",
+    "mbm2.energy_receiver.description": "Receives energy from space",
+    "multiblocked.recipe_map.energy_receiver": "Energy Receiving",
+
+    
     "block.multiblocked.create_item_input": "Input Vault Part",
     "block.multiblocked.create_item_output": "Output Vault Part",
 

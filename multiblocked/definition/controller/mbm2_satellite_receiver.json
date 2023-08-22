@@ -48,7 +48,7 @@
       "parent": "working"
     }
   },
-  "recipeMap": "receiver",
+  "recipeMap": "satellite_receiver",
   "basePattern": {
     "structureDir": [
       "BACK",

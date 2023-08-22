@@ -7,7 +7,9 @@ onEvent('recipes', event => {
 	//Seared Brick
 	event.remove({output: 'tconstruct:grout'})
 	event.remove({output: 'tconstruct:seared_brick'})
-	event.smelting('tconstruct:seared_brick', 'kubejs:sturdy_brick').id(`mbm2:smelting/seared_brick`)
+	
+  //Moved to new_material_recipes
+  //event.smelting('tconstruct:seared_brick', 'kubejs:sturdy_brick').id(`mbm2:smelting/seared_brick`)
 	
 	//Double smelting recipe
 	event.replaceInput({id: 'tconstruct:smeltery/melting/seared/grout'}, 'tconstruct:grout', 'kubejs:sturdy_brick')
@@ -19,8 +21,7 @@ onEvent('recipes', event => {
 
 	//Double smelting recipe
 	event.replaceInput({id: 'tconstruct:smeltery/melting/scorched/grout'}, 'tconstruct:nether_grout', 'kubejs:tough_brick')
-
-	event.smelting('tconstruct:scorched_brick', 'kubejs:tough_brick').id(`mbm2:smelting/scorched_brick`)
+  	//Moved to new_material_recipes
 	
 
 	//Controller

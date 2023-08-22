@@ -32,7 +32,32 @@ onEvent('recipes', event => {
 	  },
 	},  'mbm2:compacting/standard_dyson_panel')
 
+	//Chip Combnonation 8
+	event.shaped('kubejs:solar_chip_red', [
+		'AAA',
+		'A A',
+		'AAA'
+  	], {
+		A: 'kubejs:solar_chip_blue'
+  	}).id('mbm2:dyson_chip_8')
 
+	//Chip Combnonation 64
+	event.shaped('kubejs:solar_chip_green', [
+		'AAA',
+		'A A',
+		'AAA'
+  	], {
+		A: 'kubejs:solar_chip_red'
+  	}).id('mbm2:dyson_chip_64')
+	
+	//Chip Combnonation 512
+	event.shaped('kubejs:solar_chip_purple', [
+		'AAA',
+		'A A',
+		'AAA'
+  	], {
+		A: 'kubejs:solar_chip_green'
+  	}).id('mbm2:dyson_chip_512')
 
 		//Solar Railgunning
 		event.recipes.multiblocked.multiblock("railgun")
@@ -67,17 +92,66 @@ onEvent('recipes', event => {
 		.outputItem('kubejs:energy_orb_empty')
 		.duration(5)
 
+
+		//Single Dyson Panel
+		event.recipes.multiblocked.multiblock("energy_receiver")
+		.setChance(0)
+		.inputItem('kubejs:solar_chip_blue')
+		.setChance(1)
+		.inputItem('kubejs:energy_crystal_empty')
+		.outputItem('kubejs:energy_crystal_full')
+		.duration(300)
+
+		//8 Dyson Panel
+		event.recipes.multiblocked.multiblock("energy_receiver")
+		.setChance(0)
+		.inputItem('kubejs:solar_chip_red')
+		.setChance(1)
+		.inputItem('8x kubejs:energy_crystal_empty')
+		.outputItem('8x kubejs:energy_crystal_full')
+		.duration(300)
+		event.recipes.multiblocked.multiblock("energy_receiver")
+		.setChance(0)
+		.inputItem('kubejs:solar_chip_red')
+		.setChance(1)
+		.inputItem('kubejs:energy_orb_empty')
+		.outputItem('kubejs:energy_orb_full')
+		.duration(300)
+
+		//64 Dyson Panel
+		event.recipes.multiblocked.multiblock("energy_receiver")
+		.setChance(0)
+		.inputItem('kubejs:solar_chip_green')
+		.setChance(1)
+		.inputItem('8x kubejs:energy_orb_empty')
+		.outputItem('8x kubejs:energy_orb_full')
+		.duration(300)
+		event.recipes.multiblocked.multiblock("energy_receiver")
+		.setChance(0)
+		.inputItem('kubejs:solar_chip_green')
+		.setChance(1)
+		.inputItem('kubejs:lapatron_crystal_empty')
+		.outputItem('kubejs:lapatron_crystal_full')
+		.duration(300)
+
+		//512 Dyson Panel
+		event.recipes.multiblocked.multiblock("energy_receiver")
+		.setChance(0)
+		.inputItem('kubejs:solar_chip_purple')
+		.setChance(1)
+		.inputItem('8x kubejs:lapatron_crystal_empty')
+		.outputItem('8x kubejs:lapatron_crystal_full')
+		.duration(300)
+		event.recipes.multiblocked.multiblock("energy_receiver")
+		.setChance(0)
+		.inputItem('kubejs:solar_chip_purple')
+		.setChance(1)
+		.inputItem('kubejs:lapatron_orb_empty')
+		.outputItem('kubejs:lapatron_orb_full')
+		.duration(300)
 		
 	/*
 	event.remove({output: 'tconstruct:smeltery_controller'})
-  	event.shaped('tconstruct:smeltery_controller', [
-		'AAA',
-		'ABA',
-		'AAA'
-  	], {
-		A: 'tconstruct:seared_brick',
-		B: '#forge:gears/steel'
-  	}).id('mbm2:hardened_tank')
   	event.shapeless(`kubejs:carbon_covered_iron`, [`#forge:ingots/iron`, '#forge:dusts/coal_coke']).id(`mbm2:carbon_covered_iron`)
 	//Item.of(`#forge:grits/${item.material}`).withChance(0.25)
 	event.recipes.createMixing(`${item.amount}x #forge:ingots/${item.material}`, item.ingot_input).heated().id(`create:mixing/${item.material}_ingot`).id('mbm2:hardened_tank')

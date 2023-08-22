@@ -63,14 +63,29 @@ event.shaped('4x kubejs:industrial_alloy_ingot', [
 
   
   //Brick Chain
+  //Clay Bricks
 	event.recipes.createPressing('kubejs:unfired_clay_brick', 'minecraft:clay_ball').id(`mbm2:pressing/unfired_clay_brick`)
+  //Brik
+  	event.remove({id: 'minecraft:brick'})
+  	event.smelting('minecraft:brick', 'kubejs:unfired_clay_brick').id(`kubejs:smelting/brick`)
 
+  //Sandy Bricks
   event.recipes.createMixing([`kubejs:sandy_brick`], ['kubejs:unfired_clay_brick', 'sand']).id('mbm2:mixing/sandy_brick')
 
+  //Sturdy Bricks
   event.recipes.createMixing([`kubejs:sturdy_brick`], ['kubejs:sandy_brick', 'gravel']).id('mbm2:mixing/sturdy_brick')
+  //Seared Brick
+	event.smelting('tconstruct:seared_brick', 'kubejs:sturdy_brick').id(`mbm2:smelting/seared_brick`)
+  //Coke Oven Brick
+  event.blasting('kubejs:coke_oven_brick', 'tconstruct:seared_brick').id(`mbm2:blasting/coke_oven_brick`)
 
   //Tough Bricks
 	event.recipes.createMixing('kubejs:tough_brick', ['#forge:dusts/slag', 'create:cinder_flour', 'kubejs:sturdy_brick']).heated().id(`mbm2:mixing/tough_brick`)
+  //Scorched Bricks
+  event.smelting('tconstruct:scorched_brick', 'kubejs:tough_brick').id(`mbm2:smelting/scorched_brick`)
+  //Blast Bricks
+  event.blasting('kubejs:blast_brick', 'tconstruct:scorched_brick').id(`mbm2:blasting/blast_brick`)
+
   //Tough Bricks, molten slag
 	event.recipes.createMixing('kubejs:tough_brick', [Fluid.of('kubejs:molten_slag', 125), 'create:cinder_flour', 'kubejs:sturdy_brick']).heated().id(`mbm2:mixing/tough_brick`)
 

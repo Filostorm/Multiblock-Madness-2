@@ -47,7 +47,9 @@ onEvent('recipes', event => {
 //Coke Bricks
 	event.remove({id: 'immersiveengineering:crafting/cokebrick'})
 	//event.recipes.createFilling(['kubejs:unfired_coke_oven_brick'], [Fluid.of('tconstruct:molten_clay', 250), 'engineersdecor:dense_grit_sand_block']).id('mbm2:immersiveengineering/unfired_coke_oven_brick')
-  event.blasting('kubejs:coke_oven_brick', 'kubejs:sturdy_brick').id(`mbm2:blasting/coke_oven_brick`)
+  
+  //Moved to new_material_recipes
+  //event.blasting('kubejs:coke_oven_brick', 'kubejs:sturdy_brick').id(`mbm2:blasting/coke_oven_brick`)
 	event.shaped('immersiveengineering:cokebrick', [
 		'AA',
 		'AA'
@@ -62,7 +64,7 @@ onEvent('recipes', event => {
 
 
   //Blast Bricks
-	event.blasting('kubejs:blast_brick', 'kubejs:tough_brick').id(`mbm2:blasting/blast_brick`)
+  //Moved to new_material_recipes
   event.remove({id: 'immersiveengineering:crafting/blastbrick'})
   event.shaped('immersiveengineering:blastbrick', [
 		'AA',

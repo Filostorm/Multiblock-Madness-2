@@ -68,7 +68,7 @@ onEvent('recipes', event => {
 		//Immersive Sheet
 		event.custom({type:'immersiveengineering:sawmill',
 			secondaries:[
-				{output:{tag:`forge:dusts/${item.material}`}, stripping:'false'}
+				{output:Item.of(`#forge:dusts/${item.material}`).toJson(), stripping:'false'}
 			],
 			result:Item.of(`16x #forge:sheets/${item.material}`).toResultJson(),
 			input:Ingredient.of(`#forge:storage_blocks/${item.material}`).toJson(),
@@ -173,7 +173,7 @@ onEvent('recipes', event => {
 	////////////////GEARS///////////////
     if (Item.of(`#forge:gears/${item.material}`) != null) {
 		event.remove({id:`thermal:parts/${item.material}_gear`})
-		if (Item.of(`#forge:rods/${item.material}`) != null) {/*
+		if (Item.of(`#forge:rods/${item.material}`) != null) {
 			event.shaped(`#forge:gears/${item.material}`, [
 				' P ',
 				'PRP',
@@ -181,8 +181,8 @@ onEvent('recipes', event => {
 			  ], {
 				P: `#forge:plates/${item.material}`,
 				R: `#forge:rods/${item.material}`
-			}).id(`thermal:parts/${item.material}_gear`)
-*/
+			}).id(`mbm2:parts/${item.material}_gear`)
+
 			//////////////// COG BLOCK ///////////////
 			if (Item.of(`#forge:cog_blocks/${item.material}`) != null) {
 				event.shaped(`2x #forge:cog_blocks/${item.material}`, [

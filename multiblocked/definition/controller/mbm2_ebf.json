@@ -117,7 +117,7 @@
       "C": {
         "blocks": [
           {
-            "id": "kubejs:constantan_coil"
+            "id": "kubejs:white_alloy_coil"
           }
         ],
         "type": "blocks"
@@ -198,7 +198,23 @@
       "K": {
         "blocks": [
           {
-            "id": "kubejs:cobalt_coil"
+            "id": "kubejs:tungsten_coil"
+          }
+        ],
+        "type": "blocks"
+      },
+      "L": {
+        "blocks": [
+          {
+            "id": "kubejs:desh_coil"
+          }
+        ],
+        "type": "blocks"
+      },
+      "M": {
+        "blocks": [
+          {
+            "id": "kubejs:adamantium_coil"
           }
         ],
         "type": "blocks"
@@ -226,8 +242,10 @@
       ],
       "C": [
         "C",
-        "J",
-        "K"
+        "L",
+        "K",
+        "M",
+        "J"
       ],
       "D": [
         "D"

@@ -64,7 +64,7 @@
 	hippoSpawnWeight = 15
 	#Vulture spawn weight
 	#Range: 0 ~ 1000
-	vultureSpawnWeight = 15
+	vultureSpawnWeight = 0
 	#Boar spawn weight
 	#Range: 0 ~ 1000
 	boarSpawnWeight = 15

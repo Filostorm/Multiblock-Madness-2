@@ -10,16 +10,64 @@ onEvent('recipes', event => {
     event.replaceInput({id: 'botania:quartz_dark'}, '#minecraft:coals', '#forge:dusts/hop_graphite')
     //event.replaceInput({id: 'lazierae2:compat/botania/infuser/quartz_dark'}, 'minecraft:coal', '#forge:dusts/hop_graphite')
 	
-	
+	//Apothecary
+	event.remove({output: 'botania:apothecary_default'})
+	event.shaped('botania:apothecary_default', ['ABA',' A ','AAA'], {A: 'mna:decoration/vinteum_arcane_stone',B: 'mna:ritual_focus_minor'})
 
 //Living Wood Twig
 event.remove({id: 'botania:livingwood_twig'})
 global.naturesauraAltar(event, 'botania:livingwood_twig', '#botania:livingwood_logs', 'normal', 'overworld', 15000, 80, 'mbm2:altar/livingwood_twig')
-//event.shaped('botania:livingwood_twig', [
-//  ' A',
-//  'A '
-//], {
-//  A: '#botania:livingwood_logs'
-//}).id('mbm2:crafting/livingwood_twig')
+
+//Living Rock
+event.remove({id: 'botania:pure_daisy/livingrock'})
+event.custom({
+	"type": "botania:pure_daisy",
+	"input": {
+	  "type": "block",
+	  "block": 'mna:decoration/arcane_stone'
+	},
+	"output": {
+	  "name": "botania:livingrock"
+	}
+  }).id('mbm2:livingrock')
+  
+  //Living Wood
+event.remove({id: 'botania:pure_daisy/livingwood'})
+  event.custom({
+	"type": "botania:state_copying_pure_daisy",
+	"input": {
+		"type": "block",
+		"block": 'naturesaura:ancient_log'
+	},
+	"output": "botania:livingwood_log"
+  }).id('mbm2:livingwood')
+
+//Manasteel
+event.remove({id: 'botania:mana_infusion/manasteel'})
+
+  event.custom({
+	"type": "botania:mana_infusion",
+	"input": {
+	  "item": 'kubejs:rune_ingot'
+	},
+	"output": {
+	  "item": "botania:manasteel_ingot"
+	},
+	"mana": 6000
+  }).id('mbm2:manasteel_ingot')
+//Manasteel Block
+event.remove({id: 'botania:mana_infusion/manasteel_block'})
+  event.custom({
+	"type": "botania:mana_infusion",
+	"input": {
+	  "item": 'kubejs:rune_storage_block'
+	},
+	"output": {
+	  "item": "botania:manasteel_block"
+	},
+	"mana": 54000
+  }).id('mbm2:manasteel_block')
+
+
 
 });

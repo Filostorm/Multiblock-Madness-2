@@ -73,8 +73,17 @@ event.shaped('multiblocked:item_input', [
 	H: 'minecraft:hopper',
   }).id(`mbm2:multiblocked/item_input`)
   event.shapeless(`multiblocked:item_input`, ['multiblocked:item_output']).id(`mbm2:multiblocked/item_input_switch`)
+// Big Item Input
+event.shaped('multiblocked:big_item_input', [
+	'H',
+	'C',
+  ], {
+	C: 'kubejs:tier2_casing',
+	H: 'multiblocked:item_input',
+  }).id(`mbm2:multiblocked/big_item_input`)
+  event.shapeless(`multiblocked:big_item_input`, ['multiblocked:big_item_output']).id(`mbm2:multiblocked/big_item_input_switch`)
 
-// Item output
+// Item Output
 event.shaped('multiblocked:item_output', [
 	'C',
 	'H',
@@ -83,6 +92,15 @@ event.shaped('multiblocked:item_output', [
 	H: 'minecraft:hopper',
   }).id(`mbm2:multiblocked/item_output`)
   event.shapeless(`multiblocked:item_output`, ['multiblocked:item_input']).id(`mbm2:multiblocked/item_output_switch`)
+// Big Item Output
+event.shaped('multiblocked:big_item_output', [
+	'C',
+	'H',
+  ], {
+	C: 'kubejs:tier2_casing',
+	H: 'multiblocked:item_output',
+  }).id(`mbm2:multiblocked/big_item_output`)
+  event.shapeless(`multiblocked:big_item_output`, ['multiblocked:big_item_input']).id(`mbm2:multiblocked/big_item_output_switch`)
 
 // Fluid Input
 event.shaped('multiblocked:fluid_input', [
@@ -309,8 +327,22 @@ event.shaped('mbm2:leaching_vat', [
 
 
 // Deposition Chamber
-  event.shaped('mbm2:deposition_chamber', ['ABA','CDC','AEA'], {A: 'mekanism:hdpe_sheet',B: 'mekanism:advanced_control_circuit',C: '#forge:gears/stainless_steel',D: 'kubejs:tier2_casing',E: 'industrialforegoing:pink_slime_ingot'})
+event.shaped('mbm2:deposition_chamber', ['ABA','CDC','AEA'], {A: 'mekanism:hdpe_sheet',B: 'mekanism:advanced_control_circuit',C: '#forge:gears/stainless_steel',D: 'kubejs:tier2_casing',E: 'industrialforegoing:pink_slime_ingot'}).id("mbm2:deposition_chamber")
 
+// cast_press
+event.shaped('mbm2:cast_press', ['ABA','CDC','AEA'], {A: 'kubejs:steel_plate',B: 'immersiveengineering:component_electronic_adv',C: 'tconstruct:scorched_bricks',D: 'kubejs:tier1_casing',E: 'kubejs:titanium_gear'}).id("mbm2:cast_press")
 
+// casting_machine
+event.shaped('mbm2:casting_machine', ['ABA','CDC','EEE'], {A: 'industrialforegoing:pink_slime_ingot',B: 'immersiveengineering:component_electronic_adv',C: 'kubejs:industrial_alloy_component',D: 'kubejs:tier2_casing',E: 'kubejs:osmium_gear'}).id("mbm2:casting_machine")
+
+// fluid_centrifuge_mk1
+event.shaped('mbm2:fluid_centrifuge_mk1', ['ABA','CDC','EFE'], {A: 'kubejs:tier_1_mechanical_alloy_gear',B: 'immersiveengineering:component_electronic',C: 'thermal:obsidian_glass',D: 'create:railway_casing',E: 'kubejs:tier_1_mechanical_alloy_rod',F: 'thermal:fluid_cell_frame'}).id("mbm2:fluid_centrifuge_mk1")
+ 
+// mana_compressor
+event.shaped('mbm2:mana_compressor', ['AAA','BCB','DED'], {A: 'kubejs:platinum_plating',B: 'botania:rune_mana',C: 'kubejs:high_pressure_casing',D: 'pneumaticcraft:advanced_pressure_tube',E: 'kubejs:tier_1_mechanical_alloy_interlocking_component'})
+
+// chemical_reactor
+event.shaped('mbm2:chemical_reactor', ['ABA','CDC','ECE'], {A: 'thermal:obsidian_glass',B: 'pneumaticcraft:printed_circuit_board',C: 'kubejs:white_alloy_plate',D: 'kubejs:tier1_casing',E: 'powah:capacitor_niotic'})
 
 })
+

@@ -14,6 +14,9 @@ onEvent('recipes', event => {
 	
 	event.replaceInput({mod: 'elementalcraft'}, '#forge:ingots/iron', '#forge:ingots/arcanite')
 	event.replaceInput({mod: 'elementalcraft'}, '#forge:nuggets/iron', '#forge:nuggets/arcanite')
+	
+	event.replaceInput({id: 'elementalcraft:pureinfusion/purerock'}, 'minecraft:obsidian', 'beyond_earth:mars_stone')
+	
 
 	
 	//Container Upgrade
@@ -35,5 +38,9 @@ onEvent('recipes', event => {
 		    nbt.BlockEntityTag.element_storage.element_capacity = 100000
 		    return itemstack.withNBT(nbt)
 		}).id("mbm2:elementalcraft/container")
+
+
+
+
 
 });

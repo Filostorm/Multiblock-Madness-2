@@ -7,7 +7,7 @@ onEvent('tags.items', event => {
  */
 onEvent('recipes', event => {
 
-	global.compactCrafting(event, 'kubejs:standard_dyson_panel', 1, 'immersiveengineering:component_electronic',
+	global.compactCrafting(event, 'kubejs:standard_dyson_panel', 1, 'mekanism:ultimate_control_circuit',
 	7, [
 	  {
 		  type: 'compactcrafting:mixed',
@@ -62,6 +62,7 @@ onEvent('recipes', event => {
 		//Solar Railgunning
 		event.recipes.multiblocked.multiblock("railgun")
 		.inputItem('kubejs:standard_dyson_panel')
+		.inputItem('mekanism:ultimate_control_circuit')
 		.outputItem('kubejs:solar_chip_blue')
 		.inputFE(4000*(16**2)) //1048576
 		//.setPerTick(true)
@@ -71,6 +72,7 @@ onEvent('recipes', event => {
 		//Solar Railgunning W/battery
 		event.recipes.multiblocked.multiblock("railgun")
 		.inputItem('kubejs:standard_dyson_panel')
+		.inputItem('mekanism:ultimate_control_circuit')
 		.inputItem('8x kubejs:large_battery_full')
 		.outputItem('kubejs:solar_chip_blue')
 		.outputItem('8x kubejs:large_battery_empty')
@@ -79,6 +81,7 @@ onEvent('recipes', event => {
 		//Solar Railgunning W/crystal
 		event.recipes.multiblocked.multiblock("railgun")
 		.inputItem('kubejs:standard_dyson_panel')
+		.inputItem('mekanism:ultimate_control_circuit')
 		.inputItem('kubejs:energy_crystal_full')
 		.outputItem('kubejs:solar_chip_blue')
 		.outputItem('kubejs:energy_crystal_empty')
@@ -87,6 +90,7 @@ onEvent('recipes', event => {
 		//Solar Railgunning W/orb
 		event.recipes.multiblocked.multiblock("railgun")
 		.inputItem('kubejs:standard_dyson_panel')
+		.inputItem('mekanism:ultimate_control_circuit')
 		.inputItem('kubejs:energy_orb_full')
 		.outputItem('kubejs:solar_chip_blue')
 		.outputItem('kubejs:energy_orb_empty')

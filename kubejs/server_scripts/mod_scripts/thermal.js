@@ -249,8 +249,8 @@ event.shaped('thermal:machine_crystallizer', [
 	}).id('thermal:augments/upgrade_augment_1')
 
  // Latex
- event.recipes.thermal.chiller('thermal:rubber', [Fluid.of('thermal:latex', 250), 'thermal:chiller_ball_cast'])
- event.recipes.thermal.chiller('thermal:rubber_block', [Fluid.of('thermal:latex', 1000)])
+ event.recipes.thermal.chiller('thermal:rubber', [Fluid.of('industrialforegoing:latex', 250), 'thermal:chiller_ball_cast'])
+ event.recipes.thermal.chiller('thermal:rubber_block', [Fluid.of('industrialforegoing:latex', 1000)])
     
  //Magma
  event.recipes.thermal.crucible(Fluid.of('tconstruct:magma', 250), 'minecraft:magma_cream').id(`mbm2:magma_from_ball`)
@@ -258,10 +258,10 @@ event.shaped('thermal:machine_crystallizer', [
  ///////////////////// Elemental Stuff /////////////////
  
  //Temp Recipes
- event.shapeless(`kubejs:petrotheum_dust`, ['thermal:basalz_powder', '#forge:dusts/coal_coke']).id(`mbm2:petrotheum_dust`)
- event.shapeless(`kubejs:cryotheum_dust`, ['thermal:blizz_powder', 'snowball']).id(`mbm2:cryotheum_dust`)
- event.shapeless(`kubejs:pyrotheum_dust`, ['minecraft:blaze_powder', 'create:cinder_flour']).id(`mbm2:pyrotheum_dust`)
- event.shapeless(`kubejs:aerotheum_dust`, ['thermal:blitz_powder', 'cloudstorage:cloud']).id(`mbm2:aerotheum_dust`)
+ //event.shapeless(`kubejs:petrotheum_dust`, ['thermal:basalz_powder', '#forge:dusts/coal_coke']).id(`mbm2:petrotheum_dust`)
+ //event.shapeless(`kubejs:cryotheum_dust`, ['thermal:blizz_powder', 'snowball']).id(`mbm2:cryotheum_dust`)
+ //event.shapeless(`kubejs:pyrotheum_dust`, ['minecraft:blaze_powder', 'create:cinder_flour']).id(`mbm2:pyrotheum_dust`)
+ //event.shapeless(`kubejs:aerotheum_dust`, ['thermal:blitz_powder', 'cloudstorage:cloud']).id(`mbm2:aerotheum_dust`)
 
 event.recipes.thermal.crucible(Fluid.of(`kubejs:blazing_pyrotheum`, 250), `kubejs:pyrotheum_dust`).id(`mbm2:crucible/pyrotheum`)
 event.recipes.thermal.crucible(Fluid.of(`kubejs:gelid_cryotheum`, 250), `kubejs:cryotheum_dust`).id(`mbm2:crucible/cryotheum`)

@@ -11,6 +11,19 @@ onEvent('recipes', event => {
   event.remove({output: 'mekanism:steel_casing'})
   
 
+	//Small Battery
+	event.shaped('kubejs:small_battery_empty', [
+		'PBP',
+		'PCP',
+		'PCP'
+	  ], {
+		P: 'kubejs:cadmium_plate',
+		B: 'kubejs:reactive_blend',
+		C: 'powah:capacitor_blazing'
+	  }).id("mbm2:small_battery")
+
+// Large Battery 
+event.shaped('kubejs:large_battery_empty', ['AAA','BCB','BDB'], {A: 'kubejs:stainless_steel_plate',B: 'kubejs:platinum_plating',C: 'kubejs:small_battery_empty',D: 'kubejs:tier_1_electrical_alloy_wire_coil'}).id("mbm2:large_battery")
 
 
   global.compactCrafting(event, 'mekanism:steel_casing', 1, 'pneumaticcraft:printed_circuit_board',

@@ -1,7 +1,10 @@
 
 
 onEvent('fluid.registry', event => {
-    event.create(`gemstone_catalyst_mixture`).thinTexture(0x5332fa).bucketColor(0x5332fa)
+    event.create(`basic_catalyst_mixture`).thinTexture(0xab6737).bucketColor(0xab6737)
+    event.create(`crystal_catalyst_mixture`).thinTexture(0x5332fa).bucketColor(0x5332fa)
+    event.create(`magic_catalyst_mixture`).thinTexture(0xa251c4).bucketColor(0xa251c4)
+
     event.create(`zephyrean_aerotheum`).stillTexture('kubejs:block/fluid/aerotheum_still').flowingTexture('kubejs:block/fluid/aerotheum_flow').bucketColor(0xaea87c)
     event.create(`gelid_cryotheum`).stillTexture('kubejs:block/fluid/cryotheum_still').flowingTexture('kubejs:block/fluid/cryotheum_flow').bucketColor(0x1fd0fa)
     event.create(`tectonic_petrotheum`).stillTexture('kubejs:block/fluid/petrotheum_still').flowingTexture('kubejs:block/fluid/petrotheum_flow').bucketColor(0x221915)
@@ -28,5 +31,7 @@ onEvent('fluid.registry', event => {
     event.create(`molten_carbon`).thickTexture(0x383432).bucketColor(0x383432)
 
     event.create(`aqua_regia`).thinTexture(0xc98949).bucketColor(0xc98949)
+
+    event.create(`liquid_mana`).thinTexture(0x5acbd1).bucketColor(0x5acbd1)
   });
   

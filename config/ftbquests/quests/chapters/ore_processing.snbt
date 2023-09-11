@@ -211,6 +211,7 @@
 		}
 		{
 			title: "Nether Veins"
+			icon: "minecraft:nether_star"
 			disable_toast: true
 			x: 1.0d
 			y: -2.5d
@@ -224,6 +225,7 @@
 		}
 		{
 			title: "Overworld Veins"
+			icon: "beyond_earth:earth_globe"
 			disable_toast: true
 			x: -4.0d
 			y: -2.5d
@@ -335,6 +337,8 @@
 		}
 		{
 			title: "Moon Veins"
+			icon: "beyond_earth:moon_globe"
+			disable_toast: true
 			x: 7.5d
 			y: -2.5d
 			id: "28DF842E25E51E92"
@@ -490,6 +494,7 @@
 		}
 		{
 			title: "The End Veins"
+			icon: "minecraft:end_portal_frame"
 			disable_toast: true
 			x: 4.5d
 			y: -2.5d
@@ -546,7 +551,7 @@
 		{
 			disable_toast: true
 			x: -4.0d
-			y: -4.0d
+			y: -5.0d
 			id: "4418C0F5D9F2B232"
 			tasks: [{
 				id: "27C2221BF6D82054"
@@ -558,7 +563,7 @@
 		{
 			disable_toast: true
 			x: -4.0d
-			y: -5.0d
+			y: -4.0d
 			id: "374E9F1741E235E4"
 			tasks: [{
 				id: "24E0A5B61C4657E7"
@@ -570,7 +575,7 @@
 		{
 			disable_toast: true
 			x: 1.0d
-			y: -4.0d
+			y: -5.0d
 			id: "7973F284698B786F"
 			tasks: [{
 				id: "2F1F4131714F9A27"
@@ -588,7 +593,7 @@
 		{
 			disable_toast: true
 			x: 1.0d
-			y: -5.0d
+			y: -4.0d
 			id: "04BF5087EE619C6C"
 			tasks: [{
 				id: "3CED2CCD54BF029B"
@@ -618,7 +623,7 @@
 		{
 			disable_toast: true
 			x: 7.5d
-			y: -5.0d
+			y: -4.0d
 			id: "39D7F8D91CFCE5E9"
 			tasks: [{
 				id: "01F4C0C8849A26B8"
@@ -630,7 +635,7 @@
 		{
 			disable_toast: true
 			x: 7.5d
-			y: -4.0d
+			y: -5.0d
 			id: "02EA1B0663586E18"
 			tasks: [{
 				id: "5BF74880085600BE"
@@ -752,7 +757,7 @@
 			tasks: [{
 				id: "443E93A93A0F8207"
 				type: "item"
-				title: "Any #forge:ores/lump"
+				title: "Any Lumps"
 				item: {
 					id: "itemfilters:tag"
 					Count: 1b
@@ -771,6 +776,259 @@
 				id: "615AE647B41261D7"
 				type: "item"
 				item: "kubejs:raw_arcanite"
+			}]
+		}
+		{
+			title: "Mars Veins"
+			icon: "beyond_earth:mars_globe"
+			disable_toast: true
+			x: 11.0d
+			y: -2.5d
+			id: "5D08F7CC8E6911A8"
+			tasks: [{
+				id: "4EE57252D7582984"
+				type: "dimension"
+				title: "Mars"
+				dimension: "beyond_earth:mars"
+			}]
+		}
+		{
+			x: 11.0d
+			y: -1.5d
+			id: "6C7768C7EBE6829D"
+			tasks: [{
+				id: "5C2C01C93CFB2382"
+				type: "item"
+				item: "beyond_earth:raw_ostrum"
+			}]
+		}
+		{
+			title: "Venus Veins"
+			icon: "beyond_earth:venus_globe"
+			disable_toast: true
+			x: 14.0d
+			y: -2.5d
+			id: "686ECAA2B2C4E112"
+			tasks: [{
+				id: "145793782E94BB89"
+				type: "dimension"
+				title: "Venus"
+				dimension: "beyond_earth:venus"
+			}]
+		}
+		{
+			title: "Mercury Veins"
+			icon: "beyond_earth:mercury_globe"
+			disable_toast: true
+			x: 15.0d
+			y: -2.5d
+			id: "3BCE38C8A18BA068"
+			tasks: [{
+				id: "4FA5A724CB620610"
+				type: "dimension"
+				title: "Mercury"
+				dimension: "beyond_earth:mercury"
+			}]
+		}
+		{
+			x: 11.0d
+			y: -0.5d
+			id: "5EAB61F97C9CAC60"
+			tasks: [{
+				id: "69B679D0843E51B9"
+				type: "item"
+				item: "kubejs:raw_tungsten"
+			}]
+		}
+		{
+			x: 11.0d
+			y: 0.5d
+			id: "4232467D80CCB647"
+			tasks: [{
+				id: "49354139C7A6E835"
+				type: "item"
+				item: "kubejs:raw_orichalcum"
+			}]
+		}
+		{
+			x: 14.0d
+			y: -1.5d
+			id: "720C01B02B7DEE1E"
+			tasks: [{
+				id: "127425E4F3D25C0D"
+				type: "item"
+				item: "beyond_earth:raw_calorite"
+			}]
+		}
+		{
+			title: "Glacio Veins"
+			icon: "beyond_earth:glacio_globe"
+			disable_toast: true
+			x: 17.5d
+			y: -2.5d
+			id: "107BBC9E6D7F35F7"
+			tasks: [{
+				id: "5BDA8868E3BE8722"
+				type: "dimension"
+				title: "Glacio"
+				dimension: "beyond_earth:glacio"
+			}]
+		}
+		{
+			x: 17.5d
+			y: -1.5d
+			id: "4B54A9EF6B62C762"
+			tasks: [{
+				id: "659C041A15468765"
+				type: "item"
+				item: "kubejs:raw_draconium"
+			}]
+		}
+		{
+			x: 15.0d
+			y: -1.5d
+			id: "35AF50BDCB517849"
+			tasks: [{
+				id: "5F7AAD7DF4DB5306"
+				type: "item"
+				item: "kubejs:raw_iridium"
+			}]
+		}
+		{
+			x: 17.5d
+			y: -0.5d
+			id: "2B4BD77280C48DC3"
+			tasks: [{
+				id: "3202E38FB0E98B4F"
+				type: "item"
+				item: "kubejs:raw_vibranium"
+			}]
+		}
+		{
+			x: 14.0d
+			y: -0.5d
+			id: "2613429BF2F4ADD8"
+			tasks: [{
+				id: "04164FBDF4A56752"
+				type: "item"
+				item: "kubejs:raw_palladium"
+			}]
+		}
+		{
+			x: 15.0d
+			y: -0.5d
+			id: "52CC70B8491FE20F"
+			tasks: [{
+				id: "011780845D6D4CFD"
+				type: "item"
+				item: "kubejs:raw_adamantium"
+			}]
+		}
+		{
+			x: 11.0d
+			y: -6.0d
+			id: "0C3EB21BEA2D34C9"
+			tasks: [{
+				id: "2343817F7CDB82AC"
+				type: "item"
+				item: "mbm2:deposition_chamber"
+			}]
+		}
+		{
+			title: "Ore Deposit"
+			x: 12.0d
+			y: -6.0d
+			dependencies: ["0C3EB21BEA2D34C9"]
+			id: "46F59AB0DA404B1A"
+			tasks: [{
+				id: "52D25A2415B85C41"
+				type: "item"
+				title: "Any Deposits"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "forge:ores/deposit"
+					}
+				}
+			}]
+		}
+		{
+			x: 11.0d
+			y: -5.0d
+			id: "0DC400230EF6616D"
+			tasks: [{
+				id: "67D6EBF2562B51E4"
+				type: "item"
+				item: "kubejs:cobalt_coil"
+			}]
+		}
+		{
+			x: 14.0d
+			y: -6.0d
+			id: "00859F9E64E640CB"
+			tasks: [{
+				id: "3B5CFABFD2DC4AFB"
+				type: "item"
+				item: "mbm2:leaching_vat"
+			}]
+		}
+		{
+			title: "Leached Ore"
+			x: 15.0d
+			y: -6.0d
+			dependencies: ["00859F9E64E640CB"]
+			id: "547BBD0D7412471D"
+			tasks: [{
+				id: "79B10EA54A73F6A3"
+				type: "item"
+				title: "Any Leached Ores"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "forge:ores/leached"
+					}
+				}
+			}]
+		}
+		{
+			x: 14.0d
+			y: -5.0d
+			id: "3BFFF4D5CAFC1A3D"
+			tasks: [{
+				id: "1E5B44061C98D744"
+				type: "item"
+				item: "kubejs:tier_1_electrical_alloy_coil"
+			}]
+		}
+		{
+			x: 17.5d
+			y: -6.0d
+			id: "6EA1FAD3986DBE8D"
+			tasks: [{
+				id: "1FFD110CFADC963A"
+				type: "item"
+				item: "mbm2:crystal_chamber"
+			}]
+		}
+		{
+			title: "Ore Crystal"
+			x: 18.5d
+			y: -6.0d
+			dependencies: ["6EA1FAD3986DBE8D"]
+			id: "280FDDCAC78E2F8F"
+			tasks: [{
+				id: "1C953F015EEBC4F6"
+				type: "item"
+				title: "Any Crystals"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "forge:ores/crystal"
+					}
+				}
 			}]
 		}
 	]

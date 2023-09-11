@@ -76,6 +76,10 @@ onEvent('recipes', event => {
 	  //Temp Engine Frame recipe
 	  event.replaceInput({id: 'beyond_earth:engine_frame'}, '#forge:nuggets/iron', '#forge:rods/compressed_steel')
 	
+	  //Desh Engine
+		event.remove({output: 'beyond_earth:desh_engine'})
+	  event.shaped('beyond_earth:desh_engine', ['ABA','CDE','ABA'], {A: 'beyond_earth:desh_plate',B: 'elementalcraft:fireite_ingot',C: 'beyond_earth:steel_engine',D: 'compressedcreativity:engine_rotor',E: 'beyond_earth:engine_frame'})
+
 	 //fIX oXYGEN
 	event.remove({id: 'beyond_earth:oxygen_loading/from_water'})
 	  event.custom({

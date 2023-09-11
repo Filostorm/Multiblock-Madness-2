@@ -302,24 +302,29 @@ onEvent('recipes', event => {
 	  'PEP'
 	], {
 		S: '#forge:scaffoldings/energetic_alloy',
-		P: '#forge:plates/titanium',
+		P: '#forge:plates/energized_steel',
 		E: 'ae2:calculation_processor',
 		C: 'ae2:fluix_smart_cable'
 	}).id('mbm2:crafting_unit')
   
+
+
 	//Pattern Provider
 	event.remove({id: 'ae2:network/blocks/pattern_providers_interface'})
-	event.shaped('ae2:pattern_provider', [
-	  'PQP',
-	  'FEA',
-	  'PQP'
-	], {
-	  P: '#forge:plates/lumium',
-	  A: 'ae2:annihilation_core',
-	  F: 'ae2:formation_core',
-	  Q: 'ae2:quartz_glass',
-	  E: 'immersiveengineering:component_electronic_adv'
-	}).id('mbm2:pattern_provider')
+	//Early Recipe
+	event.shaped('ae2:pattern_provider', ['ABA','CDC','ABA'], {A: 'kubejs:energized_steel_plate',B: 'ae2:quartz_glass',C: 'immersiveengineering:component_electronic',D: 'kubejs:energetic_alloy_frame_box'}).id('mbm2:pattern_provider')
+	//Alt Recipe
+	//event.shaped('ae2:pattern_provider', [
+	//  'PQP',
+	//  'FEA',
+	//  'PQP'
+	//], {
+	//  P: '#forge:plates/lumium',
+	//  A: 'ae2:annihilation_core',
+	//  F: 'ae2:formation_core',
+	//  Q: 'ae2:quartz_glass',
+	//  E: 'immersiveengineering:component_electronic_adv'
+	//}).id('mbm2:alt_pattern_provider')
 	
 	//Molecular Assembler
 	event.remove({id: 'ae2:network/crafting/molecular_assembler'})
@@ -338,7 +343,10 @@ onEvent('recipes', event => {
 	
 	//Pattern
 	event.remove({id: 'ae2:network/crafting/patterns_blank'})
-	event.shaped('ae2:blank_pattern', [
+	//Early Recipe
+	event.shaped('ae2:blank_pattern', ['ABA','CDC','EEE'], {A: 'minecraft:glowstone_dust',B: 'create:precision_mechanism',C: 'ae2:quartz_glass',D: 'immersiveengineering:slab_treated_wood_horizontal',E: 'kubejs:energetic_alloy_plate'}).id('mbm2:blank_pattern')
+	//2x Recipe
+	event.shaped('2x ae2:blank_pattern', [
 	  'GEG',
 	  'QFQ',
 	  'PPP'
@@ -348,7 +356,7 @@ onEvent('recipes', event => {
 		Q: 'ae2:quartz_glass',
 		G: 'minecraft:glowstone_dust',
 		E: 'immersiveengineering:component_electronic'
-	}).id('mbm2:blank_pattern')
+	}).id('mbm2:blank_pattern_x2')
   
 	//Fluix Covered Cable
 	event.remove({id: 'ae2:network/cables/covered_fluix'})
@@ -358,7 +366,7 @@ onEvent('recipes', event => {
 	  'CCC'
 	], {
 	  C: 'ae2:fluix_glass_cable',
-	  B: 'thermal:latex_bucket'
+	  B: 'industrialforegoing:latex_bucket'
 	}).id('mbm2:fluix_covered_cable')
 	global.ieBottling(event, [Item.of('ae2:fluix_covered_cable').toJson()], Item.of('ae2:fluix_glass_cable').toJson(), {"tag":"forge:latex","amount":125}, 'mbm2:bottling/fluix_covered_cable')
 
@@ -379,7 +387,7 @@ onEvent('recipes', event => {
 	  'QPQ',
 	  'SQS'
 	], {
-		Q: '#forge:gems/certus_quartz',
+		Q: 'ae2:certus_quartz_crystal',
 		S: '#forge:sheets/energetic_alloy',
 		P: 'ae2:logic_processor',
 	}).id('mbm2:cell_component_1k')

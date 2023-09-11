@@ -316,6 +316,7 @@
 			y: 10.0d
 			description: [
 				"Welcome to Multiblock Madness 2! "
+				""
 				"To convert your Quest Book into a tome containing most manuals needed for the pack, just left click the air with it."
 			]
 			id: "5FD77AB0F43882B8"

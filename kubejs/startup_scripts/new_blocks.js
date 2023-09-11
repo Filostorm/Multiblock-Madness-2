@@ -2,7 +2,6 @@ var basicMetalBlocks = [
 	//'tier1_casing',
 	'tier1_machine_block',
 	'tier2_machine_block',
-	'tier3_casing',
 	'tier3_machine_block',
 	'machine_casing_fusion_coil',
 	'machine_casing_fusion_glass',
@@ -38,6 +37,7 @@ onEvent('block.registry', event => {
 	
 	event.create('tier1_casing').displayName('Basic Multiblock Casing').hardness(3).resistance(3).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').material('metal')
 	event.create('tier2_casing').displayName('Sturdy Multiblock Casing').hardness(3).resistance(3).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').material('metal')
+	event.create('tier3_casing').displayName('Reinforced Multiblock Casing').hardness(3).resistance(3).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').material('metal')
 
 	//Compressed Cobble
 	event.create('1x_compressed_cobblestone').hardness(1).resistance(1).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_stone_tool').material('stone')

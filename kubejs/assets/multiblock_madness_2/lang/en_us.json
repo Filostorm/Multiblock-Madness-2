@@ -40,6 +40,16 @@
     "mbm2.heater.description": "Uses Power to heat stuff",
     "multiblocked.recipe_map.heater": "Heating",
 
+
+    "block.mbm2.mana_condenser": "Mana Condenser",
+    "mbm2.mana_condenser.description": "Condensing unattuned Mana down into its fluid form",
+    "multiblocked.recipe_map.mana_condenser": "Condensing Mana",
+
+    "block.mbm2.mana_compressor": "Mana Compressor",
+    "mbm2.mana_compressor.description": "Uses compressed air and Liquid Mana to refine ores",
+    "multiblocked.recipe_map.mana_compressor": "Compressing Ore",
+
+
     "block.mbm2.sorter_mk2": "Ore Sorting Machine Mk2",
     "mbm2.sorter_mk2.description": "Sorts compound ores at a good rate",
     "multiblocked.recipe_map.sorter_mk2": "Mk2 Ore Sorting",
@@ -329,6 +339,7 @@
   "biome.terralith.cave.ice_caves": "Ice Caves",
 
   "biome.beyond_earth.moon_desert": "Moon Barren",
+  "biome.beyond_earth.venus_desert": "Venus Desert",
   "biome.beyond_earth.mars_rocky_plain": "Mars Plains",
 
   

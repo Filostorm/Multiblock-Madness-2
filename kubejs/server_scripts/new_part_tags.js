@@ -152,4 +152,7 @@ onEvent('fluid.tags', event => {
     event.add(`forge:tectonic_petrotheum`, [`kubejs:tectonic_petrotheum`, `kubejs:flowing_tectonic_petrotheum`])
     event.add(`forge:blazing_pyrotheum`, [`kubejs:blazing_pyrotheum`, `kubejs:flowing_blazing_pyrotheum`])
     event.add(`minecraft:lava`, [`kubejs:blazing_pyrotheum`, `kubejs:flowing_blazing_pyrotheum`])
+    event.add(`forge:basic_catalyst_mixture`, [`kubejs:basic_catalyst_mixture`, `kubejs:flowing_basic_catalyst_mixture`])
+    event.add(`forge:crystal_catalyst_mixture`, [`kubejs:crystal_catalyst_mixture`, `kubejs:flowing_crystal_catalyst_mixture`])
+    event.add(`forge:magic_catalyst_mixture`, [`kubejs:magic_catalyst_mixture`, `kubejs:flowing_magic_catalyst_mixture`])
 });

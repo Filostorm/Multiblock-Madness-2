@@ -865,14 +865,13 @@
 		}
 		{
 			title: "Basic Digital Storage"
-			x: 9.999999999999993d
-			y: 4.232142857142847d
+			x: 10.0d
+			y: 5.0d
 			description: ["You'll need to unlock steel for the Crafting Terminal."]
 			dependencies: [
 				"338A1AE116F1A652"
 				"059414648F84FC52"
 			]
-			size: 1.5d
 			id: "704F244888706682"
 			tasks: [
 				{
@@ -1030,6 +1029,74 @@
 				item: "minecraft:mossy_cobblestone"
 				count: 64
 			}]
+		}
+		{
+			x: 14.5d
+			y: 3.0d
+			subtitle: "You'll need this for Living Wood later"
+			dependencies: ["6AD50F15723B7927"]
+			id: "45DE61697465BD69"
+			tasks: [{
+				id: "13BB828FF1D197CD"
+				type: "item"
+				item: "naturesaura:ancient_sapling"
+			}]
+		}
+		{
+			title: "Auto Crafting!"
+			x: 10.0d
+			y: 3.5d
+			description: [
+				"You'll need to convert the Crafting Unit by adding a Storage Disk of some size."
+				""
+				"Until you unlock Titanium, you'll have to make do with 16 channels"
+			]
+			dependencies: [
+				"059414648F84FC52"
+				"338A1AE116F1A652"
+			]
+			id: "6C4354CB6E54A96A"
+			tasks: [
+				{
+					id: "1E3C92E9821492D6"
+					type: "item"
+					item: "ae2:pattern_provider"
+				}
+				{
+					id: "47318DF267287C40"
+					type: "item"
+					item: "ae2:blank_pattern"
+				}
+				{
+					id: "321BF9922838BCE6"
+					type: "item"
+					item: "ae2:pattern_encoding_terminal"
+				}
+				{
+					id: "05BA416531FD19FA"
+					type: "item"
+					item: "ae2:pattern_access_terminal"
+				}
+				{
+					id: "0D140FFB2F8889D2"
+					type: "item"
+					item: "ae2:crafting_unit"
+				}
+			]
+			rewards: [
+				{
+					id: "24DDF521273A63F2"
+					type: "random"
+					exclude_from_claim_all: true
+					table_id: 824098445478849879L
+				}
+				{
+					id: "71914634C3327663"
+					type: "item"
+					item: "ae2:blank_pattern"
+					count: 8
+				}
+			]
 		}
 	]
 	quest_links: [ ]

@@ -47,7 +47,7 @@ onEvent('recipes', event => {
 	  	.outputItem(`${plateCasting}x #forge:plates/${item.material}`)
 	  	.setPerTick(true)
 	  	.inputFE(1024)
-	  	.duration(100)
+	  	.duration(50)
 	  }
 	//Create Plates
   	event.recipes.createPressing(`#forge:plates/${item.material}`, `#forge:ingots/${item.material}`).id(`create:pressing/${item.material}_ingot`)
@@ -105,7 +105,7 @@ onEvent('recipes', event => {
 			G: `#forge:platings/${item.material}`,
 			I: `#forge:ingots/${item.material}`,
 			P: `#forge:plates/${item.material}`,
-		  }).id(`kubejs:crafting/${item.material}_rocket_fins`)
+		  }).id(`mbm2:crafting/${item.material}_rocket_fins`)
 		}
 	////////////////NOSE CONES///////////////
 	if (Item.of(`#forge:rocket_nose_cones/${item.material}`) != null) {
@@ -118,12 +118,22 @@ onEvent('recipes', event => {
 		   G: `#forge:platings/${item.material}`,
 		   I: `#forge:ingots/${item.material}`,
 		   T: 'minecraft:redstone_torch',
-		 }).id(`kubejs:crafting/${item.material}_rocket_nose_cones`)
+		 }).id(`mbm2:crafting/${item.material}_rocket_nose_cones`)
 	   }
 	}
 
 	////////////////COMPONENTS///////////////
     if (Item.of(`#forge:components/${item.material}`) != null) {
+		//Hand Crafted Components
+		event.shaped(`#forge:components/${item.material}`, [
+			'P P',
+			' I ',
+			'P P'
+		  ], {
+			I: `#forge:ingots/copper`,
+			P: `#forge:plates/${item.material}`,
+		  }).id(`mbm2:crafting/${item.material}_component`)
+
 	global.ieBlueprint(event, 'components', Item.of(`#forge:components/${item.material}`), [{count:2, base_ingredient: {tag: `forge:plates/${item.material}`}}, {tag: `forge:ingots/copper`}], `mbm2:${item.material}_component`)
 	}
 
@@ -139,7 +149,7 @@ onEvent('recipes', event => {
 		'PPP'
 	  ], {
 		P: `#forge:plates/${item.material}`,
-	  }).id(`kubejs:crafting/${item.material}_casing`)
+	  }).id(`mbm2:crafting/${item.material}_casing`)
 	}
 
 	////////////////SHEETMETAL///////////////
@@ -209,7 +219,7 @@ onEvent('recipes', event => {
 	  	.outputItem(`${gearCasting}x #forge:gears/${item.material}`)
 	  	.setPerTick(true)
 	  	.inputFE(1024)
-	  	.duration(400)
+	  	.duration(50)
 	  }
 	//Immersive Gears
 	event.recipes.immersiveengineeringMetalPress(`#forge:gears/${item.material}`, `4x #forge:ingots/${item.material}`, 'immersiveengineering:mold_gear').id(`immersiveengineering:metalpress/gear_${item.material}`)
@@ -262,7 +272,7 @@ onEvent('recipes', event => {
 			  .outputItem(`${rodCasting}x #forge:rods/${item.material}`)
 			  .setPerTick(true)
 			  .inputFE(1024)
-			  .duration(100)
+			  .duration(50)
 		  }
 	
 		////////////////SCAFFOLDING///////////////
@@ -312,7 +322,7 @@ onEvent('recipes', event => {
 		  .outputItem(`${hullCasting}x #forge:hull_panels/${item.material}`)
 		  .setPerTick(true)
 		  .inputFE(1024)
-		  .duration(100)
+		  .duration(50)
 	}
 	////////////////WIRES///////////////
     if (Item.of(`#forge:wires/${item.material}`) != null) {
@@ -335,7 +345,7 @@ onEvent('recipes', event => {
 			  .outputItem(`${wireCasting}x #forge:wires/${item.material}`)
 			  .setPerTick(true)
 			  .inputFE(1024)
-			  .duration(100)
+			  .duration(50)
 		  }
 
 		/////////////// Spools //////////////////

@@ -289,7 +289,7 @@
 
 		[elementalcraft.worldgen.inertCrystal]
 			#Disable creation of inertCrystals.
-			disableInertCrystal = false
+			disableInertCrystal = true
 			#Number of inert crystal vein.
 			#Range: 1 ~ 100
 			inertCrystalCount = 10
@@ -328,7 +328,7 @@
 
 		[elementalcraft.interaction.mekanism]
 			#Enable interaction with mekanism.
-			mekanismInteracionEnabled = true
+			mekanismInteracionEnabled = false
 			#The amount multiplier when using pure ore in mekanism.
 			#Range: 0 ~ 20
 			mekanismPureOreInputMultiplier = 5

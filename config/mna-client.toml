@@ -28,11 +28,15 @@
 	#Change the size of pinned recipes.
 	#Range: 1 ~ 3
 	pinnedRecipeSize = 1
+	#Should affinity render on the HUD?
+	renderAffinityOnHUD = true
 
 #Mana and Artifice // Performance Settings
 [ma_performance]
 	#Enable fancy magelights (disable this if you're getting FPS issues)
 	ma_fancy_magelights = true
+	#Should particles be blurred?  They'll be smoother, but shader packs may run into issues with artifact lines due to the blur math.
+	blurParticles = true
 
 #Mana and Artifice // Help Tips Settings
 [ma_helptips]
@@ -43,4 +47,6 @@
 	ma_multiblock_tip = false
 	ma_prettyblocks_tip = true
 	ma_bindwounds_tip = false
+	ma_buffcache_tip = false
+	ma_lenstype_tip = false
 

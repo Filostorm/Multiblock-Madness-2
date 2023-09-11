@@ -372,7 +372,7 @@ To refresh this file, delete it and run /reload command again! Last updated: Jul
 
 #forge:latex
 - industrialforegoing:latex
-- thermal:latex
+- industrialforegoing:latex
 
 #tconstruct:molten_tin
 - tconstruct:molten_tin

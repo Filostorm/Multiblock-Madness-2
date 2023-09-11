@@ -11,9 +11,9 @@ onEvent('recipes', event => {
 	//Fix Plastic/Latex
     event.replaceInput({mod: 'industrialforegoing'}, 'industrialforegoing:plastic', 'pneumaticcraft:plastic')
     event.replaceOutput({mod: 'industrialforegoing'}, 'industrialforegoing:plastic', 'pneumaticcraft:plastic')
-    event.replaceInput({id: 'industrialforegoing:latex_processing_unit'}, 'industrialforegoing:latex_bucket', 'thermal:latex_bucket')
+    //event.replaceInput({id: 'industrialforegoing:latex_processing_unit'}, 'industrialforegoing:latex_bucket', 'industrialforegoing:latex_bucket')
 	
-
+/*
 let woodTypes = [
 	'acacia',
 	'dark_oak',
@@ -30,7 +30,7 @@ woodTypes.forEach(type => {
 		},
 		"result": `minecraft:stripped_${type}_log`,
 		"breakChance": 0.010,
-		"output": "{FluidName:\"thermal:latex\",Amount:4}",
+		"output": "{FluidName:\"industrialforegoing:latex\",Amount:4}",
 		"defaultRecipe": false,
 		"type": "industrialforegoing:fluid_extractor"
 	  })
@@ -42,10 +42,10 @@ event.custom({
 	},
 	"result": "minecraft:air",
 	"breakChance": 0.010,
-	"output": "{FluidName:\"thermal:latex\",Amount:1}",
+	"output": "{FluidName:\"industrialforegoing:latex\",Amount:1}",
 	"defaultRecipe": true,
 	"type": "industrialforegoing:fluid_extractor"
-  })
+  })*/
 
   //Tier 1 Frame
   event.remove({output:`industrialforegoing:machine_frame_pity`})
@@ -126,7 +126,7 @@ compoundOres.forEach((type, index) => {
 			  "blacklist": {},
 			  "depth_min": minDepth[index],
 			  "depth_max": maxDepth[index],
-			  "weight": 5
+			  "weight": 20
 			},
 			{
 			  "whitelist": {},

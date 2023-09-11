@@ -267,7 +267,7 @@ event.shaped('immersiveengineering:radiator', [
 
     //Slag Glass
 	  event.remove({id: 'immersiveengineering:smelting/slag_glass'})
-    event.blasting('immersiveengineering:slag_glass', 'thermal:slag').id(`mbm2:blasting/slag_glass`)
+    event.blasting('immersiveengineering:slag_glass', 'kubejs:slag_dust').id(`mbm2:blasting/slag_glass`)
 
 //Workbench
 event.remove({id: 'immersiveengineering:crafting/workbench'})

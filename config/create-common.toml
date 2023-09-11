@@ -11,7 +11,7 @@
 		[worldgen.v2.striated_ores_nether]
 			#.
 			#Range: > 0
-			clusterSize = 32
+			clusterSize = 0
 			#.
 			#Amount of clusters generated per Chunk.
 			#  >1 to spawn multiple.
@@ -47,7 +47,7 @@
 		[worldgen.v2.zinc_ore]
 			#.
 			#Range: > 0
-			clusterSize = 12
+			clusterSize = 0
 			#.
 			#Amount of clusters generated per Chunk.
 			#  >1 to spawn multiple.

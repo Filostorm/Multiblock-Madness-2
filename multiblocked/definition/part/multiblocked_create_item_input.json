@@ -1,12 +1,12 @@
 {
-  "version": 1,
+  "version": 3,
   "location": "multiblocked:create_item_input",
   "traits": {
     "background": "multiblocked:textures/gui/4_slot.png",
     "item": [
       {
         "cIO": 0,
-        "gIO": 3,
+        "gIO": 2,
         "mIO": 0,
         "x": 70,
         "y": 62,
@@ -14,7 +14,7 @@
       },
       {
         "cIO": 0,
-        "gIO": 3,
+        "gIO": 2,
         "mIO": 0,
         "x": 88,
         "y": 62,
@@ -22,7 +22,7 @@
       },
       {
         "cIO": 0,
-        "gIO": 3,
+        "gIO": 2,
         "mIO": 0,
         "x": 70,
         "y": 80,
@@ -30,7 +30,7 @@
       },
       {
         "cIO": 0,
-        "gIO": 3,
+        "gIO": 2,
         "mIO": 0,
         "x": 88,
         "y": 80,

@@ -2,39 +2,5 @@
   "name": "chemical_reactor",
   "progressTexture": "multiblocked:textures/gui/progress_bar_arrow.png",
   "fuelTexture": "multiblocked:textures/gui/progress_bar_fuel.png",
-  "recipes": [
-    {
-      "uid": "461fe749-b335-4c3e-abb8-2c7af9c097fa",
-      "duration": 100,
-      "inputs": {
-        "fluid": [
-          {
-            "content": {
-              "fluid": "mekanism:oxygen",
-              "amount": 500
-            },
-            "chance": 1.0
-          },
-          {
-            "content": {
-              "fluid": "mekanism:hydrogen",
-              "amount": 1000
-            },
-            "chance": 1.0
-          }
-        ]
-      },
-      "outputs": {
-        "fluid": [
-          {
-            "content": {
-              "fluid": "minecraft:water",
-              "amount": 1500
-            },
-            "chance": 1.0
-          }
-        ]
-      }
-    }
-  ]
+  "recipes": []
 }

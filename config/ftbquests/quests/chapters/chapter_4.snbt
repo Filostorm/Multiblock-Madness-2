@@ -80,6 +80,7 @@
 		{
 			x: 11.0d
 			y: 1.5d
+			description: ["This is the main information hub needed to progress through Mana and Artifice."]
 			dependencies: ["0E9C33334120AC94"]
 			id: "1FC0519495084939"
 			tasks: [{
@@ -91,6 +92,7 @@
 		{
 			x: 12.5d
 			y: 3.0d
+			description: ["Used for rituals"]
 			dependencies: ["098CAF7E91266CDC"]
 			id: "12DDD9CD9F8B934F"
 			tasks: [{
@@ -820,6 +822,7 @@
 			x: 3.5d
 			y: 5.0d
 			dependencies: ["17F948FD49F0EB33"]
+			min_required_tasks: 3
 			id: "367CDBB0205D41FB"
 			tasks: [
 				{
@@ -843,6 +846,10 @@
 					layer: true
 					ignoreState: false
 					rightclick: false
+				}
+				{
+					id: "3DF95996924F543C"
+					type: "checkmark"
 				}
 			]
 			rewards: [{
@@ -1629,7 +1636,8 @@
 		}
 		{
 			x: 12.5d
-			y: 12.5d
+			y: 11.5d
+			shape: "hexagon"
 			dependencies: [
 				"0D9ABDE851B5E722"
 				"592A4D0BDEB062DB"
@@ -1688,7 +1696,7 @@
 		{
 			title: "Advanced Energetic Alloys"
 			x: 11.0d
-			y: 12.0d
+			y: 11.5d
 			description: ["You might want to set up some good power supply before mass producing AE components."]
 			dependencies: ["627B714B402BEE67"]
 			min_required_tasks: 1
@@ -1731,6 +1739,7 @@
 		{
 			x: 2.0d
 			y: 11.0d
+			description: ["Place these around a water source block and power through AE. Crystal seeds inside the water will grow much faster."]
 			dependencies: ["40CD2EB416C68B70"]
 			id: "4F570EDAF76DCC20"
 			tasks: [{
@@ -1741,57 +1750,6 @@
 			}]
 		}
 		{
-			title: "Auto Crafting!"
-			x: 12.5d
-			y: 11.5d
-			dependencies: [
-				"0D9ABDE851B5E722"
-				"592A4D0BDEB062DB"
-			]
-			id: "6C4354CB6E54A96A"
-			tasks: [
-				{
-					id: "1E3C92E9821492D6"
-					type: "item"
-					item: "ae2:pattern_provider"
-				}
-				{
-					id: "47318DF267287C40"
-					type: "item"
-					item: "ae2:blank_pattern"
-				}
-				{
-					id: "321BF9922838BCE6"
-					type: "item"
-					item: "ae2:pattern_encoding_terminal"
-				}
-				{
-					id: "05BA416531FD19FA"
-					type: "item"
-					item: "ae2:pattern_access_terminal"
-				}
-				{
-					id: "0D140FFB2F8889D2"
-					type: "item"
-					item: "ae2:crafting_unit"
-				}
-			]
-			rewards: [
-				{
-					id: "24DDF521273A63F2"
-					type: "random"
-					exclude_from_claim_all: true
-					table_id: 824098445478849879L
-				}
-				{
-					id: "71914634C3327663"
-					type: "item"
-					item: "ae2:blank_pattern"
-					count: 8
-				}
-			]
-		}
-		{
 			x: 6.5d
 			y: 8.0d
 			dependencies: ["4056DE989F8A8E98"]
@@ -1800,6 +1758,17 @@
 				id: "794856709109639B"
 				type: "item"
 				item: "thermal:machine_frame"
+			}]
+		}
+		{
+			x: 11.0d
+			y: 4.5d
+			dependencies: ["0E9C33334120AC94"]
+			id: "0C50A45DF9D419E7"
+			tasks: [{
+				id: "5EE3B0F95321FB38"
+				type: "item"
+				item: "mna:magicians_workbench"
 			}]
 		}
 	]

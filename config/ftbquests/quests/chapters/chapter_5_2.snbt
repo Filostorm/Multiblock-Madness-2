@@ -15,9 +15,14 @@
 				Count: 1b
 				tag: { }
 			}
-			x: 2.5d
-			y: 4.5d
-			dependencies: ["573198C8B96038A8"]
+			x: 1.5d
+			y: 5.0d
+			shape: "hexagon"
+			dependencies: [
+				"573198C8B96038A8"
+				"0B635C1D49C9F9AC"
+			]
+			size: 1.5d
 			id: "1E282A0E8363FD74"
 			tasks: [
 				{
@@ -52,8 +57,9 @@
 			}]
 		}
 		{
-			x: 2.5d
-			y: 6.0d
+			x: -0.5d
+			y: 5.0d
+			dependencies: ["41ADD92F106996A9"]
 			id: "573198C8B96038A8"
 			tasks: [{
 				id: "710836FC21B9AF12"
@@ -91,6 +97,7 @@
 			disable_toast: true
 			x: -6.5d
 			y: 8.0d
+			shape: "circle"
 			id: "0A0FC4AF714D99F8"
 			tasks: [{
 				id: "0F1302AB83884482"
@@ -113,8 +120,10 @@
 			}]
 		}
 		{
+			disable_toast: true
 			x: -6.5d
 			y: 6.5d
+			shape: "circle"
 			id: "25E6A3906DFF322B"
 			tasks: [{
 				id: "590A6A071A534CAD"
@@ -123,15 +132,23 @@
 			}]
 		}
 		{
+			title: "Advanced Alchemy"
 			x: 2.5d
 			y: 1.5d
 			dependencies: ["588EC54D514CB640"]
 			id: "4191399434B5CC2C"
-			tasks: [{
-				id: "5B92175592B4D0EB"
-				type: "item"
-				item: "alchemistry:dissolver"
-			}]
+			tasks: [
+				{
+					id: "5B92175592B4D0EB"
+					type: "item"
+					item: "alchemistry:dissolver"
+				}
+				{
+					id: "67EC41F7763A83F0"
+					type: "item"
+					item: "alchemistry:combiner"
+				}
+			]
 		}
 		{
 			title: "Laser Circuit Assembly"
@@ -304,6 +321,7 @@
 		{
 			x: -3.5d
 			y: -1.5d
+			dependencies: ["35C16B4B5D8C7148"]
 			id: "4007E77C425C976E"
 			tasks: [{
 				id: "1867F635409F5561"
@@ -535,7 +553,7 @@
 		}
 		{
 			x: -5.0d
-			y: 3.5d
+			y: 4.5d
 			min_required_dependencies: 1
 			dependencies: [
 				"7CDED25654D18562"
@@ -550,7 +568,7 @@
 		}
 		{
 			x: -5.0d
-			y: 4.5d
+			y: 3.5d
 			min_required_dependencies: 1
 			dependencies: [
 				"7CDED25654D18562"
@@ -598,14 +616,98 @@
 			id: "7A946D11CADF573B"
 			tasks: [
 				{
-					id: "50B7BE29F438D1CF"
+					id: "5425AAEBD64C9764"
 					type: "item"
-					item: "kubejs:crushed_thermogenic_blend"
+					item: "kubejs:thermogenic_blend_chunk"
 				}
 				{
-					id: "4934CD54BDA53D16"
+					id: "79824C89585293DA"
 					type: "item"
-					item: "kubejs:crushed_thermolytic_blend"
+					item: "kubejs:thermolytic_blend_chunk"
+				}
+			]
+		}
+		{
+			x: 3.0d
+			y: 6.5d
+			dependencies: ["12B7444358A1347F"]
+			id: "0B635C1D49C9F9AC"
+			tasks: [{
+				id: "5F0EDC7800F6EC1F"
+				type: "item"
+				item: "elementalcraft:fireite_ingot"
+			}]
+		}
+		{
+			x: 4.0d
+			y: 5.0d
+			dependencies: ["1E282A0E8363FD74"]
+			id: "11D33990B9BC8DDD"
+			tasks: [{
+				id: "7D222422E9E20938"
+				type: "item"
+				item: "elementalcraft:purerock"
+			}]
+		}
+		{
+			x: 3.0d
+			y: 8.0d
+			dependencies: ["3C2C3C5BED4E830A"]
+			id: "12B7444358A1347F"
+			tasks: [{
+				id: "0F1D3170DBD2BA66"
+				type: "item"
+				item: "elementalcraft:purecrystal"
+			}]
+		}
+		{
+			x: 1.5d
+			y: 6.5d
+			description: ["You can move elemental Sources with this"]
+			dependencies: ["12B7444358A1347F"]
+			id: "5986396A93E625F1"
+			tasks: [{
+				id: "6AC67CE0618D36EC"
+				type: "item"
+				item: {
+					id: "elementalcraft:receptacle_empty"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+		{
+			x: 3.0d
+			y: 9.5d
+			dependencies: ["63D72477BB0F83A4"]
+			id: "3C2C3C5BED4E830A"
+			tasks: [
+				{
+					id: "21452291D63A6419"
+					type: "item"
+					item: "elementalcraft:pureinfuser"
+				}
+				{
+					id: "6E8788D27A919C39"
+					type: "item"
+					item: "elementalcraft:pedestal_air"
+				}
+				{
+					id: "15687913AA974F4B"
+					type: "item"
+					item: "elementalcraft:pedestal_earth"
+				}
+				{
+					id: "45B631FD29BFD758"
+					type: "item"
+					item: "elementalcraft:pedestal_water"
+				}
+				{
+					id: "53A8DC6786252298"
+					type: "item"
+					item: "elementalcraft:pedestal_fire"
 				}
 			]
 		}

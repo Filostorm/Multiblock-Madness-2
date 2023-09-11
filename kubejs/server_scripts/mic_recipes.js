@@ -22,6 +22,11 @@ B: '#forge:glass/colorless',
 C: 'thermal:silver_plate'
   }).id("solarflux:mirror")
 
+  //Tier 1 Solar
+  event.shaped('solarflux:sp_1', ['AAA','BCB','BBB'], {A: 'solarflux:mirror',B: '#forge:treated_wood',C: '#forge:gears/dielectric_alloy'}).id("solarflux:solar_panel_1")
+
+  //Tier 2 Solar
+  event.shaped('solarflux:sp_2', ['AAA','ABA','AAA'], {A: 'solarflux:sp_1',B: 'kubejs:tier_1_electrical_alloy_wire_coil'}).id("solarflux:solar_panel_2")
 
 //Chests
 /*
@@ -39,7 +44,7 @@ event.shaped('minecraft:chest', [
 	'PPP'
   ], {
 	P: '#minecraft:planks',
-  }).id("kubejs:plank_chest")
+  }).id("mbm2:plank_chest")
 //event.shapeless(`minecraft:chest`, ['#forge:chests/wooden']).id("kubejs:default_chest")
 
 
@@ -54,7 +59,7 @@ event.shaped('scannable:scanner', [
  	C: '#forge:wires/gold',
  	D: 'create:electron_tube',
  	E: '#forge:plates/steel'
-  }).id("kubejs:scanner")
+  }).id("mbm2:scanner")
   //Cards
   event.remove({id: 'scannable:blank_module'})
   event.shaped('2x scannable:blank_module', [
@@ -64,9 +69,9 @@ event.shaped('scannable:scanner', [
   ], {
 	A: 'minecraft:clay_ball',
 	B: 'elementalcraft:earthcrystal',
-	C: '#forge:gems',
+	C: '#forge:gems/quartz',
 	D: '#forge:wires/rose_gold'
-  }).id("kubejs:blank_module")
+  }).id("mbm2:blank_module")
 
 
 // [| Wood Scaffolding |] //
@@ -77,7 +82,7 @@ event.shaped('3x kubejs:wood_scaffolding', [
 	], {
 	A: '#minecraft:planks',
   C: '#forge:rods/wooden'
-	}).id("kubejs:wood_scaffolding")
+	}).id("mbm2:wood_scaffolding")
 
 // [| Summoning Altar |] //
 	event.shaped('summoningrituals:altar', [
@@ -154,7 +159,6 @@ event.shaped('3x kubejs:wood_scaffolding', [
   	}).id("mbm2:3x_compressed_cobblestone")
 	event.shapeless('9x kubejs:2x_compressed_cobblestone', ['kubejs:3x_compressed_cobblestone']).id('mbm2:3x_uncompressed_cobblestone')
 
-
-	  
+  
 
 });

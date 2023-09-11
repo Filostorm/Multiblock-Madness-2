@@ -1,5 +1,18 @@
-const nameUpper = (name) => {return name.charAt(0).toUpperCase() + name.slice(1)}
-
+const nameUpper = (name) => {
+  if(name.includes("_")) {
+    let partOne = name.split('_')[0]
+    let partTwo = name.split('_')[1]
+    if(name.includes("stone")) {
+      let fullName = partOne.charAt(0).toUpperCase() + partOne.slice(1)
+      return fullName
+    } else {
+      let fullName = partOne.charAt(0).toUpperCase() + partOne.slice(1) + ' ' + partTwo.charAt(0).toUpperCase() + partTwo.slice(1)
+      return fullName
+    }
+  } else { 
+    return name.charAt(0).toUpperCase() + name.slice(1)
+  }
+}
 onEvent('item.registry', event => {
   global.newMaterialParts.forEach((item) => {
     item.itemParts.forEach((part) => {
@@ -128,8 +141,8 @@ onEvent('block.registry', event => {
           
             global.stoneTypes.forEach((type) => {
               if (type != 'bedrock' || type != 'end_stone') {
-                event.create(`poor_${type.material}_${item.material}_ore`).displayName(nameUpper(type.material)).color(0, item.color).material('stone').hardness(type.hardness).resistance(type.resistance).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_stone_tool').renderType('cutout').defaultCutout().model(`kubejs:block/ore/poor_${type.material}_ore`).requiresTool(true).item(itemForm => {itemForm.color(0, item.color)})
-                event.create(`${type.material}_${item.material}_ore`).displayName(nameUpper(type.material)).color(0, item.color).material('stone').hardness(type.hardness).resistance(type.resistance).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').renderType('cutout').defaultCutout().model(`kubejs:block/ore/${type.material}_ore`).requiresTool(true).item(itemForm => {itemForm.color(0, item.color)})
+                event.create(`poor_${type.material}_${item.material}_ore`).displayName('Poor ' + nameUpper(type.material) + ' ' + item.ore_name + ' Ore').color(0, item.color).material('stone').hardness(type.hardness).resistance(type.resistance).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_stone_tool').renderType('cutout').defaultCutout().model(`kubejs:block/ore/poor_${type.material}_ore`).requiresTool(true).item(itemForm => {itemForm.color(0, item.color)})
+                event.create(`${type.material}_${item.material}_ore`).displayName(nameUpper(type.material) + ' ' + item.ore_name + ' Ore').color(0, item.color).material('stone').hardness(type.hardness).resistance(type.resistance).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').renderType('cutout').defaultCutout().model(`kubejs:block/ore/${type.material}_ore`).requiresTool(true).item(itemForm => {itemForm.color(0, item.color)})
               }
             })
           } else {
@@ -170,7 +183,7 @@ onEvent('fluid.registry', event => {
       event.create(`molten_${item.material}`).thinTexture(item.color).bucketColor(item.color)
     }
 
-    if (item.ore & item.type != 'element') {
+    if (item.ore & (item.type == 'base_metal' || item.type == 'compound_ore' || item.type == 'rare_metal')) {
       let slurryColor = newShade(item.color.toString(16), -20)
       event.create(`${item.material}_slurry`).thinTexture(slurryColor).bucketColor(slurryColor)
 

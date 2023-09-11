@@ -1,0 +1,53 @@
+{
+  "version": 3,
+  "location": "multiblocked:pressure_input",
+  "traits": {
+    "pneumatic_pressure": {
+      "cIO": 0,
+      "gIO": 2,
+      "mbdIO": 2,
+      "slotName": "",
+      "x": 79,
+      "y": 71,
+      "dangerPressure": 7.5,
+      "criticalPressure": 10.0,
+      "volume": 100000
+    },
+    "background": "multiblocked:textures/gui/1_slot.png"
+  },
+  "properties": {
+    "rotationState": "ALL",
+    "showInJei": true,
+    "isOpaque": true,
+    "hasDynamicShape": false,
+    "hasCollision": true,
+    "destroyTime": 1.5,
+    "explosionResistance": 6.0,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "friction": 0.6,
+    "harvestLevel": 0,
+    "stackSize": 64,
+    "tabGroup": "multiblocked.all"
+  },
+  "status": {
+    "unformed": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier1_casing",
+        "frontTexture": "multiblocked:overlay/valve",
+        "type": "gregtech",
+        "postRenderer": false
+      }
+    },
+    "idle": {
+      "parent": "unformed"
+    },
+    "working": {
+      "parent": "idle"
+    },
+    "suspend": {
+      "parent": "working"
+    }
+  },
+  "canShared": true
+}

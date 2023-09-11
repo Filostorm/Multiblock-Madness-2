@@ -1,10 +1,10 @@
 var basicItems = [
 	'unfired_clay_brick',
 	'blank_rune',
-	'curcuit_board',
-	'curcuit_board_1',
-	'curcuit_board_2',
-	'curcuit_board_3',
+	//'curcuit_board',
+	//'curcuit_board_1',
+	//'curcuit_board_2',
+	//'curcuit_board_3',
 	'silver_coil',
 	'shifting_cube',
 	'source_ingot',
@@ -54,7 +54,7 @@ var basicItems = [
 	'activated_carbon_mesh',
 	'standard_dyson_panel',
 	'hull_panel_sand_cast',
-	'logic_component',
+	'ai_chip',
 	'unfinished_basic_control_circuit',
 	'unfinished_advanced_control_circuit',
 	'unfinished_elite_control_circuit',
@@ -123,19 +123,24 @@ onEvent('item.registry', event => {
 
 	event.create(`washed_thermogenic_blend`).color(0, 0xf06330).texture(`kubejs:item/ore/washed`)
 	event.create(`crushed_thermogenic_blend`).color(0, 0xf06330).texture(`kubejs:item/ore/crushed`)
-	event.create(`fine_thermogenic_dust`).color(0, 0xf06330).texture(`kubejs:item/ore/fine_dust`)
-	event.create(`thermogenic_chunk`).color(0, 0xf06330).texture(`kubejs:item/ore/chunk`).parentModel(`kubejs:item/ore/chunk`) 
+	event.create(`fine_thermogenic_blend_dust`).color(0, 0xf06330).texture(`kubejs:item/ore/fine_dust`)
+	event.create(`thermogenic_blend_chunk`).color(0, 0xf06330).texture(`kubejs:item/ore/chunk`).parentModel(`kubejs:item/ore/chunk`) 
+	event.create(`thermogenic_blend_crystal`).color(0, 0xf06330).texture(`kubejs:item/ore/crystal`).parentModel(`kubejs:item/ore/crystal`) 
 
 	event.create(`washed_thermolytic_blend`).color(0, 0x42f5da).texture(`kubejs:item/ore/washed`)
 	event.create(`crushed_thermolytic_blend`).color(0, 0x42f5da).texture(`kubejs:item/ore/crushed`)
-	event.create(`fine_thermolytic_dust`).color(0, 0x42f5da).texture(`kubejs:item/ore/fine_dust`)
-	event.create(`thermolytic_chunk`).color(0, 0x42f5da).texture(`kubejs:item/ore/chunk`).parentModel(`kubejs:item/ore/chunk`) 
+	event.create(`fine_thermolytic_blend_dust`).color(0, 0x42f5da).texture(`kubejs:item/ore/fine_dust`)
+	event.create(`thermolytic_blend_chunk`).color(0, 0x42f5da).texture(`kubejs:item/ore/chunk`).parentModel(`kubejs:item/ore/chunk`) 
+	event.create(`thermolytic_blend_crystal`).color(0, 0x42f5da).texture(`kubejs:item/ore/crystal`).parentModel(`kubejs:item/ore/crystal`) 
 
 	event.create(`solar_chip_blue`).displayName('Dyson Tracking Chip (1)').texture(`kubejs:item/solar_chip_blue`)
 	event.create(`solar_chip_red`).displayName('Dyson Tracking Chip (8)').texture(`kubejs:item/solar_chip_red`)
 	event.create(`solar_chip_green`).displayName('Dyson Tracking Chip (64)').texture(`kubejs:item/solar_chip_green`)
 	event.create(`solar_chip_purple`).displayName('Dyson Tracking Chip (512)').texture(`kubejs:item/solar_chip_purple`)
 
-
+	event.create(`catalyst_basic`).displayName('Basic Ore Catalyst')
+	event.create(`catalyst_gem`).displayName('Crystal Ore Catalyst')
+	event.create(`catalyst_magic`).displayName('Magic Ore Catalyst')
+	event.create(`catalyst_empty`).displayName('Empty Catalyst Housing')
 
   });

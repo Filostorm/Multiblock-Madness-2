@@ -123,6 +123,87 @@
 				item: "mekanism:chemical_crystallizer"
 			}]
 		}
+		{
+			x: -2.0d
+			y: -3.0d
+			description: ["Laser Drill Bases can have multiple Laser Drills working together to speed up the mining. Place them within 3 spaces pointing towards the Base."]
+			dependencies: ["766FA3877A259983"]
+			id: "7427C745524AC00C"
+			tasks: [
+				{
+					id: "5BD093061A201C89"
+					type: "item"
+					item: "industrialforegoing:fluid_laser_base"
+				}
+				{
+					id: "67B2048D71AE4151"
+					type: "item"
+					item: "industrialforegoing:laser_drill"
+				}
+			]
+		}
+		{
+			x: -2.0d
+			y: -4.0d
+			description: ["Laser Drill Bases can have multiple Laser Drills working together to speed up the mining. Place them within 3 spaces pointing towards the Base."]
+			dependencies: ["766FA3877A259983"]
+			id: "4EB8F3B73CD527A2"
+			tasks: [
+				{
+					id: "781FEF67EFFA2C19"
+					type: "item"
+					item: "industrialforegoing:ore_laser_base"
+				}
+				{
+					id: "45B1B56B090F4E76"
+					type: "item"
+					item: "industrialforegoing:laser_drill"
+				}
+			]
+		}
+		{
+			x: -3.5d
+			y: -3.5d
+			dependencies: ["34A861977367F4EA"]
+			id: "766FA3877A259983"
+			tasks: [{
+				id: "400C694FE9B399BD"
+				type: "item"
+				item: "industrialforegoing:machine_frame_advanced"
+			}]
+		}
+		{
+			x: 3.5d
+			y: 0.0d
+			dependencies: ["1CF39FE5E8135E08"]
+			id: "23C9DE786EB00B38"
+			tasks: [
+				{
+					id: "7DEBDACE63667AD4"
+					type: "item"
+					item: "chemlib:iridium_ingot"
+				}
+				{
+					id: "19BAD22A7DB00B7D"
+					type: "item"
+					item: "chemlib:palladium_ingot"
+				}
+			]
+		}
+		{
+			x: 5.5d
+			y: -0.5d
+			id: "66520CE078BFCC2F"
+			tasks: [{
+				id: "71AF56055BFF8F7B"
+				type: "item"
+				item: {
+					id: "beyond_earth:rocket_t3"
+					Count: 1b
+					tag: { }
+				}
+			}]
+		}
 	]
 	quest_links: [ ]
 }

@@ -40,10 +40,11 @@
 
 	//Nitric Acid
 	event.recipes.multiblocked.multiblock("chemical_reactor")
-		.inputFluid(Fluid.of('mekanism:oxygen', 300))
-		.inputFluid(Fluid.of('mekanism:hydrogen', 100))
-		.inputFluid(Fluid.of('chemlib:nitrogen_fluid', 100))
-		.outputFluid(Fluid.of('chemlib:nitric_acid_fluid', 400))
+		.inputFluid(Fluid.of('mekanism:oxygen', 500))
+		.inputFluid(Fluid.of('mekanism:hydrogen', 250))
+		.inputItem('2x chemlib:nitrogen')
+		//.inputFluid(Fluid.of('chemlib:nitrogen_fluid', 100))
+		.outputFluid(Fluid.of('chemlib:nitric_acid_fluid', 1000))
 		.setPerTick(true)
 		.inputFE(1024*2)
 		.duration(200)

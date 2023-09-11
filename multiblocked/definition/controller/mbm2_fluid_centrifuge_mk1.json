@@ -20,9 +20,8 @@
   "status": {
     "unformed": {
       "renderer": {
-        "baseTexture": "multiblocked:casing/casing",
+        "baseTexture": "multiblocked:casing/sturdy_casing",
         "frontTexture": "multiblocked:overlay/centrifuge",
-        "formedAsController": true,
         "type": "gregtech",
         "postRenderer": false
       }
@@ -32,12 +31,11 @@
     },
     "working": {
       "renderer": {
-        "baseTexture": "multiblocked:casing/casing",
+        "baseTexture": "multiblocked:casing/sturdy_casing",
         "frontTexture": "multiblocked:overlay/centrifuge_active",
         "type": "gregtech",
         "postRenderer": false
       },
-      "lightEmissive": 10,
       "parent": "idle"
     },
     "suspend": {
@@ -53,32 +51,50 @@
     ],
     "pattern": [
       [
-        "  A  ",
-        " ABA ",
-        "  A  "
+        "       ",
+        " AABAA ",
+        "       "
       ],
       [
-        " AAA ",
-        "A C A",
-        " AAA "
+        " CCCCC ",
+        "AA D AA",
+        " CCCCC "
       ],
       [
-        "@AEAA",
-        "BCFCB",
-        "AAEAA"
+        " CCCCC ",
+        "A  D  A",
+        " CCCCC "
       ],
       [
-        " AAA ",
-        "A C A",
-        " AAA "
+        " @CFCC ",
+        "BDDDDDB",
+        " CCFCC "
       ],
       [
-        "  A  ",
-        " ABA ",
-        "  A  "
+        " CCCCC ",
+        "A  D  A",
+        " CCCCC "
+      ],
+      [
+        " CCCCC ",
+        "AA D AA",
+        " CCCCC "
+      ],
+      [
+        "       ",
+        " AABAA ",
+        "       "
       ]
     ],
     "aisleRepetitions": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
       [
         1,
         1
@@ -104,7 +120,7 @@
       "A": {
         "blocks": [
           {
-            "id": "kubejs:invar_casing"
+            "id": "kubejs:tier1_casing"
           }
         ],
         "type": "blocks"
@@ -120,9 +136,20 @@
           }
         ],
         "type": "blocks",
+        "minCount": 4,
+        "maxCount": 4,
+        "previewCount": 4,
         "io": "OUT"
       },
       "C": {
+        "blocks": [
+          {
+            "id": "create:railway_casing"
+          }
+        ],
+        "type": "blocks"
+      },
+      "D": {
         "blocks": [
           {
             "id": "thermal:obsidian_glass"
@@ -131,47 +158,26 @@
         "type": "blocks"
       },
       "E": {
-        "location": "multiblocked:energy_input",
-        "type": "component",
+        "blocks": [
+          {
+            "id": "multiblocked:create_input"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 1,
+        "previewCount": 1
+      },
+      "F": {
+        "blocks": [
+          {
+            "id": "ae2:sky_stone_tank"
+          }
+        ],
+        "type": "blocks",
         "minCount": 1,
         "maxCount": 1,
         "previewCount": 1,
-        "io": "IN"
-      },
-      "G": {
-        "blocks": [
-          {
-            "id": "pneumaticcraft:small_tank"
-          }
-        ],
-        "type": "blocks",
-        "io": "IN"
-      },
-      "H": {
-        "blocks": [
-          {
-            "id": "pneumaticcraft:medium_tank"
-          }
-        ],
-        "type": "blocks",
-        "io": "IN"
-      },
-      "I": {
-        "blocks": [
-          {
-            "id": "pneumaticcraft:large_tank"
-          }
-        ],
-        "type": "blocks",
-        "io": "IN"
-      },
-      "J": {
-        "blocks": [
-          {
-            "id": "pneumaticcraft:huge_tank"
-          }
-        ],
-        "type": "blocks",
         "io": "IN"
       },
       "any": {
@@ -194,15 +200,12 @@
       "C": [
         "C"
       ],
-      "E": [
-        "E",
-        "any"
+      "D": [
+        "D"
       ],
       "F": [
-        "G",
-        "H",
-        "I",
-        "J"
+        "E",
+        "F"
       ]
     }
   }

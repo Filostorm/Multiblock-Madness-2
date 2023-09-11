@@ -1,7 +1,7 @@
 var parts = [ //this list is used to label parts the metal tier
 	'ingot',
 	//'gear',
-	//'dust',
+	'dust',
 	//'plate',
 	//'rod',
 	//'wire',
@@ -129,20 +129,55 @@ onEvent('client.generate_assets', event => {
 
 onEvent('item.tooltip', tooltip => {
 	
-	
+	tooltip.addAdvanced('multiblocked:symbol', (item, advanced, text) => {
+		text.add(1, [Text.aqua('the first tooltip has issues sometimes')])
+ 	})
+
 	//Multiblocked Tooltips
-	
 	tooltip.addAdvanced(`multiblocked:energy_input_mk1`, (item, advanced, text) => {
 		text.add(1, [Text.of('Max transfer: ').gold(), Text.of('16,384').green()])
-  })
-  tooltip.addAdvanced(`multiblocked:energy_input_mk2`, (item, advanced, text) => {
+ 	})
+  	tooltip.addAdvanced(`multiblocked:energy_input_mk2`, (item, advanced, text) => {
 		text.add(1, [Text.of('Max transfer: ').gold(), Text.of('65,536').green()])
-  })
-  tooltip.addAdvanced(`multiblocked:energy_input_mk3`, (item, advanced, text) => {
+  	})
+  	tooltip.addAdvanced(`multiblocked:energy_input_mk3`, (item, advanced, text) => {
 		text.add(1, [Text.of('Max transfer: ').gold(), Text.of('262,144').green()])
-  })
+  	})
 
 
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	///////// COIL TIPS NEED TO MAKE CHANGES MANUALLY HERE THERE AND EVERYWHERE (aka ore_processing) ///////////////
+
+	  let coilHeatValues = [
+		{
+			name: 'white_alloy',
+			heat: 100
+		},
+		{
+			name: 'desh',
+			heat: 200
+		},
+		{
+			name: 'tungsten',
+			heat: 300
+		},
+		{
+			name: 'adamantium',
+			heat: 400
+		},
+		{
+			name: 'vibranium',
+			heat: 1000
+		}
+	]
+	coilHeatValues.forEach(coil => {
+		tooltip.addAdvanced(`kubejs:${coil.name}_coil`, (item, advanced, text) => {
+			text.add(1, [Text.white('EBF Heat Increase Per Coil: '), Text.red(`${coil.heat}`)])
+		})
+	});
+
+	/////////// I really should figure out a way to handle these through the master list ///////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	global.newMaterialParts.forEach((item) => {
 		//Allomantic Tooltips for flakes
@@ -170,14 +205,14 @@ onEvent('item.tooltip', tooltip => {
 			mods.forEach((mod) => {
 				parts.forEach((part) => {
 					if (mod == 'pneumaticcraft' || mod == 'mekanism') {
-						if (Item.of(`${mod}:${part}_${item.material}`) != null)
-						tooltip.add(`${mod}:${part}_${item.material}`, `Tier `+item.tier+` Metal`)
+						if (Item.of(`${mod}:${part}_${item.material}`) != null){
+						tooltip.add(`${mod}:${part}_${item.material}`, `Tier `+item.tier+` Metal`)}
 					} else if (mod == 'naturesaura') {
-						if (Item.of(`${mod}:${item.material}`) != null)
-						tooltip.add(`${mod}:${item.material}`, `Tier `+item.tier+` Metal`)
+						if (Item.of(`${mod}:${item.material}`) != null){
+						tooltip.add(`${mod}:${item.material}`, `Tier `+item.tier+` Metal`)}
 					} else {
-						if (Item.of(`${mod}:${item.material}_${part}`) != null)
-						tooltip.add(`${mod}:${item.material}_${part}`, `Tier `+item.tier+` Metal`)
+						if (Item.of(`${mod}:${item.material}_${part}`) != null){
+						tooltip.add(`${mod}:${item.material}_${part}`, `Tier `+item.tier+` Metal`)}
 					}
 				})
 			})
@@ -515,4 +550,6 @@ onEvent('item.tooltip', tooltip => {
 		})
 		}
 	})
+	
+	
 });

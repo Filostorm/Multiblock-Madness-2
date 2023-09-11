@@ -58,12 +58,45 @@ Fluid.getTypes().forEach(fluid => {
 })
 console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 */
-	//XP
 	global.ieSqueezer(event, Fluid.of('pneumaticcraft:memory_essence', 100), Item.of('create:experience_nugget'), 6400, 'kubejs:squeezer/experience')
-	global.ieMixer(event, Fluid.of('kubejs:gemstone_catalyst_mixture', 1000), {"tag":"forge:experience","amount":1000}, Item.of('apotheosis:gem_dust'), 4000, 'mbm2:mixer/gemstufffluid')
-	global.ieMixer(event, Fluid.of('kubejs:gemstone_catalyst_mixture', 250), {"tag":"forge:experience","amount":250}, Item.of('ars_nouveau:source_gem'), 4000, 'mbm2:mixer/gemstufffluid_source')
-	
 
+	event.shaped('4x kubejs:catalyst_empty', [' A ','BBB',' A '], {A: 'thermal:iron_plate',B: 'minecraft:glass'})
+	event.shaped('16x kubejs:catalyst_empty', [' A ','BBB',' A '], {A: 'kubejs:steel_plate',B: 'minecraft:glass'})
+	event.shaped('64x kubejs:catalyst_empty', [' A ','BBB',' A '], {A: 'kubejs:stainless_steel_plate',B: 'minecraft:glass'})
+
+
+	let fillingAmount = 250
+
+	//////basic Catlyst//////
+	//global.ieMixer(event, Fluid.of('kubejs:basic_catalyst_mixture', 1000), {"tag":"forge:experience","amount":1000}, Item.of('apotheosis:gem_dust'), 4000, 'mbm2:mixer/basic_catalyst_mixture')
+	global.ieMixer(event, Fluid.of('kubejs:basic_catalyst_mixture', 250), {"tag":"forge:experience","amount":250}, Item.of('kubejs:slag_dust'), 4000, 'mbm2:mixer/basic_catalyst_mixture_slag')
+	
+	//Filling
+	event.recipes.createFilling('kubejs:catalyst_basic', [Fluid.of('kubejs:basic_catalyst_mixture', fillingAmount), 'kubejs:catalyst_empty']).id('mbm2:filling/catalyst_basic')
+	global.ieBottling(event, [Item.of('kubejs:catalyst_basic').toJson()], Item.of('kubejs:catalyst_empty').toJson(), {"tag":"forge:basic_catalyst_mixture","amount":fillingAmount}, 'mbm2:ie/bottling/catalyst_basic')
+	event.recipes.thermal.bottler('kubejs:catalyst_basic', ['kubejs:catalyst_empty', Fluid.of('kubejs:basic_catalyst_mixture', fillingAmount)]).id('mbm2:thermal/bottling/catalyst_basic')
+
+
+
+	//////Crystal Catlyst//////
+	global.ieMixer(event, Fluid.of('kubejs:crystal_catalyst_mixture', 1000), {"tag":"forge:experience","amount":1000}, Item.of('apotheosis:gem_dust'), 4000, 'mbm2:mixer/crystal_catalyst_mixture')
+	global.ieMixer(event, Fluid.of('kubejs:crystal_catalyst_mixture', 250), {"tag":"forge:experience","amount":250}, Item.of('kubejs:crystal_slag_dust'), 4000, 'mbm2:mixer/crystal_catalyst_mixture_slag')
+	
+	//Filling
+	event.recipes.createFilling('kubejs:catalyst_gem', [Fluid.of('kubejs:crystal_catalyst_mixture', fillingAmount), 'kubejs:catalyst_empty']).id('mbm2:filling/catalyst_gem')
+	global.ieBottling(event, [Item.of('kubejs:catalyst_gem').toJson()], Item.of('kubejs:catalyst_empty').toJson(), {"tag":"forge:crystal_catalyst_mixture","amount":fillingAmount}, 'mbm2:ie/bottling/catalyst_gem')
+	event.recipes.thermal.bottler('kubejs:catalyst_gem', ['kubejs:catalyst_empty', Fluid.of('kubejs:crystal_catalyst_mixture', fillingAmount)]).id('mbm2:thermal/bottling/catalyst_gem')
+
+
+
+	//////magic Catlyst//////
+	global.ieMixer(event, Fluid.of('kubejs:magic_catalyst_mixture', 1000), {"tag":"forge:experience","amount":1000}, Item.of('ars_nouveau:source_gem'), 4000, 'mbm2:mixer/magic_catalyst_mixture')
+	global.ieMixer(event, Fluid.of('kubejs:magic_catalyst_mixture', 500), {"tag":"forge:experience","amount":500}, Item.of('botania:mana_powder'), 4000, 'mbm2:mixer/magic_catalyst_mixture_slag')
+	
+	//Filling
+	event.recipes.createFilling('kubejs:catalyst_magic', [Fluid.of('kubejs:magic_catalyst_mixture', fillingAmount), 'kubejs:catalyst_empty']).id('mbm2:filling/catalyst_magic')
+	global.ieBottling(event, [Item.of('kubejs:catalyst_magic').toJson()], Item.of('kubejs:catalyst_empty').toJson(), {"tag":"forge:magic_catalyst_mixture","amount":fillingAmount}, 'mbm2:ie/bottling/catalyst_magic')
+	event.recipes.thermal.bottler('kubejs:catalyst_magic', ['kubejs:catalyst_empty', Fluid.of('kubejs:magic_catalyst_mixture', fillingAmount)]).id('mbm2:thermal/bottling/catalyst_magic')
 
 	global.newMaterialParts.forEach((item) => {
 		event.remove({id: `immersiveengineering:arcfurnace/dust_${item.material}`})
@@ -193,7 +226,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				}
 			}
 
-			if (item.type == 'base_metal' || item.type == 'compound_ore') {
+			if (item.type == 'base_metal' || item.type == 'compound_ore' || item.type == 'rare_metal') {
 
 				///////////////////// ORE PROCESSING STEP 1 //////////////////
 				//Create Crushing
@@ -272,8 +305,8 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 					"inputFluid": `{FluidName:'mekanism:hydrogen_chloride',Amount:200}`,
 					"processingTime": 200,
 					"output": {
-					  "item": 'chemlib:protein',
-					  "count": 2
+					  "item": 'kubejs:crystal_slag',
+					  "count": 1
 					},
 					"outputFluid": `{FluidName:${quotedSlurry},Amount:1000}`,
 					"type": "industrialforegoing:dissolution_chamber"
@@ -310,7 +343,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				.inputItem('kubejs:zinc_mesh')
 				.outputItem(Item.of(`#forge:ores/deposit/${item.material}`))
 				.setPerTick(true)
-				.inputFE(4000*8)
+				.inputFE(4000*4)
 				.duration(200)
 				//Ore Deposting
 				event.recipes.multiblocked.multiblock("deposition")
@@ -321,7 +354,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				.outputItem(Item.of(byproduct('brick', 4)))
 				.setChance(1)
 				.setPerTick(true)
-				.inputFE(4000*8)
+				.inputFE(4000*4)
 				.duration(150)
 				
 				///////////////////// ORE PROCESSING STEP 5 //////////////////
@@ -334,7 +367,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				.inputItem(`#forge:ores/deposit/${item.material}`)
 				.outputItem(Item.of(`#forge:ores/leached/${item.material}`))
 				.setPerTick(true)
-				.inputFE(4000*4)
+				.inputFE(4000*8)
 				.duration(200)
 				//Ore Leaching w/ Hydroflouric Acid
 				event.recipes.multiblocked.multiblock("leaching")
@@ -346,7 +379,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				.outputItem(Item.of(byproduct('grit', 5)))
 				.setChance(1)
 				.setPerTick(true)
-				.inputFE(4000*4)
+				.inputFE(4000*8)
 				.duration(200)
 
 
@@ -379,7 +412,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				.inputFE(4000*16)
 				.duration(200)
 			}
-			if (item.type == 'base_metal') {
+			if (item.type == 'base_metal' || item.type == 'rare_metal') {
 
 				///////////////////// ORE REFINING STEP 1 //////////////////
 					//Create Washing 
@@ -402,7 +435,30 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 					////Chain recipe
 	 				//global.arsImbument(event, `kubejs:${global.oreRefiningParts[2]}_${item.material}`, 1, `#forge:ores/cluster/${item.material}`, 500, [], `mbm2:${global.oreRefiningParts[2]}/${global.oreRefiningParts[3]}_${item.material}`)
 					 
-					
+				///////////////////// ORE REFINING STEP 3 //////////////////
+			
+				//Compressing
+				event.recipes.multiblocked.multiblock("mana_compressor")
+				.inputItem(refinableOre(3))
+				.inputItem(Item.of('pneumaticcraft:air_canister', '{"pneumaticcraft:air":30000}'))
+				.inputFluid(Fluid.of(`kubejs:liquid_mana`, 100))
+				.outputItem(Item.of(`${global.refiningMultiplier[3]}x #forge:ores/${global.oreRefiningParts[3].name}/${item.material}`))
+				.outputItem('pneumaticcraft:air_canister')
+				.setPerTick(true)
+				.inputFE(4000)
+				.duration(200)
+
+				//Compressing Chain
+				event.recipes.multiblocked.multiblock("mana_compressor")
+				.inputItem(Item.of(`4x #forge:ores/${global.oreRefiningParts[2].name}/${item.material}`))
+				.inputItem(Item.of('pneumaticcraft:air_canister', '{"pneumaticcraft:air":30000}'))
+				.inputFluid(Fluid.of(`kubejs:liquid_mana`, 100))
+				.outputItem(Item.of(`4x #forge:ores/${global.oreRefiningParts[3].name}/${item.material}`))
+				.outputItem('pneumaticcraft:air_canister')
+				.setPerTick(true)
+				.inputFE(4000)
+				.duration(100)
+					 
 
 		////////////////////////////////////////////////////////////////
 		///////////////////// ORE PROCESSING CASH OUT //////////////////
@@ -411,16 +467,24 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 		//Blast Furnace Data
 		let coilHeatValues = [
 			{
-				name: 'constantan',
+				name: 'white_alloy',
 				heat: 100
 			},
 			{
-				name: 'cobalt',
+				name: 'desh',
 				heat: 200
 			},
 			{
+				name: 'tungsten',
+				heat: 300
+			},
+			{
+				name: 'adamantium',
+				heat: 400
+			},
+			{
 				name: 'vibranium',
-				heat: 500
+				heat: 1000
 			}
 		]
 		let coilPos = [
@@ -453,7 +517,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 		]
 
 
-				//Cash out at any time after refining
+				//Cash out at any time after Processing
 
 				////////////// TIER 1 OR BELOW /////////////////////
 				if (item.tier <= 1) {
@@ -508,7 +572,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 						global.tinkersMeltingPlain(event, item.fluid_id, 90, Ingredient.of(`#forge:ingots/${item.material}`).toJson(), 1000, 125, `mbm2:smeltery/melting/metal/${item.material}/ingot`)
 
 					} else {
-						console.log(`ERROR: ${item.material} needs a fluid_id in Master Material List`)
+						console.log(`KJS-ERROR: ${item.material} needs a fluid_id in Master Material List`)
 					}
 					//Retro Arcing
 					event.recipes.immersiveengineeringArcFurnace(Item.of(`#forge:ingots/${item.material}`), smeltProcessedOre).id(`mbm2:arc_furnace/${item.material}_t2_ore_part`)
@@ -627,7 +691,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 								} else  {
 									return false
 								}
-							}, Component.string('Requires at least Cobalt Coils'))
+							}, Component.string('Requires at least Desh Coils'))
 /*
 
 						//EBF
@@ -652,6 +716,10 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 
 		}
 
+
+		////////////////////////////////////////////////////////////////
+		///////////////////// COMPOUND ORE STUFFFFFFS //////////////////
+		////////////////////////////////////////////////////////////////
 
 			if (item.type == 'compound_ore') {
 					console.log(`${item.material} is a compound ore!`);
@@ -808,6 +876,59 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				  	.inputFE(512*256)
 					.duration(200)
 
+					
+
+	//Compound Ore Catlyst Usage
+	let oreMixer = (event, amount, output, input, power) => {
+		event.recipes.multiblocked.multiblock('mixer')
+			.inputItems(input)
+			.outputItem(Item.of(output, amount))
+			.setPerTick(true)
+			.inputFE(500*power)
+			.duration(100*amount)
+	}
+	
+	//Tier 1
+	oreMixer(event, 4, '#forge:ores/raw/nickel', ['kubejs:catalyst_basic', '2x kubejs:raw_kharaxium', '2x kubejs:raw_vincyte'], 2)
+	oreMixer(event, 4, '#forge:ores/raw/zinc', ['kubejs:catalyst_basic', '2x kubejs:raw_jimmium', '2x kubejs:raw_vincyte'], 2)
+	oreMixer(event, 4, '#forge:ores/raw/lead', ['kubejs:catalyst_basic', '2x kubejs:raw_densite','2x kubejs:raw_potentium'], 2)
+	oreMixer(event, 4, '#forge:ores/raw/silver', ['kubejs:catalyst_basic', '2x kubejs:raw_potentium','2x kubejs:raw_imortite'], 2)
+
+	oreMixer(event, 2, '#forge:ores/raw/arcanite', ['kubejs:catalyst_magic', '2x #forge:ores/compound/raw'], 2)
+	
+	//Tier 2
+	oreMixer(event, 3, '#forge:ores/crushed/cobalt', ['kubejs:catalyst_basic', '2x kubejs:crushed_vincyte','2x kubejs:crushed_imortite'], 4)
+	oreMixer(event, 3, '#forge:ores/crushed/aluminum', ['kubejs:catalyst_basic', '2x kubejs:crushed_densite','2x kubejs:crushed_kharaxium'], 4)
+	oreMixer(event, 3, '#forge:ores/crushed/thorium', ['kubejs:catalyst_basic', '2x kubejs:crushed_jimmium','2x kubejs:crushed_vincyte'], 4)
+	oreMixer(event, 3, '#forge:ores/crushed/mithril', ['kubejs:catalyst_magic', '2x kubejs:crushed_potentium','2x kubejs:crushed_densite'], 4)
+	
+	//Tier 3
+	oreMixer(event, 2, '#forge:ores/chunk/magnesium', ['kubejs:catalyst_basic', '2x kubejs:chunk_densite','2x kubejs:chunk_kharaxium'], 8)
+	oreMixer(event, 2, '#forge:ores/chunk/titanium', ['kubejs:catalyst_basic', '2x kubejs:chunk_vincyte','2x kubejs:chunk_jimmium'], 8)
+	oreMixer(event, 2, '#forge:ores/chunk/uranium', ['kubejs:catalyst_basic', '2x kubejs:chunk_imortite','2x kubejs:chunk_densite'], 8)
+	oreMixer(event, 2, '#forge:ores/chunk/rune', ['kubejs:catalyst_magic', '2x kubejs:chunk_potentium','2x kubejs:chunk_vincyte'], 8)
+
+	//Tier 4
+	oreMixer(event, 3, '#forge:ores/lump/platinum', ['kubejs:catalyst_basic', '2x kubejs:lump_kharaxium','2x kubejs:lump_imortite','2x kubejs:lump_vincyte'], 16)
+	oreMixer(event, 3, '#forge:ores/lump/osmium', ['kubejs:catalyst_basic', '2x kubejs:lump_densite','2x kubejs:lump_jimmium','2x kubejs:lump_potentium'], 16)
+	oreMixer(event, 3, '#forge:ores/lump/cadmium', ['kubejs:catalyst_basic', '2x kubejs:lump_kharaxium','2x kubejs:lump_jimmium','2x kubejs:lump_imortite'], 16)
+	oreMixer(event, 3, '#forge:ores/lump/desh', ['kubejs:catalyst_basic', '2x kubejs:lump_potentium','2x kubejs:lump_vincyte','2x kubejs:lump_densite'], 16)
+
+	//Tier 5
+	oreMixer(event, 2, '#forge:ores/deposit/ostrum', ['kubejs:catalyst_basic', '2x kubejs:deposit_kharaxium','2x kubejs:deposit_densite','2x kubejs:deposit_imortite'], 32)
+	oreMixer(event, 2, '#forge:ores/deposit/tungsten', ['kubejs:catalyst_basic', '2x kubejs:deposit_vincyte','2x kubejs:deposit_jimmium','2x kubejs:deposit_densite'], 32)
+	oreMixer(event, 2, '#forge:ores/deposit/orichalcum', ['kubejs:catalyst_magic', '2x kubejs:deposit_imortite','2x kubejs:deposit_potentium','2x kubejs:deposit_kharaxium'], 32)
+
+	//Tier 6
+	oreMixer(event, 1, '#forge:ores/leached/iridium', ['kubejs:catalyst_basic', '2x kubejs:leached_vincyte','2x kubejs:leached_densite','2x kubejs:leached_jimmium'], 64)
+	oreMixer(event, 1, '#forge:ores/leached/calorite', ['kubejs:catalyst_basic', '2x kubejs:leached_potentium','2x kubejs:leached_jimmium','2x kubejs:leached_imortite'], 64)
+	oreMixer(event, 1, '#forge:ores/leached/adamantium', ['kubejs:catalyst_magic', '2x kubejs:leached_imortite','2x kubejs:leached_kharaxium','2x kubejs:leached_potentium'], 64)
+
+	//Tier 6
+	oreMixer(event, 1, '#forge:ores/crystal/vibranium', ['kubejs:catalyst_basic', '3x kubejs:crystal_imortite','3x kubejs:crystal_potentium','3x kubejs:crystal_kharaxium'], 128)
+	oreMixer(event, 1, '#forge:ores/crystal/uru', ['kubejs:catalyst_basic', '3x kubejs:crystal_jimmium','3x kubejs:crystal_vincyte','3x kubejs:crystal_densite'], 128)
+
+
 
 					//Gem Crafting
 					if (item.gem_components != null) {
@@ -817,7 +938,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 							console.log(`${item.gem_components[0]} has no gem!`);
 						}
 						if (Item.of(`#forge:gems/${item.gem_components[1]}`) != null) {
-							global.pneumaticcraftThermoPlant(event, Item.of(`#forge:gems/${item.gem_components[1]}`), Ingredient.of(`#forge:ores/fine_dust/${item.material}`), {"type": "pneumaticcraft:fluid", "fluid": "kubejs:gemstone_catalyst_mixture", "amount": 250}, 423, 4, 0.75, 1.0, false, `mbm2:thermo_plant/${item.gem_components[1]}_from_${item.material}`)
+							global.pneumaticcraftThermoPlant(event, Item.of(`#forge:gems/${item.gem_components[1]}`), Ingredient.of(`#forge:ores/fine_dust/${item.material}`), {"type": "pneumaticcraft:fluid", "fluid": "kubejs:crystal_catalyst_mixture", "amount": 250}, 423, 4, 0.75, 1.0, false, `mbm2:thermo_plant/${item.gem_components[1]}_from_${item.material}`)
 						} else {
 							console.log(`${item.gem_components[1]} has no gem!`);
 						}
@@ -827,16 +948,17 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 		if (item.type == 'compound_rare_metal') {
 				event.recipes.multiblocked.multiblock('mixer')
 				.inputItems(item.dust_input)
-				.outputItem(`${item.amount}x kubejs:crushed_${item.material}_blend`)
+				.outputItem(`${item.amount}x kubejs:${item.material}_blend_chunk`)
 		   		.setPerTick(true)
-		   		.inputFE(2048)
-				.duration(200)
+		   		.inputFE(2000)
+				.duration(100)
+
 			global.alchemistryDissolver(event, [
 				{'probability': 3.0,'results': [{'item': `chemlib:${item.components[0]}`,'count': 4}]},
 				{'probability': 1.0,'results': [{'item': `chemlib:${item.components[1]}`,'count': 4}]},
 				{'probability': 1.0,'results': [{'item': `chemlib:${item.components[2]}`,'count': 4}]},
 				{'probability': 1.0,'results': [{'item': `chemlib:${item.components[3]}`,'count': 4}]},
-			], `kubejs:crushed_${item.material}_blend`, 1, 4, true, `mbm2:dissolving/crushed_${item.material}_blend`)
+			], `kubejs:${item.material}_blend_chunk`, 1, 4, true, `mbm2:dissolving/${item.material}_blend_chunk`)
 
 
 			event.recipes.thermal.centrifuge([
@@ -844,7 +966,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				Item.of(`#forge:dusts/${item.components[1]}`).withChance(0.50),
 				Item.of(`#forge:dusts/${item.components[2]}`).withChance(0.25),
 				Fluid.of(`mekanism:${item.components[3]}`, 250)
-			], `kubejs:crushed_${item.material}_blend`).id(`mbm2:centrifuge/crushed_${item.material}_blend`)
+			], `kubejs:${item.material}_blend_chunk`).id(`mbm2:centrifuge/${item.material}_blend_chunk`)
 
 		}
 	})
@@ -855,27 +977,28 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 
 onEvent("lootjs", (event) => {
 	event.enableLogging();
-    event.addBlockLootModifier("#forge:ores/copper")
-        .removeLoot("raw_copper")
-        .apply((ctx) => {
-            let player = ctx.player;
-            if (!player) return;
-            if (ItemFilter.hasEnchantment("minecraft:silk_touch").test(player.mainHandItem)) {
-                //ctx.addLoot("copper_ore");
-                return;
-            }
-            let oreDrop = LootEntry.of("raw_copper");
-            if (ItemFilter.hasEnchantment("minecraft:fortune").test(player.mainHandItem)) {
-                oreDrop.applyOreBonus("minecraft:fortune");
-            }
-            ctx.addLoot(oreDrop);
-        });
+    //event.addBlockLootModifier("#forge:ores/copper")
+    //    .removeLoot("raw_copper")
+    //    .apply((ctx) => {
+    //        let player = ctx.player;
+    //        if (!player) return;
+    //        if (ItemFilter.hasEnchantment("minecraft:silk_touch").test(player.mainHandItem)) {
+    //            //ctx.addLoot("copper_ore");
+    //            return;
+    //        }
+    //        let oreDrop = LootEntry.of("raw_copper");
+    //        if (ItemFilter.hasEnchantment("minecraft:fortune").test(player.mainHandItem)) {
+    //            oreDrop.applyOreBonus("minecraft:fortune");
+    //        }
+    //        ctx.addLoot(oreDrop);
+    //    });
 		
 		
 		global.newMaterialParts.forEach((item) => {
 			if (item.ore) {
 				////////////ORE DROPS//////////////////
 				event.addBlockLootModifier(`#forge:ores/${item.material}`)
+				    .removeLoot(Item.of(`#forge:ores/raw/${item.material}`))
 					.pool((pool) => {
 						if (item.type == 'gem') {
 							//Gems
@@ -1021,7 +1144,7 @@ onEvent("lootjs", (event) => {
 			return refinableOres
 		}
 
-		if(item.type == 'base_metal') {
+		if(item.type == 'base_metal' || item.type == 'rare_metal') {
 
 			event.add(`mbm2:ore_part/refinable_tier_1/${item.material}`, refinableOre(1))
 			event.add(`mbm2:ore_part/refinable_tier_2/${item.material}`, refinableOre(2))

@@ -28,7 +28,8 @@ global.fluidsToRemove = [
 	'reliquary:xp_juice_still',
 	'cofh_core:experience',
 	'tconstruct:molten_ender',
-	'industrialforegoing:latex',
+	//'industrialforegoing:latex',
+	'thermal:latex',
 ]
 
 var removeByName = [
@@ -57,6 +58,13 @@ var removeByName = [
 ]
 
 onEvent('recipes', event => {
+	event.remove({input: 'enderstorage:ender_chest'})
+
+
+	//latex
+	event.replaceInput({}, 'thermal:latex_bucket', 'industrialforegoing:latex_bucket')
+	
+	//Dusts
 	event.replaceOutput({}, 'mekanism:dust_sulfur', 'thermal:sulfur_dust')
 	event.replaceOutput({}, 'mekanism:dust_quartz', 'thermal:quartz_dust')
 	event.replaceOutput({}, 'mekanism:dust_gold', 'thermal:gold_dust')
@@ -207,6 +215,18 @@ onEvent('recipes', event => {
 		},
 		"energy": 6400
 	  }).id('farmersdelight:recipes/integration/immersiveengineering/squeezer/tomato_seeds')
+
+	  //Fix latex
+	  event.custom({
+		"type": "thermal:tree_extractor",
+		"trunk": "minecraft:jungle_log",
+		"leaves": "minecraft:jungle_leaves",
+		"result": {
+		  "fluid": "industrialforegoing:latex",
+		  "amount": 25
+		}
+	  }).id('thermal:devices/tree_extractor/tree_extractor_jungle')
+
 })
 
 

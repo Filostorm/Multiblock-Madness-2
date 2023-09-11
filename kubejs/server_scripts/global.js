@@ -52,7 +52,7 @@ global.removeAndHide = [
 	'thermal:press_coin_die', 
 	//'thermal:dynamo_disenchantment',
 
-	'mna:improvised_manaweaver_wand', //Might add back at some point
+	//'mna:improvised_manaweaver_wand', //Might add back at some point
 
 	'ironfurnaces:augment_generator',
 	'ironfurnaces:million_furnace',

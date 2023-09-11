@@ -26,7 +26,6 @@ onEvent('rei.hide.items', event => {
 			if (item.ore) {
 				event.hide(`kubejs:poor_${type.material}_${item.material}_ore`)
 				event.hide(`kubejs:${type.material}_${item.material}_ore`)
-				event.hide(`kubejs:rich_${type.material}_${item.material}_ore`)
 				event.hide(`kubejs:${item.material}_ore_sample`)
 				}
 		})
@@ -88,25 +87,6 @@ onEvent('rei.add.items', event => {
 	addItems.forEach((item) => {
 		event.add(Item.of(item))
 	})
-});
-onEvent('item.tooltip', tooltip => {
-	/* No work with REI? :(
-  // Neat utility to display NBT in the tooltip
-  tooltip.addAdvanced(Ingredient.all, (item, advanced, text) => {
-
-	if (!tooltip.ctrl) {
-		text.add(2, [Text.of('Hold ').gold(), Text.of('Ctrl ').green(), Text.of('to see feruchemy uses.').gold()])
-	  } else {
-		text.add(2, Text.of(toolTip).green())
-	  }
-
-    if (!tooltip.alt && item.nbt) {
-		text.add(2, [Text.of('Hold '), Text.of('Alt ').red().italic(true), Text.of('to see NBT.')])
-    } else {
-		text.add(Text.of('NBT: ').append(Text.prettyPrintNbt(item.nbt)))
-	}
-  })
-  */
 });
 
 onEvent("rei.group", (event) => {

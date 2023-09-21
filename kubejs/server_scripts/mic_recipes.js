@@ -159,6 +159,35 @@ event.shaped('3x kubejs:wood_scaffolding', [
   	}).id("mbm2:3x_compressed_cobblestone")
 	event.shapeless('9x kubejs:2x_compressed_cobblestone', ['kubejs:3x_compressed_cobblestone']).id('mbm2:3x_uncompressed_cobblestone')
 
-  
+  //thermal filter augment
+  event.remove({id: 'thermal:augments/item_filter_augment'})
+  event.shaped('thermal:item_filter_augment', [
+	  ' T ',
+	  'TFT',
+	  ' T '
+	], {
+	  T: '#forge:nuggets/tin',
+	  F: 'thermal:filter_attachment',
+	}).id("mbm2:thermal/item_filter_augment")
+
+	event.remove({id: 'thermal:augments/fluid_filter_augment'})
+	event.shaped('thermal:fluid_filter_augment', [
+		' B ',
+		'BFB',
+		' B '
+	  ], {
+		B: '#forge:nuggets/bronze',
+		F: 'thermal:filter_attachment',
+	  }).id("mbm2:thermal/fluid_filter_augment")
+
+  //Convenient hopper recipe
+  event.shaped('minecraft:hopper', [
+	'ILI',
+	'ILI',
+	' I '
+  ], {
+	L: '#minecraft:logs',
+	I: 'minecraft:iron_ingot',
+  }).id("mbm2:simplifiedhopper")  
 
 });

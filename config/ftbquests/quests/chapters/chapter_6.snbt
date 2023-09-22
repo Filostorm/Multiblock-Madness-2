@@ -175,7 +175,10 @@
 		{
 			x: 3.5d
 			y: 0.0d
-			dependencies: ["1CF39FE5E8135E08"]
+			dependencies: [
+				"1CF39FE5E8135E08"
+				"66520CE078BFCC2F"
+			]
 			id: "23C9DE786EB00B38"
 			tasks: [
 				{
@@ -191,8 +194,11 @@
 			]
 		}
 		{
-			x: 5.5d
-			y: -0.5d
+			title: "Tier 3 Rocket to Venus and Mercury"
+			x: 2.25d
+			y: -2.25d
+			shape: "hexagon"
+			size: 1.5d
 			id: "66520CE078BFCC2F"
 			tasks: [{
 				id: "71AF56055BFF8F7B"

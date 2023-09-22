@@ -549,7 +549,7 @@ onEvent('item.tooltip', tooltip => {
 			}
 		})
 		}
-	})
+	});
 	
 	
 });

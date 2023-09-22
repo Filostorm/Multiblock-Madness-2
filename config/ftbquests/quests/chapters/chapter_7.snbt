@@ -1,0 +1,32 @@
+{
+	id: "05FF2E54CDC026CA"
+	group: "3C8730B42C1725BE"
+	order_index: 6
+	filename: "chapter_7"
+	title: "Chapter 7"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			x: 3.0d
+			y: -0.5d
+			id: "5F949EED9E1FDB6A"
+			tasks: [{
+				id: "21050308EF20EEE1"
+				type: "item"
+				item: "kubejs:standard_dyson_panel"
+			}]
+		}
+		{
+			x: 4.5d
+			y: -0.5d
+			id: "4E899924B02D0D37"
+			tasks: [{
+				id: "66BF294EFB0CB0B2"
+				type: "item"
+				item: "mbm2:railgun"
+			}]
+		}
+	]
+	quest_links: [ ]
+}

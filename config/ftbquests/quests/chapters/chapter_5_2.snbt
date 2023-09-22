@@ -9,7 +9,7 @@
 	default_hide_dependency_lines: false
 	quests: [
 		{
-			title: "Tier 2 Rocket, to Mars"
+			title: "Tier 2 Rocket to Mars"
 			icon: {
 				id: "beyond_earth:rocket_t2"
 				Count: 1b

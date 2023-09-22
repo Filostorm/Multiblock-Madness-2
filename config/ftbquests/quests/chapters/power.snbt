@@ -201,6 +201,23 @@
 				item: "ftbquests:screen_1"
 			}]
 		}
+		{
+			x: 2.0d
+			y: -1.0d
+			id: "512B05CED61799EF"
+			tasks: [
+				{
+					id: "607ED9B4DB29106A"
+					type: "item"
+					item: "createaddition:modular_accumulator"
+				}
+				{
+					id: "665C718569EF26DA"
+					type: "item"
+					item: "createaddition:large_connector"
+				}
+			]
+		}
 	]
 	quest_links: [ ]
 }

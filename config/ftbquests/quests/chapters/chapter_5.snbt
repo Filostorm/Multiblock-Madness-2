@@ -724,7 +724,7 @@
 		{
 			x: 9.0d
 			y: -4.5d
-			description: ["Running out of channels yet? Each ME Controller can handle up to 64 Channels per side!"]
+			description: ["Running out of channels yet? Each ME Controller can handle up to 64 Channels per side! (Normally 32)"]
 			dependencies: [
 				"43F8546BD8107D1C"
 				"281E051C6D348B35"

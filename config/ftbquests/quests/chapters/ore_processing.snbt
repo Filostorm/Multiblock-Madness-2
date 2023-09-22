@@ -958,9 +958,9 @@
 			y: -5.0d
 			id: "0DC400230EF6616D"
 			tasks: [{
-				id: "67D6EBF2562B51E4"
+				id: "5492ADF150555865"
 				type: "item"
-				item: "kubejs:cobalt_coil"
+				item: "kubejs:desh_coil"
 			}]
 		}
 		{
@@ -999,7 +999,7 @@
 			tasks: [{
 				id: "1E5B44061C98D744"
 				type: "item"
-				item: "kubejs:tier_1_electrical_alloy_coil"
+				item: "kubejs:tungsten_coil"
 			}]
 		}
 		{
@@ -1029,6 +1029,16 @@
 						value: "forge:ores/crystal"
 					}
 				}
+			}]
+		}
+		{
+			x: 17.5d
+			y: -5.0d
+			id: "3C240ED6381FC643"
+			tasks: [{
+				id: "512A18E7DA252320"
+				type: "item"
+				item: "kubejs:adamantium_coil"
 			}]
 		}
 	]

@@ -386,7 +386,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				///////////////////// ORE PROCESSING STEP 6 //////////////////
 				//Vaccum Chamber
 				event.recipes.multiblocked.multiblock("vaccum")
-				.inputFluid(Fluid.of(`industrialforegoing:ether_gas`, 200))
+				.inputFluid(Fluid.of(`industrialforegoing:ether_gas`, 100))
 				.inputItem(Item.of(`#forge:ores/leached/${item.material}`))
 				.outputFluid(Fluid.of(`kubejs:concentrated_${item.material}_slurry`, 100))
 				.setPerTick(true)
@@ -692,30 +692,75 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 									return false
 								}
 							}, Component.string('Requires at least Desh Coils'))
-/*
-
-						//EBF
+				}
+				////////////// TIER 6 /////////////////////
+				if (item.tier == 6) {
+					let tier6Temp = 3000
 						event.recipes.multiblocked.multiblock("ebf")
-						.inputFluid(Fluid.of('mekanism:oxygen', 1000))
-						.inputItem(smeltProcessedOre)
-						.outputItem(Item.of(`#forge:ingots/${item.material}`))
-						//.outputFluid(Fluid.of('mekanism:sulfuric_acid', 1000))
-						.setPerTick(true)
-						.inputFE(4000)
-						.duration(200)
-
-						//Air
+							.inputFluid(Fluid.of('chemlib:argon_fluid', 1000))
+							.inputItem(smeltProcessedOre)
+							.outputItem(Item.of(`#forge:ingots/${item.material}`))
+							.setPerTick(true)
+							.inputFE(4000*4)
+							.duration(200)
+							.data({ temperature: tier6Temp })
+							.text(`    Heat: §6${tier6Temp}`)
+							.predicate((recipe, recipeLogic) => {
+								let reqTemp = recipe.getData().getInt("temperature")
+								let controllerTe = recipeLogic.controller.self()
+								let level = controllerTe.getLevel()
+								let coilTotalHeat = 0
+								coilPos.forEach(pos => {
+									let coilName = level.getBlockState(controllerTe.getBlockPos().offset(pos.x, pos.y, pos.z)).getBlock()
+									coilHeatValues.forEach(material => {
+										if (Block.getBlock(`kubejs:${material.name}_coil`).equals(coilName)) {
+											coilTotalHeat += material.heat
+										}
+									})
+								})
+								//If we have enough Heat, chillin
+								if (reqTemp <= coilTotalHeat) {
+									return true
+								} else  {
+									return false
+								}
+							}, Component.string('Requires at least Tungsten Coils'))
+				}
+				////////////// TIER 7 /////////////////////
+				if (item.tier == 7) {
+					let tier7Temp = 4000
 						event.recipes.multiblocked.multiblock("ebf")
-						.inputFluid(Fluid.of('mekanism:oxygen', 1000))
-						.inputItem(smeltRefinedOre)
-						.outputItem(Item.of(`#forge:ingots/${item.material}`))
-						.setPerTick(true)
-						.inputFE(4000)
-						.duration(200)*/
+							.inputFluid(Fluid.of('chemlib:xenon_fluid', 1000))
+							.inputItem(smeltProcessedOre)
+							.outputItem(Item.of(`#forge:ingots/${item.material}`))
+							.setPerTick(true)
+							.inputFE(4000*4)
+							.duration(200)
+							.data({ temperature: tier7Temp })
+							.text(`    Heat: §6${tier7Temp}`)
+							.predicate((recipe, recipeLogic) => {
+								let reqTemp = recipe.getData().getInt("temperature")
+								let controllerTe = recipeLogic.controller.self()
+								let level = controllerTe.getLevel()
+								let coilTotalHeat = 0
+								coilPos.forEach(pos => {
+									let coilName = level.getBlockState(controllerTe.getBlockPos().offset(pos.x, pos.y, pos.z)).getBlock()
+									coilHeatValues.forEach(material => {
+										if (Block.getBlock(`kubejs:${material.name}_coil`).equals(coilName)) {
+											coilTotalHeat += material.heat
+										}
+									})
+								})
+								//If we have enough Heat, chillin
+								if (reqTemp <= coilTotalHeat) {
+									return true
+								} else  {
+									return false
+								}
+							}, Component.string('Requires at least Adamantium Coils'))
 				}
 
 		}
-
 
 		////////////////////////////////////////////////////////////////
 		///////////////////// COMPOUND ORE STUFFFFFFS //////////////////
@@ -797,10 +842,10 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 
 					//Sorting F grade at tier 2
 				  	event.recipes.multiblocked.multiblock('sorter_mk2')
-				  	.inputItem(`16x #forge:ores/crushed/${item.material}`)
-				  	.outputItem(`5x #forge:ores/crushed/${item.components[0]}`)
-				  	.outputItem(`4x #forge:ores/crushed/${item.components[1]}`)
-				  	.outputItem(`3x #forge:ores/crushed/${item.components[2]}`)
+				  	.inputItem(`16x #forge:ores/${global.oreProcessingParts[1].name}/${item.material}`)
+				  	.outputItem(`5x #forge:ores/${global.oreProcessingParts[1].name}/${item.components[0]}`)
+				  	.outputItem(`4x #forge:ores/${global.oreProcessingParts[1].name}/${item.components[1]}`)
+				  	.outputItem(`3x #forge:ores/${global.oreProcessingParts[1].name}/${item.components[2]}`)
 				  	.outputItem('4x thermal:slag')
 						.setPerTick(true)
 					.inputFE(512)
@@ -808,11 +853,11 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 
 				  //Sorting E grade at tier 2
 					event.recipes.multiblocked.multiblock('sorter_mk2')
-					.inputItem(`20x #forge:ores/chunk/${item.material}`)
-					.outputItem(`5x #forge:ores/chunk/${item.components[0]}`)
-					.outputItem(`4x #forge:ores/chunk/${item.components[1]}`)
-					.outputItem(`3x #forge:ores/chunk/${item.components[2]}`)
-					.outputItem(`2x #forge:ores/chunk/${item.components[3]}`)
+					.inputItem(`20x #forge:ores/${global.oreProcessingParts[2].name}/${item.material}`)
+					.outputItem(`5x #forge:ores/${global.oreProcessingParts[2].name}/${item.components[0]}`)
+					.outputItem(`4x #forge:ores/${global.oreProcessingParts[2].name}/${item.components[1]}`)
+					.outputItem(`3x #forge:ores/${global.oreProcessingParts[2].name}/${item.components[2]}`)
+					.outputItem(`2x #forge:ores/${global.oreProcessingParts[2].name}/${item.components[3]}`)
 					.outputItem('6x thermal:slag')
 						.setPerTick(true)
 					.inputFE(512*4)
@@ -820,12 +865,12 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 
 					//Sorting D grade at tier 2
 					  event.recipes.multiblocked.multiblock('sorter_mk2')
-					  .inputItem(`24x #forge:ores/lump/${item.material}`)
-					  .outputItem(`6x #forge:ores/lump/${item.components[0]}`)
-					  .outputItem(`5x #forge:ores/lump/${item.components[1]}`)
-					  .outputItem(`4x #forge:ores/lump/${item.components[2]}`)
-					  .outputItem(`3x #forge:ores/lump/${item.components[3]}`)
-					  .outputItem(`2x #forge:ores/lump/${item.components[4]}`)
+					  .inputItem(`24x #forge:ores/${global.oreProcessingParts[3].name}/${item.material}`)
+					  .outputItem(`6x #forge:ores/${global.oreProcessingParts[3].name}/${item.components[0]}`)
+					  .outputItem(`5x #forge:ores/${global.oreProcessingParts[3].name}/${item.components[1]}`)
+					  .outputItem(`4x #forge:ores/${global.oreProcessingParts[3].name}/${item.components[2]}`)
+					  .outputItem(`3x #forge:ores/${global.oreProcessingParts[3].name}/${item.components[3]}`)
+					  .outputItem(`2x #forge:ores/${global.oreProcessingParts[3].name}/${item.components[4]}`)
 					  .outputItem('4x thermal:slag')
 						  .setPerTick(true)
 					  .inputFE(512*4)
@@ -833,13 +878,13 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 
 				  //Sorting C grade at tier 2
 				  	event.recipes.multiblocked.multiblock('sorter_mk2')
-				  	.inputItem(`28x #forge:ores/leached/${item.material}`)
-				  	.outputItem(`7x #forge:ores/leached/${item.components[0]}`)
-				  	.outputItem(`6x #forge:ores/leached/${item.components[1]}`)
-				  	.outputItem(`4x #forge:ores/leached/${item.components[2]}`)
-				  	.outputItem(`3x #forge:ores/leached/${item.components[3]}`)
-				  	.outputItem(`2x #forge:ores/leached/${item.components[4]}`)
-				  	.outputItem(`2x #forge:ores/leached/${item.components[5]}`)
+				  	.inputItem(`28x #forge:ores/${global.oreProcessingParts[4].name}/${item.material}`)
+				  	.outputItem(`7x #forge:ores/${global.oreProcessingParts[4].name}/${item.components[0]}`)
+				  	.outputItem(`6x #forge:ores/${global.oreProcessingParts[4].name}/${item.components[1]}`)
+				  	.outputItem(`4x #forge:ores/${global.oreProcessingParts[4].name}/${item.components[2]}`)
+				  	.outputItem(`3x #forge:ores/${global.oreProcessingParts[4].name}/${item.components[3]}`)
+				  	.outputItem(`2x #forge:ores/${global.oreProcessingParts[4].name}/${item.components[4]}`)
+				  	.outputItem(`2x #forge:ores/${global.oreProcessingParts[4].name}/${item.components[5]}`)
 				  	.outputItem('4x thermal:slag')
 						.setPerTick(true)
 					.inputFE(512*16)
@@ -847,14 +892,14 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 
 					//Sorting B grade at tier 2
 					event.recipes.multiblocked.multiblock('sorter_mk2')
-					.inputItem(`32x #forge:ores/deposit/${item.material}`)
-					.outputItem(`7x #forge:ores/deposit/${item.components[0]}`)
-					.outputItem(`6x #forge:ores/deposit/${item.components[1]}`)
-					.outputItem(`5x #forge:ores/deposit/${item.components[2]}`)
-					.outputItem(`4x #forge:ores/deposit/${item.components[3]}`)
-					.outputItem(`2x #forge:ores/deposit/${item.components[4]}`)
-					.outputItem(`2x #forge:ores/deposit/${item.components[5]}`)
-					.outputItem(`2x #forge:ores/deposit/${item.components[6]}`)
+					.inputItem(`32x #forge:ores/${global.oreProcessingParts[5].name}/${item.material}`)
+					.outputItem(`7x #forge:ores/${global.oreProcessingParts[5].name}/${item.components[0]}`)
+					.outputItem(`6x #forge:ores/${global.oreProcessingParts[5].name}/${item.components[1]}`)
+					.outputItem(`5x #forge:ores/${global.oreProcessingParts[5].name}/${item.components[2]}`)
+					.outputItem(`4x #forge:ores/${global.oreProcessingParts[5].name}/${item.components[3]}`)
+					.outputItem(`2x #forge:ores/${global.oreProcessingParts[5].name}/${item.components[4]}`)
+					.outputItem(`2x #forge:ores/${global.oreProcessingParts[5].name}/${item.components[5]}`)
+					.outputItem(`2x #forge:ores/${global.oreProcessingParts[5].name}/${item.components[6]}`)
 					.outputItem('4x thermal:slag')
 						.setPerTick(true)
 					.inputFE(512*64)
@@ -862,15 +907,15 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 
 					//Sorting A grade at tier 2
 					event.recipes.multiblocked.multiblock('sorter_mk2')
-					.inputItem(`36x #forge:ores/crystal/${item.material}`)
-					.outputItem(`7x #forge:ores/crystal/${item.components[0]}`)
-					.outputItem(`6x #forge:ores/crystal/${item.components[1]}`)
-					.outputItem(`5x #forge:ores/crystal/${item.components[2]}`)
-					.outputItem(`4x #forge:ores/crystal/${item.components[3]}`)
-					.outputItem(`3x #forge:ores/crystal/${item.components[4]}`)
-					.outputItem(`3x #forge:ores/crystal/${item.components[5]}`)
-					.outputItem(`2x #forge:ores/crystal/${item.components[6]}`)
-					.outputItem(`2x #forge:ores/crystal/${item.components[7]}`)
+					.inputItem(`36x #forge:ores/${global.oreProcessingParts[6].name}/${item.material}`)
+					.outputItem(`7x #forge:ores/${global.oreProcessingParts[6].name}/${item.components[0]}`)
+					.outputItem(`6x #forge:ores/${global.oreProcessingParts[6].name}/${item.components[1]}`)
+					.outputItem(`5x #forge:ores/${global.oreProcessingParts[6].name}/${item.components[2]}`)
+					.outputItem(`4x #forge:ores/${global.oreProcessingParts[6].name}/${item.components[3]}`)
+					.outputItem(`3x #forge:ores/${global.oreProcessingParts[6].name}/${item.components[4]}`)
+					.outputItem(`3x #forge:ores/${global.oreProcessingParts[6].name}/${item.components[5]}`)
+					.outputItem(`2x #forge:ores/${global.oreProcessingParts[6].name}/${item.components[6]}`)
+					.outputItem(`2x #forge:ores/${global.oreProcessingParts[6].name}/${item.components[7]}`)
 					.outputItem('4x thermal:slag')
 					  .setPerTick(true)
 				  	.inputFE(512*256)
@@ -976,26 +1021,10 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 });
 
 onEvent("lootjs", (event) => {
-	event.enableLogging();
-    //event.addBlockLootModifier("#forge:ores/copper")
-    //    .removeLoot("raw_copper")
-    //    .apply((ctx) => {
-    //        let player = ctx.player;
-    //        if (!player) return;
-    //        if (ItemFilter.hasEnchantment("minecraft:silk_touch").test(player.mainHandItem)) {
-    //            //ctx.addLoot("copper_ore");
-    //            return;
-    //        }
-    //        let oreDrop = LootEntry.of("raw_copper");
-    //        if (ItemFilter.hasEnchantment("minecraft:fortune").test(player.mainHandItem)) {
-    //            oreDrop.applyOreBonus("minecraft:fortune");
-    //        }
-    //        ctx.addLoot(oreDrop);
-    //    });
-		
-		
+	event.enableLogging();		
 		global.newMaterialParts.forEach((item) => {
 			if (item.ore) {
+				if(Item.of `#forge:ores/raw/${item.material}` != null) {
 				////////////ORE DROPS//////////////////
 				event.addBlockLootModifier(`#forge:ores/${item.material}`)
 				    .removeLoot(Item.of(`#forge:ores/raw/${item.material}`))
@@ -1071,7 +1100,7 @@ onEvent("lootjs", (event) => {
 						event.addBlockLootModifier(`kubejs:${item.material}_ore_sample`)
        						.replaceLoot(`kubejs:${item.material}_ore_sample`, `#forge:raw_materials/${item.material}`);
 					}
-				
+				}
 			  } 
 		})
 

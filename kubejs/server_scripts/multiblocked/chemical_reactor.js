@@ -44,7 +44,7 @@
 		.inputFluid(Fluid.of('mekanism:hydrogen', 250))
 		.inputItem('2x chemlib:nitrogen')
 		//.inputFluid(Fluid.of('chemlib:nitrogen_fluid', 100))
-		.outputFluid(Fluid.of('chemlib:nitric_acid_fluid', 1000))
+		.outputFluid(Fluid.of('chemlib:nitric_acid_fluid', 250))
 		.setPerTick(true)
 		.inputFE(1024*2)
 		.duration(200)

@@ -164,7 +164,7 @@
         "type": "blocks"
       },
       "controller": {
-        "location": "mbm2:energy_reciever",
+        "location": "mbm2:energy_receiver",
         "type": "component"
       },
       "B": {

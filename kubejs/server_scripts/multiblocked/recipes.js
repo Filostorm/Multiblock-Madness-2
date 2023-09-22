@@ -317,7 +317,7 @@ event.shaped('mbm2:leaching_vat', [
 	'TCA',
 	'PGP'
   ], {
-	C: 'kubejs:tier2_casing',
+	C: 'kubejs:tier3_casing',
 	B: 'pneumaticcraft:printed_circuit_board',
 	P: '#forge:platings/chemically_inert_alloy',
 	G: '#forge:gears/stainless_steel',

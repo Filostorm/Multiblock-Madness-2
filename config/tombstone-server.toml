@@ -59,7 +59,7 @@
 [decorative_grave]
 	#The cooldown in hours to pray with the Ankh [1..10|default:3]
 	#Range: 1 ~ 10
-	cooldown_to_pray = 3
+	cooldown_to_pray = 1
 	#The cooldown in minutes to reset the perks with the ankh of Pray [20..1440|default:120]
 	#Range: 20 ~ 1440
 	cooldown_reset_perk = 120

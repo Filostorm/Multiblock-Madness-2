@@ -221,11 +221,14 @@ onEvent('recipes', event => {
 	  	.inputFE(1024)
 	  	.duration(50)
 	  }
+	    
+	  let gearPressedMaterial = `#forge:ingots/${item.material}`
+	  if(item.type == 'gem') gearPressedMaterial = `#forge:gems/${item.material}`
 	//Immersive Gears
-	event.recipes.immersiveengineeringMetalPress(`#forge:gears/${item.material}`, `4x #forge:ingots/${item.material}`, 'immersiveengineering:mold_gear').id(`immersiveengineering:metalpress/gear_${item.material}`)
-
+	  event.recipes.immersiveengineeringMetalPress(`#forge:gears/${item.material}`, `4x ${gearPressedMaterial}`, 'immersiveengineering:mold_gear').id(`immersiveengineering:metalpress/gear_${item.material}`)
+  
 	//Thermal Gears
-	event.recipes.thermal.press(`#forge:gears/${item.material}`, [`5x #forge:ingots/${item.material}`, 'thermal:press_gear_die']).id(`thermal:machines/press/press_${item.material}_ingot_to_gear`)
+	  event.recipes.thermal.press(`#forge:gears/${item.material}`, [`5x ${gearPressedMaterial}`, 'thermal:press_gear_die']).id(`thermal:machines/press/press_${item.material}_ingot_to_gear`)
 	
 	//////////////// INTERLOCKING PART ///////////////
     if (Item.of(`#forge:interlocking_components/${item.material}`) != null) {

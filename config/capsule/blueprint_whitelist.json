@@ -214,7 +214,7 @@
     }
   },
   {
-    "block": "immersiveengineering:conveyor",
+    "block": "immersiveengineering:conveyor_basic",
     "keepNBT": {
       "conveyorType": null,
       "conveyorBeltSubtype": "conveyorType",
@@ -272,5 +272,8 @@
   "betterboiler:boiler_valve",
   "betterboiler:boiler_vent",
   "betterboiler:boiler_pump",
-  "betterboiler:boiler_pump"
+  "betterboiler:boiler_pump",
+  "immersiveengineering:fluid_pipe",
+  "immersiveengineering:wooden_barrel",
+  "immersiveengineering:capacitor_hv"
 ]

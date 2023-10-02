@@ -190,4 +190,8 @@ event.shaped('3x kubejs:wood_scaffolding', [
 	I: 'minecraft:iron_ingot',
   }).id("mbm2:simplifiedhopper")  
 
+ //Cheaper Armory Cabinet
+  event.replaceInput({id: 'functionalstorage:armory_cabinet'}, 'minecraft:netherite_ingot', 'kubejs:iron_plating')
+
+
 });

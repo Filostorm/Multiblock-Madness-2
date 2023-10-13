@@ -1,0 +1,17 @@
+{
+  "type": "bonsaitrees3:soil",
+  "conditions": [{
+    "type": "forge:mod_loaded",
+    "modid": "botania" }
+   ],
+  "tickModifier": 1.0,
+  "soil": {
+    "item": "botania:golden_grass"
+  },
+  "compatibleSoilTags": [
+    "botan"
+  ],
+  "display": {
+    "block": "botania:golden_grass"
+  }
+}

@@ -191,7 +191,31 @@ event.shaped('3x kubejs:wood_scaffolding', [
   }).id("mbm2:simplifiedhopper")  
 
  //Cheaper Armory Cabinet
-  event.replaceInput({id: 'functionalstorage:armory_cabinet'}, 'minecraft:netherite_ingot', 'kubejs:iron_plating')
+  event.replaceInput({id: 'functionalstorage:armory_cabinet'}, 'minecraft:netherite_ingot', 'kubejs:iron_plating')  // Titanium Plated Obsidian
+  
+ //titanium plated obsidian	
+  event.recipes.createSequencedAssembly([ // start the recipe
+  'kubejs:titanium_plated_obsidian', // have this item be an output
+  ], 'minecraft:obsidian', [ // input.
+  event.recipes.createDeploying('kubejs:incomplete_titanium_plated_obsidian', ['kubejs:incomplete_titanium_plated_obsidian', '#forge:sheets/titanium']),
+  event.recipes.createDeploying('kubejs:incomplete_titanium_plated_obsidian', ['kubejs:incomplete_titanium_plated_obsidian', '#forge:sheets/titanium']),
+  event.recipes.createPressing('kubejs:incomplete_titanium_plated_obsidian', ['kubejs:incomplete_titanium_plated_obsidian']),
+  ]).transitionalItem('kubejs:incomplete_titanium_plated_obsidian').loops(2).id('mbm2:titanium_plated_obsidian');
+
+
+  //Ender Tank and Ender Chest
+  event.remove({id: 'enderstorage:ender_chest'})
+  event.remove({id: 'enderstorage:ender_tank'})
+  event.shaped('enderstorage:ender_chest', ['ABA','CDC','AEA'], {A: 'extendedcrafting:ender_ingot',B: 'tconstruct:enderman_head',C: 'kubejs:titanium_plated_obsidian',D: 'cloudstorage:static_cloud_chest',E: 'minecraft:ender_pearl'}).id('mbm2:ender_chest')
+  event.shaped('enderstorage:ender_tank', ['ABA','CDC','AEA'], {A: 'extendedcrafting:ender_ingot',B: 'tconstruct:enderman_head',C: 'kubejs:titanium_plated_obsidian',D: 'beyond_earth:steel_tank',E: 'minecraft:ender_pearl'}).id('mbm2:ender_tank');
+
+  //Entangled Block
+  event.replaceInput({id: 'entangled:block'}, 'minecraft:obsidian', 'kubejs:titanium_plated_obsidian');
+
+
+  //Chunkloader Upgrade
+  event.shaped(Item.of('compactmachines:chunkloader_upgrade', '{upgrade_info:{key:"compactmachines:chunkloader"}}'), ['ABA','BCB','ABA'], {A: 'compactmachines:wall',B: 'compactcrafting:field_projector',C: 'compactmachines:personal_shrinking_device'}).id('mbm2:chunkloader_upgrade')
+
 
 
 });

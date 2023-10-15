@@ -1,10 +1,9 @@
-/*
+
 
 onEvent('tags.items', event => {
-	event.add(`forge:ingots`, `naturesaura:tainted_gold`)
-	 event.remove(`create:crushed_ores/${item}`, `kubejs:crushed_${item}`)
+	event.add(`mbm2:livingwood_twig`, 'botania:livingwood_twig')
  });
- */
+
 onEvent('recipes', event => {
 	//HOP Dark Quartz??
     event.replaceInput({id: 'botania:quartz_dark'}, '#minecraft:coals', '#forge:dusts/hop_graphite')

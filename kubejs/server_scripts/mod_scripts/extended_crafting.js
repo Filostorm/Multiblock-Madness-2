@@ -13,5 +13,6 @@ onEvent('tags.items', event => {
 
 onEvent('recipes', event => {
 	event.remove({id: 'extendedcrafting:redstone_ingot'})
+	event.remove({id: 'extendedcrafting:ender_ingot'})
 	
 });

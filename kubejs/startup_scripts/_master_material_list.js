@@ -172,7 +172,7 @@ global.newMaterialParts = [
       'color': 0x4668cf,
       'type': 'base_metal',
       'tier': 3,
-      'itemParts': ['plate', 'gear', 'rod', 'plating'],
+      'itemParts': ['plate', 'gear', 'rod', 'plating', 'sheet'],
       'blockParts': ['casing', 'scaffolding', 'frame_box'],
       'fluid': 'thick',
       'fluid_id': 'kubejs:molten_titanium',

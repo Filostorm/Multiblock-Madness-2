@@ -19,7 +19,11 @@ onEvent('tags.items', event => {
 	
 	event.add(`mbm2:naturesaura/crimson_altar`, 'minecraft:warped_planks')
 	event.add(`mbm2:naturesaura/crimson_altar`, 'minecraft:crimson_planks')
-	
+
+	event.add(`mbm2:naturesaura/brilliant_fiber`, 'naturesaura:gold_fiber')
+	event.add('mbm2:gold_leaf', 'naturesaura:gold_leaf')
+	event.add('mbm2:infused_stone', 'naturesaura:infused_stone')
+	event.add('mbm2:gold_powder', 'naturesaura:gold_powder')
 	
  });
 

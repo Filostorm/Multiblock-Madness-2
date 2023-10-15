@@ -1021,10 +1021,9 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 });
 
 onEvent("lootjs", (event) => {
-	event.enableLogging();		
+	event.enableLogging();
 		global.newMaterialParts.forEach((item) => {
 			if (item.ore) {
-				if(Item.of `#forge:ores/raw/${item.material}` != null) {
 				////////////ORE DROPS//////////////////
 				event.addBlockLootModifier(`#forge:ores/${item.material}`)
 				    .removeLoot(Item.of(`#forge:ores/raw/${item.material}`))
@@ -1048,7 +1047,7 @@ onEvent("lootjs", (event) => {
 							pool.addWeightedLoot([3, 6], [
 								Item.of(`#forge:dusts/${item.material}`).withChance(50),
 							])
-						} else {
+						} else if (Item.of (`#forge:ores/raw/${item.material}`) != null) {
 							//Normal Ores
 							pool.addLoot(`#forge:ores/raw/${item.material}`);
 						}
@@ -1101,7 +1100,6 @@ onEvent("lootjs", (event) => {
        						.replaceLoot(`kubejs:${item.material}_ore_sample`, `#forge:raw_materials/${item.material}`);
 					}
 				}
-			  } 
 		})
 
 

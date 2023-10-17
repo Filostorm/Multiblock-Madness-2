@@ -59,6 +59,7 @@ var basicItems = [
 	'unfinished_advanced_control_circuit',
 	'unfinished_elite_control_circuit',
 	'unfinished_ultimate_control_circuit',
+	'titanium_plated_obsidian'
 ]
 
 global.transitionalItems = [
@@ -74,12 +75,12 @@ global.transitionalItems = [
 	'printed_engineering_processor',
 	'engineering_processor',
 	'printed_silicon',
-	'titanium_plated_obsidian',
 ]
 global.transitionalItemsTexture = [
 	'component_electronic_adv',
 	'component_electronic',
 	'electron_tube',
+	'titanium_plated_obsidian',
 ]
 
 var batteryItems = [

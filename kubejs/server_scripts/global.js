@@ -287,7 +287,6 @@ global.removeAndHide = [
 	'immersiveengineering:deepslate_ore_nickel',
 	/geolosys:.*_ore_sample/,
 	/titanium:.*/,
-	/placeableitems:.*/,
 	///geolosys:.*_cluster/,
 	'geolosys:iron_cluster', 
 	'geolosys:gold_cluster', 

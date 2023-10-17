@@ -198,6 +198,9 @@ onEvent('recipes', event => {
   	}).id('mbm2:pipez/gas_pipe')
 
 	
+  //Entangled Block
+	event.remove({output: 'entangled:block'})
+  	event.shaped('entangled:block', ['ABA','CDC','ABA'], {A: 'kubejs:titanium_plated_obsidian',B: 'mekanism:teleportation_core',C: 'kubejs:enderium_hull_panel',D: 'enderstorage:ender_chest'})
   
 
 });

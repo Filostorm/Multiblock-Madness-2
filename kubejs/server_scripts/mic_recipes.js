@@ -230,4 +230,8 @@ event.shaped('3x kubejs:wood_scaffolding', [
  //Furnace conversion
   event.shapeless('minecraft:furnace', ['quark:deepslate_furnace']).id('mbm2:furnaceconversion')
 
+//thermalcell fix
+  event.remove({id: 'thermal:fluid_cell'})
+  event.shaped(Item.of('thermal:fluid_cell', '{BlockEntityTag:{TankInv:[{Amount:0,Capacity:32000,FluidName:"minecraft:empty",Tank:0b}]}}'), ['ABA','CDC','AEA'], {A: 'thermal:cured_rubber',B: '#thermal:glass/hardened',C: 'minecraft:iron_ingot',D: 'thermal:fluid_cell_frame',E: 'thermal:redstone_servo'}).id('mbm2:fluidcellfix')
+
 });

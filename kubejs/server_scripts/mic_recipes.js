@@ -1,4 +1,15 @@
 
+onEvent('tags.items', event => {
+	//debris tag for potion
+	event.add(`mbm2:brewery_debris`, 'geolosys:ancient_debris_ore')
+	event.add(`mbm2:brewery_debris`, 'minecraft:ancient_debris')
+	event.add(`mbm2:brewery_debris`, 'geolosys:ancient_debris_ore_sample')
+
+	//polonium subsitute tag
+	event.add(`mbm2:polonium_subsitute`, 'mekanism:pellet_polonium')
+	event.add(`mbm2:polonium_subsitute`, 'biggerreactors:blutonium_ingot')
+
+ });
 
 onEvent('recipes', event => {
 
@@ -213,6 +224,10 @@ event.shaped('3x kubejs:wood_scaffolding', [
   //Chunkloader Upgrade
   event.shaped(Item.of('compactmachines:chunkloader_upgrade', '{upgrade_info:{key:"compactmachines:chunkloader"}}'), ['ABA','BCB','ABA'], {A: 'compactmachines:wall',B: 'compactcrafting:field_projector',C: 'compactmachines:personal_shrinking_device'}).id('mbm2:chunkloader_upgrade')
 
+ //PenumaticCraft GPS Clearing Recipe
+  event.shapeless('pneumaticcraft:gps_tool', ['pneumaticcraft:gps_tool']).id('mbm2:gps_clearing')
 
+ //Furnace conversion
+  event.shapeless('minecraft:furnace', ['quark:deepslate_furnace']).id('mbm2:furnaceconversion')
 
 });

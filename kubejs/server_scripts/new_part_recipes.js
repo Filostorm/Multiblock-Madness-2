@@ -315,6 +315,18 @@ onEvent('recipes', event => {
 					}
 				}
 		}
+
+		
+		if (Item.of(`#forge:sprockets/${item.material}`) != null) {
+			event.recipes.botania.mana_infusion(Item.of(`#forge:rings/${item.material}`), `#forge:rods/${item.material}`, 2000)
+			event.shaped(`#forge:sprockets/${item.material}`, [
+				' R ',
+				'RRR',
+				' R '
+			  ], {
+				R: `#forge:rings/${item.material}`,
+			  }).id(`mbm2:crafting/${item.material}_sprockets`)
+		}
 	}
 	
 	if (Item.of(`#forge:hull_panels/${item.material}`) != null) {

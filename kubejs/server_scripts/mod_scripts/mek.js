@@ -160,5 +160,8 @@ tiers.forEach((tier, index) => {
 //Infuser Recipe
 //global.mekanismMetallurgicInfusing(event, Item.of('kubejs:carbon_mesh'), Item.of('kubejs:zinc_mesh'), 'mekanism:diamond', 20, `mbm2:carbon_mesh`)
 
+//Teleportation Core
+event.remove({output: 'mekanism:teleportation_core'})
+event.shaped('mekanism:teleportation_core', ['ABA','CCC','ABA'], {A: 'rftoolsbase:dimensionalshard',B: 'mekanism:alloy_atomic',C: 'kubejs:orichalcum_sprocket'})
 
 });

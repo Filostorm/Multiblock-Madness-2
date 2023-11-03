@@ -26,7 +26,7 @@ onEvent('recipes', event => {
   .inputFluid(Fluid.of('thermal:redstone', 1000))
   .outputItem(Item.of('4x #forge:dusts/signalum'))
   .setPerTick(true)
-  .inputFE(2048)
+  .inputFE(2000)
   .duration(300)
 
   //Lumium
@@ -35,8 +35,19 @@ onEvent('recipes', event => {
   .inputFluid(Fluid.of('thermal:glowstone', 1000))
   .outputItem(Item.of('4x #forge:dusts/lumium'))
   .setPerTick(true)
-  .inputFE(2048)
+  .inputFE(2000)
   .duration(300)
+
+  //Enderium
+  event.recipes.multiblocked.multiblock('mixer')
+  .inputItems('2x #forge:dusts/pewter','3x #forge:dusts/platinum', '#forge:dusts/tungsten', '8x create:experience_nugget') //,'#forge:fine_dusts/rune'
+  .inputFluid(Fluid.of('thermal:ender', 1000))
+  .outputItem(Item.of('4x #forge:dusts/enderium'))
+  .setPerTick(true)
+  .inputFE(2000*2)
+  .duration(300)
+
+
 
 // Industrial_alloy_ingot
 event.shaped('4x kubejs:industrial_alloy_ingot', [

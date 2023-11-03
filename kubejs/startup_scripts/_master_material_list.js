@@ -295,10 +295,12 @@ global.newMaterialParts = [
       'color': 0xfa6837,
       'tier': 5,
       'type': 'base_metal',
-      'itemParts': ['ingot', 'nugget','dust'],
+      'itemParts': ['ingot', 'nugget','dust', 'rod', 'ring', 'sprocket'],
       'blockParts': ['storage_block'],
       'ore': true,
-      'raw_ore': true
+      'raw_ore': true,
+      'fluid': 'thick',
+      'fluid_id': 'kubejs:molten_orichalcum',
     },
     {
       'material': 'ostrum',
@@ -979,18 +981,6 @@ global.newMaterialParts = [
       'fluid': 'thick',
     },
     {
-      'material': 'enderium',
-      'color': 0x5fc4d4,
-      'tier': 4,
-      'itemParts': ['rod', 'plating'],
-      'blockParts': [],
-      'type': 'alloy',
-      'fluid_id': 'tconstruct:molten_enderium',
-      'amount': 3,
-      'dust_input': ['2x #forge:dusts/pewter','#forge:dusts/platinum','2x minecraft:ender_pearl'],
-      'ingot_input': ['2x #forge:ingots/pewter','#forge:ingots/platinum','2x minecraft:ender_pearl'],
-    },
-    {
       'material': 'fireite',
       'color': 0x4a1304,
       'tier': 4,
@@ -1033,6 +1023,18 @@ global.newMaterialParts = [
     
     /////////////// Tier 5 Alloys /////////////////////////////
     {
+      'material': 'enderium',
+      'color': 0x5fc4d4,
+      'tier': 5,
+      'itemParts': ['rod', 'plating', 'hull_panel'],
+      'blockParts': [],
+      'type': 'alloy',
+      'fluid_id': 'tconstruct:molten_enderium',
+      //'amount': 3,
+      //'dust_input': ['2x #forge:dusts/pewter','#forge:dusts/platinum', '#forge:dusts/tungsten','2x minecraft:ender_pearl'],
+      //'ingot_input': ['2x #forge:ingots/pewter','#forge:ingots/platinum', '#forge:ingots/tungsten','2x minecraft:ender_pearl'],
+    },
+    {
       'material': 'inconel',
       'color': 0x484e5e,
       'type': 'alloy',
@@ -1057,20 +1059,6 @@ global.newMaterialParts = [
       'amount': 2,
       'dust_input': ['3x #forge:dusts/titanium','#forge:dusts/fireite','#forge:dusts/vanadium','kubejs:pyrotheum_dust'],
       'ingot_input': ['3x #forge:ingots/titanium','#forge:ingots/fireite', '#forge:ingots/vanadium','kubejs:pyrotheum_dust'],
-    },
-
-    {
-      'material': 'adamantine_alloy',
-      'color': 0xd1193b,
-      'type': 'alloy',
-      'tier': 5,
-      'itemParts': ['ingot', 'nugget', 'dust',  'plate', 'gear', 'rod', 'plating'],
-      'blockParts': ['storage_block'],
-      'fluid_id': 'kubejs:molten_adamantine_alloy',
-      'fluid': 'thick',
-      'amount': 3,
-      'dust_input': ['3x #forge:dusts/adamantium','#forge:dusts/energetic_alloy','#forge:dusts/manasteel'],
-      'ingot_input': ['3x #forge:ingots/adamantium','#forge:ingots/energetic_alloy', '#forge:ingots/manasteel'],
     },
 
     {
@@ -1107,7 +1095,7 @@ global.newMaterialParts = [
       'type': 'alloy',
       'tier': 1,
       'iconset': 'magical',
-      'itemParts': ['ingot', 'nugget', 'dust', 'plate', 'sproket'],
+      'itemParts': ['ingot', 'nugget', 'dust', 'rod', 'ring', 'sprocket'],
       'blockParts': ['storage_block'],
       'fluid_id': 'kubejs:molten_tier_1_magical_alloy',
       'fluid': 'thick',
@@ -1158,6 +1146,21 @@ global.newMaterialParts = [
       'ingot_input': ['3x #forge:ingots/tier_2_structural_alloy','2x #forge:ingots/tungsten', '#forge:plastic'],
     },
 
+
+    /////////////// Tier 6 Alloys /////////////////////////////
+    {
+      'material': 'adamantine_alloy',
+      'color': 0xd1193b,
+      'type': 'alloy',
+      'tier': 6,
+      'itemParts': ['ingot', 'nugget', 'dust',  'plate', 'gear', 'rod', 'plating'],
+      'blockParts': ['storage_block'],
+      'fluid_id': 'kubejs:molten_adamantine_alloy',
+      'fluid': 'thick',
+      'amount': 3,
+      'dust_input': ['3x #forge:dusts/adamantium','#forge:dusts/energetic_alloy','#forge:dusts/manasteel'],
+      'ingot_input': ['3x #forge:ingots/adamantium','#forge:ingots/energetic_alloy', '#forge:ingots/manasteel'],
+    },
     /////////////// Ore /////////////////////////////
     /*
     {

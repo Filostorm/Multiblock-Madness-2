@@ -164,4 +164,7 @@ tiers.forEach((tier, index) => {
 event.remove({output: 'mekanism:teleportation_core'})
 event.shaped('mekanism:teleportation_core', ['ABA','CCC','ABA'], {A: 'rftoolsbase:dimensionalshard',B: 'mekanism:alloy_atomic',C: 'kubejs:orichalcum_sprocket'})
 
+//Polonium Replacement in Mek Mtems
+event.replaceInput({id: 'mekanism:module_vein_mining_unit'}, 'mekanism:pellet_polonium', '#mbm2:polonium_subsitute')
+
 });

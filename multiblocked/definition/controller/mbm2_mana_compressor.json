@@ -188,6 +188,24 @@
         "maxCount": 1,
         "previewCount": 1
       },
+      "H": {
+        "blocks": [
+          {
+            "id": "multiblocked:energy_input_mk1"
+          },
+          {
+            "id": "multiblocked:energy_input_mk2"
+          },
+          {
+            "id": "multiblocked:energy_input_mk3"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 1,
+        "previewCount": 1,
+        "io": "IN"
+      },
       "any": {
         "type": "any"
       }
@@ -202,7 +220,8 @@
       "A": [
         "A",
         "F",
-        "G"
+        "G",
+        "H"
       ],
       "B": [
         "B"

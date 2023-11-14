@@ -460,6 +460,39 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				.duration(100)
 					 
 
+				///////////////////// ORE REFINING STEP 4 //////////////////
+				//Ore Processing Deposits
+				event.custom({
+					"type": "elementalcraft:pureinfusion",
+					"element_amount": 16000,
+					"ingredients": [
+						 refinableOre(4),
+						{ "item": 'elementalcraft:springaline_shard'},
+						{ "item": 'elementalcraft:inert_crystal'},
+						{ "item": 'elementalcraft:inert_crystal'},
+						{ "item": 'elementalcraft:springaline_shard'}
+					],
+					"output": 
+						Item.of(`#forge:ores/${global.oreRefiningParts[4].name}/${item.material}`, global.refiningMultiplier[4])
+				
+				}).id(`mbm2:${global.oreRefiningParts[3].name}/${item.material}`);
+
+				event.custom({
+					"type": "elementalcraft:pureinfusion",
+					"element_amount": 500,
+					"ingredients": [
+						 Item.of(`#forge:ores/${global.oreRefiningParts[3].name}/${item.material}`),
+						{ "item": 'minecraft:prismarine_crystals'},
+						{ "item": 'forbidden_arcanus:arcane_crystal_dust_speck'},
+						{ "item": 'forbidden_arcanus:arcane_crystal_dust_speck'},
+						{ "item": 'minecraft:prismarine_crystals'}
+					],
+					"output": 
+						Item.of(`#forge:ores/${global.oreRefiningParts[4].name}/${item.material}`)
+					
+				}).id(`mbm2:chain_recipe/${global.oreRefiningParts[3].name}/${item.material}`)
+
+
 		////////////////////////////////////////////////////////////////
 		///////////////////// ORE PROCESSING CASH OUT //////////////////
 		////////////////////////////////////////////////////////////////

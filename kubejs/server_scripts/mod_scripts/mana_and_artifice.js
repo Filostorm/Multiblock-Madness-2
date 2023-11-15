@@ -100,8 +100,11 @@ C: '#forge:rods/wooden'
 		"keepNbtOfReagent": false
 	  }).id(`mbm2:enchanting_apparatus/ritual_focus_minor`)
 
-
-
+//MnA Mark Recipes
+event.recipes.createDeploying('mna:mark_of_the_fey', ['mna:stone_rune_blank', 'ars_nouveau:green_archwood_sapling']).id(`mbm2:mark_fey`)
+event.recipes.createDeploying('mna:mark_of_the_council', ['mna:stone_rune_blank', 'mna:vinteum_dust']).id(`mbm2:mark_council`)
+event.recipes.createDeploying('mna:mark_of_the_nether', ['mna:stone_rune_blank', 'minecraft:nether_brick']).id(`mbm2:mark_nether`)
+event.recipes.createDeploying('mna:mark_of_the_undead', ['mna:stone_rune_blank', '#forge:wither_bones']).id(`mbm2:mark_undead`)
 
 });
 

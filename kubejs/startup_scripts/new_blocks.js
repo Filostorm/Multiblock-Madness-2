@@ -47,8 +47,9 @@ onEvent('block.registry', event => {
 	
 	event.create('solar_panel').displayName('Dyson Panel').fullBlock(false).notSolid().box(0,0,0,16,6,16, true).hardness(2).resistance(2).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').model("kubejs:block/solar_panel").renderType('cutout').defaultCutout().material('metal')
 	event.create('solar_bar').displayName('Dyson Panel Support').fullBlock(false).notSolid().box(0,0,0,16,6,16, true).hardness(2).resistance(2).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').model("kubejs:block/solar_bar").renderType('cutout').defaultCutout().material('metal')
-	//event.create('titanium_plated_obsidian').displayName('Titanium Plated Obsidian').hardness(5).resistance(1000).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_diamond_tool').material('metal')
-	
+
+	event.create('arcane_sand', 'falling').displayName('Arcane Sand').hardness(1).resistance(1).tagBlock('minecraft:mineable/shovel').material('sand')
+
 });
 
 onEvent('tags.items', event => {

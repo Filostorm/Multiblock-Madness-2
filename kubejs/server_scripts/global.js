@@ -76,6 +76,22 @@ global.removeAndHide = [
 	'industrialforegoing:washing_factory',
 	'industrialforegoing:fermentation_station',
 
+	'ae2additions:item_advanced_cell_housing',
+	'ae2additions:item_ultimate_cell_housing',
+	'ae2additions:item_storage_cell_1kk',
+	'ae2additions:item_storage_cell_4kk',
+	'ae2additions:item_storage_cell_16kk',
+	'ae2additions:item_storage_cell_64kk',
+	'ae2additions:item_storage_cell_256kk',
+	'ae2additions:item_storage_cell_1kkk_1th',
+	'ae2additions:item_storage_cell_1kkk_2th',
+	'ae2additions:item_storage_cell_1kkk_3th',
+	'ae2additions:item_storage_cell_1kkk_4th',
+	'ae2additions:part_pattern_provider_5th',
+	'ae2additions:part_pattern_provider_6th',
+	'ae2additions:pattern_provider_5th',
+	'ae2additions:pattern_provider_6th',
+
 //////////// MATERIAL PARTS ///////////////////
 	'beyond_earth:iron_plate', 
 	'beyond_earth:iron_stick', 

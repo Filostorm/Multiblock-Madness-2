@@ -6,6 +6,7 @@ onEvent('recipes', event => {
 		'#minecraft:logs':'4x thermal:sawdust',
 		'#forge:gems/lapis':'thermal:lapis_dust',
 		'#forge:slag':'kubejs:slag_dust',
+		'mna:decoration/arcane_sandstone':'2x kubejs:arcane_sand'
 	}
 	for (var recipe in crushingRecipes) {
 		event.recipes.mekanismCrushing(crushingRecipes[recipe], recipe).id(`mbm2:mekanism/crushing/${recipe.split(':')[1]}`)

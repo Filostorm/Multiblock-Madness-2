@@ -213,9 +213,30 @@
   "item.tconstruct.large_plate_cast": "Large Plate Brass Cast",
   "item.tconstruct.tool_handle_cast": "Tool Handle Brass Cast",
   "item.tconstruct.tough_handle_cast": "Tough Handle Brass Cast",
-
+  
+  "kubejs.brew.coal_sight": "CoalSight",
+  "kubejs.brew.diamond_sight": "DiamondSight",
+  "kubejs.brew.emerald_sight": "EmeraldSight",
+  "kubejs.brew.gold_sight": "GoldSight",
+  "kubejs.brew.iron_sight": "IronSight",
+  "kubejs.brew.lapis_sight": "LapisSight",
+  "kubejs.brew.redstone_sight": "RedstoneSight",
+  "kubejs.brew.aluminium_sight": "AluminiumSight",
+  "kubejs.brew.copper_sight": "CopperSight",
+  "kubejs.brew.tin_sight": "TinSight",
+  "kubejs.brew.nickel_sight": "NickelSight",
+  "kubejs.brew.uranium_sight": "UraniumSight",
+  "kubejs.brew.lead_sight": "LeadSight",
+  "kubejs.brew.silver_sight": "SilverSight",
+  "kubejs.brew.zinc_sight": "ZincSight",
+  "kubejs.brew.osmium_sight": "OsmiumSight",
+  "kubejs.brew.quartz_sight": "QuartzSight",
+  "kubejs.brew.platinum_sight": "Platinumsight",
+  "kubejs.brew.netherite_sight": "NetheriteSight",
+  "kubejs.brew.bargaining": "Greater Bargaining",
+  "kubejs.brew.greater_bargaining": "Bargaining",
+    
   "curios.identifier.metal_mind": "Metalmind Slot",
-
   
   "biome.terralith.alpha_islands": "Alpha Islands",
   "biome.terralith.alpha_islands_winter": "Alpha Islands (Winter)",

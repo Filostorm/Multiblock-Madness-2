@@ -76,7 +76,58 @@ event.shaped('8x botania:infused_grass', ['DDD','DSD','DDD'], {D: '#minecraft:di
 event.shaped('8x botania:mutated_grass', ['DDD','DSD','DDD'], {D: '#minecraft:dirt',S: 'botania:mutated_seeds'}).id("mbm2:mutated_grass")
 event.shapeless('botania:enchanted_soil', ['botania:overgrowth_seed', '#minecraft:dirt']).id('mbm2:enchanted_soil')
 
+//Custom Brew Recipes
+let calcinatedraw = [
+        "gold",
+        "iron",
+        "copper",
+        "tin",
+        "nickel",
+        "uranium",
+        "lead",
+        "silver",
+        "zinc",
+        "osmium",
+        "platinum"
+]
+let calcinatedgem = [
+	"coal",
+        "diamond",
+        "emerald",
+        "lapis",
+        "redstone"
+]
+calcinatedraw.forEach(material => {
+	event.recipes.botania.brew(`kubejs:${material}_sight`, ['minecraft:nether_wart', `potionsmaster:calcinated${material}_powder`, `#forge:storage_blocks/raw_${material}`]).id(`mbm2:${material}_sight`)
+	})
+calcinatedgem.forEach(material => {
+	event.recipes.botania.brew(`kubejs:${material}_sight`, ['minecraft:nether_wart', `potionsmaster:calcinated${material}_powder`, `#forge:storage_blocks/${material}`]).id(`mbm2:${material}_sight`)
+	})
+event.recipes.botania.brew("kubejs:aluminium_sight", ['minecraft:nether_wart', 'potionsmaster:calcinatedaluminium_powder', '#forge:storage_blocks/raw_aluminum']).id("mbm2:aluminum_sight")
+event.recipes.botania.brew("kubejs:quartz_sight", ['minecraft:nether_wart', 'potionsmaster:calcinatedquartz_powder', 'minecraft:quartz_block']).id("mbm2:quartz_sight")
+event.recipes.botania.brew("kubejs:netherite_sight", ['minecraft:nether_wart', 'potionsmaster:calcinatednetherite_powder', '#mbm2:brewery_debris']).id("mbm2:debris_sight")
 
+event.recipes.botania.brew("kubejs:bargaining", ['minecraft:nether_wart', "minecraft:golden_apple", Item.of('minecraft:potion', '{Potion:"potionsmaster:emerald_sight"}')])
+event.recipes.botania.brew("kubejs:greater_bargaining", ['minecraft:nether_wart', 'minecraft:enchanted_golden_apple', Item.of('minecraft:potion', '{Potion:"potionsmaster:emerald_sight"}')])
+
+//mythicbot infusion
+event.custom({
+	"type": 'mythicbotany:infusion',
+	"group": 'infuser',
+	"ingredients": [
+		{ "item": 'mna:mark_of_the_fey' },
+		{ "tag": 'elementalcraft:gems/fine_earth' },
+		{ "item": 'reliquary:fertile_lily_pad' },
+		{ "item": 'naturesaura:aura_bloom' },
+		{ "item": 'ars_nouveau:ritual_overgrowth' }
+	],
+	"output": {
+		"item": 'botania:overgrowth_seed'
+	},
+	"mana": 500000,
+	"fromColor": 16777215,
+	"toColor": 2875403
+	}).id(`mbm2:mythicbotany_infusion/overgrowth`);
 
 
 });

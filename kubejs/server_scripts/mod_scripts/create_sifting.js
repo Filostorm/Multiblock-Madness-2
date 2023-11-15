@@ -38,4 +38,12 @@ onEvent('recipes', event => {
 		Item.of('mekanism:dirty_netherite_scrap').withChance(0.25).toResultJson(),
 		Item.of('minecraft:netherite_scrap').withChance(0.15).toResultJson(),
 	], 500, 'mbm2:sifting/common_material_brass_mesh')
+
+	//Arcane Sand
+	global.createSifting(event, [Item.of('createsifter:brass_mesh').toJson(), Item.of('kubejs:arcane_sand').toJson()], [
+		Item.of('forbidden_arcanus:arcane_crystal_dust_speck').withChance(0.33).toResultJson(),
+		Item.of('elementalcraft:inert_crystal').withChance(0.15).toResultJson(),
+		Item.of('create:experience_nugget').withChance(0.10).toResultJson(),
+		Item.of('botania:fertilizer').withChance(0.25).toResultJson(),
+	], 500, 'mbm2:sifting/arcane_sand_brass_mesh')
 });

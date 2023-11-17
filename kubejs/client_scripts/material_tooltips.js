@@ -143,8 +143,34 @@ onEvent('item.tooltip', tooltip => {
   	tooltip.addAdvanced(`multiblocked:energy_input_mk3`, (item, advanced, text) => {
 		text.add(1, [Text.of('Max transfer: ').gold(), Text.of('262,144').green()])
   	})
-
-
+	//ae2additions
+	var ae2aLoaded = Platform.isLoaded('ae2additions');
+   	if(ae2aLoaded){
+	tooltip.addAdvanced('ae2additions:pattern_provider_2th', (item, advanced, text) => {
+		text.add(1, [Text.of('Holds 18 Patterns').lightPurple()])
+		text.add(2, [Text.of('Only Shows Up On The Advanced Pattern Access Terminal').red()])
+  	})
+	tooltip.addAdvanced('ae2additions:pattern_provider_3th', (item, advanced, text) => {
+		text.add(1, [Text.of('Holds 27 Patterns').lightPurple()])
+		text.add(2, [Text.of('Only Shows Up On The Advanced Pattern Access Terminal').red()])
+  	})
+	tooltip.addAdvanced('ae2additions:pattern_provider_4th', (item, advanced, text) => {
+		text.add(1, [Text.of('Holds 36 Patterns').lightPurple()])
+		text.add(2, [Text.of('Only Shows Up On The Advanced Pattern Access Terminal').red()])
+  	})
+	tooltip.addAdvanced('ae2additions:part_pattern_provider_2th', (item, advanced, text) => {
+		text.add(1, [Text.of('Holds 18 Patterns').lightPurple()])
+		text.add(2, [Text.of('Only Shows Up On The Advanced Pattern Access Terminal').red()])
+  	})
+	tooltip.addAdvanced('ae2additions:part_pattern_provider_3th', (item, advanced, text) => {
+		text.add(1, [Text.of('Holds 27 Patterns').lightPurple()])
+		text.add(2, [Text.of('Only Shows Up On The Advanced Pattern Access Terminal').red()])
+  	})
+	tooltip.addAdvanced('ae2additions:part_pattern_provider_4th', (item, advanced, text) => {
+		text.add(1, [Text.of('Holds 36 Patterns').lightPurple()])
+		text.add(2, [Text.of('Only Shows Up On The Advanced Pattern Access Terminal').red()])
+  	})
+	}
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	///////// COIL TIPS NEED TO MAKE CHANGES MANUALLY HERE THERE AND EVERYWHERE (aka ore_processing) ///////////////
 

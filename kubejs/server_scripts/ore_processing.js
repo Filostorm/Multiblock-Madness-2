@@ -1094,15 +1094,15 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 
 onEvent("lootjs", (event) => {
 	event.enableLogging();
+		event.addBlockLootModifier('#forge:ores/cheese')
+			.removeLoot(Item.of('#forge:cheese/cheese'))
+			.pool((pool) => {
+					pool.addLoot('#forge:cheese/cheese');
+					pool.applyOreBonus("minecraft:fortune");
+			});
 		global.newMaterialParts.forEach((item) => {
 			if (item.ore) {
 				////////////ORE DROPS//////////////////
-				event.addBlockLootModifier(`#forge:ores/cheese`)
-				    .removeLoot(Item.of('beyond_earth:cheese'))
-					.pool((pool) => {
-						pool.addLoot('beyond_earth:cheese')
-						pool.applyOreBonus("minecraft:fortune")
-					})
 				event.addBlockLootModifier(`#forge:ores/${item.material}`)
 				    .removeLoot(Item.of(`#forge:ores/raw/${item.material}`))
 					.pool((pool) => {

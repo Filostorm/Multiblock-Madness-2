@@ -159,7 +159,37 @@ onEvent('recipes', event => {
 		}
 	})
 	
-
+//structural alloy dust ebf smelting
+let tier5Temp = 2000
+event.recipes.multiblocked.multiblock("ebf")
+.inputFluid(Fluid.of('mekanism:oxygen', 1000))
+		.inputItem('kubejs:tier_3_structural_alloy_dust')
+	.outputItem(Item.of('kubejs:tier_3_structural_alloy_ingot'))
+	.setPerTick(true)
+	.inputFE(4000)
+	.duration(200)
+	.data({ temperature: tier5Temp })
+	.text(`    Heat: §6${tier5Temp}`)
+	.predicate((recipe, recipeLogic) => {
+	let reqTemp = recipe.getData().getInt("temperature")
+	let controllerTe = recipeLogic.controller.self()
+	let level = controllerTe.getLevel()
+	let coilTotalHeat = 0
+	coilPos.forEach(pos => {
+	let coilName = level.getBlockState(controllerTe.getBlockPos().offset(pos.x, pos.y, pos.z)).getBlock()
+	coilHeatValues.forEach(material => {
+	if (Block.getBlock(`kubejs:${material.name}_coil`).equals(coilName)) {
+	coilTotalHeat += material.heat
+	}
+	})
+	})
+//If we have enough Heat, chillin
+if (reqTemp <= coilTotalHeat) {
+return true
+} else  {
+return false
+}
+}, Component.string('Requires at least Desh Coils'))
  
 });
 	

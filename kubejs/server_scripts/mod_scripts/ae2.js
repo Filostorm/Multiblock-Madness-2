@@ -413,4 +413,58 @@ onEvent('recipes', event => {
 	  'ae2:fluix_crystal', 
 	  'immersiveengineering:redstone_acid_bucket', 
 	  'naturesaura:gold_powder'*/
+
+	//Can't find the right meteorites, or are you just too lazy?
+	event.recipes.botania.pure_daisy('beyond_earth:sky_stone', 'ae2:smooth_sky_stone_block').id(`mbm2:reverse_skystone_conversion`)
+	event.recipes.botania.pure_daisy('ae2:sky_stone_block', 'beyond_earth:sky_stone').id(`mbm2:skystone_conversion`)
+
+	event.recipes.tconstruct.casting_table('ae2:calculation_processor_press', 'tconstruct:molten_steel', 810).cast('ae2:calculation_processor').consumeCast().coolingTime(180).id(`mbm2:casting/ae2_press_calculation`)
+	event.recipes.tconstruct.casting_table('ae2:engineering_processor_press', 'tconstruct:molten_steel', 810).cast('ae2:engineering_processor').consumeCast().coolingTime(180).id(`mbm2:casting/ae2_press_engineering`)
+	event.recipes.tconstruct.casting_table('ae2:logic_processor_press', 'tconstruct:molten_steel', 810).cast('ae2:logic_processor').consumeCast().coolingTime(180).id(`mbm2:casting/ae2_press_logic`)
+	event.recipes.tconstruct.casting_table('ae2:silicon_press', 'tconstruct:molten_steel', 810).cast('ae2:printed_silicon').consumeCast().coolingTime(180).id(`mbm2:casting/ae2_press_silicon`)
+
+	//ae2 additions scripts
+
+	var ae2aLoaded = Platform.isLoaded('ae2additions');
+    if(ae2aLoaded){ 
+	let ae2aRemoval = [
+		'ae2additions:network/cells/item_advanced_cell_housing',
+		'ae2additions:network/cells/item_ultimate_cell_housing',
+		'ae2additions:network/cells/item_storage_cell_1kk',
+		'ae2additions:network/cells/item_storage_cell_4kk',
+		'ae2additions:network/cells/item_storage_cell_16kk',
+		'ae2additions:network/cells/item_storage_cell_64kk',
+		'ae2additions:network/cells/item_storage_cell_256kk',
+		'ae2additions:network/cells/item_storage_cell_1kkk_1th',
+		'ae2additions:network/cells/item_storage_cell_1kkk_2th',
+		'ae2additions:network/cells/item_storage_cell_1kkk_3th',
+		'ae2additions:network/cells/item_storage_cell_1kkk_4th',
+		'ae2additions:network/cells/item_storage_cell_1kk_storage',
+		'ae2additions:network/cells/item_storage_cell_4kk_storage',
+		'ae2additions:network/cells/item_storage_cell_16kk_storage',
+		'ae2additions:network/cells/item_storage_cell_64kk_storage',
+		'ae2additions:network/cells/item_storage_cell_256kk_storage',
+		'ae2additions:network/cells/item_storage_cell_1kkk_1th_storage',
+		'ae2additions:network/cells/item_storage_cell_1kkk_2th_storage',
+		'ae2additions:network/cells/item_storage_cell_1kkk_3th_storage',
+		'ae2additions:network/cells/item_storage_cell_1kkk_4th_storage',
+		'ae2additions:network/crafting/pattern_provider_3th_gen',
+		'ae2additions:network/crafting/pattern_provider_4th_gen',
+		'ae2additions:network/crafting/pattern_provider_5th_gen',
+		'ae2additions:network/crafting/pattern_provider_6th_gen',
+		'ae2additions:parts/pattern_provider_5th_gen_part',
+		'ae2additions:parts/pattern_provider_6th_gen_part', 
+		'ae2additions:parts/pattern_provider_5th_gen_block',
+		'ae2additions:parts/pattern_provider_6th_gen_block'
+	]
+	ae2aRemoval.forEach(item => {
+		event.remove({id: item})
+	});
+
+	event.replaceInput({id: 'ae2additions:network/crafting/pattern_provider_2th_gen'}, 'ae2:fluix_block', 'powah:uraninite_block')
+
+	event.shaped('ae2additions:pattern_provider_3th', ['ABA','CDC','ABA'], {A: 'kubejs:lunar_alloy_plating',B: 'laserio:logic_chip',C: 'pneumaticcraft:module_expansion_card',D: 'ae2additions:pattern_provider_2th'})
+	
+	event.shaped('ae2additions:pattern_provider_4th', ['ABA','CDC','ABA'], {A: 'kubejs:tier_3_structural_alloy_plating',B: 'lazierae2:parallel_processor',C: 'mekanism:ultimate_control_circuit',D: 'ae2additions:pattern_provider_3th'})
+}
 });

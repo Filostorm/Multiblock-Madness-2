@@ -458,7 +458,17 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				.setPerTick(true)
 				.inputFE(4000)
 				.duration(100)
-					 
+					
+				event.recipes.multiblocked.multiblock("mana_compressor")
+				.inputItem(Item.of(`4x #forge:ores/${global.oreRefiningParts[4].name}/${item.material}`))
+				.inputItem(Item.of('pneumaticcraft:air_canister', '{"pneumaticcraft:air":30000}'))
+				.inputFluid(Fluid.of(`kubejs:liquid_mana`, 100))
+				.outputItem(Item.of(`4x #forge:ores/${global.oreRefiningParts[3].name}/${item.material}`))
+				.outputItem('pneumaticcraft:air_canister')
+				.setPerTick(true)
+				.inputFE(4000)
+				.duration(100)
+				 
 
 				///////////////////// ORE REFINING STEP 4 //////////////////
 				//Ore Processing Deposits
@@ -1084,6 +1094,12 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 
 onEvent("lootjs", (event) => {
 	event.enableLogging();
+		event.addBlockLootModifier('#forge:ores/cheese')
+			.removeLoot(Item.of('#forge:cheese/cheese'))
+			.pool((pool) => {
+					pool.addLoot('#forge:cheese/cheese');
+					pool.applyOreBonus("minecraft:fortune");
+			});
 		global.newMaterialParts.forEach((item) => {
 			if (item.ore) {
 				////////////ORE DROPS//////////////////

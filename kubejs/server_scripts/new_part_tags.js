@@ -1,5 +1,7 @@
 onEvent('tags.items', event => {
 
+  let orePartCreation = global.oreParts.concat(global.oreBonusParts)
+
     global.newMaterialParts.forEach((item) => {
       
         if (item.type == 'base_metal' && item.tier == 1) {
@@ -77,7 +79,7 @@ onEvent('tags.items', event => {
             event.add(`forge:storage_blocks/raw_${item.material}`, `kubejs:raw_${item.material}_block`)
           }
           
-          global.oreParts.forEach((part) => {
+          orePartCreation.forEach((part) => {
             if (part.name != 'raw'/* && !(part.grade == null && item.type == 'compound_ore')*/) {
               event.add(`forge:ores/${part.name}`, `kubejs:${part.name}_${item.material}`)
               event.add(`forge:ores/${part.name}/${item.material}`, `kubejs:${part.name}_${item.material}`)

@@ -135,14 +135,29 @@ onEvent('item.tooltip', tooltip => {
 
 	//Multiblocked Tooltips
 	tooltip.addAdvanced(`multiblocked:energy_input_mk1`, (item, advanced, text) => {
-		text.add(1, [Text.of('Max transfer: ').gold(), Text.of('16,384').green()])
+		text.add(1, [Text.of('Max transfer: ').gold(), Text.of('16,000').green()])
  	})
   	tooltip.addAdvanced(`multiblocked:energy_input_mk2`, (item, advanced, text) => {
-		text.add(1, [Text.of('Max transfer: ').gold(), Text.of('65,536').green()])
+		text.add(1, [Text.of('Max transfer: ').gold(), Text.of('128,000').green()])
   	})
   	tooltip.addAdvanced(`multiblocked:energy_input_mk3`, (item, advanced, text) => {
-		text.add(1, [Text.of('Max transfer: ').gold(), Text.of('262,144').green()])
+		text.add(1, [Text.of('Max transfer: ').gold(), Text.of('1,024,000').green()])
   	})
+
+	//Battie tooltips
+	global.batteryItems.forEach((item, index) => {
+	  let storage = global.batteryStorage[index].toLocaleString();
+	  console.log(item +' ' +storage)
+	  tooltip.addAdvanced(`kubejs:${item}_empty`, (item, advanced, text) => {
+		  text.add(1, [Text.of(`(0/${storage})`).red()])
+		})
+	  tooltip.addAdvanced(`kubejs:${item}_full`, (item, advanced, text) => {
+		  text.add(1, [Text.of(`(${storage})`).green()])
+		})
+	  
+	  
+	})
+
 	//ae2additions
 	var ae2aLoaded = Platform.isLoaded('ae2additions');
    	if(ae2aLoaded){
@@ -278,6 +293,15 @@ onEvent('item.tooltip', tooltip => {
 		//Adds Ore Processing Info
 		if (item.ore) {
 			
+				//Grit is special
+			if(item.type != 'compound_ore') {
+				tooltip.addAdvanced(`kubejs:grit_${item.material}`, (items, advanced, text) => {
+					text.add(1, [Text.white(`Can smelted in: `), Text.yellow(`${nameUpper(smeltingList[item.tier])}`)])
+				})
+			} else {
+				tooltip.addAdvanced(`kubejs:grit_${item.material}`, (items, advanced, text) => {
+						text.add(1, [Text.white(`Can smelted into: `), Text.gold(`${nameUpper(item.components[0])}`)])
+				})}
 			////////////////////////////////////////////////
 			//											  //
 			//			PROCESSING TOOLTIP START		  //
@@ -363,7 +387,7 @@ onEvent('item.tooltip', tooltip => {
 					let processingLine3 = (part) => {
 						let tooltipLine3 = ""
 						//console.log(oreProcessingPartList)
-						if (oreProcessingPartList[oreProcessingPartList.length-2] == nameUpper(part)) { //last item on the list has no next step -2 because grit is last
+						if (oreProcessingPartList[oreProcessingPartList.length-1] == nameUpper(part)) { //last item on the list has no next step -2 because grit is last ******moved grit to a seperate list so its -1 now
 							tooltipLine3 = Text.darkGray(`Maximum Processing Reached`)
 						} else {
 							tooltipLine3 = [smeltingDashFunction(item.tier, index+1), Text.gray(oreProcessingPartList[index+1]), Text.gray(` [${gradeLetter[index+1]}]`), refiningFunction(oreRefiningPartList[index+1], index+1)]
@@ -376,7 +400,6 @@ onEvent('item.tooltip', tooltip => {
 						tooltip.addAdvanced(name, (items, advanced, text) => {
 							text.add(1, [Text.of(`Metal Tier: `).white(),Text.of(`${item.tier}`).gold()])
 							text.add(2, [smeltingFunction(item.tier)])
-							if (part.name != 'grit') {
 								if (!tooltip.shift) {
 									text.add(3, processingLine2(part.name))
 									text.add(4, [Text.of('Hold ').gray(), Text.of('Shift ').green(), Text.of('to see more information.').gray()])
@@ -384,7 +407,7 @@ onEvent('item.tooltip', tooltip => {
 									text.add(3, processingLine1(part.name))
 									text.add(4, processingLine2(part.name))
 									text.add(5, processingLine3(part.name))
-								}}
+								}
 						})
 					}
 					
@@ -409,6 +432,7 @@ onEvent('item.tooltip', tooltip => {
 							processingToolTipCreation(partName)
 						}
 					}
+					
 					
 
 	////////////////////////////////////////////////
@@ -453,7 +477,6 @@ onEvent('item.tooltip', tooltip => {
 			let compoundToolTipCreation = (name) => {
 				//Make the Compound part Tooltip
 				tooltip.addAdvanced(name, (items, advanced, text) => {
-					if (part.name != 'grit') {
 						if (!tooltip.shift) {
 							text.add(1, [compoundSmeltingFunction(part.grade)])
 							text.add(2, [Text.of('Hold ').gray(), Text.of('Shift ').gold(), Text.of('for sorting information.').gray()])
@@ -469,9 +492,7 @@ onEvent('item.tooltip', tooltip => {
 							text.add(9, compoundLine(7))
 							text.add(10, compoundLine(8))
 						}
-					} else {
-						text.add(1, [compoundSmeltingFunction(part.grade)])
-					}
+					
 				})
 			}
 			//Finds the exact items then runs the tooltip creation function
@@ -480,6 +501,7 @@ onEvent('item.tooltip', tooltip => {
 					partName = `kubejs:${part.name}_${item.material}`
 					compoundToolTipCreation(partName)
 				}
+
 			}
 
 

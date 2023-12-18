@@ -83,7 +83,7 @@ global.transitionalItemsTexture = [
 	'titanium_plated_obsidian',
 ]
 
-var batteryItems = [
+global.batteryItems = [
 	'small_battery',
 	'large_battery',
 	'energy_crystal',
@@ -91,13 +91,13 @@ var batteryItems = [
 	'lapatron_crystal',
 	'lapatron_orb',
 ]
-var batteryStorage = [
-	500*60*20, /**power per tick */
-	4000*60*20,
-	32000*((2*60)*20),
-	256000*((2*60)*20),
-	2048000*((4*60)*20),
-	16384000*((4*60)*20),
+global.batteryStorage = [
+	10000, //10k
+	100000, //100k
+	1000000, //1m
+	100000000, //100m
+	10000000000, //100b
+	1000000000000, //1T
 ]
 
 var nameUpperWSpace = (name, status) => {
@@ -111,9 +111,9 @@ onEvent('item.registry', event => {
 	basicItems.forEach((item) => {
 		event.create(item)
 	})
-	batteryItems.forEach((item) => {
+	global.batteryItems.forEach((item) => {
 		event.create(`${item}_empty`).displayName(nameUpperWSpace(item, 'Empty')).texture(`kubejs:item/battery/${item}_empty`)
-		event.create(`${item}_full`).displayName(nameUpperWSpace(item, 'Full')).texture(`kubejs:item/battery/${item}_full`)
+		event.create(`${item}_full`).displayName(nameUpperWSpace(item, 'Full')).texture(`kubejs:item/battery/${item}_full`).unstackable()
 	})
 	global.transitionalItems.forEach((item) => {
 		event.create(`incomplete_${item}`, 'create:sequenced_assembly').texture('kubejs:item/package')

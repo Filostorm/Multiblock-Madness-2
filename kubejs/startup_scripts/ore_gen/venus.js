@@ -21,24 +21,6 @@ onEvent('worldgen.add', event => {
 
 ////////////////////////////////////////////	venus	////////////////////////////////
 
-	// Base calorite Veins
-	event.addOre((ore) => {
-		ore.id = 'kubejs:mars_calorite_ore'
-	
-		ore.addTarget('beyond_earth:mars_stone', 'beyond_earth:mars_calorite_ore')
-
-		ore.count([1, 6])
-				.squared()
-				.uniformHeight(
-						anchors.aboveBottom(0),
-						anchors.absolute(100)
-				)
-		ore.size = 20
-		ore.noSurface = marsSurfaceChance
-		ore.worldgenLayer = "underground_ores"
-		ore.chance = 0
-		ore.biomes = ["beyond_earth:mars_ice_spikes", "beyond_earth:mars"]
-	})
 
 	// Base palladium Veins
 	event.addOre((ore) => {

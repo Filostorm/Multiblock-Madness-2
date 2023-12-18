@@ -81,7 +81,7 @@
 
     "block.mbm2.railgun": "Railgun",
     "mbm2.railgun.description": "Launches satellites and other things into space",
-    "multiblocked.recipe_map.railgun": "Space Launching",
+    "multiblocked.recipe_map.railgun": "Railgun Launching",
 
     "block.mbm2.satellite_receiver": "Satellite Receiver",
     "mbm2.satellite_receiver.description": "Receives signals from space",

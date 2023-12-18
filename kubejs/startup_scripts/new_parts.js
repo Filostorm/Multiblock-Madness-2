@@ -14,6 +14,9 @@ const nameUpper = (name) => {
   }
 }
 onEvent('item.registry', event => {
+
+  let orePartCreation = global.oreParts.concat(global.oreBonusParts)
+
   global.newMaterialParts.forEach((item) => {
     item.itemParts.forEach((part) => {
     if (part.includes('model')) { // this does everything with a model
@@ -47,7 +50,7 @@ onEvent('item.registry', event => {
     //Makes all the ore parts based on the arrays in _ore_part_list
     if (item.ore) {
       if (item.type == 'base_metal' || item.type == 'compound_ore' || item.type == 'rare_metal') {
-      global.oreParts.forEach((part) => {
+        orePartCreation.forEach((part) => {
         //Build the part Name
         if (item.ore_name == null) { 
           global.partDisplayName = part.prefix + nameUpper(item.material) + part.suffix

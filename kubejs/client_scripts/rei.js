@@ -178,6 +178,7 @@ onEvent("rei.group", (event) => {
 				`#forge:ores/shard/${item.material}`,
 				`#forge:ores/chunk/${item.material}`,
 				`#forge:ores/crumbled/${item.material}`,
+				`#forge:ores/fragment/${item.material}`,
 
 				//`#mekanism:dirty_dusts/${item.material}`,
 				//`#mekanism:clumps/${item.material}`,

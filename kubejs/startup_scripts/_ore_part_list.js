@@ -49,13 +49,6 @@ global.oreProcessingParts = [
         'model': true,
         'grade': 6,
     },
-    {
-        'name': `grit`,
-        'prefix': ``,
-        'suffix': ` Grit`,
-        'model': true,
-        'grade': -1,
-    },
 ]
 
 global.oreRefiningParts = [
@@ -111,3 +104,19 @@ global.oreRefiningParts = [
 ]
 
   global.oreParts = global.oreProcessingParts.concat(global.oreRefiningParts)
+  
+
+global.oreBonusParts = [
+    {
+        'name': `grit`,
+        'prefix': ``,
+        'suffix': ` Grit`,
+        'model': true,
+    },
+    {
+        'name': `fragment`,
+        'prefix': `Fragment of `,
+        'suffix': ``,
+        'model': false,
+    },
+]

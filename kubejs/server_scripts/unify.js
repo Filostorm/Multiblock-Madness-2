@@ -27,7 +27,7 @@ global.fluidsToRemove = [
 	'sophisticatedcore:xp_still',
 	'reliquary:xp_juice_still',
 	'cofh_core:experience',
-	'tconstruct:molten_ender',
+	//'tconstruct:molten_ender',
 	//'industrialforegoing:latex',
 	'thermal:latex',
 ]
@@ -55,6 +55,7 @@ var removeByName = [
 	'thermal:smelting/netherite_ingot_from_dust_blasting',
 	'tconstruct:common/materials/netherite_ingot_from_nuggets',
 	'minecraft:netherite_ingot',
+	//'tconstruct:smeltery/melting/ender/pearl'
 ]
 
 onEvent('recipes', event => {
@@ -130,6 +131,7 @@ onEvent('recipes', event => {
 	  }).id('mbm2:centrifuge/experience_bottle')
 	  
 	  //Ender Fluid Unify
+	  //Endermen
 	  event.custom({
 		"type": "tconstruct:entity_melting",
 		"entity": {
@@ -145,6 +147,7 @@ onEvent('recipes', event => {
 		},
 		"damage": 2
 	  }).id('tconstruct:smeltery/entity_melting/ender')
+	  //Ender Pearl
 	  event.custom({
 		"type": "tconstruct:melting",
 		"ingredient": [
@@ -161,7 +164,82 @@ onEvent('recipes', event => {
 		},
 		"temperature": 477,
 		"time": 49
-	  }).id('tconstruct:smeltery/melting/pearl')
+	  }).id('tconstruct:smeltery/melting/ender/pearl')
+	  //Enderman Head
+	  event.custom({
+		"type": "tconstruct:melting",
+		"ingredient": {
+		  "item": "tconstruct:enderman_head"
+		},
+		"result": {
+		  "fluid": "thermal:ender",
+		  "amount": 500
+		},
+		"temperature": 477,
+		"time": 116
+	  }).id('tconstruct:smeltery/entity_melting/heads/enderman')
+	  //Dragon Head
+	  event.custom({
+		"type": "tconstruct:melting",
+		"ingredient": {
+		  "item": "minecraft:dragon_head"
+		},
+		"result": {
+		  "fluid": "thermal:ender",
+		  "amount": 1000
+		},
+		"temperature": 477,
+		"time": 164
+	  }).id('tconstruct:smeltery/entity_melting/heads/ender_dragon')
+	  //End Crystal
+	  event.custom({
+		"type": "tconstruct:melting",
+		"ingredient": {
+		  "item": "minecraft:end_crystal"
+		},
+		"result": {
+		  "fluid": "thermal:ender",
+		  "amount": 250
+		},
+		"temperature": 477,
+		"time": 82,
+		"byproducts": [
+		  {
+			"fluid": "tconstruct:molten_glass",
+			"amount": 7000
+		  }
+		]
+	  }).id('tconstruct:smeltery/melting/ender/end_crystal')
+	  //Ender Chest
+	  event.custom({
+		"type": "tconstruct:melting",
+		"ingredient": {
+		  "item": "minecraft:ender_chest"
+		},
+		"result": {
+		  "fluid": "tconstruct:molten_obsidian",
+		  "amount": 8000
+		},
+		"temperature": 1000,
+		"time": 332,
+		"byproducts": [
+		  {
+			"fluid": "thermal:ender",
+			"amount": 250
+		  }
+		]
+	  }).id('tconstruct:smeltery/melting/obsidian/chest')
+	  //End Tools
+	  event.custom({
+		"type": "tconstruct:material_melting",
+		"input": "tconstruct:ender_pearl",
+		"temperature": 477,
+		"result": {
+		  "fluid": "thermal:ender",
+		  "amount": 250
+		}
+	  }).id('tconstruct:tools/materials/melting/ender_pearl')
+	  
 
 	  //Farmers Delight Unifie
 	  event.custom({

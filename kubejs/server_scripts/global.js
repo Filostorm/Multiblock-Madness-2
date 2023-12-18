@@ -76,8 +76,8 @@ global.removeAndHide = [
 	'industrialforegoing:washing_factory',
 	'industrialforegoing:fermentation_station',
 
-	'ae2additions:item_advanced_cell_housing',
-	'ae2additions:item_ultimate_cell_housing',
+	//'ae2additions:item_advanced_cell_housing',
+	//'ae2additions:item_ultimate_cell_housing',
 	'ae2additions:item_storage_cell_1kk',
 	'ae2additions:item_storage_cell_4kk',
 	'ae2additions:item_storage_cell_16kk',

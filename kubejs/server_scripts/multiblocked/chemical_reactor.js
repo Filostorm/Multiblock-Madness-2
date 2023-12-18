@@ -35,7 +35,7 @@
 		//.outputItem(r.output1)
 		.outputFluid(Fluid.of('mekanism:sulfuric_acid', 1000))
 		.setPerTick(true)
-		.inputFE(1024)
+		.inputFE(1000)
 		.duration(200)
 
 	//Nitric Acid
@@ -46,6 +46,6 @@
 		//.inputFluid(Fluid.of('chemlib:nitrogen_fluid', 100))
 		.outputFluid(Fluid.of('chemlib:nitric_acid_fluid', 250))
 		.setPerTick(true)
-		.inputFE(1024*2)
+		.inputFE(1000*2)
 		.duration(200)
   })

@@ -128,6 +128,18 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 		
 		
 		if (item.ore) {
+
+			
+		// Fragmnets
+		if(Item.of(`#forge:ores/raw/${item.material}`) != null) {
+		event.shaped(Item.of(`#forge:ores/raw/${item.material}`), [
+			'FF',
+			'FF'
+		  ], {
+			F: Item.of(`#forge:ores/fragment/${item.material}`)
+		  }).id(`mbm2:${item.material}_fragment_merge`)
+		}
+	  
 			
 			//This makes a list of every smeltable/refinable part based on the grade 
 			let refineProcessedOre = []
@@ -138,9 +150,9 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 					smeltProcessedOre.push(`#forge:ores/${part.name}/${item.material}`)
 				}
 				//Grit can also be smelted
-				if (part.name == 'grit' /*part.grade == 0 && item.tier != 0*/) {
-					smeltProcessedOre.push(`#forge:ores/${part.name}/${item.material}`)
-				}
+				//if (part.name == 'grit' /*part.grade == 0 && item.tier != 0*/) {
+					smeltProcessedOre.push(`#forge:ores/grit/${item.material}`)
+				//}
 			})
 				//console.log(refineProcessedOre)
 				//console.log(smeltProcessedOre)
@@ -485,7 +497,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 					"output": 
 						Item.of(`#forge:ores/${global.oreRefiningParts[4].name}/${item.material}`, global.refiningMultiplier[4])
 				
-				}).id(`mbm2:${global.oreRefiningParts[3].name}/${item.material}`);
+				}).id(`mbm2:${global.oreRefiningParts[4].name}/${item.material}`);
 
 				event.custom({
 					"type": "elementalcraft:pureinfusion",
@@ -500,7 +512,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 					"output": 
 						Item.of(`#forge:ores/${global.oreRefiningParts[4].name}/${item.material}`)
 					
-				}).id(`mbm2:chain_recipe/${global.oreRefiningParts[3].name}/${item.material}`)
+				}).id(`mbm2:chain_recipe/${global.oreRefiningParts[4].name}/${item.material}`)
 
 
 		////////////////////////////////////////////////////////////////
@@ -570,6 +582,9 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 						event.smelting(`#forge:ingots/${item.material}`, smeltRefinedOre).xp(0.5).id(`mbm2:smelting/ore_refined_part_${item.material}`)
 						event.blasting(`#forge:ingots/${item.material}`, smeltRefinedOre).xp(1.0).id(`mbm2:blasting/ore_refined_part_${item.material}`)
 						
+						event.smelting(`2x #forge:nuggets/${item.material}`, `#forge:ores/fragment/${item.material}`).xp(0.5).id(`mbm2:smelting/fragment_${item.material}`)
+						event.blasting(`2x #forge:nuggets/${item.material}`, `#forge:ores/fragment/${item.material}`).xp(1.0).id(`mbm2:blasting/fragment_${item.material}`)
+
 						//Retro Smeltery
 				  	if (item.fluid_id != null) {
 						smeltRefinedOre.forEach((part) => {

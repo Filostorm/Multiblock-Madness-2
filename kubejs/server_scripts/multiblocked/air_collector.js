@@ -7,14 +7,14 @@
 		.inputItem('kubejs:auric_gold_nugget')
 		.outputItem(Item.of('naturesaura:aura_bottle', '{stored_type:"naturesaura:overworld"}'))
 		.setPerTick(true)
-		.inputFE(512)
+		.inputFE(500)
 		.duration(200)
 
 	event.recipes.multiblocked.multiblock("air_collector")
 		.dimension('minecraft:overworld')
 		.outputFluid(Fluid.of('kubejs:liquid_air', 100))
 		.setPerTick(true)
-		.inputFE(512)
+		.inputFE(500)
 		.duration(100)
 
 	//Nether
@@ -24,14 +24,14 @@
 		.inputItem('kubejs:auric_gold_nugget')
 		.outputItem(Item.of('naturesaura:aura_bottle', '{stored_type:"naturesaura:nether"}'))
 		.setPerTick(true)
-		.inputFE(1024)
+		.inputFE(1000)
 		.duration(200)
 
 	event.recipes.multiblocked.multiblock("air_collector")
 		.dimension('minecraft:the_nether')
 		.outputFluid(Fluid.of('kubejs:liquid_nether_air', 100))
 		.setPerTick(true)
-		.inputFE(1024)
+		.inputFE(1000)
 		.duration(100)
 
 	//Ender
@@ -40,7 +40,7 @@
 	.inputItem('minecraft:glass_bottle')
 	.outputItem('botania:ender_air_bottle')
 	.setPerTick(true)
-	.inputFE(2048)
+	.inputFE(2000)
 	.duration(200)
 
 	event.recipes.multiblocked.multiblock("air_collector")
@@ -49,13 +49,13 @@
 		.inputItem('kubejs:auric_gold_nugget')
 		.outputItem(Item.of('naturesaura:aura_bottle', '{stored_type:"naturesaura:end"}'))
 		.setPerTick(true)
-		.inputFE(2048)
+		.inputFE(2000)
 		.duration(200)
 
 	event.recipes.multiblocked.multiblock("air_collector")
 		.dimension('minecraft:the_end')
 		.outputFluid(Fluid.of('kubejs:liquid_ender_air', 100))
 		.setPerTick(true)
-		.inputFE(2048)
+		.inputFE(2000)
 		.duration(100)
   })

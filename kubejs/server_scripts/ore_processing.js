@@ -130,7 +130,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 		if (item.ore) {
 
 			
-		// Fragmnets
+		// Fragmets
 		if(Item.of(`#forge:ores/raw/${item.material}`) != null) {
 		event.shaped(Item.of(`#forge:ores/raw/${item.material}`), [
 			'FF',
@@ -345,7 +345,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				}).id(`mbm2:zinc_mesh`)
 				//Carbon Mesh
 				//event.recipes.mekanismMetallurgicInfusing('kubejs:carbon_mesh', 'kubejs:mesh', 'mekanism:carbon', 10) //cant seem to change the amount from 10
-				global.mekanismMetallurgicInfusing(event, Item.of('kubejs:carbon_mesh'), Item.of('kubejs:zinc_mesh'), 'mekanism:carbon', 20, `mbm2:carbon_mesh`)
+				global.mekanismMetallurgicInfusing(event, Item.of('kubejs:carbon_mesh'), Item.of('kubejs:zinc_mesh'), 'mekanism:carbon', 10, `mbm2:carbon_mesh`)
 				//Activated Carbon Mesh
 				event.recipes.mekanismPurifying('kubejs:activated_carbon_mesh', 'kubejs:carbon_mesh', {gas: 'mekanism:oxygen', amount: 1})
 
@@ -462,16 +462,6 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 
 				//Compressing Chain
 				event.recipes.multiblocked.multiblock("mana_compressor")
-				.inputItem(Item.of(`4x #forge:ores/${global.oreRefiningParts[2].name}/${item.material}`))
-				.inputItem(Item.of('pneumaticcraft:air_canister', '{"pneumaticcraft:air":30000}'))
-				.inputFluid(Fluid.of(`kubejs:liquid_mana`, 100))
-				.outputItem(Item.of(`4x #forge:ores/${global.oreRefiningParts[3].name}/${item.material}`))
-				.outputItem('pneumaticcraft:air_canister')
-				.setPerTick(true)
-				.inputFE(4000)
-				.duration(100)
-					
-				event.recipes.multiblocked.multiblock("mana_compressor")
 				.inputItem(Item.of(`4x #forge:ores/${global.oreRefiningParts[4].name}/${item.material}`))
 				.inputItem(Item.of('pneumaticcraft:air_canister', '{"pneumaticcraft:air":30000}'))
 				.inputFluid(Fluid.of(`kubejs:liquid_mana`, 100))
@@ -480,6 +470,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				.setPerTick(true)
 				.inputFE(4000)
 				.duration(100)
+					
 				 
 
 				///////////////////// ORE REFINING STEP 4 //////////////////
@@ -499,11 +490,12 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				
 				}).id(`mbm2:${global.oreRefiningParts[4].name}/${item.material}`);
 
+				//Infusion Chain
 				event.custom({
 					"type": "elementalcraft:pureinfusion",
 					"element_amount": 500,
 					"ingredients": [
-						 Item.of(`#forge:ores/${global.oreRefiningParts[3].name}/${item.material}`),
+						 Item.of(`#forge:ores/${global.oreRefiningParts[5].name}/${item.material}`),
 						{ "item": 'minecraft:prismarine_crystals'},
 						{ "item": 'forbidden_arcanus:arcane_crystal_dust_speck'},
 						{ "item": 'forbidden_arcanus:arcane_crystal_dust_speck'},
@@ -860,6 +852,9 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 					if (Item.of(`#forge:ingots/${item.components[0]}`) != null) {
 						event.smelting(`#forge:ingots/${item.components[0]}`, [`#forge:raw_materials/${item.material}`,`#forge:dusts/${item.material}`,`#forge:ores/grit/${item.material}`]).id(`mbm2:smelting/raw_${item.material}`)
 						event.blasting(`#forge:ingots/${item.components[0]}`, [`#forge:raw_materials/${item.material}`,`#forge:dusts/${item.material}`,`#forge:ores/grit/${item.material}`]).id(`mbm2:blasting/raw_${item.material}`)
+
+						event.smelting(`2x #forge:nuggets/${item.components[0]}`, `#forge:ores/fragment/${item.material}`).xp(0.5).id(`mbm2:smelting/fragment_${item.material}`)
+						event.blasting(`2x #forge:nuggets/${item.components[0]}`, `#forge:ores/fragment/${item.material}`).xp(1.0).id(`mbm2:blasting/fragment_${item.material}`)
 					} else {
 						//For non metalic components
 						event.smelting(`2x #forge:dusts/${item.components[0]}`, [`#forge:raw_materials/${item.material}`, `#forge:dusts/${item.material}`])
@@ -924,7 +919,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 					.outputItem(`2x #forge:raw_materials/${item.components[1]}`)
 					.outputItem('3x thermal:slag')
 					.setPerTick(true)
-				  	.inputFE(512)
+				  	.inputFE(500)
 					.duration(200)
 
 					//Sorting F grade at tier 2
@@ -935,7 +930,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				  	.outputItem(`3x #forge:ores/${global.oreProcessingParts[1].name}/${item.components[2]}`)
 				  	.outputItem('4x thermal:slag')
 						.setPerTick(true)
-					.inputFE(512)
+					.inputFE(500)
 				  	.duration(200)
 
 				  //Sorting E grade at tier 2
@@ -947,7 +942,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 					.outputItem(`2x #forge:ores/${global.oreProcessingParts[2].name}/${item.components[3]}`)
 					.outputItem('6x thermal:slag')
 						.setPerTick(true)
-					.inputFE(512*4)
+					.inputFE(500*4)
 					.duration(200)
 
 					//Sorting D grade at tier 2
@@ -960,7 +955,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 					  .outputItem(`2x #forge:ores/${global.oreProcessingParts[3].name}/${item.components[4]}`)
 					  .outputItem('4x thermal:slag')
 						  .setPerTick(true)
-					  .inputFE(512*4)
+					  .inputFE(500*4)
 					  .duration(200)
 
 				  //Sorting C grade at tier 2
@@ -974,7 +969,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				  	.outputItem(`2x #forge:ores/${global.oreProcessingParts[4].name}/${item.components[5]}`)
 				  	.outputItem('4x thermal:slag')
 						.setPerTick(true)
-					.inputFE(512*16)
+					.inputFE(500*16)
 				  	.duration(200)
 
 					//Sorting B grade at tier 2
@@ -989,7 +984,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 					.outputItem(`2x #forge:ores/${global.oreProcessingParts[5].name}/${item.components[6]}`)
 					.outputItem('4x thermal:slag')
 						.setPerTick(true)
-					.inputFE(512*64)
+					.inputFE(500*64)
 					.duration(200)
 
 					//Sorting A grade at tier 2
@@ -1005,7 +1000,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 					.outputItem(`2x #forge:ores/${global.oreProcessingParts[6].name}/${item.components[7]}`)
 					.outputItem('4x thermal:slag')
 					  .setPerTick(true)
-				  	.inputFE(512*256)
+				  	.inputFE(500*256)
 					.duration(200)
 
 					
@@ -1117,6 +1112,7 @@ onEvent("lootjs", (event) => {
 			});
 		global.newMaterialParts.forEach((item) => {
 			if (item.ore) {
+				console.log('adding ore drops for: ' + item.material)
 				////////////ORE DROPS//////////////////
 				event.addBlockLootModifier(`#forge:ores/${item.material}`)
 				    .removeLoot(Item.of(`#forge:ores/raw/${item.material}`))
@@ -1168,6 +1164,9 @@ onEvent("lootjs", (event) => {
 								} else {
 									//Normal Ores
 									pool.addLoot(`#forge:ores/grit/${item.material}`);
+									//pool.addWeightedLoot([1, 4], [
+									//	Item.of(`#forge:ores/fragment/${item.material}`),
+									//])
 								}
 								pool.applyOreBonus("minecraft:fortune");
 							})

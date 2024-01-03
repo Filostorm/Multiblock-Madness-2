@@ -180,18 +180,6 @@
         ],
         "type": "blocks"
       },
-      "T": {
-        "blocks": [
-          {
-            "id": "ae2:sky_stone_tank"
-          }
-        ],
-        "type": "blocks",
-        "minCount": 1,
-        "maxCount": 4,
-        "previewCount": 1,
-        "io": "IN"
-      },
       "E": {
         "blocks": [
           {
@@ -202,6 +190,18 @@
           },
           {
             "id": "multiblocked:energy_input_mk3"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 1,
+        "previewCount": 1,
+        "io": "IN"
+      },
+      "F": {
+        "blocks": [
+          {
+            "id": "multiblocked:fluid_input"
           }
         ],
         "type": "blocks",
@@ -254,6 +254,7 @@
       "A": [
         "A",
         "E",
+        "F",
         "I",
         "O"
       ],
@@ -261,8 +262,7 @@
         "B"
       ],
       "C": [
-        "C",
-        "T"
+        "C"
       ],
       "D": [
         "A"

@@ -599,7 +599,7 @@ onEvent('worldgen.add', event => {
 			}
 		})
 
-		ore.count(200)
+		ore.count(300)
 				.squared()
 				.uniformHeight(
 						anchors.aboveBottom(32),

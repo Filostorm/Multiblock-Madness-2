@@ -183,13 +183,13 @@ onEvent('recipes', event => {
 
      //Tanks
 	 event.remove({output: 'beyond_earth:steel_tank'})
-	 event.shaped('beyond_earth:steel_tank', ['ABA','BCB','ABA'], {A: 'kubejs:aluminum_plating',B: 'kubejs:steel_rod',C: Item.of('thermal:fluid_cell', '{BlockEntityTag:{TankInv:[{Amount:0,Capacity:32000,FluidName:"minecraft:empty",Tank:0b}]}}')})
+	 event.shaped('beyond_earth:steel_tank', ['ABA','BCB','ABA'], {A: 'kubejs:aluminum_plating',B: 'kubejs:steel_rod',C: Item.of('thermal:fluid_cell', '{BlockEntityTag:{TankInv:[{Amount:0,Capacity:32000,FluidName:"minecraft:empty",Tank:0b}]}}')}).id('mbm2:steel_tank')
 	 event.remove({output: 'beyond_earth:desh_tank'})
-	 event.shaped('beyond_earth:desh_tank', ['ABA','BCB','ABA'], {A: 'beyond_earth:compressed_desh',B: 'kubejs:steel_rod',C: 'beyond_earth:steel_tank'})
+	 event.shaped('beyond_earth:desh_tank', ['ABA','BCB','ABA'], {A: 'beyond_earth:compressed_desh',B: 'kubejs:steel_rod',C: 'beyond_earth:steel_tank'}).id('mbm2:desh_tank')
 	 event.remove({output: 'beyond_earth:ostrum_tank'})
-	 event.shaped('beyond_earth:ostrum_tank', ['ABA','BCB','ABA'], {A: 'beyond_earth:compressed_ostrum',B: 'kubejs:steel_rod',C: 'beyond_earth:desh_tank'})
+	 event.shaped('beyond_earth:ostrum_tank', ['ABA','BCB','ABA'], {A: 'beyond_earth:compressed_ostrum',B: 'kubejs:steel_rod',C: 'beyond_earth:desh_tank'}).id('mbm2:ostrum_tank')
 	 event.remove({output: 'beyond_earth:calorite_tank'})
-	 event.shaped('beyond_earth:calorite_tank', ['ABA','BCB','ABA'], {A: 'beyond_earth:compressed_calorite',B: 'kubejs:steel_rod',C: 'beyond_earth:ostrum_tank'})
+	 event.shaped('beyond_earth:calorite_tank', ['ABA','BCB','ABA'], {A: 'beyond_earth:compressed_calorite',B: 'kubejs:steel_rod',C: 'beyond_earth:ostrum_tank'}).id('mbm2:calorite_tank')
 
 
 });

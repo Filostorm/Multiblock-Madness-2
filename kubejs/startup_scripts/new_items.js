@@ -59,7 +59,8 @@ var basicItems = [
 	'unfinished_advanced_control_circuit',
 	'unfinished_elite_control_circuit',
 	'unfinished_ultimate_control_circuit',
-	'titanium_plated_obsidian'
+	'titanium_plated_obsidian',
+	'bolt_mold'
 ]
 
 global.transitionalItems = [
@@ -121,8 +122,13 @@ onEvent('item.registry', event => {
 	global.transitionalItemsTexture.forEach((item) => {
 		event.create(`incomplete_${item}`, 'create:sequenced_assembly').texture(`kubejs:item/incomplete_${item}`)
 	})
+	event.create(`blank_mold`, 'create:sequenced_assembly')
 	event.create(`partially_folded_damascus_steel`, 'create:sequenced_assembly')
 
+	event.create('charcoal_chunk').burnTime(200)
+	event.create('coal_chunk').burnTime(200)
+
+	
 	event.create(`washed_thermogenic_blend`).color(0, 0xf06330).texture(`kubejs:item/ore/washed`)
 	event.create(`crushed_thermogenic_blend`).color(0, 0xf06330).texture(`kubejs:item/ore/crushed`)
 	event.create(`fine_thermogenic_blend_dust`).color(0, 0xf06330).texture(`kubejs:item/ore/fine_dust`)
@@ -144,5 +150,5 @@ onEvent('item.registry', event => {
 	event.create(`catalyst_gem`).displayName('Crystal Ore Catalyst')
 	event.create(`catalyst_magic`).displayName('Magic Ore Catalyst')
 	event.create(`catalyst_empty`).displayName('Empty Catalyst Housing')
-
+	
   });

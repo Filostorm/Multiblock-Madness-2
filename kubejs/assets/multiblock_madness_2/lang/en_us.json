@@ -91,7 +91,12 @@
     "mbm2.energy_receiver.description": "Receives energy from space",
     "multiblocked.recipe_map.energy_receiver": "Energy Receiving",
 
-    
+    "block.mbm2.sintering_oven": "Sintering Oven",
+    "mbm2.sintering_oven.description": "Compacts dust using heat and pressure to make usable parts",
+    "multiblocked.recipe_map.sintering": "Sintering",
+
+
+
     "block.multiblocked.create_item_input": "Input Vault Part",
     "block.multiblocked.create_item_output": "Output Vault Part",
 

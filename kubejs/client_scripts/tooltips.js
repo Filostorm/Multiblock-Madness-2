@@ -293,15 +293,36 @@ onEvent('item.tooltip', tooltip => {
 		//Adds Ore Processing Info
 		if (item.ore) {
 			
-				//Grit is special
+			//Bonus Tooltips
 			if(item.type != 'compound_ore') {
 				tooltip.addAdvanced(`kubejs:grit_${item.material}`, (items, advanced, text) => {
-					text.add(1, [Text.white(`Can smelted in: `), Text.yellow(`${nameUpper(smeltingList[item.tier])}`)])
+					text.add(1, [Text.of(`Metal Tier: `).white(),Text.of(`${item.tier}`).gold()])
+					text.add(2, [Text.white(`Can be smelted in: `), Text.yellow(`${nameUpper(smeltingList[item.tier])}`)])
 				})
 			} else {
 				tooltip.addAdvanced(`kubejs:grit_${item.material}`, (items, advanced, text) => {
-						text.add(1, [Text.white(`Can smelted into: `), Text.gold(`${nameUpper(item.components[0])}`)])
+					text.add(1, [Text.of(`Metal Tier: `).white(),Text.of(`${item.tier}`).gold()])
+					text.add(2, [Text.white(`Can be smelted into: `), Text.gold(`${nameUpper(item.components[0])}`)])
 				})}
+
+			if(item.tier <= 1) {
+				if(item.type == 'compound_ore') {
+					tooltip.addAdvanced(`kubejs:fragment_${item.material}`, (items, advanced, text) => {
+						text.add(1, [Text.of(`Metal Tier: `).white(),Text.of(`${item.tier}`).gold()])
+						text.add(2, [Text.white(`Can be smelted into `), Text.gold(`${nameUpper(item.components[0])} Nuggets`), Text.white(` or combined into Raw Ore`)])
+					}) 
+				} else {
+					tooltip.addAdvanced(`kubejs:fragment_${item.material}`, (items, advanced, text) => {
+						text.add(1, [Text.of(`Metal Tier: `).white(),Text.of(`${item.tier}`).gold()])
+						text.add(2, [Text.white(`Can be smelted or combined into Raw Ore`)])
+					}) 
+				}
+			} else {
+				tooltip.addAdvanced(`kubejs:fragment_${item.material}`, (items, advanced, text) => {
+					text.add(1, [Text.of(`Metal Tier: `).white(),Text.of(`${item.tier}`).gold()])
+					text.add(2, [Text.white(`Combine into Raw Ore for futher processing`)])
+				}) 
+			}
 			////////////////////////////////////////////////
 			//											  //
 			//			PROCESSING TOOLTIP START		  //

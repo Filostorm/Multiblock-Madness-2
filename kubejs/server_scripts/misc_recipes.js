@@ -8,6 +8,12 @@ onEvent('tags.items', event => {
 	//polonium subsitute tag
 	event.add(`mbm2:polonium_subsitute`, 'mekanism:pellet_polonium')
 	event.add(`mbm2:polonium_subsitute`, 'biggerreactors:blutonium_ingot')
+	
+	//Mahogany is lame
+	event.add('forge:stripped_logs', 'hexerei:stripped_mahogany_log')
+	event.add('minecraft:logs', 'hexerei:stripped_mahogany_log')
+	event.add('minecraft:logs_that_burn', 'hexerei:stripped_mahogany_log')
+	event.add('minecraft:logs_that_burn', 'hexerei:mahogany_log')
 
  });
 
@@ -22,6 +28,7 @@ onEvent('recipes', event => {
 
   	//Sheetmetal Cast
 	global.casingBasinCast(event, 'forge:sheetmetals', true, 'kubejs:sheetmetal_cast', 'forge:molten_steel', 180, 200, 'tconstruct:smeltery/casting/sheetmetal_cast')
+
 
 // [| solarflux:mirror |] //
 //event.remove({output: 'solarflux:mirror'})
@@ -40,15 +47,7 @@ C: 'thermal:silver_plate'
   event.shaped('solarflux:sp_2', ['AAA','ABA','AAA'], {A: 'solarflux:sp_1',B: 'kubejs:tier_1_electrical_alloy_wire_coil'}).id("solarflux:solar_panel_2")
 
 //Chests
-/*
-event.shaped('4x minecraft:chest', [
-	'LLL',
-	'L L',
-	'LLL'
-  ], {
-	L: '#minecraft:logs',
-  }).id("kubejs:log_chest")
-  */
+event.remove({input: '#minecraft:planks', output: '#forge:chests'})
 event.shaped('minecraft:chest', [
 	'PPP',
 	'P P',
@@ -56,7 +55,6 @@ event.shaped('minecraft:chest', [
   ], {
 	P: '#minecraft:planks',
   }).id("mbm2:plank_chest")
-//event.shapeless(`minecraft:chest`, ['#forge:chests/wooden']).id("kubejs:default_chest")
 
 
 //Scanner
@@ -234,4 +232,21 @@ event.shaped('3x kubejs:wood_scaffolding', [
   event.remove({id: 'thermal:fluid_cell'})
   event.shaped(Item.of('thermal:fluid_cell', '{BlockEntityTag:{TankInv:[{Amount:0,Capacity:32000,FluidName:"minecraft:empty",Tank:0b}]}}'), ['ABA','CDC','AEA'], {A: 'thermal:cured_rubber',B: '#thermal:glass/hardened',C: 'minecraft:iron_ingot',D: 'thermal:fluid_cell_frame',E: 'thermal:redstone_servo'}).id('mbm2:fluidcellfix')
 
+
+  //Swap scraps for stacked iron/steel plating
+  event.recipes.createSequencedAssembly([ // start the recipe
+  'kubejs:bolt_mold', // have this item be an output
+  ], Item.of('#forge:storage_blocks/compressed_steel'), [ // input.
+  event.recipes.createPressing('kubejs:blank_mold', ['kubejs:blank_mold']),
+  event.recipes.createFilling('kubejs:blank_mold', ['kubejs:blank_mold', Fluid.of('lava', 1000)]),
+  event.recipes.createDeploying('kubejs:blank_mold', ['kubejs:blank_mold', '#forge:bolts']),
+  event.recipes.createPressing('kubejs:blank_mold', ['kubejs:blank_mold']),
+  ]).transitionalItem('kubejs:blank_mold').loops(1).id(`mbm2:bolt_mold`)
+
+//Char/Coal Chunks
+  event.shapeless('8x kubejs:charcoal_chunk', ['charcoal']).id('mbm2:charcoal_chunk_crafting')
+  event.shapeless('charcoal', ['8x kubejs:charcoal_chunk']).id('mbm2:charcoal_chunk_uncrafting')
+
+  event.shapeless('8x kubejs:coal_chunk', ['coal']).id('mbm2:coal_chunk_crafting')
+  event.shapeless('coal', ['8x kubejs:coal_chunk']).id('mbm2:coal_chunk_uncrafting')
 });

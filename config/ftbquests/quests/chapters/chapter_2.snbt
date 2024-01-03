@@ -145,8 +145,8 @@
 		}
 		{
 			icon: "create:mechanical_press"
-			x: 1.5d
-			y: 12.0d
+			x: 3.0d
+			y: 10.0d
 			subtitle: "Unlocking Upgrades!"
 			description: ["You can rig this up manually with a Depot underneath, or have it above a belt for automation."]
 			dependencies: ["273B98D3C35D7356"]
@@ -170,8 +170,8 @@
 			}]
 		}
 		{
-			x: 4.0d
-			y: 12.0d
+			x: 3.0d
+			y: 13.0d
 			dependencies: ["273B98D3C35D7356"]
 			id: "1AE07B2CC8D8B725"
 			tasks: [{
@@ -357,7 +357,7 @@
 			tasks: [{
 				id: "3A4EABCE31DA3433"
 				type: "item"
-				title: "Any #functionalstorage:drawer"
+				title: "Any Drawer"
 				item: {
 					id: "itemfilters:tag"
 					Count: 1b
@@ -411,8 +411,8 @@
 		}
 		{
 			title: "Drawer Upgrades!"
-			x: 0.0d
-			y: 13.0d
+			x: 2.0d
+			y: 9.0d
 			subtitle: "These multiply your total storage"
 			dependencies: ["2990DA17B56345DA"]
 			id: "7A3C0E70F10FC88A"
@@ -457,8 +457,8 @@
 		{
 			title: "Furnace Upgrades"
 			icon: "ironfurnaces:iron_furnace"
-			x: 1.5d
-			y: 13.5d
+			x: 3.0d
+			y: 9.0d
 			dependencies: ["2990DA17B56345DA"]
 			id: "07A5A4AA9766AC81"
 			tasks: [{
@@ -518,7 +518,7 @@
 			description: [
 				"You'll find large veins of which can include several types of materials."
 				""
-				"In order to attach your drill augment, you'll need to unlock the Engineers Workbench by crafting Treated Wood."
+				""
 				"Refill by crafting the drill and fuel together."
 			]
 			dependencies: ["5FD77AB0F43882B8"]
@@ -572,12 +572,6 @@
 							}
 						}
 					}
-				}
-				{
-					id: "448230908D36FBA4"
-					type: "choice"
-					exclude_from_claim_all: true
-					table_id: 6539507619413551151L
 				}
 				{
 					id: "65002A96BA1C130D"
@@ -651,8 +645,8 @@
 		{
 			title: "Metal Tools"
 			icon: "tconstruct:seared_melter"
-			x: 3.5d
-			y: 8.5d
+			x: 4.5d
+			y: 11.5d
 			subtitle: "Reusable Casts are made from Brass"
 			dependencies: ["760223888ADD58B0"]
 			id: "23D386A39C0311F4"
@@ -698,8 +692,8 @@
 		}
 		{
 			title: "Chest Upgrades!"
-			x: 3.0d
-			y: 13.0d
+			x: 4.0d
+			y: 9.0d
 			description: ["To Diamond Tier and beyond!"]
 			dependencies: ["2990DA17B56345DA"]
 			id: "331A846E2C1269E3"
@@ -716,13 +710,13 @@
 		}
 		{
 			icon: "create:mechanical_mixer"
-			x: 3.5d
+			x: 4.5d
 			y: 10.0d
 			description: [
 				"You'll need to speed up your rotation to use the mixer. The simplest way is to attach a large cog to your Water Wheels, and a small cog to that one. The small cog will be spinning faster!"
 				""
 			]
-			dependencies: ["273B98D3C35D7356"]
+			dependencies: ["2990DA17B56345DA"]
 			id: "760223888ADD58B0"
 			tasks: [
 				{
@@ -831,10 +825,10 @@
 		}
 		{
 			icon: "thermal:device_tree_extractor"
-			x: -2.5d
-			y: 8.5d
+			x: 3.0d
+			y: 11.5d
 			subtitle: "Replacement for Kelp"
-			dependencies: ["4598B96CC8D9CD02"]
+			dependencies: ["2990DA17B56345DA"]
 			id: "7A86EFBA4A46492E"
 			tasks: [
 				{
@@ -1078,6 +1072,12 @@
 				type: "item"
 				item: "create:andesite_alloy"
 			}]
+			rewards: [{
+				id: "4FBC208298FF1D7D"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 2582656620646881183L
+			}]
 		}
 		{
 			title: "Upgrades!"
@@ -1205,6 +1205,7 @@
 		{
 			x: 8.0d
 			y: 7.5d
+			description: ["You can attach an augment for your Drill by placing it on the table, then adding the augment of choice."]
 			dependencies: ["556CB869A6592D68"]
 			id: "02DE8C27A70C222A"
 			tasks: [{
@@ -1212,6 +1213,28 @@
 				type: "item"
 				item: "immersiveengineering:workbench"
 			}]
+			rewards: [
+				{
+					id: "266A56F6EE3D9205"
+					type: "choice"
+					exclude_from_claim_all: true
+					table_id: 6539507619413551151L
+				}
+				{
+					id: "4B605CDF0526BE88"
+					type: "item"
+					item: {
+						id: "immersiveengineering:jerrycan"
+						Count: 1b
+						tag: {
+							Fluid: {
+								FluidName: "immersiveengineering:biodiesel"
+								Amount: 10000
+							}
+						}
+					}
+				}
+			]
 		}
 	]
 	quest_links: [ ]

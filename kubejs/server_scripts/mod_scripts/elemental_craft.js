@@ -39,7 +39,25 @@ onEvent('recipes', event => {
 		    return itemstack.withNBT(nbt)
 		}).id("mbm2:elementalcraft/container")
 
-
+		let elements =[
+			'fire',
+			'earth',
+			'air',
+			'water',
+		]
+		elements.forEach(element => {
+			event.shaped(`8x elementalcraft:${element}_shard`, 
+			[
+				'SSS',
+				'SCS',
+				'SSS'
+			  ], 
+			  {
+				C: `elementalcraft:${element}crystal`,
+				S: '#quark:shards',
+			  }).replaceIngredient(`elementalcraft:${element}crystal`, 'elementalcraft:inert_crystal').id(`mbm2:${element}_shard_transfer`)
+			
+		});
 
 
 

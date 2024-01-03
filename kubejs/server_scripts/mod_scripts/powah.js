@@ -236,7 +236,7 @@ E: 'powah:dielectric_rod'
     .inputItems('minecraft:blaze_powder','#forge:dusts/redstone')
     .outputItem(`kubejs:blazing_redstone`)
     .setPerTick(true)
-    .inputFE(512)
+    .inputFE(500)
     .duration(100)
 
   //Thermoelectric Plate

@@ -27,6 +27,16 @@
 				item: "mbm2:railgun"
 			}]
 		}
+		{
+			x: 6.0d
+			y: -0.5d
+			id: "70537424EB7030A2"
+			tasks: [{
+				id: "2B7A13A14C7ED6A5"
+				type: "item"
+				item: "mbm2:energy_receiver"
+			}]
+		}
 	]
 	quest_links: [ ]
 }

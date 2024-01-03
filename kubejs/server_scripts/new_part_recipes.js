@@ -27,9 +27,8 @@ onEvent('recipes', event => {
 
 	global.newMaterialParts.forEach((item) => {
 		
-		console.log(Item.of(`#forge:ingots/${item.material}`) + `: tier ${item.tier} ${item.type}`);
-		
 
+		console.log(Item.of(`#forge:ingots/${item.material}`) + `: tier ${item.tier} ${item.type}`);
 
 	
 	////////////////PLATES///////////////
@@ -317,6 +316,7 @@ onEvent('recipes', event => {
 		}
 
 		
+	///////SPROCKETS///////////////
 		if (Item.of(`#forge:sprockets/${item.material}`) != null) {
 			event.recipes.botania.mana_infusion(Item.of(`#forge:rings/${item.material}`), `#forge:rods/${item.material}`, 2000)
 			event.shaped(`#forge:sprockets/${item.material}`, [
@@ -328,7 +328,8 @@ onEvent('recipes', event => {
 			  }).id(`mbm2:crafting/${item.material}_sprockets`)
 		}
 	}
-	
+
+	///////HULL_PANNELS///////////////
 	if (Item.of(`#forge:hull_panels/${item.material}`) != null) {
 		//Mega Hull Panels
 		  event.recipes.multiblocked.multiblock("casting")
@@ -336,10 +337,43 @@ onEvent('recipes', event => {
 		  .inputItem(`${hullCasting}x kubejs:hull_panel_sand_cast`)
 		  .outputItem(`${hullCasting}x #forge:hull_panels/${item.material}`)
 		  .setPerTick(true)
-		  .inputFE(1024)
-		  .duration(50)
+		  .inputFE(1000)
+		  .duration(200)
 	}
-	////////////////WIRES///////////////
+
+	///////BOLTS///////////////
+	if (Item.of(`#forge:bolts/${item.material}`) != null) {
+	
+		//Casting Bolts
+		event.recipes.tconstruct.casting_table(Item.of(`#forge:bolts/${item.material}`), item.fluid_id, 180).cast('#forge:rods/steel').coolingTime(60)//.switchSlots()
+
+		//Sintering Bolts
+		  event.recipes.multiblocked.multiblock("sintering")
+		  .setChance(0)
+		  .inputItem('kubejs:bolt_mold')
+		  .setChance(1)
+		  .inputItem(Item.of(`#forge:dusts/${item.material}`, 2))
+		  .inputItem(Item.of(`#forge:dusts/steel`))
+		  .inputFluid(Fluid.of(`kubejs:hot_air`, 250))
+		  .outputItem(Item.of(`2x #forge:bolts/${item.material}`))
+		  .setPerTick(true)
+		  .inputFE(2000)
+		  .duration(60)
+
+		  //Sintering Bolts 4x
+			event.recipes.multiblocked.multiblock("sintering")
+			.setChance(0)
+			.inputItem('kubejs:bolt_mold')
+			.setChance(1)
+			.inputItem(Item.of(`#forge:dusts/${item.material}`, 2))
+			.inputItem(Item.of(`#forge:dusts/stainless_steel`))
+			.inputFluid(Fluid.of(`kubejs:hot_air`, 250))
+			.outputItem(Item.of(`4x #forge:bolts/${item.material}`))
+			.setPerTick(true)
+			.inputFE(2000)
+			.duration(60)
+	}
+	///////WIRES///////////////
     if (Item.of(`#forge:wires/${item.material}`) != null) {
 
 	//Hand Crafting
@@ -508,6 +542,9 @@ onEvent('recipes', event => {
 			for (var part in partAmounts) {
 				if (Item.of(`#forge:${part}s/${item.material}`) != null) {
 					event.recipes.thermal.crucible(Fluid.of(item.fluid_id, partAmounts[part]), `#forge:${part}s/${item.material}`).id(`mbm2:crucible/${item.material}_${part}`)
+					if(item.fluid_id.includes('kubejs')) {
+						global.tinkersMeltingPlain(event, item.fluid_id, partAmounts[part], Item.of(`#forge:${part}s/${item.material}`).toJson(), 800, 142, `mbm2:smeltery/melting/${item.material}_${part}`)
+					}
 				}
 			}
 		}

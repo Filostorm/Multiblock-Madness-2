@@ -106,5 +106,125 @@ event.recipes.createDeploying('mna:mark_of_the_council', ['mna:stone_rune_blank'
 event.recipes.createDeploying('mna:mark_of_the_nether', ['mna:stone_rune_blank', 'minecraft:nether_brick']).id(`mbm2:mark_nether`)
 event.recipes.createDeploying('mna:mark_of_the_undead', ['mna:stone_rune_blank', '#forge:wither_bones']).id(`mbm2:mark_undead`)
 
+//Automatable chimerite
+	event.custom({
+		"type": "thermal:crystallizer",
+		"ingredients": [
+		  {
+			"fluid": "kubejs:crystal_catalyst_mixture",
+			"amount": 1000
+		  },
+		  {
+			"item": "mna:vinteum_dust"
+		  },
+		  {
+			"item": "minecraft:coal"
+		  }
+		],
+		"result": [
+		  {
+			"item": "mna:chimerite_gem"
+		  }
+		]
+	  }).id(`mbm2:crystallizer/chimerite_t1`)
+	  event.custom({
+		"type": "thermal:crystallizer",
+		"ingredients": [
+		  {
+			"fluid": "kubejs:crystal_catalyst_mixture",
+			"amount": 1500
+		  },
+		  {
+			"item": "mna:arcane_compound"
+		  },
+		  {
+			"item": "minecraft:diamond"
+		  }
+		],
+		"result": [
+		  {
+			"item": "mna:chimerite_gem",
+			"count": 2
+		  }
+		]
+	  }).id(`mbm2:crystallizer/chimerite_t2`)
+	  event.custom({
+		"type": "thermal:crystallizer",
+		"ingredients": [
+		  {
+			"fluid": "kubejs:crystal_catalyst_mixture",
+			"amount": 2000
+		  },
+		  {
+			"item": "mna:arcane_ash"
+		  },
+		  {
+			"item": "minecraft:emerald"
+		  }
+		],
+		"result": [
+		  {
+			"item": "mna:chimerite_gem",
+			"count": 3
+		  }
+		]
+	  }).id(`mbm2:crystallizer/chimerite_t3`)
+	  event.custom({
+		"type": "thermal:crystallizer",
+		"ingredients": [
+		  {
+			"fluid": "kubejs:crystal_catalyst_mixture",
+			"amount": 3000
+		  },
+		  {
+			"item": "mna:purified_vinteum_dust"
+		  },
+		  {
+			"item": "botania:quartz_mana"
+		  }
+		],
+		"result": [
+		  {
+			"item": "mna:chimerite_gem",
+			"count": 4
+		  }
+		]
+	  }).id(`mbm2:crystallizer/chimerite_t4`)
+
+	//Chimerite Casing
+	event.custom({
+		"type": "mna:manaweaving-recipe",
+		"tier": 2,
+		"output": "kubejs:transmuted_casing",
+		"items": [
+			"kubejs:transmuted_silver_plate",
+			"mna:chimerite_gem",
+			"kubejs:transmuted_silver_plate",		
+			"mna:chimerite_gem",
+			"mna:chimerite_gem",
+			"mna:chimerite_gem",
+			"kubejs:transmuted_silver_plate",
+			"mna:chimerite_gem",
+			"kubejs:transmuted_silver_plate"
+		],
+		"patterns": [
+			"mna:knot2",
+			"mna:square",
+			"mna:triangle",
+			"mna:square",
+			"mna:knot"
+		]
+	})
+
+	//Heated Vinteum Blocks
+	event.shaped('kubejs:heated_vinteum_block', ['AAA','AAA','AAA'], {A: 'mna:superheated_vinteum_ingot'}).id(`mbm2:heated_vinteum_block_compacting`)
+	event.shapeless(`9x mna:superheated_vinteum_ingot`, ['kubejs:heated_vinteum_block']).id(`mbm2:heated_vinteum_block_uncompacting`)
+	event.custom({
+		"type": "mna:arcane-furnace",
+		"tier": 1,
+		"input": 'mna:vinteum_block',
+		"output": 'kubejs:heated_vinteum_block',
+		"burnTime": 1800
+	})
 });
 

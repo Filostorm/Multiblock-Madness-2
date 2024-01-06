@@ -219,8 +219,8 @@ event.shaped('create:hose_pulley', [
 		  }).id(`mbm2:crafting/empty_blaze_burner`)
 
 	  //Spirit Compat
-	  event.recipes.createHaunting('spirit:soul_powder', 'minecraft:glowstone_dust').id('mbm2:huanting/soul_powder')
-	  event.recipes.createHaunting('spirit:soul_slate', 'minecraft:deepslate').id('mbm2:huanting/soul_slate')
+	  event.recipes.createHaunting('spirit:soul_powder', 'minecraft:glowstone_dust').id('mbm2:haunting/soul_powder')
+	  event.recipes.createHaunting('spirit:soul_slate', 'minecraft:deepslate').id('mbm2:haunting/soul_slate')
 
 
 	/// Propeller

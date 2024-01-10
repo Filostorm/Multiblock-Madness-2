@@ -41,5 +41,29 @@ onEvent('recipes', event => {
 
 	//Arcane Crystal Dust speck
 	event.shapeless(`9x forbidden_arcanus:arcane_crystal_dust_speck`, ['forbidden_arcanus:arcane_crystal_dust']).id(`mbm2:arcane_dust_speck`)
-
+	
+	//Soul Automation
+	event.custom({
+		"type": "thermal:centrifuge",
+		"ingredient": {
+		  "item": "minecraft:soul_sand"
+		},
+		"result": [
+		  {
+			"item": "forbidden_arcanus:soul"
+		  },
+		  {
+			"item": "forbidden_arcanus:soulless_sand",
+			"chance": 0.50
+		  },
+		  {
+			"fluid": "tconstruct:liquid_soul",
+			"amount": 100
+		  }
+		],
+		"energy": 10000
+	  }).id('mbm2:centrifuge/soul_extraction_automatable')
+	
+	//Re-haunting Soul Sand
+	event.recipes.createHaunting('minecraft:soul_sand', 'forbidden_arcanus:soulless_sand').id('mbm2:haunting/resouling_soul_sand')
 });

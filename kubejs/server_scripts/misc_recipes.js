@@ -15,6 +15,14 @@ onEvent('tags.items', event => {
 	event.add('minecraft:logs_that_burn', 'hexerei:stripped_mahogany_log')
 	event.add('minecraft:logs_that_burn', 'hexerei:mahogany_log')
 
+	//hull subsitute
+	event.add(`mbm2:hull_subsitute`, 'quark:cobblestone_vertical_slab')
+	event.add(`mbm2:hull_subsitute`, 'quark:stone_vertical_slab')
+	event.add(`mbm2:hull_subsitute`, 'quark:smooth_stone_vertical_slab')
+
+	//give coal it's own tag
+	event.add(`mbm2:coal`, 'minecraft:coal')
+
  });
 
 onEvent('recipes', event => {
@@ -249,4 +257,7 @@ event.shaped('3x kubejs:wood_scaffolding', [
 
   event.shapeless('8x kubejs:coal_chunk', ['coal']).id('mbm2:coal_chunk_crafting')
   event.shapeless('coal', ['8x kubejs:coal_chunk']).id('mbm2:coal_chunk_uncrafting')
+
+ //lerasium nugget requires arcane gold
+  event.replaceInput({id: 'allomancy:lerasium_nugget'}, '#forge:storage_blocks/gold', 'forbidden_arcanus:arcane_gold_block')
 });

@@ -84,7 +84,8 @@ event.shaped('3x kubejs:ancient_wood_scaffolding', [
 		"output": Item.of('minecraft:phantom_membrane').toResultJson()
 	}).id(`mbm2:phantom_membrane`)
 
-
+	//Gold Leaf Growth
+	global.naturesauraAltar(event, 'naturesaura:gold_leaf', 'naturesaura:golden_leaves', 'conversion', 'overworld', 4000, 200, 'mbm2:altar/automated_goldleaf')
 });
 
 

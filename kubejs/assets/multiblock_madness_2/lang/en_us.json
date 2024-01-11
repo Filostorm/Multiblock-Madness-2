@@ -94,6 +94,10 @@
     "block.mbm2.sintering_oven": "Sintering Oven",
     "mbm2.sintering_oven.description": "Compacts dust using heat and pressure to make usable parts",
     "multiblocked.recipe_map.sintering": "Sintering",
+    
+    "block.mbm2.improved_manaweaver": "Improved Manaweaver",
+    "mbm2.improved_manaweaver.description": "Grants the ability to automate the arcane",
+    "multiblocked.recipe_map.improved_manaweaver": "Manaweaving",
 
 
 

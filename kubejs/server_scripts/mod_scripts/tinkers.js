@@ -89,5 +89,11 @@ event.shaped('tconstruct:scorched_faucet', [
 		"temperature": 1500
 	  })
 
-
+//soulsteel fixes
+event.shapeless('tconstruct:soulsteel_block', ['tconstruct:soulsteel_ingot', 'tconstruct:soulsteel_ingot', 'tconstruct:soulsteel_ingot', 'tconstruct:soulsteel_ingot', 'tconstruct:soulsteel_ingot', 'tconstruct:soulsteel_ingot', 'tconstruct:soulsteel_ingot', 'tconstruct:soulsteel_ingot', 'tconstruct:soulsteel_ingot']).id('mbm2:soulsteel_ingot_to_block')
+event.shapeless('tconstruct:soulsteel_ingot', ['tconstruct:soulsteel_nugget', 'tconstruct:soulsteel_nugget', 'tconstruct:soulsteel_nugget', 'tconstruct:soulsteel_nugget', 'tconstruct:soulsteel_nugget', 'tconstruct:soulsteel_nugget', 'tconstruct:soulsteel_nugget', 'tconstruct:soulsteel_nugget', 'tconstruct:soulsteel_nugget']).id('mbm2:soulsteel_nugget_to_ingot')
+event.shapeless('9x tconstruct:soulsteel_nugget', ['tconstruct:soulsteel_ingot']).id('mbm2:soulsteel_ingot_to_nugget')
+event.shapeless('9x tconstruct:soulsteel_ingot', ['tconstruct:soulsteel_block']).id('mbm2:soulsteel_block_to_ingot')
+//this makes it more obvious that it is made from a liquid that refuses to show in rei
+global.thermalChilling(event, 'tconstruct:molten_soulsteel', 90, 'tconstruct:soulsteel_ingot', 1, 'thermal:chiller_ingot_cast', 4000, `thermal:machines/chiller/chiller_soulsteel`)
 });

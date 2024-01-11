@@ -8,11 +8,21 @@ onEvent('recipes', event => {
 	//HOP Dark Quartz??
     event.replaceInput({id: 'botania:quartz_dark'}, '#minecraft:coals', '#forge:dusts/hop_graphite')
     //event.replaceInput({id: 'lazierae2:compat/botania/infuser/quartz_dark'}, 'minecraft:coal', '#forge:dusts/hop_graphite')
+
+	//blazing Quartz
+	event.remove({id: 'botania:quartz_blaze'})
+	event.recipes.tconstruct.casting_table('botania:quartz_blaze', 'tconstruct:blazing_blood', 25).cast('minecraft:quartz').consumeCast().coolingTime(80).id(`mbm2:casting/quartz_blaze`)
+    event.replaceInput({id: 'lazierae2:compat/botania/infuser/quartz_blaze'}, 'minecraft:blaze_powder', 'minecraft:blaze_rod')
 	
 	//Apothecary
 	event.remove({output: 'botania:apothecary_default'})
 	event.shaped('botania:apothecary_default', ['ABA',' A ','AAA'], {A: 'mna:decoration/vinteum_arcane_stone',B: 'mna:ritual_focus_minor'})
 
+	//Mossy Apothecary
+	event.remove({output: 'botania:apothecary_mossy'})
+	event.shapeless('botania:apothecary_mossy', ['botania:apothecary_default', 'minecraft:moss_block']).id('mbm2:moss_apothecary')
+	event.shapeless('botania:apothecary_mossy', ['botania:apothecary_default', 'minecraft:vine']).id('mbm2:vine_apothecary')
+	
 //Living Wood Twig
 event.remove({id: 'botania:livingwood_twig'})
 global.naturesauraAltar(event, 'botania:livingwood_twig', '#botania:livingwood_logs', 'normal', 'overworld', 15000, 80, 'mbm2:altar/livingwood_twig')

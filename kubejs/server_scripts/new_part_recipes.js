@@ -290,7 +290,7 @@ onEvent('recipes', event => {
 		global.casingTable(event, 'tconstruct:casts/single_use/rod', true, `#forge:rods/${item.material}`, `forge:molten_${item.material}`, 45, 20, `tconstruct:smeltery/casting/metal/${item.material}/rod_sand_cast`)
 
 		//Thermal Rods
-		global.thermalChilling(event, `${item.fluid_id}`, 60, `#forge:rods/${item.material}`, 1, 'thermal:chiller_rod_cast', 5000, `thermal:machines/chiller/chiller_${item.material}_rod`)
+		global.thermalChilling(event, `${item.fluid_id}`, 45, `#forge:rods/${item.material}`, 1, 'thermal:chiller_rod_cast', 5000, `thermal:machines/chiller/chiller_${item.material}_rod`)
 	
 		//Mega Rod Casing
 		  event.recipes.multiblocked.multiblock("casting")

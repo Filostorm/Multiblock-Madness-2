@@ -247,6 +247,31 @@ onEvent('recipes', event => {
 
 			} else { console.log(`${item.material}` + "needs gears enabled to make an interlocking component recipe");}
 		}
+		
+	//////////////// ROBOT ARM ///////////////
+    if (Item.of(`#forge:robot_arms/${item.material}`) != null) {
+			if (Item.of(`#forge:wires/${item.material}`) != null && Item.of(`#forge:rods/${item.material}`) != null) { 
+				event.shaped(`#forge:robot_arms/${item.material}`, [
+					'ABA',
+					'CDA',
+					'E A'
+				  ], {
+					A: `#forge:rods/${item.material}`,
+					B: `#forge:wires/${item.material}`,
+					E: `#forge:gears/${item.material}`,
+					C: `minecraft:chain`,
+					D: `#forge:rods/steel`,
+				}).id(`mbm2:parts/${item.material}_robot_arm`)
+			}
+
+			event.recipes.multiblocked.multiblock("mechanical_crafting")
+			.inputItems([`4x #forge:rods/${item.material}`, `#forge:wires/${item.material}`, `#forge:gears/${item.material}`])
+			.outputItem(Item.of(`#forge:robot_arms/${item.material}`))
+			.setPerTick(true)
+			.inputFE(1000)
+			.duration(40)
+		
+		}
 	}
 	////////////////END OF GEARS///////////////
 	
@@ -454,7 +479,7 @@ onEvent('recipes', event => {
 			event.recipes.immersiveengineeringCrusher(`#forge:dusts/${item.material}`, `#forge:${item.material}`).id(`mbm2:immersive/crushing/${item.material}_${item.type}`)
 			event.recipes.mekanismCrushing(`#forge:dusts/${item.material}`, `#forge:${item.material}`).id(`mbm2:mekanism/crushing/${item.material}_${item.type}`)
 		} else {
-			if (Item.of(`#forge:ingots/${item.material}`) != null) {
+			if (Item.of(`#forge:ingots/${item.material}`) != null && item.type != 'compound_ore') {
 			event.recipes.createMilling([`#forge:dusts/${item.material}`], [`#forge:ingots/${item.material}`]).id(`mbm2:create/crushing/${item.material}_${item.type}`)
 			event.recipes.immersiveengineeringCrusher(`#forge:dusts/${item.material}`, `#forge:ingots/${item.material}`).id(`mbm2:immersive/crushing/${item.material}_${item.type}`)
 			event.recipes.mekanismCrushing(`#forge:dusts/${item.material}`, `#forge:ingots/${item.material}`).id(`mbm2:mekanism/crushing/${item.material}_${item.type}`)
@@ -548,10 +573,35 @@ onEvent('recipes', event => {
 				}
 			}
 		}
+
 		//Chemlib compat
 		if (Item.of(`chemlib:${item.material}`) != null && item.type != 'element') {
 			event.remove({id: `alchemistry:compactor/${item.material}_dust`})
 			global.alchemistryCompacting(event, Item.of(`#forge:dusts/${item.material}`).toJson(), Item.of(`chemlib:${item.material}`, 16).toJson(), `mbm2:alchemistry/${item.material}_compacting`)
+		}
+		//Compound Ingots
+		if(item.type == 'compound_ore') {
+			let componentList = []
+			item.components.forEach(material => {
+				if (material != item.components[8]) {
+				componentList.push(Item.of(`#forge:ingots/${material}`))
+				}
+			});
+			event.recipes.multiblocked.multiblock("ebf")
+			.inputFluid(Fluid.of('kubejs:liquid_air', 1000))
+			.inputItems(componentList)
+			.outputItem(Item.of(`#forge:ingots/${item.material}`))
+			.setPerTick(true)
+			.inputFE(16000)
+			.duration(500)
+			//Oxygen
+			event.recipes.multiblocked.multiblock("ebf")
+			.inputFluid(Fluid.of('mekanism:oxygen', 1000))
+			.inputItems(componentList)
+			.outputItem(Item.of(`#forge:ingots/${item.material}`))
+			.setPerTick(true)
+			.inputFE(16000)
+			.duration(400)
 		}
 	})
 });

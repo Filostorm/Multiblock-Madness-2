@@ -45,7 +45,7 @@ onEvent('recipes', event => {
 	  	.inputItem(`${plateCasting}x #tconstruct:casts/single_use/plate`)
 	  	.outputItem(`${plateCasting}x #forge:plates/${item.material}`)
 	  	.setPerTick(true)
-	  	.inputFE(1024)
+	  	.inputFE(1000)
 	  	.duration(50)
 	  }
 	//Create Plates
@@ -134,6 +134,14 @@ onEvent('recipes', event => {
 		  }).id(`mbm2:crafting/${item.material}_component`)
 
 	global.ieBlueprint(event, 'components', Item.of(`#forge:components/${item.material}`), [{count:2, base_ingredient: {tag: `forge:plates/${item.material}`}}, {tag: `forge:ingots/copper`}], `mbm2:${item.material}_component`)
+	
+			//Cheaper recipe
+			event.recipes.multiblocked.multiblock("mechanical_crafting")
+			.inputItem(`2x #forge:plates/${item.material}`)
+			.outputItem(Item.of(`#forge:components/${item.material}`))
+			.setPerTick(true)
+			.inputFE(2000)
+			.duration(100)
 	}
 
 
@@ -194,7 +202,7 @@ onEvent('recipes', event => {
 
 			//////////////// COG BLOCK ///////////////
 			if (Item.of(`#forge:cog_blocks/${item.material}`) != null) {
-				event.shaped(`2x #forge:cog_blocks/${item.material}`, [
+				event.shaped(`#forge:cog_blocks/${item.material}`, [
 					'RGR',
 					'G G',
 					'RGR'
@@ -202,6 +210,14 @@ onEvent('recipes', event => {
 					R: `#forge:rods/${item.material}`,
 					G: `#forge:gears/${item.material}`
 				  }).id(`mbm2:parts/${item.material}_cog_block`)
+				  
+			//Cheaper recipe
+			event.recipes.multiblocked.multiblock("mechanical_crafting")
+			.inputItems([`3x #forge:gears/${item.material}`,`3x #forge:rods/${item.material}`])
+			.outputItem(Item.of(`#forge:cog_blocks/${item.material}`))
+			.setPerTick(true)
+			.inputFE(2000)
+			.duration(200)
 			}
 		}
 
@@ -217,7 +233,7 @@ onEvent('recipes', event => {
 	  	.inputItem(`${gearCasting}x #tconstruct:casts/single_use/gear`)
 	  	.outputItem(`${gearCasting}x #forge:gears/${item.material}`)
 	  	.setPerTick(true)
-	  	.inputFE(1024)
+	  	.inputFE(1000)
 	  	.duration(50)
 	  }
 	    
@@ -245,6 +261,14 @@ onEvent('recipes', event => {
 			//Cheaper recipe
 			global.ieBlueprint(event, 'interlocking_components', Item.of(`#forge:interlocking_components/${item.material}`), [{count:4, base_ingredient: {tag: `forge:gears/${item.material}`}}], `mbm2:${item.material}_interlocking_component`)
 
+			//Cheaperer recipe
+			event.recipes.multiblocked.multiblock("mechanical_crafting")
+			.inputItem(`3x #forge:gears/${item.material}`)
+			.outputItem(Item.of(`#forge:interlocking_components/${item.material}`))
+			.setPerTick(true)
+			.inputFE(2000)
+			.duration(200)
+
 			} else { console.log(`${item.material}` + "needs gears enabled to make an interlocking component recipe");}
 		}
 		
@@ -257,7 +281,7 @@ onEvent('recipes', event => {
 					'E A'
 				  ], {
 					A: `#forge:rods/${item.material}`,
-					B: `#forge:wires/${item.material}`,
+					B: 'create:belt_connector',
 					E: `#forge:gears/${item.material}`,
 					C: `minecraft:chain`,
 					D: `#forge:rods/steel`,
@@ -265,11 +289,11 @@ onEvent('recipes', event => {
 			}
 
 			event.recipes.multiblocked.multiblock("mechanical_crafting")
-			.inputItems([`4x #forge:rods/${item.material}`, `#forge:wires/${item.material}`, `#forge:gears/${item.material}`])
+			.inputItems([`4x #forge:rods/${item.material}`, 'create:belt_connector', `#forge:gears/${item.material}`])
 			.outputItem(Item.of(`#forge:robot_arms/${item.material}`))
 			.setPerTick(true)
-			.inputFE(1000)
-			.duration(40)
+			.inputFE(4000)
+			.duration(400)
 		
 		}
 	}
@@ -277,12 +301,13 @@ onEvent('recipes', event => {
 	
 	////////////////RODS///////////////
     if (Item.of(`#forge:rods/${item.material}`) != null) {
-	//Create Rods
-	global.createRolling(event, `#forge:rods/${item.material}`, 1, `forge:ingots/${item.material}`, `createaddition:rolling/${item.material}_ingot`)
-	
-	//Immersive Rods
-	event.recipes.immersiveengineeringMetalPress(`2x #forge:rods/${item.material}`, `#forge:ingots/${item.material}`, 'immersiveengineering:mold_rod').id(`immersiveengineering:metalpress/rod_${item.material}`)
-	
+		if (Item.of(`#forge:ingots/${item.material}`) != null) {
+			//Create Rods
+			global.createRolling(event, `#forge:rods/${item.material}`, 1, `forge:ingots/${item.material}`, `createaddition:rolling/${item.material}_ingot`)
+
+			//Immersive Rods
+			event.recipes.immersiveengineeringMetalPress(`2x #forge:rods/${item.material}`, `#forge:ingots/${item.material}`, 'immersiveengineering:mold_rod').id(`immersiveengineering:metalpress/rod_${item.material}`)
+		}
 
     if (item.fluid_id != null) {
 		//Rod Casing
@@ -298,7 +323,7 @@ onEvent('recipes', event => {
 			  .inputItem(`${rodCasting}x #tconstruct:casts/single_use/rod`)
 			  .outputItem(`${rodCasting}x #forge:rods/${item.material}`)
 			  .setPerTick(true)
-			  .inputFE(1024)
+			  .inputFE(1000)
 			  .duration(50)
 		  }
 	
@@ -312,18 +337,38 @@ onEvent('recipes', event => {
 			  ], {
 				R: `#forge:rods/${item.material}`,
 			  }).id(`mbm2:crafting/${item.material}_scaffolding`)
+			  
+			//Cheaper recipe
+			event.recipes.multiblocked.multiblock("mechanical_crafting")
+			.inputItem(`6x #forge:rods/${item.material}`)
+			.outputItem(Item.of(`2x #forge:scaffoldings/${item.material}`))
+			.setPerTick(true)
+			.inputFE(2000)
+			.duration(100)
+
 			} else { console.log(`${item.material}` + "needs rods enabled to make a scaffolding recipe");}
 			
 			////////////////FRAME BOXES///////////////
 			if (Item.of(`#forge:frame_boxs/${item.material}`) != null) {
 				event.shaped(`#forge:frame_boxs/${item.material}`, [
-					' P ',
+					'BPB',
 					'PSP',
-					' P '
+					'BPB'
 				  ], {
 					S: `#forge:scaffoldings/${item.material}`,
+					B: `#forge:bolts/${item.material}`,
 					P: `#forge:platings/${item.material}`,
 				  }).id(`mbm2:crafting/${item.material}_frame_box`)
+
+				//Cheaper recipe
+				event.recipes.multiblocked.multiblock("mechanical_crafting")
+				.inputItem(`#forge:scaffoldings/${item.material}`)
+				.inputItem(`3x #forge:platings/${item.material}`)
+				.inputItem(`4x #forge:bolts/${item.material}`)
+				.outputItem(Item.of(`#forge:frame_boxs/${item.material}`))
+				.setPerTick(true)
+				.inputFE(2000)
+				.duration(100)
 
 				  ////////////////HULL CASINGS///////////////
 				  if (Item.of(`#forge:hull_casings/${item.material}`) != null && Item.of(`#forge:hull_panels/${item.material}`) != null) {
@@ -336,6 +381,16 @@ onEvent('recipes', event => {
 						  P: `#forge:hull_panels/${item.material}`,
 						  B: `#forge:bolts/${item.material}`,
 						}).id(`mbm2:crafting/${item.material}_hull_casing`)
+
+						//Cheaper recipe
+						event.recipes.multiblocked.multiblock("mechanical_crafting")
+						.inputItem(`#forge:frame_boxs/${item.material}`)
+						.inputItem(`3x #forge:hull_panels/${item.material}`)
+						.inputItem(`4x #forge:bolts/${item.material}`)
+						.outputItem(Item.of(`2x #forge:hull_casings/${item.material}`))
+						.setPerTick(true)
+						.inputFE(2000)
+						.duration(100)
 					}
 				}
 		}
@@ -418,7 +473,7 @@ onEvent('recipes', event => {
 			  .inputItem(`${wireCasting}x #tconstruct:casts/single_use/wire`)
 			  .outputItem(`${wireCasting}x #forge:wires/${item.material}`)
 			  .setPerTick(true)
-			  .inputFE(1024)
+			  .inputFE(1000)
 			  .duration(50)
 		  }
 

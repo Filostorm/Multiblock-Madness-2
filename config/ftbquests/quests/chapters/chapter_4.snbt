@@ -1223,6 +1223,7 @@
 		{
 			x: 1.5d
 			y: 9.5d
+			shape: "circle"
 			description: ["Tier 2 Metals, like Cobalt and Aluminum, require at least processing in the Foundry with a high temperature fuel such as Blazing Blood."]
 			dependencies: ["729CD1DC498A9130"]
 			id: "40CD2EB416C68B70"
@@ -1770,6 +1771,30 @@
 				type: "item"
 				item: "mna:magicians_workbench"
 			}]
+		}
+		{
+			icon: "hostilenetworks:sim_chamber"
+			x: 0.5d
+			y: 11.0d
+			dependencies: ["40CD2EB416C68B70"]
+			id: "4B09D1E4C5CF8BB1"
+			tasks: [
+				{
+					id: "2C6D7BCC994E7E99"
+					type: "item"
+					item: "hostilenetworks:sim_chamber"
+				}
+				{
+					id: "5C51EEF96E4138D2"
+					type: "item"
+					item: "hostilenetworks:deep_learner"
+				}
+				{
+					id: "455EF611E2436A2D"
+					type: "item"
+					item: "hostilenetworks:blank_data_model"
+				}
+			]
 		}
 	]
 	quest_links: [ ]

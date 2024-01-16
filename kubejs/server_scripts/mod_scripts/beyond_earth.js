@@ -78,7 +78,7 @@ onEvent('recipes', event => {
 	
 	  //Desh Engine
 		event.remove({output: 'beyond_earth:desh_engine'})
-	  event.shaped('beyond_earth:desh_engine', ['ABA','CDE','ABA'], {A: 'beyond_earth:desh_plate',B: 'elementalcraft:fireite_ingot',C: 'beyond_earth:steel_engine',D: 'compressedcreativity:engine_rotor',E: 'beyond_earth:engine_frame'})
+	  event.shaped('beyond_earth:desh_engine', ['ABA','CDE','ABA'], {A: 'beyond_earth:desh_plate',B: 'elementalcraft:fireite_ingot',C: 'beyond_earth:steel_engine',D: 'compressedcreativity:engine_rotor',E: 'beyond_earth:engine_frame'}).id('mbm2:desh_engine')
 
 	 //fIX oXYGEN
 	event.remove({id: 'beyond_earth:oxygen_loading/from_water'})
@@ -180,6 +180,74 @@ onEvent('recipes', event => {
 		   "count":1
 		}
 	 }).id('mbm2:tier2_rocket')
+
+	  //Tier 2 Rocket
+	  event.remove({id: 'beyond_earth:nasa_workbenching/tier2'})
+	  event.custom({
+		"type":"beyond_earth:nasa_workbench",
+		"input":{
+		   "parts":{
+			  "beyond_earth:nose":[
+				 {
+					"item":"kubejs:aerospace_alloy_rocket_nose_cone"
+				 }
+			  ],
+			  "beyond_earth:body":[
+				 {
+					"tag":"forge:platings/ostrum"
+				 },
+				 {
+					"tag":"forge:platings/ostrum"
+				 },
+				 {
+					"tag":"forge:platings/ostrum"
+				 },
+				 {
+					"tag":"forge:platings/ostrum"
+				 },
+				 {
+					"tag":"forge:platings/ostrum"
+				 },
+				 {
+					"tag":"forge:platings/ostrum"
+				 }
+			  ],
+			  "beyond_earth:tank":[
+				 {
+					"tag":"beyond_earth:tanks/ostrum"
+				 },
+				 {
+					"tag":"beyond_earth:tanks/ostrum"
+				 }
+			  ],
+			  "beyond_earth:fin_left":[
+				 {
+					"item":"kubejs:aerospace_alloy_rocket_fin"
+				 },
+				 {
+					"item":"kubejs:aerospace_alloy_rocket_fin"
+				 }
+			  ],
+			  "beyond_earth:fin_right":[
+				 {
+					"item":"kubejs:aerospace_alloy_rocket_fin"
+				 },
+				 {
+					"item":"kubejs:aerospace_alloy_rocket_fin"
+				 }
+			  ],
+			  "beyond_earth:engine":[
+				 {
+					"tag":"beyond_earth:engines/ostrum"
+				 }
+			  ]
+		   }
+		},
+		"output":{
+		   "item":"beyond_earth:rocket_t2",
+		   "count":1
+		}
+	 }).id('mbm2:tier3_rocket')
 
      //Tanks
 	 event.remove({output: 'beyond_earth:steel_tank'})

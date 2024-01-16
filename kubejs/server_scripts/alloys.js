@@ -64,7 +64,7 @@ onEvent('recipes', event => {
 					.inputFE(250 * (2**item.tier))
 		 			.duration(100 * item.amount)
 				} else {
-					console.log(`ERROR: ${item.material} needs an amount in MML to get a mixer recipe!`)
+					console.log(`[MBM2 ERROR]: ${item.material} needs an amount in MML to get a mixer recipe!`)
 				}
 			}
 
@@ -77,7 +77,6 @@ onEvent('recipes', event => {
 
 			////////////// TIER 1 OR BELOW /////////////////////
 			if (item.tier <= 1) {
-				console.log(`${item.material} can be made by tier 1 machines!`)
 
 				if (item.amount != null) {
 					if (item.dust_input != null) {
@@ -94,7 +93,7 @@ onEvent('recipes', event => {
 						}
 					}
 				} else {
-					console.log(`ERROR: ${item.material} needs an amount in MML to get create mixing recipes!`)
+					console.log(`[MBM2 ERROR]: ${item.material} needs an amount in MML to get create mixing recipes!`)
 				}
 
 				//Alloy Dust Smelting
@@ -105,7 +104,6 @@ onEvent('recipes', event => {
 			}
 			////////////// TIER 2 OR BELOW /////////////////////
 			if (item.tier <= 2) {
-				console.log(`${item.material} can be made by tier 2 machines!`);
 				if (item.tinkers_input != null) {
 					//Tinkers Alloy
 					global.tinkersAlloying(event, item.fluid_id, (item.amount*90), item.tinkers_input, 1000, `mbm2:smeltery/alloys/molten_${item.material}`)
@@ -113,7 +111,6 @@ onEvent('recipes', event => {
 			}
 			////////////// TIER 3 OR BELOW /////////////////////
 			if (item.tier <= 3) {
-				console.log(`${item.material} can be made by tier 3 machines!`);
 
 				//Alloying
 				if (item.ingot_input != null) {
@@ -136,11 +133,9 @@ onEvent('recipes', event => {
 			
 			////////////// TIER 4 OR BELOW /////////////////////
 			if (item.tier <= 4) {
-				console.log(`${item.material} can be made by tier 4 machines!`);
 
 				//Alloying is done in the Mixer for tier 4 and up
 				
-
 				//Dust Smelting
 				if (Item.of(`#forge:dusts/${item.material}`) != null && Item.of(`#forge:ingots/${item.material}`) != null) {
 					//EBF
@@ -153,43 +148,120 @@ onEvent('recipes', event => {
 					.id(`mbm2:ebf/dusts/${item.material}_ingot`)
 				}
 			}
-  
+  			////////////// TIER 5 /////////////////////
+			  if (item.tier == 5) {
+
+				//Dust Smelting
+				if (Item.of(`#forge:dusts/${item.material}`) != null && Item.of(`#forge:ingots/${item.material}`) != null) {
+					//EBF
+				let tier5Temp = 2000
+					event.recipes.multiblocked.multiblock("ebf")
+					.inputItem(Ingredient.of(`#forge:dusts/${item.material}`))
+					.outputItem(Item.of(`#forge:ingots/${item.material}`))
+					.setPerTick(true)
+					.inputFE(500 * (2**item.tier))
+					.duration(100)
+					.data({ temperature: tier5Temp })
+					.text(`    Heat: §6${tier5Temp}`)
+					.predicate((recipe, recipeLogic) => {
+						let reqTemp = recipe.getData().getInt("temperature")
+						let controllerTe = recipeLogic.controller.self()
+						let level = controllerTe.getLevel()
+						let coilTotalHeat = 0
+						global.coilPos.forEach(pos => {
+							let coilName = level.getBlockState(controllerTe.getBlockPos().offset(pos.x, pos.y, pos.z)).getBlock()
+							global.coilHeatValues.forEach(material => {
+								if (Block.getBlock(`kubejs:${material.name}_coil`).equals(coilName)) {
+									coilTotalHeat += material.heat
+								}
+							})
+						})
+						//If we have enough Heat, chillin
+						if (reqTemp <= coilTotalHeat) {
+							return true
+						} else  {
+							return false
+						}
+					}, Component.string('Requires at least Desh Coils'))
+				}
+			}
+			///////////// TIER 6 /////////////////////
+			 if (item.tier == 6) {
+
+				//Dust Smelting
+				if (Item.of(`#forge:dusts/${item.material}`) != null && Item.of(`#forge:ingots/${item.material}`) != null) {
+					//EBF
+				let tier6Temp = 3000
+					event.recipes.multiblocked.multiblock("ebf")
+					.inputItem(Ingredient.of(`#forge:dusts/${item.material}`))
+					.outputItem(Item.of(`#forge:ingots/${item.material}`))
+					.setPerTick(true)
+					.inputFE(500 * (2**item.tier))
+					.duration(100)
+					.data({ temperature: tier6Temp })
+					.text(`    Heat: §6${tier6Temp}`)
+					.predicate((recipe, recipeLogic) => {
+						let reqTemp = recipe.getData().getInt("temperature")
+						let controllerTe = recipeLogic.controller.self()
+						let level = controllerTe.getLevel()
+						let coilTotalHeat = 0
+						global.coilPos.forEach(pos => {
+							let coilName = level.getBlockState(controllerTe.getBlockPos().offset(pos.x, pos.y, pos.z)).getBlock()
+							global.coilHeatValues.forEach(material => {
+								if (Block.getBlock(`kubejs:${material.name}_coil`).equals(coilName)) {
+									coilTotalHeat += material.heat
+								}
+							})
+						})
+						//If we have enough Heat, chillin
+						if (reqTemp <= coilTotalHeat) {
+							return true
+						} else  {
+							return false
+						}
+					}, Component.string('Requires at least Tungsten Coils'))
+				}
+			}
+			///////////// TIER 7 /////////////////////
+			if (item.tier == 7) {
+
+				//Dust Smelting
+				if (Item.of(`#forge:dusts/${item.material}`) != null && Item.of(`#forge:ingots/${item.material}`) != null) {
+					//EBF
+				let tier7Temp = 4000
+					event.recipes.multiblocked.multiblock("ebf")
+					.inputItem(Ingredient.of(`#forge:dusts/${item.material}`))
+					.outputItem(Item.of(`#forge:ingots/${item.material}`))
+					.setPerTick(true)
+					.inputFE(500 * (2**item.tier))
+					.duration(100)
+					.data({ temperature: tier7Temp })
+					.text(`    Heat: §6${tier7Temp}`)
+					.predicate((recipe, recipeLogic) => {
+						let reqTemp = recipe.getData().getInt("temperature")
+						let controllerTe = recipeLogic.controller.self()
+						let level = controllerTe.getLevel()
+						let coilTotalHeat = 0
+						global.coilPos.forEach(pos => {
+							let coilName = level.getBlockState(controllerTe.getBlockPos().offset(pos.x, pos.y, pos.z)).getBlock()
+							global.coilHeatValues.forEach(material => {
+								if (Block.getBlock(`kubejs:${material.name}_coil`).equals(coilName)) {
+									coilTotalHeat += material.heat
+								}
+							})
+						})
+						//If we have enough Heat, chillin
+						if (reqTemp <= coilTotalHeat) {
+							return true
+						} else  {
+							return false
+						}
+					}, Component.string('Requires at least Adamantium Coils'))
+				}
+			}
 		} else {
-			console.log(`${item.material} is not an alloy`);
+			console.log(`[MBM2 INFO]: ${item.material} is not an alloy`);
 		}
 	})
-	
-//structural alloy dust ebf smelting
-let tier5Temp = 2000
-event.recipes.multiblocked.multiblock("ebf")
-.inputFluid(Fluid.of('mekanism:oxygen', 1000))
-		.inputItem('kubejs:tier_3_structural_alloy_dust')
-	.outputItem(Item.of('kubejs:tier_3_structural_alloy_ingot'))
-	.setPerTick(true)
-	.inputFE(4000)
-	.duration(200)
-	.data({ temperature: tier5Temp })
-	.text(`    Heat: §6${tier5Temp}`)
-	.predicate((recipe, recipeLogic) => {
-	let reqTemp = recipe.getData().getInt("temperature")
-	let controllerTe = recipeLogic.controller.self()
-	let level = controllerTe.getLevel()
-	let coilTotalHeat = 0
-	coilPos.forEach(pos => {
-	let coilName = level.getBlockState(controllerTe.getBlockPos().offset(pos.x, pos.y, pos.z)).getBlock()
-	coilHeatValues.forEach(material => {
-	if (Block.getBlock(`kubejs:${material.name}_coil`).equals(coilName)) {
-	coilTotalHeat += material.heat
-	}
-	})
-	})
-//If we have enough Heat, chillin
-if (reqTemp <= coilTotalHeat) {
-return true
-} else  {
-return false
-}
-}, Component.string('Requires at least Desh Coils'))
- 
 });
 	

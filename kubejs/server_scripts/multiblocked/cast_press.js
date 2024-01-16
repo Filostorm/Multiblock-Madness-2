@@ -58,7 +58,7 @@
 			.inputItem(['4x #forge:sand', '4x tconstruct:blank_sand_cast', '4x tconstruct:blank_red_sand_cast'])
 			.outputItem(`4x kubejs:hull_panel_sand_cast`)
 			.setPerTick(true)
-			.inputFE(256)
+			.inputFE(250)
 			.duration(40)
 
 		event.recipes.multiblocked.multiblock("cast_press")
@@ -66,6 +66,6 @@
 			.inputItem(['#forge:sand',  'tconstruct:blank_sand_cast', 'tconstruct:blank_red_sand_cast'])
 			.outputItem(`kubejs:hull_panel_sand_cast`)
 			.setPerTick(true)
-			.inputFE(256)
+			.inputFE(250)
 			.duration(40)
   })

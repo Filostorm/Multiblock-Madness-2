@@ -13,17 +13,22 @@ onEvent('recipes', event => {
 
 	//Small Battery
 	event.shaped('kubejs:small_battery_empty', [
-		'PBP',
-		'PCP',
-		'PCP'
+		'TBT',
+		'LCL',
+		'LCL'
 	  ], {
-		P: 'kubejs:cadmium_plate',
+		T: '#forge:plates/tin',
+		L: '#forge:plates/lead',
 		B: 'kubejs:reactive_blend',
 		C: 'powah:capacitor_blazing'
 	  }).id("mbm2:small_battery")
 
-// Large Battery 
-event.shaped('kubejs:large_battery_empty', ['AAA','BCB','BDB'], {A: 'kubejs:stainless_steel_plate',B: 'kubejs:platinum_plating',C: 'kubejs:small_battery_empty',D: 'kubejs:tier_1_electrical_alloy_wire_coil'}).id("mbm2:large_battery")
+	// Large Battery 
+	event.shaped('kubejs:large_battery_empty', ['AAA','BCB','BDB'], {A: 'kubejs:stainless_steel_plate',B: '#forge:platings/advanced_battery_alloy', C: 'kubejs:small_battery_empty',D: 'kubejs:tier_1_electrical_alloy_wire_coil'}).id("mbm2:large_battery")
+
+
+	//Bat-tries
+	event.replaceInput({mod: 'mekanism'}, 'mekanism:energy_tablet', 'kubejs:small_battery_empty')
 
 
   global.compactCrafting(event, 'mekanism:steel_casing', 1, 'pneumaticcraft:printed_circuit_board',

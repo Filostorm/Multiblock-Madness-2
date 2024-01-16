@@ -40,7 +40,7 @@ onEvent('recipes', event => {
 
   //Enderium
   event.recipes.multiblocked.multiblock('mixer')
-  .inputItems('2x #forge:dusts/pewter','3x #forge:dusts/platinum', '#forge:dusts/tungsten', '8x create:experience_nugget') //,'#forge:fine_dusts/rune'
+  .inputItems('2x #forge:dusts/pewter','3x #forge:dusts/platinum', '#forge:dusts/titanium', '8x create:experience_nugget') //,'#forge:fine_dusts/rune'
   .inputFluid(Fluid.of('thermal:ender', 1000))
   .outputItem(Item.of('4x #forge:dusts/enderium'))
   .setPerTick(true)
@@ -141,4 +141,9 @@ event.shaped('kubejs:reactive_blend', [
     
     .switchSlots()*/
 
+    
+  global.mekanismInfusionConversion(event, Item.of('chemlib:chitin'), 'kubejs:chitin', 10, 'mbm2:infuse/chitin_from_chitin')
+  global.mekanismInfusionConversion(event, Item.of('chemlib:chitin_dust'), 'kubejs:chitin', 100, 'mbm2:infuse/chitin_from_chitin_dust')
+  //global.mekanismMetallurgicInfusing(event, Item.of('kubejs:exoskeleton_compound_ingot'), Item.of('#forge:ingots/adamantine_alloy'), 'mbm2:chitin', 1040, `mbm2:exoskeleton_compound_ingot`)
+  event.recipes.mekanismMetallurgicInfusing('kubejs:exoskeleton_composit_ingot', Item.of('#forge:ingots/adamantine_alloy'), {infuse_type: 'kubejs:chitin', amount: 100}).id(`mbm2:exoskeleton_composit_ingot`);
 });

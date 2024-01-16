@@ -481,8 +481,8 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 					"ingredients": [
 						 refinableOre(4),
 						{ "item": 'elementalcraft:springaline_shard'},
-						{ "item": 'elementalcraft:inert_crystal'},
-						{ "item": 'elementalcraft:inert_crystal'},
+						{ "item": 'elementalcraft:contained_crystal'},
+						{ "item": 'elementalcraft:contained_crystal'},
 						{ "item": 'elementalcraft:springaline_shard'}
 					],
 					"output": 
@@ -512,7 +512,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 		////////////////////////////////////////////////////////////////
 
 		//Blast Furnace Data
-		let coilHeatValues = [
+		global.coilHeatValues = [
 			{
 				name: 'white_alloy',
 				heat: 100
@@ -534,7 +534,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				heat: 1000
 			}
 		]
-		let coilPos = [
+		global.coilPos = [
 			{ x: -1, y: 0, z: 1 },
 			{ x: 0, y: 0, z: 1 },
 			{ x: 1, y: 0, z: 1 },
@@ -727,9 +727,9 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 								let controllerTe = recipeLogic.controller.self()
 								let level = controllerTe.getLevel()
 								let coilTotalHeat = 0
-								coilPos.forEach(pos => {
+								global.coilPos.forEach(pos => {
 									let coilName = level.getBlockState(controllerTe.getBlockPos().offset(pos.x, pos.y, pos.z)).getBlock()
-									coilHeatValues.forEach(material => {
+									global.coilHeatValues.forEach(material => {
 										if (Block.getBlock(`kubejs:${material.name}_coil`).equals(coilName)) {
 											coilTotalHeat += material.heat
 										}
@@ -756,9 +756,9 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 								let controllerTe = recipeLogic.controller.self()
 								let level = controllerTe.getLevel()
 								let coilTotalHeat = 0
-								coilPos.forEach(pos => {
+								global.coilPos.forEach(pos => {
 									let coilName = level.getBlockState(controllerTe.getBlockPos().offset(pos.x, pos.y, pos.z)).getBlock()
-									coilHeatValues.forEach(material => {
+									global.coilHeatValues.forEach(material => {
 										if (Block.getBlock(`kubejs:${material.name}_coil`).equals(coilName)) {
 											coilTotalHeat += material.heat
 										}
@@ -789,9 +789,9 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 								let controllerTe = recipeLogic.controller.self()
 								let level = controllerTe.getLevel()
 								let coilTotalHeat = 0
-								coilPos.forEach(pos => {
+								global.coilPos.forEach(pos => {
 									let coilName = level.getBlockState(controllerTe.getBlockPos().offset(pos.x, pos.y, pos.z)).getBlock()
-									coilHeatValues.forEach(material => {
+									global.coilHeatValues.forEach(material => {
 										if (Block.getBlock(`kubejs:${material.name}_coil`).equals(coilName)) {
 											coilTotalHeat += material.heat
 										}
@@ -822,9 +822,9 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 								let controllerTe = recipeLogic.controller.self()
 								let level = controllerTe.getLevel()
 								let coilTotalHeat = 0
-								coilPos.forEach(pos => {
+								global.coilPos.forEach(pos => {
 									let coilName = level.getBlockState(controllerTe.getBlockPos().offset(pos.x, pos.y, pos.z)).getBlock()
-									coilHeatValues.forEach(material => {
+									global.coilHeatValues.forEach(material => {
 										if (Block.getBlock(`kubejs:${material.name}_coil`).equals(coilName)) {
 											coilTotalHeat += material.heat
 										}

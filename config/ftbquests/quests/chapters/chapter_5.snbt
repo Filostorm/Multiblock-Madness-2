@@ -958,6 +958,17 @@
 				}
 			]
 		}
+		{
+			x: 17.5d
+			y: 3.5d
+			dependencies: ["13C4C068E2EB695E"]
+			id: "4D8C40C07AF73B14"
+			tasks: [{
+				id: "2D9F1023E205DDAB"
+				type: "item"
+				item: "hostilenetworks:loot_fabricator"
+			}]
+		}
 	]
 	quest_links: [ ]
 }

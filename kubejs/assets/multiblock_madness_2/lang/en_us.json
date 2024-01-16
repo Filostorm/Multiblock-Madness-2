@@ -74,7 +74,6 @@
     "mbm2.crystal_chamber.description": "Grows metal crystals of the highest purity",
     "multiblocked.recipe_map.crystallization": "Crystal Growing",
 
-
     "block.mbm2.energy_converter": "Battery Interface",
     "mbm2.energy_converter.description": "Fills or empties batteries",
     "multiblocked.recipe_map.battery_converter": "Battery Interface",
@@ -99,6 +98,9 @@
     "mbm2.improved_manaweaver.description": "Grants the ability to automate the arcane",
     "multiblocked.recipe_map.improved_manaweaver": "Manaweaving",
 
+    "block.mbm2.mechanical_crafter": "Mechanical Assembler",
+    "mbm2.mechanical_crafter.description": "The Brass Casing can be replaced by anything",
+    "multiblocked.recipe_map.mechanical_crafting": "Mechanical Crafting",
 
 
     "block.multiblocked.create_item_input": "Input Vault Part",
@@ -131,6 +133,7 @@
 
 
     "item.mna.vinteum_coated_iron": "Vinteum Coated Mithril",
+    "item.mna.purified_vinteum_coated_iron": "Purified Vinteum Coated Mithril",
     "block.pneumaticcraft.compressed_iron_block" : "Block of Compressed Steel",
     "item.pneumaticcraft.ingot_iron_compressed" : "Compressed Steel Ingot",
     "item.pneumaticcraft.compressed_iron_boots" : "Compressed Steel Boots",

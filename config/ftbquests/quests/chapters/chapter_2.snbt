@@ -492,14 +492,14 @@
 					id: "sophisticatedbackpacks:backpack"
 					Count: 1b
 					tag: {
-						inventorySlots: 27
-						upgradeSlots: 1
 						contentsUuid: [I;
 							253092764
 							-1836366034
 							-1113098560
 							-1281562646
 						]
+						inventorySlots: 27
+						upgradeSlots: 1
 					}
 				}
 				match_nbt: false
@@ -557,8 +557,8 @@
 						tag: {
 							upgrades: { }
 							Fluid: {
-								FluidName: "immersiveengineering:biodiesel"
 								Amount: 2000
+								FluidName: "immersiveengineering:biodiesel"
 							}
 						}
 						ForgeCaps: {
@@ -581,8 +581,8 @@
 						Count: 1b
 						tag: {
 							Fluid: {
-								FluidName: "immersiveengineering:biodiesel"
 								Amount: 10000
+								FluidName: "immersiveengineering:biodiesel"
 							}
 						}
 					}
@@ -1228,8 +1228,8 @@
 						Count: 1b
 						tag: {
 							Fluid: {
-								FluidName: "immersiveengineering:biodiesel"
 								Amount: 10000
+								FluidName: "immersiveengineering:biodiesel"
 							}
 						}
 					}

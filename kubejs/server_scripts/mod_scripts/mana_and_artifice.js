@@ -67,6 +67,20 @@ C: '#forge:rods/wooden'
 		"outputQuantity": 1,
 		"burnTime": 200
 	})
+
+	// Vinteum Coated Mithril
+	  event.remove({id: 'mna:purified_vinteum_coated_iron'})
+	  event.remove({id: 'mna:purified_vinteum_bar_blast_furnace'})
+	  event.remove({id: 'mna:purified_vinteum_bar'})
+	  event.recipes.createMixing('mna:purified_vinteum_coated_iron', [`#forge:ingots/mithril`, 'mna:purified_vinteum_dust']).superheated().id(`mbm2:purified_vinteum_coated_mithril`)
+	  event.custom({
+		  "type": "mna:arcane-furnace",
+		  "tier": 2,
+		  "input": 'mna:purified_vinteum_coated_iron',
+		  "output": 'mna:purified_vinteum_ingot',
+		  "outputQuantity": 1,
+		  "burnTime": 200
+	  })
 	
 	//IDK why this needed a recipe but here ya go
 	event.shaped('4x mna:decoration/vinteum_arcane_stone', [' A ','ABA',' A '], {A: 'mna:decoration/arcane_stone',B: 'mna:superheated_vinteum_ingot'}).id('mbm2:vinteum_arcane_stone')

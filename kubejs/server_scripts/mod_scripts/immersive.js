@@ -6,6 +6,12 @@ onEvent('tags.items', event => {
   
   event.add(`forge:scaffoldings/steel`, 'immersiveengineering:steel_scaffolding_standard')
   event.add(`forge:scaffoldings/aluminium`, 'immersiveengineering:alu_scaffolding_standard')
+
+  event.add('forge:components', 'immersiveengineering:component_iron')
+  event.add('forge:components/iron', 'immersiveengineering:component_iron')
+
+  event.add('forge:components', 'immersiveengineering:component_steel')
+  event.add('forge:components/steel', 'immersiveengineering:component_steel')
  });
 
 

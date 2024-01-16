@@ -51,11 +51,12 @@ onEvent('recipes', event => {
 
 
 		//Carbon
-		global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 180, `#forge:dusts/coal_coke`, 900, 20, `mbm2:smeltery/melting/coal_coke_dust`)
-		global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 180, `#forge:coal_coke`, 900, 20, `mbm2:smeltery/melting/coal_coke`)
+		global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 180, [`#forge:dusts/coal_coke`,`#forge:coal_coke`], 900, 20, `mbm2:smeltery/melting/coal_coke_dust`)
+		//global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 180, `#forge:coal_coke`, 900, 20, `mbm2:smeltery/melting/coal_coke`)
 
-		global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 90, `#forge:dusts/coal`, 900, 20, `mbm2:smeltery/melting/coal_dust`)
-		global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 90, `#minecraft:coals`, 900, 20, `mbm2:smeltery/melting/coal`)
+		global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 90, [`#forge:dusts/coal`,`#minecraft:coals`], 900, 20, `mbm2:smeltery/melting/coal_dust`)
+		//global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 90, `#minecraft:coals`, 900, 20, `mbm2:smeltery/melting/coal`)
+		
 		//Carbon makes graphite
 		event.remove({id: 'biggerreactors:smelting/graphite_ingot'})
 		event.recipes.tconstruct.casting_table('biggerreactors:graphite_ingot', 'kubejs:molten_carbon', 90)

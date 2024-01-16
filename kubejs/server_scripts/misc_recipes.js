@@ -22,7 +22,7 @@ onEvent('tags.items', event => {
 
 	//give coal it's own tag
 	event.add(`mbm2:coal`, 'minecraft:coal')
-
+	
  });
 
 onEvent('recipes', event => {
@@ -54,16 +54,26 @@ C: 'thermal:silver_plate'
   //Tier 2 Solar
   event.shaped('solarflux:sp_2', ['AAA','ABA','AAA'], {A: 'solarflux:sp_1',B: 'kubejs:tier_1_electrical_alloy_wire_coil'}).id("solarflux:solar_panel_2")
 
+
 //Chests
+/* need to figure out how to add a plank recipe for every non quark chest material type
+event.remove({input: '#minecraft:logs', output: '#forge:chests'})
+event.shaped('4x minecraft:chest', [
+	'PPP',
+	'P P',
+	'PPP'
+  ], {
+	P: '#minecraft:logs',
+  }).id("mbm2:log_chest")
+*/
 event.remove({input: '#minecraft:planks', output: '#forge:chests'})
-event.shaped('minecraft:chest', [
+  event.shaped('minecraft:chest', [
 	'PPP',
 	'P P',
 	'PPP'
   ], {
 	P: '#minecraft:planks',
   }).id("mbm2:plank_chest")
-
 
 //Scanner
 event.remove({id: 'scannable:scanner'})
@@ -260,4 +270,9 @@ event.shaped('3x kubejs:wood_scaffolding', [
 
  //lerasium nugget requires arcane gold
   event.replaceInput({id: 'allomancy:lerasium_nugget'}, '#forge:storage_blocks/gold', 'forbidden_arcanus:arcane_gold_block')
+
+
+//Static Cloud
+  global.powahEnergizing(event, [Item.of('cloudstorage:cloud').toJson()], Item.of('cloudstorage:static_cloud'), 25000, 'mbm2:cloudstorage/static_cloud')
+
 });

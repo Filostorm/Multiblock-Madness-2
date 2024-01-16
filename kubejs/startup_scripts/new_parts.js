@@ -200,29 +200,26 @@ onEvent('fluid.registry', event => {
   })
 });
 
-/* TO DO ADD SLURRY FOR ORE PROCESSING
-const $EventBuses = Java.loadClass('dev.architectury.platform.forge.EventBuses')
-const $GasDeferredRegister = Java.loadClass('mekanism.common.registration.impl.GasDeferredRegister')
-const $SlurryDeferredRegister = Java.loadClass('mekanism.common.registration.impl.SlurryDeferredRegister')
-const $InfuseTypeDeferredRegister = Java.loadClass('mekanism.common.registration.impl.InfuseTypeDeferredRegister')
+// TO DO ADD SLURRY FOR ORE PROCESSING
+const $EventBuses = java('dev.architectury.platform.forge.EventBuses')
+const $GasDeferredRegister = java('mekanism.common.registration.impl.GasDeferredRegister')
+const $SlurryDeferredRegister = java('mekanism.common.registration.impl.SlurryDeferredRegister')
+const $InfuseTypeDeferredRegister = java('mekanism.common.registration.impl.InfuseTypeDeferredRegister')
 
 const GASES = new $GasDeferredRegister('kubejs')
 const SLURRY = new $SlurryDeferredRegister('kubejs')
 const INFUSETYPE = new $InfuseTypeDeferredRegister('kubejs')
 
 //GASES.register('example_gas', 0xA020F0)
-SLURRY.register('example_slurry', builder => builder.color(0xA020F0))
-//INFUSETYPE.register('example_infuse_type', 0xA020F0)
+//SLURRY.register('example_slurry', builder => builder.color(0xA020F0))
+INFUSETYPE.register('chitin', 0x634f34)
 
-global.newMaterialParts.forEach((item) => {
 GASES.register($EventBuses.getModEventBus('kubejs').get())
 SLURRY['register(net.minecraftforge.eventbus.api.IEventBus)']($EventBuses.getModEventBus('kubejs').get())
 INFUSETYPE.register($EventBuses.getModEventBus('kubejs').get())
-})
-ClientEvents.highPriorityAssets(event => {
 
-  global.newMaterialParts.forEach((item) => {
-    event.addLang('slurry.kubejs.dirty_example_slurry', `Dirty Example Slurry`)
-  })
+onEvent('client.generate_assets', event => {
+    //event.addLang('slurry.kubejs.dirty_example_slurry', `Dirty Example Slurry`)
+    event.addLang('infuse_type.kubejs.chitin', `Chitin`)
+  
 })
-*/

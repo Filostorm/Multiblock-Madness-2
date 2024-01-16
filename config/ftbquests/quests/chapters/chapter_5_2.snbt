@@ -132,25 +132,6 @@
 			}]
 		}
 		{
-			title: "Advanced Alchemy"
-			x: 2.5d
-			y: 1.5d
-			dependencies: ["588EC54D514CB640"]
-			id: "4191399434B5CC2C"
-			tasks: [
-				{
-					id: "5B92175592B4D0EB"
-					type: "item"
-					item: "alchemistry:dissolver"
-				}
-				{
-					id: "67EC41F7763A83F0"
-					type: "item"
-					item: "alchemistry:combiner"
-				}
-			]
-		}
-		{
 			title: "Laser Circuit Assembly"
 			x: -5.0d
 			y: 9.5d

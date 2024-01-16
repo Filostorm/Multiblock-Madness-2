@@ -469,7 +469,7 @@ onEvent('item.tooltip', tooltip => {
 			let compoundSmeltingFunction = (grade) => {
 				let smeltingTooltip = ""
 				if (grade <= 0) {
-					smeltingTooltip = [Text.white(`Can smelted into: `), Text.gold(`${nameUpper(item.components[0])}`)]
+					smeltingTooltip = [Text.white(`Can be smelted into: `), Text.gold(`${nameUpper(item.components[0])}`)]
 				} else {
 					smeltingTooltip = Text.red(`Must be sorted into base metals before smelting.`)
 				}
@@ -539,7 +539,7 @@ onEvent('item.tooltip', tooltip => {
 			let smeltingFunction = (tier) => {
 				let smeltingTooltip = ""
 				if (part.level == 1) {
-					smeltingTooltip = [Text.of(`Can smelted in: `).white(), Text.of(`${smeltingList[tier]}`).yellow()]
+					smeltingTooltip = [Text.of(`Can be smelted in: `).white(), Text.of(`${smeltingList[tier]}`).yellow()]
 				} else {
 					smeltingTooltip = Text.of(`Must be refined to level 1 before smelting.`).aqua()
 				}

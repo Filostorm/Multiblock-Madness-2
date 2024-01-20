@@ -60,9 +60,9 @@ event.shaped('3x kubejs:ancient_wood_scaffolding', [
 	//Nature Altar
 	global.naturesauraTreeRitual(event, 'naturesaura:nature_altar', [
 		Item.of('naturesaura:token_joy').toJson(), 
-		Item.of('#forge:ingots/pewter').toJson(), 
-		Item.of('#forge:ingots/pewter').toJson(), 
-		Item.of('#forge:ingots/pewter').toJson(), 
+		Item.of('#forge:ingots/tier_1_magical_alloy').toJson(), 
+		Item.of('#forge:ingots/tier_1_magical_alloy').toJson(), 
+		Item.of('#forge:ingots/tier_1_magical_alloy').toJson(), 
 		Item.of('forbidden_arcanus:arcane_crystal_dust').toJson(),
 		Item.of('elementalcraft:whiterock').toJson(),
 		Item.of('elementalcraft:whiterock').toJson(),

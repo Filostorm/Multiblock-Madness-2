@@ -109,6 +109,7 @@ onEvent('worldgen.add', event => {
 		  ore.chance = 0
 		  ore.biomes = "minecraft:the_end"
 	})
+	/*
 	// Inserted Thorium
 	event.addOre((ore) => {
 		ore.id = 'kubejs:nether_thorium'
@@ -128,7 +129,7 @@ onEvent('worldgen.add', event => {
 		ore.worldgenLayer = "underground_decoration"
 		ore.chance = 0
 		ore.biomes = "minecraft:the_end"
-	})
+	})*/
 	
 	// The End Magnesium Veins
 	event.addOre((ore) => {

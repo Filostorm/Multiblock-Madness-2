@@ -982,6 +982,7 @@
 			icon: "tconstruct:scorched_brick"
 			x: 6.5d
 			y: 1.5d
+			description: ["You can melt slag in the Melter."]
 			dependencies: ["51537052A03715D7"]
 			id: "4C7F486D0CCC38E0"
 			tasks: [{

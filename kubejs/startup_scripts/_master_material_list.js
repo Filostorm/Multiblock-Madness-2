@@ -78,17 +78,6 @@ global.newMaterialParts = [
       'byproducts': ['lead'],
     },
     {
-      'material': 'nickel',
-      'color': 0xc2b17a,
-      'type': 'base_metal',
-      'tier': 1,
-      'itemParts': ['rod', 'wire', 'sheet'],
-      'blockParts': [],
-      'fluid_id': 'tconstruct:molten_nickel',
-      'ore': true,
-      'byproducts': ['iron', 'platinum'],
-    },
-    {
       'material': 'zinc',
       'color': 0x97c7b3,
       'type': 'base_metal',
@@ -151,17 +140,15 @@ global.newMaterialParts = [
       'fluid_id': 'kubejs:molten_mithril',
     },
     {
-      'material': 'thorium',
-      'color': 0x452852,
+      'material': 'nickel',
+      'color': 0xc2b17a,
       'type': 'base_metal',
       'tier': 2,
-      'itemParts': ['plate', 'rod', 'gear'],
+      'itemParts': ['rod', 'wire', 'sheet'],
       'blockParts': [],
+      'fluid_id': 'tconstruct:molten_nickel',
       'ore': true,
-      'raw_ore': true,
-      'byproducts': ['lead'],
-      'fluid': 'thick',
-      'fluid_id': 'kubejs:molten_thorium',
+      'byproducts': ['iron', 'platinum'],
     },
     
     
@@ -266,19 +253,19 @@ global.newMaterialParts = [
       'ore': true,
       'allomancy': 'Cadmium slows down the mobs in the area around you',
       'feruchemy': 'Breath--Respiration/Water Breathing or Air Bar when not swimming',
-    },    
-    {
-      'material': 'stellarite',
-      'color': 0x858f7c,
-      'tier': 4,
-      'type': 'base_metal',
-      'itemParts': ['ingot', 'gear', 'rod', 'dust', 'plating'],
-      'blockParts': [],
-      'ore': true,
-      'raw_ore': true
     },
     /////////////// Tier 5 Metals: Mars /////////////////////////////
 
+    //{
+    //  'material': 'stellarite',
+    //  'color': 0x858f7c,
+    //  'tier': 5,
+    //  'type': 'base_metal',
+    //  'itemParts': ['ingot', 'gear', 'rod', 'dust', 'plating'],
+    //  'blockParts': [],
+    //  'ore': true,
+    //  'raw_ore': true
+    //},
     {
       'material': 'tungsten',
       'color': 0x282c33,
@@ -397,6 +384,20 @@ global.newMaterialParts = [
 
 
     /////////////// Rare Metals /////////////////////////////
+    
+    {
+      'material': 'thorium',
+      'color': 0x452852,
+      'type': 'rare_metal',
+      'tier': 3,
+      'itemParts': ['plate', 'rod', 'gear'],
+      'blockParts': [],
+      'ore': true,
+      'raw_ore': true,
+      'byproducts': ['lead'],
+      'fluid': 'thick',
+      'fluid_id': 'kubejs:molten_thorium',
+    },
     {
       'material': 'manganese',
       'color': 0xb5c7a1,
@@ -499,19 +500,6 @@ global.newMaterialParts = [
       'feruchemy': 'Wakefulness--Reset Phantom Timer/Switch Day to night or Night to Day or Spawn Phantoms within ~30 of storage (Must store the whole time)'
     },
     {
-      'material': 'constantan',
-      'color': 0xe8a156,
-      'type': 'alloy',
-      'tier': 1,
-      'itemParts': ['rod', 'wire', 'plating', 'model_spool', 'model_wire_coil', 'sheet'],
-      'blockParts': ['cog_block', 'coil'],
-      'fluid_id': 'tconstruct:molten_constantan',
-      'amount': 2,
-      'dust_input': ['#forge:dusts/copper','#forge:dusts/nickel'],
-      'ingot_input': ['#forge:ingots/copper','#forge:ingots/nickel'],
-      'tinkers_input': [{tag: 'forge:molten_copper',amount: 90},{tag: 'forge:molten_nickel',amount: 90}]
-    },
-    {
       'material': 'electrum',
       'color': 0xe6db95,
       'type': 'alloy',
@@ -525,19 +513,6 @@ global.newMaterialParts = [
       'tinkers_input': [{tag: 'forge:molten_gold',amount: 90},{tag: 'forge:molten_silver',amount: 90}],
       'allomancy': 'Electrum lets you see your "future", showing you the location of your current spawn point',
       'feruchemy': 'Determination--Gain bonus Hearts or STOP Regenerating'
-    },
-    {
-      'material': 'invar',
-      'color': 0xa4bab5,
-      'type': 'alloy',
-      'tier': 1,
-      'itemParts': ['rod', 'wire', 'plating', 'sheet'],
-      'blockParts': ['scaffolding', 'cog_block', 'casing', 'sheetmetal'],
-      'fluid_id': 'tconstruct:molten_invar',
-      'amount': 3,
-      'dust_input': ['2x #forge:dusts/iron','#forge:dusts/nickel'],
-      'ingot_input': ['2x #forge:ingots/iron','#forge:ingots/nickel'],
-      'tinkers_input': [{tag: 'forge:molten_iron',amount: 180},{tag: 'forge:molten_nickel',amount: 90}]
     },
     {
       'material': 'brass',
@@ -573,8 +548,8 @@ global.newMaterialParts = [
       'color': 0x9d96b5,
       'type': 'alloy',
       'tier': 1,
-      'itemParts': ['ingot', 'nugget', 'plate', 'gear', 'dust', 'rod', 'sheet'],
-      'blockParts': ['storage_block', 'sheetmetal'],
+      'itemParts': ['dust'],
+      'blockParts': [],
       'fluid_id': 'tconstruct:molten_pewter',
       'amount': 4,
       'dust_input': ['2x #forge:dusts/tin','#forge:dusts/silver','#forge:dusts/lead'],
@@ -613,8 +588,6 @@ global.newMaterialParts = [
         'ingot_input': ['#forge:ingots/red_alloy', '2x powah:dielectric_paste'],
         'amount': 2,
       },
-    /////////////// Tier 2 Alloys: Tinkers or chapter 2 /////////////////////////////
-    
       {
         'material': 'drenched_iron',
         'color': 0xb1f0fc,
@@ -625,6 +598,34 @@ global.newMaterialParts = [
         'fluid': 'thick',
         'fluid_id': 'kubejs:molten_drenched_iron',
       },
+    /////////////// Tier 2 Alloys: Tinkers or chapter 2 /////////////////////////////
+    
+    {
+      'material': 'constantan',
+      'color': 0xe8a156,
+      'type': 'alloy',
+      'tier': 2,
+      'itemParts': ['rod', 'wire', 'plating', 'model_spool', 'model_wire_coil', 'sheet'],
+      'blockParts': ['cog_block', 'coil'],
+      'fluid_id': 'tconstruct:molten_constantan',
+      'amount': 2,
+      'dust_input': ['#forge:dusts/copper','#forge:dusts/nickel'],
+      'ingot_input': ['#forge:ingots/copper','#forge:ingots/nickel'],
+      'tinkers_input': [{tag: 'forge:molten_copper',amount: 90},{tag: 'forge:molten_nickel',amount: 90}]
+    },
+    {
+      'material': 'invar',
+      'color': 0xa4bab5,
+      'type': 'alloy',
+      'tier': 2,
+      'itemParts': ['rod', 'wire', 'plating', 'sheet'],
+      'blockParts': ['scaffolding', 'cog_block', 'casing', 'sheetmetal'],
+      'fluid_id': 'tconstruct:molten_invar',
+      'amount': 3,
+      'dust_input': ['2x #forge:dusts/iron','#forge:dusts/nickel'],
+      'ingot_input': ['2x #forge:ingots/iron','#forge:ingots/nickel'],
+      'tinkers_input': [{tag: 'forge:molten_iron',amount: 180},{tag: 'forge:molten_nickel',amount: 90}]
+    },
     {
       'material': 'rose_gold',
       'color': 0xffccd8,
@@ -747,9 +748,9 @@ global.newMaterialParts = [
       'itemParts': ['ingot', 'dust', 'nugget', 'plate', 'gear', 'rod'],
       'blockParts': ['storage_block', 'scaffolding'],
       'amount': 2,
-      'dust_input': ['2x #forge:dusts/electrum', '#forge:dusts/thorium'],
-      'ingot_input': ['2x #forge:ingots/electrum', '#forge:ingots/thorium'],
-      'tinkers_input': [{tag: 'forge:molten_electrum',amount: 180},{tag: 'forge:molten_thorium',amount: 90}],
+      'dust_input': ['2x #forge:dusts/electrum', '#forge:dusts/cobalt'],
+      'ingot_input': ['2x #forge:ingots/electrum', '#forge:ingots/cobalt'],
+      'tinkers_input': [{tag: 'forge:molten_electrum',amount: 180},{tag: 'forge:molten_cobalt',amount: 90}],
       'fluid': 'thick',
       'fluid_id': 'kubejs:molten_reinforced_electrum',
     },
@@ -1140,7 +1141,7 @@ global.newMaterialParts = [
       'fluid': 'thick',
       'ore': true,
       'raw_ore': true,
-      'components': ['copper','zinc', 'cobalt', 'uranium', 'platinum', 'orichalcum', 'adamantium', 'vibranium', 'draconium'],
+      'components': ['copper','zinc', 'nickel', 'uranium', 'platinum', 'orichalcum', 'adamantium', 'vibranium', 'draconium'],
       'gem_components': ['sulfur', 'fluorite'],
       'byproducts': ['imortite', 'potentium'],
     },
@@ -1168,7 +1169,7 @@ global.newMaterialParts = [
       'fluid': 'thick',
       'ore': true,
       'raw_ore': true,
-      'components': ['iron','nickel', 'aluminum', 'magnesium', 'cadmium', 'ostrum', 'adamantium', 'vibranium', 'draconium'],
+      'components': ['iron','arcanite', 'aluminum', 'magnesium', 'cadmium', 'ostrum', 'adamantium', 'vibranium', 'draconium'],
       'gem_components': ['ruby', 'cinnabar'],
       'byproducts': ['kharaxium', 'imortite'],
     },
@@ -1197,7 +1198,7 @@ global.newMaterialParts = [
       'fluid': 'thick',
       'ore': true,
       'raw_ore': true,
-      'components': ['copper', 'nickel', 'cobalt', 'titanium', 'platinum', 'tungsten', 'iridium', 'uru', 'draconium'],
+      'components': ['copper', 'arcanite', 'cobalt', 'titanium', 'platinum', 'tungsten', 'iridium', 'uru', 'draconium'],
       'gem_components': ['lapis', 'apatite'],
       'byproducts': ['vincyte', 'densite'],
     },
@@ -1225,7 +1226,7 @@ global.newMaterialParts = [
       'fluid': 'thick',
       'ore': true,
       'raw_ore': true,
-      'components': ['iron', 'lead', 'thorium', 'titanium', 'osmium', 'tungsten', 'calorite', 'uru', 'draconium'],
+      'components': ['iron', 'lead', 'nickel', 'titanium', 'osmium', 'tungsten', 'calorite', 'uru', 'draconium'],
       'gem_components': ['emerald', 'niter'],
       'byproducts': ['jimmium', 'vincyte'],
     },

@@ -243,7 +243,7 @@ onEvent('worldgen.add', event => {
 		  ore.biomes = "^nether"
 	})
 	
-	
+	/*
 	// Nether Thorium Veins
 	event.addOre((ore) => {
 		ore.id = 'kubejs:nether_thorium_ore'
@@ -265,7 +265,7 @@ onEvent('worldgen.add', event => {
 		ore.worldgenLayer = "underground_ores"
 		  ore.chance = 0
 		  ore.biomes = "^nether"
-	})
+	})*/
 
 
 	// Inserted Nether luminite

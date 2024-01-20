@@ -6,10 +6,10 @@ onEvent('recipes', event => {
 	'EFE'
   ], {
 	A: 'create:cogwheel',
-	B: '#forge:string',
+	B: 'createsifter:andesite_mesh',
 	C: '#forge:glass/colorless',
 	D: 'create:copper_casing',
-	E: 'thermal:nickel_plate',
+	E: '#forge:plates/drenched_iron',
 	F: 'thermal:gold_gear'
   }).id(`mbm2:multiblocked/sludge_sifter`)
 

@@ -1038,8 +1038,8 @@
 			}]
 		}
 		{
-			x: 7.5d
-			y: 9.0d
+			x: 9.0d
+			y: 10.5d
 			dependencies: ["143FA2A8FD6E4E10"]
 			id: "42F5FCF0F07BA708"
 			tasks: [{
@@ -1235,6 +1235,24 @@
 					}
 				}
 			]
+		}
+		{
+			x: 8.5d
+			y: 12.5d
+			description: ["This is used to make the higher tier Tinkers Tools,"]
+			dependencies: ["143FA2A8FD6E4E10"]
+			id: "434D27AD712204C9"
+			tasks: [{
+				id: "3A417A0C22653AED"
+				type: "item"
+				item: {
+					id: "tconstruct:tinkers_anvil"
+					Count: 1b
+					tag: {
+						texture: "create:brass_block"
+					}
+				}
+			}]
 		}
 	]
 	quest_links: [ ]

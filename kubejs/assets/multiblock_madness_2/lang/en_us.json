@@ -132,8 +132,8 @@
     "desc.immersiveengineering.info.mineral.jimmium": "Jimmium",
 
 
-    "item.mna.vinteum_coated_iron": "Vinteum Coated Mithril",
-    "item.mna.purified_vinteum_coated_iron": "Purified Vinteum Coated Mithril",
+    "item.mna.vinteum_coated_iron": "Vinteum Coated Alloy",
+    "item.mna.purified_vinteum_coated_iron": "Purified Vinteum Coated Alloy",
     "block.pneumaticcraft.compressed_iron_block" : "Block of Compressed Steel",
     "item.pneumaticcraft.ingot_iron_compressed" : "Compressed Steel Ingot",
     "item.pneumaticcraft.compressed_iron_boots" : "Compressed Steel Boots",

@@ -56,6 +56,7 @@ var removeByName = [
 	'tconstruct:common/materials/netherite_ingot_from_nuggets',
 	'minecraft:netherite_ingot',
 	//'tconstruct:smeltery/melting/ender/pearl'
+	'allomancy:pewter_ingot_from_alloying',
 ]
 
 onEvent('recipes', event => {

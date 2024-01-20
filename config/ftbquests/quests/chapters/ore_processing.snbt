@@ -22,6 +22,7 @@
 		{
 			x: 1.0d
 			y: 0.5d
+			subtitle: "Y200 - 32"
 			description: ["Gold is most commonly found in the Nether in large Veins and can contain Luminite and Air, or in smaller amounts as part of Iron and Copper veins in the overworld."]
 			id: "0576B9C102FC7DF9"
 			tasks: [{
@@ -125,6 +126,7 @@
 		{
 			x: 1.0d
 			y: -0.5d
+			subtitle: "Y200 - 32"
 			description: ["Common ore in the Nether, can spawn with Sulfur."]
 			id: "1405FF2C05901533"
 			tasks: [{
@@ -136,6 +138,7 @@
 		{
 			x: 1.0d
 			y: -1.5d
+			subtitle: "Y200 - 0"
 			description: ["Common ore in the Nether, can spawn with Sulfur and Earth."]
 			id: "055AF757CBBD61CB"
 			tasks: [{
@@ -211,7 +214,7 @@
 		}
 		{
 			title: "Nether Veins"
-			icon: "minecraft:nether_star"
+			icon: "minecraft:netherrack"
 			disable_toast: true
 			x: 1.0d
 			y: -2.5d
@@ -393,7 +396,7 @@
 		}
 		{
 			x: -4.0d
-			y: -9.5d
+			y: -10.0d
 			id: "0BAC4F3AD0800A45"
 			tasks: [{
 				id: "05C6F2373ED082B7"
@@ -403,7 +406,7 @@
 		}
 		{
 			x: -4.0d
-			y: -10.5d
+			y: -11.0d
 			id: "7FA29068486FCB01"
 			tasks: [{
 				id: "05C908B726A9468E"
@@ -413,7 +416,7 @@
 		}
 		{
 			x: -4.0d
-			y: -11.5d
+			y: -12.0d
 			id: "59663F168755F312"
 			tasks: [{
 				id: "17D6A9009EC729A0"
@@ -423,7 +426,7 @@
 		}
 		{
 			x: -4.0d
-			y: -6.5d
+			y: -7.0d
 			id: "4E78300F04776252"
 			tasks: [{
 				id: "5C68FDA94B105BBC"
@@ -433,7 +436,7 @@
 		}
 		{
 			x: -4.0d
-			y: -7.5d
+			y: -8.0d
 			id: "07A0649720C8F7B5"
 			tasks: [{
 				id: "4EBFEC1BC69BB122"
@@ -443,7 +446,7 @@
 		}
 		{
 			x: -4.0d
-			y: -8.5d
+			y: -9.0d
 			id: "54E7157340600EB6"
 			tasks: [{
 				id: "7E183FF810B98BF3"
@@ -505,16 +508,6 @@
 				type: "dimension"
 				title: "The End"
 				dimension: "minecraft:the_end"
-			}]
-		}
-		{
-			x: 1.0d
-			y: 4.5d
-			id: "735D513D4CE5E0B4"
-			tasks: [{
-				id: "6EF061B7FE987E14"
-				type: "item"
-				item: "kubejs:raw_thorium"
 			}]
 		}
 		{
@@ -708,7 +701,7 @@
 		}
 		{
 			x: -1.5d
-			y: -10.5d
+			y: -11.0d
 			dependencies: [
 				"0BAC4F3AD0800A45"
 				"7FA29068486FCB01"
@@ -716,14 +709,14 @@
 			]
 			id: "3D6F5260B3B4242F"
 			tasks: [{
-				id: "1B0F7315F8C1786D"
+				id: "44BA8299E0D078F1"
 				type: "item"
-				item: "kubejs:crushed_thermogenic_blend"
+				item: "kubejs:thermogenic_blend_chunk"
 			}]
 		}
 		{
 			x: -1.5d
-			y: -7.5d
+			y: -8.0d
 			dependencies: [
 				"4E78300F04776252"
 				"54E7157340600EB6"
@@ -733,7 +726,7 @@
 			tasks: [{
 				id: "2DF6D87316B87028"
 				type: "item"
-				item: "kubejs:crushed_thermolytic_blend"
+				item: "kubejs:thermolytic_blend_chunk"
 			}]
 		}
 		{
@@ -925,6 +918,7 @@
 			}]
 		}
 		{
+			disable_toast: true
 			x: 11.0d
 			y: -6.0d
 			id: "0C3EB21BEA2D34C9"
@@ -954,6 +948,7 @@
 			}]
 		}
 		{
+			disable_toast: true
 			x: 11.0d
 			y: -5.0d
 			id: "0DC400230EF6616D"
@@ -964,6 +959,7 @@
 			}]
 		}
 		{
+			disable_toast: true
 			x: 14.0d
 			y: -6.0d
 			id: "00859F9E64E640CB"
@@ -993,6 +989,7 @@
 			}]
 		}
 		{
+			disable_toast: true
 			x: 14.0d
 			y: -5.0d
 			id: "3BFFF4D5CAFC1A3D"
@@ -1003,6 +1000,7 @@
 			}]
 		}
 		{
+			disable_toast: true
 			x: 17.5d
 			y: -6.0d
 			id: "6EA1FAD3986DBE8D"
@@ -1032,6 +1030,7 @@
 			}]
 		}
 		{
+			disable_toast: true
 			x: 17.5d
 			y: -5.0d
 			id: "3C240ED6381FC643"

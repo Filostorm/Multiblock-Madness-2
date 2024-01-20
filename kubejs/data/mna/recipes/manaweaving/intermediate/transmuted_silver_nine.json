@@ -5,15 +5,15 @@
 	"quantity": 9,
 	"items":
 	[
-		"forge:ingots/pewter",
-		"forge:ingots/pewter",
-		"forge:ingots/pewter",
-		"forge:ingots/pewter",
-		"forge:ingots/pewter",
-		"forge:ingots/pewter",
-		"forge:ingots/pewter",
-		"forge:ingots/pewter",
-		"forge:ingots/pewter"
+		"forge:ingots/mithril",
+		"forge:ingots/mithril",
+		"forge:ingots/mithril",
+		"forge:ingots/mithril",
+		"forge:ingots/mithril",
+		"forge:ingots/mithril",
+		"forge:ingots/mithril",
+		"forge:ingots/mithril",
+		"forge:ingots/mithril"
 	],
 	"patterns":
 	[

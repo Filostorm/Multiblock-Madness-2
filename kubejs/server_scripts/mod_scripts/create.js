@@ -213,8 +213,8 @@ event.shaped('create:hose_pulley', [
 		'R R',
 		'PNP'
 		  ], {
-		R: '#forge:rods/invar',
-		P: '#forge:plates/invar',
+		R: '#forge:rods/bronze',
+		P: '#forge:plates/bronze',
 		N: '#forge:netherrack'
 		  }).id(`mbm2:crafting/empty_blaze_burner`)
 

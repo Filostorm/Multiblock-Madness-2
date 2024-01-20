@@ -52,7 +52,7 @@ onEvent('recipes', event => {
 	//global.explosionCrafting(event, 'pneumaticcraft:compressed_iron_block', '#forge:storage_blocks/steel', 20, 'mbm2:explosion_crafting/compressed_steel_block')
 
 	//Compressed Aluminum
-	global.pressureChamber(event, [Item.of('2x #forge:ingots/pressurized_aluminum_alloy')], [{"type": "pneumaticcraft:stacked_item","tag": "forge:ingots/aluminum", "count": 2},{"tag": "forge:ingots/thorium"}, {"tag": "forge:ingots/magnesium"}], 2.0, 'mbm2:pressure_chamber/high_strength_ingot')
+	global.pressureChamber(event, [Item.of('2x #forge:ingots/pressurized_aluminum_alloy')], [{"type": "pneumaticcraft:stacked_item","tag": "forge:ingots/aluminum", "count": 2},{"tag": "forge:ingots/cobalt"}, {"tag": "forge:ingots/magnesium"}], 2.0, 'mbm2:pressure_chamber/high_strength_ingot')
 
 	//Turbine Blade
 	event.remove({id: 'pneumaticcraft:pressure_chamber/turbine_blade'})
@@ -105,12 +105,12 @@ onEvent('recipes', event => {
 	  'STS'
 	], {
 	  S: 'pneumaticcraft:reinforced_bricks',
-	  P: '#forge:plates/thorium',
+	  P: '#forge:plates/tier_1_structural_alloy',
 	  C: 'powah:dielectric_casing',
 	  T: 'pneumaticcraft:small_tank',
 	}).id('mbm2:pneumaticcraft_casing')
 
-	//air_compressor
+	//Air Compressor
 	event.remove({id: 'pneumaticcraft:air_compressor'})
 	event.shaped('pneumaticcraft:air_compressor', [
 	  ' P ',
@@ -118,7 +118,7 @@ onEvent('recipes', event => {
 	  'GFG'
 	], {
 	  T: 'pneumaticcraft:pressure_tube',
-	  G: '#forge:gears/thorium',
+	  G: '#forge:gears/tier_1_mechanical_alloy',
 	  C: 'kubejs:pneumaticcraft_casing',
 	  F: 'engineersdecor:small_lab_furnace',
 	  P: 'create:propeller',

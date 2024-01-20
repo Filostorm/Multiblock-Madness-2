@@ -1016,7 +1016,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 	}
 	
 	//Tier 1
-	oreMixer(event, 4, '#forge:ores/raw/nickel', ['kubejs:catalyst_basic', '2x kubejs:raw_kharaxium', '2x kubejs:raw_vincyte'], 2)
+	//oreMixer(event, 4, '#forge:ores/raw/nickel', ['kubejs:catalyst_basic', '2x kubejs:raw_kharaxium', '2x kubejs:raw_vincyte'], 2)
 	oreMixer(event, 4, '#forge:ores/raw/zinc', ['kubejs:catalyst_basic', '2x kubejs:raw_jimmium', '2x kubejs:raw_vincyte'], 2)
 	oreMixer(event, 4, '#forge:ores/raw/lead', ['kubejs:catalyst_basic', '2x kubejs:raw_densite','2x kubejs:raw_potentium'], 2)
 	oreMixer(event, 4, '#forge:ores/raw/silver', ['kubejs:catalyst_basic', '2x kubejs:raw_potentium','2x kubejs:raw_imortite'], 2)
@@ -1026,7 +1026,8 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 	//Tier 2
 	oreMixer(event, 3, '#forge:ores/crushed/cobalt', ['kubejs:catalyst_basic', '2x kubejs:crushed_vincyte','2x kubejs:crushed_imortite'], 4)
 	oreMixer(event, 3, '#forge:ores/crushed/aluminum', ['kubejs:catalyst_basic', '2x kubejs:crushed_densite','2x kubejs:crushed_kharaxium'], 4)
-	oreMixer(event, 3, '#forge:ores/crushed/thorium', ['kubejs:catalyst_basic', '2x kubejs:crushed_jimmium','2x kubejs:crushed_vincyte'], 4)
+	oreMixer(event, 3, '#forge:ores/crushed/nickel', ['kubejs:catalyst_basic', '2x kubejs:crushed_jimmium','2x kubejs:crushed_vincyte'], 4)
+	//oreMixer(event, 3, '#forge:ores/crushed/thorium', ['kubejs:catalyst_basic', '2x kubejs:crushed_jimmium','2x kubejs:crushed_vincyte'], 4)
 	oreMixer(event, 3, '#forge:ores/crushed/mithril', ['kubejs:catalyst_magic', '2x kubejs:crushed_potentium','2x kubejs:crushed_densite'], 4)
 	
 	//Tier 3

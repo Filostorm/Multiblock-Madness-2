@@ -53,12 +53,12 @@ B: '#mna:improvised_manaweave_wand_caps',
 C: '#forge:rods/wooden'
   }).id("mbm2:improvised_manaweaver_wand")
 
-  // Vinteum Coated Mithril
+  // Vinteum Coated tier_1_magical_alloy
 	event.remove({id: 'mna:vinteum_coated_iron'})
 	event.remove({id: 'mna:vinteum_bar_blast_furnace'})
 	event.remove({id: 'mna:vinteum_bar'})
-	event.recipes.createMixing('mna:vinteum_coated_iron', [`#forge:ingots/mithril`, 'mna:vinteum_dust']).heated().id(`mbm2:vinteum_coated_mithril`)
-  	global.tinkersMelting(event, 'kubejs:molten_slag', 50, 'kubejs:molten_vinteum', 90, 'mna:vinteum_coated_iron', 1200, 142, `mbm2:smeltery/melting/metal/vinteum_coated_mithril`)
+	event.recipes.createMixing('mna:vinteum_coated_iron', [`#forge:ingots/tier_1_magical_alloy`, 'mna:vinteum_dust']).heated().id(`mbm2:vinteum_coated_tier_1_magical_alloy`)
+  	global.tinkersMelting(event, 'kubejs:molten_slag', 50, 'kubejs:molten_vinteum', 90, 'mna:vinteum_coated_iron', 1200, 142, `mbm2:smeltery/melting/metal/vinteum_coated_tier_1_magical_alloy`)
 	event.custom({
 		"type": "mna:arcane-furnace",
 		"tier": 1,
@@ -68,11 +68,11 @@ C: '#forge:rods/wooden'
 		"burnTime": 200
 	})
 
-	// Vinteum Coated Mithril
+	// Vinteum Coated tier_1_magical_alloy
 	  event.remove({id: 'mna:purified_vinteum_coated_iron'})
 	  event.remove({id: 'mna:purified_vinteum_bar_blast_furnace'})
 	  event.remove({id: 'mna:purified_vinteum_bar'})
-	  event.recipes.createMixing('mna:purified_vinteum_coated_iron', [`#forge:ingots/mithril`, 'mna:purified_vinteum_dust']).superheated().id(`mbm2:purified_vinteum_coated_mithril`)
+	  event.recipes.createMixing('mna:purified_vinteum_coated_iron', [`#forge:ingots/tier_1_magical_alloy`, 'mna:purified_vinteum_dust']).superheated().id(`mbm2:purified_vinteum_coated_tier_1_magical_alloy`)
 	  event.custom({
 		  "type": "mna:arcane-furnace",
 		  "tier": 2,

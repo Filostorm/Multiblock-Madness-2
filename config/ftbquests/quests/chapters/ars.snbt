@@ -1,0 +1,1007 @@
+{
+	id: "00138B411AEBA6EB"
+	group: "7571E15FFD2D3DD8"
+	order_index: 2
+	filename: "ars"
+	title: "Ars"
+	icon: "ars_nouveau:source_gem"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			x: -35.0d
+			y: 0.0d
+			subtitle: "Thinking with spells"
+			description: ["Spell book is a powerful tool that can do a lot of things with almost no cost. To create a spell, you can press the open book key (Default: C) and select the Spell Form, and the spell effects. Can also be dyed."]
+			id: "01AB47D4DCA342A5"
+			tasks: [{
+				id: "275548495BE9B9DE"
+				type: "item"
+				item: "ars_nouveau:novice_spell_book"
+			}]
+		}
+		{
+			title: "Learning new Spells"
+			x: -35.0d
+			y: -2.5d
+			description: [
+				"To learn new spells, you need to make glyphs that will be consumed to learn the spell. "
+				"Each spell have a tier requirement. Tier 1 Glyphs can be used by any book, tier 2 by Mage's Spell Book and so on."
+			]
+			dependencies: ["01AB47D4DCA342A5"]
+			id: "536EC77D17B512A1"
+			tasks: [{
+				id: "4012013888C6A1BE"
+				type: "item"
+				item: "ars_nouveau:scribes_table"
+			}]
+			rewards: [{
+				id: "47ED42869CE112C8"
+				type: "item"
+				item: "ars_nouveau:glyph_light"
+			}]
+		}
+		{
+			x: -29.0d
+			y: 0.0d
+			subtitle: "Farmer's magic."
+			description: ["Can generate Source from plants growing. Bonus source is generated if the plants are from the Ars mod."]
+			dependencies: [
+				"30CD0A7C0B37EAD4"
+				"6511A3EE5F483172"
+				"01AB47D4DCA342A5"
+			]
+			id: "494A0493478153D9"
+			tasks: [{
+				id: "200DAE246831CEFB"
+				type: "item"
+				item: "ars_nouveau:agronomic_sourcelink"
+			}]
+			rewards: [{
+				id: "1D3C3DBB838A4FD0"
+				type: "item"
+				item: "tombstone:bag_of_seeds"
+			}]
+		}
+		{
+			x: -33.0d
+			y: 0.0d
+			subtitle: "Creating Materials"
+			dependencies: ["01AB47D4DCA342A5"]
+			id: "6511A3EE5F483172"
+			tasks: [{
+				id: "6C6C2C3F988AFE72"
+				type: "item"
+				item: "ars_nouveau:imbuement_chamber"
+			}]
+			rewards: [{
+				id: "66216259465F97E0"
+				type: "item"
+				item: "ars_nouveau:source_berry"
+				count: 2
+			}]
+		}
+		{
+			x: -31.0d
+			y: 0.0d
+			shape: "octagon"
+			description: ["These gems can slowly be made by putting Lapis Lazuli or Amethyst inside the imbuement chamber. Placing some source filled jars will make the process faster."]
+			dependencies: [
+				"6511A3EE5F483172"
+				"01AB47D4DCA342A5"
+			]
+			size: 1.25d
+			id: "30CD0A7C0B37EAD4"
+			tasks: [{
+				id: "38E84DF404AAACFF"
+				type: "item"
+				item: "ars_nouveau:source_gem"
+			}]
+			rewards: [{
+				id: "7F9EA4D9E40AA8EB"
+				type: "item"
+				item: "ars_nouveau:source_gem"
+				count: 16
+			}]
+		}
+		{
+			x: -29.0d
+			y: -1.5d
+			subtitle: "Even hotter topic."
+			description: ["Can generate Source consuming dropped burnable itens (Pedestals also work). Makes stone beneath it turn into magma blocks, and magma blocks to lava, also spawning lava lillies. Blazing Archwood Logs can be used to make bonus source."]
+			dependencies: ["30CD0A7C0B37EAD4"]
+			id: "7131EE1B0147377C"
+			tasks: [{
+				id: "4E63410CB8110D41"
+				type: "item"
+				item: "ars_nouveau:volcanic_sourcelink"
+			}]
+			rewards: [{
+				id: "3FD4C3903D2AD7F7"
+				type: "item"
+				item: "ars_nouveau:red_archwood_sapling"
+			}]
+		}
+		{
+			x: -29.0d
+			y: 1.5d
+			subtitle: "Meat and Beet."
+			description: ["Can generate Source from animals breed, death and makes the animals growth faster."]
+			dependencies: ["30CD0A7C0B37EAD4"]
+			id: "304204395C17131A"
+			tasks: [{
+				id: "4EE733B967608919"
+				type: "item"
+				item: "ars_nouveau:vitalic_sourcelink"
+			}]
+			rewards: [{
+				id: "1DA85A4FECA65834"
+				type: "item"
+				item: "minecraft:beetroot"
+				count: 2
+			}]
+		}
+		{
+			x: -29.0d
+			y: -3.0d
+			subtitle: "Fungus, among us."
+			description: ["Can generate Source based in the nourishment value, from dropped foods (Pedestals also work). Bonus if the food is made from Source berry. Makes dirt/grass below turn into Mycelium and will grow mushrooms if possible."]
+			dependencies: ["30CD0A7C0B37EAD4"]
+			id: "5604AD3AE0C4EC33"
+			tasks: [{
+				id: "15D7638ACE7FBEC0"
+				type: "item"
+				item: "ars_nouveau:mycelial_sourcelink"
+			}]
+			rewards: [{
+				id: "360E0F218C72AD2C"
+				type: "item"
+				item: "ars_nouveau:source_berry"
+			}]
+		}
+		{
+			x: -29.0d
+			y: 3.0d
+			subtitle: "Witchesproof!"
+			description: ["Can generate Source using potions from Potion Jar. The amount of source generated is based on the potion's complexity."]
+			dependencies: ["30CD0A7C0B37EAD4"]
+			id: "65A768A7A9946BA2"
+			tasks: [{
+				id: "1106CE88E79680A1"
+				type: "item"
+				item: "ars_nouveau:alchemical_sourcelink"
+			}]
+			rewards: [{
+				id: "30B78F37D212F3A2"
+				type: "item"
+				item: "ars_nouveau:potion_jar"
+			}]
+		}
+		{
+			x: -27.0d
+			y: 0.0d
+			dependencies: [
+				"7131EE1B0147377C"
+				"494A0493478153D9"
+				"304204395C17131A"
+				"65A768A7A9946BA2"
+				"5604AD3AE0C4EC33"
+			]
+			dependency_requirement: "one_completed"
+			id: "370F4C2E671451DB"
+			tasks: [
+				{
+					id: "0AF6E2F4BAECCAFA"
+					type: "item"
+					item: "ars_nouveau:enchanting_apparatus"
+				}
+				{
+					id: "4FDD74D6677915DA"
+					type: "item"
+					item: "ars_nouveau:arcane_pedestal"
+					count: 8L
+				}
+			]
+			rewards: [{
+				id: "7EB367A36EE39042"
+				type: "item"
+				item: "ars_nouveau:source_jar"
+			}]
+		}
+		{
+			title: "Novice Set"
+			x: -26.0d
+			y: -2.5d
+			description: ["Each Magical Armor piece will grant Mana Regen and Mana Pool bonus, with each increasing as they're upgraded."]
+			dependencies: ["1F1F80F45BC868DF"]
+			id: "19AD28C468B66F26"
+			tasks: [
+				{
+					id: "640160906ECBA1FE"
+					type: "item"
+					item: {
+						id: "ars_nouveau:novice_boots"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+				{
+					id: "5DB464B82A78D49C"
+					type: "item"
+					item: {
+						id: "ars_nouveau:novice_leggings"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+				{
+					id: "59AAE041AF4AED85"
+					type: "item"
+					item: {
+						id: "ars_nouveau:novice_robes"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+				{
+					id: "7F2147838EBADFB0"
+					type: "item"
+					item: {
+						id: "ars_nouveau:novice_hood"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+			]
+		}
+		{
+			x: -26.0d
+			y: -1.0d
+			dependencies: ["370F4C2E671451DB"]
+			id: "1F1F80F45BC868DF"
+			tasks: [
+				{
+					id: "7B0A20428F30077D"
+					type: "item"
+					item: "ars_nouveau:magebloom_crop"
+				}
+				{
+					id: "4500BF6E5ADA8EFF"
+					type: "item"
+					item: "ars_nouveau:magebloom_fiber"
+				}
+			]
+			rewards: [{
+				id: "1B01292DFB691B3B"
+				type: "item"
+				item: "ars_nouveau:magebloom_crop"
+				count: 4
+			}]
+		}
+		{
+			x: -33.5d
+			y: -1.5d
+			dependencies: ["01AB47D4DCA342A5"]
+			id: "76DD03068936D94B"
+			tasks: [{
+				id: "503A9F58CDF04FD4"
+				type: "item"
+				item: "ars_nouveau:apprentice_spell_book"
+			}]
+		}
+		{
+			x: -32.0d
+			y: -3.0d
+			shape: "hexagon"
+			dependencies: [
+				"76DD03068936D94B"
+				"1CB6E3D95AE100D6"
+			]
+			size: 1.5d
+			id: "140DD38CABFA1C2E"
+			tasks: [{
+				id: "06E339A391FAB20F"
+				type: "item"
+				item: "ars_nouveau:archmage_spell_book"
+			}]
+		}
+		{
+			title: "Mage Set"
+			x: -26.0d
+			y: -4.0d
+			dependencies: ["19AD28C468B66F26"]
+			hide: true
+			id: "5670FF94359EC719"
+			tasks: [
+				{
+					id: "2AF8ABC5C07240D0"
+					type: "item"
+					item: {
+						id: "ars_nouveau:apprentice_boots"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+				{
+					id: "74B661D3E9145AAC"
+					type: "item"
+					item: {
+						id: "ars_nouveau:apprentice_leggings"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+				{
+					id: "33D8B7D6D0A5B072"
+					type: "item"
+					item: {
+						id: "ars_nouveau:apprentice_robes"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+				{
+					id: "5AEEAF6D85868FAD"
+					type: "item"
+					item: {
+						id: "ars_nouveau:apprentice_hood"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+			]
+		}
+		{
+			title: "Archmage Set"
+			x: -26.0d
+			y: -5.5d
+			dependencies: ["5670FF94359EC719"]
+			hide: false
+			id: "71D8D8AD60B13419"
+			tasks: [
+				{
+					id: "621CCB2B7C5E2988"
+					type: "item"
+					item: {
+						id: "ars_nouveau:archmage_boots"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+				{
+					id: "444A8EC123354417"
+					type: "item"
+					item: {
+						id: "ars_nouveau:archmage_leggings"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+				{
+					id: "05B226BC67A3E261"
+					type: "item"
+					item: {
+						id: "ars_nouveau:archmage_robes"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+				{
+					id: "3BC9910195EFE025"
+					type: "item"
+					item: {
+						id: "ars_nouveau:archmage_hood"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+			]
+		}
+		{
+			x: -26.0d
+			y: 1.0d
+			dependencies: ["370F4C2E671451DB"]
+			id: "27716E90D4AA1997"
+			tasks: [{
+				id: "55FBB6E7013131F0"
+				type: "item"
+				item: {
+					id: "ars_nouveau:warp_scroll"
+					Count: 1b
+					tag: { }
+				}
+			}]
+		}
+		{
+			title: "Warp Portal"
+			x: -26.0d
+			y: 2.5d
+			subtitle: "Infinite Waystones"
+			description: [
+				"Portals can be life savers for those who don't want to search the world, or craft for waystones. Just some arcane stones, a bound warp scroll and source. Only works in the Overworld."
+				"{image:#FFFFFF width:100 height:100 align:1}"
+			]
+			dependencies: ["27716E90D4AA1997"]
+			id: "1B0E98499256D198"
+			tasks: [{
+				id: "78491E10957AEA53"
+				type: "item"
+				item: "ars_nouveau:arcane_stone"
+			}]
+		}
+		{
+			title: "Archwood"
+			x: -37.0d
+			y: 0.0d
+			dependencies: ["01AB47D4DCA342A5"]
+			id: "0A3F975D804A8C30"
+			tasks: [{
+				id: "05BBE9F10D4FDC44"
+				type: "item"
+				title: "Any #forge:logs/archwood"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "forge:logs/archwood"
+					}
+				}
+			}]
+		}
+		{
+			x: -31.0d
+			y: 2.5d
+			shape: "circle"
+			description: ["Can be used to convert Budding Amethyst into Amethyst Golems. These buddies can make Amethyst Block turn into budding amethyst, make amethyst clusters grow faster and collect the amethyst from the clusters. No source required."]
+			dependencies: ["247130E259A9A500"]
+			id: "48069E5DE90B157C"
+			tasks: [{
+				id: "04AF85A790729B8D"
+				type: "item"
+				item: "ars_nouveau:ritual_awakening"
+			}]
+			rewards: [{
+				id: "0DC207FEDBD5AA3F"
+				type: "item"
+				item: "minecraft:budding_amethyst"
+			}]
+		}
+		{
+			x: -33.5d
+			y: 1.5d
+			shape: "circle"
+			description: ["The most early game creative flight. Consumes Source to give Flight effect in a area."]
+			dependencies: ["247130E259A9A500"]
+			id: "22CE386A0520A00F"
+			tasks: [{
+				id: "0B14C5B7187277F4"
+				type: "item"
+				item: "ars_nouveau:ritual_flight"
+			}]
+		}
+		{
+			x: -32.0d
+			y: 1.5d
+			dependencies: ["30CD0A7C0B37EAD4"]
+			size: 1.2d
+			id: "247130E259A9A500"
+			tasks: [{
+				id: "112DCFAB98CD3C38"
+				type: "item"
+				item: "ars_nouveau:ritual_brazier"
+			}]
+		}
+		{
+			x: -32.0d
+			y: -1.5d
+			shape: "circle"
+			description: ["Can be used to summon the Wilden Chimera boss if augmented with Wilden Horn, Spike and Wing. Proceed with caution."]
+			hide_dependency_lines: true
+			dependencies: [
+				"247130E259A9A500"
+				"76DD03068936D94B"
+			]
+			hide: true
+			id: "1CB6E3D95AE100D6"
+			tasks: [{
+				id: "2B3A53FAA07F9A8C"
+				type: "item"
+				item: "ars_nouveau:ritual_wilden_summon"
+			}]
+		}
+		{
+			x: -32.0d
+			y: 3.0d
+			shape: "circle"
+			description: ["Can be used to convert certain entities into familiars, that gives the player some buffs."]
+			dependencies: ["247130E259A9A500"]
+			id: "062B948772A88D8B"
+			tasks: [{
+				id: "4727553AD4E24ECD"
+				type: "item"
+				item: "ars_nouveau:ritual_binding"
+			}]
+		}
+		{
+			x: -33.0d
+			y: 2.5d
+			shape: "circle"
+			description: ["Occasionally, bone meals nearby plants at the cost of source. Can make babies grow faster if upgraded with a bone block."]
+			dependencies: ["247130E259A9A500"]
+			id: "5CC10F87EF48C2AA"
+			tasks: [{
+				id: "16268E562CFFA08C"
+				type: "item"
+				item: "ars_nouveau:ritual_overgrowth"
+			}]
+		}
+		{
+			title: "Source food"
+			x: -29.0d
+			y: -4.5d
+			shape: "circle"
+			subtitle: "Hi Hungry, I'm dad!"
+			description: ["Foods that give mana regen and work as fuel for the vitalic sourcelink."]
+			dependencies: ["5604AD3AE0C4EC33"]
+			hide: true
+			id: "4799D00A8E18E8D3"
+			tasks: [{
+				id: "641E324555696B6D"
+				type: "item"
+				title: "Any #ars_nouveau:magic_food"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "ars_nouveau:magic_food"
+					}
+				}
+			}]
+		}
+		{
+			title: "Wixie's Cauldron"
+			x: -29.0d
+			y: 4.5d
+			shape: "circle"
+			subtitle: "Potionmaking 101."
+			description: ["Clicking a cauldron with the Wixie Charm will create the Wixie Cauldron. Wixies can be used to automate the potion crafting using source."]
+			dependencies: ["65A768A7A9946BA2"]
+			hide: true
+			id: "10FFE3EEDCDDFF3B"
+			tasks: [
+				{
+					id: "68ACC6EE25248F54"
+					type: "observation"
+					icon: "ars_nouveau:wixie_cauldron"
+					timer: 0L
+					observe_type: 0
+					to_observe: "ars_nouveau:wixie_cauldron"
+				}
+				{
+					id: "56C13CB0C66DD8A0"
+					type: "item"
+					item: "ars_nouveau:wixie_charm"
+				}
+			]
+		}
+		{
+			x: -33.5d
+			y: 4.0d
+			description: ["This familiar grants Speed 2 and can consume one gold nugget to search Gold Ores for a short time."]
+			dependencies: ["062B948772A88D8B"]
+			size: 0.8d
+			id: "3BA962EFAF8C1DE9"
+			tasks: [{
+				id: "53063FC0DEAA639B"
+				type: "item"
+				item: "ars_nouveau:familiar_starbuncle"
+			}]
+		}
+		{
+			x: -32.8d
+			y: 4.4d
+			description: ["This familiar grants +2 damage when using Earth damaging spells, and also give looting."]
+			dependencies: ["062B948772A88D8B"]
+			size: 0.8d
+			id: "43787880A6BFB5F2"
+			tasks: [{
+				id: "0ED49591D24905DF"
+				type: "item"
+				item: "ars_nouveau:familiar_drygmy"
+			}]
+		}
+		{
+			x: -31.2d
+			y: 4.4d
+			description: ["This familiar makes Earth Spells half the cost, and gives saturation when eating food."]
+			dependencies: ["062B948772A88D8B"]
+			size: 0.8d
+			id: "1042FC617A98CD17"
+			tasks: [{
+				id: "103117043C247F85"
+				type: "item"
+				item: "ars_nouveau:familiar_whirlisprig"
+			}]
+		}
+		{
+			x: -30.5d
+			y: 4.0d
+			description: ["This familiar increases the duration of potions, and also apply harmful potions to the enemies."]
+			dependencies: ["062B948772A88D8B"]
+			size: 0.8d
+			id: "21AAD150CA803418"
+			tasks: [{
+				id: "75743B65340265D2"
+				type: "item"
+				item: "ars_nouveau:familiar_wixie"
+			}]
+		}
+		{
+			x: -32.0d
+			y: 4.5d
+			description: ["This familiar reduces the spells cost, and increase any spell damage by 1."]
+			dependencies: ["062B948772A88D8B"]
+			size: 0.8d
+			id: "5FC8066E913E7F70"
+			tasks: [{
+				id: "6F444D6615C63433"
+				type: "item"
+				item: "ars_nouveau:familiar_bookwyrm"
+			}]
+		}
+		{
+			x: -37.0d
+			y: -1.5d
+			shape: "circle"
+			subtitle: "Dynamic Lights"
+			description: ["Summons a light that follows the user."]
+			hide_dependency_lines: true
+			dependencies: ["370F4C2E671451DB"]
+			id: "165FFF46EFCBB4B7"
+			tasks: [{
+				id: "6C44CC2B42295884"
+				type: "item"
+				item: "ars_nouveau:jar_of_light"
+			}]
+		}
+		{
+			x: -37.0d
+			y: 1.5d
+			shape: "circle"
+			subtitle: "Portable Trash Can"
+			description: ["While in the hotbar, it will void set items and give small amount of mana in return. To set the voided items, just right click the jar with the item in offhand or using the Scribe's Table."]
+			hide_dependency_lines: true
+			dependencies: ["370F4C2E671451DB"]
+			id: "1D151E24ACE9165A"
+			tasks: [{
+				id: "704FBC48B72F8A3B"
+				type: "item"
+				item: "ars_nouveau:void_jar"
+			}]
+		}
+		{
+			x: -24.5d
+			y: -3.0d
+			shape: "circle"
+			hide_dependency_lines: true
+			dependencies: ["370F4C2E671451DB"]
+			hide: true
+			id: "3332F8B5BB296A93"
+			tasks: [{
+				id: "199074F3BB27AAF2"
+				type: "item"
+				item: "ars_nouveau:ring_of_lesser_discount"
+			}]
+		}
+		{
+			x: -24.5d
+			y: -4.5d
+			shape: "circle"
+			hide_dependency_lines: true
+			dependencies: ["370F4C2E671451DB"]
+			hide: true
+			id: "00479595D2B0E384"
+			tasks: [{
+				id: "639F512F635E42F0"
+				type: "item"
+				item: "ars_nouveau:ring_of_greater_discount"
+			}]
+		}
+		{
+			x: -27.5d
+			y: -3.0d
+			shape: "circle"
+			hide_dependency_lines: true
+			dependencies: ["370F4C2E671451DB"]
+			hide: true
+			id: "70DF9FA13CC0A6EC"
+			tasks: [{
+				id: "7034AC63140C1EB9"
+				type: "item"
+				item: "ars_nouveau:amulet_of_mana_boost"
+			}]
+		}
+		{
+			x: -27.5d
+			y: -4.5d
+			shape: "circle"
+			hide_dependency_lines: true
+			dependencies: ["370F4C2E671451DB"]
+			hide: true
+			id: "2007A13EA70722A3"
+			tasks: [{
+				id: "31FCAADEE0D5D35D"
+				type: "item"
+				item: "ars_nouveau:amulet_of_mana_regen"
+			}]
+		}
+		{
+			x: -24.375d
+			y: 0.0d
+			shape: "octagon"
+			dependencies: ["370F4C2E671451DB"]
+			size: 1.25d
+			id: "08D84719159B579F"
+			tasks: [{
+				id: "4A3D6B1B19438A60"
+				type: "item"
+				item: "ars_nouveau:dominion_wand"
+			}]
+			rewards: [{
+				id: "6017239984F2A5A8"
+				type: "item"
+				item: {
+					id: "ars_nouveau:spell_parchment"
+					Count: 1b
+					tag: { }
+				}
+			}]
+		}
+		{
+			x: -22.0d
+			y: 0.0d
+			subtitle: "No Caster Needed"
+			description: ["Spell turrets allow automated Spell Casting. The Spell Turrets will consume Source to cast a set spell to a Block or Entity. Will cast the Spell each time it receives redstone power."]
+			dependencies: ["08D84719159B579F"]
+			id: "3172A17903546C3F"
+			tasks: [{
+				id: "40348C28B9B44277"
+				type: "item"
+				item: "ars_nouveau:basic_spell_turret"
+			}]
+		}
+		{
+			x: -21.0d
+			y: 1.0d
+			subtitle: "Redstone not required."
+			description: ["Timer Spell Turrets will work continuously while having enough source. Right clicking adds 1sec to the timer and left click removes 1sec. Shift will change the 1sec to 10sec. Dominion Wand can be used to lock the configuration. Restone signal can be used to turn on and off, but are not needed."]
+			dependencies: ["3172A17903546C3F"]
+			id: "6B709EFCCDC05E50"
+			tasks: [{
+				id: "404202E7DAC2FE52"
+				type: "item"
+				item: "ars_nouveau:timer_spell_turret"
+			}]
+		}
+		{
+			x: -21.0d
+			y: -1.0d
+			subtitle: "50% off!!"
+			description: ["Enchanted Spell Turrets will work exacly the same as the Basic one, but will only use half the Source needed for the operations. Good option for complex automations."]
+			dependencies: ["3172A17903546C3F"]
+			id: "6992E14678CFEEE2"
+			tasks: [{
+				id: "3A212FD482F7ABA4"
+				type: "item"
+				item: "ars_nouveau:spell_turret"
+			}]
+		}
+		{
+			x: -24.0d
+			y: -1.5d
+			shape: "circle"
+			subtitle: "Colorful Companion"
+			description: [
+				"Starbuncles can automatically farm Source Berry, but the more than that, it can pull and push items from a inventory to another. Using the Dominion Wand you can store the entity and Right click the inventory to make this inventory the input, and right clicking the inventory and then the entity, will make the block the output."
+				"Colors can be changed using red, purple, orange, yellow, blue or green dyes."
+			]
+			dependencies: ["08D84719159B579F"]
+			id: "3477B156A1699C2B"
+			tasks: [{
+				id: "632A0AA653C430BC"
+				type: "item"
+				item: {
+					id: "ars_nouveau:starbuncle_charm"
+					Count: 1b
+					tag: { }
+				}
+			}]
+			rewards: [{
+				id: "615D3C3809FC8967"
+				type: "item"
+				item: "ars_nouveau:orange_sbed"
+			}]
+		}
+		{
+			x: -24.0d
+			y: 1.5d
+			shape: "circle"
+			subtitle: "Pacifist Route"
+			description: [
+				"Drygmys can be summoned by using their charm in a mossy stone. Multiple of them can be summoned and will work at the same time."
+				"By having nearby source and a inventory, Drygmys will generate drops based on the mobs nearby their home (10 blocks from the Shrine). By having hostile entities, Drymys will generate experience gems. The efficiency will be based on the variety of mobs in their home."
+			]
+			dependencies: ["08D84719159B579F"]
+			id: "12D9F5EB29DBAF06"
+			tasks: [{
+				id: "2F5ED25124A45AD2"
+				type: "item"
+				item: "ars_nouveau:drygmy_charm"
+			}]
+			rewards: [{
+				id: "2A2739147F3CA7B1"
+				type: "item"
+				item: "minecraft:mossy_cobblestone"
+			}]
+		}
+		{
+			x: -23.0d
+			y: -1.0d
+			shape: "circle"
+			subtitle: "Green Thumb"
+			description: ["Whirlsprigs can be summoned by using the charm on a flower. They can create natural resources based on the natural items nearby the flower, such as trees and crops. Needs source and a nearby inventory. Natural diversity will be required to make the Whirlsprig happy and produce the items."]
+			dependencies: ["08D84719159B579F"]
+			id: "421948570E7E1CAB"
+			tasks: [{
+				id: "31854FF3ECD0B12D"
+				type: "item"
+				item: "ars_nouveau:whirlisprig_charm"
+			}]
+			rewards: [{
+				id: "3F862AA6D0BC5C6F"
+				type: "item"
+				item: "minecraft:bone_meal"
+				count: 5
+			}]
+		}
+		{
+			x: -23.0d
+			y: 1.0d
+			shape: "circle"
+			subtitle: "Not a Dragon"
+			description: ["Bookwyrms can be summoned using the charm on a lectern. They'll cast spells given to them with a Spell Parchment on the valid targets (as for now, will only cast the spell if all the glyphs on the spell can be used) at the cost of source. The casting area can be set by using the dominion wand on the lectern."]
+			dependencies: ["08D84719159B579F"]
+			id: "609E0203344AE653"
+			tasks: [{
+				id: "33E2CFE69254C1F8"
+				type: "item"
+				item: "ars_nouveau:bookwyrm_charm"
+			}]
+			rewards: [{
+				id: "52FF21EB802E68A7"
+				type: "item"
+				item: "minecraft:lectern"
+			}]
+		}
+		{
+			x: -38.5d
+			y: -2.0d
+			shape: "circle"
+			description: ["Can be obtained by dropping gold nugget to Starbuncles"]
+			hide_dependency_lines: true
+			dependencies: ["01AB47D4DCA342A5"]
+			id: "4D0B4C01421D4EB8"
+			tasks: [{
+				id: "767C8E2359B97EBF"
+				type: "item"
+				item: "ars_nouveau:starbuncle_shards"
+			}]
+			rewards: [{
+				id: "0E21849A4193EE41"
+				type: "item"
+				item: "minecraft:gold_nugget"
+			}]
+		}
+		{
+			x: -38.5d
+			y: -0.5d
+			shape: "circle"
+			description: ["Can be obtained by growing a tree nearby"]
+			hide_dependency_lines: true
+			dependencies: ["01AB47D4DCA342A5"]
+			id: "385F92381188F6C9"
+			tasks: [{
+				id: "2B782066092F91D5"
+				type: "item"
+				item: "ars_nouveau:whirlisprig_shards"
+			}]
+			rewards: [{
+				id: "62C01E8A5F1FED22"
+				type: "item"
+				item: "minecraft:oak_sapling"
+			}]
+		}
+		{
+			x: -38.5d
+			y: 1.0d
+			shape: "circle"
+			description: ["Can be obtained by dropping a wilden horn to Drygmys"]
+			hide_dependency_lines: true
+			dependencies: ["01AB47D4DCA342A5"]
+			id: "018ADE49D55B5BE2"
+			tasks: [{
+				id: "111415C8B98DFC6D"
+				type: "item"
+				item: "ars_nouveau:drygmy_shard"
+			}]
+			rewards: [{
+				id: "00D017A389D59EE2"
+				type: "item"
+				item: "ars_nouveau:wilden_horn"
+			}]
+		}
+		{
+			x: -38.5d
+			y: 2.5d
+			shape: "circle"
+			description: ["Can be obtained by casting Dispel spell on a witch with only half of a heart"]
+			hide_dependency_lines: true
+			dependencies: ["01AB47D4DCA342A5"]
+			hide: false
+			id: "32BA913F43F61B15"
+			tasks: [{
+				id: "058E3345E1315820"
+				type: "item"
+				item: "ars_nouveau:wixie_shards"
+			}]
+			rewards: [{
+				id: "73DD7374849BCF48"
+				type: "item"
+				item: "reliquary:witch_hat"
+			}]
+		}
+		{
+			x: -35.0d
+			y: 2.5d
+			description: ["Gives the Magic Find buff, that allows you to see nearby Amethyst or find Magical Creatures"]
+			dependencies: ["01AB47D4DCA342A5"]
+			id: "4BB6896211095291"
+			tasks: [{
+				id: "40005C051F2C906C"
+				type: "item"
+				item: {
+					id: "ars_nouveau:dowsing_rod"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+			}]
+		}
+	]
+	quest_links: [ ]
+}

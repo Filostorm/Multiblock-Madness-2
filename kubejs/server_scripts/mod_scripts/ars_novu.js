@@ -17,7 +17,7 @@ onEvent('recipes', event => {
 		'C'
 	  ], {
 		B: 'ars_nouveau:source_gem',
-		C: '#forge:plates/pewter'
+		C: '#forge:plates/silver'
 	  })
 	  
 

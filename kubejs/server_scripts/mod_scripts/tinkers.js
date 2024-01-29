@@ -61,8 +61,8 @@ event.shaped('tconstruct:scorched_faucet', [
 		'GBF',
 		'PCP'
 	  ], {
-		B: 'tconstruct:scorched_bricks',
-		P: '#forge:plates/tainted_gold',
+		B: 'naturesaura:furnace_heater',
+		P: 'tconstruct:scorched_brick',
 		G: Item.of('naturesaura:aura_bottle', '{stored_type:"naturesaura:nether"}'),
 		C: 'powah:capacitor_hardened',
 		F: 'elementalcraft:firecrystal'

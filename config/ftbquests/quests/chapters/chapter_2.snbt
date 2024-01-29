@@ -219,6 +219,12 @@
 					item: "tconstruct:crafting_station"
 				}
 			]
+			rewards: [{
+				id: "2969356CF50CBBB4"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 2582656620646881183L
+			}]
 		}
 		{
 			title: "The Toolbox"
@@ -1051,8 +1057,8 @@
 					tag: {
 						BlockEntityTag: {
 							TankInv: [{
-								FluidName: "minecraft:empty"
 								Tank: 0b
+								FluidName: "minecraft:empty"
 								Capacity: 32000
 								Amount: 0
 							}]
@@ -1133,25 +1139,11 @@
 			description: ["Easy way to strip wood, and get the bark as a byproduct!"]
 			dependencies: ["36F53EFC92FB2CA7"]
 			id: "4E2670A228CB0F4F"
-			tasks: [
-				{
-					id: "271D7BAD67A40550"
-					type: "item"
-					item: "farmersdelight:cutting_board"
-				}
-				{
-					id: "613EEAD78F2415EF"
-					type: "item"
-					title: "Any #farmersdelight:tools/knives"
-					item: {
-						id: "itemfilters:tag"
-						Count: 1b
-						tag: {
-							value: "farmersdelight:tools/knives"
-						}
-					}
-				}
-			]
+			tasks: [{
+				id: "271D7BAD67A40550"
+				type: "item"
+				item: "farmersdelight:cutting_board"
+			}]
 			rewards: [{
 				id: "4E2D099F1142A318"
 				type: "random"

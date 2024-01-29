@@ -292,7 +292,7 @@ event.shaped('mbm2:sorter_mk2', [
   ], {
 	C: 'kubejs:tier1_casing',
 	T: 'pneumaticcraft:printed_circuit_board',
-	M: 'create:precision_mechanism',
+	M: '#forge:robot_arms/tier_2_mechanical_alloy',
 	A: 'create:mechanical_arm',
 	P: '#forge:platings/osmium',
 	G: '#forge:gears/osmium',
@@ -362,9 +362,9 @@ event.shaped('mbm2:energy_converter', ['ABA','CDC','AEA'], {A: 'kubejs:tier_1_el
 	//Tier 3 Casing: suck it
 	event.recipes.createMechanicalCrafting('kubejs:tier3_casing', [
 		'HRRRH',
-		'RRSRR',
+		'ROSOR',
 		'RPCPR',
-		'RRSRR',
+		'ROSOR',
 		'HRRRH'
 	  ], {
 		H: '#forge:hull_panels/exoskeleton_composit',
@@ -372,6 +372,7 @@ event.shaped('mbm2:energy_converter', ['ABA','CDC','AEA'], {A: 'kubejs:tier_1_el
 		S: '#forge:scaffoldings/tier_2_structural_alloy',
 		P: '#forge:platings/tungsten',
 		C: 'kubejs:tier2_casing',
+		O: '#forge:ingots/refined_obsidian'
 	  }).id('mbm2:tier3_casing')
 
 

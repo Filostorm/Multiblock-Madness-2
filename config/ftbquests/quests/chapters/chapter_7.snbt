@@ -8,8 +8,8 @@
 	default_hide_dependency_lines: false
 	quests: [
 		{
-			x: 3.0d
-			y: -0.5d
+			x: 4.5d
+			y: -1.5d
 			id: "5F949EED9E1FDB6A"
 			tasks: [{
 				id: "21050308EF20EEE1"
@@ -35,6 +35,75 @@
 				id: "2B7A13A14C7ED6A5"
 				type: "item"
 				item: "mbm2:energy_receiver"
+			}]
+		}
+		{
+			x: 3.5d
+			y: 1.5d
+			dependencies: ["7427C745524AC00C"]
+			id: "1427B6C8DB9EA99F"
+			tasks: [{
+				id: "170695D69BCC6028"
+				type: "item"
+				item: "industrialforegoing:machine_frame_supreme"
+			}]
+		}
+		{
+			x: 5.5d
+			y: 1.0d
+			id: "70C3B2C93E84B058"
+			tasks: [{
+				id: "7EDABADA56C3C5A1"
+				type: "item"
+				item: "mbm2:vaccum_chamber"
+			}]
+		}
+		{
+			x: 5.5d
+			y: 2.0d
+			id: "5569DCB96EFC4C15"
+			tasks: [{
+				id: "51BCAD03FD857A87"
+				type: "item"
+				item: "mbm2:crystal_chamber"
+			}]
+		}
+		{
+			x: 6.0d
+			y: -1.5d
+			dependencies: [
+				"4E899924B02D0D37"
+				"5F949EED9E1FDB6A"
+			]
+			id: "371A0F8E03702DF1"
+			tasks: [{
+				id: "28A9CCEE6D57BCF2"
+				type: "item"
+				item: "kubejs:solar_chip_blue"
+			}]
+		}
+		{
+			x: 7.5d
+			y: -1.5d
+			dependencies: [
+				"70537424EB7030A2"
+				"371A0F8E03702DF1"
+			]
+			id: "20C6AB385FF387C9"
+			tasks: [{
+				id: "796E1759D3DC6AC8"
+				type: "item"
+				item: "kubejs:energy_crystal_full"
+			}]
+		}
+		{
+			x: 7.5d
+			y: -0.5d
+			id: "73050C7FD526E29E"
+			tasks: [{
+				id: "187CE15F9B534004"
+				type: "item"
+				item: "mbm2:energy_converter"
 			}]
 		}
 	]

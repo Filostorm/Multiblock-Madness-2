@@ -5,7 +5,7 @@ onEvent('recipes', event => {
 
 // [| compactcrafting:projector_dish |] //
 event.remove({id: 'compactcrafting:projector_dish'})
-event.shaped('4x compactcrafting:projector_dish', [
+event.shaped('compactcrafting:projector_dish', [
 	'AB ',
 	'ADB',
 	'AB '

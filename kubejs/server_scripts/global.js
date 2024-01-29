@@ -420,6 +420,7 @@ global.removeAndHide = [
 	'createaddition:electrum_ingot',
 	'createaddition:electrum_nugget',
 	'createaddition:electrum_sheet',
+	Item.of('elementalcraft:pure_ore').ignoreNBT(),
 
 	'mekanism:shard_iron', 
 	'mekanism:shard_gold', 
@@ -453,6 +454,7 @@ global.removeAndHide = [
 	'mekanism:dirty_dust_lead', 
 	'mekanism:dirty_dust_uranium',
 	'beyond_earth:hammer',
+	'create:crushed_raw_quicksilver',
 
 	//'alloyed:steel_ingot',
 	//'alloyed:steel_sheet',

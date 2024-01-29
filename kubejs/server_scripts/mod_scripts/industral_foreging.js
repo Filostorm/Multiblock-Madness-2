@@ -13,39 +13,8 @@ onEvent('recipes', event => {
     event.replaceOutput({mod: 'industrialforegoing'}, 'industrialforegoing:plastic', 'pneumaticcraft:plastic')
     //event.replaceInput({id: 'industrialforegoing:latex_processing_unit'}, 'industrialforegoing:latex_bucket', 'industrialforegoing:latex_bucket')
 	
-/*
-let woodTypes = [
-	'acacia',
-	'dark_oak',
-	'birch',
-	'jungle',
-	'oak',
-	'spruce',
-]
-woodTypes.forEach(type => {
-	event.remove({id:`industrialforegoing:fluid_extractor/${type}`})
-	event.custom({
-		"input": {
-		  "item": `minecraft:${type}_log`
-		},
-		"result": `minecraft:stripped_${type}_log`,
-		"breakChance": 0.010,
-		"output": "{FluidName:\"industrialforegoing:latex\",Amount:4}",
-		"defaultRecipe": false,
-		"type": "industrialforegoing:fluid_extractor"
-	  })
-});
-event.remove({id:`industrialforegoing:fluid_extractor/default`})
-event.custom({
-	"input": {
-	  "tag": "minecraft:logs"
-	},
-	"result": "minecraft:air",
-	"breakChance": 0.010,
-	"output": "{FluidName:\"industrialforegoing:latex\",Amount:1}",
-	"defaultRecipe": true,
-	"type": "industrialforegoing:fluid_extractor"
-  })*/
+  //Pink Slime
+  event.replaceInput({id: 'industrialforegoing:dissolution_chamber/pink_slime_ingot'}, 'iron_ingot', Item.of('#forge:ingots/platinum'))
 
   //Tier 1 Frame
   event.remove({output:`industrialforegoing:machine_frame_pity`})
@@ -55,6 +24,45 @@ event.custom({
   //Tier 2 Frame
   event.replaceInput({id: 'industrialforegoing:dissolution_chamber/simple_machine_frame'}, 'iron_ingot', 'kubejs:stainless_steel_plating')
 
+  
+
+  //Tier 3 Frame
+  event.remove({id:`industrialforegoing:dissolution_chamber/advanced_machine_frame`})
+  event.custom({
+	"input": [
+	  {
+		"item": 'kubejs:large_battery_full'
+	  },
+	  {
+		"tag": "industrialforegoing:machine_frame/simple"
+	  },
+	  {
+		"item": 'kubejs:large_battery_full'
+	  },
+	  {
+		"item": 'industrialforegoing:pink_slime_ingot'
+	  },
+	  {
+		"item": 'industrialforegoing:pink_slime_ingot'
+	  },
+	  {
+		"tag": "forge:gears/ostrum"
+	  },
+	  {
+		"item": 'mekanism:steel_casing'
+	  },
+	  {
+		"tag": "forge:gears/ostrum"
+	  }
+	],
+	"inputFluid": "{FluidName:\"tconstruct:molten_tungsten\",Amount:2700}",
+	"processingTime": 300,
+	"output": {
+	  "item": "industrialforegoing:machine_frame_advanced",
+	  "count": 1
+	},
+	"type": "industrialforegoing:dissolution_chamber"
+  })
 
 
 event.remove({id:/industrialforegoing:laser_drill_ore.*/})

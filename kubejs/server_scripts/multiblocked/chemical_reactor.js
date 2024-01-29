@@ -29,13 +29,13 @@
 
 	//Sulfuric Acid
 	event.recipes.multiblocked.multiblock("chemical_reactor")
-		.inputFluid(Fluid.of('mekanism:oxygen', 1000))
+		.inputFluid(Fluid.of('mekanism:oxygen', 125))
 		//.inputFluid(r.input)
 		.inputItem([Ingredient.of('#forge:dusts/sulfur'), Ingredient.of('#forge:gems/sulfur')])
 		//.outputItem(r.output1)
-		.outputFluid(Fluid.of('mekanism:sulfuric_acid', 1000))
+		.outputFluid(Fluid.of('mekanism:sulfuric_acid', 250))
 		.setPerTick(true)
-		.inputFE(1000)
+		.inputFE(2000)
 		.duration(200)
 
 	//Nitric Acid

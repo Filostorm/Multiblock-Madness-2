@@ -336,7 +336,7 @@ onEvent('recipes', event => {
 	  C: 'create:mechanical_crafter',
 	  A: 'ae2:annihilation_core',
 	  F: 'ae2:formation_core',
-	  Q: 'ae2:quartz_glass',
+	  Q: 'thermal:lumium_glass',
 	  E: '#forge:frame_boxs/titanium'
 	}).id('mbm2:molecular_assembler')
 	
@@ -467,4 +467,9 @@ onEvent('recipes', event => {
 	
 	event.shaped('ae2additions:pattern_provider_4th', ['ABA','CDC','ABA'], {A: 'kubejs:tier_3_structural_alloy_plating',B: 'lazierae2:parallel_processor',C: 'mekanism:ultimate_control_circuit',D: 'ae2additions:pattern_provider_3th'})
 }
+
+	  //crystal_processing_quartz_growth_accelerator
+	  event.replaceInput({id: 'ae2:network/blocks/crystal_processing_quartz_growth_accelerator'}, '#forge:ingots/iron', '#forge:platings/cobalt')
+
+
 });

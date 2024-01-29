@@ -135,11 +135,10 @@ event.shaped('thermal:device_tree_extractor', [
 // [| RF Furnace |] //
 event.remove({output: 'thermal:machine_furnace'})
 event.shaped('thermal:machine_furnace', [
-	'ABA',
+	' B ',
 	'CDC',
 	'EFE'
   ], {
-	A: Item.empty,
 	B: 'minecraft:redstone',
 	C: 'minecraft:bricks',
 	D: 'kubejs:bronze_frame',
@@ -150,11 +149,10 @@ event.shaped('thermal:machine_furnace', [
 // [| Crafter |] //
 event.remove({output: 'thermal:machine_crafter'})
 event.shaped('thermal:machine_crafter', [
-	'ABA',
+	' B ',
 	'CDC',
 	'EFE'
   ], {
-	A: Item.empty,
 	B: 'minecraft:crafting_table',
 	C: 'thermal:tin_ingot',
 	D: 'kubejs:bronze_frame',
@@ -165,7 +163,7 @@ event.shaped('thermal:machine_crafter', [
 // [| Chiller |] //
 event.remove({output: 'thermal:machine_chiller'})
 event.shaped('thermal:machine_chiller', [
-	'ABA',
+	' B ',
 	'CDC',
 	'EFE'
   ], {
@@ -173,37 +171,35 @@ event.shaped('thermal:machine_chiller', [
 	F: 'engineersdecor:small_freezer',
 	C: 'minecraft:packed_ice',
 	D: 'kubejs:bronze_frame',
-	E: '#forge:gears/invar',
+	E: '#forge:gears/bronze',
 	B: 'kubejs:silver_coil'
   }).id("mbm2:machine_chiller")
 
 // [| Melter |] //
 event.remove({output: 'thermal:machine_crucible'})
 event.shaped('thermal:machine_crucible', [
-	'ABA',
+	' B ',
 	'CDC',
 	'EFE'
   ], {
-	A: Item.empty,
 	B: '#forge:glass',
 	C: 'minecraft:nether_bricks',
 	D: 'kubejs:bronze_frame',
-	E: '#forge:gears/invar',
+	E: '#forge:gears/bronze',
 	F: 'kubejs:silver_coil'
   }).id("mbm2:machine_crucible")
 
 // [| Press |] //
 event.remove({output: 'thermal:machine_press'})
 event.shaped('thermal:machine_press', [
-	'ABA',
+	' B ',
 	'CDC',
 	'EFE'
   ], {
-	A: Item.empty,
 	B: 'minecraft:iron_block',
 	C: '#forge:ingots/bronze',
 	D: 'kubejs:bronze_frame',
-	E: 'thermal:constantan_gear',
+	E: '#forge:gears/bronze',
 	F: 'kubejs:silver_coil'
   }).id('mbm2:machine_press')
 
@@ -218,7 +214,7 @@ event.shaped('thermal:machine_crystallizer', [
 	B: '#forge:gems/diamond',
 	C: '#forge:plates/red_alloy',
 	D: 'kubejs:bronze_frame',
-	E: '#forge:gears/constantan',
+	E: '#forge:gears/electrum',
 	F: 'kubejs:silver_coil'
   }).id('mbm2:machine_press')
 

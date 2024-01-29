@@ -151,7 +151,7 @@ onEvent("rei.group", (event) => {
 				`#forge:raw_materials/${item.material}`,
 				`#forge:poor_ores/${item.material}`,
 				`#forge:storage_blocks/raw_${item.material}`,
-				Item.of(`elementalcraft:pure_ore`, `{elementalcraft:{ore:"forge:${item.material}"}}`),
+				//Item.of(`elementalcraft:pure_ore`, `{elementalcraft:{ore:"forge:${item.material}"}}`),
 
 				///#forge:ores.*/,
 				`#forge:ores/${item.material}`,

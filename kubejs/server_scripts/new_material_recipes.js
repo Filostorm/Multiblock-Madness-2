@@ -40,7 +40,7 @@ onEvent('recipes', event => {
 
   //Enderium
   event.recipes.multiblocked.multiblock('mixer')
-  .inputItems('2x #forge:dusts/pewter','3x #forge:dusts/platinum', '#forge:dusts/titanium', '8x create:experience_nugget') //,'#forge:fine_dusts/rune'
+  .inputItems('3x #forge:dusts/rune', '2x #forge:dusts/titanium', '4x hostilenetworks:end_prediction') //,'#forge:fine_dusts/rune'
   .inputFluid(Fluid.of('thermal:ender', 1000))
   .outputItem(Item.of('4x #forge:dusts/enderium'))
   .setPerTick(true)

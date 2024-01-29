@@ -723,7 +723,7 @@
 		}
 		{
 			x: 9.0d
-			y: -4.5d
+			y: -3.0d
 			description: ["Running out of channels yet? Each ME Controller can handle up to 64 Channels per side! (Normally 32)"]
 			dependencies: [
 				"43F8546BD8107D1C"
@@ -829,8 +829,8 @@
 					id: "botania:twig_wand"
 					Count: 1b
 					tag: {
-						color1: 0
 						color2: 0
+						color1: 0
 					}
 				}
 				match_nbt: false
@@ -957,17 +957,6 @@
 					item: "multiblocked:item_output"
 				}
 			]
-		}
-		{
-			x: 17.5d
-			y: 3.5d
-			dependencies: ["13C4C068E2EB695E"]
-			id: "4D8C40C07AF73B14"
-			tasks: [{
-				id: "2D9F1023E205DDAB"
-				type: "item"
-				item: "hostilenetworks:loot_fabricator"
-			}]
 		}
 	]
 	quest_links: [ ]

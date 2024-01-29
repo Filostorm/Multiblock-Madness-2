@@ -442,8 +442,8 @@ onEvent('item.tooltip', tooltip => {
 							} else if (Item.of(`${mod}:${item.material}_${part.name}`) != null) {
 								processingToolTipCreation(partName)
 								partName = `${mod}:${item.material}_${part.name}`
-							} else if (Item.of(`${mod}:${part.name}_${item.material}_ore`) != null) {
-								partName = `${mod}:${part.name}_${item.material}_ore` //this is how create does it smh
+							} else if (Item.of(`${mod}:${part.name}_raw_${item.material}`) != null) {
+								partName = `${mod}:${part.name}_raw_${item.material}` //this is how create does it smh
 								processingToolTipCreation(partName)
 							}
 						})

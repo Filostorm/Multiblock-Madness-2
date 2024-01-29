@@ -181,8 +181,8 @@ onEvent('recipes', event => {
 		}
 	 }).id('mbm2:tier2_rocket')
 
-	  //Tier 2 Rocket
-	  event.remove({id: 'beyond_earth:nasa_workbenching/tier2'})
+	  //Tier 3 Rocket
+	  event.remove({id: 'beyond_earth:nasa_workbenching/tier3'})
 	  event.custom({
 		"type":"beyond_earth:nasa_workbench",
 		"input":{
@@ -244,7 +244,7 @@ onEvent('recipes', event => {
 		   }
 		},
 		"output":{
-		   "item":"beyond_earth:rocket_t2",
+		   "item":"beyond_earth:rocket_t3",
 		   "count":1
 		}
 	 }).id('mbm2:tier3_rocket')

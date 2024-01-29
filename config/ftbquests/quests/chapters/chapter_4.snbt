@@ -1236,6 +1236,7 @@
 		{
 			x: 18.0d
 			y: 6.5d
+			shape: "circle"
 			subtitle: "Found in the End"
 			min_required_dependencies: 1
 			dependencies: [
@@ -1636,8 +1637,8 @@
 			}]
 		}
 		{
-			x: 12.5d
-			y: 11.5d
+			x: 16.5d
+			y: 10.5d
 			shape: "hexagon"
 			dependencies: [
 				"0D9ABDE851B5E722"
@@ -1696,10 +1697,10 @@
 		}
 		{
 			title: "Advanced Energetic Alloys"
-			x: 11.0d
-			y: 11.5d
+			x: 18.0d
+			y: 9.0d
 			description: ["You might want to set up some good power supply before mass producing AE components."]
-			dependencies: ["627B714B402BEE67"]
+			dependencies: ["75D4FF56D8BBF34A"]
 			min_required_tasks: 1
 			id: "592A4D0BDEB062DB"
 			tasks: [
@@ -1712,6 +1713,11 @@
 					id: "1460BBB1A47E4503"
 					type: "item"
 					item: "thermal:lumium_dust"
+				}
+				{
+					id: "6B4C7DE866A2430D"
+					type: "item"
+					item: "thermal:enderium_dust"
 				}
 			]
 		}
@@ -1751,8 +1757,8 @@
 			}]
 		}
 		{
-			x: 14.0d
-			y: 11.0d
+			x: 13.0d
+			y: 12.0d
 			dependencies: ["0D9ABDE851B5E722"]
 			id: "070F35D0E7EF8EAC"
 			tasks: [{
@@ -1795,6 +1801,32 @@
 					item: "hostilenetworks:blank_data_model"
 				}
 			]
+		}
+		{
+			x: 16.5d
+			y: 11.5d
+			subtitle: "4k RF/t "
+			dependencies: [
+				"592A4D0BDEB062DB"
+				"0D9ABDE851B5E722"
+			]
+			id: "4D8C40C07AF73B14"
+			tasks: [{
+				id: "2D9F1023E205DDAB"
+				type: "item"
+				item: "hostilenetworks:loot_fabricator"
+			}]
+		}
+		{
+			x: 18.0d
+			y: 11.5d
+			dependencies: ["592A4D0BDEB062DB"]
+			id: "33A907176391C423"
+			tasks: [{
+				id: "3957BF8D199A31BB"
+				type: "item"
+				item: "ae2:molecular_assembler"
+			}]
 		}
 	]
 	quest_links: [ ]

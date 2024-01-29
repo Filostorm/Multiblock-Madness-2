@@ -66,8 +66,9 @@ onEvent('recipes', event => {
 
 	//Kiln Bricks
 	event.remove({id: 'immersiveengineering:crafting/alloybrick'})
+	event.remove({id: 'createaddition:compat/immersiveengineering/item_application/kiln_brick'})
 	event.recipes.createCompacting('immersiveengineering:alloybrick', ['2x kubejs:unfired_clay_brick','2x engineersdecor:dense_grit_sand_block']).heated().id(`mbm2:compacting/kiln_bricks`)
-
+  
 
   //Blast Bricks
   //Moved to new_material_recipes
@@ -219,7 +220,7 @@ event.shaped('2x immersiveengineering:heavy_engineering', [
       ], {
     E: '#forge:wire_coils/electrum',
     C: 'immersiveengineering:component_steel',
-    P: '#forge:plates/energized_steel',
+    P: '#forge:rods/aluminum', //'#forge:plates/energized_steel',
     B: ['#forge:gears/bronze', '#forge:gears/constantan']
       }).id('mbm2:immersiveengineering/light_engineering')
       
@@ -238,13 +239,13 @@ event.shaped('2x immersiveengineering:heavy_engineering', [
 
 //Redstone Engineering
 	event.remove({id: 'immersiveengineering:crafting/rs_engineering'})
-event.shaped('2x immersiveengineering:rs_engineering', [
-  'CDC',
+event.shaped('immersiveengineering:rs_engineering', [
+  'DCD',
   'PBP',
-  'CDC'
+  'DCD'
     ], {
   B: 'immersiveengineering:component_electronic',
-  C: 'immersiveengineering:component_steel',
+  C: '#forge:plates/invar',
   P: '#forge:spools/red_alloy',
   D: '#forge:rods/aluminum'
     }).id('mbm2:immersiveengineering/rs_engineering')

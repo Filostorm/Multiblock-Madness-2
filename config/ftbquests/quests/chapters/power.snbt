@@ -156,11 +156,6 @@
 					type: "item"
 					item: "powah:thermo_generator_blazing"
 				}
-				{
-					id: "041B87715724577B"
-					type: "item"
-					item: "powah:solar_panel_blazing"
-				}
 			]
 		}
 		{
@@ -184,11 +179,6 @@
 					type: "item"
 					item: "powah:thermo_generator_niotic"
 				}
-				{
-					id: "71FC79C5B81AB6C7"
-					type: "item"
-					item: "powah:solar_panel_niotic"
-				}
 			]
 		}
 		{
@@ -203,7 +193,7 @@
 		}
 		{
 			x: 2.0d
-			y: -1.0d
+			y: -4.0d
 			id: "512B05CED61799EF"
 			tasks: [
 				{

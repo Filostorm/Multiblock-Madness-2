@@ -111,10 +111,11 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 		event.remove({id: `tconstruct:smeltery/melting/metal/${item.material}/raw_block`})
 		event.remove({id: `tconstruct:smeltery/melting/metal/${item.material}/raw`})
 
-		//event.remove({id: `mekanism:processing/${item.material}/slurry/dirty/from_ore`})
-		//event.remove({id: `mekanism:processing/${item.material}/slurry/dirty/from_raw_ore`})
-		//event.remove({id: `mekanism:processing/${item.material}/slurry/clean`})
-		//event.remove({id: `mekanism:processing/${item.material}/crystal/from_slurry`})
+		event.remove({id: `mekanism:processing/${item.material}/slurry/dirty/from_ore`})
+		event.remove({id: `mekanism:processing/${item.material}/slurry/dirty/from_raw_ore`})
+		event.remove({id: `mekanism:processing/${item.material}/slurry/clean`})
+		event.remove({id: `mekanism:processing/${item.material}/crystal/from_slurry`})
+
 		event.remove({id: `mekanism:processing/${item.material}/clump/from_raw_block`})
 		event.remove({id: `mekanism:processing/${item.material}/shard/from_raw_block`})
 		event.remove({id: `mekanism:processing/${item.material}/slurry/dirty/from_raw_block`})
@@ -122,6 +123,11 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 		event.remove({id: `mekanism:processing/${item.material}/dust/from_dirty_dust`})
 		event.remove({id: `mekanism:processing/${item.material}/dust/from_raw_block`})
 		event.remove({id: `elementalcraft:pure_ore/mekanism/processing/${item.material}/dust/from_ore`})
+		event.remove({id: `elementalcraft:pure_ore/mekanism/processing/${item.material}/dust/from_ore`})
+		event.remove({id: `elementalcraft:forge_${item.material}_to_pure_ore`})
+		
+		
+		
 
 		
 		
@@ -383,7 +389,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				.duration(200)
 				//Ore Leaching w/ Hydroflouric Acid
 				event.recipes.multiblocked.multiblock("leaching")
-				.inputFluid(Fluid.of('mekanism:hydrofluoric_acid', 100))
+				.inputFluid(Fluid.of('mekanism:hydrofluoric_acid', 500))
 				.inputFluid(Fluid.of('chemlib:nitric_acid_fluid', 100))
 				.inputItem(`#forge:ores/deposit/${item.material}`)
 				.outputItem(Item.of(`#forge:ores/leached/${item.material}`))
@@ -1052,25 +1058,25 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 	oreMixer(event, 1, '#forge:ores/leached/calorite', ['kubejs:catalyst_basic', '2x kubejs:leached_potentium','2x kubejs:leached_jimmium','2x kubejs:leached_imortite'], 64)
 	oreMixer(event, 1, '#forge:ores/leached/adamantium', ['kubejs:catalyst_magic', '2x kubejs:leached_imortite','2x kubejs:leached_kharaxium','2x kubejs:leached_potentium'], 64)
 
-	//Tier 6
+	//Tier 7
 	oreMixer(event, 1, '#forge:ores/crystal/vibranium', ['kubejs:catalyst_basic', '3x kubejs:crystal_imortite','3x kubejs:crystal_potentium','3x kubejs:crystal_kharaxium'], 128)
 	oreMixer(event, 1, '#forge:ores/crystal/uru', ['kubejs:catalyst_basic', '3x kubejs:crystal_jimmium','3x kubejs:crystal_vincyte','3x kubejs:crystal_densite'], 128)
 
 
 
-					//Gem Crafting
-					if (item.gem_components != null) {
-						if (Item.of(`#forge:gems/${item.gem_components[0]}`) != null) {
-							global.thermalCrystallizer(event, 'water', 2000, Item.of(`#forge:gems/${item.gem_components[0]}`).toResultJson(), `forge:dusts/${item.material}`, `mbm2:crystallizer/${item.gem_components[0]}_from_${item.material}`)
-							} else {
-							console.log(`${item.gem_components[0]} has no gem!`);
-						}
-						if (Item.of(`#forge:gems/${item.gem_components[1]}`) != null) {
-							global.pneumaticcraftThermoPlant(event, Item.of(`#forge:gems/${item.gem_components[1]}`), Ingredient.of(`#forge:ores/fine_dust/${item.material}`), {"type": "pneumaticcraft:fluid", "fluid": "kubejs:crystal_catalyst_mixture", "amount": 250}, 423, 4, 0.75, 1.0, false, `mbm2:thermo_plant/${item.gem_components[1]}_from_${item.material}`)
+				//Gem Crafting
+				if (item.gem_components != null) {
+					if (Item.of(`#forge:gems/${item.gem_components[0]}`) != null) {
+						global.thermalCrystallizer(event, 'water', 2000, Item.of(`#forge:gems/${item.gem_components[0]}`).toResultJson(), `forge:dusts/${item.material}`, `mbm2:crystallizer/${item.gem_components[0]}_from_${item.material}`)
 						} else {
-							console.log(`${item.gem_components[1]} has no gem!`);
-						}
+						console.log(`${item.gem_components[0]} has no gem!`);
 					}
+					if (Item.of(`#forge:gems/${item.gem_components[1]}`) != null) {
+						global.pneumaticcraftThermoPlant(event, Item.of(`#forge:gems/${item.gem_components[1]}`), Ingredient.of(`#forge:ores/fine_dust/${item.material}`), {"type": "pneumaticcraft:fluid", "fluid": "kubejs:crystal_catalyst_mixture", "amount": 250}, 423, 4, 0.75, 1.0, false, `mbm2:thermo_plant/${item.gem_components[1]}_from_${item.material}`)
+					} else {
+						console.log(`${item.gem_components[1]} has no gem!`);
+					}
+				}
 			}
 		}
 		if (item.type == 'compound_rare_metal') {

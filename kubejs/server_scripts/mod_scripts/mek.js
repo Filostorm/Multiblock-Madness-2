@@ -161,6 +161,35 @@ tiers.forEach((tier, index) => {
 	});
 });
 
+//osmium_compressor
+event.remove({output: 'mekanism:osmium_compressor'})
+event.shaped('mekanism:osmium_compressor', ['ABC','BDB','EFE'], {A: 'pipez:fluid_pipe',B: 'mekanism:advanced_control_circuit',C: 'pipez:item_pipe',D: 'pneumaticcraft:advanced_air_compressor',E: 'mekanism:alloy_reinforced',F: 'industrialforegoing:machine_frame_advanced'}).id(`mbm2:osmium_compressor`)
+
+//chemical_oxidizer
+event.remove({output: 'mekanism:chemical_oxidizer'})
+event.shaped('mekanism:chemical_oxidizer', ['ABA','BCB','ADA'], {A: 'mekanism:alloy_reinforced',B: 'mekanism:advanced_control_circuit',C: 'alchemistry:liquifier',D: 'industrialforegoing:machine_frame_advanced'}).id(`mbm2:chemical_oxidizer`)
+
+//chemical_crystallizer
+event.remove({output: 'mekanism:chemical_crystallizer'})
+event.shaped('mekanism:chemical_crystallizer', ['ABA','BCB','DED'], {A: 'mekanism:ingot_refined_glowstone',B: 'mekanism:ultimate_control_circuit',C: 'ae2:quartz_growth_accelerator',D: 'mekanism:alloy_reinforced',E: 'industrialforegoing:machine_frame_advanced'}).id(`mbm2:chemical_crystallizer`)
+
+//isotopic_centrifuge
+event.remove({output: 'mekanism:isotopic_centrifuge'})
+event.shaped('mekanism:isotopic_centrifuge', ['ABA','CDC','AEA'], {A: 'kubejs:exoskeleton_composit_reinforced_plating',B: 'thermal:machine_centrifuge',C: 'mekanism:ultimate_control_circuit',D: 'industrialforegoing:machine_frame_supreme',E: 'mbm2:fluid_centrifuge_mk1'}).id(`mbm2:isotopic_centrifuge`)
+
+//pressurized_reaction_chamber
+event.remove({output: 'mekanism:pressurized_reaction_chamber'})
+event.shaped('mekanism:pressurized_reaction_chamber', ['ABA','CDC','AEA'], {A: 'mekanism:alloy_infused',B: 'mekanism:dynamic_tank',C: 'mekanism:basic_control_circuit',D: 'pneumaticcraft:thermopneumatic_processing_plant',E: 'mekanism:steel_casing'}).id(`mbm2:pressurized_reaction_chamber`)
+
+//purification_chamber
+event.remove({output: 'mekanism:purification_chamber'})
+event.shaped('mekanism:purification_chamber', ['ABA','CDC','ABA'], {A: 'mekanism:alloy_infused',B: 'mekanism:basic_pressurized_tube',C: 'mekanism:advanced_control_circuit',D: 'mekanism:steel_casing'}).id(`mbm2:purification_chamber`)
+
+//enrichment_chamber
+event.remove({output: 'mekanism:enrichment_chamber'})
+event.shaped('mekanism:enrichment_chamber', ['ABA','CDC','ABA'], {A: 'mekanism:alloy_infused',B: 'mekanism:basic_control_circuit',C: 'kubejs:tier_2_electrical_alloy_wire_coil',D: 'mekanism:steel_casing'}).id(`mbm2:enrichment_chamber`)
+
+
 
 //Infuser Recipe
 //global.mekanismMetallurgicInfusing(event, Item.of('kubejs:carbon_mesh'), Item.of('kubejs:zinc_mesh'), 'mekanism:diamond', 20, `mbm2:carbon_mesh`)

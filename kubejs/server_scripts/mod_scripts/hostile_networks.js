@@ -43,7 +43,7 @@ onEvent('recipes', event => {
 		'CHG',
 		'PCP'
 		], {
-		E: 'pneumaticcraft:printed_circuit_board',
+		E: 'immersiveengineering:component_electronic_adv',
 		C: 'elementalcraft:strongly_contained_crystal',
 		P: '#forge:platings/enderium',
 		G: 'glassential:glass_ethereal',

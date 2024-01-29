@@ -81,5 +81,60 @@ upgradeMods.forEach(modID => {
   });
 });
 
+//Iron Backpack
+event.remove({id: 'sophisticatedbackpacks:iron_backpack'})
+event.custom({
+  "type": "sophisticatedbackpacks:backpack_upgrade",
+  "conditions": [
+    {
+      "itemRegistryName": "sophisticatedbackpacks:iron_backpack",
+      "type": "sophisticatedcore:item_enabled"
+    }
+  ],
+  "pattern": [
+    "III",
+    "IBI",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "tag": "forge:plates/iron"
+    },
+    "B": {
+      "item": "sophisticatedbackpacks:backpack"
+    }
+  },
+  "result": {
+    "item": "sophisticatedbackpacks:iron_backpack"
+  }
+})
+
+//Gold Backpack
+event.remove({id: 'sophisticatedbackpacks:gold_backpack'})
+event.custom({
+  "type": "sophisticatedbackpacks:backpack_upgrade",
+  "conditions": [
+    {
+      "itemRegistryName": "sophisticatedbackpacks:gold_backpack",
+      "type": "sophisticatedcore:item_enabled"
+    }
+  ],
+  "pattern": [
+    "III",
+    "IBI",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "tag": "forge:plates/gold"
+    },
+    "B": {
+      "item": "sophisticatedbackpacks:iron_backpack"
+    }
+  },
+  "result": {
+    "item": "sophisticatedbackpacks:gold_backpack"
+  }
+})
 
 });

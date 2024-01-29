@@ -43,7 +43,7 @@ onEvent('recipes', event => {
   
   
 
-	//Bronze Frame
+	//Dielectric Casing
 	global.compactCrafting(event, 'powah:dielectric_casing', 1, 'createaddition:gold_spool',
 	3, [
 	  {
@@ -73,7 +73,7 @@ onEvent('recipes', event => {
 	  ], {
 	  'S': {
 		type: 'compactcrafting:block',
-		block: 'kubejs:invar_sheetmetal'
+		block: 'kubejs:tier_1_structural_alloy_sheetmetal'
 	  },
 	  'D': {
 		type: 'compactcrafting:block',
@@ -103,13 +103,13 @@ onEvent('recipes', event => {
   event.remove({id: 'powah:crafting/capacitor_basic'})
   event.recipes.createSequencedAssembly([ // start the recipe
 'powah:capacitor_basic', // have this item be an output
-  ], '#forge:ingots/invar', [ // input.
+  ], '#forge:ingots/iron', [ // input.
   event.recipes.createDeploying('kubejs:incomplete_basic_capacitor', ['kubejs:incomplete_basic_capacitor', 'powah:dielectric_paste']),
   event.recipes.createDeploying('kubejs:incomplete_basic_capacitor', ['kubejs:incomplete_basic_capacitor', '#forge:dusts/redstone']),
   event.recipes.createDeploying('kubejs:incomplete_basic_capacitor', ['kubejs:incomplete_basic_capacitor', '#forge:dusts/redstone']),
   ]).transitionalItem('kubejs:incomplete_basic_capacitor').loops(2).id(`mbd2:sequenced_assembly/capacitor_basic`)
 
-  global.ieBlueprint(event, 'components', Item.of(`powah:capacitor_basic`), [{tag: 'forge:rods/invar'}, {tag: 'forge:wires/red_alloy'}, {count:2, base_ingredient: {item: `powah:dielectric_paste`}}], `mbm2:immersive/capacitor_basic`)
+  global.ieBlueprint(event, 'components', Item.of(`2x powah:capacitor_basic`), [{tag: 'forge:rods/invar'}, {tag: 'forge:wires/red_alloy'}, {count:2, base_ingredient: {item: `powah:dielectric_paste`}}], `mbm2:immersive/capacitor_basic`)
 
 //Paste
   event.remove({output: 'powah:dielectric_paste'})

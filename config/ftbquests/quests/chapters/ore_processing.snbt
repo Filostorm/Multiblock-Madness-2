@@ -218,6 +218,7 @@
 			disable_toast: true
 			x: 1.0d
 			y: -2.5d
+			shape: "gear"
 			id: "7D8DE6AAFA3EE65C"
 			tasks: [{
 				id: "44F011F7E11573BB"
@@ -232,6 +233,7 @@
 			disable_toast: true
 			x: -4.0d
 			y: -2.5d
+			shape: "gear"
 			id: "161CE4353277D490"
 			tasks: [{
 				id: "302E8D0E1D90E550"
@@ -344,6 +346,7 @@
 			disable_toast: true
 			x: 7.5d
 			y: -2.5d
+			shape: "gear"
 			id: "28DF842E25E51E92"
 			tasks: [{
 				id: "2766EF0746ABA7A9"
@@ -501,6 +504,7 @@
 			disable_toast: true
 			x: 4.5d
 			y: -2.5d
+			shape: "gear"
 			description: ["Also spawns veins of Certus Quartz"]
 			id: "5535F3F565BB8998"
 			tasks: [{
@@ -777,6 +781,7 @@
 			disable_toast: true
 			x: 11.0d
 			y: -2.5d
+			shape: "gear"
 			id: "5D08F7CC8E6911A8"
 			tasks: [{
 				id: "4EE57252D7582984"
@@ -801,6 +806,7 @@
 			disable_toast: true
 			x: 14.0d
 			y: -2.5d
+			shape: "gear"
 			id: "686ECAA2B2C4E112"
 			tasks: [{
 				id: "145793782E94BB89"
@@ -815,6 +821,7 @@
 			disable_toast: true
 			x: 15.0d
 			y: -2.5d
+			shape: "gear"
 			id: "3BCE38C8A18BA068"
 			tasks: [{
 				id: "4FA5A724CB620610"
@@ -859,6 +866,7 @@
 			disable_toast: true
 			x: 17.5d
 			y: -2.5d
+			shape: "gear"
 			id: "107BBC9E6D7F35F7"
 			tasks: [{
 				id: "5BDA8868E3BE8722"

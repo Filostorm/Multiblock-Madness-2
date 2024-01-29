@@ -966,10 +966,10 @@
 			}]
 		}
 		{
-			x: 7.0d
-			y: 7.0d
+			x: 5.5d
+			y: 8.0d
 			description: ["Used to craft gems from dust."]
-			dependencies: ["20E99BAA6C9A4913"]
+			dependencies: ["4DE314D64C3E7C9E"]
 			id: "651B53F1AFDEB856"
 			tasks: [{
 				id: "6E080ACB7D721A15"
@@ -1003,9 +1003,9 @@
 			}]
 		}
 		{
-			x: 7.0d
-			y: 6.0d
-			dependencies: ["20E99BAA6C9A4913"]
+			x: 5.5d
+			y: 6.5d
+			dependencies: ["4DE314D64C3E7C9E"]
 			id: "15B1FC183A90145C"
 			tasks: [{
 				id: "73D6EF0CF5688260"
@@ -1098,6 +1098,28 @@
 					count: 8
 				}
 			]
+		}
+		{
+			x: 7.0d
+			y: 8.0d
+			dependencies: ["4DE314D64C3E7C9E"]
+			id: "4483AED226DF988C"
+			tasks: [{
+				id: "03F333526EFB0549"
+				type: "item"
+				item: "thermal:machine_chiller"
+			}]
+		}
+		{
+			x: 7.0d
+			y: 6.5d
+			dependencies: ["20E99BAA6C9A4913"]
+			id: "4DE314D64C3E7C9E"
+			tasks: [{
+				id: "3452E0E28BB1E897"
+				type: "item"
+				item: "kubejs:bronze_frame"
+			}]
 		}
 	]
 	quest_links: [ ]

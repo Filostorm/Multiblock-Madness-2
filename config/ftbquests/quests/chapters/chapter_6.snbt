@@ -117,8 +117,8 @@
 			}]
 		}
 		{
-			x: -4.0d
-			y: -2.0d
+			x: -2.0d
+			y: -4.0d
 			description: ["Laser Drill Bases can have multiple Laser Drills working together to speed up the mining. Place them within 3 spaces pointing towards the Base."]
 			dependencies: ["766FA3877A259983"]
 			id: "7427C745524AC00C"
@@ -136,8 +136,8 @@
 			]
 		}
 		{
-			x: -4.0d
-			y: -3.5d
+			x: -2.0d
+			y: -5.0d
 			description: ["Laser Drill Bases can have multiple Laser Drills working together to speed up the mining. Place them within 3 spaces pointing towards the Base."]
 			dependencies: ["766FA3877A259983"]
 			id: "4EB8F3B73CD527A2"
@@ -208,35 +208,30 @@
 			}]
 		}
 		{
-			disable_toast: true
-			x: -6.5d
-			y: -1.5d
-			shape: "circle"
-			id: "196DBF0A6B8A6926"
+			x: -0.5d
+			y: -3.5d
+			dependencies: [
+				"7427C745524AC00C"
+				"0C86C3CCA8F0E429"
+			]
+			id: "698E4E432E881290"
 			tasks: [{
-				id: "6E5C01C712D4DC87"
+				id: "3515BDF3DA73AAC3"
 				type: "item"
-				item: "chemlib:tungsten_ingot"
+				item: "industrialforegoing:ether_gas_bucket"
 			}]
 		}
 		{
-			title: "Advanced Alchemy"
-			x: -5.5d
-			y: -3.5d
-			dependencies: ["196DBF0A6B8A6926"]
-			id: "4191399434B5CC2C"
-			tasks: [
-				{
-					id: "5B92175592B4D0EB"
-					type: "item"
-					item: "alchemistry:dissolver"
-				}
-				{
-					id: "67EC41F7763A83F0"
-					type: "item"
-					item: "alchemistry:combiner"
-				}
-			]
+			x: -2.0d
+			y: -3.0d
+			subtitle: "Used to prevent the wither from moving for ether gas production"
+			dependencies: ["766FA3877A259983"]
+			id: "0C86C3CCA8F0E429"
+			tasks: [{
+				id: "0EAA44DB3E9EC22D"
+				type: "item"
+				item: "industrialforegoing:stasis_chamber"
+			}]
 		}
 		{
 			x: 1.0d

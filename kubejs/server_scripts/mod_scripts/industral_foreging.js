@@ -154,6 +154,9 @@ compoundOres.forEach((type, index) => {
 	]
   })
 });
+	
+event.remove({output:`industrialforegoing:stasis_chamber`})
+event.shaped('industrialforegoing:stasis_chamber', ['AAA','BCB','DED'], {A: 'minecraft:soul_sand',B: Item.of('hostilenetworks:prediction', '{data_model:{id:"hostilenetworks:wither"}}'),C: 'industrialforegoing:machine_frame_advanced',D: 'kubejs:tainted_gold_gear',E: 'mekanism:dimensional_stabilizer'}).id('mbm2:industrial_foregoing_stasis_chamber')
 
 });
 

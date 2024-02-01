@@ -41,7 +41,7 @@ onEvent('worldgen.add', event => {
 		})
 		    
 
-		ore.count([1, 5])
+		ore.count([1, 7])
 				.squared()
 				.uniformHeight(
 						anchors.aboveBottom(0),

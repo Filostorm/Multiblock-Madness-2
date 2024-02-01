@@ -25,6 +25,11 @@ onEvent('tags.items', event => {
 	
  });
 
+// Add the minecraft:axe tag to the mattocks (Thanks Totto!)
+onEvent('block.tags', event => {
+	event.add('tconstruct:mineable/mattock', '#minecraft:mineable/axe');
+  });
+
 onEvent('recipes', event => {
 
 	//Slag Casing

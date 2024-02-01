@@ -593,7 +593,7 @@ global.newMaterialParts = [
         'color': 0xb1f0fc,
         'tier': 1,
         'type': 'alloy',
-        'itemParts': ['rod', 'gear', 'plate'],
+        'itemParts': ['rod', 'gear', 'plate', 'dust'],
         'blockParts': [],
         'fluid': 'thick',
         'fluid_id': 'kubejs:molten_drenched_iron',

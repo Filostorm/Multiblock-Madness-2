@@ -277,9 +277,9 @@ event.shaped('create:hose_pulley', [
 */
 
 
-//Clear Filter		
-event.shapeless('create:attribute_filter', [Item.of('create:attribute_filter').ignoreNBT()]).id(`mbm2:create/clear_attribute_filter`)
-event.shapeless('create:filter', [Item.of('create:filter').ignoreNBT()]).id(`mbm2:create/clear_filter`)
+//Clear Filter		dont need anymore
+//event.shapeless('create:attribute_filter', [Item.of('create:attribute_filter').ignoreNBT()]).id(`mbm2:create/clear_attribute_filter`)
+//event.shapeless('create:filter', [Item.of('create:filter').ignoreNBT()]).id(`mbm2:create/clear_filter`)
 
 	//Melt some Clay
 	event.recipes.createMixing([Fluid.of('tconstruct:molten_clay', 1000)], ['clay', Fluid.of('water', 1000)]).id(`mbm2:mixing/clay_from_block`)
@@ -306,6 +306,9 @@ event.shapeless('create:filter', [Item.of('create:filter').ignoreNBT()]).id(`mbm
 
 	//ender ingot recipe rework
 	event.recipes.createMixing('extendedcrafting:ender_ingot', [Fluid.of('thermal:ender', 250), '#forge:ingots/graphite']).heated().id('mbm2:mixing/ender_ingot')
+
+	//Rose Quartz
+	event.shapeless('4x create:rose_quartz', ['3x #forge:gems/quartz','thermal:cinnabar']).id(`mbm2:create/rose_quartz_with_cinnabar`)
 
 
 });

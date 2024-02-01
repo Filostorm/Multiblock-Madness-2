@@ -1164,16 +1164,16 @@ onEvent("lootjs", (event) => {
 						event.addBlockLootModifier(`#forge:poor_ores/${item.material}`)
 							.pool((pool) => {
 								if (item.type == 'dust') {
-									//Dust
+									//(Poor) Dust
 									pool.addWeightedLoot([1, 2], [
 										Item.of(`#forge:dusts/${item.material}`),
 									])
 								} else {
-									//Normal Ores
-									pool.addLoot(`#forge:ores/grit/${item.material}`);
-									//pool.addWeightedLoot([1, 4], [
-									//	Item.of(`#forge:ores/fragment/${item.material}`),
-									//])
+									//Normal (Poor) Ores
+									//pool.addLoot(`#forge:ores/grit/${item.material}`);
+									pool.addWeightedLoot([2, 4], [
+										Item.of(`#forge:ores/fragment/${item.material}`),
+									])
 								}
 								pool.applyOreBonus("minecraft:fortune");
 							})

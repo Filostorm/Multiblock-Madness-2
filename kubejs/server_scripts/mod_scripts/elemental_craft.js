@@ -46,16 +46,16 @@ onEvent('recipes', event => {
 			'water',
 		]
 		elements.forEach(element => {
-			event.shaped(`8x elementalcraft:${element}_shard`, 
+			event.shaped(`4x elementalcraft:${element}_shard`, 
 			[
-				'SSS',
+				' S ',
 				'SCS',
-				'SSS'
+				' S '
 			  ], 
 			  {
 				C: `elementalcraft:${element}crystal`,
 				S: '#quark:shards',
-			  }).replaceIngredient(`elementalcraft:${element}crystal`, 'elementalcraft:inert_crystal').id(`mbm2:${element}_shard_transfer`)
+			  }).replaceIngredient(4, 'elementalcraft:inert_crystal').id(`mbm2:${element}_shard_transfer`)
 			
 		});
 

@@ -320,6 +320,30 @@ onEvent('worldgen.add', event => {
 			not: ["^nether", "^the_end", /^beyond_earth:.*/]
 		  }
 	})
+	
+	// Base Zinc Veins
+	event.addOre((ore) => {
+		ore.id = 'kubejs:nether_zinc_ore'
+	
+		global.stoneTypes.forEach((type) => {
+				ore.addTarget(`#forge:${type.material}`, `excavated_variants:${type.material}_zinc_ore`)
+		})
+		    
+
+		ore.count([1, 5])
+				.squared()
+				.uniformHeight(
+						anchors.aboveBottom(0),
+						anchors.absolute(200)
+				)
+		ore.size = 25
+		ore.noSurface = netherSurfaceChance
+		ore.worldgenLayer = "underground_ores"
+		ore.chance = 0
+		ore.biomes = {
+			not: ["^nether", "^the_end", /^beyond_earth:.*/]
+		  }
+	})
 
 	// Inserted Fire Veins
 	event.addOre((ore) => {

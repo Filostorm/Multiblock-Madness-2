@@ -189,6 +189,7 @@
 			x: 14.0d
 			y: 1.5d
 			description: ["You'll need to fill your suit with Oxygen before heading to space."]
+			dependencies: ["4056DE989F8A8E98"]
 			id: "2DFADAC92EFECDFD"
 			tasks: [
 				{

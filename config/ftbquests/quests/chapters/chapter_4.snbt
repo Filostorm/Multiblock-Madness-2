@@ -129,6 +129,12 @@
 				type: "item"
 				item: "elementalcraft:binder"
 			}]
+			rewards: [{
+				id: "51255585156612F0"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 6594349084625110702L
+			}]
 		}
 		{
 			title: "More Elemental Infused Items"
@@ -1826,6 +1832,32 @@
 				id: "3957BF8D199A31BB"
 				type: "item"
 				item: "ae2:molecular_assembler"
+			}]
+		}
+		{
+			title: "Elementalcraft Automation Tools"
+			x: 7.0d
+			y: 10.0d
+			description: ["These are a great help when automating Elementalcraft!"]
+			dependencies: ["61CCA7FA3C371180"]
+			id: "2DACD33891F1AB19"
+			tasks: [
+				{
+					id: "78204D93643F5B96"
+					type: "item"
+					item: "elementalcraft:instrument_retriever"
+				}
+				{
+					id: "42B4FEFF779D5232"
+					type: "item"
+					item: "elementalcraft:sorter"
+				}
+			]
+			rewards: [{
+				id: "3E0B0334A76880BF"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 6594349084625110702L
 			}]
 		}
 	]

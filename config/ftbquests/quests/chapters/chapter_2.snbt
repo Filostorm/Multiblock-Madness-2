@@ -170,8 +170,8 @@
 			}]
 		}
 		{
-			x: 3.0d
-			y: 13.0d
+			x: 1.5d
+			y: 12.5d
 			dependencies: ["273B98D3C35D7356"]
 			id: "1AE07B2CC8D8B725"
 			tasks: [{
@@ -228,10 +228,10 @@
 		}
 		{
 			title: "The Toolbox"
-			x: -0.5d
-			y: 8.5d
+			x: 2.0d
+			y: 11.0d
 			description: ["Hold Alt to access items stored inside the toolbox."]
-			dependencies: ["360253CDEF94C130"]
+			dependencies: ["2990DA17B56345DA"]
 			id: "298E404D2803AB20"
 			tasks: [{
 				id: "664F1389CD85DFDA"
@@ -465,6 +465,7 @@
 			icon: "ironfurnaces:iron_furnace"
 			x: 3.0d
 			y: 9.0d
+			description: ["Gold and Diamond are the next two tiers"]
 			dependencies: ["2990DA17B56345DA"]
 			id: "07A5A4AA9766AC81"
 			tasks: [{
@@ -652,7 +653,7 @@
 			title: "Metal Tools"
 			icon: "tconstruct:seared_melter"
 			x: 4.5d
-			y: 11.5d
+			y: 11.0d
 			subtitle: "Reusable Casts are made from Brass"
 			dependencies: ["760223888ADD58B0"]
 			id: "23D386A39C0311F4"
@@ -832,7 +833,7 @@
 		{
 			icon: "thermal:device_tree_extractor"
 			x: 3.0d
-			y: 11.5d
+			y: 11.0d
 			subtitle: "Replacement for Kelp"
 			dependencies: ["2990DA17B56345DA"]
 			id: "7A86EFBA4A46492E"

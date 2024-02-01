@@ -118,7 +118,7 @@
 		}
 		{
 			x: -2.0d
-			y: -4.0d
+			y: -2.0d
 			description: ["Laser Drill Bases can have multiple Laser Drills working together to speed up the mining. Place them within 3 spaces pointing towards the Base."]
 			dependencies: ["766FA3877A259983"]
 			id: "7427C745524AC00C"
@@ -136,8 +136,8 @@
 			]
 		}
 		{
-			x: -2.0d
-			y: -5.0d
+			x: -4.0d
+			y: -2.0d
 			description: ["Laser Drill Bases can have multiple Laser Drills working together to speed up the mining. Place them within 3 spaces pointing towards the Base."]
 			dependencies: ["766FA3877A259983"]
 			id: "4EB8F3B73CD527A2"
@@ -159,7 +159,6 @@
 			y: -0.5d
 			dependencies: [
 				"34A861977367F4EA"
-				"196DBF0A6B8A6926"
 				"0C3B634C865AD3B9"
 			]
 			id: "766FA3877A259983"
@@ -223,8 +222,8 @@
 		}
 		{
 			x: -2.0d
-			y: -3.0d
-			subtitle: "Used to prevent the wither from moving for ether gas production"
+			y: -3.5d
+			description: ["Used to prevent the wither from moving for ether gas production"]
 			dependencies: ["766FA3877A259983"]
 			id: "0C86C3CCA8F0E429"
 			tasks: [{
@@ -245,8 +244,8 @@
 			}]
 		}
 		{
-			x: -2.5d
-			y: -3.5d
+			x: -4.0d
+			y: 1.0d
 			dependencies: ["766FA3877A259983"]
 			id: "75201B00917E0634"
 			tasks: [{
@@ -256,8 +255,8 @@
 			}]
 		}
 		{
-			x: -6.5d
-			y: 0.0d
+			x: -6.0d
+			y: -0.5d
 			shape: "circle"
 			id: "0C3B634C865AD3B9"
 			tasks: [{

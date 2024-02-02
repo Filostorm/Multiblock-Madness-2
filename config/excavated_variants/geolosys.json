@@ -4,22 +4,6 @@
   "provided_ores": [
     {
       "block_id": [
-        "geolosys:ancient_debris_ore"
-      ],
-      "en_name": "Ancient Debris",
-      "types": [
-        "nether"
-      ],
-      "id": "ancient_debris_ore",
-      "orename": [
-        "netherite_scrap_ore"
-      ],
-      "stone": [
-        "netherrack"
-      ]
-    },
-    {
-      "block_id": [
         "geolosys:quartz_ore",
         "geolosys:deepslate_quartz_ore"
       ],

@@ -170,22 +170,6 @@
     },
     {
       "block_id": [
-        "minecraft:nether_gold_ore"
-      ],
-      "en_name": "Nether Gold Ore",
-      "types": [
-        "nether"
-      ],
-      "id": "nether_gold_ore",
-      "orename": [
-        "gold_ore"
-      ],
-      "stone": [
-        "netherrack"
-      ]
-    },
-    {
-      "block_id": [
         "minecraft:copper_ore",
         "minecraft:deepslate_copper_ore"
       ],

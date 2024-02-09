@@ -3,47 +3,47 @@
 
 	["Dimension-Level Blacklists"."mna:spell_breaker"]
 		#Comma separated list of dimension ids that this mob type shouldn't spawn in
-		blacklist = "mythicbotany:alfheim, compactmachines:compact_world, beyond_earth:earth_orbit, beyond_earth:glacio, beyond_earth:glacio_orbit, bonsaitrees3:growtown, beyond_earth:mars, beyond_earth:mars_orbit, beyond_earth:mercury, beyond_earth:mercury_orbit, beyond_earth:moon, beyond_earth:moon_orbit, ae2:spatial_storage, minecraft:the_end, beyond_earth:venus, beyond_earth:venus_orbit"
+		blacklist = "javd:void, mythicbotany:alfheim, compactmachines:compact_world, beyond_earth:earth_orbit, beyond_earth:glacio, beyond_earth:glacio_orbit, bonsaitrees3:growtown, beyond_earth:mars, beyond_earth:mars_orbit, beyond_earth:mercury, beyond_earth:mercury_orbit, beyond_earth:moon, beyond_earth:moon_orbit, ae2:spatial_storage, minecraft:the_end, beyond_earth:venus, beyond_earth:venus_orbit"
 
 	["Dimension-Level Blacklists"."mna:witch_hunter"]
 		#Comma separated list of dimension ids that this mob type shouldn't spawn in
-		blacklist = "mythicbotany:alfheim, compactmachines:compact_world, beyond_earth:earth_orbit, beyond_earth:glacio, beyond_earth:glacio_orbit, bonsaitrees3:growtown, beyond_earth:mars, beyond_earth:mars_orbit, beyond_earth:mercury, beyond_earth:mercury_orbit, beyond_earth:moon, beyond_earth:moon_orbit, ae2:spatial_storage, minecraft:the_end, beyond_earth:venus, beyond_earth:venus_orbit"
+		blacklist = "javd:void, mythicbotany:alfheim, compactmachines:compact_world, beyond_earth:earth_orbit, beyond_earth:glacio, beyond_earth:glacio_orbit, bonsaitrees3:growtown, beyond_earth:mars, beyond_earth:mars_orbit, beyond_earth:mercury, beyond_earth:mercury_orbit, beyond_earth:moon, beyond_earth:moon_orbit, ae2:spatial_storage, minecraft:the_end, beyond_earth:venus, beyond_earth:venus_orbit"
 
 	["Dimension-Level Blacklists"."mna:pixie"]
 		#Comma separated list of dimension ids that this mob type shouldn't spawn in
-		blacklist = "mythicbotany:alfheim, compactmachines:compact_world, beyond_earth:earth_orbit, beyond_earth:glacio, beyond_earth:glacio_orbit, bonsaitrees3:growtown, beyond_earth:mars, beyond_earth:mars_orbit, beyond_earth:mercury, beyond_earth:mercury_orbit, beyond_earth:moon, beyond_earth:moon_orbit, ae2:spatial_storage, minecraft:the_end, beyond_earth:venus, beyond_earth:venus_orbit"
+		blacklist = "javd:void, mythicbotany:alfheim, compactmachines:compact_world, beyond_earth:earth_orbit, beyond_earth:glacio, beyond_earth:glacio_orbit, bonsaitrees3:growtown, beyond_earth:mars, beyond_earth:mars_orbit, beyond_earth:mercury, beyond_earth:mercury_orbit, beyond_earth:moon, beyond_earth:moon_orbit, ae2:spatial_storage, minecraft:the_end, beyond_earth:venus, beyond_earth:venus_orbit"
 
 	["Dimension-Level Blacklists"."mna:barkling"]
 		#Comma separated list of dimension ids that this mob type shouldn't spawn in
-		blacklist = "mythicbotany:alfheim, compactmachines:compact_world, beyond_earth:earth_orbit, beyond_earth:glacio, beyond_earth:glacio_orbit, bonsaitrees3:growtown, beyond_earth:mars, beyond_earth:mars_orbit, beyond_earth:mercury, beyond_earth:mercury_orbit, beyond_earth:moon, beyond_earth:moon_orbit, ae2:spatial_storage, minecraft:the_end, beyond_earth:venus, beyond_earth:venus_orbit"
+		blacklist = "javd:void, mythicbotany:alfheim, compactmachines:compact_world, beyond_earth:earth_orbit, beyond_earth:glacio, beyond_earth:glacio_orbit, bonsaitrees3:growtown, beyond_earth:mars, beyond_earth:mars_orbit, beyond_earth:mercury, beyond_earth:mercury_orbit, beyond_earth:moon, beyond_earth:moon_orbit, ae2:spatial_storage, minecraft:the_end, beyond_earth:venus, beyond_earth:venus_orbit"
 
 	["Dimension-Level Blacklists"."mna:mushroom_soldier"]
 		#Comma separated list of dimension ids that this mob type shouldn't spawn in
-		blacklist = "mythicbotany:alfheim, compactmachines:compact_world, beyond_earth:earth_orbit, beyond_earth:glacio, beyond_earth:glacio_orbit, bonsaitrees3:growtown, beyond_earth:mars, beyond_earth:mars_orbit, beyond_earth:mercury, beyond_earth:mercury_orbit, beyond_earth:moon, beyond_earth:moon_orbit, ae2:spatial_storage, minecraft:the_end, beyond_earth:venus, beyond_earth:venus_orbit"
+		blacklist = "javd:void, mythicbotany:alfheim, compactmachines:compact_world, beyond_earth:earth_orbit, beyond_earth:glacio, beyond_earth:glacio_orbit, bonsaitrees3:growtown, beyond_earth:mars, beyond_earth:mars_orbit, beyond_earth:mercury, beyond_earth:mercury_orbit, beyond_earth:moon, beyond_earth:moon_orbit, ae2:spatial_storage, minecraft:the_end, beyond_earth:venus, beyond_earth:venus_orbit"
 
 	["Dimension-Level Blacklists"."mna:hulking_zombie"]
 		#Comma separated list of dimension ids that this mob type shouldn't spawn in
-		blacklist = "mythicbotany:alfheim, compactmachines:compact_world, beyond_earth:earth_orbit, beyond_earth:glacio, beyond_earth:glacio_orbit, bonsaitrees3:growtown, beyond_earth:mars, beyond_earth:mars_orbit, beyond_earth:mercury, beyond_earth:mercury_orbit, beyond_earth:moon, beyond_earth:moon_orbit, ae2:spatial_storage, minecraft:the_end, beyond_earth:venus, beyond_earth:venus_orbit"
+		blacklist = "javd:void, mythicbotany:alfheim, compactmachines:compact_world, beyond_earth:earth_orbit, beyond_earth:glacio, beyond_earth:glacio_orbit, bonsaitrees3:growtown, beyond_earth:mars, beyond_earth:mars_orbit, beyond_earth:mercury, beyond_earth:mercury_orbit, beyond_earth:moon, beyond_earth:moon_orbit, ae2:spatial_storage, minecraft:the_end, beyond_earth:venus, beyond_earth:venus_orbit"
 
 	["Dimension-Level Blacklists"."mna:skeleton_assassin"]
 		#Comma separated list of dimension ids that this mob type shouldn't spawn in
-		blacklist = "mythicbotany:alfheim, compactmachines:compact_world, beyond_earth:earth_orbit, beyond_earth:glacio, beyond_earth:glacio_orbit, bonsaitrees3:growtown, beyond_earth:mars, beyond_earth:mars_orbit, beyond_earth:mercury, beyond_earth:mercury_orbit, beyond_earth:moon, beyond_earth:moon_orbit, ae2:spatial_storage, minecraft:the_end, beyond_earth:venus, beyond_earth:venus_orbit"
+		blacklist = "javd:void, mythicbotany:alfheim, compactmachines:compact_world, beyond_earth:earth_orbit, beyond_earth:glacio, beyond_earth:glacio_orbit, bonsaitrees3:growtown, beyond_earth:mars, beyond_earth:mars_orbit, beyond_earth:mercury, beyond_earth:mercury_orbit, beyond_earth:moon, beyond_earth:moon_orbit, ae2:spatial_storage, minecraft:the_end, beyond_earth:venus, beyond_earth:venus_orbit"
 
 	["Dimension-Level Blacklists"."mna:chatterer"]
 		#Comma separated list of dimension ids that this mob type shouldn't spawn in
-		blacklist = "mythicbotany:alfheim, compactmachines:compact_world, beyond_earth:earth_orbit, beyond_earth:glacio, beyond_earth:glacio_orbit, bonsaitrees3:growtown, beyond_earth:mars, beyond_earth:mars_orbit, beyond_earth:mercury, beyond_earth:mercury_orbit, beyond_earth:moon, beyond_earth:moon_orbit, ae2:spatial_storage, minecraft:the_end, beyond_earth:venus, beyond_earth:venus_orbit"
+		blacklist = "javd:void, mythicbotany:alfheim, compactmachines:compact_world, beyond_earth:earth_orbit, beyond_earth:glacio, beyond_earth:glacio_orbit, bonsaitrees3:growtown, beyond_earth:mars, beyond_earth:mars_orbit, beyond_earth:mercury, beyond_earth:mercury_orbit, beyond_earth:moon, beyond_earth:moon_orbit, ae2:spatial_storage, minecraft:the_end, beyond_earth:venus, beyond_earth:venus_orbit"
 
 	["Dimension-Level Blacklists"."mna:demon_imp"]
 		#Comma separated list of dimension ids that this mob type shouldn't spawn in
-		blacklist = "mythicbotany:alfheim, compactmachines:compact_world, beyond_earth:earth_orbit, beyond_earth:glacio, beyond_earth:glacio_orbit, bonsaitrees3:growtown, beyond_earth:mars, beyond_earth:mars_orbit, beyond_earth:mercury, beyond_earth:mercury_orbit, beyond_earth:moon, beyond_earth:moon_orbit, ae2:spatial_storage, minecraft:the_end, beyond_earth:venus, beyond_earth:venus_orbit"
+		blacklist = "javd:void, mythicbotany:alfheim, compactmachines:compact_world, beyond_earth:earth_orbit, beyond_earth:glacio, beyond_earth:glacio_orbit, bonsaitrees3:growtown, beyond_earth:mars, beyond_earth:mars_orbit, beyond_earth:mercury, beyond_earth:mercury_orbit, beyond_earth:moon, beyond_earth:moon_orbit, ae2:spatial_storage, minecraft:the_end, beyond_earth:venus, beyond_earth:venus_orbit"
 
 	["Dimension-Level Blacklists"."mna:lantern_wraith"]
 		#Comma separated list of dimension ids that this mob type shouldn't spawn in
-		blacklist = "mythicbotany:alfheim, compactmachines:compact_world, beyond_earth:earth_orbit, beyond_earth:glacio, beyond_earth:glacio_orbit, bonsaitrees3:growtown, beyond_earth:mars, beyond_earth:mars_orbit, beyond_earth:mercury, beyond_earth:mercury_orbit, beyond_earth:moon, beyond_earth:moon_orbit, ae2:spatial_storage, minecraft:the_end, beyond_earth:venus, beyond_earth:venus_orbit"
+		blacklist = "javd:void, mythicbotany:alfheim, compactmachines:compact_world, beyond_earth:earth_orbit, beyond_earth:glacio, beyond_earth:glacio_orbit, bonsaitrees3:growtown, beyond_earth:mars, beyond_earth:mars_orbit, beyond_earth:mercury, beyond_earth:mercury_orbit, beyond_earth:moon, beyond_earth:moon_orbit, ae2:spatial_storage, minecraft:the_end, beyond_earth:venus, beyond_earth:venus_orbit"
 
 	["Dimension-Level Blacklists"."mna:faction_war"]
 		#Comma separated list of dimension ids that this mob type shouldn't spawn in
-		blacklist = "mythicbotany:alfheim, compactmachines:compact_world, beyond_earth:earth_orbit, beyond_earth:glacio, beyond_earth:glacio_orbit, bonsaitrees3:growtown, beyond_earth:mars, beyond_earth:mars_orbit, beyond_earth:mercury, beyond_earth:mercury_orbit, beyond_earth:moon, beyond_earth:moon_orbit, ae2:spatial_storage, minecraft:the_end, beyond_earth:venus, beyond_earth:venus_orbit"
+		blacklist = "javd:void, mythicbotany:alfheim, compactmachines:compact_world, beyond_earth:earth_orbit, beyond_earth:glacio, beyond_earth:glacio_orbit, bonsaitrees3:growtown, beyond_earth:mars, beyond_earth:mars_orbit, beyond_earth:mercury, beyond_earth:mercury_orbit, beyond_earth:moon, beyond_earth:moon_orbit, ae2:spatial_storage, minecraft:the_end, beyond_earth:venus, beyond_earth:venus_orbit"
 
 [taiga]
 

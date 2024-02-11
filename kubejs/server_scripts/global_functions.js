@@ -475,6 +475,42 @@ global.alchemistryCompacting = (event, itemOutput, itemInput, ID) => {
 	  }).id(ID)}
 ///////////////////////////////////////////////////////////
 
+///////////////// LIQUIFIER/ATOMIZER ///////////////////////
+global.alchemistryFluidItemSwap = (event, item, fluid, removeOld) => {
+	if(removeOld) {
+		event.remove({id: `alchemistry:liquifier/${item.split(':')[1]}`})
+		event.remove({id: `alchemistry:atomizer/${item.split(':')[1]}`})
+	}
+	event.custom({
+		"type": "alchemistry:liquifier",
+		"group": "alchemistry:liquifier",
+		"input": {
+		  "ingredient": {
+			"item": item
+		  },
+		  "count": 8
+		},
+		"result": {
+		  "fluid": fluid,
+		  "amount": "500"
+		}
+	  }).id(`mbm2:liquifier/${item.split(':')[1]}`)
+	  event.custom({
+		"type": "alchemistry:atomizer",
+		"group": "alchemistry:atomizer",
+		"input": {
+		  "fluid": fluid,
+		  "amount": "500"
+		},
+		"result": {
+		  "item": item,
+		  "count": 8
+		}
+	  }).id(`mbm2:atomizer/${item.split(':')[1]}`)
+	}
+///////////////////////////////////////////////////////////
+
+
 
 ///////////////// INFUSING ///////////////////////
 global.mekanismMetallurgicInfusing = (event, itemOutput, itemInput, chemicalInput, chemicalAmount, ID) => {

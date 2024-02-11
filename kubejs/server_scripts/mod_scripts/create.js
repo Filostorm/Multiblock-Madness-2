@@ -12,8 +12,10 @@ onEvent('tags.items', event => {
 
 		
 		event.add('mbm2:movement_anchors', 'create:mechanical_bearing')
-		event.add('mbm2:movement_anchors', 'create:mechanical_piston')
+		event.add('mbm2:movement_anchors', 'create:sticky_mechanical_piston')
 		event.add('mbm2:movement_anchors', 'create:gantry_carriage')
+		event.add('mbm2:movement_anchors', 'create:windmill_bearing')
+		
 
 		event.add('mbm2:chassis', 'create:linear_chassis')
 		event.add('mbm2:chassis', 'create:radial_chassis')
@@ -111,12 +113,13 @@ C: 'thermal:cured_rubber'
 //Windmill
   event.remove({id: 'create:crafting/kinetics/windmill_bearing'})
   event.shaped('create:windmill_bearing', [
-	'B',
-	'C',
-	'D'
+	'BBB',
+	'SCS',
+	'SDS'
   ], {
-	B: 'immersiveengineering:slab_treated_wood_horizontal',
-	C: '#forge:stone',
+	B: '#forge:treated_wood',
+	C: 'immersiveengineering:turntable',
+	S: '#forge:stone',
 	D: 'create:shaft'
   }).id('mbm2:crafting/windmill_bearing')
 
@@ -310,5 +313,6 @@ event.shaped('create:hose_pulley', [
 	//Rose Quartz
 	event.shapeless('4x create:rose_quartz', ['3x #forge:gems/quartz','thermal:cinnabar']).id(`mbm2:create/rose_quartz_with_cinnabar`)
 
-
+	//Soul Sand
+	event.recipes.createCompacting([`soul_sand`], ['#forge:netherrack', 'engineersdecor:dense_grit_sand_block']).heated().id('mbm2:mixing/soul_sand_smh')
 });

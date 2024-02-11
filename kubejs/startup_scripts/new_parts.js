@@ -13,6 +13,21 @@ const nameUpper = (name) => {
     return name.charAt(0).toUpperCase() + name.slice(1)
   }
 }
+
+const newShade = (hexColor, magnitude) => {
+  const decimalColor = parseInt(hexColor, 16);
+  let r = (decimalColor >> 16) + magnitude;
+  r > 255 && (r = 255);
+  r < 0 && (r = 0);
+  let g = (decimalColor & 0x0000ff) + magnitude;
+  g > 255 && (g = 255);
+  g < 0 && (g = 0);
+  let b = ((decimalColor >> 8) & 0x00ff) + magnitude;
+  b > 255 && (b = 255);
+  b < 0 && (b = 0);
+  return (g | (b << 8) | (r << 16));
+};
+
 onEvent('item.registry', event => {
 
   let orePartCreation = global.oreParts.concat(global.oreBonusParts)
@@ -21,7 +36,7 @@ onEvent('item.registry', event => {
     item.itemParts.forEach((part) => {
     if (part.includes('model')) { // this does everything with a model
       event.create(`${item.material}_${part.slice(6)}`).color(0, item.color).parentModel(`kubejs:item/${part.slice(6)}`).texture(`kubejs:item/${part.slice(6)}`)
-    } else { // if it doesn't have a custom model or is a tool
+    } else { // if it doesn't have a custom mode
       if (item.type == 'gem') { //Gem parts get special textures, and always a custom base gem texture
         if (part == 'gem') { //Gems can burn
           if(item.burnTime != null) {
@@ -39,8 +54,12 @@ onEvent('item.registry', event => {
           event.create(`${item.material}_${part.slice(7)}`)
         } else if (item.iconset != null && part == 'ingot') { //only ingots for now, but this gives custom colored textures
           event.create(`${item.material}_${part}`).color(0, item.color).texture(`kubejs:item/${part}_${item.iconset}`)
+        } else if (part.includes('base')) { //BASE INGOTS R LIGHT
+          event.create(`${item.material}_${part}`).color(0, newShade(item.color.toString(16), 20)).texture(`kubejs:item/${part}`)
         } else {
-          //Main Part creation line
+
+          
+          ////////////////////////   Main Part creation line   /////////////////////////////
           event.create(`${item.material}_${part}`).color(0, item.color).texture(`kubejs:item/${part}`)
         }
       }
@@ -164,19 +183,6 @@ onEvent('block.registry', event => {
   })
 });
 
-const newShade = (hexColor, magnitude) => {
-		const decimalColor = parseInt(hexColor, 16);
-		let r = (decimalColor >> 16) + magnitude;
-		r > 255 && (r = 255);
-		r < 0 && (r = 0);
-		let g = (decimalColor & 0x0000ff) + magnitude;
-		g > 255 && (g = 255);
-		g < 0 && (g = 0);
-		let b = ((decimalColor >> 8) & 0x00ff) + magnitude;
-		b > 255 && (b = 255);
-		b < 0 && (b = 0);
-		return (g | (b << 8) | (r << 16));
-};
 onEvent('fluid.registry', event => {
   global.newMaterialParts.forEach((item) => {
 
@@ -200,7 +206,7 @@ onEvent('fluid.registry', event => {
   })
 });
 
-// TO DO ADD SLURRY FOR ORE PROCESSING
+// TO DO ADD SLURRY FOR ORE PROCESSING (maybe)
 const $EventBuses = java('dev.architectury.platform.forge.EventBuses')
 const $GasDeferredRegister = java('mekanism.common.registration.impl.GasDeferredRegister')
 const $SlurryDeferredRegister = java('mekanism.common.registration.impl.SlurryDeferredRegister')
@@ -210,15 +216,24 @@ const GASES = new $GasDeferredRegister('kubejs')
 const SLURRY = new $SlurryDeferredRegister('kubejs')
 const INFUSETYPE = new $InfuseTypeDeferredRegister('kubejs')
 
+
+//ADD STUFF HERE
 //GASES.register('example_gas', 0xA020F0)
 //SLURRY.register('example_slurry', builder => builder.color(0xA020F0))
 INFUSETYPE.register('chitin', 0x634f34)
+
+
+
+
 
 GASES.register($EventBuses.getModEventBus('kubejs').get())
 SLURRY['register(net.minecraftforge.eventbus.api.IEventBus)']($EventBuses.getModEventBus('kubejs').get())
 INFUSETYPE.register($EventBuses.getModEventBus('kubejs').get())
 
+
+
 onEvent('client.generate_assets', event => {
+  //ALSO HERE
     //event.addLang('slurry.kubejs.dirty_example_slurry', `Dirty Example Slurry`)
     event.addLang('infuse_type.kubejs.chitin', `Chitin`)
   

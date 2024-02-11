@@ -111,4 +111,28 @@ onEvent('worldgen.add', event => {
 		ore.chance = 0
 		ore.biomes = ["beyond_earth:infernal_venus_barrens", "beyond_earth:venus_desert", "beyond_earth:venus"]
 	})
+
+
+	// Base calorite Veins
+	event.addOre((ore) => {
+		ore.id = 'kubejs:venus_calorite_ore'
+
+		
+
+		ore.addTarget('beyond_earth:venus_stone', 'beyond_earth:venus_calorite_ore')
+
+		    
+
+		ore.count([1, 6])
+				.squared()
+				.uniformHeight(
+						anchors.aboveBottom(0),
+						anchors.absolute(100)
+				)
+		ore.size = 20
+		ore.noSurface = venusSurfaceChance
+		ore.worldgenLayer = "underground_ores"
+		ore.chance = 0
+		ore.biomes = ["beyond_earth:infernal_venus_barrens", "beyond_earth:venus_desert", "beyond_earth:venus"]
+	})
 })

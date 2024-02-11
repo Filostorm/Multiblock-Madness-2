@@ -216,7 +216,7 @@ onEvent('rei.remove.categories', event => {
 		'thermal:sawmill',
 		'thermal:pulverizer',
 		'thermal:press',
-		'thermal:pyrolyzer',
+		//'thermal:pyrolyzer',
 		'thermal:brewer',
 		'thermal:pulverizer_catalyst',
 		'thermal:stirling_fuel',

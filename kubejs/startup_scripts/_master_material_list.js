@@ -592,7 +592,7 @@ global.newMaterialParts = [
         'material': 'drenched_iron',
         'color': 0xb1f0fc,
         'tier': 1,
-        'type': 'alloy',
+        'type': 'magic_alloy',
         'itemParts': ['rod', 'gear', 'plate', 'dust'],
         'blockParts': [],
         'fluid': 'thick',
@@ -843,7 +843,7 @@ global.newMaterialParts = [
       'color': 0xffd894,
       'type': 'alloy',
       'tier': 3,
-      'itemParts': ['rod'],
+      'itemParts': ['rod', 'base_ingot', 'base_dust'],
       'blockParts': [],
       'type': 'alloy',
       'fluid_id': 'tconstruct:molten_lumium',
@@ -855,7 +855,7 @@ global.newMaterialParts = [
       'material': 'signalum',
       'color': 0xff6e4a,
       'tier': 3,
-      'itemParts': ['rod'],
+      'itemParts': ['rod', 'base_ingot', 'base_dust'],
       'blockParts': ['scaffolding'],
       'type': 'alloy',
       'fluid_id': 'tconstruct:molten_signalum',
@@ -867,7 +867,7 @@ global.newMaterialParts = [
       'material': 'enderium',
       'color': 0x5fc4d4,
       'tier': 3,
-      'itemParts': ['rod', 'plating', 'hull_panel'],
+      'itemParts': ['rod', 'plating', 'hull_panel', 'base_ingot', 'base_dust'],
       'blockParts': [],
       'type': 'alloy',
       'fluid_id': 'tconstruct:molten_enderium',
@@ -1258,8 +1258,8 @@ global.newMaterialParts = [
       'fluid_id': 'kubejs:molten_tier_1_mechanical_alloy',
       'fluid': 'thick',
       'amount': 2,
-      'dust_input': ['3x #forge:dusts/tin','#forge:dusts/zinc','ars_nouveau:air_essence'],
-      'ingot_input': ['3x #forge:ingots/tin', '#forge:ingots/zinc','ars_nouveau:air_essence'],
+      'dust_input': ['3x #forge:dusts/tin','#forge:dusts/zinc',['ars_nouveau:air_essence','elementalcraft:powerful_air_shard']],
+      'ingot_input': ['3x #forge:ingots/tin', '#forge:ingots/zinc',['ars_nouveau:air_essence','elementalcraft:powerful_air_shard']],
     },
     {
       'material': 'tier_1_electrical_alloy',
@@ -1272,8 +1272,8 @@ global.newMaterialParts = [
       'fluid_id': 'kubejs:molten_tier_1_electrical_alloy',
       'fluid': 'thick',
       'amount': 2,
-      'dust_input': ['3x #forge:dusts/gold', '#forge:dusts/silver', 'ars_nouveau:fire_essence'],
-      'ingot_input': ['3x #forge:ingots/gold','#forge:ingots/silver', 'ars_nouveau:fire_essence'],
+      'dust_input': ['3x #forge:dusts/gold', '#forge:dusts/silver', ['ars_nouveau:fire_essence','elementalcraft:powerful_fire_shard']],
+      'ingot_input': ['3x #forge:ingots/gold','#forge:ingots/silver', ['ars_nouveau:fire_essence','elementalcraft:powerful_fire_shard']],
     },
     {
       'material': 'tier_1_magical_alloy',
@@ -1286,8 +1286,8 @@ global.newMaterialParts = [
       'fluid_id': 'kubejs:molten_tier_1_magical_alloy',
       'fluid': 'thick',
       'amount': 2,
-      'dust_input': ['3x #forge:dusts/copper', '#forge:dusts/drenched_iron','ars_nouveau:water_essence'],
-      'ingot_input': ['3x #forge:ingots/copper', '#forge:ingots/drenched_iron','ars_nouveau:water_essence'],
+      'dust_input': ['3x #forge:dusts/copper', '#forge:dusts/drenched_iron',['ars_nouveau:water_essence','elementalcraft:powerful_water_shard']],
+      'ingot_input': ['3x #forge:ingots/copper', '#forge:ingots/drenched_iron',['ars_nouveau:water_essence','elementalcraft:powerful_water_shard']],
     },
     {
       'material': 'tier_1_structural_alloy',
@@ -1300,8 +1300,8 @@ global.newMaterialParts = [
       'fluid_id': 'kubejs:molten_tier_1_structural_alloy',
       'fluid': 'thick',
       'amount': 2,
-      'dust_input': ['3x #forge:dusts/iron', '#forge:dusts/lead','ars_nouveau:earth_essence'],
-      'ingot_input': ['3x #forge:ingots/iron', '#forge:ingots/lead','ars_nouveau:earth_essence'],
+      'dust_input': ['3x #forge:dusts/iron', '#forge:dusts/lead',['ars_nouveau:earth_essence','elementalcraft:powerful_earth_shard']],
+      'ingot_input': ['3x #forge:ingots/iron', '#forge:ingots/lead',['ars_nouveau:earth_essence','elementalcraft:powerful_earth_shard']],
     },
     {
       'material': 'tier_2_mechanical_alloy',
@@ -1446,7 +1446,7 @@ global.newMaterialParts = [
     {
       'material': 'manasteel',
       'color': 0x69a7ff,
-      'type': 'alloy',
+      'type': 'magic_alloy',
       'tier': 2,
       'itemParts': ['dust', 'plate', 'gear', 'rod'],
       'blockParts': [],
@@ -1456,6 +1456,7 @@ global.newMaterialParts = [
     {
       'material': 'terrasteel',
       'color': 0x63e645,
+      'type': 'magic_alloy',
       'itemParts': ['plate',  'gear', 'rod'],
       'blockParts': [],
       'fluid': 'thick'
@@ -1463,6 +1464,7 @@ global.newMaterialParts = [
     {
       'material': 'elementium',
       'color': 0xf569b6,
+      'type': 'magic_alloy',
       'itemParts': ['plate',  'gear', 'rod'],
       'blockParts': [],
       'fluid': 'thick'
@@ -1470,28 +1472,28 @@ global.newMaterialParts = [
     {
       'material': 'transmuted_silver',
       'color': 0xa9d0d9,
-      'type': 'alloy',
+      'type': 'magic_alloy',
       'itemParts': ['plate', 'gear', 'rod'],
       'blockParts': []
     },
     {
       'material': 'infused_iron',
       'color': 0x54b33b,
-      'type': 'alloy',
+      'type': 'magic_alloy',
       'itemParts': ['plate', 'gear', 'rod'],
       'blockParts': []
     },
     {
       'material': 'tainted_gold',
       'color': 0xa66032,
-      'type': 'alloy',
+      'type': 'magic_alloy',
       'itemParts': ['plate', 'gear', 'rod', 'dust'],
       'blockParts': []
     },
     {
       'material': 'sky_metal',
       'color': 0x83d5de,
-      'type': 'alloy',
+      'type': 'magic_alloy',
       'itemParts': ['plate', 'gear', 'rod'],
       'blockParts': ['storage_block']
     },

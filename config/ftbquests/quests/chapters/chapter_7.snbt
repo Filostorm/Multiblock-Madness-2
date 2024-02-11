@@ -38,17 +38,6 @@
 			}]
 		}
 		{
-			x: 3.5d
-			y: 1.5d
-			dependencies: ["7427C745524AC00C"]
-			id: "1427B6C8DB9EA99F"
-			tasks: [{
-				id: "170695D69BCC6028"
-				type: "item"
-				item: "industrialforegoing:machine_frame_supreme"
-			}]
-		}
-		{
 			x: 5.5d
 			y: 1.0d
 			id: "70C3B2C93E84B058"

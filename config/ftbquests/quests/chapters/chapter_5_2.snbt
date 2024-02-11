@@ -15,8 +15,8 @@
 				Count: 1b
 				tag: { }
 			}
-			x: 1.5d
-			y: 5.0d
+			x: 2.5d
+			y: 1.5d
 			shape: "hexagon"
 			dependencies: [
 				"573198C8B96038A8"
@@ -43,8 +43,8 @@
 			]
 		}
 		{
-			x: 2.5d
-			y: 3.0d
+			x: 3.5d
+			y: -0.5d
 			shape: "circle"
 			dependencies: [
 				"1E282A0E8363FD74"
@@ -58,8 +58,8 @@
 			}]
 		}
 		{
-			x: -0.5d
-			y: 5.0d
+			x: 0.5d
+			y: 1.5d
 			dependencies: ["41ADD92F106996A9"]
 			id: "573198C8B96038A8"
 			tasks: [{
@@ -69,8 +69,8 @@
 			}]
 		}
 		{
-			x: -5.0d
-			y: 8.0d
+			x: -4.0d
+			y: 4.5d
 			dependencies: ["0A0FC4AF714D99F8"]
 			id: "35C4C2060E205DAC"
 			tasks: [{
@@ -80,8 +80,8 @@
 			}]
 		}
 		{
-			x: -3.5d
-			y: 9.5d
+			x: -2.5d
+			y: 6.0d
 			description: ["This is primarily used for more efficient Metalurgic Infuser recipes."]
 			dependencies: [
 				"35C4C2060E205DAC"
@@ -96,8 +96,8 @@
 		}
 		{
 			disable_toast: true
-			x: -6.5d
-			y: 8.0d
+			x: -5.5d
+			y: 4.5d
 			shape: "circle"
 			id: "0A0FC4AF714D99F8"
 			tasks: [{
@@ -107,8 +107,8 @@
 			}]
 		}
 		{
-			x: -3.5d
-			y: 5.0d
+			x: -2.5d
+			y: 1.5d
 			dependencies: [
 				"25E6A3906DFF322B"
 				"35C4C2060E205DAC"
@@ -122,8 +122,8 @@
 		}
 		{
 			disable_toast: true
-			x: -5.0d
-			y: 5.5d
+			x: -4.0d
+			y: 2.0d
 			shape: "circle"
 			id: "25E6A3906DFF322B"
 			tasks: [{
@@ -134,8 +134,8 @@
 		}
 		{
 			title: "Laser Circuit Assembly"
-			x: -5.0d
-			y: 9.5d
+			x: -4.0d
+			y: 6.0d
 			dependencies: [
 				"281E051C6D348B35"
 				"7F7EC08E0D521059"
@@ -188,8 +188,8 @@
 			]
 		}
 		{
-			x: -3.5d
-			y: 6.5d
+			x: -2.5d
+			y: 3.0d
 			dependencies: ["35C4C2060E205DAC"]
 			id: "2A3A54D05C769435"
 			tasks: [{
@@ -199,8 +199,8 @@
 			}]
 		}
 		{
-			x: -3.5d
-			y: 8.0d
+			x: -2.5d
+			y: 4.5d
 			dependencies: ["35C4C2060E205DAC"]
 			id: "457FD6C86076D5EC"
 			tasks: [{
@@ -210,8 +210,8 @@
 			}]
 		}
 		{
-			x: -2.0d
-			y: 8.0d
+			x: -1.0d
+			y: 4.5d
 			dependencies: ["457FD6C86076D5EC"]
 			id: "39107F36A3069811"
 			tasks: [{
@@ -221,8 +221,8 @@
 			}]
 		}
 		{
-			x: -0.5d
-			y: 8.0d
+			x: 0.5d
+			y: 4.5d
 			dependencies: ["39107F36A3069811"]
 			id: "37DCEC6850D52142"
 			tasks: [{
@@ -232,8 +232,8 @@
 			}]
 		}
 		{
-			x: -2.0d
-			y: 6.5d
+			x: -1.0d
+			y: 3.0d
 			dependencies: [
 				"2A3A54D05C769435"
 				"457FD6C86076D5EC"
@@ -247,8 +247,8 @@
 			}]
 		}
 		{
-			x: -5.0d
-			y: 0.0d
+			x: -4.0d
+			y: -3.5d
 			dependencies: ["4007E77C425C976E"]
 			id: "2AEABA9499A68184"
 			tasks: [{
@@ -258,8 +258,8 @@
 			}]
 		}
 		{
-			x: -3.5d
-			y: 0.0d
+			x: -2.5d
+			y: -3.5d
 			dependencies: ["4007E77C425C976E"]
 			id: "23E75CBC9844F00E"
 			tasks: [{
@@ -269,8 +269,8 @@
 			}]
 		}
 		{
-			x: -5.0d
-			y: 1.5d
+			x: -4.0d
+			y: -2.0d
 			dependencies: [
 				"23E75CBC9844F00E"
 				"2AEABA9499A68184"
@@ -283,8 +283,8 @@
 			}]
 		}
 		{
-			x: -2.0d
-			y: -1.5d
+			x: -1.0d
+			y: -5.0d
 			dependencies: ["4007E77C425C976E"]
 			id: "54AC66A499DB68CF"
 			tasks: [{
@@ -294,8 +294,8 @@
 			}]
 		}
 		{
-			x: -2.0d
-			y: 0.0d
+			x: -1.0d
+			y: -3.5d
 			dependencies: ["4007E77C425C976E"]
 			id: "139950A28F2CB6B9"
 			tasks: [{
@@ -305,8 +305,8 @@
 			}]
 		}
 		{
-			x: -3.5d
-			y: -1.5d
+			x: -2.5d
+			y: -5.0d
 			dependencies: ["35C16B4B5D8C7148"]
 			id: "4007E77C425C976E"
 			tasks: [{
@@ -316,8 +316,8 @@
 			}]
 		}
 		{
-			x: -0.5d
-			y: -1.5d
+			x: 0.5d
+			y: -5.0d
 			dependencies: ["54AC66A499DB68CF"]
 			id: "6033214E0C26DFA0"
 			tasks: [{
@@ -327,8 +327,8 @@
 			}]
 		}
 		{
-			x: -0.5d
-			y: 0.0d
+			x: 0.5d
+			y: -3.5d
 			dependencies: ["54AC66A499DB68CF"]
 			id: "34A861977367F4EA"
 			tasks: [{
@@ -338,8 +338,8 @@
 			}]
 		}
 		{
-			x: 1.0d
-			y: 0.0d
+			x: 2.0d
+			y: -3.5d
 			dependencies: [
 				"34A861977367F4EA"
 				"139950A28F2CB6B9"
@@ -352,8 +352,8 @@
 			}]
 		}
 		{
-			x: -5.0d
-			y: -3.0d
+			x: -4.0d
+			y: -6.5d
 			dependencies: ["4007E77C425C976E"]
 			id: "6F2D20CFF0DF5F75"
 			tasks: [{
@@ -363,8 +363,8 @@
 			}]
 		}
 		{
-			x: -5.0d
-			y: -4.5d
+			x: -4.0d
+			y: -8.0d
 			dependencies: ["6F2D20CFF0DF5F75"]
 			id: "42249C449A0A5825"
 			tasks: [{
@@ -374,8 +374,8 @@
 			}]
 		}
 		{
-			x: -2.0d
-			y: -3.0d
+			x: -1.0d
+			y: -6.5d
 			dependencies: ["4007E77C425C976E"]
 			id: "7E8398FD2D6CF30B"
 			tasks: [{
@@ -385,8 +385,8 @@
 			}]
 		}
 		{
-			x: -2.0d
-			y: -4.5d
+			x: -1.0d
+			y: -8.0d
 			dependencies: ["7E8398FD2D6CF30B"]
 			id: "362E4FDAD6061142"
 			tasks: [{
@@ -396,8 +396,8 @@
 			}]
 		}
 		{
-			x: -6.5d
-			y: 0.0d
+			x: -5.5d
+			y: -3.5d
 			dependencies: ["4007E77C425C976E"]
 			id: "1902A89183894D86"
 			tasks: [{
@@ -407,8 +407,8 @@
 			}]
 		}
 		{
-			x: -6.5d
-			y: 1.5d
+			x: -5.5d
+			y: -2.0d
 			dependencies: ["1902A89183894D86"]
 			id: "208A18358D0CA810"
 			tasks: [{
@@ -418,8 +418,8 @@
 			}]
 		}
 		{
-			x: -2.0d
-			y: 1.5d
+			x: -1.0d
+			y: -2.0d
 			dependencies: [
 				"139950A28F2CB6B9"
 				"5AB0ED73545E6581"
@@ -433,8 +433,8 @@
 		}
 		{
 			title: "Alternative Plastic from Latex"
-			x: -3.5d
-			y: -3.0d
+			x: -2.5d
+			y: -6.5d
 			dependencies: ["4007E77C425C976E"]
 			id: "07A173CCEB148AD4"
 			tasks: [
@@ -451,8 +451,8 @@
 			]
 		}
 		{
-			x: -3.5d
-			y: 1.5d
+			x: -2.5d
+			y: -2.0d
 			dependencies: [
 				"4E9E527D477017AC"
 				"11ECD8E1D88C1DF5"
@@ -465,8 +465,8 @@
 			}]
 		}
 		{
-			x: 1.0d
-			y: -1.5d
+			x: 2.0d
+			y: -5.0d
 			dependencies: ["6033214E0C26DFA0"]
 			id: "26FBF22972815A83"
 			tasks: [{
@@ -476,8 +476,8 @@
 			}]
 		}
 		{
-			x: -5.0d
-			y: -6.0d
+			x: -4.0d
+			y: -9.5d
 			dependencies: ["42249C449A0A5825"]
 			id: "76E0CB65FC0BFD3E"
 			tasks: [{
@@ -487,8 +487,8 @@
 			}]
 		}
 		{
-			x: 0.5d
-			y: 3.0d
+			x: 1.5d
+			y: -0.5d
 			dependencies: [
 				"38BEC380C355AB46"
 				"36A0369CEDD44BB6"
@@ -505,8 +505,8 @@
 			}]
 		}
 		{
-			x: -2.0d
-			y: 9.5d
+			x: -1.0d
+			y: 6.0d
 			dependencies: ["6D96C22AED8671A4"]
 			id: "15EDB164447E3DF9"
 			tasks: [{
@@ -517,8 +517,8 @@
 		}
 		{
 			title: "Stainless Steel"
-			x: -3.5d
-			y: 3.5d
+			x: -2.5d
+			y: 0.0d
 			dependencies: [
 				"41ADD92F106996A9"
 				"604C6C3C046A8476"
@@ -538,8 +538,8 @@
 			]
 		}
 		{
-			x: -5.0d
-			y: 4.5d
+			x: -4.0d
+			y: 1.0d
 			min_required_dependencies: 1
 			dependencies: [
 				"7CDED25654D18562"
@@ -553,8 +553,8 @@
 			}]
 		}
 		{
-			x: -5.0d
-			y: 3.5d
+			x: -4.0d
+			y: 0.0d
 			min_required_dependencies: 1
 			dependencies: [
 				"7CDED25654D18562"
@@ -568,8 +568,8 @@
 			}]
 		}
 		{
-			x: -0.5d
-			y: 9.5d
+			x: 0.5d
+			y: 6.0d
 			dependencies: ["15EDB164447E3DF9"]
 			id: "1ACB934A3D13E310"
 			tasks: [{
@@ -580,8 +580,8 @@
 		}
 		{
 			title: "Washed Byproducts"
-			x: -6.5d
-			y: 3.5d
+			x: -5.5d
+			y: 0.0d
 			id: "7CDED25654D18562"
 			tasks: [
 				{
@@ -597,8 +597,8 @@
 			]
 		}
 		{
-			x: -6.5d
-			y: 4.5d
+			x: -5.5d
+			y: 1.0d
 			id: "7A946D11CADF573B"
 			tasks: [
 				{
@@ -614,8 +614,8 @@
 			]
 		}
 		{
-			x: 4.0d
-			y: 6.5d
+			x: 5.0d
+			y: 3.0d
 			dependencies: ["12B7444358A1347F"]
 			id: "0B635C1D49C9F9AC"
 			tasks: [{
@@ -625,8 +625,8 @@
 			}]
 		}
 		{
-			x: 4.0d
-			y: 5.0d
+			x: 5.0d
+			y: 1.5d
 			dependencies: ["1E282A0E8363FD74"]
 			id: "11D33990B9BC8DDD"
 			tasks: [{
@@ -636,8 +636,8 @@
 			}]
 		}
 		{
-			x: 4.0d
-			y: 8.0d
+			x: 5.0d
+			y: 4.5d
 			dependencies: ["3C2C3C5BED4E830A"]
 			id: "12B7444358A1347F"
 			tasks: [{
@@ -647,8 +647,8 @@
 			}]
 		}
 		{
-			x: 2.5d
-			y: 6.5d
+			x: 3.5d
+			y: 3.0d
 			description: ["You can move elemental Sources with this"]
 			dependencies: ["12B7444358A1347F"]
 			id: "5986396A93E625F1"
@@ -665,8 +665,8 @@
 			}]
 		}
 		{
-			x: 4.0d
-			y: 9.5d
+			x: 5.0d
+			y: 6.0d
 			dependencies: ["63D72477BB0F83A4"]
 			id: "3C2C3C5BED4E830A"
 			tasks: [
@@ -698,8 +698,8 @@
 			]
 		}
 		{
-			x: -6.5d
-			y: 9.5d
+			x: -5.5d
+			y: 6.0d
 			dependencies: ["0A0FC4AF714D99F8"]
 			id: "1ADBC08AC8A36AEE"
 			tasks: [{
@@ -709,8 +709,8 @@
 			}]
 		}
 		{
-			x: -5.0d
-			y: 6.5d
+			x: -4.0d
+			y: 3.0d
 			dependencies: ["35C4C2060E205DAC"]
 			id: "73DF8FC5E3617792"
 			tasks: [{
@@ -720,8 +720,8 @@
 			}]
 		}
 		{
-			x: -6.5d
-			y: 11.0d
+			x: -5.5d
+			y: 7.5d
 			id: "7F7EC08E0D521059"
 			tasks: [{
 				id: "4D29C6EE2BE6CDD3"

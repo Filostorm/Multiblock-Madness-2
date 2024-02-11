@@ -36,8 +36,8 @@ global.removeAndHide = [
 
 	'summoningrituals:indestructible_altar',
 
-	'thermal:machine_crafter', 
-	'thermal:machine_pyrolyzer', 
+	//'thermal:machine_crafter', 
+	//'thermal:machine_pyrolyzer', 
 	'thermal:machine_sawmill', 
 	'thermal:machine_pulverizer', 
 	'thermal:dynamo_stirling', 

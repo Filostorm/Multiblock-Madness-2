@@ -205,6 +205,7 @@
 		{
 			x: -3.0d
 			y: 1.5d
+			subtitle: "Y200 - 32 In the Nether"
 			id: "3F03F79E1CD352F5"
 			tasks: [{
 				id: "05D40B9270433B82"
@@ -344,7 +345,7 @@
 			title: "Moon Veins"
 			icon: "beyond_earth:moon_globe"
 			disable_toast: true
-			x: 7.5d
+			x: 8.0d
 			y: -2.5d
 			shape: "gear"
 			id: "28DF842E25E51E92"
@@ -356,7 +357,7 @@
 			}]
 		}
 		{
-			x: 7.5d
+			x: 8.0d
 			y: -1.5d
 			id: "5A0CAB18859FAEA6"
 			tasks: [{
@@ -366,7 +367,7 @@
 			}]
 		}
 		{
-			x: 8.5d
+			x: 9.0d
 			y: -1.5d
 			id: "0AC6531AEECA59E5"
 			tasks: [{
@@ -387,7 +388,7 @@
 			}]
 		}
 		{
-			x: 7.5d
+			x: 8.0d
 			y: -0.5d
 			description: ["Common ore on the Moon, can spawn with Runite."]
 			id: "3A97404A93628B41"
@@ -525,7 +526,7 @@
 			}]
 		}
 		{
-			x: 7.5d
+			x: 8.0d
 			y: 0.5d
 			id: "37957A7CAE2F9967"
 			tasks: [{
@@ -535,7 +536,7 @@
 			}]
 		}
 		{
-			x: 7.5d
+			x: 8.0d
 			y: 1.5d
 			description: ["Spawns in Uranium Veins"]
 			id: "519BC8708D266F3E"
@@ -619,7 +620,7 @@
 		}
 		{
 			disable_toast: true
-			x: 7.5d
+			x: 8.0d
 			y: -4.0d
 			id: "39D7F8D91CFCE5E9"
 			tasks: [{
@@ -631,7 +632,7 @@
 		}
 		{
 			disable_toast: true
-			x: 7.5d
+			x: 8.0d
 			y: -5.0d
 			id: "02EA1B0663586E18"
 			tasks: [{
@@ -675,7 +676,7 @@
 		}
 		{
 			disable_toast: true
-			x: 7.5d
+			x: 8.0d
 			y: -6.0d
 			id: "2B17F5722136AB89"
 			tasks: [{
@@ -747,7 +748,7 @@
 		}
 		{
 			title: "Lump of Ore"
-			x: 8.5d
+			x: 9.0d
 			y: -6.0d
 			dependencies: ["2B17F5722136AB89"]
 			id: "4BF0862881DCDE10"
@@ -779,7 +780,7 @@
 			title: "Mars Veins"
 			icon: "beyond_earth:mars_globe"
 			disable_toast: true
-			x: 11.0d
+			x: 11.5d
 			y: -2.5d
 			shape: "gear"
 			id: "5D08F7CC8E6911A8"
@@ -791,7 +792,7 @@
 			}]
 		}
 		{
-			x: 11.0d
+			x: 11.5d
 			y: -1.5d
 			id: "6C7768C7EBE6829D"
 			tasks: [{
@@ -804,7 +805,7 @@
 			title: "Venus Veins"
 			icon: "beyond_earth:venus_globe"
 			disable_toast: true
-			x: 14.0d
+			x: 14.5d
 			y: -2.5d
 			shape: "gear"
 			id: "686ECAA2B2C4E112"
@@ -819,7 +820,7 @@
 			title: "Mercury Veins"
 			icon: "beyond_earth:mercury_globe"
 			disable_toast: true
-			x: 15.0d
+			x: 15.5d
 			y: -2.5d
 			shape: "gear"
 			id: "3BCE38C8A18BA068"
@@ -831,7 +832,7 @@
 			}]
 		}
 		{
-			x: 11.0d
+			x: 11.5d
 			y: -0.5d
 			id: "5EAB61F97C9CAC60"
 			tasks: [{
@@ -841,7 +842,7 @@
 			}]
 		}
 		{
-			x: 11.0d
+			x: 11.5d
 			y: 0.5d
 			id: "4232467D80CCB647"
 			tasks: [{
@@ -851,7 +852,7 @@
 			}]
 		}
 		{
-			x: 14.0d
+			x: 14.5d
 			y: -1.5d
 			id: "720C01B02B7DEE1E"
 			tasks: [{
@@ -864,7 +865,7 @@
 			title: "Glacio Veins"
 			icon: "beyond_earth:glacio_globe"
 			disable_toast: true
-			x: 17.5d
+			x: 18.0d
 			y: -2.5d
 			shape: "gear"
 			id: "107BBC9E6D7F35F7"
@@ -876,7 +877,7 @@
 			}]
 		}
 		{
-			x: 17.5d
+			x: 18.0d
 			y: -1.5d
 			id: "4B54A9EF6B62C762"
 			tasks: [{
@@ -886,7 +887,7 @@
 			}]
 		}
 		{
-			x: 15.0d
+			x: 15.5d
 			y: -1.5d
 			id: "35AF50BDCB517849"
 			tasks: [{
@@ -896,7 +897,7 @@
 			}]
 		}
 		{
-			x: 17.5d
+			x: 18.0d
 			y: -0.5d
 			id: "2B4BD77280C48DC3"
 			tasks: [{
@@ -906,7 +907,7 @@
 			}]
 		}
 		{
-			x: 14.0d
+			x: 14.5d
 			y: -0.5d
 			id: "2613429BF2F4ADD8"
 			tasks: [{
@@ -916,7 +917,7 @@
 			}]
 		}
 		{
-			x: 15.0d
+			x: 15.5d
 			y: -0.5d
 			id: "52CC70B8491FE20F"
 			tasks: [{
@@ -927,7 +928,7 @@
 		}
 		{
 			disable_toast: true
-			x: 11.0d
+			x: 11.5d
 			y: -6.0d
 			id: "0C3EB21BEA2D34C9"
 			tasks: [{
@@ -938,7 +939,7 @@
 		}
 		{
 			title: "Ore Deposit"
-			x: 12.0d
+			x: 12.5d
 			y: -6.0d
 			dependencies: ["0C3EB21BEA2D34C9"]
 			id: "46F59AB0DA404B1A"
@@ -957,7 +958,7 @@
 		}
 		{
 			disable_toast: true
-			x: 11.0d
+			x: 11.5d
 			y: -5.0d
 			id: "0DC400230EF6616D"
 			tasks: [{
@@ -968,7 +969,7 @@
 		}
 		{
 			disable_toast: true
-			x: 14.0d
+			x: 14.5d
 			y: -6.0d
 			id: "00859F9E64E640CB"
 			tasks: [{
@@ -979,7 +980,7 @@
 		}
 		{
 			title: "Leached Ore"
-			x: 15.0d
+			x: 15.5d
 			y: -6.0d
 			dependencies: ["00859F9E64E640CB"]
 			id: "547BBD0D7412471D"
@@ -998,7 +999,7 @@
 		}
 		{
 			disable_toast: true
-			x: 14.0d
+			x: 14.5d
 			y: -5.0d
 			id: "3BFFF4D5CAFC1A3D"
 			tasks: [{
@@ -1009,7 +1010,7 @@
 		}
 		{
 			disable_toast: true
-			x: 17.5d
+			x: 18.0d
 			y: -6.0d
 			id: "6EA1FAD3986DBE8D"
 			tasks: [{
@@ -1020,7 +1021,7 @@
 		}
 		{
 			title: "Ore Crystal"
-			x: 18.5d
+			x: 19.0d
 			y: -6.0d
 			dependencies: ["6EA1FAD3986DBE8D"]
 			id: "280FDDCAC78E2F8F"
@@ -1039,13 +1040,144 @@
 		}
 		{
 			disable_toast: true
-			x: 17.5d
+			x: 18.0d
 			y: -5.0d
 			id: "3C240ED6381FC643"
 			tasks: [{
 				id: "512A18E7DA252320"
 				type: "item"
 				item: "kubejs:adamantium_coil"
+			}]
+		}
+		{
+			x: 1.0d
+			y: -7.5d
+			id: "04E530CE0867A595"
+			tasks: [{
+				id: "506EDAE3B2AFDD04"
+				type: "item"
+				item: "create:encased_fan"
+			}]
+		}
+		{
+			title: "Washed Ores (2x)"
+			x: 2.0d
+			y: -8.5d
+			dependencies: [
+				"04E530CE0867A595"
+				"21F49B8439E00DAF"
+			]
+			id: "0F775E2996F34054"
+			tasks: [{
+				id: "3A631CE3C385AC39"
+				type: "item"
+				title: "Washed Ores"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "forge:ores/washed"
+					}
+				}
+			}]
+		}
+		{
+			x: 4.5d
+			y: -7.5d
+			id: "1C8AAD5840B436DD"
+			tasks: [{
+				id: "5CA015BFF9674404"
+				type: "item"
+				item: "naturesaura:crushing_catalyst"
+			}]
+		}
+		{
+			title: "Crumbled Ore (4x)"
+			x: 5.5d
+			y: -8.5d
+			dependencies: [
+				"1C8AAD5840B436DD"
+				"4DE6A9BF08BD38DD"
+				"0F775E2996F34054"
+			]
+			id: "29FBA2AD5DD2367B"
+			tasks: [{
+				id: "508882A8C6269E60"
+				type: "item"
+				title: "Any #forge:ores/crumbled"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "forge:ores/crumbled"
+					}
+				}
+			}]
+		}
+		{
+			x: 8.0d
+			y: -7.5d
+			id: "7E366CE8A15E4FFB"
+			tasks: [{
+				id: "7EA92BBE0BB37477"
+				type: "item"
+				item: "mbm2:mana_compressor"
+			}]
+		}
+		{
+			x: 11.5d
+			y: -7.5d
+			id: "6BA6707B8E0C5935"
+			tasks: [{
+				id: "4F908F9B2DD3C6D7"
+				type: "item"
+				item: "elementalcraft:pureinfuser"
+			}]
+		}
+		{
+			title: "Ore Brick (8x)"
+			x: 9.0d
+			y: -8.5d
+			dependencies: [
+				"4BF0862881DCDE10"
+				"29FBA2AD5DD2367B"
+				"7E366CE8A15E4FFB"
+			]
+			id: "5AF8241E1B970137"
+			tasks: [{
+				id: "153A6E730DF7B8CD"
+				type: "item"
+				title: "Ore Brick"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "forge:ores/brick"
+					}
+				}
+			}]
+		}
+		{
+			title: "Infused Ore (16x)"
+			x: 12.5d
+			y: -8.5d
+			dependencies: [
+				"5AF8241E1B970137"
+				"46F59AB0DA404B1A"
+				"6BA6707B8E0C5935"
+			]
+			id: "7713DFA9C3E8B80F"
+			tasks: [{
+				id: "244618105A97F400"
+				type: "item"
+				title: "Infused Ore"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "forge:ores/infused"
+					}
+				}
 			}]
 		}
 	]

@@ -81,7 +81,7 @@ onEvent('recipes', event => {
 		}).id(`mbm2:crafting/blast_bricks`)
   
   //Reinforced Blast Bricks
-	event.remove({id: 'immersiveengineering:crafting/blastbrick_reinforced'})
+	event.remove({output: 'immersiveengineering:blastbrick_reinforced'})
   event.recipes.createFilling('immersiveengineering:blastbrick_reinforced', [Fluid.of('tconstruct:molten_steel', 180), 'immersiveengineering:blastbrick']).id('mbm2:filling/blastbrick_reinforced')
  //event.shaped('immersiveengineering:blastbrick_reinforced', [
  //  'S',
@@ -283,7 +283,7 @@ event.shaped('immersiveengineering:workbench', [
   'C F'
     ], {
   T: '#forge:treated_wood_slab',
-  P: '#forge:plates/invar',
+  P: '#forge:platings/electrum',
   C: 'immersiveengineering:craftingtable',
   F: 'immersiveengineering:treated_fence'
     }).id('mbm2:immersiveengineering/workbench')

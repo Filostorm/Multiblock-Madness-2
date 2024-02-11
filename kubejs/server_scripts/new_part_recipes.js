@@ -525,6 +525,8 @@ onEvent('recipes', event => {
 
 	////////////////////// DUST //////////////////////
     if (Item.of(`#forge:dusts/${item.material}`) != null) {
+		global.tinkersMeltingPlain(event, item.fluid_id, 90, Item.of(`#forge:dusts/${item.material}`).toJson(), 800, 142, `mbm2:smeltery/melting/${item.material}_dust`)
+					
 		if (item.type == 'gem') {
 			event.recipes.createMilling([`#forge:dusts/${item.material}`], [`#forge:gems/${item.material}`]).id(`mbm2:create/crushing/${item.material}_${item.type}`)
 			event.recipes.immersiveengineeringCrusher(`#forge:dusts/${item.material}`, `#forge:gems/${item.material}`).id(`mbm2:immersive/crushing/${item.material}_${item.type}`)

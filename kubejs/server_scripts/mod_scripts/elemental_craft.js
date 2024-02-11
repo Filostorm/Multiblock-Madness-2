@@ -9,7 +9,7 @@ onEvent('tags.items', event => {
  
 onEvent('recipes', event => {
 	//Nether Wart
-	global.elementalcraftInfusion(event, Ingredient.of('#forge:mushrooms'), Item.of('minecraft:nether_wart'), 'fire', 1000, 'mbm:infusion/nether_wart')
+	global.elementalcraftInfusion(event, Ingredient.of('#forge:mushrooms'), Item.of('minecraft:nether_wart'), 'fire', 1000, 'mbm2:infusion/nether_wart')
 	
 	
 	event.replaceInput({mod: 'elementalcraft'}, '#forge:ingots/iron', '#forge:ingots/arcanite')

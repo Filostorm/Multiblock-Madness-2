@@ -64,7 +64,7 @@ event.shaped('tconstruct:scorched_faucet', [
 		B: 'naturesaura:furnace_heater',
 		P: 'tconstruct:scorched_brick',
 		G: Item.of('naturesaura:aura_bottle', '{stored_type:"naturesaura:nether"}'),
-		C: 'powah:capacitor_hardened',
+		C: 'create:precision_mechanism', //'powah:capacitor_hardened',
 		F: 'elementalcraft:firecrystal'
 	  })
 	  

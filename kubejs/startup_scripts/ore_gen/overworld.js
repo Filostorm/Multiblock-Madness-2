@@ -337,7 +337,7 @@ onEvent('worldgen.add', event => {
 						anchors.absolute(200)
 				)
 		ore.size = 25
-		ore.noSurface = netherSurfaceChance
+		ore.noSurface = 0
 		ore.worldgenLayer = "underground_ores"
 		ore.chance = 0
 		ore.biomes = {
@@ -613,6 +613,7 @@ onEvent('worldgen.add', event => {
 
 	// Inserted Inert Crystal to Arcanite Veins
 	event.addOre((ore) => {
+		
 		ore.id = 'kubejs:inert_crystal_ore'
 
 		ore.addTarget('kubejs:arcanite_ore', 'elementalcraft:inert_crystal_ore')
@@ -620,6 +621,7 @@ onEvent('worldgen.add', event => {
 		global.stoneTypes.forEach((type) => {
 			if (Item.of(`excavated_variants:${type.material}_arcanite_ore`) != null) {
 				ore.addTarget(`excavated_variants:${type.material}_arcanite_ore`, `excavated_variants:${type.material}_inert_crystal_ore`)
+				console.log('adding '+ `excavated_variants:${type.material}_arcanite_ore` + 'to: ' +Item.of(`excavated_variants:${type.material}_inert_crystal_ore`))
 			}
 		})
 

@@ -23,7 +23,7 @@ event.shaped('compactcrafting:base', [
 	'EEE'
   ], {
 B: 'minecraft:lightning_rod',
-C: 'minecraft:diamond',
+C: ['minecraft:diamond', 'ars_nouveau:source_gem'],
 D: 'ars_nouveau:arcane_stone',
 E: '#forge:plates/brass'
   }).id("mbm2:base")

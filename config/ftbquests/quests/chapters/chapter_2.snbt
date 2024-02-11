@@ -170,7 +170,7 @@
 			}]
 		}
 		{
-			x: 1.5d
+			x: 1.0d
 			y: 12.5d
 			dependencies: ["273B98D3C35D7356"]
 			id: "1AE07B2CC8D8B725"
@@ -358,6 +358,7 @@
 			x: -8.5d
 			y: 12.0d
 			subtitle: "Better Drawers?"
+			description: ["These store a high amount of a single item, with the Compacting Drawer allowing you to I/O things like blocks, ingots, and nuggets at the same time"]
 			dependencies: ["5FD77AB0F43882B8"]
 			id: "09785A45FBC8D26F"
 			tasks: [{
@@ -745,7 +746,7 @@
 		}
 		{
 			title: "Primitive Rotational Power"
-			x: 1.5d
+			x: 1.0d
 			y: 10.0d
 			dependencies: ["360253CDEF94C130"]
 			id: "273B98D3C35D7356"
@@ -773,7 +774,7 @@
 			y: 11.0d
 			shape: "gear"
 			description: [
-				"You'll need plenty of Brass to upgrade your Create parts, while Bronze is used in Thermal, and Invar is mostly used in multiblocks."
+				"You'll need plenty of Brass to upgrade your Create parts, while Bronze is used in Thermal and some other recipes."
 				""
 				"Nickel and Zinc are most commonly found in the Nether."
 			]
@@ -859,14 +860,17 @@
 		{
 			title: "The Sludge Sifter"
 			icon: "mbm2:sludge_sifter"
-			x: 7.5d
-			y: 6.0d
+			x: 6.0d
+			y: 5.5d
 			subtitle: "Some passive resources"
 			description: [
 				"The Barrel can replace any of the scaffolding, while the tank can be extended upwards to hold more water."
 				"You'll need to pipe water into the tank!"
 			]
-			dependencies: ["556CB869A6592D68"]
+			dependencies: [
+				"556CB869A6592D68"
+				"391E4F9DA1A3D71B"
+			]
 			id: "4B132B0884AC63AC"
 			tasks: [
 				{
@@ -919,7 +923,7 @@
 		}
 		{
 			title: "Fluid Transfer"
-			x: 1.5d
+			x: 1.0d
 			y: 8.0d
 			description: ["Most fluid handling with Create needs to by done with pipes, rather then buckets."]
 			dependencies: ["273B98D3C35D7356"]
@@ -944,7 +948,7 @@
 		}
 		{
 			icon: "create:hose_pulley"
-			x: 2.5d
+			x: 2.0d
 			y: 6.5d
 			subtitle: "Infinite Water/Lava"
 			description: ["Used to drain bodies of liquid."]
@@ -973,8 +977,8 @@
 		}
 		{
 			title: "Better Rotational Power"
-			x: 6.0d
-			y: 5.5d
+			x: 7.5d
+			y: 6.0d
 			subtitle: "Use Ponder!"
 			dependencies: ["556CB869A6592D68"]
 			id: "6C5CC546B5799587"
@@ -998,7 +1002,7 @@
 			}]
 		}
 		{
-			x: 1.0d
+			x: 0.5d
 			y: 6.5d
 			subtitle: "This can also be used to automate Treated Wood."
 			description: ["You won't be able to fill the Spout with buckets, so you'll need to rig up the pipes to fill it for you."]
@@ -1058,8 +1062,8 @@
 					tag: {
 						BlockEntityTag: {
 							TankInv: [{
-								Tank: 0b
 								FluidName: "minecraft:empty"
+								Tank: 0b
 								Capacity: 32000
 								Amount: 0
 							}]
@@ -1199,7 +1203,10 @@
 			x: 8.0d
 			y: 7.5d
 			description: ["You can attach an augment for your Drill by placing it on the table, then adding the augment of choice."]
-			dependencies: ["556CB869A6592D68"]
+			dependencies: [
+				"556CB869A6592D68"
+				"143FA2A8FD6E4E10"
+			]
 			id: "02DE8C27A70C222A"
 			tasks: [{
 				id: "53F026E2743E3876"

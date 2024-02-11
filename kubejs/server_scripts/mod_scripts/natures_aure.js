@@ -29,7 +29,7 @@ onEvent('tags.items', event => {
 
 
 onEvent('recipes', event => {
-	event.remove({id: 'naturesaura:gold_fiber'})
+	//event.remove({id: 'naturesaura:gold_fiber'})
   	event.shaped('4x naturesaura:gold_fiber', [
 		'GEG',
 		'ELE',
@@ -37,8 +37,17 @@ onEvent('recipes', event => {
   	], {
 		G: 'minecraft:grass',
 		L: '#minecraft:leaves',
-		E: '#forge:nuggets/electrum'
+		E: '#forge:ingots/electrum'
   	}).id('naturesaura:gold_fiber')
+  	event.shaped('naturesaura:gold_fiber', [
+		'GEG',
+		'ELE',
+		'GEG'
+  	], {
+		G: 'minecraft:grass',
+		L: '#minecraft:leaves',
+		E: 'naturesaura:gold_powder'
+  	}).id('mbm2:gold_fiber')
 
 	//Wood Stand
 	event.remove({id: 'naturesaura:wood_stand'})

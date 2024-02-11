@@ -887,10 +887,10 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 					event.recipes.multiblocked.multiblock('sorter_mk1')
 						.inputItem(`8x #forge:ores/crushed/${item.material}`)
 						.inputStress(64)
-						.outputItem(`2x #forge:ores/crushed/${item.components[0]}`)
+						.outputItem(`3x #forge:ores/crushed/${item.components[0]}`)
 						.outputItem(`2x #forge:ores/crushed/${item.components[1]}`)
 						.outputItem(`#forge:ores/crushed/${item.components[2]}`)
-						.outputItem('3x thermal:slag')
+						.outputItem('2x thermal:slag')
 						.duration(200)
 
 					//Sorting E grade at tier 1
@@ -1104,10 +1104,30 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 
 		}
 	})
-	  
-
-
 });
+
+
+var elementalMobDrops = [
+	{
+	  'element': 'fire',
+	  'drops': ['gunpowder', 'magma_cream', 'blaze_rod'],
+	},
+	{
+	  'element': 'water',
+	  'drops': ['slime_ball', 'prismarine_shard', 'prismarine_crystals'],
+	},
+	{
+	  'element': 'air',
+	  'drops': ['spider_eye', 'phantom_membrane', 'ender_pearl'],
+	},
+	{
+	  'element': 'earth',
+	  'drops': ['rotten_flesh', 'bone', 'wither_skeleton_skull'],
+	},
+]
+
+
+
 
 onEvent("lootjs", (event) => {
 	event.enableLogging();
@@ -1118,7 +1138,7 @@ onEvent("lootjs", (event) => {
 					pool.applyOreBonus("minecraft:fortune");
 			});
 		global.newMaterialParts.forEach((item) => {
-			if (item.ore) {
+			if (item.ore && item.material != 'arcanite') {
 				console.log('adding ore drops for: ' + item.material)
 				////////////ORE DROPS//////////////////
 				event.addBlockLootModifier(`#forge:ores/${item.material}`)
@@ -1133,10 +1153,9 @@ onEvent("lootjs", (event) => {
 						} else if (item.type == 'element') {
 							//Element
 							pool.addWeightedLoot([1, 3], [
-								Item.of(`elementalcraft:${item.material}_shard`).withChance(55),
-								Item.of(`elementalcraft:powerful_${item.material}_shard`).withChance(30),
-								Item.of(`elementalcraft:${item.material}crystal`).withChance(12),
-								Item.of(`elementalcraft:crude_${item.material}_gem`).withChance(3)
+								Item.of(`elementalcraft:${item.material}_shard`).withChance(70),
+								//Item.of(`elementalcraft:powerful_${item.material}_shard`).withChance(30),
+								//Item.of(`elementalcraft:${item.material}crystal`).withChance(12),
 							])
 						} else if (item.type == 'dust') {
 							//Dust
@@ -1194,12 +1213,50 @@ onEvent("lootjs", (event) => {
 					} else if (item.type == 'dust') {
 						event.addBlockLootModifier(`kubejs:${item.material}_ore_sample`)
        						.replaceLoot(`kubejs:${item.material}_ore_sample`, `#forge:dusts/${item.material}`);
-					} else {
+					} else if (item.type != 'element') {
 						event.addBlockLootModifier(`kubejs:${item.material}_ore_sample`)
        						.replaceLoot(`kubejs:${item.material}_ore_sample`, `#forge:raw_materials/${item.material}`);
 					}
 				}
+				//Elements
+				if (item.type == 'element') {
+					elementalMobDrops.forEach(element => {
+						if(element.element == item.material) {
+							console.log('adding mob drops for: ' + item.material)
+
+							event.addBlockLootModifier(`#forge:ores/${item.material}`)
+								.pool((pool) => {
+									pool.addWeightedLoot([0,1], [
+										Item.of(element.drops[0]).withChance(30),
+										Item.of(element.drops[1]).withChance(20),
+										Item.of(element.drops[2]).withChance(10)
+									])
+								})
+						}
+					});
+				}
+
 		})
+		//Arcanite
+		console.log('adding drops for: arcanite')
+			event.addBlockLootModifier('#forge:ores/arcanite')
+				.pool((pool) => {
+					pool.addWeightedLoot([
+						Item.of(`#forge:raw_materials/arcanite`).withChance(70),
+						Item.of('elementalcraft:inert_crystal').withChance(25),
+						Item.of('forbidden_arcanus:arcane_crystal').withChance(5)
+					])
+					pool.applyOreBonus("minecraft:fortune");
+				})
+				.apply((ctx) => {
+					let player = ctx.player;
+					if (!player) return;
+					if (ItemFilter.hasEnchantment("minecraft:silk_touch").test(player.mainHandItem)) {
+						ctx.removeLoot(Ingredient.getAll().filter(Ingredient.of(`#forge:ores/arcanite`).not()))
+					} else {
+						ctx.removeLoot('#forge:ores/arcanite')
+					}
+				})
 
 
 });

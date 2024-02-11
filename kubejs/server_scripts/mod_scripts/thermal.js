@@ -274,6 +274,42 @@ event.smelting('kubejs:quicksilver', 'thermal:cinnabar')
 //Hive Hopper recipe
 event.shaped('thermal:device_hive_extractor', [' A ','BCB',' D '], {A: 'littlelogistics:fluid_hopper',B: 'create:cogwheel',C: 'create:andesite_casing',D: 'engineersdecor:factory_hopper'}).id(`mbm2:hive_hopper`)
 
-	
+//Add back in the Pyrolyzer
+event.custom({
+	"type": "thermal:pyrolyzer",
+	"ingredient": {
+	  "tag": "minecraft:coals"
+	},
+	"result": [
+	  {
+		"item": "thermal:coal_coke"
+	  },
+	  {
+		"item": "thermal:tar",
+		"chance": 0.25
+	  },
+	  {
+		"fluid": "immersiveengineering:creosote",
+		"amount": 250
+	  }
+	],
+	"experience": 0.15
+  }).id('mbm2:pyrolyzer/coal')
+  event.custom({
+	"type": "thermal:pyrolyzer",
+	"ingredient": {
+	  "tag": "minecraft:logs"
+	},
+	"result": [
+	  {
+		"item": "minecraft:charcoal"
+	  },
+	  {
+		"fluid": "immersiveengineering:creosote",
+		"amount": 125
+	  }
+	],
+	"experience": 0.15
+  }).id('mbm2:pyrolyzer/logs')
 });
 

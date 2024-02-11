@@ -9,8 +9,8 @@
 	default_hide_dependency_lines: false
 	quests: [
 		{
-			x: 14.0d
-			y: -1.5d
+			x: -2.0d
+			y: 0.5d
 			dependencies: [
 				"09B9B831214F6072"
 				"43F8546BD8107D1C"
@@ -23,8 +23,8 @@
 			}]
 		}
 		{
-			x: 13.0d
-			y: -2.5d
+			x: -3.0d
+			y: -0.5d
 			description: ["Place the molten plastic in world to have it solidify into a Plastic Sheet, or place inside a chest that has been cooled via Heat Frame."]
 			dependencies: ["444E392EA0BB8807"]
 			dependency_requirement: "one_completed"
@@ -43,8 +43,8 @@
 			]
 		}
 		{
-			x: 14.5d
-			y: -2.5d
+			x: -1.5d
+			y: -0.5d
 			description: ["You can use Bio Diesel or LPG (from Refining Oil) to make Plastic."]
 			dependencies: [
 				"2F38722F9A7D89CC"
@@ -59,8 +59,8 @@
 		}
 		{
 			disable_toast: true
-			x: 10.5d
-			y: 0.0d
+			x: -5.5d
+			y: 2.0d
 			shape: "circle"
 			dependencies: ["75D4FF56D8BBF34A"]
 			id: "43F8546BD8107D1C"
@@ -71,8 +71,8 @@
 			}]
 		}
 		{
-			x: 12.0d
-			y: -3.5d
+			x: -5.0d
+			y: -2.5d
 			dependencies: [
 				"2F38722F9A7D89CC"
 				"09B9B831214F6072"
@@ -92,8 +92,8 @@
 			]
 		}
 		{
-			x: 11.0d
-			y: -2.5d
+			x: -5.0d
+			y: -0.5d
 			dependencies: [
 				"02285A69B0A09A44"
 				"09B9B831214F6072"
@@ -107,8 +107,8 @@
 		}
 		{
 			title: "Better Circuits"
-			x: 11.0d
-			y: -4.5d
+			x: -4.0d
+			y: -1.5d
 			dependencies: [
 				"72DC15C390A992F6"
 				"01D41BC5B499F063"
@@ -139,8 +139,8 @@
 				Count: 1b
 				tag: { }
 			}
-			x: 16.0d
-			y: 0.0d
+			x: 0.0d
+			y: 2.0d
 			shape: "hexagon"
 			description: [
 				"After placing the Rocket on the 3x3 Launch Pad, shift right click to open the gui for fueling."
@@ -174,8 +174,8 @@
 			]
 		}
 		{
-			x: 14.0d
-			y: 0.0d
+			x: -2.0d
+			y: 2.0d
 			dependencies: ["12523E152182734F"]
 			id: "70A8DBCE5978F640"
 			tasks: [{
@@ -186,8 +186,8 @@
 		}
 		{
 			title: "Space Suit"
-			x: 14.0d
-			y: 1.5d
+			x: -2.0d
+			y: 3.5d
 			description: ["You'll need to fill your suit with Oxygen before heading to space."]
 			dependencies: ["4056DE989F8A8E98"]
 			id: "2DFADAC92EFECDFD"
@@ -240,8 +240,8 @@
 			]
 		}
 		{
-			x: 16.0d
-			y: -1.5d
+			x: 0.0d
+			y: 0.5d
 			dependencies: ["591233C3DDD3FE04"]
 			id: "5E914AEBF8D378B9"
 			tasks: [{
@@ -252,8 +252,8 @@
 			}]
 		}
 		{
-			x: 16.0d
-			y: -3.0d
+			x: 0.0d
+			y: -1.0d
 			description: ["Stacking up to 4 Refinery Outputs on the top (and insulating them), will allow you to get the maximum amount of products from your Crude Oil."]
 			min_required_dependencies: 3
 			dependencies: [
@@ -279,8 +279,8 @@
 		}
 		{
 			icon: "mbm2:ebf"
-			x: 16.0d
-			y: 2.0d
+			x: 0.0d
+			y: 4.0d
 			dependencies: [
 				"75D4FF56D8BBF34A"
 				"43F8546BD8107D1C"
@@ -341,8 +341,8 @@
 		}
 		{
 			title: "Tier 4 Metals"
-			x: 18.5d
-			y: 2.0d
+			x: 2.5d
+			y: 4.0d
 			shape: "gear"
 			dependencies: [
 				"06E62336B0646B17"
@@ -366,8 +366,8 @@
 		}
 		{
 			icon: "mbm2:air_collector_mk1"
-			x: 12.5d
-			y: 0.0d
+			x: -3.5d
+			y: 2.0d
 			description: ["You'll need to craft up some Pressurized Aluminum Alloy in the Pressure Chamber for this multiblock."]
 			dependencies: ["43F8546BD8107D1C"]
 			id: "12523E152182734F"
@@ -420,8 +420,8 @@
 			]
 		}
 		{
-			x: 16.0d
-			y: -5.0d
+			x: 0.0d
+			y: -3.0d
 			shape: "circle"
 			dependencies: ["75D4FF56D8BBF34A"]
 			id: "2F6A6631A7BAAE8E"
@@ -433,8 +433,8 @@
 		}
 		{
 			icon: "mbm2:flotation"
-			x: 18.5d
-			y: 0.0d
+			x: 2.5d
+			y: 2.0d
 			description: ["You'll also need to cover the Cog Blocks with water."]
 			dependencies: ["63D72477BB0F83A4"]
 			dependency_requirement: "one_completed"
@@ -492,8 +492,8 @@
 		}
 		{
 			title: "Purifed Water"
-			x: 18.0d
-			y: -1.5d
+			x: 2.0d
+			y: 0.5d
 			description: ["If used in the Flotation Tank, you'll be able to get some byproducts!"]
 			dependencies: [
 				"02E4BADB1F8BEB33"
@@ -522,8 +522,8 @@
 		}
 		{
 			icon: "mbm2:sorter_mk2"
-			x: 19.5d
-			y: 3.5d
+			x: 3.5d
+			y: 5.5d
 			dependencies: ["13C4C068E2EB695E"]
 			id: "67A63CB65FEDF5AC"
 			tasks: [
@@ -574,46 +574,9 @@
 			]
 		}
 		{
-			title: "Pressure Chamber"
-			x: 11.0d
-			y: -7.5d
-			description: [
-				"You will need to pipe items in and out of the Pressure Chamber for crafting."
-				""
-				"The 4 slots surrounded by blue are for Upgrades."
-			]
-			dependencies: ["02285A69B0A09A44"]
-			id: "14C449A154C78D7E"
-			tasks: [
-				{
-					id: "35754DEDE8BBF9A5"
-					type: "item"
-					item: "pneumaticcraft:pressure_chamber_wall"
-					count: 21L
-				}
-				{
-					id: "5BBD7F188B0087D2"
-					type: "item"
-					item: "pneumaticcraft:pressure_chamber_interface"
-					count: 2L
-				}
-				{
-					id: "34E8E7C805313302"
-					type: "item"
-					item: "pneumaticcraft:pressure_chamber_valve"
-				}
-				{
-					id: "76A294980B2DAEC3"
-					type: "item"
-					item: "pneumaticcraft:pressure_chamber_glass"
-					count: 2L
-				}
-			]
-		}
-		{
 			title: "Compressing Air"
-			x: 11.0d
-			y: -6.0d
+			x: -5.0d
+			y: -4.0d
 			description: ["Attach the Safety Tube Module to keep your system from exploding if pressure gets too high."]
 			dependencies: ["418AC2EB203010CA"]
 			id: "02285A69B0A09A44"
@@ -644,8 +607,8 @@
 		}
 		{
 			title: "Using Heat"
-			x: 13.5d
-			y: -5.0d
+			x: -2.5d
+			y: -3.0d
 			description: [
 				"The Vortex Tube will passively cool the blue side while heating the red side. If supplied Air Pressure, it will enhance this function significantly. Additionally, by adding a Heat Sink to the hot side, the cold side will be able to go much lower."
 				""
@@ -678,35 +641,9 @@
 			}]
 		}
 		{
-			title: "More of that strange oil"
-			x: 13.5d
-			y: -6.5d
-			subtitle: "Its probably nothing"
-			description: ["Use the Sensor on the ground to find an oil deposit, which you can then drill up to the surface with the Gas Lift."]
-			dependencies: ["02285A69B0A09A44"]
-			id: "598DE255BBB061C3"
-			tasks: [
-				{
-					id: "1E0C3A1641C88775"
-					type: "item"
-					item: "pneumaticcraft:seismic_sensor"
-				}
-				{
-					id: "415556D38061EFBB"
-					type: "item"
-					item: "pneumaticcraft:gas_lift"
-				}
-				{
-					id: "629CEA1B669EDAB8"
-					type: "item"
-					item: "pneumaticcraft:drill_pipe"
-				}
-			]
-		}
-		{
 			title: "Explosions!"
-			x: 9.5d
-			y: -6.0d
+			x: -6.5d
+			y: -4.0d
 			dependencies: ["35C16B4B5D8C7148"]
 			id: "418AC2EB203010CA"
 			tasks: [
@@ -723,8 +660,8 @@
 			]
 		}
 		{
-			x: 9.0d
-			y: -3.0d
+			x: -7.0d
+			y: -1.0d
 			description: ["Running out of channels yet? Each ME Controller can handle up to 64 Channels per side! (Normally 32)"]
 			dependencies: [
 				"43F8546BD8107D1C"
@@ -745,8 +682,8 @@
 			}]
 		}
 		{
-			x: 21.5d
-			y: -6.0d
+			x: 5.5d
+			y: -4.0d
 			dependencies: [
 				"13D02E1465C8913E"
 				"098CAF7E91266CDC"
@@ -759,8 +696,8 @@
 			}]
 		}
 		{
-			x: 20.0d
-			y: -5.0d
+			x: 4.0d
+			y: -3.0d
 			dependencies: ["65E0754BC5138500"]
 			id: "6150C63B77F8E6D8"
 			tasks: [{
@@ -770,8 +707,8 @@
 			}]
 		}
 		{
-			x: 19.5d
-			y: -3.5d
+			x: 3.5d
+			y: -1.5d
 			dependencies: ["6150C63B77F8E6D8"]
 			id: "78B61F638A702484"
 			tasks: [{
@@ -781,8 +718,8 @@
 			}]
 		}
 		{
-			x: 20.5d
-			y: -3.5d
+			x: 4.5d
+			y: -1.5d
 			dependencies: ["6150C63B77F8E6D8"]
 			id: "207551C54C784815"
 			tasks: [{
@@ -792,8 +729,8 @@
 			}]
 		}
 		{
-			x: 20.5d
-			y: -2.0d
+			x: 4.5d
+			y: 0.0d
 			description: ["You'll need the Wand of the Forest to link this to the Mana Pool, in order for the flower's mana to bo collected."]
 			dependencies: [
 				"207551C54C784815"
@@ -807,8 +744,8 @@
 			}]
 		}
 		{
-			x: 19.5d
-			y: -2.0d
+			x: 3.5d
+			y: 0.0d
 			dependencies: ["78B61F638A702484"]
 			id: "24AB6B3E3C29F3CD"
 			tasks: [{
@@ -819,8 +756,8 @@
 		}
 		{
 			title: "Wand of the Forest"
-			x: 21.5d
-			y: -3.5d
+			x: 5.5d
+			y: -1.5d
 			dependencies: ["207551C54C784815"]
 			id: "60255993C8EFE1D2"
 			tasks: [{
@@ -830,35 +767,17 @@
 					id: "botania:twig_wand"
 					Count: 1b
 					tag: {
-						color2: 0
 						color1: 0
+						color2: 0
 					}
 				}
 				match_nbt: false
 			}]
 		}
 		{
-			title: "Mystical Flowers"
-			x: 20.0d
-			y: -7.0d
-			id: "13D02E1465C8913E"
-			tasks: [{
-				id: "0D788CD792C63848"
-				type: "item"
-				title: "Any Mystical Flowers"
-				item: {
-					id: "itemfilters:tag"
-					Count: 1b
-					tag: {
-						value: "botania:mystical_flowers"
-					}
-				}
-			}]
-		}
-		{
 			title: "Mana Infused Items"
-			x: 20.5d
-			y: -0.5d
+			x: 4.5d
+			y: 1.5d
 			dependencies: [
 				"24AB6B3E3C29F3CD"
 				"343E2A3C2342E08A"
@@ -880,8 +799,8 @@
 		}
 		{
 			title: "First Tier Generating Flowers"
-			x: 21.5d
-			y: -2.0d
+			x: 5.5d
+			y: 0.0d
 			dependencies: ["65E0754BC5138500"]
 			id: "469495A371AA465F"
 			tasks: [
@@ -898,8 +817,8 @@
 			]
 		}
 		{
-			x: 20.5d
-			y: 1.0d
+			x: 4.5d
+			y: 3.0d
 			dependencies: ["26C90FCCFBBEBD70"]
 			id: "3BB743C226858D7A"
 			tasks: [{
@@ -911,8 +830,8 @@
 		{
 			title: "Mana Compressor (8x Ore Refining)"
 			icon: "mbm2:mana_compressor"
-			x: 20.5d
-			y: 2.5d
+			x: 4.5d
+			y: 4.5d
 			dependencies: [
 				"13C4C068E2EB695E"
 				"3BB743C226858D7A"
@@ -956,6 +875,87 @@
 					id: "3836EAD2AFD6FF25"
 					type: "item"
 					item: "multiblocked:item_output"
+				}
+			]
+		}
+		{
+			title: "Mystical Flowers"
+			x: 4.0d
+			y: -5.0d
+			id: "13D02E1465C8913E"
+			tasks: [{
+				id: "0D788CD792C63848"
+				type: "item"
+				title: "Any Mystical Flowers"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "botania:mystical_flowers"
+					}
+				}
+			}]
+		}
+		{
+			title: "More of that strange oil"
+			x: -2.5d
+			y: -4.5d
+			subtitle: "Its probably nothing"
+			description: ["Use the Sensor on the ground to find an oil deposit, which you can then drill up to the surface with the Gas Lift."]
+			dependencies: ["02285A69B0A09A44"]
+			id: "598DE255BBB061C3"
+			tasks: [
+				{
+					id: "1E0C3A1641C88775"
+					type: "item"
+					item: "pneumaticcraft:seismic_sensor"
+				}
+				{
+					id: "415556D38061EFBB"
+					type: "item"
+					item: "pneumaticcraft:gas_lift"
+				}
+				{
+					id: "629CEA1B669EDAB8"
+					type: "item"
+					item: "pneumaticcraft:drill_pipe"
+				}
+			]
+		}
+		{
+			title: "Pressure Chamber"
+			x: -5.0d
+			y: -5.5d
+			description: [
+				"You will need to pipe items in and out of the Pressure Chamber for crafting."
+				""
+				"The 4 slots surrounded by blue are for Upgrades."
+			]
+			dependencies: ["02285A69B0A09A44"]
+			id: "14C449A154C78D7E"
+			tasks: [
+				{
+					id: "35754DEDE8BBF9A5"
+					type: "item"
+					item: "pneumaticcraft:pressure_chamber_wall"
+					count: 21L
+				}
+				{
+					id: "5BBD7F188B0087D2"
+					type: "item"
+					item: "pneumaticcraft:pressure_chamber_interface"
+					count: 2L
+				}
+				{
+					id: "34E8E7C805313302"
+					type: "item"
+					item: "pneumaticcraft:pressure_chamber_valve"
+				}
+				{
+					id: "76A294980B2DAEC3"
+					type: "item"
+					item: "pneumaticcraft:pressure_chamber_glass"
+					count: 2L
 				}
 			]
 		}

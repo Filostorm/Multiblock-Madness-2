@@ -9,24 +9,6 @@
 	default_hide_dependency_lines: false
 	quests: [
 		{
-			title: "Imbument Chamber"
-			x: 11.5d
-			y: 6.5d
-			description: ["Auxiliary items are not comsumed for crafting."]
-			dependencies: ["4187F705E4356142"]
-			id: "488E2999C6BE6591"
-			tasks: [{
-				id: "2124621A623FF8EA"
-				type: "item"
-				item: "ars_nouveau:imbuement_chamber"
-			}]
-			rewards: [{
-				id: "38F12EEED5D870B4"
-				type: "item"
-				item: "ars_nouveau:arcane_pedestal"
-			}]
-		}
-		{
 			title: "The Brass Age"
 			disable_toast: true
 			x: 0.5d
@@ -77,19 +59,8 @@
 			}]
 		}
 		{
-			x: 4.0d
+			x: 7.0d
 			y: 3.0d
-			dependencies: ["50E9DDE83C23EE6E"]
-			id: "39F16774468E59FE"
-			tasks: [{
-				id: "7B91CDE325666152"
-				type: "item"
-				item: "powah:capacitor_basic"
-			}]
-		}
-		{
-			x: 4.0d
-			y: 4.5d
 			description: ["Attaching a large Cog to the top allows you to configure the speed of the attached system."]
 			dependencies: ["1E77F20F773CA050"]
 			id: "7D69D2DC60D8892C"
@@ -110,6 +81,7 @@
 			y: 0.0d
 			description: ["Brass Tunnels/Funnels have a filter spot that can be clicked with an item to allow for simple whitelisting, or with a configured Filter for more complex options."]
 			dependencies: ["1A4ED8C40CDFBBE5"]
+			progression_mode: "flexible"
 			id: "40255F14A4599270"
 			tasks: [
 				{
@@ -131,6 +103,11 @@
 						tag: { }
 					}
 				}
+				{
+					id: "6131E9E367CD24BB"
+					type: "item"
+					item: "create:filter"
+				}
 			]
 			rewards: [{
 				id: "4A0D81B9053BFD94"
@@ -139,8 +116,9 @@
 			}]
 		}
 		{
-			x: 4.0d
-			y: 6.0d
+			x: 7.0d
+			y: 4.5d
+			description: ["Very good at hand feeding Blaze Burners."]
 			dependencies: ["1E77F20F773CA050"]
 			id: "2D4B1C82A8FC7E2E"
 			tasks: [{
@@ -155,8 +133,9 @@
 			}]
 		}
 		{
-			x: 2.5d
-			y: 4.5d
+			x: 5.5d
+			y: 3.0d
+			description: ["You'll need a lot of these"]
 			dependencies: ["50E9DDE83C23EE6E"]
 			id: "1E77F20F773CA050"
 			tasks: [{
@@ -312,9 +291,11 @@
 		}
 		{
 			title: "Ritual of the Forest"
+			icon: "naturesaura:wood_stand"
 			x: 14.5d
 			y: 1.5d
 			dependencies: ["4187F705E4356142"]
+			min_required_tasks: 2
 			id: "6AD50F15723B7927"
 			tasks: [
 				{
@@ -328,6 +309,10 @@
 					type: "item"
 					item: "naturesaura:wood_stand"
 					count: 8L
+				}
+				{
+					id: "274EAC79CF00F4FB"
+					type: "checkmark"
 				}
 			]
 		}
@@ -347,7 +332,7 @@
 			title: "Easy(er) Alloys"
 			x: 9.5d
 			y: 0.0d
-			shape: "circle"
+			shape: "rsquare"
 			description: ["Build in a 4x4, then hammer the front with the Engineers Hammer"]
 			dependencies: ["46DC0D67FE1C4C67"]
 			id: "2A97F4CE430A26BC"
@@ -363,37 +348,6 @@
 				exclude_from_claim_all: true
 				table_id: 2582656620646881183L
 			}]
-		}
-		{
-			title: "Basic Power Generation"
-			x: 5.5d
-			y: 3.0d
-			dependencies: ["39F16774468E59FE"]
-			id: "47910242F4DE9220"
-			tasks: [
-				{
-					id: "1895020E0D74216E"
-					type: "item"
-					title: "Any #powah:generator/basic"
-					item: {
-						id: "itemfilters:tag"
-						Count: 1b
-						tag: {
-							value: "powah:generator/basic"
-						}
-					}
-				}
-				{
-					id: "3A0881DA9C104671"
-					type: "item"
-					item: "powah:energy_cable_basic"
-				}
-				{
-					id: "13DC6700EE416D18"
-					type: "item"
-					item: "powah:energy_cell_basic"
-				}
-			]
 		}
 		{
 			x: 7.0d
@@ -416,45 +370,6 @@
 				type: "random"
 				exclude_from_claim_all: true
 				table_id: 2582656620646881183L
-			}]
-		}
-		{
-			title: "Tier 2 Powah"
-			x: 7.0d
-			y: 4.160714285714292d
-			description: ["Place the Rods near the Orb and fill with crafting materials."]
-			dependencies: [
-				"47910242F4DE9220"
-				"20E99BAA6C9A4913"
-			]
-			id: "37610C524354F5F2"
-			tasks: [
-				{
-					id: "3A2BB9386F55B5BC"
-					type: "item"
-					item: "powah:energizing_orb"
-				}
-				{
-					id: "1B08B163ECFB54FC"
-					type: "item"
-					item: "powah:energizing_rod_basic"
-				}
-				{
-					id: "1B4BF19412D41125"
-					type: "item"
-					item: "powah:steel_energized"
-				}
-			]
-			rewards: [{
-				id: "2033F9214A46820C"
-				type: "item"
-				item: {
-					id: "powah:wrench"
-					Count: 1b
-					tag: {
-						PowahWrenchNBT: { }
-					}
-				}
 			}]
 		}
 		{
@@ -574,6 +489,7 @@
 				"72C360D92C26799F"
 				"46DC0D67FE1C4C67"
 				"4C7F486D0CCC38E0"
+				"1E77F20F773CA050"
 			]
 			size: 1.5d
 			id: "729CD1DC498A9130"
@@ -634,6 +550,7 @@
 			icon: "mbm2:sorter_mk1"
 			x: 4.0d
 			y: 0.0d
+			subtitle: "The Imbument Chamber is required for Mechanical Alloy"
 			description: ["This is required to extract higher tier Ores from Compound Ore."]
 			dependencies: ["51537052A03715D7"]
 			id: "23C9B04C7E4C834F"
@@ -658,7 +575,7 @@
 				{
 					id: "155E46A0A6D296A0"
 					type: "item"
-					item: "kubejs:invar_cog_block"
+					item: "kubejs:tier_1_mechanical_alloy_cog_block"
 					count: 3L
 				}
 				{
@@ -686,7 +603,7 @@
 		}
 		{
 			icon: "createoreexcavation:drilling_machine"
-			x: 5.5d
+			x: 4.0d
 			y: 4.5d
 			description: ["You'll probably need to set up a Steam Engine to generate enough Rotation to power the drill."]
 			dependencies: ["1E77F20F773CA050"]
@@ -731,8 +648,8 @@
 		{
 			title: "Steam Engines!"
 			icon: "create:steam_engine"
-			x: 2.5d
-			y: 6.0d
+			x: 5.5d
+			y: 4.5d
 			description: [
 				"Once the Steam Engine has been placed, it no longer stores water. Rather it has a flow meter, shown while looking with the Goggles. You'll need one bar of water for each Steam Engine you will be using."
 				""
@@ -766,8 +683,14 @@
 			}]
 		}
 		{
-			title: "Wood Farm"
-			icon: "minecraft:oak_sapling"
+			title: "Farming Tools"
+			icon: {
+				id: "create:super_glue"
+				Count: 1b
+				tag: {
+					Damage: 0
+				}
+			}
 			x: 1.0d
 			y: 4.0d
 			dependencies: ["50E9DDE83C23EE6E"]
@@ -810,16 +733,6 @@
 					}
 				}
 				{
-					id: "4A77864EFAC72310"
-					type: "item"
-					item: "create:mechanical_saw"
-				}
-				{
-					id: "769F5D2A04363CFA"
-					type: "item"
-					item: "create:deployer"
-				}
-				{
 					id: "0C63F343C9866A93"
 					type: "item"
 					item: "create:portable_storage_interface"
@@ -829,6 +742,11 @@
 					id: "6737976599C00075"
 					type: "item"
 					item: "create:clutch"
+				}
+				{
+					id: "3FA3F7BBAD97F60B"
+					type: "item"
+					item: "create:sequenced_gearshift"
 				}
 			]
 			rewards: [{
@@ -864,120 +782,6 @@
 			]
 		}
 		{
-			title: "Basic Digital Storage"
-			x: 10.0d
-			y: 5.0d
-			description: ["You'll need to unlock steel for the Crafting Terminal."]
-			dependencies: [
-				"338A1AE116F1A652"
-				"059414648F84FC52"
-			]
-			id: "704F244888706682"
-			tasks: [
-				{
-					id: "18F13FF3849FAA04"
-					type: "item"
-					item: "ae2:energy_acceptor"
-				}
-				{
-					id: "78C53E28988595A3"
-					type: "item"
-					item: "ae2:fluix_glass_cable"
-				}
-				{
-					id: "3AB21F73DAAECB90"
-					type: "item"
-					item: "ae2:terminal"
-				}
-				{
-					id: "5B43E4F7C8D0DF57"
-					type: "item"
-					item: "ae2:storage_bus"
-				}
-			]
-			rewards: [
-				{
-					id: "74F359CE95670B49"
-					type: "random"
-					exclude_from_claim_all: true
-					table_id: 824098445478849879L
-				}
-				{
-					id: "2F79C2CEAA20A6D5"
-					type: "item"
-					item: "ae2:storage_bus"
-				}
-			]
-		}
-		{
-			title: "Fluix Dust"
-			icon: "ae2:fluix_dust"
-			x: 8.5d
-			y: 5.0d
-			description: ["Throw the quartz and redstone into water to combine into Fluix."]
-			dependencies: ["37610C524354F5F2"]
-			id: "338A1AE116F1A652"
-			tasks: [
-				{
-					id: "42328F4E2C3B7B15"
-					type: "item"
-					item: "ae2:charged_certus_quartz_crystal"
-				}
-				{
-					id: "761A9A75CC0F5A54"
-					type: "item"
-					item: "minecraft:redstone"
-				}
-				{
-					id: "020D64082350FC98"
-					type: "item"
-					item: "minecraft:quartz"
-				}
-				{
-					id: "6D3210A76A983076"
-					type: "item"
-					item: "ae2:fluix_dust"
-				}
-			]
-		}
-		{
-			x: 8.5d
-			y: 6.5d
-			dependencies: ["488E2999C6BE6591"]
-			id: "20E99BAA6C9A4913"
-			tasks: [{
-				id: "6D58611087E3BD41"
-				type: "item"
-				item: "compactcrafting:field_projector"
-				count: 4L
-			}]
-		}
-		{
-			title: "Energetic Alloy"
-			x: 8.5d
-			y: 3.5d
-			description: ["Can be crafted by casting molten Electrum onto Energetic Blend."]
-			dependencies: ["37610C524354F5F2"]
-			id: "059414648F84FC52"
-			tasks: [{
-				id: "12C53DC5FF079A54"
-				type: "item"
-				item: "kubejs:energetic_alloy_ingot"
-			}]
-		}
-		{
-			x: 5.5d
-			y: 8.0d
-			description: ["Used to craft gems from dust."]
-			dependencies: ["4DE314D64C3E7C9E"]
-			id: "651B53F1AFDEB856"
-			tasks: [{
-				id: "6E080ACB7D721A15"
-				type: "item"
-				item: "thermal:machine_crystallizer"
-			}]
-		}
-		{
 			title: "Scorched Bricks"
 			icon: "tconstruct:scorched_brick"
 			x: 6.5d
@@ -1002,18 +806,7 @@
 			}]
 		}
 		{
-			x: 5.5d
-			y: 6.5d
-			dependencies: ["4DE314D64C3E7C9E"]
-			id: "15B1FC183A90145C"
-			tasks: [{
-				id: "73D6EF0CF5688260"
-				type: "item"
-				item: "thermal:machine_crucible"
-			}]
-		}
-		{
-			x: 13.0d
+			x: 12.0d
 			y: -1.5d
 			description: ["By eating the moss off stones nearby, this is one simple (if ineffective) way to refill the Aura."]
 			dependencies: ["4691F3E2268FD78F"]
@@ -1043,9 +836,209 @@
 			}]
 		}
 		{
-			title: "Auto Crafting!"
+			x: 8.5d
+			y: 7.5d
+			dependencies: ["488E2999C6BE6591"]
+			id: "20E99BAA6C9A4913"
+			tasks: [{
+				id: "6D58611087E3BD41"
+				type: "item"
+				item: "compactcrafting:field_projector"
+				count: 4L
+			}]
+		}
+		{
+			title: "Imbument Chamber"
+			x: 14.0d
+			y: 7.0d
+			description: ["Auxiliary items are not comsumed for crafting."]
+			dependencies: ["4187F705E4356142"]
+			id: "488E2999C6BE6591"
+			tasks: [{
+				id: "2124621A623FF8EA"
+				type: "item"
+				item: "ars_nouveau:imbuement_chamber"
+			}]
+			rewards: [{
+				id: "38F12EEED5D870B4"
+				type: "item"
+				item: "ars_nouveau:arcane_pedestal"
+			}]
+		}
+		{
+			x: 4.0d
+			y: 6.0d
+			dependencies: ["50E9DDE83C23EE6E"]
+			id: "39F16774468E59FE"
+			tasks: [{
+				id: "7B91CDE325666152"
+				type: "item"
+				item: "powah:capacitor_basic"
+			}]
+		}
+		{
+			title: "Basic Power Generation"
+			x: 7.0d
+			y: 6.0d
+			dependencies: [
+				"39F16774468E59FE"
+				"20E99BAA6C9A4913"
+			]
+			id: "47910242F4DE9220"
+			tasks: [
+				{
+					id: "1895020E0D74216E"
+					type: "item"
+					title: "Any #powah:generator/basic"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "powah:generator/basic"
+						}
+					}
+				}
+				{
+					id: "3A0881DA9C104671"
+					type: "item"
+					item: "powah:energy_cable_basic"
+				}
+				{
+					id: "13DC6700EE416D18"
+					type: "item"
+					item: "powah:energy_cell_basic"
+				}
+			]
+		}
+		{
+			title: "Tier 2 Powah"
+			x: 8.5d
+			y: 6.0d
+			description: ["Place the Rods near the Orb and fill with crafting materials."]
+			dependencies: ["47910242F4DE9220"]
+			id: "37610C524354F5F2"
+			tasks: [
+				{
+					id: "3A2BB9386F55B5BC"
+					type: "item"
+					item: "powah:energizing_orb"
+				}
+				{
+					id: "1B08B163ECFB54FC"
+					type: "item"
+					item: "powah:energizing_rod_basic"
+				}
+				{
+					id: "1B4BF19412D41125"
+					type: "item"
+					item: "powah:steel_energized"
+				}
+			]
+			rewards: [{
+				id: "2033F9214A46820C"
+				type: "item"
+				item: {
+					id: "powah:wrench"
+					Count: 1b
+					tag: {
+						PowahWrenchNBT: { }
+					}
+				}
+			}]
+		}
+		{
+			x: 6.5d
+			y: 7.5d
+			dependencies: ["20E99BAA6C9A4913"]
+			id: "4DE314D64C3E7C9E"
+			tasks: [{
+				id: "3452E0E28BB1E897"
+				type: "item"
+				item: "kubejs:bronze_frame"
+			}]
+		}
+		{
+			x: 5.0d
+			y: 7.5d
+			dependencies: ["4DE314D64C3E7C9E"]
+			id: "15B1FC183A90145C"
+			tasks: [{
+				id: "73D6EF0CF5688260"
+				type: "item"
+				item: "thermal:machine_crucible"
+			}]
+		}
+		{
+			x: 5.0d
+			y: 9.0d
+			description: ["Used to craft gems from dust."]
+			dependencies: ["4DE314D64C3E7C9E"]
+			id: "651B53F1AFDEB856"
+			tasks: [{
+				id: "6E080ACB7D721A15"
+				type: "item"
+				item: "thermal:machine_crystallizer"
+			}]
+		}
+		{
+			x: 6.5d
+			y: 9.0d
+			dependencies: ["4DE314D64C3E7C9E"]
+			id: "4483AED226DF988C"
+			tasks: [{
+				id: "03F333526EFB0549"
+				type: "item"
+				item: "thermal:machine_chiller"
+			}]
+		}
+		{
+			title: "Fluix Dust"
+			icon: "ae2:fluix_dust"
 			x: 10.0d
-			y: 3.5d
+			y: 6.0d
+			description: ["Throw the quartz and redstone into water to combine into Fluix."]
+			dependencies: ["37610C524354F5F2"]
+			id: "338A1AE116F1A652"
+			tasks: [
+				{
+					id: "42328F4E2C3B7B15"
+					type: "item"
+					item: "ae2:charged_certus_quartz_crystal"
+				}
+				{
+					id: "761A9A75CC0F5A54"
+					type: "item"
+					item: "minecraft:redstone"
+				}
+				{
+					id: "020D64082350FC98"
+					type: "item"
+					item: "minecraft:quartz"
+				}
+				{
+					id: "6D3210A76A983076"
+					type: "item"
+					item: "ae2:fluix_dust"
+				}
+			]
+		}
+		{
+			title: "Energetic Alloy"
+			x: 10.0d
+			y: 4.5d
+			description: ["Can be crafted by casting molten Electrum onto Energetic Blend."]
+			dependencies: ["37610C524354F5F2"]
+			id: "059414648F84FC52"
+			tasks: [{
+				id: "12C53DC5FF079A54"
+				type: "item"
+				item: "kubejs:energetic_alloy_ingot"
+			}]
+		}
+		{
+			title: "Auto Crafting!"
+			x: 11.5d
+			y: 4.5d
 			description: [
 				"You'll need to convert the Crafting Unit by adding a Storage Disk of some size."
 				""
@@ -1099,25 +1092,117 @@
 			]
 		}
 		{
-			x: 7.0d
-			y: 8.0d
-			dependencies: ["4DE314D64C3E7C9E"]
-			id: "4483AED226DF988C"
-			tasks: [{
-				id: "03F333526EFB0549"
-				type: "item"
-				item: "thermal:machine_chiller"
-			}]
+			title: "Basic Digital Storage"
+			x: 11.5d
+			y: 6.0d
+			description: ["You'll need to unlock steel for the Crafting Terminal."]
+			dependencies: [
+				"338A1AE116F1A652"
+				"059414648F84FC52"
+			]
+			id: "704F244888706682"
+			tasks: [
+				{
+					id: "18F13FF3849FAA04"
+					type: "item"
+					item: "ae2:energy_acceptor"
+				}
+				{
+					id: "78C53E28988595A3"
+					type: "item"
+					item: "ae2:fluix_glass_cable"
+				}
+				{
+					id: "3AB21F73DAAECB90"
+					type: "item"
+					item: "ae2:terminal"
+				}
+				{
+					id: "5B43E4F7C8D0DF57"
+					type: "item"
+					item: "ae2:storage_bus"
+				}
+			]
+			rewards: [
+				{
+					id: "74F359CE95670B49"
+					type: "random"
+					exclude_from_claim_all: true
+					table_id: 824098445478849879L
+				}
+				{
+					id: "2F79C2CEAA20A6D5"
+					type: "item"
+					item: "ae2:storage_bus"
+				}
+			]
 		}
 		{
-			x: 7.0d
-			y: 6.5d
-			dependencies: ["20E99BAA6C9A4913"]
-			id: "4DE314D64C3E7C9E"
+			title: "Tree Farming"
+			x: 1.0d
+			y: 5.5d
+			dependencies: ["7E15574E530E5A45"]
+			id: "1BDAAA788FF99E75"
+			tasks: [
+				{
+					id: "43AF76F759EB1531"
+					type: "item"
+					title: "Any #forge:sapling"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "forge:sapling"
+						}
+					}
+				}
+				{
+					id: "047865B390FB09A1"
+					type: "item"
+					item: "create:mechanical_saw"
+				}
+				{
+					id: "7A2D31131FB6274A"
+					type: "item"
+					item: "create:deployer"
+				}
+			]
+		}
+		{
+			title: "Plant Harvesting"
+			x: -0.5d
+			y: 5.0d
+			dependencies: ["7E15574E530E5A45"]
+			id: "04CAC58DBD2678D6"
+			tasks: [
+				{
+					id: "7A8AE2115B907755"
+					type: "item"
+					title: "Any #forge:seeds"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "forge:seeds"
+						}
+					}
+				}
+				{
+					id: "24ABECB8DEEBB08E"
+					type: "item"
+					item: "create:mechanical_harvester"
+				}
+			]
+		}
+		{
+			x: 14.0d
+			y: -1.5d
+			dependencies: ["4691F3E2268FD78F"]
+			id: "72094D5B6BA7A1EC"
 			tasks: [{
-				id: "3452E0E28BB1E897"
+				id: "405077118CE5D0F4"
 				type: "item"
-				item: "kubejs:bronze_frame"
+				item: "naturesaura:oak_generator"
 			}]
 		}
 	]

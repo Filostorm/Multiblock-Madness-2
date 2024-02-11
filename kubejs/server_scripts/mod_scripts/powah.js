@@ -3,7 +3,7 @@ var basicGens = [
   'powah:furnator_basic', 
   'powah:magmator_basic', 
   'powah:thermo_generator_basic', 
-  'powah:solar_panel_basic'
+  //'powah:solar_panel_basic'
 ]
 
 onEvent('tags.items', event => {
@@ -251,6 +251,10 @@ E: 'powah:dielectric_rod'
 	  R: 'kubejs:blazing_redstone'
   }).id(`mbd2:crafting/thermoelectric_plate`)
   
+  //Basic Energy Cell
+  event.replaceInput({id: 'powah:crafting/energy_cell_basic'}, '#forge:ingots/iron', '#forge:plates/tier_1_electrical_alloy')
+  
+
   //tiered crystals
     //Blazing Crystal
     event.remove({id: 'powah:energizing/blazing_crystal_2'})

@@ -39,5 +39,7 @@ onEvent('recipes', event => {
 	  event.remove({output: 'ars_nouveau:enchanting_apparatus'})
 	  event.shaped('ars_nouveau:enchanting_apparatus', ['ABA','A A','CCC'], {A: 'kubejs:auric_gold_ingot',B: 'elementalcraft:springaline_shard',C: 'ars_nouveau:arcane_stone'})
 	  
+	global.elementalcraftInfusion(event, Item.of('phantom_membrane'), Item.of('ars_nouveau:wilden_wing'), 'earth', 1000, 'mbm2:infusion/wilden_wing')
+	
 
 });

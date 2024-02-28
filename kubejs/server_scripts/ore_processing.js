@@ -448,10 +448,10 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 					global.naturesauraAltar(event, `kubejs:${global.oreRefiningParts[2].name}_${item.material}`, `kubejs:${global.oreRefiningParts[3].name}_${item.material}`, 'crushing', 'overworld', 2000, 40, `mbm2:chain_recipe/${global.oreRefiningParts[2].name}/${item.material}`)
 
 	 				////Imbuing
-	 				//global.arsImbument(event, `kubejs:${global.oreRefiningParts[2]}_${item.material}`, global.refiningMultiplier[2], refinableOre(2), 3000, [], `mbm2:${global.oreRefiningParts[2]}/${item.material}`)
+	 				//global.arsImbuement(event, `kubejs:${global.oreRefiningParts[2]}_${item.material}`, global.refiningMultiplier[2], refinableOre(2), 3000, [], `mbm2:${global.oreRefiningParts[2]}/${item.material}`)
 //
 					////Chain recipe
-	 				//global.arsImbument(event, `kubejs:${global.oreRefiningParts[2]}_${item.material}`, 1, `#forge:ores/cluster/${item.material}`, 500, [], `mbm2:${global.oreRefiningParts[2]}/${global.oreRefiningParts[3]}_${item.material}`)
+	 				//global.arsImbuement(event, `kubejs:${global.oreRefiningParts[2]}_${item.material}`, 1, `#forge:ores/cluster/${item.material}`, 500, [], `mbm2:${global.oreRefiningParts[2]}/${global.oreRefiningParts[3]}_${item.material}`)
 					 
 				///////////////////// ORE REFINING STEP 3 //////////////////
 			

@@ -33,7 +33,7 @@ onEvent('recipes', event => {
 	  })
 	  
 	  //Crafting Ender Pearls
-	  global.arsImbument(event, 'minecraft:ender_pearl', 1, '#forge:slimeballs', 1000, [{"item": {"item": "powah:uraninite"}},{"item": {"item": "powah:uraninite"}},{"item": {"item": "powah:uraninite"}},{"item": {"item": "powah:uraninite"}}], 'mbm2:slimy_pearl')
+	  global.arsImbuement(event, 'minecraft:ender_pearl', 1, '#forge:slimeballs', 1000, [{"item": {"item": "powah:uraninite"}},{"item": {"item": "powah:uraninite"}},{"item": {"item": "powah:uraninite"}},{"item": {"item": "powah:uraninite"}}], 'mbm2:slimy_pearl')
 
 	  //Enchanting Apparatus
 	  event.remove({output: 'ars_nouveau:enchanting_apparatus'})

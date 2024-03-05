@@ -491,7 +491,7 @@
 			]
 		}
 		{
-			title: "Purifed Water"
+			title: "Purified Water"
 			x: 2.0d
 			y: 0.5d
 			description: ["If used in the Flotation Tank, you'll be able to get some byproducts!"]
@@ -727,7 +727,7 @@
 		{
 			x: 4.5d
 			y: 0.0d
-			description: ["You'll need the Wand of the Forest to link this to the Mana Pool, in order for the flower's mana to bo collected."]
+			description: ["You'll need the Wand of the Forest to link this to the Mana Pool, in order for the flower's mana to be collected."]
 			dependencies: [
 				"207551C54C784815"
 				"60255993C8EFE1D2"

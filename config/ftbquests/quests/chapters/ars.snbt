@@ -11,7 +11,7 @@
 		{
 			x: -35.0d
 			y: 0.0d
-			subtitle: "Thinking with spells"
+			subtitle: "Thanks JeanRdS for this questbook page!"
 			description: ["Spell book is a powerful tool that can do a lot of things with almost no cost. To create a spell, you can press the open book key (Default: C) and select the Spell Form, and the spell effects. Can also be dyed."]
 			id: "01AB47D4DCA342A5"
 			tasks: [{
@@ -68,6 +68,7 @@
 			y: 0.0d
 			subtitle: "Creating Materials"
 			dependencies: ["01AB47D4DCA342A5"]
+			progression_mode: "flexible"
 			id: "6511A3EE5F483172"
 			tasks: [{
 				id: "6C6C2C3F988AFE72"
@@ -124,7 +125,7 @@
 		}
 		{
 			x: -29.0d
-			y: 1.5d
+			y: -3.0d
 			subtitle: "Meat and Beet."
 			description: ["Can generate Source from animals breed, death and makes the animals growth faster."]
 			dependencies: ["30CD0A7C0B37EAD4"]
@@ -143,7 +144,7 @@
 		}
 		{
 			x: -29.0d
-			y: -3.0d
+			y: 1.5d
 			subtitle: "Fungus, among us."
 			description: ["Can generate Source based in the nourishment value, from dropped foods (Pedestals also work). Bonus if the food is made from Source berry. Makes dirt/grass below turn into Mycelium and will grow mushrooms if possible."]
 			dependencies: ["30CD0A7C0B37EAD4"]
@@ -566,7 +567,7 @@
 			shape: "circle"
 			subtitle: "Hi Hungry, I'm dad!"
 			description: ["Foods that give mana regen and work as fuel for the vitalic sourcelink."]
-			dependencies: ["5604AD3AE0C4EC33"]
+			dependencies: ["304204395C17131A"]
 			hide: true
 			id: "4799D00A8E18E8D3"
 			tasks: [{

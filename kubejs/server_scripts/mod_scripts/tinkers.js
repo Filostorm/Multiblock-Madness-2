@@ -61,11 +61,11 @@ event.shaped('tconstruct:scorched_faucet', [
 		'GBF',
 		'PCP'
 	  ], {
-		B: 'naturesaura:furnace_heater',
+		B: 'elementalcraft:pristine_fire_gem',
 		P: 'tconstruct:scorched_brick',
 		G: Item.of('naturesaura:aura_bottle', '{stored_type:"naturesaura:nether"}'),
 		C: 'create:precision_mechanism', //'powah:capacitor_hardened',
-		F: 'elementalcraft:firecrystal'
+		F: 'ars_nouveau:glyph_smelt'
 	  })
 	  
 	  //Blazing Pyrotheum

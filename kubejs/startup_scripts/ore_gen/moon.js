@@ -11,13 +11,15 @@ onEvent('worldgen.remove', event => {
 
 onEvent('worldgen.add', event => {
 
-	
+	console.log('moon')
+
 	const moonSurfaceChance = 0
 
 	// use the anchors helper from the event (NOTE: this requires newer versions of KubeJS)
 	// if you are using an older version of KubeJS, you can use the methods in the ore properties class
 	const {anchors} = event
 
+	
 
 ////////////////////////////////////////////	moon	////////////////////////////////
 	// Base Iron Veins
@@ -25,7 +27,8 @@ onEvent('worldgen.add', event => {
 		ore.id = 'kubejs:moon_iron_ore'
 	
 		global.stoneTypes.forEach((type) => {
-				ore.addTarget(`#forge:${type.material}`, `excavated_variants:${type.material}_iron_ore`)
+			if (Item.of(`excavated_variants:${type.material}_iron_ore`) != null) {
+				ore.addTarget(`#forge:${type.material}`, `excavated_variants:${type.material}_iron_ore`)}
 		})
 		    
 
@@ -69,7 +72,7 @@ onEvent('worldgen.add', event => {
 
 	// Inserted Runite
 	event.addOre((ore) => {
-		ore.id = 'kubejs:nether_rune'
+		ore.id = 'kubejs:moon_rune'
 			global.stoneTypes.forEach((type) => {
 				if (type.material != 'bedrock' && type.material != 'deepslate') {
 					ore.addTarget(`kubejs:${type.material}_platinum_ore`, `kubejs:${type.material}_rune_ore`)
@@ -93,7 +96,7 @@ onEvent('worldgen.add', event => {
 		ore.id = 'kubejs:moon_osmium_ore'
 	
 		global.stoneTypes.forEach((type) => {
-			if (type.material != 'bedrock') {
+			if (Item.of(`excavated_variants:${type.material}_osmium_ore`) != null) {
 				ore.addTarget(`#forge:${type.material}`, `excavated_variants:${type.material}_osmium_ore`)
 			}
 		})
@@ -114,7 +117,7 @@ onEvent('worldgen.add', event => {
 	
 	// Inserted Aluminum
 	event.addOre((ore) => {
-		ore.id = 'kubejs:nether_aluminum'
+		ore.id = 'kubejs:moon_aluminum'
 			global.stoneTypes.forEach((type) => {
 				if (type.material != 'bedrock' && type.material != 'deepslate') {
 				ore.addTarget(`excavated_variants:${type.material}_osmium_ore`, `kubejs:${type.material}_aluminum_ore`)
@@ -138,7 +141,7 @@ onEvent('worldgen.add', event => {
 		ore.id = 'kubejs:moon_certus_ore'
 	 
 		global.stoneTypes.forEach((type) => {
-			if (type.material != 'bedrock') {
+			if (Item.of(`excavated_variants:${type.material}_certus_quartz_ore`) != null) {
 			ore.addTarget(`#forge:${type.material}`, `excavated_variants:${type.material}_certus_quartz_ore`)
 			}
 		})
@@ -177,7 +180,7 @@ onEvent('worldgen.add', event => {
 	
 	// Inserted Cheese
 	event.addOre((ore) => {
-		ore.id = 'kubejs:nether_cheese'
+		ore.id = 'kubejs:moon_cheese'
 
 		ore.addTarget(`beyond_earth:moon_desh_ore`, `beyond_earth:moon_cheese_ore`)
 
@@ -199,7 +202,7 @@ onEvent('worldgen.add', event => {
 		ore.id = 'kubejs:moon_uranium_ore'
 	 
 		global.stoneTypes.forEach((type) => {
-			if (type.material != 'bedrock') {
+			if (Item.of(`excavated_variants:${type.material}_uranium_ore`) != null) {
 			ore.addTarget(`#forge:${type.material}`, `excavated_variants:${type.material}_uranium_ore`)
 			}
 		})
@@ -220,7 +223,7 @@ onEvent('worldgen.add', event => {
 	event.addOre((ore) => {
 		ore.id = 'kubejs:moon_cadmium'
 			global.stoneTypes.forEach((type) => {
-				if (type.material != 'bedrock' && type.material != 'deepslate') {
+				if (Item.of(`excavated_variants:${type.material}_cadmium_ore`) != null) {
 					ore.addTarget(`excavated_variants:${type.material}_uranium_ore`, `excavated_variants:${type.material}_cadmium_ore`)
 				}
 			})

@@ -14,7 +14,7 @@
 	#1: Hidden unless holding a mana consuming/restoring item.
 	#2: Always hidden.
 	#Range: 0 ~ 2
-	hudMode = 1
+	hudMode = 0
 	#0: Top Left
 	#1: Top Center
 	#2: Top Right

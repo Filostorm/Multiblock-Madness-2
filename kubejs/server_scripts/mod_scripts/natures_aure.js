@@ -6,14 +6,14 @@ onEvent('tags.blocks', event => {
 onEvent('tags.items', event => {
 	event.add(`forge:ingots`, `naturesaura:tainted_gold`)
 	event.add(`forge:ingots/tainted_gold`, `naturesaura:tainted_gold`)
-	event.add(`forge:ingots`, `naturesaura:infused_iron`)
-	event.add(`forge:ingots/infused_iron`, `naturesaura:infused_iron`)
-	event.add(`forge:ingots`, `naturesaura:sky_ingot`)
-	event.add(`forge:ingots/sky_metal`, `naturesaura:sky_ingot`)
 	event.add(`forge:storage_blocks`, 'naturesaura:tainted_gold_block')
 	event.add(`forge:storage_blocks/tainted_gold`, 'naturesaura:tainted_gold_block')
+	event.add(`forge:ingots`, `naturesaura:infused_iron`)
+	event.add(`forge:ingots/infused_mithril`, `naturesaura:infused_iron`)
 	event.add(`forge:storage_blocks`, 'naturesaura:infused_iron_block')
-	event.add(`forge:storage_blocks/infused_iron`, 'naturesaura:infused_iron_block')
+	event.add(`forge:storage_blocks/infused_mithril`, 'naturesaura:infused_iron_block')
+	event.add(`forge:ingots`, `naturesaura:sky_ingot`)
+	event.add(`forge:ingots/sky_metal`, `naturesaura:sky_ingot`)
 	event.remove(`forge:rods/wooden`, 'naturesaura:ancient_stick')
 
 	
@@ -49,9 +49,26 @@ onEvent('recipes', event => {
 		E: 'naturesaura:gold_powder'
   	}).id('mbm2:gold_fiber')
 
+	//gold Powder
+	event.remove({id: 'naturesaura:gold_powder'})
+	event.custom({
+		"type": "elementalcraft:grinding",
+		"element_amount": 800,
+		"input": {
+		  "item": "naturesaura:gold_leaf"
+		},
+		"luck_ration": 5,
+		"output": {
+		  "item": "naturesaura:gold_powder",
+		  "count": 2
+		}
+	})
+	event.recipes.immersiveengineeringCrusher('naturesaura:gold_powder', 'naturesaura:gold_leaf').id(`mbm2:immersiveengineering/crushing/gold_powder`)
+
+
 	//Wood Stand
 	event.remove({id: 'naturesaura:wood_stand'})
- 	global.createApplying(event, 'naturesaura:wood_stand', Ingredient.of('naturesaura:gold_leaf'), Ingredient.of('#forge:stripped_logs'), `mbm2:applying/wood_stand`)
+ 	global.createApplying(event, 'naturesaura:wood_stand', Ingredient.of('#forge:ingots/auric_gold'), Ingredient.of('#forge:stripped_logs'), `mbm2:applying/wood_stand`)
 
 // [| Ancient Wood Scaffolding |] //
 event.shaped('3x kubejs:ancient_wood_scaffolding', [
@@ -78,6 +95,12 @@ event.shaped('3x kubejs:ancient_wood_scaffolding', [
 		Item.of('elementalcraft:whiterock').toJson(),
 	], 'oak_sapling', 500, 'naturesaura:tree_ritual/nature_altar')
 
+	//Infused Mithril
+	//event.remove({id: 'naturesaura:altar/infused_iron'})
+	global.naturesauraAltar(event, 'naturesaura:infused_iron', 'kubejs:mithril_ingot', 'normal', 'nether', 15000, 80, 'naturesaura:altar/infused_iron')
+	//event.remove({id: 'naturesaura:altar/infused_iron_block'})
+	global.naturesauraAltar(event, 'naturesaura:infused_iron_block', 'kubejs:mithril_storage_block', 'normal', 'nether', 135000, 700, 'naturesaura:altar/infused_iron_block')
+	
 	//Tainted Gold
 	//event.remove({id: 'naturesaura:altar/tainted_gold'})
 	global.naturesauraAltar(event, 'naturesaura:tainted_gold', 'kubejs:auric_gold_ingot', 'normal', 'nether', 15000, 80, 'naturesaura:altar/tainted_gold')
@@ -94,7 +117,48 @@ event.shaped('3x kubejs:ancient_wood_scaffolding', [
 	}).id(`mbm2:phantom_membrane`)
 
 	//Gold Leaf Growth
-	global.naturesauraAltar(event, 'naturesaura:gold_leaf', 'naturesaura:golden_leaves', 'conversion', 'overworld', 4000, 200, 'mbm2:altar/automated_goldleaf')
+	global.naturesauraAltar(event, 'naturesaura:gold_leaf', 'naturesaura:golden_leaves', 'naturesaura:conversion_catalyst', 'overworld', 4000, 200, 'mbm2:altar/automated_goldleaf')
+
+	//Nature Gem
+	global.naturesauraAltar(event, 'kubejs:nature_gem', 'ars_nouveau:source_gem', 'naturesaura:conversion_catalyst', 'overworld', 4000, 200, 'mbm2:altar/nature_gem')
+	
+	//Overgrown Light Engineering block
+	global.naturesauraTreeRitual(event, 'kubejs:overgrown_light_engineering_block', [
+		Item.of('immersiveengineering:light_engineering').toJson(), 
+		Item.of('#elementalcraft:gems/fine_earth').toJson(),
+		Item.of('ars_nouveau:ritual_overgrowth').toJson(),
+		Item.of('#forge:ingots/infused_mithril').toJson(),
+		Item.of('kubejs:tier_1_structural_alloy_bolt').toJson(),
+		Item.of('kubejs:tier_1_structural_alloy_bolt').toJson(),
+		Item.of('kubejs:tier_1_structural_alloy_bolt').toJson(),
+		Item.of('naturesaura:gold_brick').toJson(),
+	], 'oak_sapling', 500, 'mbm2:tree_ritual/overgrown_engineering')
+
+	//Living Metal Seed
+	global.naturesauraAltar(event, 'kubejs:living_metal_seed', 'kubejs:metal_seed', 'kubejs:overgrown_light_engineering_block', 'overworld', 7500, 200, 'mbm2:altar/living_metal_seed')
+	
+	event.custom({
+		"type": "thermal:crystallizer",
+		"ingredients": [
+		  {
+			"fluid": 'tconstruct:molten_aluminum',
+			"amount": 900
+		  },
+		  {
+			"item": 'ars_nouveau:magebloom_crop'
+		  },
+		  {
+			"item": 'kubejs:catalyst_gem'
+		  }
+		],
+		"result": [
+		  {
+			"item": "kubejs:metal_seed",
+			"count": 1
+		  }
+		]
+	  }).id(`mbm2:crystallizer/metal_seed`)
+	
 });
 
 

@@ -7,7 +7,7 @@ onEvent('tags.items', event => {
  */
 onEvent('recipes', event => {
 	//Casing
-	global.elementalcraftBinding(event, 'earth', 2500, 'kubejs:captured_soul', [Item.of('spirit:soul_crystal_shard').toJson(), Item.of('forbidden_arcanus:soul').toJson(), Item.of('apotheosis:gem_dust').toJson(), Item.of('mna:arcane_ash').toJson()], 'mbm2:captured_soul')
+	global.elementalcraftBinding(event, 'earth', 2500, 'kubejs:captured_soul', [Item.of('spirit:soul_crystal_shard').toJson(), Item.of('forbidden_arcanus:soul').toJson(), Item.of('apotheosis:gem_dust').toJson(), Item.of('forbidden_arcanus:aureal_bottle').toJson()], 'mbm2:captured_soul')
   
 	event.shaped('kubejs:haunted_casing', [
 		'RPR',

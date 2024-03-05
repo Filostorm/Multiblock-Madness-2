@@ -1,7 +1,8 @@
 
 onEvent('worldgen.add', event => {
-
 	
+	console.log('nether')
+
 	const netherSurfaceChance = 0.75
 
 	// use the anchors helper from the event (NOTE: this requires newer versions of KubeJS)
@@ -15,7 +16,9 @@ onEvent('worldgen.add', event => {
 		ore.id = 'kubejs:nether_iron_ore'
 	
 		global.stoneTypes.forEach((type) => {
+			if (Item.of(`excavated_variants:${type.material}_iron_ore`) != null) {
 				ore.addTarget(`#forge:${type.material}`, `excavated_variants:${type.material}_iron_ore`)
+			}
 		})
 		    
 
@@ -37,7 +40,9 @@ onEvent('worldgen.add', event => {
 		ore.id = 'kubejs:nether_zinc_ore'
 	
 		global.stoneTypes.forEach((type) => {
+			if (Item.of(`excavated_variants:${type.material}_zinc_ore`) != null) {
 				ore.addTarget(`#forge:${type.material}`, `excavated_variants:${type.material}_zinc_ore`)
+			}
 		})
 		    
 
@@ -59,7 +64,9 @@ onEvent('worldgen.add', event => {
 		ore.id = 'kubejs:nether_nickel_ore'
 	
 		global.stoneTypes.forEach((type) => {
+			if (Item.of(`excavated_variants:${type.material}_nickel_ore`) != null) {
 				ore.addTarget(`#forge:${type.material}`, `excavated_variants:${type.material}_nickel_ore`)
+			}
 		})
 		    
 
@@ -81,7 +88,9 @@ onEvent('worldgen.add', event => {
 		ore.id = 'kubejs:nether_gold_ore'
 	
 		global.stoneTypes.forEach((type) => {
+			if (Item.of(`excavated_variants:${type.material}_gold_ore`) != null) {
 				ore.addTarget(`#forge:${type.material}`, `excavated_variants:${type.material}_gold_ore`)
+			}
 		})
 		    
 
@@ -103,7 +112,9 @@ onEvent('worldgen.add', event => {
 		ore.id = 'kubejs:nether_silver_ore'
 	
 		global.stoneTypes.forEach((type) => {
+			if (Item.of(`excavated_variants:${type.material}_silver_ore`) != null) {
 				ore.addTarget(`#forge:${type.material}`, `excavated_variants:${type.material}_silver_ore`)
+			}
 		})
 		    
 
@@ -125,7 +136,9 @@ onEvent('worldgen.add', event => {
 		ore.id = 'kubejs:nether_aluminum_ore'
 	
 		global.stoneTypes.forEach((type) => {
+			if (Item.of(`kubejs:${type.material}_aluminum_ore`) != null) {
 				ore.addTarget(`#forge:${type.material}`, `kubejs:${type.material}_aluminum_ore`)
+			}
 		})
 		    
 
@@ -148,7 +161,7 @@ onEvent('worldgen.add', event => {
 	
 		ore.addTarget('netherrack', 'tconstruct:cobalt_ore')
 		global.stoneTypes.forEach((type) => {
-			if (type.material != 'netherrack' && type.material != 'bedrock') {
+			if (Item.of(`excavated_variants:${type.material}_cobalt_ore`) != null) {
 				ore.addTarget(`#forge:${type.material}`, `excavated_variants:${type.material}_cobalt_ore`)
 			}
 		})
@@ -170,12 +183,13 @@ onEvent('worldgen.add', event => {
 	
 
 	// Base Quartz Veins
+	console.log('nether_quartz_ore')
 	event.addOre((ore) => {
 		ore.id = 'kubejs:nether_quartz_ore'
 	
-		ore.addTarget('netherrack', 'minecraft:quartz_ore')
+		ore.addTarget('netherrack', 'minecraft:nether_quartz_ore')
 		global.stoneTypes.forEach((type) => {
-			if (type.material != 'netherrack' && type.material != 'bedrock') {
+			if (Item.of(`excavated_variants:${type.material}_quartz_ore`) != null) {
 				ore.addTarget(`#forge:${type.material}`, `excavated_variants:${type.material}_quartz_ore`)
 			}
 		})
@@ -195,15 +209,15 @@ onEvent('worldgen.add', event => {
 	})
 
 	// Inserted Certus Quartz
+	console.log('nether_certus_quartz')
 	event.addOre((ore) => {
 		ore.id = 'kubejs:nether_certus_quartz'
 
 		ore.addTarget(`minecraft:nether_quartz_ore`, `excavated_variants:netherrack_certus_quartz_ore`)
 		
 			global.stoneTypes.forEach((type) => {
-				if (type.material != 'deepslate' && type.material != 'bedrock' && type.material != 'netherrack') {
-				ore.addTarget(`excavated_variants:${type.material}_quartz_ore`, `excavated_variants:${type.material}_certus_quartz_ore`)
-				
+				if (Item.of(`excavated_variants:${type.material}_quartz_ore`) != null && Item.of(`excavated_variants:${type.material}_certus_quartz_ore`) != null) {
+					ore.addTarget(`excavated_variants:${type.material}_quartz_ore`, `excavated_variants:${type.material}_certus_quartz_ore`)
 				}
 			})
 		ore.count(300)
@@ -221,11 +235,12 @@ onEvent('worldgen.add', event => {
 	
 	
 	// Nether Redstone Veins
+	console.log('nether_redstone_ore')
 	event.addOre((ore) => {
 		ore.id = 'kubejs:nether_redstone_ore'
 	 
 		global.stoneTypes.forEach((type) => {
-			if (type.material != 'deepslate' && type.material != 'bedrock') {
+			if (Item.of(`excavated_variants:${type.material}_redstone_ore`) != null) {
 			ore.addTarget(`#forge:${type.material}`, `excavated_variants:${type.material}_redstone_ore`)
 			}
 		})
@@ -271,15 +286,17 @@ onEvent('worldgen.add', event => {
 	// Inserted Nether luminite
 	
 	//Maybe make a seperate vein??
+	console.log('nether_luminite')
 
 	event.addOre((ore) => {
 		ore.id = 'kubejs:nether_luminite'
 
 			global.stoneTypes.forEach((type) => {
-				if (type.material != 'deepslate' && type.material != 'bedrock') {
+				if (Item.of(`excavated_variants:${type.material}_gold_ore`) != null) {
 					ore.addTarget(`excavated_variants:${type.material}_gold_ore`, `kubejs:${type.material}_luminite_ore`)
-					ore.addTarget(`kubejs:${type.material}_aluminum_ore`, `kubejs:${type.material}_luminite_ore`)
 				}
+					ore.addTarget(`kubejs:${type.material}_aluminum_ore`, `kubejs:${type.material}_luminite_ore`)
+				
 			})
 		ore.count(400)
 				.squared()
@@ -300,7 +317,7 @@ onEvent('worldgen.add', event => {
 
 		ore.addTarget(`tconstruct:cobalt_ore`, `kubejs:netherrack_mithril_ore`)
 			global.stoneTypes.forEach((type) => {
-				if (type.material != 'deepslate' && type.material != 'bedrock' && type.material != 'netherrack') {
+				if (Item.of(`excavated_variants:${type.material}_cobalt_ore`) != null) {
 				ore.addTarget(`excavated_variants:${type.material}_cobalt_ore`, `kubejs:${type.material}_mithril_ore`)
 				}
 			})
@@ -318,14 +335,21 @@ onEvent('worldgen.add', event => {
 	})
 
 	// Inserted Nether Sulfur
+	console.log('nether_sulfur')
 	event.addOre((ore) => {
 		ore.id = 'kubejs:nether_sulfur'
 
 		global.stoneTypes.forEach((type) => {
-			if (type.material != 'deepslate' && type.material != 'bedrock') {
-			ore.addTarget(`excavated_variants:${type.material}_iron_ore`, `excavated_variants:${type.material}_sulfur_ore`)
-			ore.addTarget(`excavated_variants:${type.material}_zinc_ore`, `excavated_variants:${type.material}_sulfur_ore`)
-			ore.addTarget(`excavated_variants:${type.material}_nickel_ore`, `excavated_variants:${type.material}_sulfur_ore`)
+			if (Item.of(`excavated_variants:${type.material}_sulfur_ore`) != null) {
+				if (Item.of(`excavated_variants:${type.material}_iron_ore`) != null) {
+					ore.addTarget(`excavated_variants:${type.material}_iron_ore`, `excavated_variants:${type.material}_sulfur_ore`)
+				}
+				if (Item.of(`excavated_variants:${type.material}_zinc_ore`) != null) {
+					ore.addTarget(`excavated_variants:${type.material}_zinc_ore`, `excavated_variants:${type.material}_sulfur_ore`)
+				}
+				if (Item.of(`excavated_variants:${type.material}_nickel_ore`) != null) {
+					ore.addTarget(`excavated_variants:${type.material}_nickel_ore`, `excavated_variants:${type.material}_sulfur_ore`)
+				}
 			}
 		})
 

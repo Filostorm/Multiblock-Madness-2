@@ -59,6 +59,11 @@ onEvent('recipes', event => {
 			
 		});
 
-
+		//Element Binder
+		event.remove({output: 'elementalcraft:binder'})
+		event.shaped('elementalcraft:binder', ['ABA','CDC','DCD'], {A: 'tconstruct:seared_bricks',B: 'elementalcraft:contained_crystal',C: 'elementalcraft:drenched_iron_ingot',D: 'elementalcraft:whiterock'}).id("mbm2:elementalcraft/binder")
+		//Air Mill
+		event.remove({output: 'elementalcraft:air_mill'})
+		event.shaped('elementalcraft:air_mill', ['ABA','BCB','DED'], {A: 'kubejs:source_tube',B: 'kubejs:tier_1_magical_alloy_ingot',C: 'minecraft:grindstone',D: 'elementalcraft:whiterock',E: 'elementalcraft:aircrystal'}).id("mbm2:elementalcraft/air_mill")
 
 });

@@ -162,11 +162,11 @@ onEvent('recipes', event => {
 	  'GSG',
 	  'HCH'
 	], {
-	  S: '#forge:casings/hepatizon',
-	  C: 'immersiveengineering:component_electronic',
-	  H: 'powah:energy_cable_hardened',
+	  S: '#forge:casings/brass',
+	  C: 'kubejs:charged_coil',
+	  H: 'powah:energy_cable_basic',
 	  G: 'ae2:quartz_glass',
-	  R: 'kubejs:silver_coil'
+	  R: '#forge:gems/fluix'
 
 	}).id('mbm2:energy_acceptor')
 
@@ -178,7 +178,7 @@ onEvent('recipes', event => {
 	  ' GQ'
 	], {
 		G: '#forge:dusts/glowstone',
-		R: '#forge:dusts/redstone',
+		R: '#forge:dusts/fluix',
 	  	Q: 'ae2:quartz_glass',
 	  	P: '#forge:plates/energetic_alloy',
 	}).id('mbm2:semi_dark_monitor')
@@ -192,10 +192,14 @@ onEvent('recipes', event => {
 	], {
 		A: 'create:display_board',
 	  	S: 'ae2:semi_dark_monitor',
-		C: 'ae2:logic_processor',
+		C: 'powah:capacitor_basic_large', //'ae2:logic_processor',
 		P: '#forge:plates/energetic_alloy',
 		T: 'kubejs:source_tube'
 	}).id('mbm2:terminal')
+
+	//terminals_pattern
+	event.replaceInput({id: 'ae2:network/parts/terminals_pattern_encoding'}, 'ae2:crafting_terminal', 'ae2:terminal', )
+	
 
 	//crafting_terminal
 	event.remove({id: 'ae2:network/parts/terminals_crafting'})
@@ -302,7 +306,7 @@ onEvent('recipes', event => {
 	  'PEP'
 	], {
 		S: '#forge:scaffoldings/energetic_alloy',
-		P: '#forge:plates/energized_steel',
+		P: '#forge:plates/tier_1_electrical_alloy',
 		E: 'ae2:calculation_processor',
 		C: 'ae2:fluix_smart_cable'
 	}).id('mbm2:crafting_unit')
@@ -312,7 +316,7 @@ onEvent('recipes', event => {
 	//Pattern Provider
 	event.remove({id: 'ae2:network/blocks/pattern_providers_interface'})
 	//Early Recipe
-	event.shaped('ae2:pattern_provider', ['ABA','CDC','ABA'], {A: 'kubejs:energized_steel_plate',B: 'ae2:quartz_glass',C: 'immersiveengineering:component_electronic',D: 'kubejs:energetic_alloy_frame_box'}).id('mbm2:pattern_provider')
+	event.shaped('ae2:pattern_provider', ['ABA','CDC','ABA'], {A: '#forge:plates/tier_1_electrical_alloy',B: 'ae2:quartz_glass',C: 'kubejs:charged_coil',D: 'kubejs:energetic_alloy_frame_box'}).id('mbm2:pattern_provider')
 	//Alt Recipe
 	//event.shaped('ae2:pattern_provider', [
 	//  'PQP',
@@ -395,10 +399,10 @@ onEvent('recipes', event => {
     
 
 	//Resonating Crystal
-	global.mekanismMetallurgicInfusing(event, Item.of('lazierae2:resonating_crystal'), Item.of('mna:resonating_dust'), 'mekanism:diamond', 20, `mbm2:infusing/resonating_crystal`)
+	global.mekanismMetallurgicInfusing(event, Item.of('lazierae2:resonating_crystal'), Item.of('kubejs:resonating_dust'), 'mekanism:diamond', 20, `mbm2:infusing/resonating_crystal`)
 	
-	event.recipes.createFilling('mna:resonating_dust', [Fluid.of('thermal:ender', 250), 'ae2:sky_dust']).id('mbm2:filling/resonating_dust')
-	event.recipes.tconstruct.casting_table('mna:resonating_dust', 'thermal:ender', 250).cast('ae2:sky_dust').consumeCast().coolingTime(100).id(`mbm2:casting/resonating_dust`)
+	event.recipes.createFilling('kubejs:resonating_dust', [Fluid.of('thermal:ender', 250), 'ae2:sky_dust']).id('mbm2:filling/resonating_dust')
+	event.recipes.tconstruct.casting_table('kubejs:resonating_dust', 'thermal:ender', 250).cast('ae2:sky_dust').consumeCast().coolingTime(100).id(`mbm2:casting/resonating_dust`)
 	
 
 

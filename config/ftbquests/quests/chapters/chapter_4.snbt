@@ -9,122 +9,11 @@
 	default_hide_dependency_lines: false
 	quests: [
 		{
-			x: -3.0d
-			y: -4.5d
-			description: [
-				"Flip to the correct book in your Tome to complete this quest."
-				""
-				"You'll need to read it to get started. Following the internal guide for Mana and Artifice will be your best path moving forward with the mod."
-			]
-			id: "47AA157D687A02F7"
-			tasks: [{
-				id: "6652FF81E0985785"
-				type: "item"
-				item: "mna:guide_book"
-			}]
-		}
-		{
-			x: -1.5d
-			y: -4.5d
-			dependencies: [
-				"47AA157D687A02F7"
-				"243652BEE988A387"
-			]
-			id: "7EBE28646422EC18"
-			tasks: [{
-				id: "3483C1EA4FEB42A9"
-				type: "item"
-				item: {
-					id: "mna:manaweaver_wand"
-					Count: 1b
-					tag: {
-						Damage: 0
-					}
-				}
-			}]
-		}
-		{
-			x: 0.0d
-			y: -4.5d
-			dependencies: ["7EBE28646422EC18"]
-			id: "0E9C33334120AC94"
-			tasks: [{
-				id: "53D3DF24EA663D62"
-				type: "item"
-				item: "mna:transmuted_silver"
-				count: 9L
-			}]
-		}
-		{
-			x: 1.5d
-			y: -4.5d
-			dependencies: ["0E9C33334120AC94"]
-			id: "098CAF7E91266CDC"
-			tasks: [{
-				id: "6302DA60089BF7CD"
-				type: "item"
-				item: "mna:runeforge"
-			}]
-		}
-		{
-			x: 0.0d
-			y: -6.0d
-			dependencies: ["0E9C33334120AC94"]
-			id: "1BF79E8ACC1F917F"
-			tasks: [{
-				id: "1F4122EFD87E59A3"
-				type: "item"
-				item: "mna:manaweaving_altar"
-			}]
-		}
-		{
-			x: 1.5d
-			y: -6.0d
-			description: ["This is the main information hub needed to progress through Mana and Artifice."]
-			dependencies: ["0E9C33334120AC94"]
-			id: "1FC0519495084939"
-			tasks: [{
-				id: "314EFEAEC1C1D314"
-				type: "item"
-				item: "mna:occulus"
-			}]
-		}
-		{
-			x: 3.0d
-			y: -4.5d
-			description: ["Used for rituals"]
-			dependencies: ["098CAF7E91266CDC"]
-			id: "12DDD9CD9F8B934F"
-			tasks: [{
-				id: "340349797FF371F8"
-				type: "item"
-				item: {
-					id: "mna:wizard_chalk"
-					Count: 1b
-					tag: {
-						Damage: 0
-					}
-				}
-			}]
-		}
-		{
-			x: 0.0d
-			y: -7.5d
-			dependencies: ["1BF79E8ACC1F917F"]
-			id: "07A718A55B5A7318"
-			tasks: [{
-				id: "5AE55B859A66458A"
-				type: "item"
-				item: "mna:infused_silk"
-			}]
-		}
-		{
 			x: 4.0d
 			y: -1.0d
 			dependencies: [
 				"3D971E0CF8257193"
 				"04FD40DD2CE51B84"
-				"098CAF7E91266CDC"
 			]
 			id: "0EB55E9BCD6E97C3"
 			tasks: [{
@@ -963,6 +852,7 @@
 		{
 			x: -4.0d
 			y: 0.5d
+			shape: "circle"
 			dependencies: ["729CD1DC498A9130"]
 			id: "4056DE989F8A8E98"
 			tasks: [{
@@ -997,8 +887,8 @@
 			]
 		}
 		{
-			x: -6.5d
-			y: 4.0d
+			x: -6.0d
+			y: 2.0d
 			shape: "circle"
 			description: ["Tier 2 Metals, like Cobalt and Aluminum, require at least processing in the Foundry with a high temperature fuel such as Blazing Blood."]
 			dependencies: ["729CD1DC498A9130"]
@@ -1115,7 +1005,6 @@
 			y: 2.0d
 			dependencies: [
 				"40CD2EB416C68B70"
-				"61CCA7FA3C371180"
 				"4056DE989F8A8E98"
 			]
 			size: 1.25d
@@ -1274,8 +1163,8 @@
 			}]
 		}
 		{
-			x: -5.5d
-			y: 5.5d
+			x: -5.0d
+			y: 4.0d
 			description: ["Place these around a water source block and power through AE. Crystal seeds inside the water will grow much faster."]
 			dependencies: ["40CD2EB416C68B70"]
 			id: "4F570EDAF76DCC20"
@@ -1287,20 +1176,9 @@
 			}]
 		}
 		{
-			x: 1.5d
-			y: -3.0d
-			dependencies: ["0E9C33334120AC94"]
-			id: "0C50A45DF9D419E7"
-			tasks: [{
-				id: "5EE3B0F95321FB38"
-				type: "item"
-				item: "mna:magicians_workbench"
-			}]
-		}
-		{
 			icon: "hostilenetworks:sim_chamber"
-			x: -7.5d
-			y: 5.5d
+			x: -7.0d
+			y: 4.0d
 			dependencies: ["40CD2EB416C68B70"]
 			id: "4B09D1E4C5CF8BB1"
 			tasks: [
@@ -1351,8 +1229,10 @@
 			title: "The Smeltery, aka tier 2 alloys"
 			x: -7.5d
 			y: -1.0d
+			shape: "gear"
 			description: ["Once you have access to the Smeltery, you can use it to alloy Coke and Iron to make Steel."]
 			dependencies: ["17F948FD49F0EB33"]
+			size: 1.5d
 			id: "44B029D2AFEC131D"
 			tasks: [
 				{
@@ -1394,8 +1274,8 @@
 			}]
 		}
 		{
-			x: -7.5d
-			y: -2.5d
+			x: -9.0d
+			y: -1.0d
 			dependencies: ["44B029D2AFEC131D"]
 			id: "28B61E3051A1F1DD"
 			tasks: [{
@@ -1405,8 +1285,8 @@
 			}]
 		}
 		{
-			x: -7.5d
-			y: 0.5d
+			x: -9.0d
+			y: 1.0d
 			dependencies: [
 				"1F932299A59D3965"
 				"44B029D2AFEC131D"
@@ -1431,14 +1311,14 @@
 			}]
 		}
 		{
-			x: -6.0d
-			y: 2.0d
+			x: -5.625d
+			y: 0.625d
 			dependencies: [
 				"1F932299A59D3965"
 				"44B029D2AFEC131D"
 				"40CD2EB416C68B70"
 			]
-			size: 1.5d
+			size: 1.25d
 			id: "4330D1B18E585E4E"
 			tasks: [{
 				id: "65BAEAC0D2E64797"
@@ -1502,7 +1382,6 @@
 			y: -1.0d
 			shape: "circle"
 			description: [""]
-			dependencies: ["35C16B4B5D8C7148"]
 			id: "17F948FD49F0EB33"
 			tasks: [{
 				id: "6A1342A29C56C67D"
@@ -1565,8 +1444,8 @@
 					blueprint: "components"
 				}
 			}
-			x: -6.0d
-			y: 0.5d
+			x: -7.5d
+			y: 1.0d
 			dependencies: ["17F948FD49F0EB33"]
 			id: "1F932299A59D3965"
 			tasks: [{
@@ -1600,268 +1479,7 @@
 			}]
 		}
 		{
-			x: -4.0d
-			y: 4.0d
-			description: ["Items must be placed in the shown order."]
-			dependencies: ["391E4F9DA1A3D71B"]
-			id: "6B06707ECFAFD263"
-			tasks: [{
-				id: "6378AF3A0AE6AF58"
-				type: "item"
-				item: "elementalcraft:binder"
-			}]
-			rewards: [{
-				id: "51255585156612F0"
-				type: "random"
-				exclude_from_claim_all: true
-				table_id: 6594349084625110702L
-			}]
-		}
-		{
-			title: "More Elemental Infused Items"
-			x: -2.5d
-			y: 4.0d
-			dependencies: ["6B06707ECFAFD263"]
-			id: "61CCA7FA3C371180"
-			tasks: [
-				{
-					id: "2CFB04C7A08F97D3"
-					type: "item"
-					item: "elementalcraft:swift_alloy_ingot"
-				}
-				{
-					id: "48F4AD547AF2A043"
-					type: "item"
-					item: "elementalcraft:springaline_shard"
-				}
-			]
-		}
-		{
-			x: -1.0d
-			y: 4.0d
-			dependencies: ["61CCA7FA3C371180"]
-			id: "63D72477BB0F83A4"
-			tasks: [{
-				id: "0576FF10B6A77AE8"
-				type: "item"
-				item: "elementalcraft:crystallizer"
-			}]
-			rewards: [{
-				id: "1A071C495A346567"
-				type: "choice"
-				exclude_from_claim_all: true
-				table_id: 5588879661420231004L
-			}]
-		}
-		{
-			x: -2.5d
-			y: 5.5d
-			dependencies: ["63D72477BB0F83A4"]
-			id: "6B88E5CD8EC9BE7B"
-			tasks: [
-				{
-					id: "7F86898B2643C4E6"
-					type: "item"
-					item: {
-						id: "elementalcraft:jewel"
-						Count: 1b
-						tag: {
-							elementalcraft: {
-								jewel: "elementalcraft:strider"
-							}
-						}
-					}
-					match_nbt: true
-				}
-				{
-					id: "185EC521325CAEC0"
-					type: "item"
-					item: {
-						id: "elementalcraft:element_holder_fire"
-						Count: 1b
-						tag: {
-							Damage: 0
-						}
-						ForgeCaps: {
-							Parent: {
-								element_capacity: 10000
-								element_type: "fire"
-								element_amount: 0
-							}
-						}
-					}
-				}
-			]
-		}
-		{
-			x: -1.5d
-			y: 5.5d
-			dependencies: ["63D72477BB0F83A4"]
-			id: "68E140A5DD8F3F8E"
-			tasks: [
-				{
-					id: "08E4B2A30181E88D"
-					type: "item"
-					item: {
-						id: "elementalcraft:jewel"
-						Count: 1b
-						tag: {
-							elementalcraft: {
-								jewel: "elementalcraft:water_strider"
-							}
-						}
-					}
-					match_nbt: true
-				}
-				{
-					id: "1DC4319C34318628"
-					type: "item"
-					item: {
-						id: "elementalcraft:element_holder_water"
-						Count: 1b
-						tag: {
-							Damage: 0
-						}
-						ForgeCaps: {
-							Parent: {
-								element_capacity: 10000
-								element_type: "water"
-								element_amount: 0
-							}
-						}
-					}
-				}
-			]
-		}
-		{
-			x: -0.5d
-			y: 5.5d
-			dependencies: ["63D72477BB0F83A4"]
-			id: "68F646A73B66D82A"
-			tasks: [
-				{
-					id: "70B8FC4CD85C89F8"
-					type: "item"
-					item: {
-						id: "elementalcraft:jewel"
-						Count: 1b
-						tag: {
-							elementalcraft: {
-								jewel: "elementalcraft:hawk"
-							}
-						}
-					}
-					match_nbt: true
-				}
-				{
-					id: "7A2C33D293723FA2"
-					type: "item"
-					item: {
-						id: "elementalcraft:element_holder_air"
-						Count: 1b
-						tag: {
-							Damage: 0
-						}
-						ForgeCaps: {
-							Parent: {
-								element_capacity: 10000
-								element_type: "air"
-								element_amount: 0
-							}
-						}
-					}
-				}
-			]
-		}
-		{
-			x: 0.5d
-			y: 5.5d
-			dependencies: ["63D72477BB0F83A4"]
-			id: "4406D31EA06538A1"
-			tasks: [
-				{
-					id: "6547C679B84CD01F"
-					type: "item"
-					item: {
-						id: "elementalcraft:jewel"
-						Count: 1b
-						tag: {
-							elementalcraft: {
-								jewel: "elementalcraft:bear"
-							}
-						}
-					}
-					match_nbt: true
-				}
-				{
-					id: "48F8474BEDBB4BA2"
-					type: "item"
-					item: {
-						id: "elementalcraft:element_holder_earth"
-						Count: 1b
-						tag: {
-							Damage: 0
-						}
-						ForgeCaps: {
-							Parent: {
-								element_capacity: 10000
-								element_type: "earth"
-								element_amount: 0
-							}
-						}
-					}
-				}
-			]
-		}
-		{
-			title: "Shrines"
-			x: -4.0d
-			y: 5.5d
-			description: [
-				"The Ore Shrine is basic method of in world ore collection."
-				"Elements must be piped directly into any shrine."
-			]
-			dependencies: ["6B06707ECFAFD263"]
-			id: "0F378674EF81D178"
-			tasks: [{
-				id: "4F33E9DF2516BCEA"
-				type: "item"
-				item: "elementalcraft:shrinebase"
-			}]
-			rewards: [{
-				id: "5DBD1AD796A3FCEB"
-				type: "item"
-				item: "elementalcraft:shrine_upgrade_core"
-			}]
-		}
-		{
-			title: "Elementalcraft Automation Tools"
-			x: -1.0d
-			y: 3.0d
-			description: ["These are a great help when automating Elementalcraft!"]
-			dependencies: ["61CCA7FA3C371180"]
-			id: "2DACD33891F1AB19"
-			tasks: [
-				{
-					id: "78204D93643F5B96"
-					type: "item"
-					item: "elementalcraft:instrument_retriever"
-				}
-				{
-					id: "42B4FEFF779D5232"
-					type: "item"
-					item: "elementalcraft:sorter"
-				}
-			]
-			rewards: [{
-				id: "3E0B0334A76880BF"
-				type: "random"
-				exclude_from_claim_all: true
-				table_id: 6594349084625110702L
-			}]
-		}
-		{
-			x: 4.0d
+			x: 3.0d
 			y: 4.5d
 			dependencies: ["0D9ABDE851B5E722"]
 			id: "070F35D0E7EF8EAC"
@@ -1872,14 +1490,241 @@
 			}]
 		}
 		{
-			x: 2.5d
-			y: 4.5d
+			x: 3.0d
+			y: 6.0d
 			dependencies: ["070F35D0E7EF8EAC"]
 			id: "52CA3CCD2B27CB98"
 			tasks: [{
 				id: "197FF241B85A951E"
 				type: "item"
 				item: "thermal:machine_smelter"
+			}]
+		}
+		{
+			title: "Crimson Altar"
+			icon: "naturesaura:tainted_gold"
+			x: 1.5d
+			y: -4.5d
+			description: ["Must be built in the Nether."]
+			dependencies: [
+				"31513AA25B621FD8"
+				"20FA1AFF0BD65177"
+			]
+			id: "72C360D92C26799F"
+			tasks: [
+				{
+					id: "7876A582459B93B1"
+					type: "item"
+					title: "Crimson/Warped Planks"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "mbm2:naturesaura/crimson_altar"
+						}
+					}
+					count: 20L
+				}
+				{
+					id: "2A05BA81C9D360F3"
+					type: "item"
+					item: "minecraft:red_nether_bricks"
+					count: 4L
+				}
+				{
+					id: "191BAA35843D7391"
+					type: "item"
+					item: "minecraft:nether_bricks"
+					count: 16L
+				}
+				{
+					id: "5418D1554871B886"
+					type: "item"
+					item: "naturesaura:gold_nether_brick"
+					count: 8L
+				}
+				{
+					id: "2894121D4DCD9343"
+					type: "item"
+					item: "naturesaura:tainted_gold"
+				}
+			]
+		}
+		{
+			x: 1.5d
+			y: -7.5d
+			description: ["By eating the moss off stones nearby, this is one simple (if ineffective) way to refill the Aura."]
+			dependencies: ["4691F3E2268FD78F"]
+			id: "1D7CB78AC32EAFC0"
+			tasks: [{
+				id: "4D2D4F7C4D71D5AC"
+				type: "item"
+				item: "naturesaura:moss_generator"
+			}]
+			rewards: [{
+				id: "290FC635B1E0980E"
+				type: "item"
+				item: "minecraft:mossy_cobblestone"
+				count: 64
+			}]
+		}
+		{
+			x: 3.0d
+			y: -7.5d
+			dependencies: ["4691F3E2268FD78F"]
+			id: "72094D5B6BA7A1EC"
+			tasks: [{
+				id: "405077118CE5D0F4"
+				type: "item"
+				item: "naturesaura:oak_generator"
+			}]
+		}
+		{
+			x: 1.5d
+			y: -5.5d
+			dependencies: ["31513AA25B621FD8"]
+			id: "4691F3E2268FD78F"
+			tasks: [{
+				id: "22C1A5DB0AFB31EE"
+				type: "item"
+				item: "naturesaura:infused_iron"
+			}]
+		}
+		{
+			title: "Paint the Trees Gold"
+			x: -3.0d
+			y: -5.5d
+			description: ["You'll be able to find the Book of Natural Aura in your Akashic Tome."]
+			dependencies: ["143FA2A8FD6E4E10"]
+			id: "4187F705E4356142"
+			tasks: [
+				{
+					id: "207E8A7F752042D0"
+					type: "item"
+					item: "naturesaura:gold_fiber"
+				}
+				{
+					id: "29FF7F7D6BDD7E50"
+					type: "item"
+					item: "naturesaura:gold_leaf"
+				}
+			]
+		}
+		{
+			title: "Ritual of the Forest"
+			icon: "naturesaura:wood_stand"
+			x: -1.5d
+			y: -5.5d
+			min_required_dependencies: 2
+			dependencies: [
+				"4187F705E4356142"
+				"38B7849EB717422A"
+				"4489F9C5F2899DFE"
+			]
+			min_required_tasks: 2
+			id: "6AD50F15723B7927"
+			tasks: [
+				{
+					id: "667719DCAABF9464"
+					type: "item"
+					item: "naturesaura:gold_powder"
+					count: 16L
+				}
+				{
+					id: "3B06635E1B7C7118"
+					type: "item"
+					item: "naturesaura:wood_stand"
+					count: 8L
+				}
+				{
+					id: "274EAC79CF00F4FB"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: "naturesaura:nature_altar"
+			x: 0.0d
+			y: -5.5d
+			subtitle: "Check out page 2 of the Ponder"
+			dependencies: ["6AD50F15723B7927"]
+			id: "31513AA25B621FD8"
+			tasks: [
+				{
+					id: "2D06F23D4A7EEC74"
+					type: "item"
+					item: "naturesaura:nature_altar"
+				}
+				{
+					id: "2885DD4829B36C14"
+					type: "item"
+					item: "minecraft:oak_planks"
+					count: 20L
+				}
+				{
+					id: "4AA0F6143AFE7D5F"
+					type: "item"
+					item: "minecraft:chiseled_stone_bricks"
+					count: 4L
+				}
+				{
+					id: "2F472C937866CC1E"
+					type: "item"
+					item: "minecraft:stone_bricks"
+					count: 16L
+				}
+				{
+					id: "1AFEE6C8846D9E82"
+					type: "item"
+					item: "naturesaura:gold_brick"
+					count: 8L
+				}
+			]
+		}
+		{
+			x: 0.0d
+			y: -7.5d
+			description: ["This displays the aura nearby."]
+			dependencies: ["6AD50F15723B7927"]
+			id: "75639B06251CAA16"
+			tasks: [{
+				id: "6EBBBAF37B549654"
+				type: "item"
+				item: "naturesaura:eye"
+			}]
+		}
+		{
+			x: -1.5d
+			y: -7.5d
+			subtitle: "You'll need this for Living Wood later"
+			dependencies: ["6AD50F15723B7927"]
+			id: "45DE61697465BD69"
+			tasks: [{
+				id: "13BB828FF1D197CD"
+				type: "item"
+				item: "naturesaura:ancient_sapling"
+			}]
+		}
+		{
+			title: "Tier 2 Powah!"
+			x: -7.5d
+			y: -2.5d
+			dependencies: ["17F948FD49F0EB33"]
+			id: "6EEC0647011A6CAC"
+			tasks: [{
+				id: "279A094FAFA72728"
+				type: "item"
+				item: "powah:capacitor_hardened"
+			}]
+		}
+		{
+			x: -3.0d
+			y: -4.0d
+			id: "38B7849EB717422A"
+			tasks: [{
+				id: "0C35C8AD0A05BCC6"
+				type: "item"
+				item: "elementalcraft:air_mill"
 			}]
 		}
 	]

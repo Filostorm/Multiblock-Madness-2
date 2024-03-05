@@ -88,6 +88,8 @@ upgradeMods.forEach(modID => {
   });
 });
 
+//Copper -> Iron chest recipe fix
+event.replaceInput({id: 'sophisticatedstorage:copper_to_iron_tier_upgrade'}, `redstone_torch`, `#forge:ingots/copper`)
 
 
 //Iron Backpack

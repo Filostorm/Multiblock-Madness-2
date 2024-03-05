@@ -28,6 +28,17 @@ const newShade = (hexColor, magnitude) => {
   return (g | (b << 8) | (r << 16));
 };
 
+//Build the part Name
+global.displayNameFunction = (material, ore_name, prefix, suffix) => {
+  if (ore_name == null) { 
+    let partDisplayName = prefix + nameUpper(material) + suffix
+    return partDisplayName
+  } else {
+    let partDisplayName = prefix + nameUpper(ore_name) + suffix
+    return partDisplayName
+  }
+}
+
 onEvent('item.registry', event => {
 
   let orePartCreation = global.oreParts.concat(global.oreBonusParts)
@@ -70,20 +81,15 @@ onEvent('item.registry', event => {
     if (item.ore) {
       if (item.type == 'base_metal' || item.type == 'compound_ore' || item.type == 'rare_metal') {
         orePartCreation.forEach((part) => {
-        //Build the part Name
-        if (item.ore_name == null) { 
-          global.partDisplayName = part.prefix + nameUpper(item.material) + part.suffix
-        } else {
-          global.partDisplayName = part.prefix + nameUpper(item.ore_name) + part.suffix
-        }
+
         //Make the part items
         if (item.raw_ore && part.name == 'raw') {
-          event.create(`${part.name}_${item.material}`).displayName(global.partDisplayName).color(0, item.color).texture(`kubejs:item/ore/${part.name}`)
+          event.create(`${part.name}_${item.material}`).displayName(global.displayNameFunction(item.material)).color(0, item.color).texture(`kubejs:item/ore/${part.name}`)
         } else if (part.name != 'raw' /*&& !(part.grade == null && item.type == 'compound_ore')*/) {
           if (part.model) {
-            event.create(`${part.name}_${item.material}`).displayName(global.partDisplayName).color(0, item.color).texture(`kubejs:item/ore/${part.name}`).parentModel(`kubejs:item/ore/${part.name}`)  
+            event.create(`${part.name}_${item.material}`).displayName(global.displayNameFunction(item.material, item.ore_name, part.prefix, part.suffix)).color(0, item.color).texture(`kubejs:item/ore/${part.name}`).parentModel(`kubejs:item/ore/${part.name}`)  
           } else {
-            event.create(`${part.name}_${item.material}`).displayName(global.partDisplayName).color(0, item.color).texture(`kubejs:item/ore/${part.name}`)
+            event.create(`${part.name}_${item.material}`).displayName(global.displayNameFunction(item.material, item.ore_name, part.prefix, part.suffix)).color(0, item.color).texture(`kubejs:item/ore/${part.name}`)
           }
         }
       })
@@ -115,6 +121,7 @@ onEvent('item.registry.armor_tiers', event => {
 })*/
 
 onEvent('block.registry', event => {
+	console.log('blocks in new parts')
   global.newMaterialParts.forEach((item) => {
     item.blockParts.forEach((part) => {
       if (part == 'scaffolding' || part == 'coil') {

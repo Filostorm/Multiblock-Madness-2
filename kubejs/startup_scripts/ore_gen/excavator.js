@@ -2,6 +2,7 @@
 
 onEvent('recipes', event => {
 
+	console.log('excivator')
 
 
 	//event.remove({type: 'immersiveengineering:mineral_mix'})
@@ -51,8 +52,8 @@ onEvent('recipes', event => {
 					"weight":20,"fail_chance":0.05,}).id(`mbm2:mineral/${item.material}`)
 				}
 			})
-			event.forEachRecipe({ type: 'immersiveengineering:mineral_mix' }, recipe => {
-				console.log(recipe)
-			})
+			//event.forEachRecipe({ type: 'immersiveengineering:mineral_mix' }, recipe => {
+			//	console.log(recipe)
+			//})
 		
 })

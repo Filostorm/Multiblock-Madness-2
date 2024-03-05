@@ -207,7 +207,7 @@ event.shaped('2x immersiveengineering:heavy_engineering', [
   B: 'thermal:obsidian_glass',
   C: '#forge:components/industrial_alloy',
   P: 'thermal:invar_gear',
-  D: 'mna:bone_ash'
+  D: 'kubejs:living_metal_seed'
     }).id('mbm2:immersiveengineering/heavy_engineering')
     //Make more expensive, have rubber be a ingredent in a component
 

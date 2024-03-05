@@ -228,109 +228,8 @@
 			}]
 		}
 		{
-			icon: "naturesaura:nature_altar"
-			x: 13.0d
-			y: 1.5d
-			subtitle: "Check out page 2 of the Ponder"
-			dependencies: [
-				"6AD50F15723B7927"
-				"2E25E6142C8DBE01"
-			]
-			id: "31513AA25B621FD8"
-			tasks: [
-				{
-					id: "2D06F23D4A7EEC74"
-					type: "item"
-					item: "naturesaura:nature_altar"
-				}
-				{
-					id: "2885DD4829B36C14"
-					type: "item"
-					item: "minecraft:oak_planks"
-					count: 20L
-				}
-				{
-					id: "4AA0F6143AFE7D5F"
-					type: "item"
-					item: "minecraft:chiseled_stone_bricks"
-					count: 4L
-				}
-				{
-					id: "2F472C937866CC1E"
-					type: "item"
-					item: "minecraft:stone_bricks"
-					count: 16L
-				}
-				{
-					id: "1AFEE6C8846D9E82"
-					type: "item"
-					item: "naturesaura:gold_brick"
-					count: 8L
-				}
-			]
-		}
-		{
-			title: "Paint the Trees Gold"
-			x: 16.5d
-			y: 1.5d
-			description: ["You'll be able to find the Book of Natural Aura in your Akashic Tome."]
-			dependencies: ["143FA2A8FD6E4E10"]
-			id: "4187F705E4356142"
-			tasks: [
-				{
-					id: "207E8A7F752042D0"
-					type: "item"
-					item: "naturesaura:gold_fiber"
-				}
-				{
-					id: "29FF7F7D6BDD7E50"
-					type: "item"
-					item: "naturesaura:gold_leaf"
-				}
-			]
-		}
-		{
-			title: "Ritual of the Forest"
-			icon: "naturesaura:wood_stand"
-			x: 14.5d
-			y: 1.5d
-			dependencies: ["4187F705E4356142"]
-			min_required_tasks: 2
-			id: "6AD50F15723B7927"
-			tasks: [
-				{
-					id: "667719DCAABF9464"
-					type: "item"
-					item: "naturesaura:gold_powder"
-					count: 16L
-				}
-				{
-					id: "3B06635E1B7C7118"
-					type: "item"
-					item: "naturesaura:wood_stand"
-					count: 8L
-				}
-				{
-					id: "274EAC79CF00F4FB"
-					type: "checkmark"
-				}
-			]
-		}
-		{
-			x: 13.0d
-			y: 3.0d
-			description: ["This displays the aura nearby."]
-			dependencies: ["6AD50F15723B7927"]
-			id: "75639B06251CAA16"
-			tasks: [{
-				id: "6EBBBAF37B549654"
-				type: "item"
-				item: "naturesaura:eye"
-			}]
-		}
-		{
 			title: "Easy(er) Alloys"
-			x: 9.5d
+			x: 7.5d
 			y: 0.0d
 			shape: "rsquare"
 			description: ["Build in a 4x4, then hammer the front with the Engineers Hammer"]
@@ -391,105 +290,19 @@
 			}]
 		}
 		{
-			title: "Crimson Altar"
-			icon: "naturesaura:tainted_gold"
-			x: 11.5d
-			y: 1.5d
-			description: ["Must be built in the Nether."]
-			dependencies: [
-				"31513AA25B621FD8"
-				"20FA1AFF0BD65177"
-			]
-			id: "72C360D92C26799F"
-			tasks: [
-				{
-					id: "7876A582459B93B1"
-					type: "item"
-					title: "Crimson/Warped Planks"
-					item: {
-						id: "itemfilters:tag"
-						Count: 1b
-						tag: {
-							value: "mbm2:naturesaura/crimson_altar"
-						}
-					}
-					count: 20L
-				}
-				{
-					id: "2A05BA81C9D360F3"
-					type: "item"
-					item: "minecraft:red_nether_bricks"
-					count: 4L
-				}
-				{
-					id: "191BAA35843D7391"
-					type: "item"
-					item: "minecraft:nether_bricks"
-					count: 16L
-				}
-				{
-					id: "5418D1554871B886"
-					type: "item"
-					item: "naturesaura:gold_nether_brick"
-					count: 8L
-				}
-				{
-					id: "2894121D4DCD9343"
-					type: "item"
-					item: "naturesaura:tainted_gold"
-				}
-			]
-		}
-		{
-			title: "Steel"
-			x: 7.5d
-			y: 0.5d
-			shape: "circle"
-			dependencies: ["729CD1DC498A9130"]
-			id: "35C16B4B5D8C7148"
-			tasks: [
-				{
-					id: "23258E62D7B5AB09"
-					type: "item"
-					item: "kubejs:carbon_covered_iron"
-				}
-				{
-					id: "418726F0FA55D645"
-					type: "item"
-					item: "mekanism:ingot_steel"
-				}
-			]
-		}
-		{
-			title: "Vinteum"
-			x: 9.5d
-			y: 2.5d
-			dependencies: ["729CD1DC498A9130"]
-			id: "243652BEE988A387"
-			tasks: [
-				{
-					id: "38B92A9528D8EDED"
-					type: "item"
-					item: "mna:vinteum_coated_iron"
-				}
-				{
-					id: "5C7A47EDB8AF316E"
-					type: "item"
-					item: "mna:vinteum_ingot"
-				}
-			]
-		}
-		{
 			title: "The Foundry"
 			icon: "tconstruct:foundry_controller"
 			x: 8.5d
 			y: 1.5d
 			shape: "gear"
 			dependencies: [
-				"72C360D92C26799F"
 				"46DC0D67FE1C4C67"
 				"4C7F486D0CCC38E0"
 				"1E77F20F773CA050"
+				"63D72477BB0F83A4"
+				"29506E4E5B34C06B"
+				"20FA1AFF0BD65177"
+				"2E25E6142C8DBE01"
 			]
 			size: 1.5d
 			id: "729CD1DC498A9130"
@@ -605,6 +418,7 @@
 			icon: "createoreexcavation:drilling_machine"
 			x: 4.0d
 			y: 4.5d
+			subtitle: "Many Ores"
 			description: ["You'll probably need to set up a Steam Engine to generate enough Rotation to power the drill."]
 			dependencies: ["1E77F20F773CA050"]
 			id: "7F00F4A7C74AC181"
@@ -633,17 +447,6 @@
 					table_id: 1606026794008844755L
 				}
 			]
-		}
-		{
-			x: 11.5d
-			y: 3.0d
-			dependencies: ["31513AA25B621FD8"]
-			id: "193DF7CEBFCB9C41"
-			tasks: [{
-				id: "74DE4F3CEC5A2FCE"
-				type: "item"
-				item: "apotheosis:salvaging_table"
-			}]
 		}
 		{
 			title: "Steam Engines!"
@@ -757,31 +560,6 @@
 			}]
 		}
 		{
-			title: "Bottled Aura"
-			x: 14.5d
-			y: 0.0d
-			dependencies: ["4187F705E4356142"]
-			id: "2E25E6142C8DBE01"
-			tasks: [
-				{
-					id: "42E16D3411C0AB57"
-					type: "item"
-					item: "naturesaura:bottle_two_the_rebottling"
-				}
-				{
-					id: "6B49AB20C14E3ACB"
-					type: "item"
-					item: {
-						id: "naturesaura:aura_bottle"
-						Count: 1b
-						tag: {
-							stored_type: "naturesaura:overworld"
-						}
-					}
-				}
-			]
-		}
-		{
 			title: "Scorched Bricks"
 			icon: "tconstruct:scorched_brick"
 			x: 6.5d
@@ -795,49 +573,8 @@
 			}]
 		}
 		{
-			x: 13.0d
-			y: 0.0d
-			dependencies: ["31513AA25B621FD8"]
-			id: "4691F3E2268FD78F"
-			tasks: [{
-				id: "22C1A5DB0AFB31EE"
-				type: "item"
-				item: "naturesaura:infused_iron"
-			}]
-		}
-		{
-			x: 12.0d
-			y: -1.5d
-			description: ["By eating the moss off stones nearby, this is one simple (if ineffective) way to refill the Aura."]
-			dependencies: ["4691F3E2268FD78F"]
-			id: "1D7CB78AC32EAFC0"
-			tasks: [{
-				id: "4D2D4F7C4D71D5AC"
-				type: "item"
-				item: "naturesaura:moss_generator"
-			}]
-			rewards: [{
-				id: "290FC635B1E0980E"
-				type: "item"
-				item: "minecraft:mossy_cobblestone"
-				count: 64
-			}]
-		}
-		{
-			x: 14.5d
-			y: 3.0d
-			subtitle: "You'll need this for Living Wood later"
-			dependencies: ["6AD50F15723B7927"]
-			id: "45DE61697465BD69"
-			tasks: [{
-				id: "13BB828FF1D197CD"
-				type: "item"
-				item: "naturesaura:ancient_sapling"
-			}]
-		}
-		{
-			x: 8.5d
-			y: 7.5d
+			x: 10.0d
+			y: 6.0d
 			dependencies: ["488E2999C6BE6591"]
 			id: "20E99BAA6C9A4913"
 			tasks: [{
@@ -849,10 +586,10 @@
 		}
 		{
 			title: "Imbument Chamber"
-			x: 14.0d
-			y: 7.0d
+			x: 11.5d
+			y: 4.0d
 			description: ["Auxiliary items are not comsumed for crafting."]
-			dependencies: ["4187F705E4356142"]
+			dependencies: ["61CCA7FA3C371180"]
 			id: "488E2999C6BE6591"
 			tasks: [{
 				id: "2124621A623FF8EA"
@@ -911,11 +648,13 @@
 			]
 		}
 		{
-			title: "Tier 2 Powah"
-			x: 8.5d
-			y: 6.0d
+			title: "Energizing!"
+			x: 7.0d
+			y: 7.5d
+			subtitle: "Try the Ordered Sorter!"
 			description: ["Place the Rods near the Orb and fill with crafting materials."]
 			dependencies: ["47910242F4DE9220"]
+			min_required_tasks: 2
 			id: "37610C524354F5F2"
 			tasks: [
 				{
@@ -927,11 +666,6 @@
 					id: "1B08B163ECFB54FC"
 					type: "item"
 					item: "powah:energizing_rod_basic"
-				}
-				{
-					id: "1B4BF19412D41125"
-					type: "item"
-					item: "powah:steel_energized"
 				}
 			]
 			rewards: [{
@@ -947,7 +681,7 @@
 			}]
 		}
 		{
-			x: 6.5d
+			x: 10.0d
 			y: 7.5d
 			dependencies: ["20E99BAA6C9A4913"]
 			id: "4DE314D64C3E7C9E"
@@ -958,8 +692,8 @@
 			}]
 		}
 		{
-			x: 5.0d
-			y: 7.5d
+			x: 8.5d
+			y: 9.0d
 			dependencies: ["4DE314D64C3E7C9E"]
 			id: "15B1FC183A90145C"
 			tasks: [{
@@ -969,7 +703,7 @@
 			}]
 		}
 		{
-			x: 5.0d
+			x: 11.5d
 			y: 9.0d
 			description: ["Used to craft gems from dust."]
 			dependencies: ["4DE314D64C3E7C9E"]
@@ -981,7 +715,7 @@
 			}]
 		}
 		{
-			x: 6.5d
+			x: 10.0d
 			y: 9.0d
 			dependencies: ["4DE314D64C3E7C9E"]
 			id: "4483AED226DF988C"
@@ -994,8 +728,8 @@
 		{
 			title: "Fluix Dust"
 			icon: "ae2:fluix_dust"
-			x: 10.0d
-			y: 6.0d
+			x: 7.0d
+			y: 9.0d
 			description: ["Throw the quartz and redstone into water to combine into Fluix."]
 			dependencies: ["37610C524354F5F2"]
 			id: "338A1AE116F1A652"
@@ -1024,8 +758,8 @@
 		}
 		{
 			title: "Energetic Alloy"
-			x: 10.0d
-			y: 4.5d
+			x: 5.5d
+			y: 9.0d
 			description: ["Can be crafted by casting molten Electrum onto Energetic Blend."]
 			dependencies: ["37610C524354F5F2"]
 			id: "059414648F84FC52"
@@ -1037,8 +771,8 @@
 		}
 		{
 			title: "Auto Crafting!"
-			x: 11.5d
-			y: 4.5d
+			x: 7.0d
+			y: 10.5d
 			description: [
 				"You'll need to convert the Crafting Unit by adding a Storage Disk of some size."
 				""
@@ -1093,8 +827,8 @@
 		}
 		{
 			title: "Basic Digital Storage"
-			x: 11.5d
-			y: 6.0d
+			x: 5.5d
+			y: 10.5d
 			description: ["You'll need to unlock steel for the Crafting Terminal."]
 			dependencies: [
 				"338A1AE116F1A652"
@@ -1195,15 +929,410 @@
 			]
 		}
 		{
-			x: 14.0d
-			y: -1.5d
-			dependencies: ["4691F3E2268FD78F"]
-			id: "72094D5B6BA7A1EC"
+			title: "Crystal Seeds"
+			x: 8.5d
+			y: 10.5d
+			description: ["Double your Quartz and Fluix!"]
+			dependencies: ["338A1AE116F1A652"]
+			id: "2BF6374708A25B4E"
+			tasks: [
+				{
+					id: "17DB0A1626E9915D"
+					type: "item"
+					item: "ae2:certus_crystal_seed"
+				}
+				{
+					id: "720DDC0785BE636A"
+					type: "item"
+					item: "ae2:fluix_crystal_seed"
+				}
+			]
+		}
+		{
+			x: 11.5d
+			y: 7.0d
+			subtitle: "Automating 3D crafting!"
+			description: ["When Automating the placing of blocks for 3D crafting, it is required to also ping this block with a redstone pulse before throwing the item in to start the craft."]
+			dependencies: ["20E99BAA6C9A4913"]
+			id: "6B656B6FE8A5F221"
 			tasks: [{
-				id: "405077118CE5D0F4"
+				id: "1617AA403965171A"
 				type: "item"
-				item: "naturesaura:oak_generator"
+				item: "compactcrafting:rescan_proxy"
 			}]
+		}
+		{
+			title: "More Elemental Infused Items"
+			x: 12.5d
+			y: 1.5d
+			description: ["If you need help finding Amethest, the Explorers Compass or the Dowsing Rod can lead you to a Geode!"]
+			dependencies: ["6B06707ECFAFD263"]
+			id: "61CCA7FA3C371180"
+			tasks: [
+				{
+					id: "2CFB04C7A08F97D3"
+					type: "item"
+					item: "elementalcraft:swift_alloy_ingot"
+				}
+				{
+					id: "48F4AD547AF2A043"
+					type: "item"
+					item: "elementalcraft:springaline_shard"
+				}
+			]
+		}
+		{
+			x: 14.0d
+			y: 1.5d
+			description: ["Items must be placed in the shown order."]
+			dependencies: ["391E4F9DA1A3D71B"]
+			id: "6B06707ECFAFD263"
+			tasks: [{
+				id: "6378AF3A0AE6AF58"
+				type: "item"
+				item: "elementalcraft:binder"
+			}]
+			rewards: [{
+				id: "51255585156612F0"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 6594349084625110702L
+			}]
+		}
+		{
+			title: "Shrines"
+			x: 15.5d
+			y: 0.0d
+			description: [
+				"The Ore Shrine is basic method of in world ore collection."
+				"Elements must be piped directly into any shrine."
+			]
+			dependencies: ["6B06707ECFAFD263"]
+			id: "0F378674EF81D178"
+			tasks: [{
+				id: "4F33E9DF2516BCEA"
+				type: "item"
+				item: "elementalcraft:shrinebase"
+			}]
+			rewards: [{
+				id: "5DBD1AD796A3FCEB"
+				type: "item"
+				item: "elementalcraft:shrine_upgrade_core"
+			}]
+		}
+		{
+			x: 12.5d
+			y: -1.0d
+			dependencies: ["63D72477BB0F83A4"]
+			id: "6B88E5CD8EC9BE7B"
+			tasks: [
+				{
+					id: "7F86898B2643C4E6"
+					type: "item"
+					item: {
+						id: "elementalcraft:jewel"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								jewel: "elementalcraft:strider"
+							}
+						}
+					}
+					match_nbt: true
+				}
+				{
+					id: "185EC521325CAEC0"
+					type: "item"
+					item: {
+						id: "elementalcraft:element_holder_fire"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+						ForgeCaps: {
+							Parent: {
+								element_capacity: 10000
+								element_type: "fire"
+								element_amount: 0
+							}
+						}
+					}
+				}
+			]
+		}
+		{
+			x: 11.5d
+			y: -1.0d
+			dependencies: ["63D72477BB0F83A4"]
+			id: "68E140A5DD8F3F8E"
+			tasks: [
+				{
+					id: "08E4B2A30181E88D"
+					type: "item"
+					item: {
+						id: "elementalcraft:jewel"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								jewel: "elementalcraft:water_strider"
+							}
+						}
+					}
+					match_nbt: true
+				}
+				{
+					id: "1DC4319C34318628"
+					type: "item"
+					item: {
+						id: "elementalcraft:element_holder_water"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+						ForgeCaps: {
+							Parent: {
+								element_capacity: 10000
+								element_type: "water"
+								element_amount: 0
+							}
+						}
+					}
+				}
+			]
+		}
+		{
+			x: 11.5d
+			y: 0.0d
+			dependencies: ["63D72477BB0F83A4"]
+			id: "68F646A73B66D82A"
+			tasks: [
+				{
+					id: "70B8FC4CD85C89F8"
+					type: "item"
+					item: {
+						id: "elementalcraft:jewel"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								jewel: "elementalcraft:hawk"
+							}
+						}
+					}
+					match_nbt: true
+				}
+				{
+					id: "7A2C33D293723FA2"
+					type: "item"
+					item: {
+						id: "elementalcraft:element_holder_air"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+						ForgeCaps: {
+							Parent: {
+								element_capacity: 10000
+								element_type: "air"
+								element_amount: 0
+							}
+						}
+					}
+				}
+			]
+		}
+		{
+			x: 12.5d
+			y: 0.0d
+			dependencies: ["63D72477BB0F83A4"]
+			id: "4406D31EA06538A1"
+			tasks: [
+				{
+					id: "6547C679B84CD01F"
+					type: "item"
+					item: {
+						id: "elementalcraft:jewel"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								jewel: "elementalcraft:bear"
+							}
+						}
+					}
+					match_nbt: true
+				}
+				{
+					id: "48F8474BEDBB4BA2"
+					type: "item"
+					item: {
+						id: "elementalcraft:element_holder_earth"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+						ForgeCaps: {
+							Parent: {
+								element_capacity: 10000
+								element_type: "earth"
+								element_amount: 0
+							}
+						}
+					}
+				}
+			]
+		}
+		{
+			x: 11.0d
+			y: 1.5d
+			description: [""]
+			dependencies: ["61CCA7FA3C371180"]
+			id: "63D72477BB0F83A4"
+			tasks: [{
+				id: "0576FF10B6A77AE8"
+				type: "item"
+				item: "elementalcraft:crystallizer"
+			}]
+			rewards: [{
+				id: "1A071C495A346567"
+				type: "choice"
+				exclude_from_claim_all: true
+				table_id: 5588879661420231004L
+			}]
+		}
+		{
+			title: "Elementalcraft Automation Tools"
+			x: 14.0d
+			y: 0.0d
+			description: ["These are a great help when automating Elementalcraft!"]
+			dependencies: ["61CCA7FA3C371180"]
+			id: "2DACD33891F1AB19"
+			tasks: [
+				{
+					id: "78204D93643F5B96"
+					type: "item"
+					item: "elementalcraft:instrument_retriever"
+				}
+				{
+					id: "42B4FEFF779D5232"
+					type: "item"
+					item: "elementalcraft:sorter"
+				}
+			]
+			rewards: [{
+				id: "3E0B0334A76880BF"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 6594349084625110702L
+			}]
+		}
+		{
+			x: 13.5d
+			y: 3.5d
+			dependencies: ["61CCA7FA3C371180"]
+			id: "193DF7CEBFCB9C41"
+			tasks: [{
+				id: "74DE4F3CEC5A2FCE"
+				type: "item"
+				item: "apotheosis:salvaging_table"
+			}]
+		}
+		{
+			title: "Electric City"
+			x: 8.5d
+			y: 7.5d
+			dependencies: [
+				"37610C524354F5F2"
+				"4DE314D64C3E7C9E"
+			]
+			min_required_tasks: 2
+			id: "413DA778FC89BC94"
+			tasks: [
+				{
+					id: "496B2F2A593FFB21"
+					type: "item"
+					item: "thermal:charge_bench"
+				}
+				{
+					id: "465646683A293877"
+					type: "item"
+					item: {
+						id: "thermal:flux_drill"
+						Count: 1b
+						tag: { }
+					}
+				}
+				{
+					id: "1482BCC043A384DE"
+					type: "item"
+					item: {
+						id: "thermal:flux_magnet"
+						Count: 1b
+						tag: { }
+					}
+				}
+				{
+					id: "5434002AFF74BA8E"
+					type: "item"
+					item: {
+						id: "thermal:flux_saw"
+						Count: 1b
+						tag: { }
+					}
+				}
+			]
+		}
+		{
+			disable_toast: true
+			x: 9.5d
+			y: 3.0d
+			dependencies: [
+				"0A183233FD5F6BF5"
+				"488E2999C6BE6591"
+			]
+			id: "29506E4E5B34C06B"
+			tasks: [{
+				id: "2EB4AA772AD056F4"
+				type: "item"
+				item: "ars_nouveau:scribes_table"
+			}]
+		}
+		{
+			disable_toast: true
+			x: 9.0d
+			y: 4.5d
+			shape: "circle"
+			subtitle: "Check out the Ars Nouveau quest page!"
+			id: "0A183233FD5F6BF5"
+			tasks: [{
+				id: "40935CD9C6341B46"
+				type: "item"
+				item: "ars_nouveau:novice_spell_book"
+			}]
+		}
+		{
+			title: "Bottled Aura"
+			x: 10.0d
+			y: -1.0d
+			description: ["Depending on what dimension you use the bottle, you'll get different results."]
+			dependencies: ["20FA1AFF0BD65177"]
+			id: "2E25E6142C8DBE01"
+			tasks: [
+				{
+					id: "42E16D3411C0AB57"
+					type: "item"
+					item: "naturesaura:bottle_two_the_rebottling"
+				}
+				{
+					id: "4BA02776067A5DFC"
+					type: "item"
+					item: {
+						id: "naturesaura:aura_bottle"
+						Count: 1b
+						tag: {
+							stored_type: "naturesaura:nether"
+						}
+					}
+				}
+			]
 		}
 	]
 	quest_links: [ ]

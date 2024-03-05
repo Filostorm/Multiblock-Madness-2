@@ -12,6 +12,9 @@ onEvent('worldgen.remove', event => {
 
 onEvent('worldgen.add', event => {
 
+	
+	console.log('venus')
+
 	const venusSurfaceChance = 0
 
 	// use the anchors helper from the event (NOTE: this requires newer versions of KubeJS)
@@ -49,7 +52,9 @@ onEvent('worldgen.add', event => {
 		ore.id = 'kubejs:venus_diamond_ore'
 	
 		global.stoneTypes.forEach((type) => {
+			if (Item.of(`excavated_variants:${type.material}_diamond_ore`) != null) {
 				ore.addTarget(`#forge:${type.material}`, `excavated_variants:${type.material}_diamond_ore`)
+			}
 		})
 		    
 
@@ -72,7 +77,9 @@ onEvent('worldgen.add', event => {
 		ore.id = 'kubejs:venus_uranium_ore'
 	
 		global.stoneTypes.forEach((type) => {
+			if (Item.of(`excavated_variants:${type.material}_uranium_ore`) != null) {
 				ore.addTarget(`#forge:${type.material}`, `excavated_variants:${type.material}_uranium_ore`)
+			}
 		})
 		    
 

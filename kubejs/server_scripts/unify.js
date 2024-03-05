@@ -42,9 +42,9 @@ var removeByName = [
 	'mekanism:paper',
 	'minecraft:sticky_piston',
 	'beyond_earth:desh_plate',
-	'allomancy:duralumin_ingot_from_alloying',
-	'allomancy:nicrosil_ingot_from_alloying',
-	'allomancy:bendalloy_ingot_from_alloying',
+	//'allomancy:duralumin_ingot_from_alloying',
+	//'allomancy:nicrosil_ingot_from_alloying',
+	//'allomancy:bendalloy_ingot_from_alloying',
 	'thermal:rockwool/white_rockwool_from_blasting',
 	'malum:magma_cream_from_sapballs',
 	'thermal:bottler_bucket',
@@ -56,7 +56,7 @@ var removeByName = [
 	'tconstruct:common/materials/netherite_ingot_from_nuggets',
 	'minecraft:netherite_ingot',
 	//'tconstruct:smeltery/melting/ender/pearl'
-	'allomancy:pewter_ingot_from_alloying',
+	//'allomancy:pewter_ingot_from_alloying',
 ]
 
 onEvent('recipes', event => {

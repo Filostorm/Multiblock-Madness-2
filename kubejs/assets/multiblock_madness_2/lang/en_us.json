@@ -385,5 +385,9 @@
   "entity.minecraft.villager.immersiveengineering:mechinist" : "Mechinist",
   "entity.minecraft.villager.immersiveengineering:electrician" : "Electrician",
   "entity.minecraft.villager.immersiveengineering:outfitter" : "Outfitter",
-  "entity.minecraft.villager.immersiveengineering:gunsmith" : "Gunsmith"
+  "entity.minecraft.villager.immersiveengineering:gunsmith" : "Gunsmith",
+
+  
+  "item.naturesaura.infused_iron": "Infused Mithril Ingot",
+  "block.naturesaura.infused_iron_block": "Infused Mithril Block"
 }

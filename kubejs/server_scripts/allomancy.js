@@ -1,9 +1,4 @@
-//onEvent('item.right_click', event => {
-//    const { player, block, item, hand, server } = event //gets some data from the event.
-//  if(item == 'allomancy:iron_flakes'){
-//    event.server.runCommand(`allomancy get`)
-//  }
-//})
+/*
 onEvent('item.right_click', event => {
 	global.newMaterialParts.forEach((item) => {
 		//Allomantic command for flakes
@@ -14,4 +9,4 @@ onEvent('item.right_click', event => {
       }
     }
   })
-})
+})*/

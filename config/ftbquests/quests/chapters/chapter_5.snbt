@@ -644,7 +644,6 @@
 			title: "Explosions!"
 			x: -6.5d
 			y: -4.0d
-			dependencies: ["35C16B4B5D8C7148"]
 			id: "418AC2EB203010CA"
 			tasks: [
 				{
@@ -684,10 +683,7 @@
 		{
 			x: 5.5d
 			y: -4.0d
-			dependencies: [
-				"13D02E1465C8913E"
-				"098CAF7E91266CDC"
-			]
+			dependencies: ["13D02E1465C8913E"]
 			id: "65E0754BC5138500"
 			tasks: [{
 				id: "40BB7B8E8F18AC62"

@@ -273,14 +273,14 @@ global.AssemblyLaser = (event, output, input, ID) => {
 
 ///////////////// NATURAL ALTAR ///////////////////////
 	global.naturesauraAltar = (event, output, input, catalyst, aura_type, aura, time, ID) => {
-		if (catalyst == 'crushing' || catalyst == 'conversion') {
+		if (Item.of(catalyst) != null) {
 			event.custom({
 				type: 'naturesaura:altar',
 				input: Ingredient.of(input).toJson(),
 				output: Item.of(output).toResultJson(),
 				aura_type: `naturesaura:${aura_type}`,
 				catalyst: {
-					item: `naturesaura:${catalyst}_catalyst`
+					item: catalyst
 				},
 				aura: aura, //2000,
 				time: time //20

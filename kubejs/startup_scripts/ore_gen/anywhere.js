@@ -1,6 +1,7 @@
 
 onEvent('worldgen.add', event => {
 
+	console.log('anywhere')
 	const {anchors} = event
 	
 	// Base Uru Veins

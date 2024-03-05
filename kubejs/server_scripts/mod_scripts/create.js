@@ -315,4 +315,14 @@ event.shaped('create:hose_pulley', [
 
 	//Soul Sand
 	event.recipes.createCompacting([`soul_sand`], ['#forge:netherrack', 'engineersdecor:dense_grit_sand_block']).heated().id('mbm2:mixing/soul_sand_smh')
+
+	//liquid_source
+	event.recipes.createEmptying([Fluid.of('kubejs:liquid_source', 1000), 'bucket'], ['ars_nouveau:bucket_of_source']).id('mbm2:emptying/liquid_source')
+
+	/* Schematic ded
+	let powahCasingSchematic = Item.of('create:schematic', '{Anchor:{X:0,Y:0,Z:0},Bounds:[3,3,3],Deployed:0b,File:"dielectric_casing.nbt",Mirror:"NONE",Owner:"NONE",Rotation:"NONE"}')
+
+	event.shapeless(powahCasingSchematic, ['create:empty_schematic', 'kubejs:dielectric_alloy_scaffolding']).keepIngredient(1).id(`mbm2:schematic/dielectric_casing`)
+	*/
+
 });

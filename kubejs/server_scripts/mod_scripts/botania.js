@@ -125,7 +125,7 @@ event.custom({
 	"type": 'mythicbotany:infusion',
 	"group": 'infuser',
 	"ingredients": [
-		{ "item": 'mna:mark_of_the_fey' },
+		{ "item": 'kubejs:nature_gem' },
 		{ "tag": 'elementalcraft:gems/fine_earth' },
 		{ "item": 'reliquary:fertile_lily_pad' },
 		{ "item": 'naturesaura:aura_bloom' },

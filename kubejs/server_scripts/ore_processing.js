@@ -126,16 +126,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 		event.remove({id: `elementalcraft:pure_ore/mekanism/processing/${item.material}/dust/from_ore`})
 		event.remove({id: `elementalcraft:forge_${item.material}_to_pure_ore`})
 		
-		
-		
-
-		
-		
-		
-		
 		if (item.ore) {
-
-			
 		// Fragmets
 		if(Item.of(`#forge:ores/raw/${item.material}`) != null) {
 		event.shaped(Item.of(`#forge:ores/raw/${item.material}`), [
@@ -151,7 +142,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 			let refineProcessedOre = []
 			let smeltProcessedOre = []
 			global.oreProcessingParts.forEach((part) => {
-				if (part.grade >= item.tier-1) {
+				if (part.grade >= item.tier-1 && Item.of(`#forge:ores/${part.name}/${item.material}`) != null) {
 					refineProcessedOre.push(`#forge:ores/${part.name}/${item.material}`)
 					smeltProcessedOre.push(`#forge:ores/${part.name}/${item.material}`)
 				}
@@ -275,7 +266,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 
 				///////////////////// ORE PROCESSING STEP 3 //////////////////
 				//Water Filter
-				event.shaped('4x kubejs:water_filter', [
+				event.shaped('kubejs:water_filter', [
 					'SWS',
 					'RWR',
 					'SWS'
@@ -290,7 +281,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				
 				//Ore Flotation
 				event.recipes.multiblocked.multiblock("flotation")
-				.inputFluid(Fluid.of('water', 500))
+				.inputFluid(Fluid.of('water', 250))
 				.inputItem(`#forge:ores/chunk/${item.material}`)
 				.outputItem(Item.of(`#forge:ores/lump/${item.material}`))
 				.outputFluid(Fluid.of('kubejs:sludge', 250))
@@ -299,7 +290,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				.duration(100)
 				//Ore Flotation w/ Purified Water
 				event.recipes.multiblocked.multiblock("flotation")
-				.inputFluid(Fluid.of('kubejs:purified_water', 500))
+				.inputFluid(Fluid.of('kubejs:purified_water', 250))
 				.inputItem(`#forge:ores/chunk/${item.material}`)
 				.outputItem(Item.of(`#forge:ores/lump/${item.material}`))
 				.setChance(0.25)
@@ -443,9 +434,9 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				///////////////////// ORE REFINING STEP 2 //////////////////
 			
 					//NA Crushing
-					global.naturesauraAltar(event, `${global.refiningMultiplier[2]}x kubejs:${global.oreRefiningParts[2].name}_${item.material}`, `#mbm2:ore_part/refinable_tier_2/${item.material}`, 'crushing', 'overworld', 10000, 80, `mbm2:${global.oreRefiningParts[2].name}/${item.material}`)
+					global.naturesauraAltar(event, `${global.refiningMultiplier[2]}x kubejs:${global.oreRefiningParts[2].name}_${item.material}`, `#mbm2:ore_part/refinable_tier_2/${item.material}`, 'naturesaura:crushing_catalyst', 'overworld', 10000, 80, `mbm2:${global.oreRefiningParts[2].name}/${item.material}`)
 					//Chain recipe
-					global.naturesauraAltar(event, `kubejs:${global.oreRefiningParts[2].name}_${item.material}`, `kubejs:${global.oreRefiningParts[3].name}_${item.material}`, 'crushing', 'overworld', 2000, 40, `mbm2:chain_recipe/${global.oreRefiningParts[2].name}/${item.material}`)
+					global.naturesauraAltar(event, `kubejs:${global.oreRefiningParts[2].name}_${item.material}`, `kubejs:${global.oreRefiningParts[3].name}_${item.material}`, 'naturesaura:crushing_catalyst', 'overworld', 2000, 40, `mbm2:chain_recipe/${global.oreRefiningParts[2].name}/${item.material}`)
 
 	 				////Imbuing
 	 				//global.arsImbument(event, `kubejs:${global.oreRefiningParts[2]}_${item.material}`, global.refiningMultiplier[2], refinableOre(2), 3000, [], `mbm2:${global.oreRefiningParts[2]}/${item.material}`)
@@ -595,7 +586,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 
 						//Retro Blasting
 						event.recipes.multiblocked.multiblock("ebf")
-						.inputFluid(Fluid.of('mekanism:oxygen', 1000))
+						.inputFluid(Fluid.of('mekanism:oxygen', 500))
 						.inputItem(smeltProcessedOre)
 						.outputItem(Item.of(`#forge:ingots/${item.material}`))
 						.setPerTick(true)
@@ -603,7 +594,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 						.duration(150)
 						//Retro Blasting air
 						event.recipes.multiblocked.multiblock("ebf")
-						.inputFluid(Fluid.of('kubejs:liquid_air', 1000))
+						.inputFluid(Fluid.of('kubejs:liquid_air', 500))
 						.inputItem(smeltProcessedOre)
 						.outputItem(Item.of(`#forge:ingots/${item.material}`))
 						.setPerTick(true)
@@ -634,7 +625,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 					event.recipes.immersiveengineeringArcFurnace(Item.of(`#forge:ingots/${item.material}`), smeltProcessedOre).id(`mbm2:arc_furnace/${item.material}_t2_ore_part`)
 					//Retro Blasting
 					event.recipes.multiblocked.multiblock("ebf")
-					.inputFluid(Fluid.of('kubejs:liquid_air', 1000))
+					.inputFluid(Fluid.of('kubejs:liquid_air', 500))
 					.inputItem(smeltProcessedOre)
 					.outputItem(Item.of(`#forge:ingots/${item.material}`))
 					.setPerTick(true)
@@ -642,7 +633,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 					.duration(200)
 					//Oxygen
 					event.recipes.multiblocked.multiblock("ebf")
-					.inputFluid(Fluid.of('mekanism:oxygen', 1000))
+					.inputFluid(Fluid.of('mekanism:oxygen', 500))
 					.inputItem(smeltProcessedOre)
 					.outputItem(Item.of(`#forge:ingots/${item.material}`))
 					.setPerTick(true)
@@ -656,7 +647,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 
 						//Retro Blasting
 						event.recipes.multiblocked.multiblock("ebf")
-						.inputFluid(Fluid.of('kubejs:liquid_air', 1000))
+						.inputFluid(Fluid.of('kubejs:liquid_air', 500))
 						.inputItem(smeltProcessedOre)
 						.outputItem(Item.of(`#forge:ingots/${item.material}`))
 						.setPerTick(true)
@@ -664,7 +655,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 						.duration(200)
 						//Oxygen
 						event.recipes.multiblocked.multiblock("ebf")
-						.inputFluid(Fluid.of('mekanism:oxygen', 1000))
+						.inputFluid(Fluid.of('mekanism:oxygen', 500))
 						.inputItem(smeltProcessedOre)
 						.outputItem(Item.of(`#forge:ingots/${item.material}`))
 						.setPerTick(true)
@@ -680,7 +671,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				if (item.tier == 4) {
 					//Oxygen
 					event.recipes.multiblocked.multiblock("ebf")
-					.inputFluid(Fluid.of('mekanism:oxygen', 1000))
+					.inputFluid(Fluid.of('mekanism:oxygen', 500))
 					.inputItem(smeltProcessedOre)
 					.outputItem(Item.of(`#forge:ingots/${item.material}`))
 					.setPerTick(true)
@@ -689,7 +680,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 
 					//Air
 					event.recipes.multiblocked.multiblock("ebf")
-					.inputFluid(Fluid.of('kubejs:liquid_air', 1000))
+					.inputFluid(Fluid.of('kubejs:liquid_air', 500))
 					.inputItem(smeltProcessedOre)
 					.outputItem(Item.of(`#forge:ingots/${item.material}`))
 					.setPerTick(true)
@@ -699,7 +690,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				if (item.tier <= 4) {
 					//Oxygen
 					event.recipes.multiblocked.multiblock("ebf")
-					.inputFluid(Fluid.of('mekanism:oxygen', 1000))
+					.inputFluid(Fluid.of('mekanism:oxygen', 500))
 					.inputItem(smeltRefinedOre)
 					.outputItem(Item.of(`#forge:ingots/${item.material}`))
 					.setPerTick(true)
@@ -708,7 +699,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 
 					//Air
 					event.recipes.multiblocked.multiblock("ebf")
-					.inputFluid(Fluid.of('kubejs:liquid_air', 1000))
+					.inputFluid(Fluid.of('kubejs:liquid_air', 500))
 					.inputItem(smeltRefinedOre)
 					.outputItem(Item.of(`#forge:ingots/${item.material}`))
 					.setPerTick(true)
@@ -720,7 +711,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				if (item.tier == 5) {
 					let tier5Temp = 2000
 						event.recipes.multiblocked.multiblock("ebf")
-							.inputFluid(Fluid.of('mekanism:oxygen', 1000))
+							.inputFluid(Fluid.of('mekanism:oxygen', 500))
 							.inputItem(smeltProcessedOre)
 							.outputItem(Item.of(`#forge:ingots/${item.material}`))
 							.setPerTick(true)
@@ -749,7 +740,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 								}
 							}, Component.string('Requires at least Desh Coils'))
 												event.recipes.multiblocked.multiblock("ebf")
-							.inputFluid(Fluid.of('mekanism:oxygen', 1000))
+							.inputFluid(Fluid.of('mekanism:oxygen', 500))
 							.inputItem(smeltRefinedOre)
 							.outputItem(Item.of(`#forge:ingots/${item.material}`))
 							.setPerTick(true)
@@ -782,7 +773,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				if (item.tier == 6) {
 					let tier6Temp = 3000
 						event.recipes.multiblocked.multiblock("ebf")
-							.inputFluid(Fluid.of('chemlib:argon_fluid', 1000))
+							.inputFluid(Fluid.of('chemlib:argon_fluid', 500))
 							.inputItem(smeltProcessedOre)
 							.outputItem(Item.of(`#forge:ingots/${item.material}`))
 							.setPerTick(true)
@@ -815,7 +806,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				if (item.tier == 7) {
 					let tier7Temp = 4000
 						event.recipes.multiblocked.multiblock("ebf")
-							.inputFluid(Fluid.of('chemlib:xenon_fluid', 1000))
+							.inputFluid(Fluid.of('chemlib:xenon_fluid', 500))
 							.inputItem(smeltProcessedOre)
 							.outputItem(Item.of(`#forge:ingots/${item.material}`))
 							.setPerTick(true)
@@ -1138,7 +1129,7 @@ onEvent("lootjs", (event) => {
 					pool.applyOreBonus("minecraft:fortune");
 			});
 		global.newMaterialParts.forEach((item) => {
-			if (item.ore && item.material != 'arcanite') {
+			if (item.ore /*&& item.material != 'arcanite'*/) {
 				console.log('adding ore drops for: ' + item.material)
 				////////////ORE DROPS//////////////////
 				event.addBlockLootModifier(`#forge:ores/${item.material}`)
@@ -1152,8 +1143,8 @@ onEvent("lootjs", (event) => {
 							])
 						} else if (item.type == 'element') {
 							//Element
-							pool.addWeightedLoot([1, 3], [
-								Item.of(`elementalcraft:${item.material}_shard`).withChance(70),
+							pool.addWeightedLoot([
+								Item.of(`elementalcraft:powerful_${item.material}_shard`).withChance(90),
 								//Item.of(`elementalcraft:powerful_${item.material}_shard`).withChance(30),
 								//Item.of(`elementalcraft:${item.material}crystal`).withChance(12),
 							])
@@ -1240,6 +1231,7 @@ onEvent("lootjs", (event) => {
 		//Arcanite
 		console.log('adding drops for: arcanite')
 			event.addBlockLootModifier('#forge:ores/arcanite')
+				.removeLoot(Item.of(`#forge:ores/raw/arcanite`))
 				.pool((pool) => {
 					pool.addWeightedLoot([
 						Item.of(`#forge:raw_materials/arcanite`).withChance(70),
@@ -1248,15 +1240,15 @@ onEvent("lootjs", (event) => {
 					])
 					pool.applyOreBonus("minecraft:fortune");
 				})
-				.apply((ctx) => {
-					let player = ctx.player;
-					if (!player) return;
-					if (ItemFilter.hasEnchantment("minecraft:silk_touch").test(player.mainHandItem)) {
-						ctx.removeLoot(Ingredient.getAll().filter(Ingredient.of(`#forge:ores/arcanite`).not()))
-					} else {
-						ctx.removeLoot('#forge:ores/arcanite')
-					}
-				})
+				//.apply((ctx) => {
+				//	let player = ctx.player;
+				//	if (!player) return;
+				//	if (ItemFilter.hasEnchantment("minecraft:silk_touch").test(player.mainHandItem)) {
+				//		ctx.removeLoot(Ingredient.getAll().filter(Ingredient.of(`#forge:ores/arcanite`).not()))
+				//	} else {
+				//		ctx.removeLoot('#forge:ores/arcanite')
+				//	}
+				//})
 
 
 });

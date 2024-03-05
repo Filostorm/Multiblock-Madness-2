@@ -160,37 +160,45 @@ event.shaped('3x kubejs:wood_scaffolding', [
 	event.replaceInput({id: 'minecraft:piston'}, 'cobblestone', '#forge:cobblestone')
   
 	//So, you made an extra Metal Mind
-	global.tinkersMeltingPlain(event, 'tconstruct:molten_iron', 720, Item.of('feruchemy:metal_mind').toJson(), 750, 142, `mbm2:smeltery/melting/metalmind`)
+	//global.tinkersMeltingPlain(event, 'tconstruct:molten_iron', 720, Item.of('feruchemy:metal_mind').toJson(), 750, 142, `mbm2:smeltery/melting/metalmind`)
 
 	//string from cobweb
 	event.shapeless('3x string', ['cobweb']).id('mbm2:string_from_cobweb')
 
-  //compressed cobble
-  event.shaped('kubejs:1x_compressed_cobblestone', [
-	  'CCC',
-	  'CCC',
-	  'CCC'
-	], {
-	  C: 'cobblestone'
-	}).id("mbm2:1x_compressed_cobblestone")
-	event.shapeless('9x cobblestone', ['kubejs:1x_compressed_cobblestone']).id('mbm2:1x_uncompressed_cobblestone')
-	event.shaped('kubejs:2x_compressed_cobblestone', [
-		'CCC',
-		'CCC',
-		'CCC'
+	let compressedBlocks = [ // only vanilla items with this script right now
+		'cobblestone',
+		'cobbled_deepslate',
+		'netherrack',
+	]
+  //compressed crafintg
+  compressedBlocks.forEach(block => {
+	
+	event.shaped(`kubejs:1x_compressed_${block}`, [
+		`CCC`,
+		`CCC`,
+		`CCC`
 	  ], {
-		C: 'kubejs:1x_compressed_cobblestone'
-	}).id("mbm2:2x_compressed_cobblestone")
-	event.shapeless('9x kubejs:1x_compressed_cobblestone', ['kubejs:2x_compressed_cobblestone']).id('mbm2:2x_uncompressed_cobblestone')
-  	event.shaped('kubejs:3x_compressed_cobblestone', [
-		'CCC',
-		'CCC',
-		'CCC'
-  	], {
-		C: 'kubejs:2x_compressed_cobblestone'
-  	}).id("mbm2:3x_compressed_cobblestone")
-	event.shapeless('9x kubejs:2x_compressed_cobblestone', ['kubejs:3x_compressed_cobblestone']).id('mbm2:3x_uncompressed_cobblestone')
-
+		C: `${block}`
+	  }).id(`mbm2:1x_compressed_${block}`)
+	  event.shapeless(`9x ${block}`, [`kubejs:1x_compressed_${block}`]).id(`mbm2:1x_uncompressed_${block}`)
+	  event.shaped(`kubejs:2x_compressed_${block}`, [
+		  `CCC`,
+		  `CCC`,
+		  `CCC`
+		], {
+		  C: `kubejs:1x_compressed_${block}`
+	  }).id(`mbm2:2x_compressed_${block}`)
+	  event.shapeless(`9x kubejs:1x_compressed_${block}`, [`kubejs:2x_compressed_${block}`]).id(`mbm2:2x_uncompressed_${block}`)
+		event.shaped(`kubejs:3x_compressed_${block}`, [
+		  `CCC`,
+		  `CCC`,
+		  `CCC`
+		], {
+		  C: `kubejs:2x_compressed_${block}`
+		}).id(`mbm2:3x_compressed_${block}`)
+	  event.shapeless(`9x kubejs:2x_compressed_${block}`, [`kubejs:3x_compressed_${block}`]).id(`mbm2:3x_uncompressed_${block}`)
+  
+  });
   //thermal filter augment
   event.remove({id: 'thermal:augments/item_filter_augment'})
   event.shaped('thermal:item_filter_augment', [
@@ -274,10 +282,14 @@ event.shaped('3x kubejs:wood_scaffolding', [
   event.shapeless('coal', ['8x kubejs:coal_chunk']).id('mbm2:coal_chunk_uncrafting')
 
  //lerasium nugget requires arcane gold
-  event.replaceInput({id: 'allomancy:lerasium_nugget'}, '#forge:storage_blocks/gold', 'forbidden_arcanus:arcane_gold_block')
+//event.replaceInput({id: 'allomancy:lerasium_nugget'}, '#forge:storage_blocks/gold', 'forbidden_arcanus:arcane_gold_block')
 
 
 //Static Cloud
   global.powahEnergizing(event, [Item.of('cloudstorage:cloud').toJson()], Item.of('cloudstorage:static_cloud'), 25000, 'mbm2:cloudstorage/static_cloud')
+
+//Arcane Sand
+  event.shapeless('8x kubejs:arcane_sand', ['forbidden_arcanus:arcane_crystal_dust_speck', '#forge:sand', '#forge:sand', '#forge:sand', '#forge:sand', '#forge:sand', '#forge:sand', '#forge:sand', '#forge:sand']).id('mbm2:arcane_sand')
+
 
 });

@@ -1,6 +1,14 @@
 {
   "mod_id": "forbidden_arcanus",
-  "provided_stones": [],
+  "provided_stones": [
+    {
+      "block_id": "forbidden_arcanus:darkstone",
+      "types": [
+        "stone"
+      ],
+      "id": "darkstone",
+      "en_name": "Darkstone"
+    }],
   "provided_ores": [
     {
       "block_id": [

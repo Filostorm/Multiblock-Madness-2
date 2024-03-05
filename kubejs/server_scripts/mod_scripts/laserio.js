@@ -19,5 +19,5 @@ onEvent('recipes', event => {
 
     //laserio Node Overclocker
     event.remove({id: 'laserio:overclocker_node'})
-    event.shaped('laserio:overclocker_node', [' A ','BCB','AAA'], {A: 'allomancy:cadmium_ingot',B: 'kubejs:red_alloy_wire',C: 'laserio:logic_chip'})
+    event.shaped('laserio:overclocker_node', [' A ','BCB','AAA'], {A: '#forge:ingots/cadmium',B: 'kubejs:red_alloy_wire',C: 'laserio:logic_chip'})
 });

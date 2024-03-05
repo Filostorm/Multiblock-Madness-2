@@ -10,7 +10,7 @@ var parts = [ //this list is used to label parts the metal tier
 ]
 
 var mods = [
-	'allomancy',
+	//'allomancy',
 	'kubejs',
 	'thermal',
 	'create',
@@ -103,22 +103,16 @@ var partColor = [
 	'§6',
 ]
 
-
 onEvent('client.generate_assets', event => {
 	global.newMaterialParts.forEach((item) => {
 		if (item.ore) {
 			global.oreProcessingParts.forEach((part) => {
 				if (part.name != 'grit') {
-					global.partDisplayName = ""
-					if (item.ore_name == null) { 
-					  global.partDisplayName = part.prefix + nameUpper(item.material) + part.suffix
-					} else {
-					  global.partDisplayName = part.prefix + nameUpper(item.ore_name) + part.suffix
-					}
 						//Color the ore part names based on the grade
-    					event.addLang(`item.kubejs.${part.name}_${item.material}`, `${partColor[part.grade]}${global.partDisplayName}`)
-					if (part.name == 'crushed') {
-    					event.addLang(`item.create.crushed_raw_${item.material}`, `${partColor[part.grade]}${global.partDisplayName}`)
+					if (Item.of(`kubejs:${part.name}_${item.material}`) != null) {
+    					event.addLang(`item.kubejs.${part.name}_${item.material}`, `${partColor[part.grade]}${global.displayNameFunction(item.material, item.ore_name, part.prefix, part.suffix)}`)
+					} else if (Item.of(`create:crushed_raw_${item.material}`) != null /*&& part.name == 'crushed'*/) {
+    					event.addLang(`item.create.crushed_raw_${item.material}`, `${partColor[part.grade]}${global.displayNameFunction(item.material, item.ore_name, part.prefix, part.suffix)}`)
 					}
 				}
 			})
@@ -221,6 +215,7 @@ onEvent('item.tooltip', tooltip => {
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	global.newMaterialParts.forEach((item) => {
+		/*
 		//Allomantic Tooltips for flakes
 		if (item.allomancy != null) {
 			console.log(`${item.material} is allomantic`);
@@ -238,7 +233,7 @@ onEvent('item.tooltip', tooltip => {
 				  text.add(2, Text.green(feruchemyToolTip))
 				}
 			})
-		}
+		}*/
 
 
 		//Adds Metal Tier labels

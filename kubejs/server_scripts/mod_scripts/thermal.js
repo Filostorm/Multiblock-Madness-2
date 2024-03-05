@@ -274,6 +274,32 @@ event.smelting('kubejs:quicksilver', 'thermal:cinnabar')
 //Hive Hopper recipe
 event.shaped('thermal:device_hive_extractor', [' A ','BCB',' D '], {A: 'littlelogistics:fluid_hopper',B: 'create:cogwheel',C: 'create:andesite_casing',D: 'engineersdecor:factory_hopper'}).id(`mbm2:hive_hopper`)
 
+//Charged Coil
+global.powahEnergizing(event, [Item.of('thermal:rf_coil').toJson()], Item.of('kubejs:charged_coil'), 25000, 'mbm2:charged_coil')
+
+//charge_bench
+event.remove({output: 'thermal:charge_bench'})
+event.shaped('thermal:charge_bench', ['ABA','CDC','ECE'], {A: '#forge:plates/tier_1_electrical_alloy',B: 'kubejs:tier_1_electrical_alloy_wire_coil',C: 'kubejs:charged_coil',D: 'kubejs:bronze_frame',E: 'thermal:lead_plate'}).id(`mbm2:charge_bench`)
+//flux_drill
+event.remove({output: 'thermal:flux_drill'})
+event.shaped('thermal:flux_drill', [' A ','BCB',' D '], {A: 'thermal:drill_head',B: 'kubejs:tier_1_mechanical_alloy_interlocking_component',C: 'thermal:ruby',D: 'kubejs:charged_coil'}).id(`mbm2:flux_drill`)
+//flux_magnet
+event.remove({output: 'thermal:flux_magnet'})
+event.shaped('thermal:flux_magnet', ['A A','BCB','BBB'], {A: 'create:polished_rose_quartz',B: 'kubejs:tier_1_structural_alloy_plate',C: 'kubejs:charged_coil'}).id(`mbm2:flux_magnet`)
+//flux_saw
+event.remove({output: 'thermal:flux_saw'})
+event.shaped('thermal:flux_saw', [' A ','BCB',' D '], {A: 'thermal:saw_blade',B: 'kubejs:tier_1_mechanical_alloy_interlocking_component',C: 'thermal:ruby',D: 'kubejs:charged_coil'}).id(`mbm2:flux_saw`)
+//flux_capacitor
+event.remove({output: 'thermal:flux_capacitor'})
+event.shaped('thermal:flux_capacitor', ['ABA','CDC',' E '], {A: 'thermal:lead_plate',B: 'thermal:ruby',C: 'kubejs:energetic_alloy_bolt',D: 'kubejs:small_battery_empty',E: 'kubejs:charged_coil'}).id(`mbm2:flux_capacitor`)
+
+//saw_blade
+event.remove({output: 'thermal:saw_blade'})
+event.shaped('thermal:saw_blade', ['AA ','ABA',' AA'], {A: 'thermal:iron_plate',B: 'kubejs:bronze_plating'}).id(`mbm2:saw_blade`)
+//drill_head
+event.remove({output: 'thermal:drill_head'})
+event.shaped('thermal:drill_head', [' A ','ABA','AAA'], {A: 'thermal:iron_plate',B: 'kubejs:bronze_plating'}).id(`mbm2:drill_head`)
+
 //Add back in the Pyrolyzer
 event.custom({
 	"type": "thermal:pyrolyzer",

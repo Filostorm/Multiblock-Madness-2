@@ -35,11 +35,11 @@ onEvent('recipes', event => {
     if (Item.of(`#forge:plates/${item.material}`) != null && item.material != 'plastic') {
 
 	  if (item.fluid_id != null) {
-		//Plate Casing
+		//Plate Casting
 		  global.casingTable(event, 'tconstruct:casts/multi_use/plate', false, `#forge:plates/${item.material}`, `forge:molten_${item.material}`, 90, 60, `tconstruct:smeltery/casting/metal/${item.material}/plate_gold_cast`)
 		  global.casingTable(event, 'tconstruct:casts/single_use/plate', true, `#forge:plates/${item.material}`, `forge:molten_${item.material}`, 90, 60, `tconstruct:smeltery/casting/metal/${item.material}/plate_sand_cast`)
 
-		//Mega Plate Casing
+		//Mega Plate Casting
 	  event.recipes.multiblocked.multiblock("casting")
 	  	.inputFluid(Fluid.of(`${item.fluid_id}`, plateCasting*90))
 	  	.inputItem(`${plateCasting}x #tconstruct:casts/single_use/plate`)
@@ -210,6 +210,16 @@ onEvent('recipes', event => {
 					R: `#forge:rods/${item.material}`,
 					G: `#forge:gears/${item.material}`
 				  }).id(`mbm2:parts/${item.material}_cog_block`)
+				  if (Item.of(`#forge:scaffoldings/${item.material}`) != null) {
+					  event.shaped(`#forge:cog_blocks/${item.material}`, [
+						  ' G ',
+						  'GSG',
+						  ' G '
+						], {
+						  S: `#forge:scaffoldings/${item.material}`,
+						  G: `#forge:gears/${item.material}`
+						}).id(`mbm2:parts/${item.material}_cog_block_with_scaffoldings`)
+					}
 				  
 			//Cheaper recipe
 			event.recipes.multiblocked.multiblock("mechanical_crafting")
@@ -425,7 +435,12 @@ onEvent('recipes', event => {
 	if (Item.of(`#forge:bolts/${item.material}`) != null) {
 	
 		//Casting Bolts
-		event.recipes.tconstruct.casting_table(Item.of(`#forge:bolts/${item.material}`), item.fluid_id, 180).cast('#forge:rods/steel').coolingTime(60)//.switchSlots()
+		
+		if (item.tier <= 2) {
+			event.recipes.tconstruct.casting_table(Item.of(`#forge:bolts/${item.material}`), item.fluid_id, 180).cast('#forge:rods/iron').coolingTime(60)//.switchSlots()
+		} else {
+			event.recipes.tconstruct.casting_table(Item.of(`#forge:bolts/${item.material}`), item.fluid_id, 180).cast('#forge:rods/steel').coolingTime(60)//.switchSlots()
+		}
 
 		//Sintering Bolts
 		  event.recipes.multiblocked.multiblock("sintering")
@@ -490,14 +505,26 @@ onEvent('recipes', event => {
 		}
 		/////////////// Coil Item //////////////////
     	if (Item.of(`#forge:wire_coils/${item.material}`) != null) {
-		event.shaped(`#forge:wire_coils/${item.material}`, [
-			' W ',
-			'WSW',
-			' W '
-		  ], {
-			S: `#forge:rods/aluminum`,
-			W: `#forge:spools/${item.material}`
-		  }).id(`mbm2:crafting/${item.material}_wire_coil`)
+			if (item.tier <= 2) {
+				event.shaped(`#forge:wire_coils/${item.material}`, [
+					' W ',
+					'WSW',
+					' W '
+				  ], {
+					S: `#forge:rods/iron`,
+					W: `#forge:spools/${item.material}`
+				  }).id(`mbm2:crafting/${item.material}_wire_coil`)
+			} else {
+				event.shaped(`#forge:wire_coils/${item.material}`, [
+					' W ',
+					'WSW',
+					' W '
+				  ], {
+					S: `#forge:rods/aluminum`,
+					W: `#forge:spools/${item.material}`
+				  }).id(`mbm2:crafting/${item.material}_wire_coil`)
+
+			}
 		}
 		/////////////// Coil Block //////////////////
     	if (Item.of(`#forge:coils/${item.material}`) != null) {
@@ -525,8 +552,9 @@ onEvent('recipes', event => {
 
 	////////////////////// DUST //////////////////////
     if (Item.of(`#forge:dusts/${item.material}`) != null) {
-		global.tinkersMeltingPlain(event, item.fluid_id, 90, Item.of(`#forge:dusts/${item.material}`).toJson(), 800, 142, `mbm2:smeltery/melting/${item.material}_dust`)
-					
+		if (item.fluid != null) {
+			global.tinkersMeltingPlain(event, item.fluid_id, 90, Item.of(`#forge:dusts/${item.material}`).toJson(), 800, 142, `mbm2:smeltery/melting/${item.material}_dust`)
+		}
 		if (item.type == 'gem') {
 			event.recipes.createMilling([`#forge:dusts/${item.material}`], [`#forge:gems/${item.material}`]).id(`mbm2:create/crushing/${item.material}_${item.type}`)
 			event.recipes.immersiveengineeringCrusher(`#forge:dusts/${item.material}`, `#forge:gems/${item.material}`).id(`mbm2:immersive/crushing/${item.material}_${item.type}`)
@@ -584,17 +612,17 @@ onEvent('recipes', event => {
 	  if (item.fluid != null && (item.type == 'base_metal' || item.type == 'alloy'))
 	  {
     	if (Item.of(`#forge:ingots/${item.material}`) != null) {
-		//Ingot Casing
+		//Ingot Casting
 		 global.casingTable(event, 'tconstruct:casts/single_use/ingot', true, `#forge:ingots/${item.material}`, `forge:molten_${item.material}`, 90, 60, `tconstruct:smeltery/casting/metal/${item.material}/ingot_sand_cast`)
 		 global.casingTable(event, 'tconstruct:casts/multi_use/ingot', false, `#forge:ingots/${item.material}`, `forge:molten_${item.material}`, 90, 60, `tconstruct:smeltery/casting/metal/${item.material}/ingot_gold_cast`)
 		}
 		 if (Item.of(`#forge:nuggets/${item.material}`) != null) {
-		//Nugget Casing
+		//Nugget Casting
 		 global.casingTable(event, 'tconstruct:casts/multi_use/nugget', false, `#forge:nuggets/${item.material}`, `forge:molten_${item.material}`, 10, 10, `tconstruct:smeltery/casting/metal/${item.material}/nugget_gold_cast`)
 		 global.casingTable(event, 'tconstruct:casts/single_use/nugget', true, `#forge:nuggets/${item.material}`, `forge:molten_${item.material}`, 10, 10, `tconstruct:smeltery/casting/metal/${item.material}/nugget_sand_cast`)
 	  	}
 		 if (Item.of(`#forge:storage_blocks/${item.material}`) != null){
-		//Block Casing
+		//Block Casting
 		global.casingBasin(event, `#forge:storage_blocks/${item.material}`, `forge:molten_${item.material}`, 810, 180, `tconstruct:smeltery/casting/metal/${item.material}/block`)
 	  }
 	}

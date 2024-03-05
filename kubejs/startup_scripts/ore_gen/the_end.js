@@ -11,6 +11,7 @@
 
 onEvent('worldgen.add', event => {
 
+	console.log('the end')
 	
 	const endSurfaceChance = 0.5
 
@@ -21,6 +22,7 @@ onEvent('worldgen.add', event => {
 
 ////////////////////////////////////////////	the_end	////////////////////////////////
 	// Base Titanium Veins
+	console.log('titanium')
 	event.addOre((ore) => {
 		ore.id = 'kubejs:the_end_titanium_ore'
 	
@@ -45,8 +47,9 @@ onEvent('worldgen.add', event => {
 	})
 	
 	// Inserted Runite
+	console.log('rune')
 	event.addOre((ore) => {
-		ore.id = 'kubejs:nether_rune'
+		ore.id = 'kubejs:the_end_rune_ore'
 			global.stoneTypes.forEach((type) => {
 				if (type.material != 'bedrock' && type.material != 'deepslate') {
 					ore.addTarget(`kubejs:${type.material}_titanium_ore`, `kubejs:${type.material}_rune_ore`)
@@ -66,11 +69,12 @@ onEvent('worldgen.add', event => {
 	})
 
 	// The End Certus Veins
+	console.log('the_end_certus_ore')
 	event.addOre((ore) => {
 		ore.id = 'kubejs:the_end_certus_ore'
 	 
 		global.stoneTypes.forEach((type) => {
-			if (type.material != 'bedrock') {
+			if (Item.of(`excavated_variants:${type.material}_certus_quartz_ore`) != null) {
 			ore.addTarget(`#forge:${type.material}`, `excavated_variants:${type.material}_certus_quartz_ore`)
 			}
 		})
@@ -89,11 +93,12 @@ onEvent('worldgen.add', event => {
 	})
 
 	// The End Uranium Veins
+	console.log('the_end_uranium_ore')
 	event.addOre((ore) => {
 		ore.id = 'kubejs:the_end_uranium_ore'
 	 
 		global.stoneTypes.forEach((type) => {
-			if (type.material != 'bedrock') {
+			if (Item.of(`excavated_variants:${type.material}_uranium_ore`) != null) {
 			ore.addTarget(`#forge:${type.material}`, `excavated_variants:${type.material}_uranium_ore`)
 			}
 		})
@@ -132,8 +137,9 @@ onEvent('worldgen.add', event => {
 	})*/
 	
 	// The End Magnesium Veins
+	console.log('the_end_magnesium_ore')
 	event.addOre((ore) => {
-		ore.id = 'kubejs:nether_magnesium_ore'
+		ore.id = 'kubejs:the_end_magnesium_ore'
 	 
 		global.stoneTypes.forEach((type) => {
 			if (type.material != 'deepslate' && type.material != 'bedrock') {

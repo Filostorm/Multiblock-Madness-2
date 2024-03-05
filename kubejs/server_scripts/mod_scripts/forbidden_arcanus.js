@@ -37,7 +37,7 @@ onEvent('recipes', event => {
 */
 	//Corrupti Dust
 	event.remove({output: 'forbidden_arcanus:corrupti_dust'})
-	event.shapeless(`4x forbidden_arcanus:corrupti_dust`, ['forbidden_arcanus:obsidian_ingot', 'forbidden_arcanus:arcane_crystal_dust', 'forbidden_arcanus:ender_pearl_fragment', 'minecraft:blaze_powder', 'mna:arcane_compound']).id(`mbm2:forbidden_arcanus/corrupti_dust`)
+	event.shapeless(`4x forbidden_arcanus:corrupti_dust`, ['forbidden_arcanus:obsidian_ingot', 'forbidden_arcanus:arcane_crystal_dust', 'forbidden_arcanus:ender_pearl_fragment', 'minecraft:blaze_powder', 'elementalcraft:air_silk']).id(`mbm2:forbidden_arcanus/corrupti_dust`)
 
 	//Arcane Crystal Dust speck
 	event.shapeless(`9x forbidden_arcanus:arcane_crystal_dust_speck`, ['forbidden_arcanus:arcane_crystal_dust']).id(`mbm2:arcane_dust_speck`)

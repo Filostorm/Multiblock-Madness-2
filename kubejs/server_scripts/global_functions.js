@@ -228,7 +228,7 @@ global.tinkersAlloying = (event, outputFluid, amount, inputFluids, temperature, 
 
 ///////////////// IMBUING ///////////////////////
 
-		  global.arsImbument = (event, output, amount, input, source, extraItems, ID) => {
+		  global.arsImbuement = (event, output, amount, input, source, extraItems, ID) => {
 			event.custom({
 				type: 'ars_nouveau:imbuement',
 				input: Ingredient.of(input).toJson(),

@@ -433,7 +433,7 @@
 			x: -10.0d
 			y: 11.5d
 			subtitle: "You'll need to head to cloud level to get the parts"
-			description: ["Place one of the ballons on the Cloud Chest, and the other on any other chest to upload it to the cloud."]
+			description: ["Place one of the balloons on the Cloud Chest, and the other on any other chest to upload it to the cloud."]
 			dependencies: ["5FD77AB0F43882B8"]
 			id: "531F9CD69D9E1D66"
 			tasks: [

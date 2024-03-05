@@ -84,7 +84,8 @@
     {
       "block_id": "minecraft:basalt",
       "types": [
-        "nether"
+        "nether",
+        "stone"
       ],
       "id": "basalt",
       "en_name": "Basalt"
@@ -100,7 +101,8 @@
     {
       "block_id": "minecraft:netherrack",
       "types": [
-        "nether"
+        "nether",
+        "stone"
       ],
       "id": "netherrack",
       "en_name": "Netherrack"
@@ -108,7 +110,8 @@
     {
       "block_id": "minecraft:blackstone",
       "types": [
-        "nether"
+        "nether",
+        "stone"
       ],
       "id": "blackstone",
       "en_name": "Blackstone"
@@ -116,7 +119,8 @@
     {
       "block_id": "minecraft:end_stone",
       "types": [
-        "end"
+        "end",
+        "stone"
       ],
       "id": "end_stone",
       "en_name": "End Stone"

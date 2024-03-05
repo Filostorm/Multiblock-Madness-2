@@ -132,7 +132,7 @@ onEvent("rei.group", (event) => {
         const { namespace, path } = Utils.id(item.id);
         event.groupSameItem(`mbm2:rei_groups/${namespace}/${path}`, item.getName(), item);
     });
-
+/*
     event.groupItems(`mbm2:rei_groups/wickerwood_constructs`, "Wickerwood Construct Parts", [/mna:constructs.*_wickerwood/]);
     event.groupItems(`mbm2:rei_groups/wood_constructs`, "Wooden Construct Parts", [/mna:constructs.*_wood/]);
     event.groupItems(`mbm2:rei_groups/stone_constructs`, "Stone Construct Parts", [/mna:constructs.*_stone/]);
@@ -140,7 +140,7 @@ onEvent("rei.group", (event) => {
     event.groupItems(`mbm2:rei_groups/gold_constructs`, "Gold Construct Parts", [/mna:constructs.*_gold/]);
     event.groupItems(`mbm2:rei_groups/diamond_constructs`, "Diamond Construct Parts", [/mna:constructs.*_diamond/]);
     event.groupItems(`mbm2:rei_groups/obsidian_constructs`, "Obsidian Construct Parts", [/mna:constructs.*_obsidian/]);
-
+*/
 	/*
 	'cb_microblock:microblock', '{factory_id:0,mat:"minecraft:red_concrete",size:1}'
 	'cb_microblock:microblock', '{factory_id:0,mat:"minecraft:basalt//axis.y",size:2}',

@@ -127,7 +127,7 @@ event.shaped('3x kubejs:wood_scaffolding', [
 		C: 'forbidden_arcanus:soul',
 		D: 'thermal:gold_plate',
 		E: 'minecraft:red_carpet',
-		F: 'mna:basic_table'
+		F: 'minecraft:enchanting_table'
 	  }).id("summoningrituals:altar")
 
 	// Sticks

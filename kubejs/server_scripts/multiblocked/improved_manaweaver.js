@@ -1,3 +1,5 @@
+/*
+
 onEvent('tags.items', event => {
     event.add('mbm2:mna_construct_part', [
     'mna:constructs/construct_blade_arm_right_stone', 'mna:constructs/construct_fishing_rod_right_wood', 'mna:constructs/construct_mana_cannon_left_wood', 'mna:constructs/construct_mana_torso_gold', 'mna:constructs/construct_shield_arm_right_gold',
@@ -27,10 +29,12 @@ onEvent('tags.items', event => {
     ])
     event.add('mbm2:auto_manaweaver_blacklist', ['#mna:runes', '#curios:ring', '#curios:charm', '#curios:head', '#curios:necklace', '#curios:bracelet', '#curios:back', '#curios:belt', '#mbm2:mna_construct_part','mna:patch_weave', 'mna:staff_skull_alt', 'mna:wand_skull_alt', 'mna:eldrin_sight_unguent', 'mna:spectral_elytra', 'mna:hellfire_staff', 'mna:coffin', 'mna:player_charm', 'mna:faction_horn_council', 'mna:faction_horn_demons', 'mna:faction_horn_fey', 'mna:faction_horn_undead', 'mna:mage_hood', 'mna:mage_robes', 'mna:mage_leggings', 'mna:mage_boots'])
 });
-/*function getManaweaveBottle (pattern) {
-    let modAndPattern = pattern.split(':')
-    return Item.of('mna:manaweave_bottle', `{pattern:"${modAndPattern[0]}:manaweave_patterns/${modAndPattern[1]}"}`)
-  };*/
+
+//function getManaweaveBottle (pattern) {
+//    let modAndPattern = pattern.split(':')
+//    return Item.of('mna:manaweave_bottle', `{pattern:"${modAndPattern[0]}:manaweave_patterns/${modAndPattern[1]}"}`)
+//  };
+  
 onEvent('recipes', event => {
     
     let mWeaves = [
@@ -164,10 +168,11 @@ onEvent('recipes', event => {
     .outputItem(recipe.output)
     .duration(80)
     });
-    /*
+    
+    
     //manaweaving logging
-    event.forEachRecipe({ type: 'mna:manaweaving-recipe', not: {output: '#mbm2:auto_manaweaver_blacklist'}}, r => {
-    console.log(r.json)})*/
+    //event.forEachRecipe({ type: 'mna:manaweaving-recipe', not: {output: '#mbm2:auto_manaweaver_blacklist'}}, r => {
+    //console.log(r.json)})
 
     global.compactCrafting(event, 'mbm2:improved_manaweaver', 1, 'mna:manaweaving_altar',
   5, [
@@ -239,4 +244,4 @@ onEvent('recipes', event => {
 	  block: 'kubejs:transmuted_casing'
 	}
   },  'mbm2:improved_manawever_miniaturization')
-  });
+  });*/

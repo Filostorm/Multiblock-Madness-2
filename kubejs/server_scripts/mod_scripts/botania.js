@@ -16,7 +16,7 @@ onEvent('recipes', event => {
 	
 	//Apothecary
 	event.remove({output: 'botania:apothecary_default'})
-	event.shaped('botania:apothecary_default', ['ABA',' A ','AAA'], {A: 'mna:decoration/vinteum_arcane_stone',B: 'mna:ritual_focus_minor'})
+	event.shaped('botania:apothecary_default', ['ABA',' A ','AAA'], {A: 'naturesaura:infused_stone',B: 'naturesaura:token_euphoria'})
 
 	//Mossy Apothecary
 	event.remove({output: 'botania:apothecary_mossy'})
@@ -33,7 +33,7 @@ event.custom({
 	"type": "botania:pure_daisy",
 	"input": {
 	  "type": "block",
-	  "block": 'mna:decoration/arcane_stone'
+	  "block": 'naturesaura:infused_stone'
 	},
 	"output": {
 	  "name": "botania:livingrock"

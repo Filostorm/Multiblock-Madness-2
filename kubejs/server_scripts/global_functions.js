@@ -208,22 +208,6 @@ global.tinkersAlloying = (event, outputFluid, amount, inputFluids, temperature, 
 			  }]
 		  }).id(ID)}
 ///////////////////////////////////////////////////////////
-///////////////// TRANSMUTING ///////////////////////
-	global.mnaBlockTransmutation = (event, output, input, ID) => {
-		event.custom({
-			type: 'mna:transmutation',
-			targetBlock: input,
-			replaceBlock: output,
-		  }).id(ID)}
-
-		  global.mnaItemTransmutation = (event, output, looksLike, input, ID) => {
-			event.custom({
-				type: 'mna:transmutation',
-				targetBlock: input,
-				lootTable: output,
-				representationItem: looksLike
-			  }).id(ID)}
-///////////////////////////////////////////////////////////
 
 
 ///////////////// IMBUING ///////////////////////

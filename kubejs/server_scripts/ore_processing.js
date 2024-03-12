@@ -421,7 +421,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				.inputFE(4000*16)
 				.duration(200)
 			}
-			if (item.type == 'base_metal' || item.type == 'rare_metal') {
+			if (item.ore && (item.type == 'base_metal' || item.type == 'rare_metal')) {
 
 				///////////////////// ORE REFINING STEP 1 //////////////////
 					//Create Washing 

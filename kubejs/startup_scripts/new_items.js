@@ -67,6 +67,7 @@ var basicItems = [
 	'chimerite_gem',
 	'living_metal_seed',
 	'metal_seed',
+	'shaped_fluix_crystal',
 ]
 
 global.transitionalItems = [

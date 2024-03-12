@@ -12,7 +12,4 @@ general = {}
 	#The size of nether biome regions from each mod that uses TerraBlender.
 	#Range: 2-6
 	nether_region_size = 2
-	#The weighting of vanilla biome regions in the overworld.
-	#Range: 0-2147483647
-	vanilla_overworld_region_weight = 10
 

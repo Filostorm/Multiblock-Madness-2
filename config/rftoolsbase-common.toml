@@ -51,10 +51,10 @@
 	[worldgen.end]
 		#Number of times to try generate the ore (set to 0 to disable)
 		#Range: 0 ~ 256
-		oreChances = 1
+		oreChances = 0
 		#Max size of veins
 		#Range: 1 ~ 256
-		oreVeinsize = 1
+		oreVeinsize = 10
 		#Min height
 		#Range: -512 ~ 512
 		oreMin = 2

@@ -9,8 +9,7 @@
       ],
       "en_name": "Certus Quartz Ore",
       "types": [
-        "stone",
-        "nether"
+        "stone"
       ],
       "texture_count": 5,
       "id": "certus_quartz_ore",

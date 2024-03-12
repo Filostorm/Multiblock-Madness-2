@@ -14,6 +14,7 @@
 			dependencies: [
 				"3D971E0CF8257193"
 				"04FD40DD2CE51B84"
+				"3AA3487F8175A54E"
 			]
 			id: "0EB55E9BCD6E97C3"
 			tasks: [{
@@ -865,7 +866,7 @@
 			title: "Biodesiel"
 			icon: "immersiveengineering:biodiesel_bucket"
 			x: 1.5d
-			y: 0.5d
+			y: 1.0d
 			description: ["A great sustanable fuel source, and can be used for plastic later on."]
 			dependencies: [
 				"1A2C95D86B270D15"
@@ -887,8 +888,8 @@
 			]
 		}
 		{
-			x: -6.0d
-			y: 2.0d
+			x: -4.5d
+			y: 2.5d
 			shape: "circle"
 			description: ["Tier 2 Metals, like Cobalt and Aluminum, require at least processing in the Foundry with a high temperature fuel such as Blazing Blood."]
 			dependencies: ["729CD1DC498A9130"]
@@ -1001,12 +1002,8 @@
 		}
 		{
 			icon: "mbm2:mixer_mk1"
-			x: -4.0d
-			y: 2.0d
-			dependencies: [
-				"40CD2EB416C68B70"
-				"4056DE989F8A8E98"
-			]
+			x: 10.0d
+			y: 1.25d
 			size: 1.25d
 			id: "627B714B402BEE67"
 			tasks: [
@@ -1119,7 +1116,10 @@
 			x: 8.5d
 			y: 1.5d
 			description: ["You might want to set up some good power supply before mass producing AE components."]
-			dependencies: ["75D4FF56D8BBF34A"]
+			dependencies: [
+				"75D4FF56D8BBF34A"
+				"627B714B402BEE67"
+			]
 			min_required_tasks: 1
 			id: "592A4D0BDEB062DB"
 			tasks: [
@@ -1163,7 +1163,7 @@
 			}]
 		}
 		{
-			x: -5.0d
+			x: -5.5d
 			y: 4.0d
 			description: ["Place these around a water source block and power through AE. Crystal seeds inside the water will grow much faster."]
 			dependencies: ["40CD2EB416C68B70"]
@@ -1177,7 +1177,7 @@
 		}
 		{
 			icon: "hostilenetworks:sim_chamber"
-			x: -7.0d
+			x: -3.5d
 			y: 4.0d
 			dependencies: ["40CD2EB416C68B70"]
 			id: "4B09D1E4C5CF8BB1"
@@ -1311,8 +1311,8 @@
 			}]
 		}
 		{
-			x: -5.625d
-			y: 0.625d
+			x: -6.875d
+			y: 2.5d
 			dependencies: [
 				"1F932299A59D3965"
 				"44B029D2AFEC131D"
@@ -1444,8 +1444,8 @@
 					blueprint: "components"
 				}
 			}
-			x: -7.5d
-			y: 1.0d
+			x: -9.0d
+			y: 2.5d
 			dependencies: ["17F948FD49F0EB33"]
 			id: "1F932299A59D3965"
 			tasks: [{
@@ -1503,8 +1503,8 @@
 		{
 			title: "Crimson Altar"
 			icon: "naturesaura:tainted_gold"
-			x: 1.5d
-			y: -4.5d
+			x: 0.0d
+			y: -7.5d
 			description: ["Must be built in the Nether."]
 			dependencies: [
 				"31513AA25B621FD8"
@@ -1593,7 +1593,7 @@
 		{
 			title: "Paint the Trees Gold"
 			x: -3.0d
-			y: -5.5d
+			y: -4.5d
 			description: ["You'll be able to find the Book of Natural Aura in your Akashic Tome."]
 			dependencies: ["143FA2A8FD6E4E10"]
 			id: "4187F705E4356142"
@@ -1682,8 +1682,8 @@
 			]
 		}
 		{
-			x: 0.0d
-			y: -7.5d
+			x: -1.5d
+			y: -4.0d
 			description: ["This displays the aura nearby."]
 			dependencies: ["6AD50F15723B7927"]
 			id: "75639B06251CAA16"
@@ -1719,13 +1719,89 @@
 		}
 		{
 			x: -3.0d
-			y: -4.0d
+			y: -6.5d
+			description: ["This can be used to improve your Golden Powder yield"]
 			id: "38B7849EB717422A"
 			tasks: [{
 				id: "0C35C8AD0A05BCC6"
 				type: "item"
 				item: "elementalcraft:air_mill"
 			}]
+		}
+		{
+			icon: "kubejs:living_metal_seed"
+			x: 1.5d
+			y: -2.5d
+			dependencies: [
+				"31513AA25B621FD8"
+				"02E4BADB1F8BEB33"
+			]
+			id: "3AA3487F8175A54E"
+			tasks: [
+				{
+					id: "6B2CFE7EF5CFC30B"
+					type: "item"
+					item: "kubejs:living_metal_seed"
+				}
+				{
+					id: "1A56E7C4B66E318F"
+					type: "item"
+					item: "kubejs:overgrown_light_engineering_block"
+				}
+			]
+		}
+		{
+			title: "Auto Crafting!"
+			x: -5.5d
+			y: 1.0d
+			description: [
+				"You'll need to convert the Crafting Unit by adding a Storage Disk of some size."
+				""
+				"Until you unlock Titanium, you'll have to make do with 16 channels"
+			]
+			dependencies: ["4330D1B18E585E4E"]
+			id: "6C4354CB6E54A96A"
+			tasks: [
+				{
+					id: "1E3C92E9821492D6"
+					type: "item"
+					item: "ae2:pattern_provider"
+				}
+				{
+					id: "47318DF267287C40"
+					type: "item"
+					item: "ae2:blank_pattern"
+				}
+				{
+					id: "321BF9922838BCE6"
+					type: "item"
+					item: "ae2:pattern_encoding_terminal"
+				}
+				{
+					id: "05BA416531FD19FA"
+					type: "item"
+					item: "ae2:pattern_access_terminal"
+				}
+				{
+					id: "0D140FFB2F8889D2"
+					type: "item"
+					item: "ae2:crafting_unit"
+				}
+			]
+			rewards: [
+				{
+					id: "24DDF521273A63F2"
+					type: "random"
+					exclude_from_claim_all: true
+					table_id: 824098445478849879L
+				}
+				{
+					id: "71914634C3327663"
+					type: "item"
+					item: "ae2:blank_pattern"
+					count: 8
+				}
+			]
 		}
 	]
 	quest_links: [ ]

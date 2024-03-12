@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "excavated_variants:block/quark_jasper_cassiterite_ore0"
+  }
+}

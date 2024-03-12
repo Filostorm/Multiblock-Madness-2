@@ -49,7 +49,7 @@
 	"Jukebox Automation" = true
 	"Iron Rod" = true
 	Gravisand = true
-	"Feeding Trough" = false
+	"Feeding Trough" = true
 	"Ender Watcher" = true
 	"Dispensers Place Blocks" = true
 	Chute = true
@@ -404,7 +404,7 @@
 	"Compasses Work Everywhere" = true
 	"Campfires Boost Elytra" = true
 	"Better Elytra Rocket" = true
-	"Automatic Recipe Unlock" = false
+	"Automatic Recipe Unlock" = true
 	"Armed Armor Stands" = true
 	"Skull Pikes" = true
 
@@ -532,7 +532,7 @@
 		#A list of recipe names that should NOT be added in by default
 		"Ignored Recipes" = []
 		"Force Limited Crafting" = false
-		"Disable Recipe Book" = true
+		"Disable Recipe Book" = false
 		#If enabled, advancements granting recipes will be stopped from loading, potentially reducing the lagspike on first world join.
 		"Filter Recipe Advancements" = true
 
@@ -1433,7 +1433,7 @@
 	"Usage Ticker" = true
 	"Soul Candles" = true
 	"Microcrafting Helper" = true
-	"Improved Tooltips" = false
+	"Improved Tooltips" = true
 	"Greener Grass" = true
 	"Chest Searching" = true
 	"Back Button Keybind" = true

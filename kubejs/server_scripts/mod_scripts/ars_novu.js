@@ -51,7 +51,7 @@ onEvent('recipes', event => {
 	  //Alchemical Sourcelink
 	  event.shaped('ars_nouveau:alchemical_sourcelink', ['ABA','CDC','CEC'], {A: 'kubejs:blazing_redstone',B: 'kubejs:source_tube',C: '#forge:ingots/swift_alloy',D: 'minecraft:brewing_stand',E: 'ars_nouveau:arcane_pedestal'}).id('ars_nouveau:alchemical_sourcelink')
 	  //Ritual Brazier
-	  event.shaped('ars_nouveau:ritual_brazier', ['ABA','CDC','CEC'], {A: '#froge:ingots/infused_mithril',B: 'ars_nouveau:source_gem_block',C: 'naturesaura:tainted_gold',D: 'ars_nouveau:arcane_pedestal',E: 'ars_nouveau:arcane_stone'}).id('ars_nouveau:ritual_brazier')
+	  event.shaped('ars_nouveau:ritual_brazier', ['ABA','CDC','CEC'], {A: '#forge:ingots/infused_mithril',B: 'ars_nouveau:source_gem_block',C: 'naturesaura:tainted_gold',D: 'ars_nouveau:arcane_pedestal',E: 'ars_nouveau:arcane_stone'}).id('ars_nouveau:ritual_brazier')
 	  //Arcane Pedestal
 	  event.shaped('ars_nouveau:arcane_pedestal', ['ABA','CAC','CAC'], {A: 'ars_nouveau:arcane_stone',B: 'ars_nouveau:source_gem',C: '#forge:ingots/swift_alloy'}).id('ars_nouveau:arcane_pedestal')
 

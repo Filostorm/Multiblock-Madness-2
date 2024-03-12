@@ -10,7 +10,7 @@
 	#If empty, all materials will show
 	showOnlyPartMaterial = ""
 	#If true, tables such as the part builder and tinker station will show all variants. If false shows only a variant with a default texture.
-	showAllTableVariants = false
+	showAllTableVariants = true
 	#If true, anvils will show all metal variants. If false, shows only a variant with the default texture
 	showAllAnvilVariants = true
 	#If true, smeltery and foundry controllers, drains, ducts, and chutes will show all variants
@@ -51,19 +51,19 @@
 		[recipes.ore_rates.melter]
 			#Number of nuggets produced per metal ore unit melted. 9 nuggets would give 1 ingot
 			#Range: 1 ~ 45
-			nuggetsPerMetal = 9
+			nuggetsPerMetal = 12
 			#Number of gem shards produced per gem ore unit melted. 4 gem shards would give 1 gem
 			#Range: 1 ~ 20
-			shardsPerGem = 4
+			shardsPerGem = 8
 
 		#Ore rates when melting in the smeltery
 		[recipes.ore_rates.smeltery]
 			#Number of nuggets produced per metal ore unit melted. 9 nuggets would give 1 ingot
 			#Range: 1 ~ 45
-			nuggetsPerMetal = 9
+			nuggetsPerMetal = 12
 			#Number of gem shards produced per gem ore unit melted. 4 gem shards would give 1 gem
 			#Range: 1 ~ 20
-			shardsPerGem = 4
+			shardsPerGem = 8
 
 		#Ore rates when melting in the foundry
 		[recipes.ore_rates.foundry]
@@ -78,7 +78,7 @@
 		[recipes.ore_rates.foundry_byproduct]
 			#Number of nuggets produced per metal ore unit melted. 9 nuggets would give 1 ingot
 			#Range: 1 ~ 45
-			nuggetsPerMetal = 9
+			nuggetsPerMetal = 3
 			#Number of gem shards produced per gem ore unit melted. 4 gem shards would give 1 gem
 			#Range: 1 ~ 20
 			shardsPerGem = 4
@@ -114,12 +114,14 @@
 #Everything to do with world generation
 [worldgen]
 	#Generate Cobalt
-	generateCobalt = false
+	generateCobalt = true
 	#Approx Ores per Chunk
 	veinCountCobalt = 8
 
 	#Options related to slime geodes
 	[worldgen.geodes]
+		#If true, recipes using slime crystals will ignore the other geode configs, useful if you add other ways to get the slime crystals. When false (default), recipes using slime crystals will be substituted for an alternative if the geode is disabled.
+		forceRecipes = false
 		#If true, earthslime geodes generate deep in the world as another way to get slime
 		earth = true
 		#If true, skyslime geodes generate above amethyst as another way to get skyslime
@@ -128,8 +130,6 @@
 		ichor = true
 		#If true, enderslime geodes generate as additional islands in the end
 		ender = true
-		#If true, recipes using slime crystals will ignore the other geode configs, useful if you add other ways to get the slime crystals. When false (default), recipes using slime crystals will be substituted for an alternative if the geode is disabled.
-		forceRecipes = false
 
 #Features to use in debugging gameplay and mechanics, generally should not be enabled in packs
 [debug]

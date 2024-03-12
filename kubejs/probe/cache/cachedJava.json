@@ -1,1 +1,1 @@
-["blusunrize.immersiveengineering.api.crafting.BlueprintCraftingRecipe"]
+["mekanism.common.registration.impl.GasDeferredRegister","dev.architectury.platform.forge.EventBuses","blusunrize.immersiveengineering.api.crafting.BlueprintCraftingRecipe","mekanism.common.registration.impl.InfuseTypeDeferredRegister","mekanism.common.registration.impl.SlurryDeferredRegister"]

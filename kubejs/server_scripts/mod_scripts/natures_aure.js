@@ -158,7 +158,9 @@ event.shaped('3x kubejs:ancient_wood_scaffolding', [
 		  }
 		]
 	  }).id(`mbm2:crystallizer/metal_seed`)
-	
+
+	  //infused_stone
+	  event.replaceInput({id: 'naturesaura:altar/infused_stone'}, 'minecraft:stone', 'elementalcraft:whiterock')
 });
 
 

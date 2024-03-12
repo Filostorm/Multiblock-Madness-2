@@ -18,7 +18,7 @@ var mods = [
 	//'malum', 
 	'tconstruct', 
 	'mythicbotany', 
-	'mna', 
+	//'mna', 
 	//'createbigcannons', 
 	'forbidden_arcanus',
 	'extendedcrafting',

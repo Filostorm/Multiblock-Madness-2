@@ -659,7 +659,7 @@ global.newMaterialParts = [
       'type': 'alloy',
       'tier': 2,
       'fluid_id': 'tconstruct:molten_steel',
-      'itemParts': ['plate',  'gear', 'rod', 'sheet'],
+      'itemParts': ['plate',  'gear', 'rod', 'sheet', 'plating'],
       'blockParts': ['casing'],
       'amount': 1,
       'tinkers_input': [{tag: 'forge:molten_iron',amount: 90},{name: 'kubejs:molten_carbon',amount: 90}],
@@ -754,6 +754,18 @@ global.newMaterialParts = [
       'tinkers_input': [{tag: 'forge:molten_electrum',amount: 180},{tag: 'forge:molten_cobalt',amount: 90}],
       'fluid': 'thick',
       'fluid_id': 'kubejs:molten_reinforced_electrum',
+    },
+    {
+      'material': 'swift_alloy',
+      'color': 0xf2c45a,
+      'type': 'alloy',
+      'tier': 2,
+      'itemParts': ['dust', 'plate', 'gear', 'rod'],
+      'blockParts': [],
+      //'fluid_id': 'tconstruct:molten_manyullyn',
+      //'amount': 4,
+      //'dust_input': ['3x #forge:dusts/cobalt','#forge:ingots/netherite_scrap'],
+      //'ingot_input': ['3x #forge:ingots/cobalt','#forge:ingots/netherite_scrap'],
     },
     /////////////// Tier 3 Alloys: Arc Furnace or chapter 3 /////////////////////////////
     
@@ -928,18 +940,6 @@ global.newMaterialParts = [
       'ingot_input': ['2x #forge:ingots/manyullyn', '#forge:ingots/titanium', '#forge:gems/uraninite'],
       'fluid': 'thick',
       'fluid_id': 'kubejs:molten_titanite',
-    },
-    {
-      'material': 'swift_alloy',
-      'color': 0xf2c45a,
-      'type': 'alloy',
-      'tier': 3,
-      'itemParts': ['dust', 'plate', 'gear', 'rod'],
-      'blockParts': [],
-      //'fluid_id': 'tconstruct:molten_manyullyn',
-      //'amount': 4,
-      //'dust_input': ['3x #forge:dusts/cobalt','#forge:ingots/netherite_scrap'],
-      //'ingot_input': ['3x #forge:ingots/cobalt','#forge:ingots/netherite_scrap'],
     },
 
     

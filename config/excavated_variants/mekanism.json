@@ -19,6 +19,21 @@
     },
     {
       "block_id": [
+        "mekanism:tin_ore",
+        "mekanism:deepslate_tin_ore"
+      ],
+      "en_name": "Tin Ore",
+      "types": [
+        "stone"
+      ],
+      "id": "tin_ore",
+      "stone": [
+        "stone",
+        "deepslate"
+      ]
+    },
+    {
+      "block_id": [
         "mekanism:osmium_ore",
         "mekanism:deepslate_osmium_ore"
       ],

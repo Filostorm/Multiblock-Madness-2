@@ -726,12 +726,13 @@
 			}]
 		}
 		{
-			title: "Fluix Dust"
+			title: "Fluix"
 			icon: "ae2:fluix_dust"
 			x: 7.0d
 			y: 9.0d
 			description: ["Throw the quartz and redstone into water to combine into Fluix."]
 			dependencies: ["37610C524354F5F2"]
+			min_required_tasks: 4
 			id: "338A1AE116F1A652"
 			tasks: [
 				{
@@ -754,6 +755,11 @@
 					type: "item"
 					item: "ae2:fluix_dust"
 				}
+				{
+					id: "44E38671735FB021"
+					type: "item"
+					item: "ae2:fluix_crystal"
+				}
 			]
 		}
 		{
@@ -768,62 +774,6 @@
 				type: "item"
 				item: "kubejs:energetic_alloy_ingot"
 			}]
-		}
-		{
-			title: "Auto Crafting!"
-			x: 7.0d
-			y: 10.5d
-			description: [
-				"You'll need to convert the Crafting Unit by adding a Storage Disk of some size."
-				""
-				"Until you unlock Titanium, you'll have to make do with 16 channels"
-			]
-			dependencies: [
-				"059414648F84FC52"
-				"338A1AE116F1A652"
-			]
-			id: "6C4354CB6E54A96A"
-			tasks: [
-				{
-					id: "1E3C92E9821492D6"
-					type: "item"
-					item: "ae2:pattern_provider"
-				}
-				{
-					id: "47318DF267287C40"
-					type: "item"
-					item: "ae2:blank_pattern"
-				}
-				{
-					id: "321BF9922838BCE6"
-					type: "item"
-					item: "ae2:pattern_encoding_terminal"
-				}
-				{
-					id: "05BA416531FD19FA"
-					type: "item"
-					item: "ae2:pattern_access_terminal"
-				}
-				{
-					id: "0D140FFB2F8889D2"
-					type: "item"
-					item: "ae2:crafting_unit"
-				}
-			]
-			rewards: [
-				{
-					id: "24DDF521273A63F2"
-					type: "random"
-					exclude_from_claim_all: true
-					table_id: 824098445478849879L
-				}
-				{
-					id: "71914634C3327663"
-					type: "item"
-					item: "ae2:blank_pattern"
-					count: 8
-				}
-			]
 		}
 		{
 			title: "Basic Digital Storage"
@@ -930,7 +880,7 @@
 		}
 		{
 			title: "Crystal Seeds"
-			x: 8.5d
+			x: 7.0d
 			y: 10.5d
 			description: ["Double your Quartz and Fluix!"]
 			dependencies: ["338A1AE116F1A652"]
@@ -950,7 +900,7 @@
 		}
 		{
 			x: 11.5d
-			y: 7.0d
+			y: 5.5d
 			subtitle: "Automating 3D crafting!"
 			description: ["When Automating the placing of blocks for 3D crafting, it is required to also ping this block with a redstone pulse before throwing the item in to start the craft."]
 			dependencies: ["20E99BAA6C9A4913"]
@@ -965,7 +915,7 @@
 			title: "More Elemental Infused Items"
 			x: 12.5d
 			y: 1.5d
-			description: ["If you need help finding Amethest, the Explorers Compass or the Dowsing Rod can lead you to a Geode!"]
+			description: ["If you need help finding Amethest, the Dowsing Rod can help you locate a Geode!"]
 			dependencies: ["6B06707ECFAFD263"]
 			id: "61CCA7FA3C371180"
 			tasks: [
@@ -1183,7 +1133,10 @@
 		{
 			x: 11.0d
 			y: 1.5d
-			description: [""]
+			description: [
+				""
+				"Source receptacals can be used to move Sources"
+			]
 			dependencies: ["61CCA7FA3C371180"]
 			id: "63D72477BB0F83A4"
 			tasks: [{
@@ -1284,6 +1237,7 @@
 			disable_toast: true
 			x: 9.5d
 			y: 3.0d
+			description: ["Use your spellbook on the table to open the crafting menu"]
 			dependencies: [
 				"0A183233FD5F6BF5"
 				"488E2999C6BE6591"
@@ -1333,6 +1287,17 @@
 					}
 				}
 			]
+		}
+		{
+			x: 11.5d
+			y: 7.5d
+			dependencies: ["4DE314D64C3E7C9E"]
+			id: "3261DDADEDB91321"
+			tasks: [{
+				id: "0E3F648E2D65ED8F"
+				type: "item"
+				item: "thermal:machine_crafter"
+			}]
 		}
 	]
 	quest_links: [ ]

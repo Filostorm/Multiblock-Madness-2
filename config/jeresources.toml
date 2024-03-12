@@ -2,7 +2,7 @@ disableLootManagerReloading = false
 hiddenTabs = []
 #Range: 1 ~ 4
 itemsPerRow = 4
-enchantsBlacklist = ["flimflam", "soulBound", "reactive", "fireproof"]
+enchantsBlacklist = ["flimflam", "soulBound", "reactive"]
 showDevData = false
 dimensionsBlacklist = [-11]
 diyData = true

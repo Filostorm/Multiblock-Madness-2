@@ -32,6 +32,9 @@
 		#Display 24h time format. False for 12h format
 		24h_format = true
 
+	[blocks.blackboard]
+		allow_gui = true
+
 	[blocks.pedestal]
 		#Enable displayed item spin
 		spin = true
@@ -147,9 +150,6 @@
 		#Range: 0.01 ~ 200.0
 		wobbling_period = 12.0
 
-	[blocks.blackboard]
-		allow_gui = true
-
 #Particle parameters
 [particles]
 
@@ -163,7 +163,7 @@
 #General settings
 [general]
 	#Enable Quark style config button on main menu. Needs Configured installed to work
-	config_button = false
+	config_button = true
 	#Show some tooltip hints to guide players through the mod
 	tooltip_hints = true
 	#Show tooltips items that have been made placeable
@@ -197,25 +197,6 @@
 #Items
 [items]
 
-	[items.slingshot]
-		#Adds an overlay to slingshots in gui displaying currently selected block
-		overlay = true
-		#Render the block outline for distant blocks that are reachable with a slingshot enchanted with Stasis
-		stasis_block_outline = true
-		#An RGBA color for the block outline in hex format, for example 0x00000066 for vanilla outline colors
-		block_outline_color = "ffffff66"
-		#How big should a slingshot projectile look
-		#Range: 0.0 ~ 1.0
-		projectile_scale = 0.5
-
-	[items.wrench]
-		#Display visual particles when a block is rotated
-		turn_particles = true
-
-	[items.flute]
-		#Display visual particles when a playing a flute
-		note_particles = true
-
 	[items.quiver]
 		#Z offset for quiver render when wearing armor. Useful for when you have custom armor bigger than vanilla to void clipping. Leave at -1 for automatic offset
 		#Range: -1.0 ~ 1.0
@@ -236,4 +217,23 @@
 		#Quiver GUI Y offset from default position
 		#Range: -1000 ~ 1000
 		gui_y_offset = 0
+
+	[items.slingshot]
+		#Adds an overlay to slingshots in gui displaying currently selected block
+		overlay = true
+		#Render the block outline for distant blocks that are reachable with a slingshot enchanted with Stasis
+		stasis_block_outline = true
+		#An RGBA color for the block outline in hex format, for example 0x00000066 for vanilla outline colors
+		block_outline_color = "ffffff66"
+		#How big should a slingshot projectile look
+		#Range: 0.0 ~ 1.0
+		projectile_scale = 0.5
+
+	[items.wrench]
+		#Display visual particles when a block is rotated
+		turn_particles = true
+
+	[items.flute]
+		#Display visual particles when a playing a flute
+		note_particles = true
 

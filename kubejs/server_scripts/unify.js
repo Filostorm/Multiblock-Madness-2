@@ -1,13 +1,5 @@
 // priority: 0
 
-settings.logAddedRecipes = false
-settings.logRemovedRecipes = true
-settings.logSkippedRecipes = false
-settings.logErroringRecipes = true
-
-console.info('Hello, World! (You will see this line every time server resources reload)')
-
-
 global.fluidsToRemove = [
 	'createaddition:bioethanol',
 	'createaddition:flowing_bioethanol',
@@ -33,18 +25,11 @@ global.fluidsToRemove = [
 ]
 
 var removeByName = [
-	'mna:chainmail_chestplate',
-	'mna:chainmail_helmet',
-	'mna:chainmail_leggings',
-	'mna:chainmail_boots',
 	'minecraft:magma_cream',
 	'quark:tweaks/crafting/utility/bent/paper',
 	'mekanism:paper',
 	'minecraft:sticky_piston',
 	'beyond_earth:desh_plate',
-	//'allomancy:duralumin_ingot_from_alloying',
-	//'allomancy:nicrosil_ingot_from_alloying',
-	//'allomancy:bendalloy_ingot_from_alloying',
 	'thermal:rockwool/white_rockwool_from_blasting',
 	'malum:magma_cream_from_sapballs',
 	'thermal:bottler_bucket',

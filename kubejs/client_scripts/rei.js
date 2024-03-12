@@ -112,7 +112,8 @@ onEvent("rei.group", (event) => {
     // so you don't have a bajillion potions and enchanted books cluttering up REI anymore
     const useNbt = ["potion", "enchanted_book", "splash_potion", "tipped_arrow", "lingering_potion", "apotheosis:potion_charm", "botania:flight_tiara", 'rftoolsutility:syringe',
 	'reliquary:bullets/neutral_bullet', 'reliquary:magazines/neutral_magazine', 'reliquary:mob_charm', 'reliquary:splash_potion', 'reliquary:potion', 'reliquary:potion_essence', 'reliquary:tipped_arrow', 'reliquary:mob_charm_fragment', 'reliquary:lingering_potion', 
-	'mna:runescribing_recipe_paper', 'mna:manaweaving_pattern_recipe_paper', 'mna:thaumaturgic_link', 'immersiveengineering:shader', 
+	//'mna:runescribing_recipe_paper', 'mna:manaweaving_pattern_recipe_paper', 'mna:thaumaturgic_link',
+	 'immersiveengineering:shader', 
 	'tconstruct:repair_kit', 'tconstruct:pick_head', 'tconstruct:hammer_head', 'tconstruct:small_axe_head', 'tconstruct:small_blade', 'tconstruct:broad_axe_head', 'tconstruct:round_plate', 'tconstruct:large_plate', 'tconstruct:tool_binding', 'tconstruct:broad_blade', 'tconstruct:tool_handle', 'tconstruct:tough_handle', 
 	'tconstruct:kama', 'tconstruct:scythe', 'tconstruct:dagger', 'tconstruct:sword', 'tconstruct:cleaver', 'tconstruct:pickaxe', 'tconstruct:sledge_hammer', 'tconstruct:vein_hammer', 'tconstruct:mattock', 'tconstruct:pickadze', 'tconstruct:excavator', 'tconstruct:hand_axe', 'tconstruct:broad_axe', 
 	'tconstruct:bow_limb', 'tconstruct:bow_grip', 'tconstruct:bowstring', 'tconstruct:crossbow', 'tconstruct:longbow', 
@@ -124,7 +125,7 @@ onEvent("rei.group", (event) => {
 	"sophisticatedstorage:limited_barrel_3", "sophisticatedstorage:limited_copper_barrel_3", "sophisticatedstorage:limited_iron_barrel_3", "sophisticatedstorage:limited_gold_barrel_3", "sophisticatedstorage:limited_diamond_barrel_3", "sophisticatedstorage:limited_netherite_barrel_3",
 	"sophisticatedstorage:limited_barrel_4", "sophisticatedstorage:limited_copper_barrel_4", "sophisticatedstorage:limited_iron_barrel_4", "sophisticatedstorage:limited_gold_barrel_4", "sophisticatedstorage:limited_diamond_barrel_4", "sophisticatedstorage:limited_netherite_barrel_4",
 	'industrialforegoing:infinity_nuke', 'industrialforegoing:infinity_launcher', 'industrialforegoing:infinity_backpack', 'industrialforegoing:infinity_drill', 'industrialforegoing:infinity_saw', 'industrialforegoing:infinity_hammer', 'industrialforegoing:infinity_trident',
-	'cb_microblock:microblock'/*This needs to be named!*/,
+	
 ];
 
     useNbt.forEach((id) => {
@@ -132,6 +133,7 @@ onEvent("rei.group", (event) => {
         const { namespace, path } = Utils.id(item.id);
         event.groupSameItem(`mbm2:rei_groups/${namespace}/${path}`, item.getName(), item);
     });
+	event.groupSameItem(`mbm2:rei_groups/microblocks`, 'Micro Blocks', 'cb_microblock:microblock');
 /*
     event.groupItems(`mbm2:rei_groups/wickerwood_constructs`, "Wickerwood Construct Parts", [/mna:constructs.*_wickerwood/]);
     event.groupItems(`mbm2:rei_groups/wood_constructs`, "Wooden Construct Parts", [/mna:constructs.*_wood/]);

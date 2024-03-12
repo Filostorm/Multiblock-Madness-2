@@ -24,23 +24,6 @@ onEvent('recipes', event => {
 		
 	})
 	
-	//Slag Melting
-	//event.custom({
-	//	"type": "createbigcannons:melting",
-	//	"ingredients": [
-	//	  {
-	//		"tag": 'forge:slag'
-	//	  }
-	//	],
-	//	"results": [
-	//	  {
-	//		"fluid": "kubejs:molten_slag",
-	//		"amount": 250
-	//	  }
-	//	],
-	//	"processingTime": 100,
-	//	"heatRequirement": "heated"
-	//})
 	  global.tinkersMeltingPlain(event, 'kubejs:molten_slag', 250, `#forge:slag`, 900, 40, `mbm2:smeltery/melting/slag`)
 	  //global.tinkersMeltingPlain(event, 'kubejs:molten_slag', 250, `#forge:gravel`, 900, 40, `mbm2:smeltery/melting/slag_from_gravel`)
 
@@ -74,11 +57,6 @@ onEvent('recipes', event => {
 		global.tinkersOreMelting(event, 'kubejs:liquid_smoke', 100,  'tconstruct:molten_quartz', 50, Ingredient.of('botania:quartz_dark').toJson(), 900, 20, `mbm2:foundry/melting/dark_quartz`)
 		global.tinkersOreMelting(event, 'kubejs:liquid_smoke', 400,  'tconstruct:molten_quartz', 200, Ingredient.of('botania:dark_quartz').toJson(), 900, 40, `mbm2:foundry/melting/dark_quartz_block`)
 
-		//Nethersteel
-		//global.tinkersMeltingPlain(event, 'createbigcannons:molten_nethersteel', 90, Ingredient.of('createbigcannons:nethersteel_ingot').toJson(), 900, 40, `mbm2:smeltery/melting/nethersteel_ingot`)
-		//global.tinkersMeltingPlain(event, 'createbigcannons:molten_nethersteel', 810, Ingredient.of('createbigcannons:nethersteel_block').toJson(), 900, 120, `mbm2:smeltery/melting/nethersteel_block`)
-		//global.tinkersMeltingPlain(event, 'createbigcannons:molten_nethersteel', 10, Ingredient.of('createbigcannons:nethersteel_nugget').toJson(), 900, 10, `mbm2:smeltery/melting/nethersteel_nugget`)
-	
 		//Luminite
 		global.tinkersMeltingPlain(event, 'kubejs:molten_luminite', 250, Ingredient.of('#forge:dusts/luminite').toJson(), 900, 80, `mbm2:smeltery/melting/luminite_dust`)
 		global.tinkersMeltingPlain(event, 'kubejs:molten_luminite', 250, Ingredient.of('#forge:gems/luminite').toJson(), 900, 150, `mbm2:smeltery/melting/luminite_gem`)
@@ -91,6 +69,6 @@ onEvent('recipes', event => {
 		event.recipes.thermal.chiller(Item.of('tconstruct:round_plate', '{Material:"tconstruct:silver"}'), [Fluid.of('tconstruct:molten_silver', 180), 'thermal:chiller_ball_cast'])
 
 		//Quartz Casting
-		global.casingTable(event, 'tconstruct:casts/multi_use/gem', false, `#forge:gems/quartz`, `forge:molten_quartz`, 100, 60, `mbm2:smeltery/casting/gem/quartz/gem_gold_cast`)
-		global.casingTable(event, 'tconstruct:casts/single_use/gem', true, `#forge:gems/quartz`, `forge:molten_quartz`, 100, 60, `mbm2:smeltery/casting/gem/quartz/gem_sand_cast`)
+		global.casingTable(event, 'tconstruct:casts/multi_use/gem', false, `#forge:gems/quartz`, `tconstruct:molten_quartz`, 100, 60, `mbm2:smeltery/casting/gem/quartz/gem_gold_cast`)
+		global.casingTable(event, 'tconstruct:casts/single_use/gem', true, `#forge:gems/quartz`, `tconstruct:molten_quartz`, 100, 60, `mbm2:smeltery/casting/gem/quartz/gem_sand_cast`)
 });

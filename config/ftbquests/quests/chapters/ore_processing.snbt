@@ -139,7 +139,7 @@
 			x: 1.0d
 			y: -1.5d
 			subtitle: "Y200 - 0"
-			description: ["Common ore in the Nether, can spawn with Sulfur and Earth."]
+			description: ["Uncommon in the overworld, common in the Nether, can spawn with Sulfur and Earth."]
 			id: "055AF757CBBD61CB"
 			tasks: [{
 				id: "047F37742C512155"
@@ -242,16 +242,6 @@
 				title: "The Overworld"
 				disable_toast: true
 				dimension: "minecraft:overworld"
-			}]
-		}
-		{
-			x: -3.0d
-			y: 2.5d
-			id: "4B023EEF48EE4CBD"
-			tasks: [{
-				id: "40388CACF92606FC"
-				type: "item"
-				item: "mna:vinteum_dust"
 			}]
 		}
 		{
@@ -480,7 +470,7 @@
 			}]
 		}
 		{
-			x: -2.0d
+			x: -3.0d
 			y: 2.5d
 			id: "29FF83E81F4EF64C"
 			tasks: [{
@@ -490,7 +480,7 @@
 			}]
 		}
 		{
-			x: -1.0d
+			x: -2.0d
 			y: 2.5d
 			id: "61CE7BEBA6005FD2"
 			tasks: [{
@@ -541,9 +531,9 @@
 			description: ["Spawns in Uranium Veins"]
 			id: "519BC8708D266F3E"
 			tasks: [{
-				id: "25A83951D2400A39"
+				id: "0BBAF6A7DF0CD97A"
 				type: "item"
-				item: "allomancy:raw_cadmium"
+				item: "kubejs:raw_cadmium"
 			}]
 		}
 		{

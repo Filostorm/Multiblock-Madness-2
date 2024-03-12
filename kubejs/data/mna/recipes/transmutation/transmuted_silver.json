@@ -1,6 +1,0 @@
-{
-  "type": "mna:transmutation",
-  "targetBlock": "kubejs:mithril_storage_block",
-  "lootTable": "mna:transmutation/transmuted_silver",
-  "representationItem": "mna:transmuted_silver"
-}

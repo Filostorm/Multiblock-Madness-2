@@ -198,7 +198,7 @@ onEvent('recipes', event => {
 	}).id('mbm2:terminal')
 
 	//terminals_pattern
-	event.replaceInput({id: 'ae2:network/parts/terminals_pattern_encoding'}, 'ae2:crafting_terminal', 'ae2:terminal', )
+	//event.replaceInput({id: 'ae2:network/parts/terminals_pattern_encoding'}, 'ae2:crafting_terminal', 'ae2:terminal', )
 	
 
 	//crafting_terminal

@@ -98,4 +98,8 @@ declare namespace Registry {
         create(id: string, type: "clean"): Internal.KubeJSSlurryBuilder$Clean;
         create(id: string): Internal.KubeJSSlurryBuilder$Basic;
     }
+    class Brews extends Internal.RegistryObjectBuilderTypes$RegistryEventJS<any> {
+        create(id: string, type: "basic"): Internal.BasicBrewJS$Builder;
+        create(id: string): Internal.BasicBrewJS$Builder;
+    }
 }

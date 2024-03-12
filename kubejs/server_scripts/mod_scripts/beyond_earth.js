@@ -67,7 +67,7 @@ onEvent('recipes', event => {
 	  }).id('mbm2:nasa_workbench')
 
 	  //ROTARS
-	  event.replaceInput({mod: 'beyond_earth'}, 'beyond_earth:engine_fan', 'compressedcreativity:engine_rotor', )
+	  event.replaceInput({mod: 'beyond_earth'}, 'beyond_earth:engine_fan', 'compressedcreativity:engine_rotor')
 
 	  //Aluminum
 	  event.replaceInput({mod: 'beyond_earth'}, '#forge:plates/iron', '#forge:plates/aluminum')

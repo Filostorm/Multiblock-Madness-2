@@ -28,8 +28,8 @@
 			x: -2.0d
 			y: -1.0d
 			dependencies: [
-				"17F948FD49F0EB33"
-				"4056DE989F8A8E98"
+				"40CD2EB416C68B70"
+				"44B029D2AFEC131D"
 			]
 			id: "3D971E0CF8257193"
 			tasks: [
@@ -851,18 +851,6 @@
 			}]
 		}
 		{
-			x: -4.0d
-			y: 0.5d
-			shape: "circle"
-			dependencies: ["729CD1DC498A9130"]
-			id: "4056DE989F8A8E98"
-			tasks: [{
-				id: "4B4295C63D922D71"
-				type: "item"
-				item: "chemlib:aluminum_ingot"
-			}]
-		}
-		{
 			title: "Biodesiel"
 			icon: "immersiveengineering:biodiesel_bucket"
 			x: 1.5d
@@ -888,17 +876,26 @@
 			]
 		}
 		{
-			x: -4.5d
-			y: 2.5d
+			title: "Tier 2 Metals"
+			x: -3.5d
+			y: 1.0d
 			shape: "circle"
 			description: ["Tier 2 Metals, like Cobalt and Aluminum, require at least processing in the Foundry with a high temperature fuel such as Blazing Blood."]
 			dependencies: ["729CD1DC498A9130"]
+			min_required_tasks: 1
 			id: "40CD2EB416C68B70"
-			tasks: [{
-				id: "53766C9CA41DB49E"
-				type: "item"
-				item: "tconstruct:cobalt_ingot"
-			}]
+			tasks: [
+				{
+					id: "53766C9CA41DB49E"
+					type: "item"
+					item: "tconstruct:cobalt_ingot"
+				}
+				{
+					id: "737BC39BC003DB17"
+					type: "item"
+					item: "chemlib:aluminum_ingot"
+				}
+			]
 		}
 		{
 			x: 8.5d
@@ -1163,8 +1160,8 @@
 			}]
 		}
 		{
-			x: -5.5d
-			y: 4.0d
+			x: -4.0d
+			y: 3.0d
 			description: ["Place these around a water source block and power through AE. Crystal seeds inside the water will grow much faster."]
 			dependencies: ["40CD2EB416C68B70"]
 			id: "4F570EDAF76DCC20"
@@ -1177,8 +1174,8 @@
 		}
 		{
 			icon: "hostilenetworks:sim_chamber"
-			x: -3.5d
-			y: 4.0d
+			x: -3.0d
+			y: 3.0d
 			dependencies: ["40CD2EB416C68B70"]
 			id: "4B09D1E4C5CF8BB1"
 			tasks: [
@@ -1227,7 +1224,7 @@
 		}
 		{
 			title: "The Smeltery, aka tier 2 alloys"
-			x: -7.5d
+			x: -4.0d
 			y: -1.0d
 			shape: "gear"
 			description: ["Once you have access to the Smeltery, you can use it to alloy Coke and Iron to make Steel."]
@@ -1259,7 +1256,14 @@
 				{
 					id: "5BF972C8FC7D1087"
 					type: "item"
-					item: "tconstruct:seared_fuel_gauge"
+					title: "Any #tconstruct:seared_tanks"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "tconstruct:seared_tanks"
+						}
+					}
 				}
 				{
 					id: "70EC89BD2A5B529D"
@@ -1274,8 +1278,8 @@
 			}]
 		}
 		{
-			x: -9.0d
-			y: -1.0d
+			x: -4.0d
+			y: -2.5d
 			dependencies: ["44B029D2AFEC131D"]
 			id: "28B61E3051A1F1DD"
 			tasks: [{
@@ -1285,12 +1289,9 @@
 			}]
 		}
 		{
-			x: -9.0d
+			x: -6.5d
 			y: 1.0d
-			dependencies: [
-				"1F932299A59D3965"
-				"44B029D2AFEC131D"
-			]
+			dependencies: ["1F932299A59D3965"]
 			id: "7B3DB78D063966D4"
 			tasks: [
 				{
@@ -1311,11 +1312,10 @@
 			}]
 		}
 		{
-			x: -6.875d
-			y: 2.5d
+			x: -5.5d
+			y: 3.125d
 			dependencies: [
 				"1F932299A59D3965"
-				"44B029D2AFEC131D"
 				"40CD2EB416C68B70"
 			]
 			size: 1.25d
@@ -1335,7 +1335,7 @@
 		{
 			title: "Reinforced Blast Furnace"
 			icon: "immersiveengineering:advanced_blast_furnace"
-			x: -6.0d
+			x: -7.0d
 			y: -2.5d
 			dependencies: ["17F948FD49F0EB33"]
 			min_required_tasks: 3
@@ -1378,7 +1378,7 @@
 		{
 			title: "The Industrial Metal"
 			disable_toast: true
-			x: -6.0d
+			x: -7.0d
 			y: -1.0d
 			shape: "circle"
 			description: [""]
@@ -1398,8 +1398,8 @@
 		}
 		{
 			title: "Fast Multiblock Creation"
-			x: -4.5d
-			y: -2.0d
+			x: -5.5d
+			y: -2.5d
 			description: [
 				"Select a Schematic for your blueprint in the table, then after placing it in world, load it in your cannon. Make sure it has Gunpowder and a chest nearby with every block needed."
 				""
@@ -1444,9 +1444,12 @@
 					blueprint: "components"
 				}
 			}
-			x: -9.0d
-			y: 2.5d
-			dependencies: ["17F948FD49F0EB33"]
+			x: -5.0d
+			y: 1.0d
+			dependencies: [
+				"40CD2EB416C68B70"
+				"44B029D2AFEC131D"
+			]
 			id: "1F932299A59D3965"
 			tasks: [{
 				id: "0196F2E48C1F2AE3"
@@ -1461,7 +1464,7 @@
 			}]
 		}
 		{
-			x: -6.0d
+			x: -7.0d
 			y: -4.0d
 			dependencies: ["367CDBB0205D41FB"]
 			id: "1E47E0235AF25002"
@@ -1707,15 +1710,22 @@
 		}
 		{
 			title: "Tier 2 Powah!"
-			x: -7.5d
-			y: -2.5d
+			x: -8.5d
+			y: 0.0d
 			dependencies: ["17F948FD49F0EB33"]
 			id: "6EEC0647011A6CAC"
-			tasks: [{
-				id: "279A094FAFA72728"
-				type: "item"
-				item: "powah:capacitor_hardened"
-			}]
+			tasks: [
+				{
+					id: "715EF60327A56B9F"
+					type: "item"
+					item: "powah:energy_cell_hardened"
+				}
+				{
+					id: "56361C2A2398FE44"
+					type: "item"
+					item: "powah:energy_cable_hardened"
+				}
+			]
 		}
 		{
 			x: -3.0d
@@ -1752,8 +1762,8 @@
 		}
 		{
 			title: "Auto Crafting!"
-			x: -5.5d
-			y: 1.0d
+			x: -7.0d
+			y: 3.0d
 			description: [
 				"You'll need to convert the Crafting Unit by adding a Storage Disk of some size."
 				""

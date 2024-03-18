@@ -28,7 +28,7 @@ onEvent('recipes', event => {
 	  'PHG',
 	  'DDD'
 	  ], {
-	  E: 'immersiveengineering:component_electronic_adv',
+	  E: 'immersiveengineering:component_electronic',
 	  C: '#forge:gears/cobalt',
 	  D: 'darkutils:damage_plate_player',
 	  P: 'powah:ender_core',

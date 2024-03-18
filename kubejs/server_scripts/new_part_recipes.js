@@ -671,6 +671,7 @@ onEvent('recipes', event => {
 	  	}
 		 if (Item.of(`#forge:storage_blocks/${item.material}`) != null){
 		//Block Casting
+		event.remove({id:`tconstruct:smeltery/casting/metal/${item.material}/block`})
 		global.casingBasin(event, `#forge:storage_blocks/${item.material}`, `forge:molten_${item.material}`, 810, 180, `mbm2:smeltery/casting/metal/${item.material}/block`)
 	  }
 	}

@@ -220,10 +220,10 @@ event.shaped('2x immersiveengineering:heavy_engineering', [
     'CEC',
     'BCP'
       ], {
-    E: '#forge:wire_coils/electrum',
+    E: 'create:precision_mechanism', //'#forge:wire_coils/electrum',
     C: 'immersiveengineering:component_steel',
     P: '#forge:rods/aluminum', //'#forge:plates/energized_steel',
-    B: ['#forge:gears/bronze', '#forge:gears/constantan']
+    B: '#forge:gears/constantan'
       }).id('mbm2:immersiveengineering/light_engineering')
       
 //Generator

@@ -212,7 +212,7 @@ onEvent('recipes', event => {
 		F: 'ae2:formation_core',
 	  	S: 'ae2:terminal',
 		C: 'ae2:calculation_processor',
-		P: '#forge:plates/cobalt', //hepatizon, fluix_steel
+		P: '#forge:plates/reinforced_electrum', // cobalt, hepatizon, fluix_steel
 		T: 'kubejs:source_tube'
 	}).id('mbm2:crafting_terminal')
   

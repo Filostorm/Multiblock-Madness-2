@@ -249,6 +249,7 @@ global.removeAndHide = [
 	'immersiveengineering:storage_lead',
 	'immersiveengineering:storage_nickel', 
 	'immersiveengineering:storage_silver', 
+	'immersiveengineering:storage_constantan', 
 	//'immersiveengineering:storage_steel', 
 	'mekanism:block_steel',
 	'immersiveengineering:wire_copper',

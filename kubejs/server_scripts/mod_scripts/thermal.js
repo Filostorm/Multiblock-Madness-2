@@ -277,9 +277,18 @@ event.shaped('thermal:device_hive_extractor', [' A ','BCB',' D '], {A: 'littlelo
 //Charged Coil
 global.powahEnergizing(event, [Item.of('thermal:rf_coil').toJson()], Item.of('kubejs:charged_coil'), 25000, 'mbm2:charged_coil')
 
+//Extruder
+event.remove({output: 'thermal:device_rock_gen'})
+event.shaped('thermal:device_rock_gen', ['ABA','CDC','AEA'], {A: 'thermal:invar_plate',B: 'thermal:redstone_servo',C: 'kubejs:steel_gear',D: 'kubejs:bronze_frame',E: 'minecraft:piston'}).id(`mbm2:device_rock_gen`)
+
+//tinker_bench
+event.remove({output: 'thermal:tinker_bench'})
+event.shaped('thermal:tinker_bench', ['ABA','CDC','CEC'], {A: 'kubejs:iron_plating',B: 'minecraft:crafting_table',C: 'immersiveengineering:treated_wood_horizontal',D: 'kubejs:bronze_frame',E: 'thermal:rf_coil'}).id(`mbm2:tinker_bench`)
+
 //charge_bench
 event.remove({output: 'thermal:charge_bench'})
-event.shaped('thermal:charge_bench', ['ABA','CDC','ECE'], {A: '#forge:plates/tier_1_electrical_alloy',B: 'kubejs:tier_1_electrical_alloy_wire_coil',C: 'kubejs:charged_coil',D: 'kubejs:bronze_frame',E: 'thermal:lead_plate'}).id(`mbm2:charge_bench`)
+event.shaped('thermal:charge_bench', ['ABA','CDC','ECE'], {A: '#forge:plates/tier_1_electrical_alloy',B: 'kubejs:tier_1_electrical_alloy_wire_coil',C: 'kubejs:charged_coil',D: 'thermal:tinker_bench',E: 'thermal:lead_plate'}).id(`mbm2:charge_bench`)
+
 //flux_drill
 event.remove({output: 'thermal:flux_drill'})
 event.shaped('thermal:flux_drill', [' A ','BCB',' D '], {A: 'thermal:drill_head',B: 'kubejs:tier_1_mechanical_alloy_interlocking_component',C: 'thermal:ruby',D: 'kubejs:charged_coil'}).id(`mbm2:flux_drill`)

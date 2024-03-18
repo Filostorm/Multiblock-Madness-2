@@ -245,7 +245,7 @@ event.shaped('create:hose_pulley', [
 	  'PMP',
 	  ' B '
 		], {
-	  B: '#forge:cog_blocks/constantan',
+	  B: '#forge:cog_blocks/tier_1_mechanical_alloy',
 	  M: 'create:precision_mechanism',
 	  P: '#forge:plates/obsidian',
 	  A: 'create:fluid_pipe',

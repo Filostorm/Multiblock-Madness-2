@@ -19,7 +19,7 @@ global.newMaterialParts = [
       'color': 0x9dbdc2,
       'type': 'base_metal',
       'tier': 0,
-      'itemParts': ['rod', 'wire'],
+      'itemParts': ['rod', 'wire', 'plating'],
       'blockParts': [],
       'fluid_id': 'tconstruct:molten_tin',
       'ore': true,

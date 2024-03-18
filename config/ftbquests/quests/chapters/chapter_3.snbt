@@ -330,11 +330,6 @@
 					item: "tconstruct:scorched_drain"
 				}
 				{
-					id: "73C01F853CAEA8F2"
-					type: "item"
-					item: "tconstruct:scorched_chute"
-				}
-				{
 					id: "6622B5FC9735A8C4"
 					type: "item"
 					item: "tconstruct:scorched_table"
@@ -356,6 +351,11 @@
 					id: "1C60C5013445F44D"
 					type: "item"
 					item: "tconstruct:blazing_blood_bucket"
+				}
+				{
+					id: "70A284B4CE66E1D7"
+					type: "item"
+					item: "tconstruct:gold_platform"
 				}
 			]
 		}
@@ -1200,11 +1200,6 @@
 			id: "413DA778FC89BC94"
 			tasks: [
 				{
-					id: "496B2F2A593FFB21"
-					type: "item"
-					item: "thermal:charge_bench"
-				}
-				{
 					id: "465646683A293877"
 					type: "item"
 					item: {
@@ -1230,6 +1225,16 @@
 						Count: 1b
 						tag: { }
 					}
+				}
+				{
+					id: "64A339164E50852D"
+					type: "item"
+					item: "thermal:tinker_bench"
+				}
+				{
+					id: "4173A00F5ECFEC05"
+					type: "item"
+					item: "thermal:area_radius_augment"
 				}
 			]
 		}

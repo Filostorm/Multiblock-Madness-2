@@ -148,7 +148,7 @@ onEvent('recipes', event => {
 			P: `#forge:plates/${item.material}`,
 		  }).id(`mbm2:crafting/${item.material}_component`)
 
-	global.ieBlueprint(event, 'components', Item.of(`#forge:components/${item.material}`), [{count:2, base_ingredient: {tag: `forge:plates/${item.material}`}}, {tag: `forge:ingots/copper`}], `mbm2:${item.material}_component`)
+	global.ieBlueprint(event, 'mechanical_components', Item.of(`#forge:components/${item.material}`), [{count:2, base_ingredient: {tag: `forge:plates/${item.material}`}}, {tag: `forge:ingots/copper`}], `mbm2:${item.material}_component`)
 	
 			//Cheaper recipe
 			event.recipes.multiblocked.multiblock("mechanical_crafting")

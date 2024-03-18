@@ -21,6 +21,8 @@ onEvent('recipes', event => {
 	event.remove({id: 'immersiveengineering:crafting/steel_scaffolding_standard'})
   
 
+	event.remove({id: 'immersiveengineering:blueprint/component_steel'})
+	event.remove({id: 'immersiveengineering:blueprint/component_iron'})
 
   //No recycling - doesnt work, prob needs to be an actual datapack
   //event.custom({
@@ -200,9 +202,9 @@ event.shaped('3x immersiveengineering:treated_scaffold', [
 //Heavy Engineering
 	event.remove({id: 'immersiveengineering:crafting/heavy_engineering'})
 event.shaped('2x immersiveengineering:heavy_engineering', [
-  'CDC',
-  'PBP',
-  'CDC'
+  'CBC',
+  'PDP',
+  'CBC'
     ], {
   B: 'thermal:obsidian_glass',
   C: '#forge:components/industrial_alloy',
@@ -312,6 +314,17 @@ event.shaped('immersiveengineering:workbench', [
       P: 'paper',
       B: 'blue_dye'
         }).id('mbm2:immersiveengineering/interlocking_components')
+
+//Mechanical Blueprint
+event.shaped(Item.of('immersiveengineering:blueprint', '{blueprint:"mechanical_components"}'), [
+  ' G ',
+  'BBB',
+  'PPP'
+    ], {
+  G: '#forge:components/steel',
+  P: 'paper',
+  B: 'blue_dye'
+    }).id('mbm2:immersiveengineering/mechanical_components')
 
     //Hempcrete, might not use
     event.remove({id: 'immersiveengineering:crafting/hempcrete'})

@@ -1,0 +1,17 @@
+
+[graphics]
+	#Maximum iron/steelsight distance. Can have a HUGE impact on performance
+	#Range: 3 ~ 30
+	max_metal_distance = 15
+	#Animate the selection wheel
+	animate_selection = true
+	#Enable the screen overlay
+	overlay_enabled = true
+	#Screen Overlay Position
+	#Allowed Values: TOP_RIGHT, BOTTOM_RIGHT, TOP_LEFT, BOTTOM_LEFT
+	overlay_position = "TOP_LEFT"
+
+[controls]
+	#Register extra keys, one for each metal, which toggle that metal specifically
+	advanced_keybinds = false
+

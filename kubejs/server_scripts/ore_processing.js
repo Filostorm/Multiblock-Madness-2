@@ -32,6 +32,8 @@ onEvent('recipes', event => {
 		event.remove({id: `create:crushing/raw_${item}_ore`})
 		event.remove({id: `create:crushing/raw_${item}_block`})
 		event.remove({id: `create:crushing/raw_${item}`})
+		event.remove({id: `create:crushing/${item}_ore`})
+		event.remove({id: `create:crushing/deepslate_${item}_ore`})
 		event.remove({id: `create:splashing/crushed_raw_${item}`})
 		event.remove({id: `create:splashing/thermal/crushed_raw_${item}`})
 		event.remove({id: `create:splashing/mekanism/crushed_raw_${item}`})

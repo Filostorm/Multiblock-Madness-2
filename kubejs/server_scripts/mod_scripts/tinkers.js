@@ -14,6 +14,8 @@ onEvent('recipes', event => {
 	//Double smelting recipe
 	event.replaceInput({id: 'tconstruct:smeltery/melting/seared/grout'}, 'tconstruct:grout', 'kubejs:sturdy_brick')
 	
+	//Seared Tank recipes
+	event.replaceInput({output: '#tconstruct:scorched_tanks'}, 'quartz', 'thermal:obsidian_glass')
 
 	//Scorched Brick
 	event.remove({id: 'tconstruct:smeltery/casting/scorched/brick_composite'})

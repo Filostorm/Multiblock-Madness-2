@@ -97,9 +97,9 @@ event.shaped('3x kubejs:ancient_wood_scaffolding', [
 
 	//Infused Mithril
 	//event.remove({id: 'naturesaura:altar/infused_iron'})
-	global.naturesauraAltar(event, 'naturesaura:infused_iron', 'kubejs:mithril_ingot', 'normal', 'nether', 15000, 80, 'naturesaura:altar/infused_iron')
+	global.naturesauraAltar(event, 'naturesaura:infused_iron', 'kubejs:mithril_ingot', 'normal', 'overworld', 15000, 80, 'naturesaura:altar/infused_iron')
 	//event.remove({id: 'naturesaura:altar/infused_iron_block'})
-	global.naturesauraAltar(event, 'naturesaura:infused_iron_block', 'kubejs:mithril_storage_block', 'normal', 'nether', 135000, 700, 'naturesaura:altar/infused_iron_block')
+	global.naturesauraAltar(event, 'naturesaura:infused_iron_block', 'kubejs:mithril_storage_block', 'normal', 'overworld', 135000, 700, 'naturesaura:altar/infused_iron_block')
 	
 	//Tainted Gold
 	//event.remove({id: 'naturesaura:altar/tainted_gold'})

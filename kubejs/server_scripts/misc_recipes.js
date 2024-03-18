@@ -291,5 +291,35 @@ event.shaped('3x kubejs:wood_scaffolding', [
 //Arcane Sand
   event.shapeless('8x kubejs:arcane_sand', ['forbidden_arcanus:arcane_crystal_dust_speck', '#forge:sand', '#forge:sand', '#forge:sand', '#forge:sand', '#forge:sand', '#forge:sand', '#forge:sand', '#forge:sand']).id('mbm2:arcane_sand')
 
+//simplified repeaters/comparators
+  event.shaped('minecraft:repeater', ['ABA','CCC'], {A: 'minecraft:redstone_torch',B: 'minecraft:redstone',C: 'projectred_core:plate'}).id('mbm2:stone_plate_repeater')
+  event.shaped('minecraft:repeater', ['A A','BAB','CCC'], {A: 'minecraft:redstone',B: 'minecraft:stick',C: 'projectred_core:plate'}).id('mbm2:stone_plate_repeater_alt')
+  event.shaped('minecraft:comparator', [' A ','ABA','CCC'], {A: 'minecraft:redstone_torch',B: 'minecraft:quartz',C: 'projectred_core:plate'}).id('mbm2:stone_plate_comparator')
 
+//Flowers Begone (AKA: Azalea Shearing)
+  event.shapeless('ecologics:azalea_log', ['ecologics:flowering_azalea_log', '#forge:shears']).damageIngredient('#forge:shears', 1).id('mbm2:remove_azalea_flowers')
+  event.custom({
+	"type": "farmersdelight:cutting",
+	"ingredients": [
+	  {
+		"item": "ecologics:flowering_azalea_log"
+	  }
+	],
+	"tool": {
+	  "tag": "forge:shears"
+	},
+	"result": [
+	  {
+		"item": "ecologics:azalea_log"
+	  },
+	  {
+		"item": "ecologics:azalea_flower",
+		"chance": 0.5
+	  },
+	  {
+		"item": "ecologics:azalea_flower",
+		"chance": 0.25
+	  }
+	]
+  }).id('mbm2:cutting/remove_azalea_flowers')
 });

@@ -1,0 +1,63 @@
+{
+    "inputs": [
+        {
+            "item": "minecraft:ink_sac",
+            "slot": 0
+        },
+        {
+            "item": "forbidden_arcanus:arcane_crystal",
+            "slot": 1
+        },
+        {
+            "item": "minecraft:enchanted_book",
+            "slot": 2,
+            "nbt": {
+                "StoredEnchantments": [
+                    {
+                        "id": "minecraft:looting",
+                        "lvl": 3
+                    }
+                ]
+            }
+        },
+        {
+            "item": "forbidden_arcanus:mundabitur_dust",
+            "slot": 3
+        },
+        {
+            "item": "minecraft:enchanted_book",
+            "slot": 4,
+            "nbt": {
+                "StoredEnchantments": [
+                    {
+                        "id": "minecraft:fortune",
+                        "lvl": 3
+                    }
+                ]
+            }
+        },
+        {
+            "item": "naturesaura:loot_finder",
+            "slot": 5
+        }
+    ],
+    "hephaestus_forge_item": "minecraft:book",
+    "essences": {
+        "aureal": 100,
+        "experience": 100,
+        "blood": 1000,
+        "souls": 1
+    },
+    "result": {
+        "item": "minecraft:enchanted_book",
+        "count": 1,
+        "nbt": {
+            "StoredEnchantments": [
+                {
+                    "id": "apotheosis:scavenger",
+                    "lvl": 3
+                }
+            ]
+        }
+    }
+}

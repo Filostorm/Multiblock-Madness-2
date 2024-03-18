@@ -1,0 +1,47 @@
+{
+    "inputs": [
+        {
+            "item": "minecraft:ink_sac",
+            "slot": 0
+        },
+        {
+            "item": "forbidden_arcanus:arcane_crystal",
+            "slot": 1
+        },
+        {
+            "item": "allomancy:koloss_blade",
+            "slot": 2
+        },
+        {
+            "item": "forbidden_arcanus:mundabitur_dust",
+            "slot": 3
+        },
+        {
+            "item": "allomancy:koloss_blade",
+            "slot": 4
+        },
+        {
+            "item": "reliquary:angelheart_vial",
+            "slot": 5
+        }
+    ],
+    "hephaestus_forge_item": "minecraft:book",
+    "essences": {
+        "aureal": 70,
+        "experience": 50,
+        "blood": 1000,
+        "souls": 1
+    },
+    "result": {
+        "item": "minecraft:enchanted_book",
+        "count": 1,
+        "nbt": {
+            "StoredEnchantments": [
+                {
+                    "id": "reliquary:severing",
+                    "lvl": 5
+                }
+            ]
+        }
+    }
+}

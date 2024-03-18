@@ -95,6 +95,7 @@ onEvent('recipes', event => {
 
 
 //Iron Components
+event.remove({id: 'immersiveengineering:blueprint/component_iron'})
 event.recipes.createSequencedAssembly([
 'immersiveengineering:component_iron', // output
   ], '#forge:ingots/copper', [ // input.
@@ -104,6 +105,7 @@ event.recipes.createSequencedAssembly([
   ]).transitionalItem('kubejs:incomplete_component_iron').loops(1) // transitional item and the loops
 
 //Steel Components
+event.remove({id: 'immersiveengineering:blueprint/component_steel'})
 event.recipes.createSequencedAssembly([
 'immersiveengineering:component_steel', // output
   ], '#forge:ingots/copper', [ // input.

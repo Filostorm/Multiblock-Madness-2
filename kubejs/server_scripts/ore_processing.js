@@ -1130,6 +1130,12 @@ onEvent("lootjs", (event) => {
 					pool.addLoot('#forge:cheese/cheese');
 					pool.applyOreBonus("minecraft:fortune");
 			});
+		event.addBlockLootModifier('#forge:ores/runic')
+			.removeLoot(Item.of('forbidden_arcanus:rune'))
+			.pool((pool) => {
+					pool.addLoot('forbidden_arcanus:rune');
+					pool.applyOreBonus("minecraft:fortune");
+			});
 		global.newMaterialParts.forEach((item) => {
 			if (item.ore /*&& item.material != 'arcanite'*/) {
 				console.log('adding ore drops for: ' + item.material)

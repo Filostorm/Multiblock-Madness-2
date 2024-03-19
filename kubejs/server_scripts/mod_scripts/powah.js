@@ -286,7 +286,7 @@ D: 'minecraft:furnace'
 
     //Nitro Crystal
     event.remove({id: 'powah:energizing/nitro_crystal'})
-    global.powahEnergizing(event, [Item.of('powah:spirited_crystal_block').toJson(), Item.of('powah:niotic_crystal_block').toJson(), Item.of('powah:blazing_crystal_block').toJson(), Item.of('forbidden_arcanus:arcane_gold_block').toJson(), Item.of('kubejs:lithium_plating').toJson(), Item.of('beyond_earth:calorite_block').toJson()], Item.of('powah:nitro_crystal_block'), 20000000, 'mbm2:powah/nitro_crystal')
+    global.powahEnergizing(event, [Item.of('powah:spirited_crystal_block').toJson(), Item.of('powah:niotic_crystal_block').toJson(), Item.of('powah:blazing_crystal_block').toJson(), Item.of('kubejs:wixie_shard_block').toJson(), Item.of('kubejs:lithium_plating').toJson(), Item.of('beyond_earth:calorite_block').toJson()], Item.of('powah:nitro_crystal_block'), 20000000, 'mbm2:powah/nitro_crystal')
 
 
 

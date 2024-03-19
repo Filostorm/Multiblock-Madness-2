@@ -46,6 +46,9 @@ onEvent('rei.hide.items', event => {
 
 	event.hide(Item.of('ae2:facade').ignoreNBT())
 	event.hide(Item.of('ae2:wireless_terminal').ignoreNBT())
+	
+	event.hide('forbidden_arcanus:test_tube')
+	event.hide('forbidden_arcanus:blood_test_tube')
 
 	let MBDAny = [
 		'multiblocked:bot_mana.any', 
@@ -69,6 +72,11 @@ onEvent('rei.hide.items', event => {
 });
 
 onEvent('rei.add.items', event => {
+	
+	event.add(Item.of('forbidden_arcanus:blood_test_tube', '{Blood:0}'))
+	event.add(Item.of('forbidden_arcanus:blood_test_tube', '{Blood:3000}'))
+	event.add(Item.of('tconstruct:modifier_crystal', '{modifier:"tconstruct:unbreakable"}'))
+	
 	var addItems = [
 		'thermal:ruby',
 		'thermal:ruby_block',

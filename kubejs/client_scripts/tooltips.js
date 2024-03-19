@@ -151,7 +151,15 @@ onEvent('item.tooltip', tooltip => {
 	  
 	  
 	})
-
+	
+	//Misc tooltips
+	tooltip.addAdvanced('forbidden_arcanus:orb_of_temporary_flight', (item, advanced, text) => {
+		text.add(2, [Text.of('Found In End City Chests').aqua()])
+	})
+	tooltip.addAdvanced('forbidden_arcanus:blood_test_tube', (item, advanced, text) => {
+		text.add(1, [Text.red('Filled With Blood By Hitting Mobs With The '), Text.gold('Mystical Dagger')])
+	})
+	
 	//ae2additions
 	var ae2aLoaded = Platform.isLoaded('ae2additions');
    	if(ae2aLoaded){

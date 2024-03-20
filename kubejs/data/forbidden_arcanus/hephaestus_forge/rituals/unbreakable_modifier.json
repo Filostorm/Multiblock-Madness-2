@@ -1,0 +1,39 @@
+{
+    "inputs": [
+        {
+            "item": "minecraft:dragon_breath",
+            "slot": 0
+        },
+        {
+            "item": "minecraft:shulker_shell",
+            "slot": 1
+        },
+        {
+            "item": "minecraft:netherite_ingot",
+            "slot": 2
+        },
+        {
+            "item": "minecraft:netherite_ingot",
+            "slot": 4
+        },
+        {
+            "item": "minecraft:shulker_shell",
+            "slot": 5
+        }
+    ],
+    "hephaestus_forge_item": "apotheosis:rare_material",
+    "essences": {
+        "aureal": 75,
+        "experience": 50,
+        "blood": 1000,
+        "souls": 1
+    },
+    "result": {
+        "item": "tconstruct:modifier_crystal",
+        "count": 1,
+        "nbt": {
+            "modifier":
+                "tconstruct:unbreakable"
+        }
+    }
+}

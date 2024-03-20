@@ -58,5 +58,14 @@ onEvent('recipes', event => {
 	  //Gilb wing
 	global.elementalcraftInfusion(event, Item.of('phantom_membrane'), Item.of('ars_nouveau:wilden_wing'), 'earth', 1000, 'mbm2:infusion/wilden_wing')
 	
-
+	//Ars shards block crafting
+	event.shaped('kubejs:drygmy_shard_block', ['AAA','AAA','AAA'], {A: 'ars_nouveau:drygmy_shard'}).id('mbm2:drygmy_shards_to_block')
+	event.shaped('kubejs:starbuncle_shard_block', ['AAA','AAA','AAA'], {A: 'ars_nouveau:starbuncle_shards'}).id('mbm2:starbuncle_shards_to_block')
+	event.shaped('kubejs:whirlisprig_shard_block', ['AAA','AAA','AAA'], {A: 'ars_nouveau:whirlisprig_shards'}).id('mbm2:whirlisprig_shards_to_block')
+	event.shaped('kubejs:wixie_shard_block', ['AAA','AAA','AAA'], {A: 'ars_nouveau:wixie_shards'}).id('mbm2:wixie_shards_to_block')
+	event.shapeless('9x ars_nouveau:drygmy_shard', ['kubejs:drygmy_shard_block']).id('mbm2:drygmy_block_to_shards')
+	event.shapeless('9x ars_nouveau:starbuncle_shards', ['kubejs:starbuncle_shard_block']).id('mbm2:starbuncle_block_to_shards')
+	event.shapeless('9x ars_nouveau:whirlisprig_shards', ['kubejs:whirlisprig_shard_block']).id('mbm2:whirlisprig_block_to_shards')
+	event.shapeless('9x ars_nouveau:wixie_shards', ['kubejs:wixie_shard_block']).id('mbm2:wixie_block_to_shards')
+	
 });

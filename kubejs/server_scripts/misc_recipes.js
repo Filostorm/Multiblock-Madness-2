@@ -322,4 +322,8 @@ event.shaped('3x kubejs:wood_scaffolding', [
 	  }
 	]
   }).id('mbm2:cutting/remove_azalea_flowers')
+
+//Darkutils Tome of enchanting
+  event.shaped('darkutils:tome_enchanting', [' A ','BCB',' D '], {A: 'ars_nouveau:bookwyrm_charm',B: 'create:experience_nugget',C: 'tombstone:book_of_disenchantment',D: 'thermal:xp_crystal'}).id('mbm2:darkutil_enchant_tome')
+
 });

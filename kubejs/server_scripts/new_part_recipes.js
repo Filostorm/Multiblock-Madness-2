@@ -393,7 +393,7 @@ onEvent('recipes', event => {
 				  ], {
 					S: `#forge:scaffoldings/${item.material}`,
 					B: `#forge:bolts/${item.material}`,
-					P: `#forge:platings/${item.material}`,
+					P: `#forge:plates/${item.material}`,
 				  }).id(`mbm2:crafting/${item.material}_frame_box`)
 
 				//Cheaper recipe
@@ -464,13 +464,13 @@ onEvent('recipes', event => {
 	
 		//Casting Bolts
 		
-		//if (item.fluid_id != null) {
-		//	if (item.tier <= 2) {
-		//		event.recipes.tconstruct.casting_table(Item.of(`#forge:bolts/${item.material}`), item.fluid_id, 180).cast('#forge:rods/iron').coolingTime(60).consumeCast().id(`mbm2:smeltery/casting/metal/${item.material}/bolt`)//.switchSlots()
-		//	} else {
-		//		event.recipes.tconstruct.casting_table(Item.of(`#forge:bolts/${item.material}`), item.fluid_id, 180).cast('#forge:rods/steel').coolingTime(60).consumeCast().id(`mbm2:smeltery/casting/metal/${item.material}/bolt`)//.switchSlots()
-		//	}
-		//} else { console.log(`[MM2 ERROR] ${item.material}` + "needs a fluid_id or bolts casting");}
+		if (item.fluid_id != null) {
+			if (item.tier <= 2) {
+				event.recipes.tconstruct.casting_table(Item.of(`#forge:bolts/${item.material}`), item.fluid_id, 180).cast('#forge:rods/iron').coolingTime(60).consumeCast().id(`mbm2:smeltery/casting/metal/${item.material}/bolt`)//.switchSlots()
+			} else {
+				event.recipes.tconstruct.casting_table(Item.of(`#forge:bolts/${item.material}`), item.fluid_id, 180).cast('#forge:rods/steel').coolingTime(60).consumeCast().id(`mbm2:smeltery/casting/metal/${item.material}/bolt`)//.switchSlots()
+			}
+		} else { console.log(`[MM2 ERROR] ${item.material}` + "needs a fluid_id or bolts casting");}
 
 		//Sintering Bolts
 		  event.recipes.multiblocked.multiblock("sintering")
@@ -693,7 +693,7 @@ onEvent('recipes', event => {
 				if (Item.of(`#forge:${part}s/${item.material}`) != null) {
 					event.recipes.thermal.crucible(Fluid.of(item.fluid_id, partAmounts[part]), `#forge:${part}s/${item.material}`).id(`mbm2:crucible/${item.material}_${part}`)
 					if(item.fluid_id.includes('kubejs')) {
-						global.tinkersMeltingPlain(event, item.fluid_id, partAmounts[part], Item.of(`#forge:${part}s/${item.material}`).toJson(), 800, 142, `mbm2:smeltery/melting/${item.material}_${part}`)
+						global.tinkersMeltingPlain(event, item.fluid_id, partAmounts[part], Item.of(`#forge:${part}s/${item.material}`).toJson(), 800, 90, `mbm2:smeltery/melting/${item.material}_${part}`)
 					}
 				}
 			}

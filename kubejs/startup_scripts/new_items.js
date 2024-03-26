@@ -75,13 +75,6 @@ global.transitionalItems = [
 	'light_bulb',
 	'component_iron',
 	'component_steel',
-	'printed_calculation_processor',
-	'calculation_processor',
-	'printed_logic_processor',
-	'logic_processor',
-	'printed_engineering_processor',
-	'engineering_processor',
-	'printed_silicon',
 ]
 global.transitionalItemsTexture = [
 	'basic_capacitor',
@@ -89,6 +82,13 @@ global.transitionalItemsTexture = [
 	'component_electronic',
 	'electron_tube',
 	'titanium_plated_obsidian',
+	'printed_calculation_processor',
+	'calculation_processor',
+	'printed_logic_processor',
+	'logic_processor',
+	'printed_engineering_processor',
+	'engineering_processor',
+	'printed_silicon',
 ]
 
 global.batteryItems = [

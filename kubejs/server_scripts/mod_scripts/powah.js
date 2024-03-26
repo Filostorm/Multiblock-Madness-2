@@ -274,19 +274,19 @@ D: 'minecraft:furnace'
     //Blazing Crystal
     event.remove({id: 'powah:energizing/blazing_crystal_2'})
     event.remove({id: 'powah:energizing/blazing_crystal'})
-    global.powahEnergizing(event, [Item.of('solarflux:blazing_coating').toJson(), Item.of('reliquary:molten_core').toJson(), Item.of('botania:quartz_blaze').toJson()], Item.of('powah:crystal_blazing'), 120000, 'mbm2:powah/blazing_crystal')
+    global.powahEnergizing(event, [Item.of('solarflux:blazing_coating').toJson(), Item.of('reliquary:molten_core').toJson(), Item.of('botania:quartz_blaze').toJson()], 'powah:crystal_blazing', 1,  120000, 'mbm2:powah/blazing_crystal')
 
     //Niotic Crystal
     event.remove({id: 'powah:energizing/niotic_crystal'})
-    global.powahEnergizing(event, [Item.of('#forge:sprockets/tier_1_magical_alloy').toJson(), Item.of('kubejs:titanium_plated_obsidian').toJson(), Item.of('elementalcraft:springaline_shard').toJson(), Item.of('tconstruct:slimesteel_ingot').toJson()], Item.of('powah:crystal_niotic'), 300000, 'mbm2:powah/niotic_crystal')
+    global.powahEnergizing(event, [Item.of('#forge:sprockets/tier_1_magical_alloy').toJson(), Item.of('kubejs:titanium_plated_obsidian').toJson(), Item.of('elementalcraft:springaline_shard').toJson(), Item.of('tconstruct:slimesteel_ingot').toJson()], 'powah:crystal_niotic', 1,  300000, 'mbm2:powah/niotic_crystal')
 
     //Spirited Crystal
     event.remove({id: 'powah:energizing/spirited_crystal'})
-    global.powahEnergizing(event, [Item.of('naturesaura:calling_spirit').toJson(), Item.of('forbidden_arcanus:dark_soul').toJson(), Item.of('kubejs:spirited_brick').toJson(), Item.of('tconstruct:soulsteel_ingot').toJson(), Item.of('lazierae2:resonating_crystal').toJson()], Item.of('powah:crystal_spirited'), 1000000, 'mbm2:powah/spirited_crystal')
+    global.powahEnergizing(event, [Item.of('naturesaura:calling_spirit').toJson(), Item.of('forbidden_arcanus:dark_soul').toJson(), Item.of('kubejs:spirited_brick').toJson(), Item.of('tconstruct:soulsteel_ingot').toJson(), Item.of('lazierae2:resonating_crystal').toJson()], 'powah:crystal_spirited', 1,  1000000, 'mbm2:powah/spirited_crystal')
 
     //Nitro Crystal
     event.remove({id: 'powah:energizing/nitro_crystal'})
-    global.powahEnergizing(event, [Item.of('powah:spirited_crystal_block').toJson(), Item.of('powah:niotic_crystal_block').toJson(), Item.of('powah:blazing_crystal_block').toJson(), Item.of('kubejs:wixie_shard_block').toJson(), Item.of('kubejs:lithium_plating').toJson(), Item.of('beyond_earth:calorite_block').toJson()], Item.of('powah:nitro_crystal_block'), 20000000, 'mbm2:powah/nitro_crystal')
+    global.powahEnergizing(event, [Item.of('powah:spirited_crystal_block').toJson(), Item.of('powah:niotic_crystal_block').toJson(), Item.of('powah:blazing_crystal_block').toJson(), Item.of('kubejs:wixie_shard_block').toJson(), Item.of('kubejs:lithium_plating').toJson(), Item.of('beyond_earth:calorite_block').toJson()], 'powah:nitro_crystal_block', 20000000, 1,  'mbm2:powah/nitro_crystal')
 
 
 

@@ -409,13 +409,17 @@ global.elementalcraftInfusion = (event, itemInput, itemOutput, element_type, ele
 ///////////////////////////////////////////////////////////
 
 ///////////////// ENERGIZING ///////////////////////
-global.powahEnergizing = (event, itemInput, itemOutput, energy, ID) => {
+global.powahEnergizing = (event, itemInput, itemOutput, amount, energy, ID) => {
 	event.custom({
 		type: 'powah:energizing',
 		ingredients: itemInput,
 		energy: energy, //120000
-		result: itemOutput.toJson()
-	  }).id(ID)}
+		result: {
+		  item: itemOutput,
+		  count: amount
+		}
+	  }).id(ID)
+	}
 
 ///////////////////////////////////////////////////////////
 ///////////////// ENERGIZING ///////////////////////

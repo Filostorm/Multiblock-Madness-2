@@ -28,7 +28,8 @@ var mods = [
 	'biggerreactors',
 	'beyond_earth',
 	'extendedcrafting',
-	'elementalcraft'
+	'elementalcraft',
+	'lazerae2'
 ]
 
 var smeltingList = [
@@ -111,7 +112,8 @@ onEvent('client.generate_assets', event => {
 						//Color the ore part names based on the grade
 					if (Item.of(`kubejs:${part.name}_${item.material}`) != null) {
     					event.addLang(`item.kubejs.${part.name}_${item.material}`, `${partColor[part.grade]}${global.displayNameFunction(item.material, item.ore_name, part.prefix, part.suffix)}`)
-					} else if (Item.of(`create:crushed_raw_${item.material}`) != null /*&& part.name == 'crushed'*/) {
+					}
+					if (Item.of(`create:crushed_raw_${item.material}`) != null && part.name == 'crushed') {
     					event.addLang(`item.create.crushed_raw_${item.material}`, `${partColor[part.grade]}${global.displayNameFunction(item.material, item.ore_name, part.prefix, part.suffix)}`)
 					}
 				}

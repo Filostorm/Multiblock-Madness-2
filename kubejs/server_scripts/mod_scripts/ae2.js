@@ -55,7 +55,7 @@ onEvent('recipes', event => {
   	}).id('mbm2:hardened_tank')
 
 	//Charging Quartz wioth Powah
-	global.powahEnergizing(event, [Item.of('ae2:certus_quartz_crystal').toJson()], Item.of('ae2:charged_certus_quartz_crystal'), 25000, 'mbm2:powah/charged_quartz')
+	global.powahEnergizing(event, [Item.of('ae2:certus_quartz_crystal').toJson()], 'ae2:charged_certus_quartz_crystal', 1,  25000, 'mbm2:powah/charged_quartz')
 
 
   // Printed Silicon
@@ -197,8 +197,8 @@ onEvent('recipes', event => {
 		T: 'kubejs:source_tube'
 	}).id('mbm2:terminal')
 
-	//terminals_pattern
-	//event.replaceInput({id: 'ae2:network/parts/terminals_pattern_encoding'}, 'ae2:crafting_terminal', 'ae2:terminal', )
+	//Pattern Terminal
+	event.replaceInput({id: 'ae2:network/parts/terminals_pattern_encoding'}, 'ae2:crafting_terminal', 'ae2:semi_dark_monitor')
 	
 
 	//crafting_terminal
@@ -275,29 +275,35 @@ onEvent('recipes', event => {
 	event.shaped('ae2:interface', [
 	  'PQP',
 	  'FEA',
-	  'PQP'
+	  'PGP'
 	], {
-	  P: '#forge:plates/signalum',
+	  P: '#forge:platings/energetic_alloy',
 	  A: 'ae2:annihilation_core',
 	  F: 'ae2:formation_core',
-	  Q: 'ae2:quartz_glass',
-	  E: 'immersiveengineering:component_electronic_adv'
+	  Q: 'immersiveengineering:component_electronic',
+	  E: '#forge:scaffoldings/cobalt',
+	  G: 'ae2:quartz_glass',
 	}).id('mbm2:interface')
 	
-	//Storage Drive
-	event.remove({id: 'ae2:network/blocks/storage_drive'})
-	event.shaped('ae2:drive', [
+
+	//Pattern Provider
+	event.remove({id: 'ae2:network/blocks/pattern_providers_interface'})
+	//Early Recipe
+	//event.shaped('ae2:pattern_provider', ['ABA','CDC','ABA'], {A: '#forge:plates/tier_1_electrical_alloy',B: 'ae2:quartz_glass',C: 'kubejs:charged_coil',D: '#forge:scaffoldings/energetic_alloy'}).id('mbm2:pattern_provider')
+	//Alt Recipe
+	event.shaped('ae2:pattern_provider', [
 	  'PEP',
-	  'CSC',
-	  'PEP'
+	  'FCF',
+	  'PQP'
 	], {
-		S: '#forge:casings/titanium',
-		P: '#forge:platings/hepatizon',
-		E: 'ae2:engineering_processor',
-		C: 'ae2:fluix_glass_cable'
-	}).id('mbm2:drive')
-
-
+	  P: '#forge:platings/lumium',
+	  //A: 'ae2:annihilation_core',
+	  F: 'ae2:formation_core',
+	  Q: 'ae2:quartz_glass',
+	  C: '#forge:scaffoldings/cobalt',
+	  E: 'immersiveengineering:component_electronic_adv'
+	}).id('mbm2:alt_pattern_provider')
+	
 	//Crafting Unit
 	event.remove({id: 'ae2:network/crafting/cpu_crafting_unit'})
 	event.shaped('ae2:crafting_unit', [
@@ -305,31 +311,13 @@ onEvent('recipes', event => {
 	  'CSC',
 	  'PEP'
 	], {
-		S: '#forge:scaffoldings/energetic_alloy',
+		S: '#forge:frame_boxs/energetic_alloy',
 		P: '#forge:plates/tier_1_electrical_alloy',
 		E: 'ae2:calculation_processor',
 		C: 'ae2:fluix_smart_cable'
 	}).id('mbm2:crafting_unit')
   
 
-
-	//Pattern Provider
-	event.remove({id: 'ae2:network/blocks/pattern_providers_interface'})
-	//Early Recipe
-	event.shaped('ae2:pattern_provider', ['ABA','CDC','ABA'], {A: '#forge:plates/tier_1_electrical_alloy',B: 'ae2:quartz_glass',C: 'kubejs:charged_coil',D: 'kubejs:energetic_alloy_frame_box'}).id('mbm2:pattern_provider')
-	//Alt Recipe
-	//event.shaped('ae2:pattern_provider', [
-	//  'PQP',
-	//  'FEA',
-	//  'PQP'
-	//], {
-	//  P: '#forge:plates/lumium',
-	//  A: 'ae2:annihilation_core',
-	//  F: 'ae2:formation_core',
-	//  Q: 'ae2:quartz_glass',
-	//  E: 'immersiveengineering:component_electronic_adv'
-	//}).id('mbm2:alt_pattern_provider')
-	
 	//Molecular Assembler
 	event.remove({id: 'ae2:network/crafting/molecular_assembler'})
 	event.shaped('ae2:molecular_assembler', [
@@ -372,7 +360,7 @@ onEvent('recipes', event => {
 	  C: 'ae2:fluix_glass_cable',
 	  B: 'industrialforegoing:latex_bucket'
 	}).id('mbm2:fluix_covered_cable')
-	global.ieBottling(event, [Item.of('ae2:fluix_covered_cable').toJson()], Item.of('ae2:fluix_glass_cable').toJson(), {"tag":"forge:latex","amount":125}, 'mbm2:bottling/fluix_covered_cable')
+	global.ieBottling(event, [Item.of('ae2:fluix_covered_cable').toJson()], Item.of('ae2:fluix_glass_cable').toJson(), {"tag":"forge:latex","amount":100}, 'mbm2:bottling/fluix_covered_cable')
 
 	
 
@@ -381,6 +369,19 @@ onEvent('recipes', event => {
 	event.shapeless('4x ae2:fluix_smart_cable', ['ae2:fluix_smart_dense_cable']).id('mbm2:uncompressing_fluix_smart_cable')
 	event.shapeless('4x ae2:fluix_covered_cable', ['ae2:fluix_covered_dense_cable']).id('mbm2:uncompressing_fluix_covered_cable')
 	
+
+	//Storage Drive
+	event.remove({id: 'ae2:network/blocks/storage_drive'})
+	event.shaped('ae2:drive', [
+	  'PEP',
+	  'CSC',
+	  'PEP'
+	], {
+		S: '#forge:casings/titanium',
+		P: '#forge:platings/hepatizon',
+		E: 'ae2:engineering_processor',
+		C: 'ae2:fluix_glass_cable'
+	}).id('mbm2:drive')
 
 
 

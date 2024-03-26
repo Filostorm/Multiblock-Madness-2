@@ -12,7 +12,7 @@
 	# Configure tooltip for max stack size.
 	maxStackSizeTooltipMode = "disabled"
 	# Configure tooltip for NBT data.
-	nbtTooltipMode = "onShift"
+	nbtTooltipMode = "disabled"
 	# Configure tooltip for registry name. E.g. minecraft:stone
 	registryNameTooltipMode = "disabled"
 	# Configure tooltip for tags. E.g. forge:ingot, minecraft:planks

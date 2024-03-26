@@ -463,6 +463,7 @@
 			icon: "immersiveengineering:diesel_generator"
 			x: 5.5d
 			y: 2.0d
+			description: ["Needs Diesel of some variety "]
 			dependencies: ["758CEB9A27CE3547"]
 			min_required_tasks: 7
 			id: "738E3C876E9D4BC6"
@@ -1050,13 +1051,11 @@
 			]
 		}
 		{
-			x: 7.0d
-			y: 3.0d
+			x: -7.0d
+			y: 2.5d
 			shape: "hexagon"
-			dependencies: [
-				"0D9ABDE851B5E722"
-				"592A4D0BDEB062DB"
-			]
+			description: ["This can supply items from your network, and accept them back in."]
+			dependencies: ["1F932299A59D3965"]
 			id: "0BFAF74E6813F17D"
 			tasks: [{
 				id: "011FE858EDE88A1B"
@@ -1574,6 +1573,7 @@
 		{
 			x: 3.0d
 			y: -7.5d
+			description: ["This Produces Aura when a nearby Oak Tree would grow larger then normal"]
 			dependencies: ["4691F3E2268FD78F"]
 			id: "72094D5B6BA7A1EC"
 			tasks: [{
@@ -1762,14 +1762,17 @@
 		}
 		{
 			title: "Auto Crafting!"
-			x: -7.0d
+			x: 7.0d
 			y: 3.0d
 			description: [
 				"You'll need to convert the Crafting Unit by adding a Storage Disk of some size."
 				""
 				"Until you unlock Titanium, you'll have to make do with 16 channels"
 			]
-			dependencies: ["4330D1B18E585E4E"]
+			dependencies: [
+				"592A4D0BDEB062DB"
+				"0D9ABDE851B5E722"
+			]
 			id: "6C4354CB6E54A96A"
 			tasks: [
 				{

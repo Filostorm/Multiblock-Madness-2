@@ -17,6 +17,7 @@ onEvent('worldgen.add', event => {
 	// if you are using an older version of KubeJS, you can use the methods in the ore properties class
 	const {anchors} = event
 
+	console.log('mars')
 
 ////////////////////////////////////////////	mars	////////////////////////////////
 

@@ -9,170 +9,12 @@
 	default_hide_dependency_lines: false
 	quests: [
 		{
-			x: 6.5d
-			y: 3.0d
-			description: [
-				"Flip to the correct book in your Tome to complete this quest."
-				""
-				"You'll need to read it to get started. Following the internal guide for Mana and Artifice will be your best path moving forward with the mod."
-			]
-			id: "47AA157D687A02F7"
-			tasks: [{
-				id: "6652FF81E0985785"
-				type: "item"
-				item: "mna:guide_book"
-			}]
-		}
-		{
-			x: 8.0d
-			y: 3.0d
-			dependencies: [
-				"47AA157D687A02F7"
-				"243652BEE988A387"
-			]
-			id: "7EBE28646422EC18"
-			tasks: [{
-				id: "3483C1EA4FEB42A9"
-				type: "item"
-				item: {
-					id: "mna:manaweaver_wand"
-					Count: 1b
-					tag: {
-						Damage: 0
-					}
-				}
-			}]
-		}
-		{
-			x: 9.5d
-			y: 3.0d
-			dependencies: ["7EBE28646422EC18"]
-			id: "0E9C33334120AC94"
-			tasks: [{
-				id: "53D3DF24EA663D62"
-				type: "item"
-				item: "mna:transmuted_silver"
-				count: 9L
-			}]
-		}
-		{
-			x: 11.0d
-			y: 3.0d
-			dependencies: ["0E9C33334120AC94"]
-			id: "098CAF7E91266CDC"
-			tasks: [{
-				id: "6302DA60089BF7CD"
-				type: "item"
-				item: "mna:runeforge"
-			}]
-		}
-		{
-			x: 9.5d
-			y: 1.5d
-			dependencies: ["0E9C33334120AC94"]
-			id: "1BF79E8ACC1F917F"
-			tasks: [{
-				id: "1F4122EFD87E59A3"
-				type: "item"
-				item: "mna:manaweaving_altar"
-			}]
-		}
-		{
-			x: 11.0d
-			y: 1.5d
-			description: ["This is the main information hub needed to progress through Mana and Artifice."]
-			dependencies: ["0E9C33334120AC94"]
-			id: "1FC0519495084939"
-			tasks: [{
-				id: "314EFEAEC1C1D314"
-				type: "item"
-				item: "mna:occulus"
-			}]
-		}
-		{
-			x: 12.5d
-			y: 3.0d
-			description: ["Used for rituals"]
-			dependencies: ["098CAF7E91266CDC"]
-			id: "12DDD9CD9F8B934F"
-			tasks: [{
-				id: "340349797FF371F8"
-				type: "item"
-				item: {
-					id: "mna:wizard_chalk"
-					Count: 1b
-					tag: {
-						Damage: 0
-					}
-				}
-			}]
-		}
-		{
-			x: 9.5d
-			y: 0.0d
-			dependencies: ["1BF79E8ACC1F917F"]
-			id: "07A718A55B5A7318"
-			tasks: [{
-				id: "5AE55B859A66458A"
-				type: "item"
-				item: "mna:infused_silk"
-			}]
-		}
-		{
 			x: 4.0d
-			y: 11.0d
-			description: ["Items must be placed in the shown order."]
-			dependencies: ["391E4F9DA1A3D71B"]
-			id: "6B06707ECFAFD263"
-			tasks: [{
-				id: "6378AF3A0AE6AF58"
-				type: "item"
-				item: "elementalcraft:binder"
-			}]
-		}
-		{
-			title: "More Elemental Infused Items"
-			x: 5.5d
-			y: 11.0d
-			dependencies: ["6B06707ECFAFD263"]
-			id: "61CCA7FA3C371180"
-			tasks: [
-				{
-					id: "2CFB04C7A08F97D3"
-					type: "item"
-					item: "elementalcraft:swift_alloy_ingot"
-				}
-				{
-					id: "48F4AD547AF2A043"
-					type: "item"
-					item: "elementalcraft:springaline_shard"
-				}
-			]
-		}
-		{
-			x: 7.0d
-			y: 11.0d
-			dependencies: ["61CCA7FA3C371180"]
-			id: "63D72477BB0F83A4"
-			tasks: [{
-				id: "0576FF10B6A77AE8"
-				type: "item"
-				item: "elementalcraft:crystallizer"
-			}]
-			rewards: [{
-				id: "1A071C495A346567"
-				type: "choice"
-				exclude_from_claim_all: true
-				table_id: 5588879661420231004L
-			}]
-		}
-		{
-			x: 13.5d
-			y: 6.5d
+			y: -1.0d
 			dependencies: [
 				"3D971E0CF8257193"
 				"04FD40DD2CE51B84"
-				"098CAF7E91266CDC"
+				"3AA3487F8175A54E"
 			]
 			id: "0EB55E9BCD6E97C3"
 			tasks: [{
@@ -183,11 +25,11 @@
 		}
 		{
 			title: "Basic Engineering Blocks"
-			x: 7.5d
-			y: 6.5d
+			x: -2.0d
+			y: -1.0d
 			dependencies: [
-				"17F948FD49F0EB33"
-				"4056DE989F8A8E98"
+				"40CD2EB416C68B70"
+				"44B029D2AFEC131D"
 			]
 			id: "3D971E0CF8257193"
 			tasks: [
@@ -206,8 +48,8 @@
 		{
 			title: "The Squeezer"
 			icon: "immersiveengineering:squeezer"
-			x: 9.0d
-			y: 6.5d
+			x: -0.5d
+			y: -1.0d
 			dependencies: ["3D971E0CF8257193"]
 			min_required_tasks: 8
 			id: "1A2C95D86B270D15"
@@ -278,8 +120,8 @@
 		{
 			title: "The Metal Press"
 			icon: "immersiveengineering:metal_press"
-			x: 13.5d
-			y: 5.0d
+			x: 4.0d
+			y: -2.5d
 			subtitle: "Better part creation"
 			description: ["Simple gears, and double production of wires and rods."]
 			dependencies: ["0EB55E9BCD6E97C3"]
@@ -335,8 +177,8 @@
 		{
 			title: "The Arc Furnace"
 			icon: "immersiveengineering:arc_furnace"
-			x: 16.5d
-			y: 6.5d
+			x: 7.0d
+			y: -1.0d
 			shape: "gear"
 			dependencies: [
 				"0EB55E9BCD6E97C3"
@@ -424,8 +266,8 @@
 		{
 			title: "The Refinery"
 			icon: "immersiveengineering:refinery"
-			x: 13.5d
-			y: 8.0d
+			x: 4.0d
+			y: 0.5d
 			dependencies: ["0EB55E9BCD6E97C3"]
 			min_required_tasks: 7
 			id: "50FBAD99E2875E46"
@@ -491,8 +333,8 @@
 		{
 			title: "The Crusher"
 			icon: "immersiveengineering:crusher"
-			x: 6.5d
-			y: 5.0d
+			x: -3.0d
+			y: -2.5d
 			dependencies: ["3D971E0CF8257193"]
 			min_required_tasks: 6
 			id: "4489F9C5F2899DFE"
@@ -552,8 +394,8 @@
 		{
 			title: "The Automated Workbench"
 			icon: "immersiveengineering:auto_workbench"
-			x: 15.0d
-			y: 5.0d
+			x: 5.5d
+			y: -2.5d
 			dependencies: ["0EB55E9BCD6E97C3"]
 			min_required_tasks: 7
 			id: "598305F8C2BF7FAF"
@@ -619,8 +461,9 @@
 		{
 			title: "The Diesel Generator"
 			icon: "immersiveengineering:diesel_generator"
-			x: 15.0d
-			y: 9.5d
+			x: 5.5d
+			y: 2.0d
+			description: ["Needs Diesel of some variety "]
 			dependencies: ["758CEB9A27CE3547"]
 			min_required_tasks: 7
 			id: "738E3C876E9D4BC6"
@@ -686,8 +529,8 @@
 		{
 			title: "The Mixer"
 			icon: "immersiveengineering:mixer"
-			x: 8.5d
-			y: 5.0d
+			x: -1.0d
+			y: -2.5d
 			dependencies: ["3D971E0CF8257193"]
 			min_required_tasks: 6
 			id: "02E4BADB1F8BEB33"
@@ -752,8 +595,8 @@
 		{
 			title: "Fermenting"
 			icon: "immersiveengineering:fermenter"
-			x: 8.5d
-			y: 8.0d
+			x: -1.0d
+			y: 0.5d
 			dependencies: ["3D971E0CF8257193"]
 			min_required_tasks: 7
 			id: "6AE6AC04DFC1A75A"
@@ -817,93 +660,10 @@
 			}]
 		}
 		{
-			title: "Reinforced Blast Furnace"
-			icon: "immersiveengineering:advanced_blast_furnace"
-			x: 3.5d
-			y: 5.0d
-			dependencies: ["17F948FD49F0EB33"]
-			min_required_tasks: 3
-			id: "367CDBB0205D41FB"
-			tasks: [
-				{
-					id: "61E714B4E12BE2C1"
-					type: "item"
-					item: "immersiveengineering:blastbrick_reinforced"
-					count: 27L
-				}
-				{
-					id: "52FA029D82A79A55"
-					type: "item"
-					item: "minecraft:hopper"
-				}
-				{
-					id: "18F0D03A65F1C3F9"
-					type: "questsadditions:structure"
-					title: "Blast Furnace"
-					icon: "immersiveengineering:advanced_blast_furnace"
-					name: "blast_furnace"
-					hasCustomPicture: false
-					layer: true
-					ignoreState: false
-					rightclick: false
-				}
-				{
-					id: "3DF95996924F543C"
-					type: "checkmark"
-				}
-			]
-			rewards: [{
-				id: "4E516849CA8F7DEF"
-				type: "random"
-				exclude_from_claim_all: true
-				table_id: 2582656620646881183L
-			}]
-		}
-		{
-			title: "The Industral Metal"
-			disable_toast: true
-			x: 3.5d
-			y: 6.5d
-			shape: "circle"
-			description: [""]
-			dependencies: ["35C16B4B5D8C7148"]
-			id: "17F948FD49F0EB33"
-			tasks: [{
-				id: "6A1342A29C56C67D"
-				type: "item"
-				title: "Any #forge:ingots/steel"
-				item: {
-					id: "itemfilters:tag"
-					Count: 1b
-					tag: {
-						value: "forge:ingots/steel"
-					}
-				}
-			}]
-		}
-		{
-			x: 3.5d
-			y: 3.5d
-			dependencies: ["367CDBB0205D41FB"]
-			id: "1E47E0235AF25002"
-			tasks: [{
-				id: "41D123875ECB56E7"
-				type: "item"
-				item: "immersiveengineering:blastfurnace_preheater"
-				count: 2L
-			}]
-			rewards: [{
-				id: "529EBD42E8E6CFC1"
-				type: "random"
-				exclude_from_claim_all: true
-				table_id: 7840564287515615038L
-			}]
-		}
-		{
 			title: "The Bottling Machine"
 			icon: "immersiveengineering:bottling_machine"
-			x: 7.5d
-			y: 9.0d
+			x: -2.0d
+			y: 1.5d
 			dependencies: ["3D971E0CF8257193"]
 			min_required_tasks: 7
 			id: "45011E84BFF6E319"
@@ -966,8 +726,8 @@
 			}]
 		}
 		{
-			x: 11.0d
-			y: 10.017857142857146d
+			x: 1.5d
+			y: 2.517857142857146d
 			dependencies: [
 				"50FBAD99E2875E46"
 				"6AE6AC04DFC1A75A"
@@ -981,33 +741,8 @@
 			}]
 		}
 		{
-			title: "Crafting Components"
-			icon: {
-				id: "immersiveengineering:blueprint"
-				Count: 1b
-				tag: {
-					blueprint: "components"
-				}
-			}
-			x: 3.5d
-			y: 8.0d
-			dependencies: ["17F948FD49F0EB33"]
-			id: "1F932299A59D3965"
-			tasks: [{
-				id: "0196F2E48C1F2AE3"
-				type: "item"
-				item: {
-					id: "immersiveengineering:blueprint"
-					Count: 1b
-					tag: {
-						blueprint: "components"
-					}
-				}
-			}]
-		}
-		{
-			x: 12.5d
-			y: 10.0d
+			x: 3.0d
+			y: 2.5d
 			shape: "circle"
 			dependencies: ["3DB2C9FEEFF74379"]
 			size: 1.5d
@@ -1026,8 +761,8 @@
 		}
 		{
 			title: "More Engineer's Blocks"
-			x: 15.0d
-			y: 8.0d
+			x: 5.5d
+			y: 0.5d
 			dependencies: ["0EB55E9BCD6E97C3"]
 			id: "758CEB9A27CE3547"
 			tasks: [
@@ -1046,8 +781,8 @@
 		{
 			title: "The Excavator"
 			icon: "immersiveengineering:excavator"
-			x: 16.5d
-			y: 9.0d
+			x: 7.0d
+			y: 1.5d
 			dependencies: ["758CEB9A27CE3547"]
 			min_required_tasks: 8
 			id: "043DFE88CE9F4625"
@@ -1117,67 +852,10 @@
 			}]
 		}
 		{
-			x: 5.5d
-			y: 8.0d
-			dependencies: ["729CD1DC498A9130"]
-			id: "4056DE989F8A8E98"
-			tasks: [{
-				id: "4B4295C63D922D71"
-				type: "item"
-				item: "chemlib:aluminum_ingot"
-			}]
-		}
-		{
-			title: "The Smeltery, aka tier 2 alloys"
-			x: 2.0d
-			y: 6.5d
-			description: ["Once you have access to the Smeltery, you can use it to alloy Coke and Iron to make Steel."]
-			dependencies: ["17F948FD49F0EB33"]
-			id: "44B029D2AFEC131D"
-			tasks: [
-				{
-					id: "07B16EA6DF6B96DC"
-					type: "item"
-					item: {
-						id: "tconstruct:smeltery_controller"
-						Count: 1b
-						tag: {
-							texture: "tconstruct:seared_bricks"
-						}
-					}
-				}
-				{
-					id: "63CE459BDFAE175D"
-					type: "item"
-					item: "tconstruct:seared_table"
-				}
-				{
-					id: "110F23710198924E"
-					type: "item"
-					item: "tconstruct:seared_faucet"
-				}
-				{
-					id: "5BF972C8FC7D1087"
-					type: "item"
-					item: "tconstruct:seared_fuel_gauge"
-				}
-				{
-					id: "70EC89BD2A5B529D"
-					type: "item"
-					item: "tconstruct:seared_drain"
-				}
-			]
-			rewards: [{
-				id: "4CADBD0D2FE793A3"
-				type: "item"
-				item: "tconstruct:blazing_blood_bucket"
-			}]
-		}
-		{
 			title: "Biodesiel"
 			icon: "immersiveengineering:biodiesel_bucket"
-			x: 11.0d
-			y: 8.0d
+			x: 1.5d
+			y: 1.0d
 			description: ["A great sustanable fuel source, and can be used for plastic later on."]
 			dependencies: [
 				"1A2C95D86B270D15"
@@ -1199,43 +877,30 @@
 			]
 		}
 		{
-			x: 3.5d
-			y: 9.5d
-			dependencies: [
-				"1F932299A59D3965"
-				"44B029D2AFEC131D"
-				"40CD2EB416C68B70"
-			]
-			size: 1.5d
-			id: "4330D1B18E585E4E"
-			tasks: [{
-				id: "65BAEAC0D2E64797"
-				type: "item"
-				item: "ae2:crafting_terminal"
-			}]
-			rewards: [{
-				id: "63F20E012C2FCA96"
-				type: "random"
-				exclude_from_claim_all: true
-				table_id: 824098445478849879L
-			}]
-		}
-		{
-			x: 1.5d
-			y: 9.5d
+			title: "Tier 2 Metals"
+			x: -3.5d
+			y: 1.0d
 			shape: "circle"
 			description: ["Tier 2 Metals, like Cobalt and Aluminum, require at least processing in the Foundry with a high temperature fuel such as Blazing Blood."]
 			dependencies: ["729CD1DC498A9130"]
+			min_required_tasks: 1
 			id: "40CD2EB416C68B70"
-			tasks: [{
-				id: "53766C9CA41DB49E"
-				type: "item"
-				item: "tconstruct:cobalt_ingot"
-			}]
+			tasks: [
+				{
+					id: "53766C9CA41DB49E"
+					type: "item"
+					item: "tconstruct:cobalt_ingot"
+				}
+				{
+					id: "737BC39BC003DB17"
+					type: "item"
+					item: "chemlib:aluminum_ingot"
+				}
+			]
 		}
 		{
-			x: 18.0d
-			y: 6.5d
+			x: 8.5d
+			y: -1.0d
 			shape: "circle"
 			subtitle: "Found in the End"
 			min_required_dependencies: 1
@@ -1253,8 +918,8 @@
 		{
 			title: "Autocrafting with Fluids"
 			icon: "immersiveengineering:assembler"
-			x: 7.5d
-			y: 5.0d
+			x: -2.0d
+			y: -2.5d
 			dependencies: ["3D971E0CF8257193"]
 			min_required_tasks: 7
 			id: "02527CA184E00FE4"
@@ -1321,8 +986,8 @@
 		{
 			title: "Visit The End"
 			disable_toast: true
-			x: 16.5d
-			y: 4.5d
+			x: 7.0d
+			y: -3.0d
 			description: ["Check the Ore Processing page for a preview of the potential ores you can find."]
 			size: 1.5d
 			id: "509A0BA1A97F85A8"
@@ -1335,13 +1000,8 @@
 		}
 		{
 			icon: "mbm2:mixer_mk1"
-			x: 5.5d
-			y: 9.5d
-			dependencies: [
-				"40CD2EB416C68B70"
-				"61CCA7FA3C371180"
-				"4056DE989F8A8E98"
-			]
+			x: 10.0d
+			y: 1.25d
 			size: 1.25d
 			id: "627B714B402BEE67"
 			tasks: [
@@ -1391,9 +1051,354 @@
 			]
 		}
 		{
+			x: -7.0d
+			y: 2.5d
+			shape: "hexagon"
+			description: ["This can supply items from your network, and accept them back in."]
+			dependencies: ["1F932299A59D3965"]
+			id: "0BFAF74E6813F17D"
+			tasks: [{
+				id: "011FE858EDE88A1B"
+				type: "item"
+				item: "ae2:interface"
+			}]
+			rewards: [{
+				id: "708192448272E3B1"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 824098445478849879L
+			}]
+		}
+		{
+			x: 5.5d
+			y: -1.0d
+			dependencies: ["1A2C95D86B270D15"]
+			id: "2265D46C0B449F49"
+			tasks: [{
+				id: "3A3AB773495D5AC3"
+				type: "item"
+				item: {
+					id: "immersiveengineering:graphite_electrode"
+					Count: 1b
+					tag: {
+						graphDmg: 0
+					}
+				}
+				count: 3L
+			}]
+		}
+		{
+			x: 1.5d
+			y: -1.0d
+			description: ["The IE Assembler can use fluids that have been piped for bucket recipes."]
+			dependencies: [
+				"02E4BADB1F8BEB33"
+				"6AE6AC04DFC1A75A"
+			]
+			id: "04FD40DD2CE51B84"
+			tasks: [{
+				id: "77FE5C466581D832"
+				type: "item"
+				item: "kubejs:industrial_alloy_ingot"
+			}]
+			rewards: [{
+				id: "383A9EB2BAA49DF7"
+				type: "item"
+				item: "immersiveengineering:herbicide_bucket"
+			}]
+		}
+		{
+			title: "Advanced Energetic Alloys"
+			x: 8.5d
+			y: 1.5d
+			description: ["You might want to set up some good power supply before mass producing AE components."]
+			dependencies: [
+				"75D4FF56D8BBF34A"
+				"627B714B402BEE67"
+			]
+			min_required_tasks: 1
+			id: "592A4D0BDEB062DB"
+			tasks: [
+				{
+					id: "3617876F5A6612CD"
+					type: "item"
+					item: "thermal:signalum_dust"
+				}
+				{
+					id: "1460BBB1A47E4503"
+					type: "item"
+					item: "thermal:lumium_dust"
+				}
+				{
+					id: "6B4C7DE866A2430D"
+					type: "item"
+					item: "thermal:enderium_dust"
+				}
+			]
+		}
+		{
+			x: 10.0d
+			y: -0.5d
+			dependencies: ["7BB9213CBA0A5FCC"]
+			id: "6881A552DF61AD73"
+			tasks: [{
+				id: "5ECBA239A2EB00C8"
+				type: "item"
+				item: "ae2:drive"
+			}]
+		}
+		{
+			x: 10.0d
+			y: -1.5d
+			dependencies: ["7BB9213CBA0A5FCC"]
+			id: "6DEB9BB02E28A823"
+			tasks: [{
+				id: "6591CF4E4F97B357"
+				type: "item"
+				item: "ae2:cell_component_1k"
+			}]
+		}
+		{
+			x: -4.0d
+			y: 3.0d
+			description: ["Place these around a water source block and power through AE. Crystal seeds inside the water will grow much faster."]
+			dependencies: ["40CD2EB416C68B70"]
+			id: "4F570EDAF76DCC20"
+			tasks: [{
+				id: "6A0B60F6C8CF60D3"
+				type: "item"
+				item: "ae2:quartz_growth_accelerator"
+				count: 4L
+			}]
+		}
+		{
+			icon: "hostilenetworks:sim_chamber"
+			x: -3.0d
+			y: 3.0d
+			dependencies: ["40CD2EB416C68B70"]
+			id: "4B09D1E4C5CF8BB1"
+			tasks: [
+				{
+					id: "2C6D7BCC994E7E99"
+					type: "item"
+					item: "hostilenetworks:sim_chamber"
+				}
+				{
+					id: "5C51EEF96E4138D2"
+					type: "item"
+					item: "hostilenetworks:deep_learner"
+				}
+				{
+					id: "455EF611E2436A2D"
+					type: "item"
+					item: "hostilenetworks:blank_data_model"
+				}
+			]
+		}
+		{
+			x: 7.0d
+			y: 4.0d
+			subtitle: "4k RF/t "
+			dependencies: [
+				"592A4D0BDEB062DB"
+				"0D9ABDE851B5E722"
+			]
+			id: "4D8C40C07AF73B14"
+			tasks: [{
+				id: "2D9F1023E205DDAB"
+				type: "item"
+				item: "hostilenetworks:loot_fabricator"
+			}]
+		}
+		{
+			x: 8.5d
+			y: 4.0d
+			dependencies: ["592A4D0BDEB062DB"]
+			id: "33A907176391C423"
+			tasks: [{
+				id: "3957BF8D199A31BB"
+				type: "item"
+				item: "ae2:molecular_assembler"
+			}]
+		}
+		{
+			title: "The Smeltery, aka tier 2 alloys"
+			x: -4.0d
+			y: -1.0d
+			shape: "gear"
+			description: ["Once you have access to the Smeltery, you can use it to alloy Coke and Iron to make Steel."]
+			dependencies: ["17F948FD49F0EB33"]
+			size: 1.5d
+			id: "44B029D2AFEC131D"
+			tasks: [
+				{
+					id: "07B16EA6DF6B96DC"
+					type: "item"
+					item: {
+						id: "tconstruct:smeltery_controller"
+						Count: 1b
+						tag: {
+							texture: "tconstruct:seared_bricks"
+						}
+					}
+				}
+				{
+					id: "63CE459BDFAE175D"
+					type: "item"
+					item: "tconstruct:seared_table"
+				}
+				{
+					id: "110F23710198924E"
+					type: "item"
+					item: "tconstruct:seared_faucet"
+				}
+				{
+					id: "5BF972C8FC7D1087"
+					type: "item"
+					title: "Any #tconstruct:seared_tanks"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "tconstruct:seared_tanks"
+						}
+					}
+				}
+				{
+					id: "70EC89BD2A5B529D"
+					type: "item"
+					item: "tconstruct:seared_drain"
+				}
+			]
+			rewards: [{
+				id: "4CADBD0D2FE793A3"
+				type: "item"
+				item: "tconstruct:blazing_blood_bucket"
+			}]
+		}
+		{
+			x: -4.0d
+			y: -2.5d
+			dependencies: ["44B029D2AFEC131D"]
+			id: "28B61E3051A1F1DD"
+			tasks: [{
+				id: "150B9B6E2804C2A7"
+				type: "item"
+				item: "functionalstorage:fluid_1"
+			}]
+		}
+		{
+			x: -6.5d
+			y: 1.0d
+			dependencies: ["1F932299A59D3965"]
+			id: "7B3DB78D063966D4"
+			tasks: [
+				{
+					id: "3CEB9764CDA99319"
+					type: "item"
+					item: "scannable:scanner"
+				}
+				{
+					id: "35D755B0DB74A309"
+					type: "item"
+					item: "scannable:blank_module"
+				}
+			]
+			rewards: [{
+				id: "51118C078744459E"
+				type: "item"
+				item: "scannable:blank_module"
+			}]
+		}
+		{
+			x: -5.5d
+			y: 3.125d
+			dependencies: [
+				"1F932299A59D3965"
+				"40CD2EB416C68B70"
+			]
+			size: 1.25d
+			id: "4330D1B18E585E4E"
+			tasks: [{
+				id: "65BAEAC0D2E64797"
+				type: "item"
+				item: "ae2:crafting_terminal"
+			}]
+			rewards: [{
+				id: "63F20E012C2FCA96"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 824098445478849879L
+			}]
+		}
+		{
+			title: "Reinforced Blast Furnace"
+			icon: "immersiveengineering:advanced_blast_furnace"
+			x: -7.0d
+			y: -2.5d
+			dependencies: ["17F948FD49F0EB33"]
+			min_required_tasks: 3
+			id: "367CDBB0205D41FB"
+			tasks: [
+				{
+					id: "61E714B4E12BE2C1"
+					type: "item"
+					item: "immersiveengineering:blastbrick_reinforced"
+					count: 27L
+				}
+				{
+					id: "52FA029D82A79A55"
+					type: "item"
+					item: "minecraft:hopper"
+				}
+				{
+					id: "18F0D03A65F1C3F9"
+					type: "questsadditions:structure"
+					title: "Blast Furnace"
+					icon: "immersiveengineering:advanced_blast_furnace"
+					name: "blast_furnace"
+					hasCustomPicture: false
+					layer: true
+					ignoreState: false
+					rightclick: false
+				}
+				{
+					id: "3DF95996924F543C"
+					type: "checkmark"
+				}
+			]
+			rewards: [{
+				id: "4E516849CA8F7DEF"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 2582656620646881183L
+			}]
+		}
+		{
+			title: "The Industrial Metal"
+			disable_toast: true
+			x: -7.0d
+			y: -1.0d
+			shape: "circle"
+			description: [""]
+			id: "17F948FD49F0EB33"
+			tasks: [{
+				id: "6A1342A29C56C67D"
+				type: "item"
+				title: "Any #forge:ingots/steel"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "forge:ingots/steel"
+					}
+				}
+			}]
+		}
+		{
 			title: "Fast Multiblock Creation"
-			x: 5.0d
-			y: 5.5d
+			x: -5.5d
+			y: -2.5d
 			description: [
 				"Select a Schematic for your blueprint in the table, then after placing it in world, load it in your cannon. Make sure it has Gunpowder and a chest nearby with every block needed."
 				""
@@ -1430,335 +1435,54 @@
 			]
 		}
 		{
-			x: 2.0d
-			y: 8.0d
+			title: "Crafting Components"
+			icon: {
+				id: "immersiveengineering:blueprint"
+				Count: 1b
+				tag: {
+					blueprint: "components"
+				}
+			}
+			x: -5.0d
+			y: 1.0d
 			dependencies: [
-				"1F932299A59D3965"
+				"40CD2EB416C68B70"
 				"44B029D2AFEC131D"
 			]
-			id: "7B3DB78D063966D4"
-			tasks: [
-				{
-					id: "3CEB9764CDA99319"
-					type: "item"
-					item: "scannable:scanner"
-				}
-				{
-					id: "35D755B0DB74A309"
-					type: "item"
-					item: "scannable:blank_module"
-				}
-			]
-			rewards: [{
-				id: "51118C078744459E"
-				type: "item"
-				item: "scannable:blank_module"
-			}]
-		}
-		{
-			x: 5.5d
-			y: 12.5d
-			dependencies: ["63D72477BB0F83A4"]
-			id: "6B88E5CD8EC9BE7B"
-			tasks: [
-				{
-					id: "7F86898B2643C4E6"
-					type: "item"
-					item: {
-						id: "elementalcraft:jewel"
-						Count: 1b
-						tag: {
-							elementalcraft: {
-								jewel: "elementalcraft:strider"
-							}
-						}
-					}
-					match_nbt: true
-				}
-				{
-					id: "185EC521325CAEC0"
-					type: "item"
-					item: {
-						id: "elementalcraft:element_holder_fire"
-						Count: 1b
-						tag: {
-							Damage: 0
-						}
-						ForgeCaps: {
-							Parent: {
-								element_capacity: 10000
-								element_type: "fire"
-								element_amount: 0
-							}
-						}
-					}
-				}
-			]
-		}
-		{
-			x: 6.5d
-			y: 12.5d
-			dependencies: ["63D72477BB0F83A4"]
-			id: "68E140A5DD8F3F8E"
-			tasks: [
-				{
-					id: "08E4B2A30181E88D"
-					type: "item"
-					item: {
-						id: "elementalcraft:jewel"
-						Count: 1b
-						tag: {
-							elementalcraft: {
-								jewel: "elementalcraft:water_strider"
-							}
-						}
-					}
-					match_nbt: true
-				}
-				{
-					id: "1DC4319C34318628"
-					type: "item"
-					item: {
-						id: "elementalcraft:element_holder_water"
-						Count: 1b
-						tag: {
-							Damage: 0
-						}
-						ForgeCaps: {
-							Parent: {
-								element_capacity: 10000
-								element_type: "water"
-								element_amount: 0
-							}
-						}
-					}
-				}
-			]
-		}
-		{
-			x: 7.5d
-			y: 12.5d
-			dependencies: ["63D72477BB0F83A4"]
-			id: "68F646A73B66D82A"
-			tasks: [
-				{
-					id: "70B8FC4CD85C89F8"
-					type: "item"
-					item: {
-						id: "elementalcraft:jewel"
-						Count: 1b
-						tag: {
-							elementalcraft: {
-								jewel: "elementalcraft:hawk"
-							}
-						}
-					}
-					match_nbt: true
-				}
-				{
-					id: "7A2C33D293723FA2"
-					type: "item"
-					item: {
-						id: "elementalcraft:element_holder_air"
-						Count: 1b
-						tag: {
-							Damage: 0
-						}
-						ForgeCaps: {
-							Parent: {
-								element_capacity: 10000
-								element_type: "air"
-								element_amount: 0
-							}
-						}
-					}
-				}
-			]
-		}
-		{
-			x: 8.5d
-			y: 12.5d
-			dependencies: ["63D72477BB0F83A4"]
-			id: "4406D31EA06538A1"
-			tasks: [
-				{
-					id: "6547C679B84CD01F"
-					type: "item"
-					item: {
-						id: "elementalcraft:jewel"
-						Count: 1b
-						tag: {
-							elementalcraft: {
-								jewel: "elementalcraft:bear"
-							}
-						}
-					}
-					match_nbt: true
-				}
-				{
-					id: "48F8474BEDBB4BA2"
-					type: "item"
-					item: {
-						id: "elementalcraft:element_holder_earth"
-						Count: 1b
-						tag: {
-							Damage: 0
-						}
-						ForgeCaps: {
-							Parent: {
-								element_capacity: 10000
-								element_type: "earth"
-								element_amount: 0
-							}
-						}
-					}
-				}
-			]
-		}
-		{
-			title: "Shrines"
-			x: 4.0d
-			y: 12.5d
-			description: [
-				"The Ore Shrine is basic method of in world ore collection."
-				"Elements must be piped directly into any shrine."
-			]
-			dependencies: ["6B06707ECFAFD263"]
-			id: "0F378674EF81D178"
+			id: "1F932299A59D3965"
 			tasks: [{
-				id: "4F33E9DF2516BCEA"
-				type: "item"
-				item: "elementalcraft:shrinebase"
-			}]
-			rewards: [{
-				id: "5DBD1AD796A3FCEB"
-				type: "item"
-				item: "elementalcraft:shrine_upgrade_core"
-			}]
-		}
-		{
-			x: 16.5d
-			y: 10.5d
-			shape: "hexagon"
-			dependencies: [
-				"0D9ABDE851B5E722"
-				"592A4D0BDEB062DB"
-			]
-			id: "0BFAF74E6813F17D"
-			tasks: [{
-				id: "011FE858EDE88A1B"
-				type: "item"
-				item: "ae2:interface"
-			}]
-			rewards: [{
-				id: "708192448272E3B1"
-				type: "random"
-				exclude_from_claim_all: true
-				table_id: 824098445478849879L
-			}]
-		}
-		{
-			x: 15.0d
-			y: 6.5d
-			dependencies: ["1A2C95D86B270D15"]
-			id: "2265D46C0B449F49"
-			tasks: [{
-				id: "3A3AB773495D5AC3"
+				id: "0196F2E48C1F2AE3"
 				type: "item"
 				item: {
-					id: "immersiveengineering:graphite_electrode"
+					id: "immersiveengineering:blueprint"
 					Count: 1b
 					tag: {
-						graphDmg: 0
+						blueprint: "components"
 					}
 				}
-				count: 3L
 			}]
 		}
 		{
-			x: 11.0d
-			y: 6.5d
-			description: ["The IE Assembler can use fluids that have been piped for bucket recipes."]
-			dependencies: [
-				"02E4BADB1F8BEB33"
-				"6AE6AC04DFC1A75A"
-			]
-			id: "04FD40DD2CE51B84"
+			x: -7.0d
+			y: -4.0d
+			dependencies: ["367CDBB0205D41FB"]
+			id: "1E47E0235AF25002"
 			tasks: [{
-				id: "77FE5C466581D832"
+				id: "41D123875ECB56E7"
 				type: "item"
-				item: "kubejs:industrial_alloy_ingot"
+				item: "immersiveengineering:blastfurnace_preheater"
+				count: 2L
 			}]
 			rewards: [{
-				id: "383A9EB2BAA49DF7"
-				type: "item"
-				item: "immersiveengineering:herbicide_bucket"
+				id: "529EBD42E8E6CFC1"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 7840564287515615038L
 			}]
 		}
 		{
-			title: "Advanced Energetic Alloys"
-			x: 18.0d
-			y: 9.0d
-			description: ["You might want to set up some good power supply before mass producing AE components."]
-			dependencies: ["75D4FF56D8BBF34A"]
-			min_required_tasks: 1
-			id: "592A4D0BDEB062DB"
-			tasks: [
-				{
-					id: "3617876F5A6612CD"
-					type: "item"
-					item: "thermal:signalum_dust"
-				}
-				{
-					id: "1460BBB1A47E4503"
-					type: "item"
-					item: "thermal:lumium_dust"
-				}
-				{
-					id: "6B4C7DE866A2430D"
-					type: "item"
-					item: "thermal:enderium_dust"
-				}
-			]
-		}
-		{
-			x: 19.5d
-			y: 7.0d
-			dependencies: ["7BB9213CBA0A5FCC"]
-			id: "6881A552DF61AD73"
-			tasks: [{
-				id: "5ECBA239A2EB00C8"
-				type: "item"
-				item: "ae2:drive"
-			}]
-		}
-		{
-			x: 19.5d
-			y: 6.0d
-			dependencies: ["7BB9213CBA0A5FCC"]
-			id: "6DEB9BB02E28A823"
-			tasks: [{
-				id: "6591CF4E4F97B357"
-				type: "item"
-				item: "ae2:cell_component_1k"
-			}]
-		}
-		{
-			x: 2.0d
-			y: 11.0d
-			description: ["Place these around a water source block and power through AE. Crystal seeds inside the water will grow much faster."]
-			dependencies: ["40CD2EB416C68B70"]
-			id: "4F570EDAF76DCC20"
-			tasks: [{
-				id: "6A0B60F6C8CF60D3"
-				type: "item"
-				item: "ae2:quartz_growth_accelerator"
-				count: 4L
-			}]
-		}
-		{
-			x: 13.0d
-			y: 12.0d
+			x: 3.0d
+			y: 4.5d
 			dependencies: ["0D9ABDE851B5E722"]
 			id: "070F35D0E7EF8EAC"
 			tasks: [{
@@ -1768,65 +1492,329 @@
 			}]
 		}
 		{
-			x: 11.0d
-			y: 4.5d
-			dependencies: ["0E9C33334120AC94"]
-			id: "0C50A45DF9D419E7"
+			x: 3.0d
+			y: 6.0d
+			dependencies: ["070F35D0E7EF8EAC"]
+			id: "52CA3CCD2B27CB98"
 			tasks: [{
-				id: "5EE3B0F95321FB38"
+				id: "197FF241B85A951E"
 				type: "item"
-				item: "mna:magicians_workbench"
+				item: "thermal:machine_smelter"
 			}]
 		}
 		{
-			icon: "hostilenetworks:sim_chamber"
-			x: 0.5d
-			y: 11.0d
-			dependencies: ["40CD2EB416C68B70"]
-			id: "4B09D1E4C5CF8BB1"
+			title: "Crimson Altar"
+			icon: "naturesaura:tainted_gold"
+			x: 0.0d
+			y: -7.5d
+			description: ["Must be built in the Nether."]
+			dependencies: [
+				"31513AA25B621FD8"
+				"20FA1AFF0BD65177"
+			]
+			id: "72C360D92C26799F"
 			tasks: [
 				{
-					id: "2C6D7BCC994E7E99"
+					id: "7876A582459B93B1"
 					type: "item"
-					item: "hostilenetworks:sim_chamber"
+					title: "Crimson/Warped Planks"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "mbm2:naturesaura/crimson_altar"
+						}
+					}
+					count: 20L
 				}
 				{
-					id: "5C51EEF96E4138D2"
+					id: "2A05BA81C9D360F3"
 					type: "item"
-					item: "hostilenetworks:deep_learner"
+					item: "minecraft:red_nether_bricks"
+					count: 4L
 				}
 				{
-					id: "455EF611E2436A2D"
+					id: "191BAA35843D7391"
 					type: "item"
-					item: "hostilenetworks:blank_data_model"
+					item: "minecraft:nether_bricks"
+					count: 16L
+				}
+				{
+					id: "5418D1554871B886"
+					type: "item"
+					item: "naturesaura:gold_nether_brick"
+					count: 8L
+				}
+				{
+					id: "2894121D4DCD9343"
+					type: "item"
+					item: "naturesaura:tainted_gold"
 				}
 			]
 		}
 		{
-			x: 16.5d
-			y: 11.5d
-			subtitle: "4k RF/t "
+			x: 1.5d
+			y: -7.5d
+			description: ["By eating the moss off stones nearby, this is one simple (if ineffective) way to refill the Aura."]
+			dependencies: ["4691F3E2268FD78F"]
+			id: "1D7CB78AC32EAFC0"
+			tasks: [{
+				id: "4D2D4F7C4D71D5AC"
+				type: "item"
+				item: "naturesaura:moss_generator"
+			}]
+			rewards: [{
+				id: "290FC635B1E0980E"
+				type: "item"
+				item: "minecraft:mossy_cobblestone"
+				count: 64
+			}]
+		}
+		{
+			x: 3.0d
+			y: -7.5d
+			description: ["This Produces Aura when a nearby Oak Tree would grow larger then normal"]
+			dependencies: ["4691F3E2268FD78F"]
+			id: "72094D5B6BA7A1EC"
+			tasks: [{
+				id: "405077118CE5D0F4"
+				type: "item"
+				item: "naturesaura:oak_generator"
+			}]
+		}
+		{
+			x: 1.5d
+			y: -5.5d
+			dependencies: ["31513AA25B621FD8"]
+			id: "4691F3E2268FD78F"
+			tasks: [{
+				id: "22C1A5DB0AFB31EE"
+				type: "item"
+				item: "naturesaura:infused_iron"
+			}]
+		}
+		{
+			title: "Paint the Trees Gold"
+			x: -3.0d
+			y: -4.5d
+			description: ["You'll be able to find the Book of Natural Aura in your Akashic Tome."]
+			dependencies: ["143FA2A8FD6E4E10"]
+			id: "4187F705E4356142"
+			tasks: [
+				{
+					id: "207E8A7F752042D0"
+					type: "item"
+					item: "naturesaura:gold_fiber"
+				}
+				{
+					id: "29FF7F7D6BDD7E50"
+					type: "item"
+					item: "naturesaura:gold_leaf"
+				}
+			]
+		}
+		{
+			title: "Ritual of the Forest"
+			icon: "naturesaura:wood_stand"
+			x: -1.5d
+			y: -5.5d
+			min_required_dependencies: 2
+			dependencies: [
+				"4187F705E4356142"
+				"38B7849EB717422A"
+				"4489F9C5F2899DFE"
+			]
+			min_required_tasks: 2
+			id: "6AD50F15723B7927"
+			tasks: [
+				{
+					id: "667719DCAABF9464"
+					type: "item"
+					item: "naturesaura:gold_powder"
+					count: 16L
+				}
+				{
+					id: "3B06635E1B7C7118"
+					type: "item"
+					item: "naturesaura:wood_stand"
+					count: 8L
+				}
+				{
+					id: "274EAC79CF00F4FB"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			icon: "naturesaura:nature_altar"
+			x: 0.0d
+			y: -5.5d
+			subtitle: "Check out page 2 of the Ponder"
+			dependencies: ["6AD50F15723B7927"]
+			id: "31513AA25B621FD8"
+			tasks: [
+				{
+					id: "2D06F23D4A7EEC74"
+					type: "item"
+					item: "naturesaura:nature_altar"
+				}
+				{
+					id: "2885DD4829B36C14"
+					type: "item"
+					item: "minecraft:oak_planks"
+					count: 20L
+				}
+				{
+					id: "4AA0F6143AFE7D5F"
+					type: "item"
+					item: "minecraft:chiseled_stone_bricks"
+					count: 4L
+				}
+				{
+					id: "2F472C937866CC1E"
+					type: "item"
+					item: "minecraft:stone_bricks"
+					count: 16L
+				}
+				{
+					id: "1AFEE6C8846D9E82"
+					type: "item"
+					item: "naturesaura:gold_brick"
+					count: 8L
+				}
+			]
+		}
+		{
+			x: -1.5d
+			y: -4.0d
+			description: ["This displays the aura nearby."]
+			dependencies: ["6AD50F15723B7927"]
+			id: "75639B06251CAA16"
+			tasks: [{
+				id: "6EBBBAF37B549654"
+				type: "item"
+				item: "naturesaura:eye"
+			}]
+		}
+		{
+			x: -1.5d
+			y: -7.5d
+			subtitle: "You'll need this for Living Wood later"
+			dependencies: ["6AD50F15723B7927"]
+			id: "45DE61697465BD69"
+			tasks: [{
+				id: "13BB828FF1D197CD"
+				type: "item"
+				item: "naturesaura:ancient_sapling"
+			}]
+		}
+		{
+			title: "Tier 2 Powah!"
+			x: -8.5d
+			y: 0.0d
+			dependencies: ["17F948FD49F0EB33"]
+			id: "6EEC0647011A6CAC"
+			tasks: [
+				{
+					id: "715EF60327A56B9F"
+					type: "item"
+					item: "powah:energy_cell_hardened"
+				}
+				{
+					id: "56361C2A2398FE44"
+					type: "item"
+					item: "powah:energy_cable_hardened"
+				}
+			]
+		}
+		{
+			x: -3.0d
+			y: -6.5d
+			description: ["This can be used to improve your Golden Powder yield"]
+			id: "38B7849EB717422A"
+			tasks: [{
+				id: "0C35C8AD0A05BCC6"
+				type: "item"
+				item: "elementalcraft:air_mill"
+			}]
+		}
+		{
+			icon: "kubejs:living_metal_seed"
+			x: 1.5d
+			y: -2.5d
+			dependencies: [
+				"31513AA25B621FD8"
+				"02E4BADB1F8BEB33"
+			]
+			id: "3AA3487F8175A54E"
+			tasks: [
+				{
+					id: "6B2CFE7EF5CFC30B"
+					type: "item"
+					item: "kubejs:living_metal_seed"
+				}
+				{
+					id: "1A56E7C4B66E318F"
+					type: "item"
+					item: "kubejs:overgrown_light_engineering_block"
+				}
+			]
+		}
+		{
+			title: "Auto Crafting!"
+			x: 7.0d
+			y: 3.0d
+			description: [
+				"You'll need to convert the Crafting Unit by adding a Storage Disk of some size."
+				""
+				"Until you unlock Titanium, you'll have to make do with 16 channels"
+			]
 			dependencies: [
 				"592A4D0BDEB062DB"
 				"0D9ABDE851B5E722"
 			]
-			id: "4D8C40C07AF73B14"
-			tasks: [{
-				id: "2D9F1023E205DDAB"
-				type: "item"
-				item: "hostilenetworks:loot_fabricator"
-			}]
-		}
-		{
-			x: 18.0d
-			y: 11.5d
-			dependencies: ["592A4D0BDEB062DB"]
-			id: "33A907176391C423"
-			tasks: [{
-				id: "3957BF8D199A31BB"
-				type: "item"
-				item: "ae2:molecular_assembler"
-			}]
+			id: "6C4354CB6E54A96A"
+			tasks: [
+				{
+					id: "1E3C92E9821492D6"
+					type: "item"
+					item: "ae2:pattern_provider"
+				}
+				{
+					id: "47318DF267287C40"
+					type: "item"
+					item: "ae2:blank_pattern"
+				}
+				{
+					id: "321BF9922838BCE6"
+					type: "item"
+					item: "ae2:pattern_encoding_terminal"
+				}
+				{
+					id: "05BA416531FD19FA"
+					type: "item"
+					item: "ae2:pattern_access_terminal"
+				}
+				{
+					id: "0D140FFB2F8889D2"
+					type: "item"
+					item: "ae2:crafting_unit"
+				}
+			]
+			rewards: [
+				{
+					id: "24DDF521273A63F2"
+					type: "random"
+					exclude_from_claim_all: true
+					table_id: 824098445478849879L
+				}
+				{
+					id: "71914634C3327663"
+					type: "item"
+					item: "ae2:blank_pattern"
+					count: 8
+				}
+			]
 		}
 	]
 	quest_links: [ ]

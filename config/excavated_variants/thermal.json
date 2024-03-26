@@ -1,56 +1,6 @@
 {
   "mod_id": "thermal",
-  "provided_stones": [
-    {
-      "block_id": "minecraft:netherrack",
-      "types": [
-        "stone"
-      ],
-      "id": "netherrack",
-      "en_name": "Netherrack"
-    },
-    {
-      "block_id": "minecraft:blackstone",
-      "types": [
-        "stone"
-      ],
-      "id": "blackstone",
-      "en_name": "Blackstone"
-    },
-    {
-      "block_id": "minecraft:basalt",
-      "types": [
-        "stone"
-      ],
-      "id": "basalt",
-      "en_name": "Basalt"
-    },
-    {
-      "block_id": "minecraft:deepslate",
-      "types": [
-        "stone"
-      ],
-      "id": "deepslate",
-      "en_name": "Deepslate"
-    },
-    {
-      "block_id": "minecraft:end_stone",
-      "types": [
-        "stone"
-      ],
-      "id": "end_stone",
-      "en_name": "End Stone"
-    },
-    {
-      "block_id": "forbidden_arcanus:darkstone",
-      "types": [
-        "stone"
-      ],
-      "id": "darkstone",
-      "en_name": "Darkstone"
-    }
-    
-  ],
+  "provided_stones": [],
   "provided_ores": [
     {
       "block_id": [

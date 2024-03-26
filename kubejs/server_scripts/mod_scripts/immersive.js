@@ -21,6 +21,8 @@ onEvent('recipes', event => {
 	event.remove({id: 'immersiveengineering:crafting/steel_scaffolding_standard'})
   
 
+	event.remove({id: 'immersiveengineering:blueprint/component_steel'})
+	event.remove({id: 'immersiveengineering:blueprint/component_iron'})
 
   //No recycling - doesnt work, prob needs to be an actual datapack
   //event.custom({
@@ -81,7 +83,7 @@ onEvent('recipes', event => {
 		}).id(`mbm2:crafting/blast_bricks`)
   
   //Reinforced Blast Bricks
-	event.remove({id: 'immersiveengineering:crafting/blastbrick_reinforced'})
+	event.remove({output: 'immersiveengineering:blastbrick_reinforced'})
   event.recipes.createFilling('immersiveengineering:blastbrick_reinforced', [Fluid.of('tconstruct:molten_steel', 180), 'immersiveengineering:blastbrick']).id('mbm2:filling/blastbrick_reinforced')
  //event.shaped('immersiveengineering:blastbrick_reinforced', [
  //  'S',
@@ -93,6 +95,7 @@ onEvent('recipes', event => {
 
 
 //Iron Components
+event.remove({id: 'immersiveengineering:blueprint/component_iron'})
 event.recipes.createSequencedAssembly([
 'immersiveengineering:component_iron', // output
   ], '#forge:ingots/copper', [ // input.
@@ -102,6 +105,7 @@ event.recipes.createSequencedAssembly([
   ]).transitionalItem('kubejs:incomplete_component_iron').loops(1) // transitional item and the loops
 
 //Steel Components
+event.remove({id: 'immersiveengineering:blueprint/component_steel'})
 event.recipes.createSequencedAssembly([
 'immersiveengineering:component_steel', // output
   ], '#forge:ingots/copper', [ // input.
@@ -200,14 +204,14 @@ event.shaped('3x immersiveengineering:treated_scaffold', [
 //Heavy Engineering
 	event.remove({id: 'immersiveengineering:crafting/heavy_engineering'})
 event.shaped('2x immersiveengineering:heavy_engineering', [
-  'CDC',
-  'PBP',
-  'CDC'
+  'CBC',
+  'PDP',
+  'CBC'
     ], {
   B: 'thermal:obsidian_glass',
   C: '#forge:components/industrial_alloy',
   P: 'thermal:invar_gear',
-  D: 'mna:bone_ash'
+  D: 'kubejs:living_metal_seed'
     }).id('mbm2:immersiveengineering/heavy_engineering')
     //Make more expensive, have rubber be a ingredent in a component
 
@@ -218,10 +222,10 @@ event.shaped('2x immersiveengineering:heavy_engineering', [
     'CEC',
     'BCP'
       ], {
-    E: '#forge:wire_coils/electrum',
+    E: 'create:precision_mechanism', //'#forge:wire_coils/electrum',
     C: 'immersiveengineering:component_steel',
     P: '#forge:rods/aluminum', //'#forge:plates/energized_steel',
-    B: ['#forge:gears/bronze', '#forge:gears/constantan']
+    B: '#forge:gears/constantan'
       }).id('mbm2:immersiveengineering/light_engineering')
       
 //Generator
@@ -283,7 +287,7 @@ event.shaped('immersiveengineering:workbench', [
   'C F'
     ], {
   T: '#forge:treated_wood_slab',
-  P: '#forge:plates/invar',
+  P: '#forge:platings/electrum',
   C: 'immersiveengineering:craftingtable',
   F: 'immersiveengineering:treated_fence'
     }).id('mbm2:immersiveengineering/workbench')
@@ -312,6 +316,17 @@ event.shaped('immersiveengineering:workbench', [
       P: 'paper',
       B: 'blue_dye'
         }).id('mbm2:immersiveengineering/interlocking_components')
+
+//Mechanical Blueprint
+event.shaped(Item.of('immersiveengineering:blueprint', '{blueprint:"mechanical_components"}'), [
+  ' G ',
+  'BBB',
+  'PPP'
+    ], {
+  G: '#forge:components/steel',
+  P: 'paper',
+  B: 'blue_dye'
+    }).id('mbm2:immersiveengineering/mechanical_components')
 
     //Hempcrete, might not use
     event.remove({id: 'immersiveengineering:crafting/hempcrete'})

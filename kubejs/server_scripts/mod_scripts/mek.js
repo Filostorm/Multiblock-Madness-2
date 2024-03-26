@@ -20,7 +20,7 @@ onEvent('recipes', event => {
 		T: '#forge:plates/tin',
 		L: '#forge:plates/lead',
 		B: 'kubejs:reactive_blend',
-		C: 'powah:capacitor_blazing'
+		C: 'powah:capacitor_hardened'
 	  }).id("mbm2:small_battery")
 
 	// Large Battery 

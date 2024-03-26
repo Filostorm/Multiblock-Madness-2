@@ -208,27 +208,11 @@ global.tinkersAlloying = (event, outputFluid, amount, inputFluids, temperature, 
 			  }]
 		  }).id(ID)}
 ///////////////////////////////////////////////////////////
-///////////////// TRANSMUTING ///////////////////////
-	global.mnaBlockTransmutation = (event, output, input, ID) => {
-		event.custom({
-			type: 'mna:transmutation',
-			targetBlock: input,
-			replaceBlock: output,
-		  }).id(ID)}
-
-		  global.mnaItemTransmutation = (event, output, looksLike, input, ID) => {
-			event.custom({
-				type: 'mna:transmutation',
-				targetBlock: input,
-				lootTable: output,
-				representationItem: looksLike
-			  }).id(ID)}
-///////////////////////////////////////////////////////////
 
 
 ///////////////// IMBUING ///////////////////////
 
-		  global.arsImbument = (event, output, amount, input, source, extraItems, ID) => {
+		  global.arsImbuement = (event, output, amount, input, source, extraItems, ID) => {
 			event.custom({
 				type: 'ars_nouveau:imbuement',
 				input: Ingredient.of(input).toJson(),
@@ -273,14 +257,14 @@ global.AssemblyLaser = (event, output, input, ID) => {
 
 ///////////////// NATURAL ALTAR ///////////////////////
 	global.naturesauraAltar = (event, output, input, catalyst, aura_type, aura, time, ID) => {
-		if (catalyst == 'crushing' || catalyst == 'conversion') {
+		if (Item.of(catalyst) != null) {
 			event.custom({
 				type: 'naturesaura:altar',
 				input: Ingredient.of(input).toJson(),
 				output: Item.of(output).toResultJson(),
 				aura_type: `naturesaura:${aura_type}`,
 				catalyst: {
-					item: `naturesaura:${catalyst}_catalyst`
+					item: catalyst
 				},
 				aura: aura, //2000,
 				time: time //20
@@ -425,13 +409,17 @@ global.elementalcraftInfusion = (event, itemInput, itemOutput, element_type, ele
 ///////////////////////////////////////////////////////////
 
 ///////////////// ENERGIZING ///////////////////////
-global.powahEnergizing = (event, itemInput, itemOutput, energy, ID) => {
+global.powahEnergizing = (event, itemInput, itemOutput, amount, energy, ID) => {
 	event.custom({
 		type: 'powah:energizing',
 		ingredients: itemInput,
 		energy: energy, //120000
-		result: itemOutput.toJson()
-	  }).id(ID)}
+		result: {
+		  item: itemOutput,
+		  count: amount
+		}
+	  }).id(ID)
+	}
 
 ///////////////////////////////////////////////////////////
 ///////////////// ENERGIZING ///////////////////////
@@ -474,6 +462,42 @@ global.alchemistryCompacting = (event, itemOutput, itemInput, ID) => {
 		result: itemOutput
 	  }).id(ID)}
 ///////////////////////////////////////////////////////////
+
+///////////////// LIQUIFIER/ATOMIZER ///////////////////////
+global.alchemistryFluidItemSwap = (event, item, fluid, removeOld) => {
+	if(removeOld) {
+		event.remove({id: `alchemistry:liquifier/${item.split(':')[1]}`})
+		event.remove({id: `alchemistry:atomizer/${item.split(':')[1]}`})
+	}
+	event.custom({
+		"type": "alchemistry:liquifier",
+		"group": "alchemistry:liquifier",
+		"input": {
+		  "ingredient": {
+			"item": item
+		  },
+		  "count": 8
+		},
+		"result": {
+		  "fluid": fluid,
+		  "amount": "500"
+		}
+	  }).id(`mbm2:liquifier/${item.split(':')[1]}`)
+	  event.custom({
+		"type": "alchemistry:atomizer",
+		"group": "alchemistry:atomizer",
+		"input": {
+		  "fluid": fluid,
+		  "amount": "500"
+		},
+		"result": {
+		  "item": item,
+		  "count": 8
+		}
+	  }).id(`mbm2:atomizer/${item.split(':')[1]}`)
+	}
+///////////////////////////////////////////////////////////
+
 
 
 ///////////////// INFUSING ///////////////////////

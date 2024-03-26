@@ -10,6 +10,8 @@ onEvent('worldgen.remove', event => {
 onEvent('worldgen.add', event => {
 
 	
+	console.log('mercury')
+	
 	const mercurySurfaceChance = 0
 
 	// use the anchors helper from the event (NOTE: this requires newer versions of KubeJS)

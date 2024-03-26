@@ -21,6 +21,8 @@
 	display_knowledge_message = true
 	#Equips elytra in priority when recovering your lost items [false/true|default:false]
 	equip_elytra_in_priority = false
+	#Automatically equip magic books in Curios slot [false/true|default:false]
+	equip_curio_slot_magic_book = false
 	#Shows the use of the Tombstone's enchantments in tooltip [false/true|default:true]
 	show_info_on_enchantment = true
 	#Favor the tools on the hotbar when recovering a grave [false/true|default:false]
@@ -70,15 +72,13 @@
 	#Defines the type of marker when holding in hand some items like the Grave's Key [WING/SPARK/NOTE/BOX|default:WING]
 	#Allowed Values: WING, SPARK, NOTE, BOX
 	marker_type = "WING"
+	#Defines the font to use in Tombstone's screens (only for english, french and spanish languages) [FANTASY/VANILLA|default:FANTASY]
+	#Allowed Values: FANTASY, VANILLA
+	font_rule = "FANTASY"
 	#Display the combinations in item tooltip [false/true|default:true]
 	show_tooltip_combine = true
 	#Display an icon when fishing with the Rod of Misadventure showing if you're in openwater [false/true|default:true]
 	show_fishing_marker = true
-	#Defines the font to use in Tombstone's screens (only for english, french and spanish languages) [FANTASY/VANILLA|default:FANTASY]
-	#Allowed Values: FANTASY, VANILLA
-	font_rule = "FANTASY"
 	#Prevent night vision from flashing when less than 5 seconds left [false/true|default:true]
 	no_blinking_nightvision = true
-	#Automatically equip magic books in Curios slot [false/true|default:false]
-	equip_curio_slot_magic_book = false
 

@@ -7,7 +7,7 @@ onEvent('tags.items', event => {
  */
 onEvent('recipes', event => {
 	//Casing
-	global.elementalcraftBinding(event, 'earth', 2500, 'kubejs:captured_soul', [Item.of('spirit:soul_crystal_shard').toJson(), Item.of('forbidden_arcanus:soul').toJson(), Item.of('apotheosis:gem_dust').toJson(), Item.of('mna:arcane_ash').toJson()], 'mbm2:captured_soul')
+	global.elementalcraftBinding(event, 'earth', 2500, 'kubejs:captured_soul', [Item.of('spirit:soul_crystal_shard').toJson(), Item.of('forbidden_arcanus:soul').toJson(), Item.of('apotheosis:gem_dust').toJson(), Item.of('forbidden_arcanus:aureal_bottle').toJson()], 'mbm2:captured_soul')
   
 	event.shaped('kubejs:haunted_casing', [
 		'RPR',
@@ -28,7 +28,7 @@ onEvent('recipes', event => {
 	  'PHG',
 	  'DDD'
 	  ], {
-	  E: 'immersiveengineering:component_electronic_adv',
+	  E: 'immersiveengineering:component_electronic',
 	  C: '#forge:gears/cobalt',
 	  D: 'darkutils:damage_plate_player',
 	  P: 'powah:ender_core',
@@ -70,14 +70,77 @@ onEvent('recipes', event => {
 	//data_models
 	var dataModelRecipes = [
 		{
+		  'mob': 'skelton',
+		  'drop_item': 'bone',
+		  'second_item': '#forge:platings/iron',
+		},
+		{
 		  'mob': 'creeper',
 		  'drop_item': 'gunpowder',
 		  'second_item': '#forge:platings/iron',
 		},
 		{
+		  'mob': 'zombie',
+		  'drop_item': 'rotten_flesh',
+		  'second_item': '#forge:platings/iron',
+		},
+		{
+		  'mob': 'spider',
+		  'drop_item': 'cobweb',
+		  'second_item': '#forge:platings/iron',
+		},
+		{
+		  'mob': 'slime',
+		  'drop_item': 'slime_ball',
+		  'second_item': '#forge:platings/iron',
+		},
+
+		{
 		  'mob': 'enderman',
 		  'drop_item': 'ender_pearl',
-		  'second_item': '#forge:platings/iron',
+		  'second_item': '#forge:platings/steel',
+		},
+		{
+		  'mob': 'blaze',
+		  'drop_item': 'blaze_rod',
+		  'second_item': '#forge:platings/steel',
+		},
+		{
+		  'mob': 'phantom',
+		  'drop_item': 'phantom_membrane',
+		  'second_item': '#forge:platings/steel',
+		},
+		{
+		  'mob': 'wither_skeleton',
+		  'drop_item': 'wither_skeleton_skull',
+		  'second_item': '#forge:platings/steel',
+		},
+
+		{
+		  'mob': 'wither',
+		  'drop_item': 'nether_star',
+		  'second_item': '#forge:platings/stainless_steel',
+		},
+		{
+		  'mob': 'ender_dragon',
+		  'drop_item': 'dragon_egg',
+		  'second_item': '#forge:platings/stainless_steel',
+		},
+
+		{
+		  'mob': 'thermal/blizz',
+		  'drop_item': 'thermal:blizz_rod',
+		  'second_item': '#forge:platings/steel',
+		},
+		{
+		  'mob': 'thermal/basalz',
+		  'drop_item': 'thermal:basalz_rod',
+		  'second_item': '#forge:platings/steel',
+		},
+		{
+		  'mob': 'thermal/blitz',
+		  'drop_item': 'thermal:blitz_rod',
+		  'second_item': '#forge:platings/steel',
 		},
 	]
 	dataModelRecipes.forEach(item => {

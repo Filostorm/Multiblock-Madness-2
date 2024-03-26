@@ -12,6 +12,7 @@ onEvent('worldgen.remove', event => {
 
 onEvent('worldgen.add', event => {
 
+	console.log('glacio')
 	
 	const glacioSurfaceChance = 0
 

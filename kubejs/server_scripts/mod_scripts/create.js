@@ -12,8 +12,10 @@ onEvent('tags.items', event => {
 
 		
 		event.add('mbm2:movement_anchors', 'create:mechanical_bearing')
-		event.add('mbm2:movement_anchors', 'create:mechanical_piston')
+		event.add('mbm2:movement_anchors', 'create:sticky_mechanical_piston')
 		event.add('mbm2:movement_anchors', 'create:gantry_carriage')
+		event.add('mbm2:movement_anchors', 'create:windmill_bearing')
+		
 
 		event.add('mbm2:chassis', 'create:linear_chassis')
 		event.add('mbm2:chassis', 'create:radial_chassis')
@@ -111,12 +113,13 @@ C: 'thermal:cured_rubber'
 //Windmill
   event.remove({id: 'create:crafting/kinetics/windmill_bearing'})
   event.shaped('create:windmill_bearing', [
-	'B',
-	'C',
-	'D'
+	'BBB',
+	'SCS',
+	'SDS'
   ], {
-	B: 'immersiveengineering:slab_treated_wood_horizontal',
-	C: '#forge:stone',
+	B: '#forge:treated_wood',
+	C: 'immersiveengineering:turntable',
+	S: '#forge:stone',
 	D: 'create:shaft'
   }).id('mbm2:crafting/windmill_bearing')
 
@@ -242,7 +245,7 @@ event.shaped('create:hose_pulley', [
 	  'PMP',
 	  ' B '
 		], {
-	  B: '#forge:cog_blocks/constantan',
+	  B: '#forge:cog_blocks/tier_1_mechanical_alloy',
 	  M: 'create:precision_mechanism',
 	  P: '#forge:plates/obsidian',
 	  A: 'create:fluid_pipe',
@@ -277,9 +280,9 @@ event.shaped('create:hose_pulley', [
 */
 
 
-//Clear Filter		
-event.shapeless('create:attribute_filter', [Item.of('create:attribute_filter').ignoreNBT()]).id(`mbm2:create/clear_attribute_filter`)
-event.shapeless('create:filter', [Item.of('create:filter').ignoreNBT()]).id(`mbm2:create/clear_filter`)
+//Clear Filter		dont need anymore
+//event.shapeless('create:attribute_filter', [Item.of('create:attribute_filter').ignoreNBT()]).id(`mbm2:create/clear_attribute_filter`)
+//event.shapeless('create:filter', [Item.of('create:filter').ignoreNBT()]).id(`mbm2:create/clear_filter`)
 
 	//Melt some Clay
 	event.recipes.createMixing([Fluid.of('tconstruct:molten_clay', 1000)], ['clay', Fluid.of('water', 1000)]).id(`mbm2:mixing/clay_from_block`)
@@ -307,5 +310,19 @@ event.shapeless('create:filter', [Item.of('create:filter').ignoreNBT()]).id(`mbm
 	//ender ingot recipe rework
 	event.recipes.createMixing('extendedcrafting:ender_ingot', [Fluid.of('thermal:ender', 250), '#forge:ingots/graphite']).heated().id('mbm2:mixing/ender_ingot')
 
+	//Rose Quartz
+	event.shapeless('4x create:rose_quartz', ['3x #forge:gems/quartz','thermal:cinnabar']).id(`mbm2:create/rose_quartz_with_cinnabar`)
+
+	//Soul Sand
+	event.recipes.createCompacting([`soul_sand`], ['#forge:netherrack', 'engineersdecor:dense_grit_sand_block']).heated().id('mbm2:mixing/soul_sand_smh')
+
+	//liquid_source
+	event.recipes.createEmptying([Fluid.of('kubejs:liquid_source', 1000), 'bucket'], ['ars_nouveau:bucket_of_source']).id('mbm2:emptying/liquid_source')
+
+	/* Schematic ded
+	let powahCasingSchematic = Item.of('create:schematic', '{Anchor:{X:0,Y:0,Z:0},Bounds:[3,3,3],Deployed:0b,File:"dielectric_casing.nbt",Mirror:"NONE",Owner:"NONE",Rotation:"NONE"}')
+
+	event.shapeless(powahCasingSchematic, ['create:empty_schematic', 'kubejs:dielectric_alloy_scaffolding']).keepIngredient(1).id(`mbm2:schematic/dielectric_casing`)
+	*/
 
 });

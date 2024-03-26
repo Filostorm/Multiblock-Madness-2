@@ -192,4 +192,22 @@ onEvent('recipes', event => {
 	  P: '#pneumaticcraft:plastic_sheets',
 	}).id('mbm2:thermal_lagging')
 
+	//rotational_compressor
+	event.remove({output: 'compressedcreativity:rotational_compressor'})
+	event.recipes.createMechanicalCrafting('compressedcreativity:rotational_compressor', [
+		'  BBB  ',
+		'BBECEBB',
+		'BMCRCMB',
+		'BBECEBB',
+		'  BBB  '
+	  ], {
+		R: 'compressedcreativity:engine_rotor',
+		C: '#forge:components/compressed_steel',
+		M: '#forge:cog_blocks/brass',
+		B: 'create:brass_casing',
+		E: 'immersiveengineering:component_electronic_adv',
+	  }).id('mbm2:rotational_compressor')
+
+
+
 });

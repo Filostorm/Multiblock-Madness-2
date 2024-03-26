@@ -104,6 +104,7 @@ onEvent('tags.items', event => {
         } 
             event.add(`forge:ores`, `kubejs:${item.material}_ore`)
             event.add(`forge:ores/${item.material}`, `kubejs:${item.material}_ore`)
+            console.log('adding tags for ' + item.material + `#forge:ores`)
         global.stoneTypes.forEach((type) => {
             event.add(`forge:ores`, `kubejs:${type.material}_${item.material}_ore`)
             event.add(`forge:ores/${item.material}`, `kubejs:${type.material}_${item.material}_ore`)
@@ -158,3 +159,4 @@ onEvent('fluid.tags', event => {
     event.add(`forge:crystal_catalyst_mixture`, [`kubejs:crystal_catalyst_mixture`, `kubejs:flowing_crystal_catalyst_mixture`])
     event.add(`forge:magic_catalyst_mixture`, [`kubejs:magic_catalyst_mixture`, `kubejs:flowing_magic_catalyst_mixture`])
 });
+

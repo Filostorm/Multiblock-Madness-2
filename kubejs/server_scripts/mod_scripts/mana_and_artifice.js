@@ -1,5 +1,5 @@
 
-onEvent('block.loot_tables', event => {
+/*onEvent('block.loot_tables', event => {
 	//Ore should drop the dust
 	event.addSimpleBlock('mna:vinteum_ore', 'mna:vinteum_dust')
 });
@@ -242,3 +242,4 @@ event.recipes.createDeploying('mna:mark_of_the_undead', ['mna:stone_rune_blank',
 	})
 });
 
+*/

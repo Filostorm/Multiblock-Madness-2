@@ -274,6 +274,77 @@ event.smelting('kubejs:quicksilver', 'thermal:cinnabar')
 //Hive Hopper recipe
 event.shaped('thermal:device_hive_extractor', [' A ','BCB',' D '], {A: 'littlelogistics:fluid_hopper',B: 'create:cogwheel',C: 'create:andesite_casing',D: 'engineersdecor:factory_hopper'}).id(`mbm2:hive_hopper`)
 
-	
+//Charged Coil
+global.powahEnergizing(event, [Item.of('thermal:rf_coil').toJson()], 'kubejs:charged_coil', 1,  25000, 'mbm2:charged_coil')
+
+//Extruder
+event.remove({output: 'thermal:device_rock_gen'})
+event.shaped('thermal:device_rock_gen', ['ABA','CDC','AEA'], {A: 'thermal:invar_plate',B: 'thermal:redstone_servo',C: 'kubejs:steel_gear',D: 'kubejs:bronze_frame',E: 'minecraft:piston'}).id(`mbm2:device_rock_gen`)
+
+//tinker_bench
+event.remove({output: 'thermal:tinker_bench'})
+event.shaped('thermal:tinker_bench', ['ABA','CDC','CEC'], {A: 'kubejs:iron_plating',B: 'minecraft:crafting_table',C: 'immersiveengineering:treated_wood_horizontal',D: 'kubejs:bronze_frame',E: 'thermal:rf_coil'}).id(`mbm2:tinker_bench`)
+
+//charge_bench
+event.remove({output: 'thermal:charge_bench'})
+event.shaped('thermal:charge_bench', ['ABA','CDC','ECE'], {A: '#forge:plates/tier_1_electrical_alloy',B: 'kubejs:tier_1_electrical_alloy_wire_coil',C: 'kubejs:charged_coil',D: 'thermal:tinker_bench',E: 'thermal:lead_plate'}).id(`mbm2:charge_bench`)
+
+//flux_drill
+event.remove({output: 'thermal:flux_drill'})
+event.shaped('thermal:flux_drill', [' A ','BCB',' D '], {A: 'thermal:drill_head',B: 'kubejs:tier_1_mechanical_alloy_interlocking_component',C: 'thermal:ruby',D: 'kubejs:charged_coil'}).id(`mbm2:flux_drill`)
+//flux_magnet
+event.remove({output: 'thermal:flux_magnet'})
+event.shaped('thermal:flux_magnet', ['A A','BCB','BBB'], {A: 'create:polished_rose_quartz',B: 'kubejs:tier_1_structural_alloy_plate',C: 'kubejs:charged_coil'}).id(`mbm2:flux_magnet`)
+//flux_saw
+event.remove({output: 'thermal:flux_saw'})
+event.shaped('thermal:flux_saw', [' A ','BCB',' D '], {A: 'thermal:saw_blade',B: 'kubejs:tier_1_mechanical_alloy_interlocking_component',C: 'thermal:ruby',D: 'kubejs:charged_coil'}).id(`mbm2:flux_saw`)
+//flux_capacitor
+event.remove({output: 'thermal:flux_capacitor'})
+event.shaped('thermal:flux_capacitor', ['ABA','CDC',' E '], {A: 'thermal:lead_plate',B: 'thermal:ruby',C: 'kubejs:energetic_alloy_bolt',D: 'kubejs:small_battery_empty',E: 'kubejs:charged_coil'}).id(`mbm2:flux_capacitor`)
+
+//saw_blade
+event.remove({output: 'thermal:saw_blade'})
+event.shaped('thermal:saw_blade', ['AA ','ABA',' AA'], {A: 'thermal:iron_plate',B: 'kubejs:bronze_plating'}).id(`mbm2:saw_blade`)
+//drill_head
+event.remove({output: 'thermal:drill_head'})
+event.shaped('thermal:drill_head', [' A ','ABA','AAA'], {A: 'thermal:iron_plate',B: 'kubejs:bronze_plating'}).id(`mbm2:drill_head`)
+
+//Add back in the Pyrolyzer
+event.custom({
+	"type": "thermal:pyrolyzer",
+	"ingredient": {
+	  "tag": "minecraft:coals"
+	},
+	"result": [
+	  {
+		"item": "thermal:coal_coke"
+	  },
+	  {
+		"item": "thermal:tar",
+		"chance": 0.25
+	  },
+	  {
+		"fluid": "immersiveengineering:creosote",
+		"amount": 250
+	  }
+	],
+	"experience": 0.15
+  }).id('mbm2:pyrolyzer/coal')
+  event.custom({
+	"type": "thermal:pyrolyzer",
+	"ingredient": {
+	  "tag": "minecraft:logs"
+	},
+	"result": [
+	  {
+		"item": "minecraft:charcoal"
+	  },
+	  {
+		"fluid": "immersiveengineering:creosote",
+		"amount": 125
+	  }
+	],
+	"experience": 0.15
+  }).id('mbm2:pyrolyzer/logs')
 });
 

@@ -11,7 +11,7 @@
 		{
 			x: -35.0d
 			y: 0.0d
-			subtitle: "Thinking with spells"
+			subtitle: "Thanks JeanRdS for this questbook page!"
 			description: ["Spell book is a powerful tool that can do a lot of things with almost no cost. To create a spell, you can press the open book key (Default: C) and select the Spell Form, and the spell effects. Can also be dyed."]
 			id: "01AB47D4DCA342A5"
 			tasks: [{
@@ -68,6 +68,7 @@
 			y: 0.0d
 			subtitle: "Creating Materials"
 			dependencies: ["01AB47D4DCA342A5"]
+			progression_mode: "flexible"
 			id: "6511A3EE5F483172"
 			tasks: [{
 				id: "6C6C2C3F988AFE72"
@@ -108,7 +109,7 @@
 			x: -29.0d
 			y: -1.5d
 			subtitle: "Even hotter topic."
-			description: ["Can generate Source consuming dropped burnable itens (Pedestals also work). Makes stone beneath it turn into magma blocks, and magma blocks to lava, also spawning lava lillies. Blazing Archwood Logs can be used to make bonus source."]
+			description: ["Can generate Source consuming dropped burnable items (Pedestals also work). Makes stone beneath it turn into magma blocks, and magma blocks to lava, also spawning lava lillies. Blazing Archwood Logs can be used to make bonus source."]
 			dependencies: ["30CD0A7C0B37EAD4"]
 			id: "7131EE1B0147377C"
 			tasks: [{
@@ -124,7 +125,7 @@
 		}
 		{
 			x: -29.0d
-			y: 1.5d
+			y: -3.0d
 			subtitle: "Meat and Beet."
 			description: ["Can generate Source from animals breed, death and makes the animals growth faster."]
 			dependencies: ["30CD0A7C0B37EAD4"]
@@ -143,7 +144,7 @@
 		}
 		{
 			x: -29.0d
-			y: -3.0d
+			y: 1.5d
 			subtitle: "Fungus, among us."
 			description: ["Can generate Source based in the nourishment value, from dropped foods (Pedestals also work). Bonus if the food is made from Source berry. Makes dirt/grass below turn into Mycelium and will grow mushrooms if possible."]
 			dependencies: ["30CD0A7C0B37EAD4"]
@@ -566,7 +567,7 @@
 			shape: "circle"
 			subtitle: "Hi Hungry, I'm dad!"
 			description: ["Foods that give mana regen and work as fuel for the vitalic sourcelink."]
-			dependencies: ["5604AD3AE0C4EC33"]
+			dependencies: ["304204395C17131A"]
 			hide: true
 			id: "4799D00A8E18E8D3"
 			tasks: [{
@@ -798,7 +799,7 @@
 			x: -21.0d
 			y: 1.0d
 			subtitle: "Redstone not required."
-			description: ["Timer Spell Turrets will work continuously while having enough source. Right clicking adds 1sec to the timer and left click removes 1sec. Shift will change the 1sec to 10sec. Dominion Wand can be used to lock the configuration. Restone signal can be used to turn on and off, but are not needed."]
+			description: ["Timer Spell Turrets will work continuously while having enough source. Right clicking adds 1sec to the timer and left click removes 1sec. Shift will change the 1sec to 10sec. Dominion Wand can be used to lock the configuration. Redstone signal can be used to turn on and off, but are not needed."]
 			dependencies: ["3172A17903546C3F"]
 			id: "6B709EFCCDC05E50"
 			tasks: [{
@@ -811,7 +812,7 @@
 			x: -21.0d
 			y: -1.0d
 			subtitle: "50% off!!"
-			description: ["Enchanted Spell Turrets will work exacly the same as the Basic one, but will only use half the Source needed for the operations. Good option for complex automations."]
+			description: ["Enchanted Spell Turrets will work exactly the same as the Basic one, but will only use half the Source needed for the operations. Good option for complex automations."]
 			dependencies: ["3172A17903546C3F"]
 			id: "6992E14678CFEEE2"
 			tasks: [{
@@ -853,7 +854,7 @@
 			subtitle: "Pacifist Route"
 			description: [
 				"Drygmys can be summoned by using their charm in a mossy stone. Multiple of them can be summoned and will work at the same time."
-				"By having nearby source and a inventory, Drygmys will generate drops based on the mobs nearby their home (10 blocks from the Shrine). By having hostile entities, Drymys will generate experience gems. The efficiency will be based on the variety of mobs in their home."
+				"By having nearby source and a inventory, Drygmys will generate drops based on the mobs nearby their home (10 blocks from the Shrine). By having hostile entities, Drygmys will generate experience gems. The efficiency will be based on the variety of mobs in their home."
 			]
 			dependencies: ["08D84719159B579F"]
 			id: "12D9F5EB29DBAF06"

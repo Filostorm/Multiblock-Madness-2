@@ -9,7 +9,7 @@ onEvent('tags.items', event => {
  
 onEvent('recipes', event => {
 	//Nether Wart
-	global.elementalcraftInfusion(event, Ingredient.of('#forge:mushrooms'), Item.of('minecraft:nether_wart'), 'fire', 1000, 'mbm:infusion/nether_wart')
+	global.elementalcraftInfusion(event, Ingredient.of('#forge:mushrooms'), Item.of('minecraft:nether_wart'), 'fire', 1000, 'mbm2:infusion/nether_wart')
 	
 	
 	event.replaceInput({mod: 'elementalcraft'}, '#forge:ingots/iron', '#forge:ingots/arcanite')
@@ -46,19 +46,24 @@ onEvent('recipes', event => {
 			'water',
 		]
 		elements.forEach(element => {
-			event.shaped(`8x elementalcraft:${element}_shard`, 
+			event.shaped(`4x elementalcraft:${element}_shard`, 
 			[
-				'SSS',
+				' S ',
 				'SCS',
-				'SSS'
+				' S '
 			  ], 
 			  {
 				C: `elementalcraft:${element}crystal`,
 				S: '#quark:shards',
-			  }).replaceIngredient(`elementalcraft:${element}crystal`, 'elementalcraft:inert_crystal').id(`mbm2:${element}_shard_transfer`)
+			  }).replaceIngredient(4, 'elementalcraft:inert_crystal').id(`mbm2:${element}_shard_transfer`)
 			
 		});
 
-
+		//Element Binder
+		event.remove({output: 'elementalcraft:binder'})
+		event.shaped('elementalcraft:binder', ['ABA','CDC','DCD'], {A: 'tconstruct:seared_bricks',B: 'elementalcraft:contained_crystal',C: 'elementalcraft:drenched_iron_ingot',D: 'elementalcraft:whiterock'}).id("mbm2:elementalcraft/binder")
+		//Air Mill
+		event.remove({output: 'elementalcraft:air_mill'})
+		event.shaped('elementalcraft:air_mill', ['ABA','BCB','DED'], {A: 'kubejs:source_tube',B: 'kubejs:tier_1_magical_alloy_ingot',C: 'minecraft:grindstone',D: 'elementalcraft:whiterock',E: 'elementalcraft:aircrystal'}).id("mbm2:elementalcraft/air_mill")
 
 });

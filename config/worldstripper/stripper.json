@@ -77,6 +77,8 @@
     "beyond_earth:mercury_stone",
     "beyond_earth:venus_sand",
     "beyond_earth:venus_sandstone",
-    "beyond_earth:venus_stone"
+    "beyond_earth:venus_stone",
+    "minecraft:packed_ice",
+    "minecraft:blue_ice"
   ]
 }

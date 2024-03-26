@@ -14,11 +14,15 @@ var basicMetalBlocks = [
 	'high_pressure_casing',
 	'factory_fan',
 	'heated_vinteum_block',
+	'overgrown_light_engineering_block',
 ]
 var basicWoodBlocks = [
 	'charred_planks'
 ]
 onEvent('block.registry', event => {
+	
+	console.log('new blocks')
+
 	//Metal
 	basicMetalBlocks.forEach((item) => {
 		event.create(item).hardness(3).resistance(3).tagBlock('minecraft:mineable/pickaxe').material('metal')
@@ -41,11 +45,22 @@ onEvent('block.registry', event => {
 	event.create('tier3_casing').displayName('Reinforced Multiblock Casing').hardness(3).resistance(3).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').material('metal')
 	event.create('transmuted_casing').displayName('Transmuted Casing').hardness(3).resistance(3).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').material('metal')
 
-	//Compressed Cobble
-	event.create('1x_compressed_cobblestone').hardness(1).resistance(1).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_stone_tool').material('stone')
-	event.create('2x_compressed_cobblestone').hardness(2).resistance(2).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').material('stone')
-	event.create('3x_compressed_cobblestone').hardness(3).resistance(3).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').material('stone')
+	//Compressed blocks
+	let compressedBlocks = [
+		'cobblestone',
+		'cobbled_deepslate',
+		'netherrack'
+	]
+	compressedBlocks.forEach(block => {
+		event.create(`1x_compressed_${block}`).hardness(1).resistance(1).tagBlock(`minecraft:mineable/pickaxe`).tagBlock(`minecraft:needs_stone_tool`).material(`stone`)
+		event.create(`2x_compressed_${block}`).hardness(2).resistance(2).tagBlock(`minecraft:mineable/pickaxe`).tagBlock(`minecraft:needs_iron_tool`).material(`stone`)
+		event.create(`3x_compressed_${block}`).hardness(3).resistance(3).tagBlock(`minecraft:mineable/pickaxe`).tagBlock(`minecraft:needs_iron_tool`).material(`stone`)
+	});
 	
+	event.create('drygmy_shard_block').displayName('Drygmy Shard Block').hardness(3).resistance(2).tagBlock('minecraft:mineable/pickaxe').material('glass')
+	event.create('starbuncle_shard_block').displayName('Starbuncle Shard Block').hardness(3).resistance(2).tagBlock('minecraft:mineable/pickaxe').material('glass')
+	event.create('whirlisprig_shard_block').displayName('Whirlisprig Shard Block').hardness(3).resistance(2).tagBlock('minecraft:mineable/pickaxe').material('glass')
+	event.create('wixie_shard_block').displayName('Wixie Shard Block').hardness(3).resistance(2).tagBlock('minecraft:mineable/pickaxe').material('glass')
 	
 	event.create('solar_panel').displayName('Dyson Panel').fullBlock(false).notSolid().box(0,0,0,16,6,16, true).hardness(2).resistance(2).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').model("kubejs:block/solar_panel").renderType('cutout').defaultCutout().material('metal')
 	event.create('solar_bar').displayName('Dyson Panel Support').fullBlock(false).notSolid().box(0,0,0,16,6,16, true).hardness(2).resistance(2).tagBlock('minecraft:mineable/pickaxe').tagBlock('minecraft:needs_iron_tool').model("kubejs:block/solar_bar").renderType('cutout').defaultCutout().material('metal')

@@ -25,6 +25,11 @@ onEvent('tags.items', event => {
 	
  });
 
+// Add the minecraft:axe tag to the mattocks (Thanks Totto!)
+onEvent('block.tags', event => {
+	event.add('tconstruct:mineable/mattock', '#minecraft:mineable/axe');
+  });
+
 onEvent('recipes', event => {
 
 	//Slag Casing
@@ -122,7 +127,7 @@ event.shaped('3x kubejs:wood_scaffolding', [
 		C: 'forbidden_arcanus:soul',
 		D: 'thermal:gold_plate',
 		E: 'minecraft:red_carpet',
-		F: 'mna:basic_table'
+		F: 'minecraft:enchanting_table'
 	  }).id("summoningrituals:altar")
 
 	// Sticks
@@ -155,37 +160,45 @@ event.shaped('3x kubejs:wood_scaffolding', [
 	event.replaceInput({id: 'minecraft:piston'}, 'cobblestone', '#forge:cobblestone')
   
 	//So, you made an extra Metal Mind
-	global.tinkersMeltingPlain(event, 'tconstruct:molten_iron', 720, Item.of('feruchemy:metal_mind').toJson(), 750, 142, `mbm2:smeltery/melting/metalmind`)
+	//global.tinkersMeltingPlain(event, 'tconstruct:molten_iron', 720, Item.of('feruchemy:metal_mind').toJson(), 750, 142, `mbm2:smeltery/melting/metalmind`)
 
 	//string from cobweb
 	event.shapeless('3x string', ['cobweb']).id('mbm2:string_from_cobweb')
 
-  //compressed cobble
-  event.shaped('kubejs:1x_compressed_cobblestone', [
-	  'CCC',
-	  'CCC',
-	  'CCC'
-	], {
-	  C: 'cobblestone'
-	}).id("mbm2:1x_compressed_cobblestone")
-	event.shapeless('9x cobblestone', ['kubejs:1x_compressed_cobblestone']).id('mbm2:1x_uncompressed_cobblestone')
-	event.shaped('kubejs:2x_compressed_cobblestone', [
-		'CCC',
-		'CCC',
-		'CCC'
+	let compressedBlocks = [ // only vanilla items with this script right now
+		'cobblestone',
+		'cobbled_deepslate',
+		'netherrack',
+	]
+  //compressed crafintg
+  compressedBlocks.forEach(block => {
+	
+	event.shaped(`kubejs:1x_compressed_${block}`, [
+		`CCC`,
+		`CCC`,
+		`CCC`
 	  ], {
-		C: 'kubejs:1x_compressed_cobblestone'
-	}).id("mbm2:2x_compressed_cobblestone")
-	event.shapeless('9x kubejs:1x_compressed_cobblestone', ['kubejs:2x_compressed_cobblestone']).id('mbm2:2x_uncompressed_cobblestone')
-  	event.shaped('kubejs:3x_compressed_cobblestone', [
-		'CCC',
-		'CCC',
-		'CCC'
-  	], {
-		C: 'kubejs:2x_compressed_cobblestone'
-  	}).id("mbm2:3x_compressed_cobblestone")
-	event.shapeless('9x kubejs:2x_compressed_cobblestone', ['kubejs:3x_compressed_cobblestone']).id('mbm2:3x_uncompressed_cobblestone')
-
+		C: `${block}`
+	  }).id(`mbm2:1x_compressed_${block}`)
+	  event.shapeless(`9x ${block}`, [`kubejs:1x_compressed_${block}`]).id(`mbm2:1x_uncompressed_${block}`)
+	  event.shaped(`kubejs:2x_compressed_${block}`, [
+		  `CCC`,
+		  `CCC`,
+		  `CCC`
+		], {
+		  C: `kubejs:1x_compressed_${block}`
+	  }).id(`mbm2:2x_compressed_${block}`)
+	  event.shapeless(`9x kubejs:1x_compressed_${block}`, [`kubejs:2x_compressed_${block}`]).id(`mbm2:2x_uncompressed_${block}`)
+		event.shaped(`kubejs:3x_compressed_${block}`, [
+		  `CCC`,
+		  `CCC`,
+		  `CCC`
+		], {
+		  C: `kubejs:2x_compressed_${block}`
+		}).id(`mbm2:3x_compressed_${block}`)
+	  event.shapeless(`9x kubejs:2x_compressed_${block}`, [`kubejs:3x_compressed_${block}`]).id(`mbm2:3x_uncompressed_${block}`)
+  
+  });
   //thermal filter augment
   event.remove({id: 'thermal:augments/item_filter_augment'})
   event.shaped('thermal:item_filter_augment', [
@@ -269,10 +282,48 @@ event.shaped('3x kubejs:wood_scaffolding', [
   event.shapeless('coal', ['8x kubejs:coal_chunk']).id('mbm2:coal_chunk_uncrafting')
 
  //lerasium nugget requires arcane gold
-  event.replaceInput({id: 'allomancy:lerasium_nugget'}, '#forge:storage_blocks/gold', 'forbidden_arcanus:arcane_gold_block')
+//event.replaceInput({id: 'allomancy:lerasium_nugget'}, '#forge:storage_blocks/gold', 'forbidden_arcanus:arcane_gold_block')
 
 
 //Static Cloud
-  global.powahEnergizing(event, [Item.of('cloudstorage:cloud').toJson()], Item.of('cloudstorage:static_cloud'), 25000, 'mbm2:cloudstorage/static_cloud')
+  global.powahEnergizing(event, [Item.of('cloudstorage:cloud').toJson()], 'cloudstorage:static_cloud', 1, 25000, 'mbm2:cloudstorage/static_cloud')
+
+//Arcane Sand
+  event.shapeless('8x kubejs:arcane_sand', ['forbidden_arcanus:arcane_crystal_dust_speck', '#forge:sand', '#forge:sand', '#forge:sand', '#forge:sand', '#forge:sand', '#forge:sand', '#forge:sand', '#forge:sand']).id('mbm2:arcane_sand')
+
+//simplified repeaters/comparators
+  event.shaped('minecraft:repeater', ['ABA','CCC'], {A: 'minecraft:redstone_torch',B: 'minecraft:redstone',C: 'projectred_core:plate'}).id('mbm2:stone_plate_repeater')
+  event.shaped('minecraft:repeater', ['A A','BAB','CCC'], {A: 'minecraft:redstone',B: 'minecraft:stick',C: 'projectred_core:plate'}).id('mbm2:stone_plate_repeater_alt')
+  event.shaped('minecraft:comparator', [' A ','ABA','CCC'], {A: 'minecraft:redstone_torch',B: 'minecraft:quartz',C: 'projectred_core:plate'}).id('mbm2:stone_plate_comparator')
+
+//Flowers Begone (AKA: Azalea Shearing)
+  event.shapeless('ecologics:azalea_log', ['ecologics:flowering_azalea_log', '#forge:shears']).damageIngredient('#forge:shears', 1).id('mbm2:remove_azalea_flowers')
+  event.custom({
+	"type": "farmersdelight:cutting",
+	"ingredients": [
+	  {
+		"item": "ecologics:flowering_azalea_log"
+	  }
+	],
+	"tool": {
+	  "tag": "forge:shears"
+	},
+	"result": [
+	  {
+		"item": "ecologics:azalea_log"
+	  },
+	  {
+		"item": "ecologics:azalea_flower",
+		"chance": 0.5
+	  },
+	  {
+		"item": "ecologics:azalea_flower",
+		"chance": 0.25
+	  }
+	]
+  }).id('mbm2:cutting/remove_azalea_flowers')
+
+//Darkutils Tome of enchanting
+  event.shaped('darkutils:tome_enchanting', [' A ','BCB',' D '], {A: 'ars_nouveau:bookwyrm_charm',B: 'create:experience_nugget',C: 'tombstone:book_of_disenchantment',D: 'thermal:xp_crystal'}).id('mbm2:darkutil_enchant_tome')
 
 });

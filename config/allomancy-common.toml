@@ -11,7 +11,7 @@
 	#Generation Settings for aluminum ore.
 	[world.aluminum]
 		#Enable aluminum generation
-		generate = false
+		generate = true
 		#Density of aluminum Ore
 		#Range: 1 ~ 40
 		per_chunk = 14
@@ -31,7 +31,7 @@
 	#Generation Settings for cadmium ore.
 	[world.cadmium]
 		#Enable cadmium generation
-		generate = false
+		generate = true
 		#Density of cadmium Ore
 		#Range: 1 ~ 40
 		per_chunk = 5
@@ -51,7 +51,7 @@
 	#Generation Settings for chromium ore.
 	[world.chromium]
 		#Enable chromium generation
-		generate = false
+		generate = true
 		#Density of chromium Ore
 		#Range: 1 ~ 40
 		per_chunk = 8
@@ -71,7 +71,7 @@
 	#Generation Settings for lead ore.
 	[world.lead]
 		#Enable lead generation
-		generate = false
+		generate = true
 		#Density of lead Ore
 		#Range: 1 ~ 40
 		per_chunk = 15
@@ -91,7 +91,7 @@
 	#Generation Settings for silver ore.
 	[world.silver]
 		#Enable silver generation
-		generate = false
+		generate = true
 		#Density of silver Ore
 		#Range: 1 ~ 40
 		per_chunk = 11
@@ -111,7 +111,7 @@
 	#Generation Settings for tin ore.
 	[world.tin]
 		#Enable tin generation
-		generate = false
+		generate = true
 		#Density of tin Ore
 		#Range: 1 ~ 40
 		per_chunk = 15
@@ -131,7 +131,7 @@
 	#Generation Settings for zinc ore.
 	[world.zinc]
 		#Enable zinc generation
-		generate = false
+		generate = true
 		#Density of zinc Ore
 		#Range: 1 ~ 40
 		per_chunk = 12

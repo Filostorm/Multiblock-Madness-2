@@ -46,6 +46,9 @@ onEvent('rei.hide.items', event => {
 
 	event.hide(Item.of('ae2:facade').ignoreNBT())
 	event.hide(Item.of('ae2:wireless_terminal').ignoreNBT())
+	
+	event.hide('forbidden_arcanus:test_tube')
+	event.hide('forbidden_arcanus:blood_test_tube')
 
 	let MBDAny = [
 		'multiblocked:bot_mana.any', 
@@ -69,6 +72,11 @@ onEvent('rei.hide.items', event => {
 });
 
 onEvent('rei.add.items', event => {
+	
+	event.add(Item.of('forbidden_arcanus:blood_test_tube', '{Blood:0}'))
+	event.add(Item.of('forbidden_arcanus:blood_test_tube', '{Blood:3000}'))
+	event.add(Item.of('tconstruct:modifier_crystal', '{modifier:"tconstruct:unbreakable"}'))
+	
 	var addItems = [
 		'thermal:ruby',
 		'thermal:ruby_block',
@@ -81,7 +89,7 @@ onEvent('rei.add.items', event => {
 		'thermal:sapphire_dust',
 		'thermal:sapphire_gear',
 		'minecraft:structure_block',
-		'feruchemy:metal_mind'
+		//'feruchemy:metal_mind'
 	]
 
 	addItems.forEach((item) => {
@@ -112,26 +120,29 @@ onEvent("rei.group", (event) => {
     // so you don't have a bajillion potions and enchanted books cluttering up REI anymore
     const useNbt = ["potion", "enchanted_book", "splash_potion", "tipped_arrow", "lingering_potion", "apotheosis:potion_charm", "botania:flight_tiara", 'rftoolsutility:syringe',
 	'reliquary:bullets/neutral_bullet', 'reliquary:magazines/neutral_magazine', 'reliquary:mob_charm', 'reliquary:splash_potion', 'reliquary:potion', 'reliquary:potion_essence', 'reliquary:tipped_arrow', 'reliquary:mob_charm_fragment', 'reliquary:lingering_potion', 
-	'mna:runescribing_recipe_paper', 'mna:manaweaving_pattern_recipe_paper', 'mna:thaumaturgic_link', 'immersiveengineering:shader', 
+	//'mna:runescribing_recipe_paper', 'mna:manaweaving_pattern_recipe_paper', 'mna:thaumaturgic_link',
+	 'immersiveengineering:shader', 
 	'tconstruct:repair_kit', 'tconstruct:pick_head', 'tconstruct:hammer_head', 'tconstruct:small_axe_head', 'tconstruct:small_blade', 'tconstruct:broad_axe_head', 'tconstruct:round_plate', 'tconstruct:large_plate', 'tconstruct:tool_binding', 'tconstruct:broad_blade', 'tconstruct:tool_handle', 'tconstruct:tough_handle', 
 	'tconstruct:kama', 'tconstruct:scythe', 'tconstruct:dagger', 'tconstruct:sword', 'tconstruct:cleaver', 'tconstruct:pickaxe', 'tconstruct:sledge_hammer', 'tconstruct:vein_hammer', 'tconstruct:mattock', 'tconstruct:pickadze', 'tconstruct:excavator', 'tconstruct:hand_axe', 'tconstruct:broad_axe', 
 	'tconstruct:bow_limb', 'tconstruct:bow_grip', 'tconstruct:bowstring', 'tconstruct:crossbow', 'tconstruct:longbow', 
-	"sophisticatedstorage:chest", "sophisticatedstorage:iron_chest", "sophisticatedstorage:gold_chest", "sophisticatedstorage:diamond_chest", "sophisticatedstorage:netherite_chest",
-	"sophisticatedstorage:shulker_box", "sophisticatedstorage:iron_shulker_box", "sophisticatedstorage:gold_shulker_box", "sophisticatedstorage:diamond_shulker_box", "sophisticatedstorage:netherite_shulker_box",
-	"sophisticatedstorage:barrel", "sophisticatedstorage:iron_barrel", "sophisticatedstorage:gold_barrel", "sophisticatedstorage:diamond_barrel", "sophisticatedstorage:netherite_barrel",
-	"sophisticatedstorage:limited_barrel_1", "sophisticatedstorage:limited_iron_barrel_1", "sophisticatedstorage:limited_gold_barrel_1", "sophisticatedstorage:limited_diamond_barrel_1", "sophisticatedstorage:limited_netherite_barrel_1",
-	"sophisticatedstorage:limited_barrel_2", "sophisticatedstorage:limited_iron_barrel_2", "sophisticatedstorage:limited_gold_barrel_2", "sophisticatedstorage:limited_diamond_barrel_2", "sophisticatedstorage:limited_netherite_barrel_2",
-	"sophisticatedstorage:limited_barrel_3", "sophisticatedstorage:limited_iron_barrel_3", "sophisticatedstorage:limited_gold_barrel_3", "sophisticatedstorage:limited_diamond_barrel_3", "sophisticatedstorage:limited_netherite_barrel_3",
-	"sophisticatedstorage:limited_barrel_4", "sophisticatedstorage:limited_iron_barrel_4", "sophisticatedstorage:limited_gold_barrel_4", "sophisticatedstorage:limited_diamond_barrel_4", "sophisticatedstorage:limited_netherite_barrel_4",
+	"sophisticatedstorage:chest", "sophisticatedstorage:copper_chest", "sophisticatedstorage:iron_chest", "sophisticatedstorage:gold_chest", "sophisticatedstorage:diamond_chest", "sophisticatedstorage:netherite_chest",
+	"sophisticatedstorage:shulker_box", "sophisticatedstorage:copper_shulker_box", "sophisticatedstorage:iron_shulker_box", "sophisticatedstorage:gold_shulker_box", "sophisticatedstorage:diamond_shulker_box", "sophisticatedstorage:netherite_shulker_box",
+	"sophisticatedstorage:barrel", "sophisticatedstorage:copper_barrel", "sophisticatedstorage:iron_barrel", "sophisticatedstorage:gold_barrel", "sophisticatedstorage:diamond_barrel", "sophisticatedstorage:netherite_barrel",
+	"sophisticatedstorage:limited_barrel_1", "sophisticatedstorage:limited_copper_barrel_1", "sophisticatedstorage:limited_iron_barrel_1", "sophisticatedstorage:limited_gold_barrel_1", "sophisticatedstorage:limited_diamond_barrel_1", "sophisticatedstorage:limited_netherite_barrel_1",
+	"sophisticatedstorage:limited_barrel_2", "sophisticatedstorage:limited_copper_barrel_2", "sophisticatedstorage:limited_iron_barrel_2", "sophisticatedstorage:limited_gold_barrel_2", "sophisticatedstorage:limited_diamond_barrel_2", "sophisticatedstorage:limited_netherite_barrel_2",
+	"sophisticatedstorage:limited_barrel_3", "sophisticatedstorage:limited_copper_barrel_3", "sophisticatedstorage:limited_iron_barrel_3", "sophisticatedstorage:limited_gold_barrel_3", "sophisticatedstorage:limited_diamond_barrel_3", "sophisticatedstorage:limited_netherite_barrel_3",
+	"sophisticatedstorage:limited_barrel_4", "sophisticatedstorage:limited_copper_barrel_4", "sophisticatedstorage:limited_iron_barrel_4", "sophisticatedstorage:limited_gold_barrel_4", "sophisticatedstorage:limited_diamond_barrel_4", "sophisticatedstorage:limited_netherite_barrel_4",
 	'industrialforegoing:infinity_nuke', 'industrialforegoing:infinity_launcher', 'industrialforegoing:infinity_backpack', 'industrialforegoing:infinity_drill', 'industrialforegoing:infinity_saw', 'industrialforegoing:infinity_hammer', 'industrialforegoing:infinity_trident',
-	];
+	
+];
 
     useNbt.forEach((id) => {
         const item = Item.of(id);
         const { namespace, path } = Utils.id(item.id);
         event.groupSameItem(`mbm2:rei_groups/${namespace}/${path}`, item.getName(), item);
     });
-
+	event.groupSameItem(`mbm2:rei_groups/microblocks`, 'Micro Blocks', 'cb_microblock:microblock');
+/*
     event.groupItems(`mbm2:rei_groups/wickerwood_constructs`, "Wickerwood Construct Parts", [/mna:constructs.*_wickerwood/]);
     event.groupItems(`mbm2:rei_groups/wood_constructs`, "Wooden Construct Parts", [/mna:constructs.*_wood/]);
     event.groupItems(`mbm2:rei_groups/stone_constructs`, "Stone Construct Parts", [/mna:constructs.*_stone/]);
@@ -139,8 +150,21 @@ onEvent("rei.group", (event) => {
     event.groupItems(`mbm2:rei_groups/gold_constructs`, "Gold Construct Parts", [/mna:constructs.*_gold/]);
     event.groupItems(`mbm2:rei_groups/diamond_constructs`, "Diamond Construct Parts", [/mna:constructs.*_diamond/]);
     event.groupItems(`mbm2:rei_groups/obsidian_constructs`, "Obsidian Construct Parts", [/mna:constructs.*_obsidian/]);
-
-
+*/
+	/*
+	'cb_microblock:microblock', '{factory_id:0,mat:"minecraft:red_concrete",size:1}'
+	'cb_microblock:microblock', '{factory_id:0,mat:"minecraft:basalt//axis.y",size:2}',
+	'cb_microblock:microblock', '{factory_id:0,mat:"minecraft:jungle_log//axis.y",size:4}',
+	'cb_microblock:microblock', '{factory_id:1,mat:"minecraft:spruce_log//axis.y",size:1}',
+	'cb_microblock:microblock', '{factory_id:1,mat:"minecraft:brown_wool",size:2}',
+	'cb_microblock:microblock', '{factory_id:1,mat:"minecraft:orange_glazed_terracotta//facing.north",size:4}',
+	'cb_microblock:microblock', '{factory_id:3,mat:"minecraft:acacia_log//axis.y",size:1}',
+	'cb_microblock:microblock', '{factory_id:3,mat:"minecraft:cobblestone",size:2}',
+	'cb_microblock:microblock', '{factory_id:3,mat:"minecraft:red_sandstone",size:4}',
+	'cb_microblock:microblock', '{factory_id:2,mat:"minecraft:diorite",size:1}',
+	'cb_microblock:microblock', '{factory_id:2,mat:"minecraft:stripped_birch_log//axis.y",size:2}',
+	'cb_microblock:microblock', '{factory_id:2,mat:"minecraft:jungle_leaves//distance.7/persistent.false",size:4}',
+	*/
 
 
 	global.newMaterialParts.forEach((item) => {
@@ -216,7 +240,7 @@ onEvent('rei.remove.categories', event => {
 		'thermal:sawmill',
 		'thermal:pulverizer',
 		'thermal:press',
-		'thermal:pyrolyzer',
+		//'thermal:pyrolyzer',
 		'thermal:brewer',
 		'thermal:pulverizer_catalyst',
 		'thermal:stirling_fuel',

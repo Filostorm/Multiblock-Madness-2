@@ -10,7 +10,7 @@ var parts = [ //this list is used to label parts the metal tier
 ]
 
 var mods = [
-	'allomancy',
+	//'allomancy',
 	'kubejs',
 	'thermal',
 	'create',
@@ -18,7 +18,7 @@ var mods = [
 	//'malum', 
 	'tconstruct', 
 	'mythicbotany', 
-	'mna', 
+	//'mna', 
 	//'createbigcannons', 
 	'forbidden_arcanus',
 	'extendedcrafting',
@@ -28,7 +28,8 @@ var mods = [
 	'biggerreactors',
 	'beyond_earth',
 	'extendedcrafting',
-	'elementalcraft'
+	'elementalcraft',
+	'lazerae2'
 ]
 
 var smeltingList = [
@@ -103,22 +104,17 @@ var partColor = [
 	'§6',
 ]
 
-
 onEvent('client.generate_assets', event => {
 	global.newMaterialParts.forEach((item) => {
 		if (item.ore) {
 			global.oreProcessingParts.forEach((part) => {
 				if (part.name != 'grit') {
-					global.partDisplayName = ""
-					if (item.ore_name == null) { 
-					  global.partDisplayName = part.prefix + nameUpper(item.material) + part.suffix
-					} else {
-					  global.partDisplayName = part.prefix + nameUpper(item.ore_name) + part.suffix
-					}
 						//Color the ore part names based on the grade
-    					event.addLang(`item.kubejs.${part.name}_${item.material}`, `${partColor[part.grade]}${global.partDisplayName}`)
-					if (part.name == 'crushed') {
-    					event.addLang(`item.create.crushed_raw_${item.material}`, `${partColor[part.grade]}${global.partDisplayName}`)
+					if (Item.of(`kubejs:${part.name}_${item.material}`) != null) {
+    					event.addLang(`item.kubejs.${part.name}_${item.material}`, `${partColor[part.grade]}${global.displayNameFunction(item.material, item.ore_name, part.prefix, part.suffix)}`)
+					}
+					if (Item.of(`create:crushed_raw_${item.material}`) != null && part.name == 'crushed') {
+    					event.addLang(`item.create.crushed_raw_${item.material}`, `${partColor[part.grade]}${global.displayNameFunction(item.material, item.ore_name, part.prefix, part.suffix)}`)
 					}
 				}
 			})
@@ -157,7 +153,15 @@ onEvent('item.tooltip', tooltip => {
 	  
 	  
 	})
-
+	
+	//Misc tooltips
+	tooltip.addAdvanced('forbidden_arcanus:orb_of_temporary_flight', (item, advanced, text) => {
+		text.add(2, [Text.of('Found In End City Chests').aqua()])
+	})
+	tooltip.addAdvanced('forbidden_arcanus:blood_test_tube', (item, advanced, text) => {
+		text.add(1, [Text.red('Filled With Blood By Hitting Mobs With The '), Text.gold('Mystical Dagger')])
+	})
+	
 	//ae2additions
 	var ae2aLoaded = Platform.isLoaded('ae2additions');
    	if(ae2aLoaded){
@@ -221,6 +225,7 @@ onEvent('item.tooltip', tooltip => {
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 	global.newMaterialParts.forEach((item) => {
+		/*
 		//Allomantic Tooltips for flakes
 		if (item.allomancy != null) {
 			console.log(`${item.material} is allomantic`);
@@ -238,7 +243,7 @@ onEvent('item.tooltip', tooltip => {
 				  text.add(2, Text.green(feruchemyToolTip))
 				}
 			})
-		}
+		}*/
 
 
 		//Adds Metal Tier labels

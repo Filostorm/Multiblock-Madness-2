@@ -14,6 +14,8 @@ onEvent('recipes', event => {
 	//Double smelting recipe
 	event.replaceInput({id: 'tconstruct:smeltery/melting/seared/grout'}, 'tconstruct:grout', 'kubejs:sturdy_brick')
 	
+	//Seared Tank recipes
+	event.replaceInput({output: '#tconstruct:scorched_tanks'}, 'quartz', 'thermal:obsidian_glass')
 
 	//Scorched Brick
 	event.remove({id: 'tconstruct:smeltery/casting/scorched/brick_composite'})
@@ -28,12 +30,13 @@ onEvent('recipes', event => {
 	event.remove({output: 'tconstruct:smeltery_controller'})
 	event.remove({output: 'tconstruct:smeltery/melting/metal/copper/smeltery_controller'})
   	event.shaped('tconstruct:smeltery_controller', [
-		'AAA',
-		'ABA',
-		'AAA'
+		'ACA',
+		'CDC',
+		'ACA'
   	], {
 		A: 'tconstruct:seared_brick',
-		B: '#forge:gears/steel'
+		C: 'powah:capacitor_hardened',
+		D: 'tconstruct:seared_melter'
   	})
 
 //Seared Faucet nerf
@@ -61,11 +64,11 @@ event.shaped('tconstruct:scorched_faucet', [
 		'GBF',
 		'PCP'
 	  ], {
-		B: 'naturesaura:furnace_heater',
+		B: 'elementalcraft:pristine_fire_gem',
 		P: 'tconstruct:scorched_brick',
 		G: Item.of('naturesaura:aura_bottle', '{stored_type:"naturesaura:nether"}'),
-		C: 'powah:capacitor_hardened',
-		F: 'elementalcraft:firecrystal'
+		C: 'create:precision_mechanism', //'powah:capacitor_hardened',
+		F: 'ars_nouveau:glyph_smelt'
 	  })
 	  
 	  //Blazing Pyrotheum

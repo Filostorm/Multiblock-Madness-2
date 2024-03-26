@@ -1,5 +1,7 @@
 onEvent('tags.blocks', event => {
 	event.add(`minecraft:mineable/pickaxe`, `compactcrafting:field_projector`)
+	event.add(`minecraft:mineable/pickaxe`, `compactcrafting:rescan_proxy`)
+	event.add(`minecraft:mineable/pickaxe`, `compactcrafting:match_proxy`)
 });
 onEvent('recipes', event => {
 
@@ -23,7 +25,7 @@ event.shaped('compactcrafting:base', [
 	'EEE'
   ], {
 B: 'minecraft:lightning_rod',
-C: 'minecraft:diamond',
+C: ['minecraft:diamond', 'ars_nouveau:source_gem'],
 D: 'ars_nouveau:arcane_stone',
 E: '#forge:plates/brass'
   }).id("mbm2:base")

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "excavated_variants:block/red_sandstone_teallite_ore0",
+    "bottom": "excavated_variants:block/red_sandstone_teallite_ore1",
+    "side": "excavated_variants:block/red_sandstone_teallite_ore2"
+  }
+}

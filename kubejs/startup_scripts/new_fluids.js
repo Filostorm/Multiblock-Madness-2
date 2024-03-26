@@ -33,5 +33,7 @@ onEvent('fluid.registry', event => {
     event.create(`aqua_regia`).thinTexture(0xc98949).bucketColor(0xc98949)
 
     event.create(`liquid_mana`).thinTexture(0x5acbd1).bucketColor(0x5acbd1)
+
+    event.create(`liquid_source`).thinTexture(0xbf32bf).bucketColor(0xbf32bf)
   });
   

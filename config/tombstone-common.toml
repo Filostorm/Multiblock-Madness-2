@@ -127,6 +127,8 @@
 	can_recycle_damaged_item = true
 	#The items that can't be recycled by the Book of Recycling
 	denied_item_to_recycle = []
+	#Allows to disenchant enchanted books with the Book of Disenchantment
+	can_disenchant_enchanted_book = false
 	#Allows lost tablets to find locations outside the current world [false/true|default:true]
 	lost_tablet_search_outside_world = true
 	#Allows lost tablets to find modded structures [false/true|default:true]
@@ -136,8 +138,6 @@
 	#Duration of voodoo poppet's effects in seconds when preventing death [5..60000|default:60]
 	#Range: 5 ~ 60000
 	duration_voodoo_poppet_effects = 60
-	#Allows to disenchant enchanted books with the Book of Disenchantment
-	can_disenchant_enchanted_book = false
 
 #For settings related to decorative tombs and magic items
 [decorative_grave]
@@ -209,10 +209,10 @@
 	curio_auto_equip = true
 	#Allows to provide a default support for bundle in Curio mod [false/true|default:true]
 	curio_bundle_support = true
+	#Allows to provide a magic book slot in Curio mod used to enchant with a soul [false/true|default:true]
+	curio_magic_book_support = true
 	#Keeps the cosmetic armor when you die [false/true|default:true]
 	keep_cosmetic_armor = true
 	#Ensure the potion effects to stay on the player after returning from end conquered [false/true|default:true]
 	preserve_effects_on_return_end_conquered = true
-	#Allows to provide a magic book slot in Curio mod used to enchant with a soul [false/true|default:true]
-	curio_magic_book_support = true
 

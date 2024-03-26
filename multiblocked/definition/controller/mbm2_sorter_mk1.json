@@ -123,7 +123,7 @@
       "D": {
         "blocks": [
           {
-            "id": "kubejs:invar_cog_block"
+            "id": "kubejs:tier_1_mechanical_alloy_cog_block"
           }
         ],
         "type": "blocks"

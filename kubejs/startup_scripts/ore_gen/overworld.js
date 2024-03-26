@@ -11,7 +11,6 @@ onEvent('worldgen.remove', event => {
 		'minecraft:emerald_ore', 
 		'minecraft:diamond_ore', 
 		'minecraft:redstone_ore', 
-		'mna:vinteum_ore',
 	]
 	})
 	event.removeFeatureById('top_layer_modification', ['beyond_earth:oil_well'])
@@ -47,6 +46,7 @@ onEvent('worldgen.add', event => {
 	// if you are using an older version of KubeJS, you can use the methods in the ore properties class
 	const {anchors} = event
 
+	console.log('overworld')
 	global.newMaterialParts.forEach((item) => {
 		//Poor Ores
 		if (item.tier <= 1 && item.ore && item.type != 'gem') {
@@ -55,6 +55,7 @@ onEvent('worldgen.add', event => {
 			
 				ore.addTarget('minecraft:stone', `kubejs:poor_${item.material}_ore`)
 				global.stoneTypes.forEach((type) => {
+					
 					ore.addTarget(`#forge:${type.material}`, `kubejs:poor_${type.material}_${item.material}_ore`)
 				})
 				ore.count([8, 16])                      // generate between 15 and 50 veins (chosen at random), you could use a single number here for a fixed amount of blocks
@@ -84,7 +85,7 @@ onEvent('worldgen.add', event => {
 		ore.addTarget('stone', 'coal_ore')
 		ore.addTarget('deepslate', 'deepslate_coal_ore')
 		global.stoneTypes.forEach((type) => {
-			if (type.material != 'deepslate' && type.material != 'bedrock') {
+			if (Item.of(`excavated_variants:${type.material}_coal_ore`) != null) {
 				ore.addTarget(`#forge:${type.material}`, `excavated_variants:${type.material}_coal_ore`)
 			}
 		})
@@ -110,7 +111,7 @@ onEvent('worldgen.add', event => {
 			ore.addTarget('stone', 'minecraft:iron_ore')
 			ore.addTarget('minecraft:deepslate', 'minecraft:deepslate_iron_ore')
 			global.stoneTypes.forEach((type) => {
-				if (type.material != 'deepslate' && type.material != 'bedrock') {
+				if (Item.of(`excavated_variants:${type.material}_iron_ore`) != null) {
 					ore.addTarget(`#forge:${type.material}`, `excavated_variants:${type.material}_iron_ore`)
 				}
 			})
@@ -138,7 +139,7 @@ onEvent('worldgen.add', event => {
 		ore.addTarget('stone', 'minecraft:copper_ore')
 		ore.addTarget('minecraft:deepslate', 'minecraft:deepslate_copper_ore')
 		global.stoneTypes.forEach((type) => {
-			if (type.material != 'deepslate' && type.material != 'bedrock') {
+			if (Item.of(`excavated_variants:${type.material}_copper_ore`) != null) {
 				ore.addTarget(`#forge:${type.material}`, `excavated_variants:${type.material}_copper_ore`)
 			}
 		})
@@ -165,7 +166,7 @@ onEvent('worldgen.add', event => {
 		ore.addTarget('stone', 'thermal:tin_ore')
 		ore.addTarget('minecraft:deepslate', 'thermal:deepslate_tin_ore')
 		global.stoneTypes.forEach((type) => {
-			if (type.material != 'deepslate' && type.material != 'bedrock') {
+			if (Item.of(`excavated_variants:${type.material}_tin_ore`) != null) {
 				ore.addTarget(`#forge:${type.material}`, `excavated_variants:${type.material}_tin_ore`)
 			}
 		})
@@ -192,7 +193,7 @@ onEvent('worldgen.add', event => {
 		ore.addTarget('stone', 'minecraft:redstone_ore')
 		ore.addTarget('minecraft:deepslate', 'minecraft:deepslate_redstone_ore')
 		global.stoneTypes.forEach((type) => {
-			if (type.material != 'deepslate' && type.material != 'bedrock') {
+			if (Item.of(`excavated_variants:${type.material}_redstone_ore`) != null) {
 				ore.addTarget(`#forge:${type.material}`, `excavated_variants:${type.material}_redstone_ore`)
 			}
 		})
@@ -219,7 +220,7 @@ onEvent('worldgen.add', event => {
 		ore.addTarget('stone', 'thermal:silver_ore')
 		ore.addTarget('minecraft:deepslate', 'thermal:deepslate_silver_ore')
 		global.stoneTypes.forEach((type) => {
-			if (type.material != 'deepslate' && type.material != 'bedrock') {
+			if (Item.of(`excavated_variants:${type.material}_silver_ore`) != null) {
 				ore.addTarget(`#forge:${type.material}`, `excavated_variants:${type.material}_silver_ore`)
 			}
 		})
@@ -246,7 +247,7 @@ onEvent('worldgen.add', event => {
 		ore.addTarget('stone', 'thermal:lead_ore')
 		ore.addTarget('minecraft:deepslate', 'thermal:deepslate_lead_ore')
 		global.stoneTypes.forEach((type) => {
-			if (type.material != 'deepslate' && type.material != 'bedrock') {
+			if (Item.of(`excavated_variants:${type.material}_lead_ore`) != null) {
 				ore.addTarget(`#forge:${type.material}`, `excavated_variants:${type.material}_lead_ore`)
 			}
 		})
@@ -274,7 +275,7 @@ onEvent('worldgen.add', event => {
 		ore.addTarget('stone', 'minecraft:lapis_ore')
 		ore.addTarget('minecraft:deepslate', 'minecraft:deepslate_lapis_ore')
 		global.stoneTypes.forEach((type) => {
-			if (type.material != 'deepslate' && type.material != 'bedrock') {
+			if (Item.of(`excavated_variants:${type.material}_lapis_ore`) != null) {
 				ore.addTarget(`#forge:${type.material}`, `excavated_variants:${type.material}_lapis_ore`)
 			}
 		})
@@ -313,6 +314,32 @@ onEvent('worldgen.add', event => {
 						anchors.absolute(100)
 				)
 		ore.size = 20
+		ore.noSurface = 0
+		ore.worldgenLayer = "underground_ores"
+		ore.chance = 0
+		ore.biomes = {
+			not: ["^nether", "^the_end", /^beyond_earth:.*/]
+		  }
+	})
+	
+	// Base Zinc Veins
+	event.addOre((ore) => {
+		ore.id = 'kubejs:nether_zinc_ore'
+	
+		global.stoneTypes.forEach((type) => {
+			if (Item.of(`excavated_variants:${type.material}_zinc_ore`) != null) {
+				ore.addTarget(`#forge:${type.material}`, `excavated_variants:${type.material}_zinc_ore`)
+			}
+		})
+		    
+
+		ore.count([1, 5])
+				.squared()
+				.uniformHeight(
+						anchors.aboveBottom(0),
+						anchors.absolute(200)
+				)
+		ore.size = 25
 		ore.noSurface = 0
 		ore.worldgenLayer = "underground_ores"
 		ore.chance = 0
@@ -477,7 +504,7 @@ onEvent('worldgen.add', event => {
 		ore.addTarget('thermal:tin_ore', 'mekanism:fluorite_ore')
 		ore.addTarget('thermal:deepslate_tin_ore', 'mekanism:deepslate_fluorite_ore')
 		global.stoneTypes.forEach((type) => {
-			if (Item.of(`excavated_variants:${type.material}_tin_ore`) != null) {
+			if (Item.of(`excavated_variants:${type.material}_tin_ore`) != null && Item.of(`excavated_variants:${type.material}_fluorite_ore`) != null ) {
 				ore.addTarget(`excavated_variants:${type.material}_tin_ore`, `excavated_variants:${type.material}_fluorite_ore`)
 			}
 		})
@@ -492,7 +519,7 @@ onEvent('worldgen.add', event => {
 		ore.noSurface = 0
 		ore.worldgenLayer = "underground_decoration"
 		  ore.chance = 0
-	})
+	})/*
 	// Inserted Vinteum to Lapis Veins
 	event.addOre((ore) => {
 		ore.id = 'kubejs:vinteum_ore'
@@ -500,7 +527,7 @@ onEvent('worldgen.add', event => {
 		ore.addTarget('minecraft:lapis_ore', 'mna:vinteum_ore')
 		ore.addTarget('minecraft:deepslate_lapis_ore', 'mna:deepslate_vinteum_ore')
 		global.stoneTypes.forEach((type) => {
-			if (Item.of(`excavated_variants:${type.material}_lapis_ore`) != null) {
+			if (Item.of(`excavated_variants:${type.material}_lapis_ore`) != null && Item.of(`excavated_variants:${type.material}_vinteum_ore`) != null ) {
 				ore.addTarget(`excavated_variants:${type.material}_lapis_ore`, `excavated_variants:${type.material}_vinteum_ore`)
 			}
 		})
@@ -515,7 +542,7 @@ onEvent('worldgen.add', event => {
 		ore.noSurface = 0
 		ore.worldgenLayer = "underground_decoration"
 		  ore.chance = 0
-	})
+	})*/
 	// Inserted Sapphire to Lapis Veins
 	event.addOre((ore) => {
 		ore.id = 'kubejs:sapphire_ore'
@@ -523,7 +550,7 @@ onEvent('worldgen.add', event => {
 		ore.addTarget('minecraft:lapis_ore', 'thermal:sapphire_ore')
 		ore.addTarget('minecraft:deepslate_lapis_ore', 'thermal:deepslate_sapphire_ore')
 		global.stoneTypes.forEach((type) => {
-			if (Item.of(`excavated_variants:${type.material}_lapis_ore`) != null) {
+			if (Item.of(`excavated_variants:${type.material}_lapis_ore`) != null && Item.of(`excavated_variants:${type.material}_sapphire_ore`) != null ) {
 				ore.addTarget(`excavated_variants:${type.material}_lapis_ore`, `excavated_variants:${type.material}_sapphire_ore`)
 			}
 		})
@@ -546,7 +573,7 @@ onEvent('worldgen.add', event => {
 		ore.addTarget('minecraft:lapis_ore', 'thermal:sapphire_ore')
 		ore.addTarget('minecraft:deepslate_lapis_ore', 'thermal:deepslate_niter_ore')
 		global.stoneTypes.forEach((type) => {
-			if (Item.of(`excavated_variants:${type.material}_lapis_ore`) != null) {
+			if (Item.of(`excavated_variants:${type.material}_lapis_ore`) != null && Item.of(`excavated_variants:${type.material}_niter_ore`) != null ) {
 				ore.addTarget(`excavated_variants:${type.material}_lapis_ore`, `excavated_variants:${type.material}_niter_ore`)
 			}
 		})
@@ -570,7 +597,7 @@ onEvent('worldgen.add', event => {
 		ore.addTarget('kubejs:arcanite_ore', 'forbidden_arcanus:arcane_crystal_ore')
 		ore.addTarget('kubejs:deepslate_arcanite_ore', 'forbidden_arcanus:deepslate_arcane_crystal_ore')
 		global.stoneTypes.forEach((type) => {
-			if (Item.of(`excavated_variants:${type.material}_arcanite_ore`) != null) {
+			if (Item.of(`excavated_variants:${type.material}_arcanite_ore`) != null && Item.of(`excavated_variants:${type.material}_arcane_crystal_ore`) != null ) {
 				ore.addTarget(`excavated_variants:${type.material}_arcanite_ore`, `excavated_variants:${type.material}_arcane_crystal_ore`)
 			}
 		})
@@ -589,12 +616,13 @@ onEvent('worldgen.add', event => {
 
 	// Inserted Inert Crystal to Arcanite Veins
 	event.addOre((ore) => {
+		
 		ore.id = 'kubejs:inert_crystal_ore'
 
 		ore.addTarget('kubejs:arcanite_ore', 'elementalcraft:inert_crystal_ore')
 		ore.addTarget('kubejs:deepslate_arcanite_ore', 'elementalcraft:deepslate_inert_crystal_ore')
 		global.stoneTypes.forEach((type) => {
-			if (Item.of(`excavated_variants:${type.material}_arcanite_ore`) != null) {
+			if (Item.of(`excavated_variants:${type.material}_arcanite_ore`) != null && Item.of(`excavated_variants:${type.material}_inert_crystal_ore`) != null ) {
 				ore.addTarget(`excavated_variants:${type.material}_arcanite_ore`, `excavated_variants:${type.material}_inert_crystal_ore`)
 			}
 		})
@@ -642,7 +670,7 @@ onEvent('worldgen.add', event => {
 		ore.addTarget('minecraft:iron_ore', 'thermal:nickel_ore')
 		ore.addTarget('minecraft:deepslate_iron_ore', 'thermal:deepslate_nickel_ore')
 		global.stoneTypes.forEach((type) => {
-			if (Item.of(`excavated_variants:${type.material}_iron_ore`) != null) {
+			if (Item.of(`excavated_variants:${type.material}_iron_ore`) != null && Item.of(`excavated_variants:${type.material}_nickel_ore`) != null ) {
 				ore.addTarget(`excavated_variants:${type.material}_iron_ore`, `excavated_variants:${type.material}_nickel_ore`)
 			}
 		})
@@ -667,7 +695,7 @@ onEvent('worldgen.add', event => {
 		ore.addTarget('minecraft:iron_ore', 'minecraft:gold_ore')
 		ore.addTarget('minecraft:deepslate_iron_ore', 'minecraft:deepslate_gold_ore')
 		global.stoneTypes.forEach((type) => {
-			if (Item.of(`excavated_variants:${type.material}_iron_ore`) != null) {
+			if (Item.of(`excavated_variants:${type.material}_iron_ore`) != null && Item.of(`excavated_variants:${type.material}_gold_ore`) != null ) {
 				ore.addTarget(`excavated_variants:${type.material}_iron_ore`, `excavated_variants:${type.material}_gold_ore`)
 			}
 		})
@@ -675,7 +703,7 @@ onEvent('worldgen.add', event => {
 		ore.addTarget('minecraft:copper_ore', 'minecraft:gold_ore')
 		ore.addTarget('minecraft:deepslate_copper_ore', 'minecraft:deepslate_gold_ore')
 		global.stoneTypes.forEach((type) => {
-			if (Item.of(`excavated_variants:${type.material}_copper_ore`) != null) {
+			if (Item.of(`excavated_variants:${type.material}_copper_ore`) != null && Item.of(`excavated_variants:${type.material}_gold_ore`) != null ) {
 				ore.addTarget(`excavated_variants:${type.material}_copper_ore`, `excavated_variants:${type.material}_gold_ore`)
 			}
 		})
@@ -699,7 +727,7 @@ onEvent('worldgen.add', event => {
 		ore.addTarget('minecraft:redstone_ore', 'thermal:cinnabar_ore')
 		ore.addTarget('minecraft:deepslate_redstone_ore', 'thermal:deepslate_cinnabar_ore')
 		global.stoneTypes.forEach((type) => {
-			if (Item.of(`excavated_variants:${type.material}_redstone_ore`) != null) {
+			if (Item.of(`excavated_variants:${type.material}_redstone_ore`) != null && Item.of(`excavated_variants:${type.material}_cinnabar_ore`) != null ) {
 				ore.addTarget(`excavated_variants:${type.material}_redstone_ore`, `excavated_variants:${type.material}_cinnabar_ore`)
 			}
 		})
@@ -724,7 +752,7 @@ onEvent('worldgen.add', event => {
 		ore.addTarget('minecraft:redstone_ore', 'thermal:ruby_ore')
 		ore.addTarget('minecraft:deepslate_redstone_ore', 'thermal:deepslate_ruby_ore')
 		global.stoneTypes.forEach((type) => {
-			if (Item.of(`excavated_variants:${type.material}_redstone_ore`) != null) {
+			if (Item.of(`excavated_variants:${type.material}_redstone_ore`) != null && Item.of(`excavated_variants:${type.material}_ruby_ore`) != null ) {
 				ore.addTarget(`excavated_variants:${type.material}_redstone_ore`, `excavated_variants:${type.material}_ruby_ore`)
 			}
 		})
@@ -749,7 +777,7 @@ onEvent('worldgen.add', event => {
 		ore.addTarget('thermal:silver_ore', 'thermal:lead_ore')
 		ore.addTarget('thermal:deepslate_silver_ore', 'thermal:deepslate_lead_ore')
 		global.stoneTypes.forEach((type) => {
-			if (Item.of(`excavated_variants:${type.material}_silver_ore`) != null) {
+			if (Item.of(`excavated_variants:${type.material}_silver_ore`) != null && Item.of(`excavated_variants:${type.material}_lead_ore`) != null ) {
 				ore.addTarget(`excavated_variants:${type.material}_silver_ore`, `excavated_variants:${type.material}_lead_ore`)
 			}
 		})
@@ -773,7 +801,7 @@ onEvent('worldgen.add', event => {
 		ore.addTarget('thermal:silver_ore', 'thermal:silver_ore')
 		ore.addTarget('thermal:deepslate_silver_ore', 'thermal:deepslate_silver_ore')
 		global.stoneTypes.forEach((type) => {
-			if (Item.of(`excavated_variants:${type.material}_lead_ore`) != null) {
+			if (Item.of(`excavated_variants:${type.material}_lead_ore`) != null && Item.of(`excavated_variants:${type.material}_silver_ore`) != null ) {
 				ore.addTarget(`excavated_variants:${type.material}_lead_ore`, `excavated_variants:${type.material}_silver_ore`)
 			}
 		})
@@ -797,7 +825,7 @@ onEvent('worldgen.add', event => {
 //		ore.addTarget('coal_ore', 'diamond_ore')
 		ore.addTarget('deepslate_coal_ore', 'deepslate_diamond_ore')
 		global.stoneTypes.forEach((type) => {
-			if (Item.of(`excavated_variants:${type.material}_coal_ore`) != null) {
+			if (Item.of(`excavated_variants:${type.material}_coal_ore`) != null && Item.of(`excavated_variants:${type.material}_diamond_ore`) != null ) {
 				ore.addTarget(`excavated_variants:${type.material}_coal_ore`, `excavated_variants:${type.material}_diamond_ore`)
 			}
 		})

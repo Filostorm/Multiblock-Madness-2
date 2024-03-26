@@ -62,7 +62,7 @@ event.shaped('4x kubejs:industrial_alloy_ingot', [
   }).id(`mbm2:industrial_alloy_ingot`)
 
 	//Energetic Blend
-	global.powahEnergizing(event, [Item.of('#forge:dusts/glowstone').toJson(), Item.of('#forge:dusts/redstone').toJson()], Item.of('kubejs:energetic_blend'), 15000, 'mbm2:powah/energetic_blend')
+	global.powahEnergizing(event, [Item.of('#forge:dusts/glowstone').toJson(), Item.of('#forge:dusts/redstone').toJson()], 'kubejs:energetic_blend', 1,  15000, 'mbm2:powah/energetic_blend')
 	
   //Energetic Alloy
 	event.recipes.tconstruct.casting_table('kubejs:energetic_alloy_ingot', 'tconstruct:molten_electrum', 90).cast('kubejs:energetic_blend').consumeCast().coolingTime(100).id(`mbm2:energetic_alloy_ingot`)

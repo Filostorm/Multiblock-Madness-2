@@ -15,7 +15,7 @@ onEvent('recipes', event => {
 		T: 'minecraft:smithing_table',
 		G: 'apotheosis:gem_dust',
 		L: 'minecraft:lava_bucket',
-		P: 'kubejs:infused_iron_plate',
+		P: '#forge:ingots/swift_alloy',
 		S: 'elementalcraft:air_silk',
   	})
 });

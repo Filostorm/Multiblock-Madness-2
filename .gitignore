@@ -16,3 +16,7 @@ config/libraryferret.properties
 config/roughlyenoughitems/pinyin.properties
 config/roughlyenoughitems/pinyin_double.properties
 config/roughlyenoughitems/config.json5
+config/oculus.properties
+config/libraryferret_1.properties
+config/awesomedungeonocean_1.properties
+config/awesomedungeon_1.properties

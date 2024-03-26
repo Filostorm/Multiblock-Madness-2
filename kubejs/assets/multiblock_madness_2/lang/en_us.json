@@ -123,6 +123,7 @@
     "create.recipe.charginf": "Tesla Coil",
 
     "desc.immersiveengineering.info.blueprint.interlocking_components": "Interlocking Components",
+    "desc.immersiveengineering.info.blueprint.mechanical_components": "Mechanical Components",
 
     "desc.immersiveengineering.info.mineral.kharaxium": "Kharaxium",
     "desc.immersiveengineering.info.mineral.imortite": "Imortite",
@@ -132,8 +133,6 @@
     "desc.immersiveengineering.info.mineral.jimmium": "Jimmium",
 
 
-    "item.mna.vinteum_coated_iron": "Vinteum Coated Alloy",
-    "item.mna.purified_vinteum_coated_iron": "Purified Vinteum Coated Alloy",
     "block.pneumaticcraft.compressed_iron_block" : "Block of Compressed Steel",
     "item.pneumaticcraft.ingot_iron_compressed" : "Compressed Steel Ingot",
     "item.pneumaticcraft.compressed_iron_boots" : "Compressed Steel Boots",
@@ -385,5 +384,9 @@
   "entity.minecraft.villager.immersiveengineering:mechinist" : "Mechinist",
   "entity.minecraft.villager.immersiveengineering:electrician" : "Electrician",
   "entity.minecraft.villager.immersiveengineering:outfitter" : "Outfitter",
-  "entity.minecraft.villager.immersiveengineering:gunsmith" : "Gunsmith"
+  "entity.minecraft.villager.immersiveengineering:gunsmith" : "Gunsmith",
+
+  
+  "item.naturesaura.infused_iron": "Infused Mithril Ingot",
+  "block.naturesaura.infused_iron_block": "Infused Mithril Block"
 }

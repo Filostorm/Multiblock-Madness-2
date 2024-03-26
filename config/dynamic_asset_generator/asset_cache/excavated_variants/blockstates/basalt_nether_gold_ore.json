@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "axis\u003dz": [
+      {
+        "model": "excavated_variants:block/basalt_nether_gold_ore0",
+        "x": 90,
+        "y": 0
+      }
+    ],
+    "axis\u003dx": [
+      {
+        "model": "excavated_variants:block/basalt_nether_gold_ore0",
+        "x": 90,
+        "y": 90
+      }
+    ],
+    "axis\u003dy": [
+      {
+        "model": "excavated_variants:block/basalt_nether_gold_ore0",
+        "x": 0,
+        "y": 0
+      }
+    ]
+  }
+}

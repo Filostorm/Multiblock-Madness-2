@@ -4,12 +4,24 @@
 	order_index: 5
 	filename: "chapter_6"
 	title: "Chapter 6"
+	icon: "chemlib:iridium_ingot"
 	default_quest_shape: ""
 	default_hide_dependency_lines: false
 	quests: [
 		{
-			x: -2.0d
-			y: 1.0d
+			x: 1.0d
+			y: -1.75d
+			dependencies: ["7427C745524AC00C"]
+			id: "1427B6C8DB9EA99F"
+			tasks: [{
+				id: "170695D69BCC6028"
+				type: "item"
+				item: "industrialforegoing:machine_frame_supreme"
+			}]
+		}
+		{
+			x: -0.5d
+			y: 1.25d
 			dependencies: ["766FA3877A259983"]
 			id: "248A48AB03F59D80"
 			tasks: [{
@@ -19,8 +31,8 @@
 			}]
 		}
 		{
-			x: -0.5d
-			y: 1.0d
+			x: 1.0d
+			y: 1.25d
 			dependencies: ["248A48AB03F59D80"]
 			id: "34F1D7C257F4D2FD"
 			tasks: [{
@@ -30,8 +42,8 @@
 			}]
 		}
 		{
-			x: -2.0d
-			y: -0.5d
+			x: -0.5d
+			y: -0.25d
 			dependencies: ["766FA3877A259983"]
 			id: "6E0C90037432031C"
 			tasks: [{
@@ -41,8 +53,8 @@
 			}]
 		}
 		{
-			x: -0.5d
-			y: -0.5d
+			x: 1.0d
+			y: -0.25d
 			dependencies: ["6E0C90037432031C"]
 			id: "13A76B63A6E8833D"
 			tasks: [{
@@ -52,8 +64,8 @@
 			}]
 		}
 		{
-			x: 1.5d
-			y: -0.5d
+			x: 3.0d
+			y: -0.25d
 			dependencies: [
 				"13A76B63A6E8833D"
 				"6C3EBA1AD09FEE6C"
@@ -66,8 +78,8 @@
 			}]
 		}
 		{
-			x: 0.5d
-			y: 2.5d
+			x: 2.0d
+			y: 2.75d
 			dependencies: ["64E2B67C0B0AB9E4"]
 			id: "4EEBD21943C92471"
 			tasks: [{
@@ -78,8 +90,8 @@
 		}
 		{
 			title: "Multiblock Power Storage"
-			x: 2.0d
-			y: 2.5d
+			x: 3.5d
+			y: 2.75d
 			dependencies: ["4EEBD21943C92471"]
 			id: "1F35BD186E84BA9C"
 			tasks: [
@@ -106,8 +118,8 @@
 			]
 		}
 		{
-			x: -1.0d
-			y: 2.5d
+			x: -0.5d
+			y: 2.75d
 			dependencies: ["248A48AB03F59D80"]
 			id: "64E2B67C0B0AB9E4"
 			tasks: [{
@@ -117,8 +129,8 @@
 			}]
 		}
 		{
-			x: -2.0d
-			y: -4.0d
+			x: -0.5d
+			y: -1.75d
 			description: ["Laser Drill Bases can have multiple Laser Drills working together to speed up the mining. Place them within 3 spaces pointing towards the Base."]
 			dependencies: ["766FA3877A259983"]
 			id: "7427C745524AC00C"
@@ -136,8 +148,8 @@
 			]
 		}
 		{
-			x: -2.0d
-			y: -5.0d
+			x: -2.5d
+			y: -1.75d
 			description: ["Laser Drill Bases can have multiple Laser Drills working together to speed up the mining. Place them within 3 spaces pointing towards the Base."]
 			dependencies: ["766FA3877A259983"]
 			id: "4EB8F3B73CD527A2"
@@ -155,11 +167,10 @@
 			]
 		}
 		{
-			x: -4.0d
-			y: -0.5d
+			x: -2.5d
+			y: -0.25d
 			dependencies: [
 				"34A861977367F4EA"
-				"196DBF0A6B8A6926"
 				"0C3B634C865AD3B9"
 			]
 			id: "766FA3877A259983"
@@ -171,7 +182,7 @@
 		}
 		{
 			x: 3.5d
-			y: -0.5d
+			y: -1.75d
 			dependencies: [
 				"1CF39FE5E8135E08"
 				"66520CE078BFCC2F"
@@ -192,8 +203,8 @@
 		}
 		{
 			title: "Tier 3 Rocket to Venus and Mercury"
-			x: 1.5d
-			y: -2.25d
+			x: 3.25d
+			y: -3.5d
 			shape: "hexagon"
 			size: 1.5d
 			id: "66520CE078BFCC2F"
@@ -208,8 +219,8 @@
 			}]
 		}
 		{
-			x: -0.5d
-			y: -3.5d
+			x: 1.0d
+			y: -3.25d
 			dependencies: [
 				"7427C745524AC00C"
 				"0C86C3CCA8F0E429"
@@ -222,9 +233,9 @@
 			}]
 		}
 		{
-			x: -2.0d
-			y: -3.0d
-			subtitle: "Used to prevent the wither from moving for ether gas production"
+			x: -0.5d
+			y: -3.25d
+			description: ["Used to prevent the wither from moving for ether gas production"]
 			dependencies: ["766FA3877A259983"]
 			id: "0C86C3CCA8F0E429"
 			tasks: [{
@@ -234,8 +245,8 @@
 			}]
 		}
 		{
-			x: 1.0d
-			y: 1.0d
+			x: 2.5d
+			y: 1.25d
 			dependencies: ["34F1D7C257F4D2FD"]
 			id: "6C3EBA1AD09FEE6C"
 			tasks: [{
@@ -246,7 +257,7 @@
 		}
 		{
 			x: -2.5d
-			y: -3.5d
+			y: 1.25d
 			dependencies: ["766FA3877A259983"]
 			id: "75201B00917E0634"
 			tasks: [{
@@ -256,8 +267,8 @@
 			}]
 		}
 		{
-			x: -6.5d
-			y: 0.0d
+			x: -4.5d
+			y: -0.25d
 			shape: "circle"
 			id: "0C3B634C865AD3B9"
 			tasks: [{

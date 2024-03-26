@@ -3,7 +3,7 @@ var basicGens = [
   'powah:furnator_basic', 
   'powah:magmator_basic', 
   'powah:thermo_generator_basic', 
-  'powah:solar_panel_basic'
+  //'powah:solar_panel_basic'
 ]
 
 onEvent('tags.items', event => {
@@ -155,7 +155,7 @@ event.shaped('4x powah:reactor_basic', [
 B: 'powah:capacitor_basic',
 C: 'powah:dielectric_casing'
   }).id("powah:crafting/reactor_basic")
-
+/*
 // [| solar_panel_basic |] //
 event.shaped('powah:solar_panel_basic', [
   'AAA',
@@ -167,44 +167,8 @@ B: 'powah:capacitor_basic',
 C: 'powah:dielectric_casing',
 D: 'minecraft:iron_ingot'
   }).id("powah:crafting/solar_panel_basic")
-
-// [| thermo_generator_basic |] //
-event.shaped('powah:thermo_generator_basic', [
-  'ABA',
-'CDC',
-'EEE'
-  ], {
-  A: 'powah:dielectric_paste',
-B: 'minecraft:iron_ingot',
-C: 'powah:capacitor_basic',
-D: 'powah:dielectric_casing',
-E: 'powah:thermoelectric_plate'
-  }).id("powah:crafting/thermo_generator_basic")
-
-// [| magmator_basic |] //
-event.shaped('powah:magmator_basic', [
-  'AAA',
-'BCB',
-'ADA'
-  ], {
-  A: 'minecraft:iron_ingot',
-B: 'powah:capacitor_basic',
-C: 'powah:dielectric_casing',
-D: 'minecraft:bucket'
-  }).id("powah:crafting/magmator_basic")
-/*
-// [| furnator_basic |] //
-event.shaped('powah:furnator_basic', [
-  'AAA',
-'BCB',
-'ADA'
-  ], {
-  A: 'minecraft:iron_ingot',
-B: 'powah:capacitor_basic',
-C: 'powah:dielectric_casing',
-D: 'minecraft:furnace'
-  }).id("powah:crafting/furnator_basic")
 */
+
 // [| battery_basic |] //
 event.shaped('powah:battery_basic', [
   'ABA',
@@ -249,24 +213,94 @@ E: 'powah:dielectric_rod'
     C: 'powah:capacitor_basic_tiny',
     G: '#forge:gears/dielectric_alloy',
 	  R: 'kubejs:blazing_redstone'
-  }).id(`mbd2:crafting/thermoelectric_plate`)
+  }).id(`mbm2:crafting/thermoelectric_plate`)
   
+
+let powahToSwap = [
+'powah:energy_cell_basic',
+'powah:furnator_basic',
+//'powah:magmator_basic',
+//'powah:thermo_generator_basic',
+'powah:energy_cable_basic',
+]
+
+  //Swap Basic Inputs with electrical alloy
+powahToSwap.forEach(machine => {
+  event.replaceInput({output: machine}, '#forge:ingots/iron', '#forge:plates/tier_1_electrical_alloy')
+});
+  
+event.replaceInput({id: 'powah:energizing/energized_steel'}, '#forge:ingots/iron', '#forge:ingots/steel')
+
+
+// [| magmator_basic |] //
+event.shaped('powah:magmator_basic', [
+  'AAA',
+'BCB',
+'ADA'
+  ], {
+  A: '#forge:plates/tier_1_electrical_alloy',
+B: 'powah:capacitor_basic',
+C: 'powah:dielectric_casing',
+D: 'minecraft:bucket'
+  }).id("mbm2:crafting/magmator_basic")
+
+
+// [| thermo_generator_basic |] //
+event.shaped('powah:thermo_generator_basic', [
+  'ABA',
+'CDC',
+'EEE'
+  ], {
+  A: 'powah:dielectric_paste',
+B: '#forge:plates/tier_1_electrical_alloy',
+C: 'powah:capacitor_basic',
+D: 'powah:dielectric_casing',
+E: 'powah:thermoelectric_plate'
+  }).id("mbm2:crafting/thermo_generator_basic")
+
+// [| furnator_basic |] //
+event.shaped('powah:furnator_basic', [
+  'AAA',
+'BCB',
+'ADA'
+  ], {
+  A: '#forge:plates/tier_1_electrical_alloy',
+B: 'powah:capacitor_basic',
+C: 'powah:dielectric_casing',
+D: 'minecraft:furnace'
+  }).id("mbm2:crafting/furnator_basic")
+
   //tiered crystals
     //Blazing Crystal
     event.remove({id: 'powah:energizing/blazing_crystal_2'})
     event.remove({id: 'powah:energizing/blazing_crystal'})
-    global.powahEnergizing(event, [Item.of('solarflux:blazing_coating').toJson(), Item.of('reliquary:molten_core').toJson(), Item.of('botania:quartz_blaze').toJson()], Item.of('powah:crystal_blazing'), 120000, 'mbm2:powah/blazing_crystal')
+    global.powahEnergizing(event, [Item.of('solarflux:blazing_coating').toJson(), Item.of('reliquary:molten_core').toJson(), Item.of('botania:quartz_blaze').toJson()], 'powah:crystal_blazing', 1,  120000, 'mbm2:powah/blazing_crystal')
 
     //Niotic Crystal
     event.remove({id: 'powah:energizing/niotic_crystal'})
-    global.powahEnergizing(event, [Item.of('mna:lodestar_copier').toJson(), Item.of('kubejs:titanium_plated_obsidian').toJson(), Item.of('elementalcraft:springaline_shard').toJson(), Item.of('tconstruct:slimesteel_ingot').toJson()], Item.of('powah:crystal_niotic'), 300000, 'mbm2:powah/niotic_crystal')
+    global.powahEnergizing(event, [Item.of('#forge:sprockets/tier_1_magical_alloy').toJson(), Item.of('kubejs:titanium_plated_obsidian').toJson(), Item.of('elementalcraft:springaline_shard').toJson(), Item.of('tconstruct:slimesteel_ingot').toJson()], 'powah:crystal_niotic', 1,  300000, 'mbm2:powah/niotic_crystal')
 
     //Spirited Crystal
     event.remove({id: 'powah:energizing/spirited_crystal'})
-    global.powahEnergizing(event, [Item.of('naturesaura:calling_spirit').toJson(), Item.of('forbidden_arcanus:dark_soul').toJson(), Item.of('kubejs:spirited_brick').toJson(), Item.of('tconstruct:soulsteel_ingot').toJson(), Item.of('lazierae2:resonating_crystal').toJson()], Item.of('powah:crystal_spirited'), 1000000, 'mbm2:powah/spirited_crystal')
+    global.powahEnergizing(event, [Item.of('naturesaura:calling_spirit').toJson(), Item.of('forbidden_arcanus:dark_soul').toJson(), Item.of('kubejs:spirited_brick').toJson(), Item.of('tconstruct:soulsteel_ingot').toJson(), Item.of('lazierae2:resonating_crystal').toJson()], 'powah:crystal_spirited', 1,  1000000, 'mbm2:powah/spirited_crystal')
 
     //Nitro Crystal
     event.remove({id: 'powah:energizing/nitro_crystal'})
-    global.powahEnergizing(event, [Item.of('powah:spirited_crystal_block').toJson(), Item.of('powah:niotic_crystal_block').toJson(), Item.of('powah:blazing_crystal_block').toJson(), Item.of('allomancy:lerasium_nugget').toJson(), Item.of('kubejs:lithium_plating').toJson(), Item.of('beyond_earth:calorite_block').toJson()], Item.of('powah:nitro_crystal_block'), 20000000, 'mbm2:powah/nitro_crystal')
+    global.powahEnergizing(event, [Item.of('powah:spirited_crystal_block').toJson(), Item.of('powah:niotic_crystal_block').toJson(), Item.of('powah:blazing_crystal_block').toJson(), Item.of('kubejs:wixie_shard_block').toJson(), Item.of('kubejs:lithium_plating').toJson(), Item.of('beyond_earth:calorite_block').toJson()], 'powah:nitro_crystal_block', 20000000, 1,  'mbm2:powah/nitro_crystal')
 
+
+
+// [| energizing_rod_basic |] //
+event.remove({id: 'powah:crafting/energizing_rod_basic'})
+event.shaped('powah:energizing_rod_basic', [
+  ' A ',
+  'BCB',
+  ' R '
+  ], {
+  A: '#forge:storage_blocks/quartz',
+  B: '#forge:spools/tier_1_electrical_alloy',
+  C: 'powah:capacitor_basic_large',
+  R: 'powah:dielectric_rod'
+  }).id("mbm2:crafting/energizing_rod_basic")
+    
 });

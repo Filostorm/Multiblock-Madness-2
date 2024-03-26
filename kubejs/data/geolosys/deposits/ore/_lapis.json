@@ -12,10 +12,7 @@
     "blocks": {                                        
       "default": [{                                    
         "block": "minecraft:lapis_ore",
-        "chance": 0.2
-      },{                                    
-        "block": "mna:vinteum_ore",
-        "chance": 0.65
+        "chance": 0.85
       },{                                    
         "block": "thermal:niter_ore",
         "chance": 0.05

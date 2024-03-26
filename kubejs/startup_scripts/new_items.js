@@ -36,7 +36,7 @@ var basicItems = [
 	't4_circuit',
 	'energetic_blend',
 	'glass_shard',
-	'water_filter',
+	//'water_filter',
 	'quicksilver',
 	'shaped_quartz',
 	'blast_brick',
@@ -60,15 +60,28 @@ var basicItems = [
 	'unfinished_elite_control_circuit',
 	'unfinished_ultimate_control_circuit',
 	'titanium_plated_obsidian',
-	'bolt_mold'
+	'bolt_mold',
+	'resonating_dust',
+	'charged_coil',
+	'nature_gem',
+	'chimerite_gem',
+	'living_metal_seed',
+	'metal_seed',
+	'shaped_fluix_crystal',
 ]
 
 global.transitionalItems = [
-	'basic_capacitor',
 	'circuit_board',
 	'light_bulb',
 	'component_iron',
 	'component_steel',
+]
+global.transitionalItemsTexture = [
+	'basic_capacitor',
+	'component_electronic_adv',
+	'component_electronic',
+	'electron_tube',
+	'titanium_plated_obsidian',
 	'printed_calculation_processor',
 	'calculation_processor',
 	'printed_logic_processor',
@@ -76,12 +89,6 @@ global.transitionalItems = [
 	'printed_engineering_processor',
 	'engineering_processor',
 	'printed_silicon',
-]
-global.transitionalItemsTexture = [
-	'component_electronic_adv',
-	'component_electronic',
-	'electron_tube',
-	'titanium_plated_obsidian',
 ]
 
 global.batteryItems = [
@@ -114,7 +121,7 @@ onEvent('item.registry', event => {
 	})
 	global.batteryItems.forEach((item) => {
 		event.create(`${item}_empty`).displayName(nameUpperWSpace(item, 'Empty')).texture(`kubejs:item/battery/${item}_empty`)
-		event.create(`${item}_full`).displayName(nameUpperWSpace(item, 'Full')).texture(`kubejs:item/battery/${item}_full`).unstackable()
+		event.create(`${item}_full`).displayName(nameUpperWSpace(item, 'Full')).texture(`kubejs:item/battery/${item}_full`)//.unstackable()
 	})
 	global.transitionalItems.forEach((item) => {
 		event.create(`incomplete_${item}`, 'create:sequenced_assembly').texture('kubejs:item/package')
@@ -151,4 +158,5 @@ onEvent('item.registry', event => {
 	event.create(`catalyst_magic`).displayName('Magic Ore Catalyst')
 	event.create(`catalyst_empty`).displayName('Empty Catalyst Housing')
 	
+	event.create(`water_filter`).unstackable()
   });

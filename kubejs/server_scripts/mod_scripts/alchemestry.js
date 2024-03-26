@@ -1,9 +1,3 @@
-/*
-onEvent('tags.items', event => {
-	event.add(`forge:ingots`, `naturesaura:tainted_gold`)
-	 event.remove(`create:crushed_ores/${item}`, `kubejs:crushed_${item}`)
- });
- */
 onEvent('recipes', event => {
 
 	//Frame
@@ -27,53 +21,14 @@ onEvent('recipes', event => {
 		C: 'kubejs:alchemistry_frame'
   	}).id('mbm2:reactor_casing')
 	  
-//Fix Sulfur
-event.custom({
-	"type": "alchemistry:liquifier",
-	"group": "alchemistry:liquifier",
-	"input": {
-	  "ingredient": {
-		"item": "chemlib:sulfuric_acid"
-	  },
-	  "count": 8
-	},
-	"result": {
-	  "fluid": "mekanism:sulfuric_acid",
-	  "amount": "500"
-	}
-  }).id('alchemistry:liquifier/sulfuric_acid')
-  
-  //Fix Hydrogen
-  event.custom({
-	  "type": "alchemistry:liquifier",
-	  "group": "alchemistry:liquifier",
-	  "input": {
-		"ingredient": {
-		  "item": "chemlib:hydrogen"
-		},
-		"count": 8
-	  },
-	  "result": {
-		"fluid": "mekanism:hydrogen",
-		"amount": "500"
-	  }
-	}).id('alchemistry:liquifier/hydrogen')
+	//Fix Sulfur
+	global.alchemistryFluidItemSwap(event, 'chemlib:sulfuric_acid', 'mekanism:sulfuric_acid', true)
+
+  	//Fix Hydrogen
+	global.alchemistryFluidItemSwap(event, 'chemlib:hydrogen', 'mekanism:hydrogen', true)
   
 	//Fix Oxygen
-	event.custom({
-		"type": "alchemistry:liquifier",
-		"group": "alchemistry:liquifier",
-		"input": {
-		  "ingredient": {
-			"item": "chemlib:oxygen"
-		  },
-		  "count": 8
-		},
-		"result": {
-		  "fluid": "mekanism:oxygen",
-		  "amount": "500"
-		}
-	}).id('alchemistry:liquifier/oxygen')
+	global.alchemistryFluidItemSwap(event, 'chemlib:oxygen', 'mekanism:oxygen', true)
 
 	//Missing Carbon Dust?
 	event.custom({

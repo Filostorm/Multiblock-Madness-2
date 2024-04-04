@@ -291,6 +291,52 @@ event.shaped('3x kubejs:wood_scaffolding', [
 //Arcane Sand
   event.shapeless('8x kubejs:arcane_sand', ['forbidden_arcanus:arcane_crystal_dust_speck', '#forge:sand', '#forge:sand', '#forge:sand', '#forge:sand', '#forge:sand', '#forge:sand', '#forge:sand', '#forge:sand']).id('mbm2:arcane_sand')
 
+//Sink
+    event.remove({output: 'cookingforblockheads:sink'})
+    global.compactCrafting(event, 'cookingforblockheads:sink', 1, 'reliquary:emperor_chalice',
+    3, [
+      {
+        type: 'compactcrafting:mixed',
+          pattern: [
+              ['L', 'S','S'],
+              ['L', '','S'],
+              ['L', 'S','S']
+          ]
+      },
+      {
+          type: 'compactcrafting:mixed',
+          pattern: [
+              ['C', 'C','C'],
+              ['C', 'A','C'],
+              ['C', 'C','C']
+          ]
+      },
+      {  type: 'compactcrafting:mixed',
+          pattern: [
+              ['C', 'C','C'],
+              ['C', 'C','C'],
+              ['C', 'C','C']
+          ]
+      },
+      ], {
+		'S': {
+        type: 'compactcrafting:block',
+        block: 'create:polished_cut_andesite_slab'
+      },
+      'C': {
+        type: 'compactcrafting:block',
+        block: 'minecraft:copper_block'
+      },
+      'A': {
+        type: 'compactcrafting:block',
+        block: 'thermal:device_water_gen'
+      },
+      'L': {
+        type: 'compactcrafting:block',
+        block: 'create:polished_cut_andesite_stairs'
+      }
+    },  'mbm2:sink')
+	
 //simplified repeaters/comparators
   event.shaped('minecraft:repeater', ['ABA','CCC'], {A: 'minecraft:redstone_torch',B: 'minecraft:redstone',C: 'projectred_core:plate'}).id('mbm2:stone_plate_repeater')
   event.shaped('minecraft:repeater', ['A A','BAB','CCC'], {A: 'minecraft:redstone',B: 'minecraft:stick',C: 'projectred_core:plate'}).id('mbm2:stone_plate_repeater_alt')

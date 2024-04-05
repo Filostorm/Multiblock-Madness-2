@@ -116,10 +116,12 @@
 			"{data:{Count:1b,id:\"engineersdecor:iron_floor_edge_light\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
 			"{data:{Count:1b,id:\"solarflux:sp_3\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
 			"{data:{Count:1b,id:\"ars_nouveau:volcanic_sourcelink\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
-			"{data:{Count:1b,id:\"sophisticatedstorage:stack_upgrade_tier_1\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}"
+			"{data:{Count:1b,id:\"sophisticatedstorage:stack_upgrade_tier_1\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"createaddition:alternator\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}"
 		],
 		"hiddenFavorites": [],
 		"displayHistory": [
+			"{DisplayHistoryCategory:\"create:mechanical_crafting\",DisplayHistoryContains:1b,DisplayHistoryData:{JEISerializer:\"create:mechanical_crafting\",data:\"BQQAAAABAbw7AQAAAAABAdItAQABAcmAAQEAAQHSLQEAAAEB0i0BAAEByYABAQABAfJDAQABAcmAAQEAAQHSLQEAAAEB0i0BAAEBu4ABAQABAdItAQAAAa2AAQEAAQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\",id:\"createaddition:mechanical_crafting/alternator\"},DisplayHistoryUUID:\"42cd64f6-6971-4fe0-844a-d66a14d82003\"}",
 			"{DisplayHistoryCategory:\"create:mechanical_crafting\",DisplayHistoryContains:1b,DisplayHistoryData:{JEISerializer:\"create:mechanical_crafting\",data:\"BQUAAQG0PAEAAQHHOwEAAQGCOwEAAQHHOwEAAQG0PAEAAQHHOwEAAQGuOwEAAQHgOgEAAQGuOwEAAQHHOwEAAQGBOwEAAQGyOwEAAQH1OgEAAQGyOwEAAQGUOwEAAQHHOwEAAQGpOwEAAQGpOwEAAQGpOwEAAQHHOwEAAQG0PAEAAQHHOwEAAQHHOwEAAQHHOwEAAQG0PAEAAcwgAQABAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\",id:\"createoreexcavation:drilling_machine\"},DisplayHistoryUUID:\"8a91e8d2-0c55-4096-b1c8-1959df685b29\"}",
 			"{DisplayHistoryCategory:\"multiblocked:multiblock_info\",DisplayHistoryContains:0b,DisplayHistoryUUID:\"048f7c40-691d-420c-b9f6-4890227548c0\"}",
 			"{DisplayHistoryCategory:\"multiblocked:multiblock_info\",DisplayHistoryContains:0b,DisplayHistoryUUID:\"1749c1cc-a77c-406b-976b-8a14f6bb5d77\"}",
@@ -183,7 +185,8 @@
 			"shouldFilterDisplays": true,
 			"filteringRules": [
 				"{id:\"roughlyenoughitems:manual\",rule:{}}",
-				"{id:\"roughlyenoughitems:basic\",rule:{}}"
+				"{id:\"roughlyenoughitems:basic\",rule:{}}",
+				"{id:\"roughlyenoughitems:hidden_from_recipe_viewers\",rule:{}}"
 			],
 			"filteringQuickCraftCategories": { },
 			"filteredStacks": [

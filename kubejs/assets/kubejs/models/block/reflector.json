@@ -1,8 +1,9 @@
 {
     "__comment": "Model generated using MrCrayfish's Model Creator (https://mrcrayfish.com/tools?id=mc)",
     "textures": {
-        "solar": "kubejs:block/solar",
-        "casing": "kubejs:block/ev_casing"
+        "reflector": "kubejs:block/reflector",
+        "casing": "kubejs:block/ev_casing",
+        "particle": "kubejs:block/ev_casing"
     },
     "display": {
         "gui": {
@@ -58,7 +59,7 @@
                 "east": { "texture": "#casing", "uv": [ 0, 0, 16, 4 ] },
                 "south": { "texture": "#casing", "uv": [ 0, 0, 16, 4 ] },
                 "west": { "texture": "#casing", "uv": [ 0, 0, 16, 4 ] },
-                "up": { "texture": "#solar", "uv": [ 0, 0, 16, 16 ] }
+                "up": { "texture": "#reflector", "uv": [ 0, 0, 16, 16 ] }
             }
         }
     ]

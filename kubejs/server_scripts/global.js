@@ -28,6 +28,7 @@ global.removeAndHide = [
 	'powah:player_transmitter_starter', 
 	'powah:energy_hopper_starter', 
 	'powah:energy_discharger_starter',
+	/powah:solar_panel_.*/,
 
 	'beyond_earth:compressor',
 	'beyond_earth:fuel_refinery',

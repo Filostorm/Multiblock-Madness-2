@@ -29,7 +29,7 @@ var mods = [
 	'beyond_earth',
 	'extendedcrafting',
 	'elementalcraft',
-	'lazerae2'
+	'lazierae2'
 ]
 
 var smeltingList = [

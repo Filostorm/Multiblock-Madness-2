@@ -1,0 +1,65 @@
+{
+    "__comment": "Model generated using MrCrayfish's Model Creator (https://mrcrayfish.com/tools?id=mc)",
+    "textures": {
+        "solar": "kubejs:block/solar",
+        "casing": "kubejs:block/ev_casing"
+    },
+    "display": {
+        "gui": {
+            "rotation": [ 30, 45, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 0.625, 0.625, 0.625 ]
+        },
+        "ground": {
+            "rotation": [ 0, 0, 0 ],
+            "translation": [ 0, 3, 0 ],
+            "scale": [ 0.25, 0.25, 0.25 ]
+        },
+        "fixed": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 1, 1, 1 ]
+        },
+        "head": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 1, 1, 1 ]
+        },
+        "firstperson_righthand": {
+            "rotation": [ 0, 315, 0 ],
+            "translation": [ 0, 2.5, 0 ],
+            "scale": [ 0.4, 0.4, 0.4 ]
+        },
+        "thirdperson_righthand": {
+            "rotation": [ 75, 315, 0 ],
+            "translation": [ 0, 2.5, 0 ],
+            "scale": [ 0.375, 0.375, 0.375 ]
+        }
+    },
+    "elements": [
+        {
+            "name": "base_b",
+            "from": [ 0, 0, 0 ], 
+            "to": [ 16, 4, 16 ], 
+            "faces": {
+                "north": { "texture": "#casing", "uv": [ 0, 12, 16, 16 ] },
+                "east": { "texture": "#casing", "uv": [ 0, 12, 16, 16 ] },
+                "south": { "texture": "#casing", "uv": [ 0, 12, 16, 16 ] },
+                "west": { "texture": "#casing", "uv": [ 0, 12, 16, 16 ] },
+                "down": { "texture": "#casing", "uv": [ 0, 0, 16, 16 ] }
+            }
+        },
+        {
+            "name": "base_t",
+            "from": [ 0, 4, 0 ], 
+            "to": [ 16, 8, 16 ], 
+            "faces": {
+                "north": { "texture": "#casing", "uv": [ 0, 0, 16, 4 ] },
+                "east": { "texture": "#casing", "uv": [ 0, 0, 16, 4 ] },
+                "south": { "texture": "#casing", "uv": [ 0, 0, 16, 4 ] },
+                "west": { "texture": "#casing", "uv": [ 0, 0, 16, 4 ] },
+                "up": { "texture": "#solar", "uv": [ 0, 0, 16, 16 ] }
+            }
+        }
+    ]
+}

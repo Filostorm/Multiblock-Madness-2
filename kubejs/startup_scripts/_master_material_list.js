@@ -32,7 +32,7 @@ global.newMaterialParts = [
       'color': 0xf5c564,
       'type': 'base_metal',
       'tier': 0,
-      'itemParts': ['plating'],
+      'itemParts': ['plating', 'sheet'],
       'blockParts': ['cog_block'],
       'fluid_id': 'tconstruct:molten_gold',
       'ore': true,
@@ -662,7 +662,7 @@ global.newMaterialParts = [
       'itemParts': ['plate',  'gear', 'rod', 'sheet', 'plating'],
       'blockParts': ['casing'],
       'amount': 1,
-      'tinkers_input': [{tag: 'forge:molten_iron',amount: 90},{name: 'kubejs:molten_carbon',amount: 90}],
+      'tinkers_input': [{tag: 'forge:molten_iron',amount: 90},{name: 'kubejs:molten_carbon',amount: 200}],
       'allomancy': 'Steel allows you to Push on metals. This means moving metal items away from you, or pushing yourself off of metal blocks. This can be used as a sort of rudimentary flight, though it is more falling with style than anything else. Steel also allows you to use the Coin Bag item. If you have gold nuggets in your inventory and are burning steel, you can use this as a ranged weapon similar to the old Beta-edition Bow. Iron nuggets can also be used, causing more damage but far less accurately',
       'feruchemy': 'Speed--Speed Boost or Slowness'
     },
@@ -702,7 +702,7 @@ global.newMaterialParts = [
       'tinkers_input': [{tag: 'forge:molten_copper',amount: 180},{tag: 'forge:molten_cobalt',amount: 90},{tag: 'tconstruct:molten_quartz',amount: 400}],
       'itemParts': ['plate', 'gear', 'rod', 'dust', 'interlocking_component', 'wire', 'plating'],
       'blockParts': ['casing'],
-    },
+    },/*
     {
       'material': 'duralumin',
       'color': 0xbbc9c1,
@@ -718,13 +718,13 @@ global.newMaterialParts = [
       'tinkers_input': [{tag: 'forge:molten_aluminum',amount: 270},{tag: 'forge:molten_copper',amount: 90}],
       'allomancy': 'Duralumin enhances whatever other metal you are using. This may mean pushing harder with steel, speeding things up even more with Bendalloy, or even teleporting to special locations with Gold and Electrum. If this metal burns out (which it does quickly!) or is extinguished, it empties all other burning metals of their stock.',
       'feruchemy': 'Connection--Hero of the Village or Bad Omen'
-    },
+    },*/
     {
       'material': 'cobalt_brass',
       'color': 0xb8af98,
       'type': 'alloy',
       'tier': 2,
-      'itemParts': ['ingot', 'dust', 'nugget', 'plate', 'gear', 'rod',],
+      'itemParts': ['ingot', 'dust', 'nugget', 'plate', 'gear', 'rod', 'plating'],
       'blockParts': ['storage_block', 'casing', 'cog_block'],
       'amount': 6,
       'dust_input': ['4x #forge:dusts/brass', '#forge:dusts/aluminum', '#forge:dusts/cobalt'],
@@ -766,6 +766,20 @@ global.newMaterialParts = [
       //'amount': 4,
       //'dust_input': ['3x #forge:dusts/cobalt','#forge:ingots/netherite_scrap'],
       //'ingot_input': ['3x #forge:ingots/cobalt','#forge:ingots/netherite_scrap'],
+    },
+    {
+      'material': 'nethersteel',
+      'color': 0x403836,
+      'type': 'alloy',
+      'tier': 2,
+      'itemParts': ['ingot', 'nugget', 'dust', 'plate', 'plating'],
+      'blockParts': ['storage_block'],
+      'amount': 8,
+      'dust_input': ['8x #forge:dusts/steel', '#forge:ingots/netherite_scrap'],
+      'ingot_input': ['8x #forge:ingots/steel', '#forge:ingots/netherite_scrap'],
+      'tinkers_input': [{name: 'tconstruct:molten_debris',amount: 90},{tag: 'forge:molten_steel',amount: 720}],
+      'fluid': 'thick',
+      'fluid_id': 'kubejs:molten_nethersteel',
     },
     /////////////// Tier 3 Alloys: Arc Furnace or chapter 3 /////////////////////////////
     
@@ -816,19 +830,6 @@ global.newMaterialParts = [
       'ingot_input': ['4x #forge:ingots/netherite_scrap','4x #forge:ingots/gold'],
     },
     {
-      'material': 'nethersteel',
-      'color': 0x403836,
-      'type': 'alloy',
-      'tier': 3,
-      'itemParts': ['ingot', 'nugget', 'dust', 'plate', 'plating'],
-      'blockParts': ['storage_block'],
-      'amount': 8,
-      'dust_input': ['8x #forge:dusts/steel', '#forge:ingots/netherite_scrap'],
-      'ingot_input': ['8x #forge:ingots/steel', '#forge:ingots/netherite_scrap'],
-      'fluid': 'thick',
-      'fluid_id': 'kubejs:molten_nethersteel',
-    },
-    {
       'material': 'industrial_alloy',
       'color': 0x574735,
       'type': 'alloy',
@@ -843,13 +844,15 @@ global.newMaterialParts = [
       'material': 'fluix_steel',
       'color': 0x7e5fb0,
       'type': 'alloy',
-      'tier': 3,
+      'tier': 2,
       'itemParts': ['dust', 'plate', 'gear', 'rod', 'wire'],
-      'blockParts': ['storage_block'],
+      'blockParts': ['storage_block','scaffolding'],
       'fluid': 'thick',
+      'fluid_id': 'kubejs:molten_fluix_steel',
       'amount': 1,
       'dust_input': ['#forge:dusts/steel', '2x lazierae2:carbonic_fluix_dust'],
       'ingot_input': ['#forge:ingots/steel', '2x lazierae2:carbonic_fluix_dust'],
+      'tinkers_input': [{tag: 'forge:molten_steel',amount: 90},{name: 'kubejs:molten_fluix',amount: 400},{name: 'kubejs:molten_carbon',amount: 400},{tag: 'tconstruct:molten_quartz',amount: 200}],
     },
     {
       'material': 'lumium',
@@ -1308,7 +1311,7 @@ global.newMaterialParts = [
       'material': 'tier_2_mechanical_alloy',
       'color': 0xe8e348,
       'type': 'alloy',
-      'tier': 2,
+      'tier': 3,
       'iconset': 'mechanical',
       'itemParts': ['ingot', 'nugget', 'dust', 'plate', 'gear', 'interlocking_component', 'rod', 'model_robot_arm', 'wire'],
       'blockParts': ['storage_block', 'cog_block',],
@@ -1322,7 +1325,7 @@ global.newMaterialParts = [
       'material': 'tier_2_electrical_alloy',
       'color': 0xf09169,
       'type': 'alloy',
-      'tier': 4,
+      'tier': 3,
       'iconset': 'electrical',
       'itemParts': ['ingot', 'nugget', 'dust',  'plate', 'wire', 'model_spool', 'model_wire_coil', 'sheet', 'model_dual_coil'],
       'blockParts': ['storage_block', 'coil'],
@@ -1334,9 +1337,9 @@ global.newMaterialParts = [
     },
     {
       'material': 'tier_2_structural_alloy',
-      'color': 0x39ccc2,
+      'color': 0x11b861,
       'type': 'alloy',
-      'tier': 2,
+      'tier': 3,
       'iconset': 'structural',
       'itemParts': ['ingot', 'nugget', 'dust', 'plate', 'rod', 'plating', 'reinforced_plating', 'hull_panel', 'bolt', 'sheet', 'component'],
       'blockParts': ['storage_block', 'casing', 'scaffolding', 'hull_casing', 'frame_box', 'sheetmetal'],
@@ -1348,7 +1351,7 @@ global.newMaterialParts = [
     },
     {
       'material': 'tier_3_structural_alloy',
-      'color': 0x3296e3,
+      'color': 0x096315,
       'type': 'alloy',
       'tier': 5,
       'iconset': 'structural',
@@ -1360,7 +1363,6 @@ global.newMaterialParts = [
       'dust_input': ['3x #forge:dusts/tier_2_structural_alloy','2x #forge:dusts/tungsten','mekanism:hdpe_sheet'],
       'ingot_input': ['3x #forge:ingots/tier_2_structural_alloy','2x #forge:ingots/tungsten', 'mekanism:hdpe_sheet'],
     },
-
 
 
 
@@ -1732,6 +1734,18 @@ global.newMaterialParts = [
       'itemParts': [],
       'blockParts': [],
       'ore': false
+    },
+    {
+      'material': 'fluix',
+      'gem': true,
+      'color': 0x6d168a,
+      'type': 'gem',
+      'iconset': 'quartz',
+      'itemParts': [],
+      'blockParts': [],
+      'ore': false,
+      'fluid': 'thick',
+      'fluid_id': 'kubejs:molten_fluix',
     },
     ]
     

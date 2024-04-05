@@ -1068,8 +1068,8 @@
 					tag: {
 						BlockEntityTag: {
 							TankInv: [{
-								FluidName: "minecraft:empty"
 								Tank: 0b
+								FluidName: "minecraft:empty"
 								Capacity: 32000
 								Amount: 0
 							}]
@@ -1170,14 +1170,14 @@
 			dependencies: ["03F754FB73DEF8FA"]
 			id: "423438726B049430"
 			tasks: [{
-				id: "7315D08B27B4B4F0"
+				id: "14928AF1C2A1F06C"
 				type: "item"
-				title: "Compound Ore Grit"
+				title: "Compond Ore Fragments"
 				item: {
 					id: "itemfilters:tag"
 					Count: 1b
 					tag: {
-						value: "forge:ores/compound/grit"
+						value: "forge:ores/compound/fragment"
 					}
 				}
 			}]
@@ -1191,6 +1191,7 @@
 				"{image:kubejs:textures/quests/ore_sample.png width:119 height:82 align:1}"
 			]
 			dependencies: ["423438726B049430"]
+			progression_mode: "flexible"
 			id: "71F53411D675017F"
 			tasks: [{
 				id: "00466F8C8935B4C3"

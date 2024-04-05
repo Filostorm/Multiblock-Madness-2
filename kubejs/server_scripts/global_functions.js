@@ -182,9 +182,7 @@ global.tinkersAlloying = (event, outputFluid, amount, inputFluids, temperature, 
 			fluid: fluid,
 			amount: fluidAmount
 		  },
-		  {
-			tag: input
-		  }
+		  Item.of(input).toJson()
 		],
 		result: outputItem,
 	}).id(ID)}

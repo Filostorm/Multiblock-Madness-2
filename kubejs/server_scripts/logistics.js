@@ -23,7 +23,7 @@ onEvent('recipes', event => {
 		'BSB',
 		'PPP'
   	], {
-		P: '#forge:plates/duralumin',
+		P: '#forge:plates/cobalt_brass',
 		B: 'thermal:fluid_duct',
 		S: 'thermal:servo_attachment'
   	}).id('mbm2:pipez/fluid_pipe')

@@ -34,15 +34,17 @@ onEvent('recipes', event => {
 
 
 		//Carbon
-		global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 180, [`#forge:dusts/coal_coke`,`#forge:coal_coke`], 900, 20, `mbm2:smeltery/melting/coal_coke_dust`)
+		global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 200, [`#forge:dusts/coal_coke`,`#forge:coal_coke`], 900, 20, `mbm2:smeltery/melting/coal_coke`)
 		//global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 180, `#forge:coal_coke`, 900, 20, `mbm2:smeltery/melting/coal_coke`)
 
-		global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 90, [`#forge:dusts/coal`,`#minecraft:coals`], 900, 20, `mbm2:smeltery/melting/coal_dust`)
+		global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 100, [`#forge:dusts/coal`,`#mbm2:coal`], 900, 20, `mbm2:smeltery/melting/coal`)
+
+		global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 50, [`#forge:dusts/coal`,`#forge:charcoal`], 900, 20, `mbm2:smeltery/melting/charcoal`)
 		//global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 90, `#minecraft:coals`, 900, 20, `mbm2:smeltery/melting/coal`)
 		
 		//Carbon makes graphite
 		event.remove({id: 'biggerreactors:smelting/graphite_ingot'})
-		event.recipes.tconstruct.casting_table('biggerreactors:graphite_ingot', 'kubejs:molten_carbon', 90)
+		event.recipes.tconstruct.casting_table('biggerreactors:graphite_ingot', 'kubejs:molten_carbon', 100)
 		
 
 		//global.tinkersMeltingPlain(event, 'kubejs:molten_carbon', 40, `#forge:charcoal`, 900, 20, `mbm2:smeltery/melting/charcoal`)
@@ -61,8 +63,17 @@ onEvent('recipes', event => {
 		global.tinkersMeltingPlain(event, 'kubejs:molten_luminite', 250, Ingredient.of('#forge:dusts/luminite').toJson(), 900, 80, `mbm2:smeltery/melting/luminite_dust`)
 		global.tinkersMeltingPlain(event, 'kubejs:molten_luminite', 250, Ingredient.of('#forge:gems/luminite').toJson(), 900, 150, `mbm2:smeltery/melting/luminite_gem`)
 		
-		global.casingTable(event, 'tconstruct:casts/multi_use/gem', false, `#forge:gems/luminite`, `forge:molten_luminite`, 90, 60, `mbm2:smeltery/casting/metal/luminite/gem_gold_cast`)
-		global.casingTable(event, 'tconstruct:casts/single_use/gem', true, `#forge:gems/luminite`, `forge:molten_luminite`, 90, 60, `mbm2:smeltery/casting/metal/luminite/gem_sand_cast`)
+		global.casingTable(event, 'tconstruct:casts/multi_use/gem', false, `#forge:gems/luminite`, `forge:molten_luminite`, 250, 60, `mbm2:smeltery/casting/gem/luminite/gem_gold_cast`)
+		global.casingTable(event, 'tconstruct:casts/single_use/gem', true, `#forge:gems/luminite`, `forge:molten_luminite`, 250, 60, `mbm2:smeltery/casting/gem/luminite/gem_sand_cast`)
+
+		//fluix
+		global.tinkersMeltingPlain(event, 'kubejs:molten_fluix', 100, Ingredient.of('#forge:dusts/fluix').toJson(), 900, 80, `mbm2:smeltery/melting/fluix_dust`)
+		global.tinkersMeltingPlain(event, 'kubejs:molten_fluix', 100, Ingredient.of('#forge:gems/fluix').toJson(), 900, 150, `mbm2:smeltery/melting/fluix_gem`)
+		global.tinkersMeltingPlain(event, 'kubejs:molten_fluix', 400, Ingredient.of('ae2:fluix_block').toJson(), 900, 240, `mbm2:smeltery/melting/fluix_blox`)
+		
+		global.casingTable(event, 'tconstruct:casts/multi_use/gem', false, `#forge:gems/fluix`, `forge:molten_fluix`, 100, 60, `mbm2:smeltery/casting/gem/fluix/gem_gold_cast`)
+		global.casingTable(event, 'tconstruct:casts/single_use/gem', true, `#forge:gems/fluix`, `forge:molten_fluix`, 100, 60, `mbm2:smeltery/casting/gem/fluix/gem_sand_cast`)
+		global.casingBasin(event, 'ae2:fluix_block', 'forge:molten_fluix', 400, 100, 'mbm2:smeltery/casting/gem/fluix/block')
 
 		
 		//Round Silver Plate

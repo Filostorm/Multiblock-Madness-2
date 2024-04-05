@@ -1296,6 +1296,7 @@
 		{
 			x: 11.5d
 			y: 7.5d
+			description: ["Can be used for early auto crafting"]
 			dependencies: ["4DE314D64C3E7C9E"]
 			id: "3261DDADEDB91321"
 			tasks: [{
@@ -1303,6 +1304,28 @@
 				type: "item"
 				item: "thermal:machine_crafter"
 			}]
+		}
+		{
+			title: "Automating Charcoal"
+			icon: "minecraft:charcoal"
+			x: 1.0d
+			y: 7.0d
+			description: ["Automating Charcoal"]
+			dependencies: ["1BDAAA788FF99E75"]
+			min_required_tasks: 1
+			id: "029683AB689F2019"
+			tasks: [
+				{
+					id: "1D21B65CFECDEEC5"
+					type: "item"
+					item: "minecraft:charcoal"
+					count: 1000L
+				}
+				{
+					id: "086C29A018EFCF38"
+					type: "checkmark"
+				}
+			]
 		}
 	]
 	quest_links: [ ]

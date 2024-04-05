@@ -231,6 +231,8 @@ powahToSwap.forEach(machine => {
   
 event.replaceInput({id: 'powah:energizing/energized_steel'}, '#forge:ingots/iron', '#forge:ingots/steel')
 
+//Energized Steel Block
+global.powahEnergizing(event, [Item.of('#forge:storage_blocks/steel').toJson(), Item.of('#forge:storage_blocks/gold').toJson()],Item.of('powah:energized_steel_block'),2, 90000, 'mbm2:powah/energized_steel_block')
 
 // [| magmator_basic |] //
 event.shaped('powah:magmator_basic', [

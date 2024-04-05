@@ -137,6 +137,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 		  ], {
 			F: Item.of(`#forge:ores/fragment/${item.material}`)
 		  }).id(`mbm2:${item.material}_fragment_merge`)
+		  event.shapeless(`4x #forge:ores/fragment/${item.material}`, [`#forge:ores/raw/${item.material}`]).id(`mbm2:${item.material}_fragment_split`)
 		}
 	  
 			
@@ -213,10 +214,10 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 			//Make some dust
 			if (Item.of(`#forge:dusts/${item.material}`) != null) {
 				//Washed Ore
-				if (Item.of(`#forge:ores/washed/${item.material}`) != null) {
-				//event.recipes.immersiveengineeringCrusher(`#forge:dusts/${item.material}`, `#forge:ores/washed/${item.material}`).id(`mbm2:immersive/crushing/washed_${item.material}`)
-				event.recipes.createMilling([`#forge:dusts/${item.material}`], [`#forge:ores/washed/${item.material}`]).id(`mbm2:create/crushing/washed_${item.material}`)
-				event.recipes.mekanismCrushing(`#forge:dusts/${item.material}`, `#forge:ores/washed/${item.material}`).id(`mbm2:mekanism/crushing/washed_${item.material}`)
+				if (Item.of(`#forge:ores/pure/${item.material}`) != null) {
+				//event.recipes.immersiveengineeringCrusher(`#forge:dusts/${item.material}`, `#forge:ores/pure/${item.material}`).id(`mbm2:immersive/crushing/pure_${item.material}`)
+				event.recipes.createMilling([`#forge:dusts/${item.material}`], [`#forge:ores/pure/${item.material}`]).id(`mbm2:create/crushing/pure_${item.material}`)
+				event.recipes.mekanismCrushing(`#forge:dusts/${item.material}`, `#forge:ores/pure/${item.material}`).id(`mbm2:mekanism/crushing/pure_${item.material}`)
 				}
 				//Crush Smetable Ore
 				if (refineProcessedOre != null) {
@@ -296,7 +297,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				.inputItem(`#forge:ores/chunk/${item.material}`)
 				.outputItem(Item.of(`#forge:ores/lump/${item.material}`))
 				.setChance(0.25)
-				.outputItem(Item.of(byproduct('washed', 3)))
+				.outputItem(Item.of(byproduct('pure', 3)))
 				.setChance(1)
 				.outputFluid(Fluid.of('kubejs:sludge', 250))
 				.setPerTick(true)
@@ -427,11 +428,18 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 
 				///////////////////// ORE REFINING STEP 1 //////////////////
 					//Create Washing 
-					event.recipes.createSplashing([`${global.refiningMultiplier[1]}x #forge:ores/washed/${item.material}`, Item.of('gravel').withChance(0.50)], `#mbm2:ore_part/refinable_tier_1/${item.material}`/*refinableOre(1) in tag form because washing is spechlae*/).id(`mbm2:washing/${item.material}`)
+					event.recipes.createSplashing([`#forge:dusts/${item.material}`, Item.of(`#forge:ores/grit/${item.material}`).withChance(0.25), Item.of('gravel').withChance(0.25)], `#mbm2:ore_part/refinable_tier_1/${item.material}`/*refinableOre(1) in tag form because washing is spechlae*/).id(`mbm2:washing/${item.material}`)
 					
 					//Chain recipe
-					event.recipes.createSplashing([`#forge:ores/washed/${item.material}`], `#forge:ores/${global.oreRefiningParts[2].name}/${item.material}`).id(`mbm2:washing/${global.oreRefiningParts[2].name}_ore_${item.material}`)
-							
+					//event.recipes.createSplashing([`#forge:ores/washed/${item.material}`], `#forge:ores/${global.oreRefiningParts[2].name}/${item.material}`).id(`mbm2:washing/${global.oreRefiningParts[2].name}_ore_${item.material}`)
+					
+	  				//Purifing
+					let pureOre = Item.of(`#forge:ores/pure/${item.material}`).toString().split("'")[1]
+	  				global.arsImbuement(event, pureOre, global.refiningMultiplier[1], `#mbm2:ore_part/refinable_tier_1/${item.material}`, 2000, [{"item": {"item": 'ars_nouveau:glyph_crush'}},{"item": Item.of('elementalcraft:scroll', '{elementalcraft:{spell:"elementalcraft:purification"}}').toJson()},{"item": {"item": 'elementalcraft:pristine_earth_gem'}}], `mbm2:purifing/${item.material}`)
+					
+					//Chain recipe
+					global.arsImbuement(event, pureOre, 1, `#forge:ores/${global.oreRefiningParts[2].name}/${item.material}`, 500, [{"item": {"item": 'ars_nouveau:glyph_crush'}},{"item": Item.of('elementalcraft:scroll', '{elementalcraft:{spell:"elementalcraft:purification"}}').toJson()},{"item": {"item": 'elementalcraft:pristine_earth_gem'}}], `mbm2:purifing/${global.oreRefiningParts[2].name}_ore_${item.material}`)
+					
 
 				///////////////////// ORE REFINING STEP 2 //////////////////
 			
@@ -1060,7 +1068,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				//Gem Crafting
 				if (item.gem_components != null) {
 					if (Item.of(`#forge:gems/${item.gem_components[0]}`) != null) {
-						global.thermalCrystallizer(event, 'water', 2000, Item.of(`#forge:gems/${item.gem_components[0]}`).toResultJson(), `forge:dusts/${item.material}`, `mbm2:crystallizer/${item.gem_components[0]}_from_${item.material}`)
+						global.thermalCrystallizer(event, 'water', 2000, Item.of(`#forge:gems/${item.gem_components[0]}`).toResultJson(), `#forge:dusts/${item.material}`, `mbm2:crystallizer/${item.gem_components[0]}_from_${item.material}`)
 						} else {
 						console.log(`${item.gem_components[0]} has no gem!`);
 					}

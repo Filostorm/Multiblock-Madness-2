@@ -136,13 +136,13 @@ onEvent('item.registry', event => {
 	event.create('coal_chunk').burnTime(200)
 
 	
-	event.create(`washed_thermogenic_blend`).color(0, 0xf06330).texture(`kubejs:item/ore/washed`)
+	event.create(`pure_thermogenic_blend`).color(0, 0xf06330).texture(`kubejs:item/ore/pure`)
 	event.create(`crushed_thermogenic_blend`).color(0, 0xf06330).texture(`kubejs:item/ore/crushed`)
 	event.create(`fine_thermogenic_blend_dust`).color(0, 0xf06330).texture(`kubejs:item/ore/fine_dust`)
 	event.create(`thermogenic_blend_chunk`).color(0, 0xf06330).texture(`kubejs:item/ore/chunk`).parentModel(`kubejs:item/ore/chunk`) 
 	event.create(`thermogenic_blend_crystal`).color(0, 0xf06330).texture(`kubejs:item/ore/crystal`).parentModel(`kubejs:item/ore/crystal`) 
 
-	event.create(`washed_thermolytic_blend`).color(0, 0x42f5da).texture(`kubejs:item/ore/washed`)
+	event.create(`pure_thermolytic_blend`).color(0, 0x42f5da).texture(`kubejs:item/ore/pure`)
 	event.create(`crushed_thermolytic_blend`).color(0, 0x42f5da).texture(`kubejs:item/ore/crushed`)
 	event.create(`fine_thermolytic_blend_dust`).color(0, 0x42f5da).texture(`kubejs:item/ore/fine_dust`)
 	event.create(`thermolytic_blend_chunk`).color(0, 0x42f5da).texture(`kubejs:item/ore/chunk`).parentModel(`kubejs:item/ore/chunk`) 

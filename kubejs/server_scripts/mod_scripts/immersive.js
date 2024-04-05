@@ -379,6 +379,11 @@ event.recipes.immersiveengineeringArcFurnace([outputs], input, [additives], slag
 		//		"item":"minecraft:stripped_acacia_log"
 		//	}
 		//})
-
+    let lights =['engineersdecor:iron_floor_edge_light', 'engineersdecor:iron_ceiling_edge_light', 'engineersdecor:iron_inset_light', 'engineersdecor:iron_bulb_light']
+    lights.forEach(lightIn => {
+      lights.forEach(lightOut => {
+        event.stonecutting(lightOut, lightIn)
+      })
+    });
 
 });

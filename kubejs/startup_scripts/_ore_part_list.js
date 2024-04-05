@@ -60,8 +60,8 @@ global.oreRefiningParts = [
         'level': 0,
     },
     {
-        'name': `washed`,
-        'prefix': `Washed `,
+        'name': `pure`,
+        'prefix': `Purified `,
         'suffix': ``,
         'model': false,
         'level': 1,

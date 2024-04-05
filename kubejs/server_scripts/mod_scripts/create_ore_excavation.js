@@ -31,7 +31,7 @@ onEvent('recipes', event => {
 			const veinName = materialNameUpper + ' Vein'
 			
 			//.charAt(0).toUpperCase()
-			event.recipes.createoreexcavation.drilling([Item.of(`#forge:raw_materials/${item.material}`), Item.of(`#forge:ores/grit/${item.material}`).withChance(0.25)], `{"text": "${veinName}"}`, 75, 200).id(`mbm2:drilling/${item.material}_vein`);
+			event.recipes.createoreexcavation.drilling([Item.of(`#forge:raw_materials/${item.material}`), Item.of(`#forge:ores/grit/${item.material}`).withChance(0.10)], `{"text": "${veinName}"}`, 75, 200).id(`mbm2:drilling/${item.material}_vein`);
 		}
 	})
 	//Coal vein with 5% chance for diamond and require a diamond drill and lava for drilling

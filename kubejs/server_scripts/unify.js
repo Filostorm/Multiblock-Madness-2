@@ -42,6 +42,7 @@ var removeByName = [
 	'minecraft:netherite_ingot',
 	//'tconstruct:smeltery/melting/ender/pearl'
 	//'allomancy:pewter_ingot_from_alloying',
+	'createaddition:mixing/bioethanol',
 ]
 
 onEvent('recipes', event => {

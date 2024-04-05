@@ -199,7 +199,7 @@ onEvent('recipes', event => {
 
 		  if (item.fluid_id != null) {
 		  	//Sheetmetal Casting
-	  		//global.casingBasinCast(event, 'forge:sheetmetal_cast', false, `#forge:sheetmetals/${item.material}`, `forge:molten_${item.material}`, 90, 80, `mbm2:smeltery/casting/metal/${item.material}/sheetmetal`)
+	  		global.casingBasinCast(event, 'forge:sheetmetal_cast', false, `#forge:sheetmetals/${item.material}`, `forge:molten_${item.material}`, 90, 80, `mbm2:smeltery/casting/metal/${item.material}/sheetmetal`)
 		  }
 		}
 	}

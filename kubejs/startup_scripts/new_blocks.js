@@ -67,6 +67,8 @@ onEvent('block.registry', event => {
 
 	event.create('arcane_sand', 'falling').displayName('Arcane Sand').hardness(1).resistance(1).tagBlock('minecraft:mineable/shovel').material('sand')
 
+	event.create(`reflector`).material('metal').hardness(0.5).resistance(0.5).tagBlock('minecraft:mineable/pickaxe').renderType('cutout').defaultCutout().model(`kubejs:block/reflector`).fullBlock(false).notSolid().box(0,0,0,16,8,16, true)
+
 });
 
 onEvent('tags.items', event => {

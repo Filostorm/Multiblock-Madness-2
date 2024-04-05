@@ -5,6 +5,8 @@ onEvent('tags.items', event => {
 onEvent('recipes', event => {
 
 	let recipesToRemove = [
+		'create:compat/ae2/mixing/fluix_crystal',
+
 		'ae2things:cells/disk_drive_1k',
 		'ae2:network/cells/item_storage_cell_1k',
 		'ae2:network/cells/fluid_storage_cell_1k',
@@ -128,11 +130,6 @@ onEvent('recipes', event => {
   event.remove({output: 'ae2:annihilation_core'})
   global.ieBlueprint(event, 'components', Item.of(`ae2:annihilation_core`), [{item: `ae2:logic_processor`}, {item: 'ae2:fluix_crystal'}, {count:2, base_ingredient:  {tag: 'forge:wires/electrum'}}], `mbm2:immersive/annihilation_core`)
 
-
-//Thermal Quartz
-  global.thermalCrystallizer(event, 'water', 2000, Item.of('ae2:certus_quartz_crystal').toResultJson(), 'forge:dusts/certus_quartz', `mbm2:crystallizer/certus_quartz_from_dust`)
-  global.thermalCrystallizer(event, 'water', 2000, Item.of('ae2:fluix_crystal').toResultJson(), 'forge:dusts/fluix', `mbm2:crystallizer/fluix_from_dust`)
-  //global.thermalCrystallizer(event, 'water', 2000, Item.of('ae2:certus_quartz_crystal').toResultJson(), 'forge:seeds/certus_quartz', `mbm2:crystallizer/certus_quartz_from_seed`)
 
 //Fluix alt recipe
  event.recipes.createMixing(['4x ae2:fluix_crystal'], [Fluid.of('immersiveengineering:redstone_acid', 250), '#forge:gems/quartz', 'ae2:charged_certus_quartz_crystal']).id('mbm2:mixing/fluix_crystal')
@@ -277,11 +274,11 @@ onEvent('recipes', event => {
 	  'FEA',
 	  'PGP'
 	], {
-	  P: '#forge:platings/energetic_alloy',
+	  P: '#forge:platings/cobalt_brass',
 	  A: 'ae2:annihilation_core',
 	  F: 'ae2:formation_core',
 	  Q: 'immersiveengineering:component_electronic',
-	  E: '#forge:scaffoldings/cobalt',
+	  E: '#forge:scaffoldings/fluix_steel',
 	  G: 'ae2:quartz_glass',
 	}).id('mbm2:interface')
 	
@@ -289,7 +286,7 @@ onEvent('recipes', event => {
 	//Pattern Provider
 	event.remove({id: 'ae2:network/blocks/pattern_providers_interface'})
 	//Early Recipe
-	//event.shaped('ae2:pattern_provider', ['ABA','CDC','ABA'], {A: '#forge:plates/tier_1_electrical_alloy',B: 'ae2:quartz_glass',C: 'kubejs:charged_coil',D: '#forge:scaffoldings/energetic_alloy'}).id('mbm2:pattern_provider')
+	//event.shaped('ae2:pattern_provider', ['ABA','CDC','ABA'], {A: '#forge:plates/tier_1_electrical_alloy',B: 'ae2:quartz_glass',C: 'kubejs:charged_coil',D: '#forge:frame_boxs/energetic_alloy'}).id('mbm2:pattern_provider')
 	//Alt Recipe
 	event.shaped('ae2:pattern_provider', [
 	  'PEP',
@@ -300,7 +297,7 @@ onEvent('recipes', event => {
 	  //A: 'ae2:annihilation_core',
 	  F: 'ae2:formation_core',
 	  Q: 'ae2:quartz_glass',
-	  C: '#forge:scaffoldings/cobalt',
+	  C: '#forge:scaffoldings/fluix_steel',
 	  E: 'immersiveengineering:component_electronic_adv'
 	}).id('mbm2:alt_pattern_provider')
 	
@@ -476,5 +473,11 @@ onEvent('recipes', event => {
 	  //crystal_processing_quartz_growth_accelerator
 	  event.replaceInput({id: 'ae2:network/blocks/crystal_processing_quartz_growth_accelerator'}, '#forge:ingots/iron', '#forge:platings/cobalt')
 
+	//Thermal Quartz
+	global.thermalCrystallizer(event, 'water', 2000, Item.of('ae2:certus_quartz_crystal').toResultJson(), '#forge:dusts/certus_quartz', `mbm2:crystallizer/certus_quartz_from_dust`)
+	global.thermalCrystallizer(event, 'water', 2000, Item.of('ae2:fluix_crystal').toResultJson(), '#forge:dusts/fluix', `mbm2:crystallizer/fluix_from_dust`)
+
+	global.thermalCrystallizer(event, 'water', 2000, Item.of(`#forge:gems/fluix`).toResultJson(), 'ae2:fluix_crystal_seed', `mbm2:crystallizer/growing_fluix`)
+	global.thermalCrystallizer(event, 'water', 2000, Item.of(`#forge:gems/certus_quartz`).toResultJson(), 'ae2:certus_crystal_seed', `mbm2:crystallizer/growing_certus`)
 
 });

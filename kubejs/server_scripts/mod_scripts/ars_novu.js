@@ -53,7 +53,10 @@ onEvent('recipes', event => {
 	  //Ritual Brazier
 	  event.shaped('ars_nouveau:ritual_brazier', ['ABA','CDC','CEC'], {A: '#forge:ingots/infused_mithril',B: 'ars_nouveau:source_gem_block',C: 'naturesaura:tainted_gold',D: 'ars_nouveau:arcane_pedestal',E: 'ars_nouveau:arcane_stone'}).id('ars_nouveau:ritual_brazier')
 	  //Arcane Pedestal
-	  event.shaped('ars_nouveau:arcane_pedestal', ['ABA','CAC','CAC'], {A: 'ars_nouveau:arcane_stone',B: 'ars_nouveau:source_gem',C: '#forge:ingots/swift_alloy'}).id('ars_nouveau:arcane_pedestal')
+	  event.shaped('ars_nouveau:arcane_pedestal', [
+		' B ',
+		'ACA',
+		'ACA'], {A: 'ars_nouveau:arcane_stone',B: 'ars_nouveau:source_gem',C: ['#forge:ingots/swift_alloy','#forge:ingots/auric_gold']}).id('ars_nouveau:arcane_pedestal')
 
 	  //Gilb wing
 	global.elementalcraftInfusion(event, Item.of('phantom_membrane'), Item.of('ars_nouveau:wilden_wing'), 'earth', 1000, 'mbm2:infusion/wilden_wing')

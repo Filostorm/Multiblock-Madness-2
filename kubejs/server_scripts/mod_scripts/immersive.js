@@ -200,6 +200,31 @@ event.shaped('3x immersiveengineering:treated_scaffold', [
       })
       */
     
+	//Living Metal Seed
+	global.naturesauraAltar(event, 'kubejs:living_metal_seed', 'kubejs:metal_seed', 'kubejs:overgrown_light_engineering_block', 'overworld', 7500, 200, 'mbm2:altar/living_metal_seed')
+	
+	event.custom({
+		"type": "thermal:crystallizer",
+		"ingredients": [
+		  {
+			"fluid": 'kubejs:molten_tier_1_magical_alloy',
+			"amount": 900
+		  },
+		  {
+			"item": 'ars_nouveau:magebloom_crop'
+		  },
+		  {
+			"item": 'kubejs:catalyst_gem'
+		  }
+		],
+		"result": [
+		  {
+			"item": "kubejs:metal_seed",
+			"count": 1
+		  }
+		]
+	  }).id(`mbm2:crystallizer/metal_seed`)
+
 
 //Heavy Engineering
 	event.remove({id: 'immersiveengineering:crafting/heavy_engineering'})
@@ -208,8 +233,8 @@ event.shaped('2x immersiveengineering:heavy_engineering', [
   'PDP',
   'CBC'
     ], {
-  B: 'thermal:obsidian_glass',
-  C: '#forge:components/industrial_alloy',
+  B: '#forge:bolts/tier_1_structural_alloy', //'thermal:obsidian_glass',
+  C: '#forge:platings/industrial_alloy',
   P: 'thermal:invar_gear',
   D: 'kubejs:living_metal_seed'
     }).id('mbm2:immersiveengineering/heavy_engineering')

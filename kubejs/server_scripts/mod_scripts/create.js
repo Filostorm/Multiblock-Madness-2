@@ -307,9 +307,6 @@ event.shaped('create:hose_pulley', [
 	//Blazing Blood
 	event.recipes.createMixing([Fluid.of('tconstruct:blazing_blood', 500)], [Fluid.of('tconstruct:blood', 500), 'blaze_powder']).superheated().id('mbm2:mixing/blazing_blood')
 
-	//ender ingot recipe rework
-	event.recipes.createMixing('extendedcrafting:ender_ingot', [Fluid.of('thermal:ender', 250), '#forge:ingots/graphite']).heated().id('mbm2:mixing/ender_ingot')
-
 	//Rose Quartz
 	event.shapeless('4x create:rose_quartz', ['3x #forge:gems/quartz','thermal:cinnabar']).id(`mbm2:create/rose_quartz_with_cinnabar`)
 

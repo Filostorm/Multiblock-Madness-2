@@ -251,6 +251,7 @@
 		{
 			x: 7.0d
 			y: -2.0d
+			description: ["You can find Edelwood saplings be crushing Leaves."]
 			dependencies: ["20FA1AFF0BD65177"]
 			id: "0C62C2532E374205"
 			tasks: [{

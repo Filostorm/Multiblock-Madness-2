@@ -43,22 +43,6 @@ onEvent('recipes', event => {
 	global.casingBasinCast(event, 'forge:sheetmetals', true, 'kubejs:sheetmetal_cast', 'forge:molten_steel', 180, 200, 'tconstruct:smeltery/casting/sheetmetal_cast')
 
 
-// [| solarflux:mirror |] //
-//event.remove({output: 'solarflux:mirror'})
-event.shaped('3x solarflux:mirror', [
-'BBB',
-'CCC'
-  ], {
-B: '#forge:glass/colorless',
-C: 'thermal:silver_plate'
-  }).id("solarflux:mirror")
-
-  //Tier 1 Solar
-  event.shaped('solarflux:sp_1', ['AAA','BCB','BBB'], {A: 'solarflux:mirror',B: '#forge:treated_wood',C: '#forge:gears/dielectric_alloy'}).id("solarflux:solar_panel_1")
-
-  //Tier 2 Solar
-  event.shaped('solarflux:sp_2', ['AAA','ABA','AAA'], {A: 'solarflux:sp_1',B: 'kubejs:tier_1_electrical_alloy_wire_coil'}).id("solarflux:solar_panel_2")
-
 
 //Chests
 /* need to figure out how to add a plank recipe for every non quark chest material type
@@ -371,5 +355,21 @@ event.shaped('3x kubejs:wood_scaffolding', [
 
 //Darkutils Tome of enchanting
   event.shaped('darkutils:tome_enchanting', [' A ','BCB',' D '], {A: 'ars_nouveau:bookwyrm_charm',B: 'create:experience_nugget',C: 'tombstone:book_of_disenchantment',D: 'thermal:xp_crystal'}).id('mbm2:darkutil_enchant_tome')
+
+
+  //Travel Anchor
+	event.remove({output: 'travel_anchors:travel_anchor'})
+  	event.shaped('travel_anchors:travel_anchor', [
+		'CIC',
+		'IFI',
+		'CIC'
+	 ], {
+		F: 'extendedcrafting:frame',
+		C: '#forge:platings/steel',
+		I: 'extendedcrafting:ender_ingot',
+	 }).id("mbm2:travel_anchor")  
+
+
+
 
 });

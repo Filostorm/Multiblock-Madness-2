@@ -70,7 +70,7 @@ onEvent('recipes', event => {
 	//data_models
 	var dataModelRecipes = [
 		{
-		  'mob': 'skelton',
+		  'mob': 'skeleton',
 		  'drop_item': 'bone',
 		  'second_item': '#forge:platings/iron',
 		},
@@ -102,7 +102,7 @@ onEvent('recipes', event => {
 		},
 		{
 		  'mob': 'blaze',
-		  'drop_item': 'blaze_rod',
+		  'drop_item': 'ars_nouveau:fire_essence',
 		  'second_item': '#forge:platings/steel',
 		},
 		{
@@ -129,17 +129,17 @@ onEvent('recipes', event => {
 
 		{
 		  'mob': 'thermal/blizz',
-		  'drop_item': 'thermal:blizz_rod',
+		  'drop_item': 'ars_nouveau:water_essence',
 		  'second_item': '#forge:platings/steel',
 		},
 		{
 		  'mob': 'thermal/basalz',
-		  'drop_item': 'thermal:basalz_rod',
+		  'drop_item': 'ars_nouveau:earth_essence',
 		  'second_item': '#forge:platings/steel',
 		},
 		{
 		  'mob': 'thermal/blitz',
-		  'drop_item': 'thermal:blitz_rod',
+		  'drop_item': 'ars_nouveau:air_essence',
 		  'second_item': '#forge:platings/steel',
 		},
 	]

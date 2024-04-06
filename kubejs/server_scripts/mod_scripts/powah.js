@@ -44,7 +44,17 @@ onEvent('recipes', event => {
   
 
 	//Dielectric Casing
-	global.compactCrafting(event, 'powah:dielectric_casing', 1, 'createaddition:gold_spool',
+  event.shaped('powah:dielectric_casing', [
+    'SPS',
+    'S S',
+    'SPS'
+    ], {
+    S: 'kubejs:dielectric_alloy_scaffolding',
+    P: '#forge:platings/tier_1_structural_alloy'
+    }).id(`mbm2:dielectric_casing`)
+    
+  
+	global.compactCrafting(event, 'powah:dielectric_casing', 2, 'createaddition:gold_spool',
 	3, [
 	  {
 		  type: 'compactcrafting:mixed',
@@ -79,7 +89,7 @@ onEvent('recipes', event => {
 		type: 'compactcrafting:block',
 		block: 'kubejs:dielectric_alloy_scaffolding'
 	  }
-	},  'mbm2:dielectric_casing')
+	},  'mbm2:dielectric_casing_2x')
 	
 
 
@@ -232,7 +242,7 @@ powahToSwap.forEach(machine => {
 event.replaceInput({id: 'powah:energizing/energized_steel'}, '#forge:ingots/iron', '#forge:ingots/steel')
 
 //Energized Steel Block
-global.powahEnergizing(event, [Item.of('#forge:storage_blocks/steel').toJson(), Item.of('#forge:storage_blocks/gold').toJson()],Item.of('powah:energized_steel_block'),2, 90000, 'mbm2:powah/energized_steel_block')
+global.powahEnergizing(event, [Item.of('#forge:storage_blocks/steel').toJson(), Item.of('#forge:storage_blocks/gold').toJson()],'powah:energized_steel_block',2, 90000, 'mbm2:powah/energized_steel_block')
 
 // [| magmator_basic |] //
 event.shaped('powah:magmator_basic', [

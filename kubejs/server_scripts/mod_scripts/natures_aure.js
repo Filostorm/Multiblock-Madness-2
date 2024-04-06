@@ -134,31 +134,6 @@ event.shaped('3x kubejs:ancient_wood_scaffolding', [
 		Item.of('naturesaura:gold_brick').toJson(),
 	], 'oak_sapling', 500, 'mbm2:tree_ritual/overgrown_engineering')
 
-	//Living Metal Seed
-	global.naturesauraAltar(event, 'kubejs:living_metal_seed', 'kubejs:metal_seed', 'kubejs:overgrown_light_engineering_block', 'overworld', 7500, 200, 'mbm2:altar/living_metal_seed')
-	
-	event.custom({
-		"type": "thermal:crystallizer",
-		"ingredients": [
-		  {
-			"fluid": 'tconstruct:molten_aluminum',
-			"amount": 900
-		  },
-		  {
-			"item": 'ars_nouveau:magebloom_crop'
-		  },
-		  {
-			"item": 'kubejs:catalyst_gem'
-		  }
-		],
-		"result": [
-		  {
-			"item": "kubejs:metal_seed",
-			"count": 1
-		  }
-		]
-	  }).id(`mbm2:crystallizer/metal_seed`)
-
 	  //infused_stone
 	  event.replaceInput({id: 'naturesaura:altar/infused_stone'}, 'minecraft:stone', 'elementalcraft:whiterock')
 });

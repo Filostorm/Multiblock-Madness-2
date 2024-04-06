@@ -586,8 +586,12 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 
 						//Retro Smeltery
 				  	if (item.fluid_id != null) {
+						smeltProcessedOre.forEach((part) => {
+							//Foundry Processing for ores
+							global.tinkersOreMelting(event, 'kubejs:molten_slag', 50,  item.fluid_id, 90, part, 1000, 150, `mbm2:foundry/melting/${part.split(':')[1]}`)
+						})
 						smeltRefinedOre.forEach((part) => {
-							global.tinkersMeltingPlain(event, item.fluid_id, 90, Ingredient.of(part).toJson(), 1000, 75, `mbm2:smeltery/melting/${part.split(':')[1]}`)
+							global.tinkersMeltingPlain(event, item.fluid_id, 90, Ingredient.of(part).toJson(), 900, 75, `mbm2:smeltery/melting/${part.split(':')[1]}`)
 						})
 					}
 

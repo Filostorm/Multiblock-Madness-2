@@ -1,7 +1,5 @@
 
 
-
-
 ///////////////// TINKERS ///////////////////////
 ////CASTING TABLE////
 global.casingTable = (event, cast, consumed, outputItem, inputFluid, amount, cooling, ID) => {
@@ -518,3 +516,12 @@ global.mekanismInfusionConversion = (event, itemInput, infuseOutput, infuseAmoun
 	  }).id(ID)}
 
 ///////////////////////////////////////////////////////////
+
+///////////////// FILLING ///////////////////////
+global.anyFilling = (event, output, inputItem, inputFluid) => {
+	event.recipes.createFilling(output, [inputFluid, inputItem]).id(`mbm2:create/filling/${output.split(':')[1]}`)
+	event.recipes.thermal.bottler(output, [inputItem, inputFluid]).id(`mbm2:thermal/bottling/${output.split(':')[1]}`)
+}
+
+	///////////////////////////////////////////////////////////
+	

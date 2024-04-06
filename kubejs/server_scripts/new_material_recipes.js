@@ -50,7 +50,18 @@ onEvent('recipes', event => {
 
 
 // Industrial_alloy_ingot
-event.shaped('4x kubejs:industrial_alloy_ingot', [
+  event.shaped('4x kubejs:industrial_alloy_ingot', [
+    'AIQ',
+    'IBI',
+    'QIA'
+    ], {
+    B: 'immersiveengineering:biodiesel_bucket',
+    A: 'thermal:cured_rubber', //'mna:bone_ash',
+    Q: 'immersiveengineering:concrete_leaded', //'botania:quartz_dark',
+    I: '#forge:ingots/steel',
+    }).id(`mbm2:industrial_alloy_ingot_4x`)
+  
+event.shaped('2x kubejs:industrial_alloy_ingot', [
 	'AIQ',
 	'IBI',
 	'QIA'
@@ -59,7 +70,7 @@ event.shaped('4x kubejs:industrial_alloy_ingot', [
 	A: 'thermal:cured_rubber', //'mna:bone_ash',
 	Q: 'immersiveengineering:concrete_leaded', //'botania:quartz_dark',
 	I: '#forge:ingots/steel',
-  }).id(`mbm2:industrial_alloy_ingot`)
+  }).id(`mbm2:industrial_alloy_ingot_2x`)
 
 	//Energetic Blend
 	global.powahEnergizing(event, [Item.of('#forge:dusts/glowstone').toJson(), Item.of('#forge:dusts/redstone').toJson()], 'kubejs:energetic_blend', 1,  15000, 'mbm2:powah/energetic_blend')
@@ -146,4 +157,11 @@ event.shaped('kubejs:reactive_blend', [
   global.mekanismInfusionConversion(event, Item.of('chemlib:chitin_dust'), 'kubejs:chitin', 100, 'mbm2:infuse/chitin_from_chitin_dust')
   //global.mekanismMetallurgicInfusing(event, Item.of('kubejs:exoskeleton_compound_ingot'), Item.of('#forge:ingots/adamantine_alloy'), 'mbm2:chitin', 1040, `mbm2:exoskeleton_compound_ingot`)
   event.recipes.mekanismMetallurgicInfusing('kubejs:exoskeleton_composit_ingot', Item.of('#forge:ingots/adamantine_alloy'), {infuse_type: 'kubejs:chitin', amount: 100}).id(`mbm2:exoskeleton_composit_ingot`);
+
+
+	//ender ingot recipe rework
+  global.anyFilling(event, 'extendedcrafting:ender_ingot', '#forge:ingots/graphite', Fluid.of('thermal:ender', 125))
+	//event.recipes.createMixing('extendedcrafting:ender_ingot', [Fluid.of('thermal:ender', 250), '#forge:ingots/graphite']).heated().id('mbm2:mixing/ender_ingot')
+
+
 });

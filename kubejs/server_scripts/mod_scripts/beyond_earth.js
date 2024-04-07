@@ -60,7 +60,7 @@ onEvent('recipes', event => {
 		C: 'compressedcreativity:compressed_iron_casing',
 		U: 'thermal:upgrade_augment_1',
 		E: 'immersiveengineering:component_electronic_adv',
-		R: '#forge:rods/duralumin',
+		R: '#forge:rods/pressurized_aluminum_alloy',
 		P: '#forge:platings/titanium',
 		M: '#forge:interlocking_components/energetic_alloy',
 		G: '#forge:gears/compressed_steel',

@@ -40,6 +40,11 @@ let colors = [
 			W: `#forge:wool/${color}`
 		}).id(`mbm2:${color}_insulated_wire`)
 	});
+//Electrotine
+	global.createCharging(event, Item.of('minecraft:redstone').toJson(), Item.of('projectred_core:electrotine_dust').toJson(), 2000, 'mbm2:electrotine_dust')
+	event.remove({output: 'projectred_core:electrotine_ingot'})
+	event.recipes.createMixing(['projectred_core:electrotine_ingot'], ['4x projectred_core:electrotine_dust', '4x powah:dielectric_paste', '#forge:ingots/tier_1_electrical_alloy']).heated().id('mbm2:mixing/electrotine_ingot')
+
 
 
 });

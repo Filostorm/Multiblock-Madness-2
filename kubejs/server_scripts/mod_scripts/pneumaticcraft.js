@@ -208,6 +208,9 @@ onEvent('recipes', event => {
 		E: 'immersiveengineering:component_electronic_adv',
 	  }).id('mbm2:rotational_compressor')
 
+//Pneumatic Dynamo
+	event.remove({output: 'pneumaticcraft:pneumatic_dynamo'})
+	event.shaped('pneumaticcraft:pneumatic_dynamo', [' A ','BCB','DED'], {A: 'pneumaticcraft:advanced_pressure_tube',B: 'pneumaticcraft:compressed_iron_gear',C: 'pneumaticcraft:printed_circuit_board',D: 'pneumaticcraft:ingot_iron_compressed',E: 'kubejs:dynamo_frame'}).id('mbm2:pneumatic_dynamo')
 
 
 });

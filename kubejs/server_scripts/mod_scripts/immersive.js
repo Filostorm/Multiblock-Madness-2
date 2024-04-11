@@ -410,5 +410,13 @@ event.recipes.immersiveengineeringArcFurnace([outputs], input, [additives], slag
         event.stonecutting(lightOut, lightIn)
       })
     });
-
+    event.remove({output: 'immersiveengineering:capacitor_lv'})
+    event.shaped('immersiveengineering:capacitor_lv', ['ABA','CDC','ABA'],
+     {A: 'immersiveengineering:treated_wood_horizontal',B: 'kubejs:battery_alloy_plating',C: 'kubejs:tier_1_electrical_alloy_wire_coil',D: 'immersiveengineering:redstone_acid_bucket'}).id('mbm2:crafting/capacitor_lv')
+    event.remove({output: 'immersiveengineering:capacitor_mv'})
+    event.shaped('immersiveengineering:capacitor_mv', ['ABA','CDC','AEA'],
+     {A: 'immersiveengineering:treated_wood_horizontal',B: 'kubejs:nickel_plating',C: '#forge:storage_blocks/steel',D: 'immersiveengineering:capacitor_lv',E: 'kubejs:iron_plating'}).id('mbm2:crafting/capacitor_mv')
+    event.remove({output: 'immersiveengineering:capacitor_hv'})
+    event.shaped('immersiveengineering:capacitor_hv', ['ABA','CDC','AEA'],
+     {A: 'immersiveengineering:treated_wood_horizontal',B: 'kubejs:aluminum_plating',C: '#forge:storage_blocks/steel',D: 'immersiveengineering:capacitor_mv',E: 'immersiveengineering:ingot_hop_graphite'}).id('mbm2:crafting/capacitor_hv')
 });

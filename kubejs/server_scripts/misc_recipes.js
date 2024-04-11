@@ -142,6 +142,9 @@ event.shaped('3x kubejs:wood_scaffolding', [
 
 	//Piston not racist anymore
 	event.replaceInput({id: 'minecraft:piston'}, 'cobblestone', '#forge:cobblestone')
+	//Sticky Piston
+	let glue = Item.of('create:super_glue').ignoreNBT()
+	event.shapeless(`sticky_piston`, [glue,'piston']).id(`mbm2:super_sticky_piston`).damageIngredient(glue).keepIngredient(glue)
   
 	//So, you made an extra Metal Mind
 	//global.tinkersMeltingPlain(event, 'tconstruct:molten_iron', 720, Item.of('feruchemy:metal_mind').toJson(), 750, 142, `mbm2:smeltery/melting/metalmind`)

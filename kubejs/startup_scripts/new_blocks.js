@@ -69,7 +69,7 @@ onEvent('block.registry', event => {
 
 	event.create(`reflector`).material('metal').hardness(1).resistance(1).tagBlock('minecraft:mineable/pickaxe').renderType('cutout').defaultCutout().model(`kubejs:block/reflector`).fullBlock(false).notSolid().box(0,0,0,16,8,16, true)
 
-	event.create(`incomplete_dynamo`).material('metal').hardness(1).resistance(1).tagBlock('minecraft:mineable/pickaxe').renderType('cutout').defaultCutout().model(`kubejs:block/incomplete_dynamo`).color(0, 0x76b090).item(itemForm => {itemForm.color(0, 0x76b090)}).fullBlock(false).notSolid().box(0,0,0,16,15,16, true)
+	event.create(`dynamo_frame`).material('metal').hardness(1).resistance(1).tagBlock('minecraft:mineable/pickaxe').renderType('cutout').defaultCutout().model(`kubejs:block/incomplete_dynamo`).color(0, 0x76b090).item(itemForm => {itemForm.color(0, 0x76b090)}).fullBlock(false).notSolid().box(0,0,0,16,15,16, true)
 	
 
 });

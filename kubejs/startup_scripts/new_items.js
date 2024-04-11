@@ -159,4 +159,6 @@ onEvent('item.registry', event => {
 	event.create(`catalyst_empty`).displayName('Empty Catalyst Housing')
 	
 	event.create(`water_filter`).unstackable()
+
+	event.create('bottled_magic').glow(true)
   });

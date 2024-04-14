@@ -435,10 +435,10 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 					
 	  				//Purifing
 					let pureOre = Item.of(`#forge:ores/pure/${item.material}`).toString().split("'")[1]
-	  				global.arsImbuement(event, pureOre, global.refiningMultiplier[1], `#mbm2:ore_part/refinable_tier_1/${item.material}`, 2000, [{"item": {"item": 'ars_nouveau:glyph_crush'}},{"item": Item.of('elementalcraft:scroll', '{elementalcraft:{spell:"elementalcraft:purification"}}').toJson()},{"item": {"item": 'elementalcraft:pristine_earth_gem'}}], `mbm2:purifing/${item.material}`)
+	  				global.arsImbuement(event, pureOre, global.refiningMultiplier[1], `#mbm2:ore_part/refinable_tier_1/${item.material}`, 1000, [{"item": {"item": 'ars_nouveau:glyph_crush'}},{"item": Item.of('elementalcraft:scroll', '{elementalcraft:{spell:"elementalcraft:purification"}}').toJson()},{"item": {"item": 'elementalcraft:pristine_earth_gem'}}], `mbm2:purifing/${item.material}`)
 					
 					//Chain recipe
-					global.arsImbuement(event, pureOre, 1, `#forge:ores/${global.oreRefiningParts[2].name}/${item.material}`, 500, [{"item": {"item": 'ars_nouveau:glyph_crush'}},{"item": Item.of('elementalcraft:scroll', '{elementalcraft:{spell:"elementalcraft:purification"}}').toJson()},{"item": {"item": 'elementalcraft:pristine_earth_gem'}}], `mbm2:purifing/${global.oreRefiningParts[2].name}_ore_${item.material}`)
+					global.arsImbuement(event, pureOre, 1, `#forge:ores/${global.oreRefiningParts[2].name}/${item.material}`, 250, [{"item": {"item": 'ars_nouveau:glyph_crush'}},{"item": Item.of('elementalcraft:scroll', '{elementalcraft:{spell:"elementalcraft:purification"}}').toJson()},{"item": {"item": 'elementalcraft:pristine_earth_gem'}}], `mbm2:purifing/${global.oreRefiningParts[2].name}_ore_${item.material}`)
 					
 
 				///////////////////// ORE REFINING STEP 2 //////////////////

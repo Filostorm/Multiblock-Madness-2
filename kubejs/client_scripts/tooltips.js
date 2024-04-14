@@ -27,7 +27,6 @@ var mods = [
 	'chemlib',
 	'biggerreactors',
 	'beyond_earth',
-	'extendedcrafting',
 	'elementalcraft',
 	'lazierae2'
 ]

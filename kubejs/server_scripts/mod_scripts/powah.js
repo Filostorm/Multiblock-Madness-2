@@ -298,7 +298,7 @@ D: 'minecraft:furnace'
 
     //Nitro Crystal
     event.remove({id: 'powah:energizing/nitro_crystal'})
-    global.powahEnergizing(event, [Item.of('powah:spirited_crystal_block').toJson(), Item.of('powah:niotic_crystal_block').toJson(), Item.of('powah:blazing_crystal_block').toJson(), Item.of('kubejs:wixie_shard_block').toJson(), Item.of('kubejs:lithium_plating').toJson(), Item.of('beyond_earth:calorite_block').toJson()], 'powah:nitro_crystal_block', 20000000, 1,  'mbm2:powah/nitro_crystal')
+    global.powahEnergizing(event, [Item.of('powah:spirited_crystal_block').toJson(), Item.of('powah:niotic_crystal_block').toJson(), Item.of('powah:blazing_crystal_block').toJson(), Item.of('kubejs:wixie_shard_block').toJson(), Item.of('kubejs:lithium_plating').toJson(), Item.of('beyond_earth:calorite_block').toJson()], 'powah:nitro_crystal_block', 1, 20000000,  'mbm2:powah/nitro_crystal')
 
 
 
@@ -314,5 +314,8 @@ event.shaped('powah:energizing_rod_basic', [
   C: 'powah:capacitor_basic_large',
   R: 'powah:dielectric_rod'
   }).id("mbm2:crafting/energizing_rod_basic")
+
+//Uranium Block to Uranite Block
+  global.powahEnergizing(event, [Item.of('#forge:storage_blocks/uranium').toJson()], 'powah:uraninite_block', 1,  270000, 'mbm2:powah/uranite_block')
     
 });

@@ -43,6 +43,8 @@ var removeByName = [
 	//'tconstruct:smeltery/melting/ender/pearl'
 	//'allomancy:pewter_ingot_from_alloying',
 	'createaddition:mixing/bioethanol',
+	'extendedcrafting:black_iron_ingot',
+	'createaddition:compacting/seed_oil',
 ]
 
 onEvent('recipes', event => {

@@ -418,7 +418,7 @@ global.powahEnergizing = (event, itemInput, itemOutput, amount, energy, ID) => {
 	}
 
 ///////////////////////////////////////////////////////////
-///////////////// ENERGIZING ///////////////////////
+///////////////// BINDING ///////////////////////
 
 global.elementalcraftBinding = (event, element_type, element_amount, itemOutput, itemInput, ID) => {
 event.custom({
@@ -523,5 +523,53 @@ global.anyFilling = (event, output, inputItem, inputFluid) => {
 	event.recipes.thermal.bottler(output, [inputItem, inputFluid]).id(`mbm2:thermal/bottling/${output.split(':')[1]}`)
 }
 
-	///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+
+///////////////// ENCHANTING APPARATUS ////////////////////
+global.arsEnchantment = (event, outputItem, inputItem, pedestals, source, ID, keepInputNbt) => {
+	keepInputNbt = keepInputNbt || false
+	let pedestalHolder = []
+	pedestals.forEach(
+		itemOnPedestal => {
+			pedestalHolder.push({
+				"item": itemOnPedestal.toJson()
+			})
+		}
+	)
+	event.custom({
+		"type": "ars_nouveau:enchanting_apparatus",
+		"reagent": [
+			inputItem.toJson()
+		  ],
+		"pedestalItems": pedestalHolder,
+		"output": outputItem.toJson(),
+		"sourceCost": source,
+		"keepNbtOfReagent": keepInputNbt
+	}).id(ID)
+	
+}
+///////////////////////////////////////////////////////////////////////////////
+
+//////////////////HEXEREI MIXING CAULDRON///////////////////////
+global.mixingCauldron = (event, output, inputs, inputFluid, outputFluid, mbConsumed, ID) => {
+	event.custom({
+		type: 'hexerei:mixingcauldron',
+		liquid: {fluid: inputFluid},
+		ingredients: inputs,
+		output: output.toJson(),
+		liquidOutput: {fluid: outputFluid},
+		fluidLevelsConsumed: mbConsumed
+	}).id(ID)
+}
+//////////////////////////////////////////////////////////////////////////////
+
+//////////////////CREATE C&A CHARGING/////////////////////////
+global.createCharging = (event, input, output, energy, ID) => {
+	event.custom({
+		type:'createaddition:charging',
+		input: input,
+		result: output,
+		energy: energy
+	}).id(ID)
+}
 	

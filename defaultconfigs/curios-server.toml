@@ -2,4 +2,13 @@
 #List of curio slot type settings
 [[curiosSettings]]
 	identifier = "metal_mind"
+ [[curiosSettings]]
+	identifier = "feet"
+	size = 2
+[[curiosSettings]]
+	identifier = "charm"
+	size = 2
+[[curiosSettings]]
+	identifier = "head"
+	size = 2
 

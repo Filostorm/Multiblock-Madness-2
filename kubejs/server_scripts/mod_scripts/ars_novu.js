@@ -70,5 +70,36 @@ onEvent('recipes', event => {
 	event.shapeless('9x ars_nouveau:starbuncle_shards', ['kubejs:starbuncle_shard_block']).id('mbm2:starbuncle_block_to_shards')
 	event.shapeless('9x ars_nouveau:whirlisprig_shards', ['kubejs:whirlisprig_shard_block']).id('mbm2:whirlisprig_block_to_shards')
 	event.shapeless('9x ars_nouveau:wixie_shards', ['kubejs:wixie_shard_block']).id('mbm2:wixie_block_to_shards')
+
+	//Blank Glyph
+	event.shaped('4x ars_nouveau:blank_glyph', [' A ','ABA',' A '], {A: 'ars_nouveau:conjuration_essence',B: 'ars_nouveau:blank_parchment'}).id('mbm2:blank_glyph')
+
+	//Automatable Dispel Glyph
+	global.arsEnchantment(event, Item.of('ars_nouveau:glyph_dispel'), Item.of('ars_nouveau:blank_glyph'), [Item.of('ars_nouveau:abjuration_essence'), Item.of('minecraft:milk_bucket'), Item.of('minecraft:milk_bucket'), Item.of('minecraft:milk_bucket')], 50, 'mbm2:dispel_glyph', true)
+
+	//Automatable Wixie Shards
+	event.custom({
+		"type": "thermal:crystallizer",
+		"ingredients": [
+		  {
+			"fluid": 'kubejs:liquid_source',
+			"amount": 4000
+		  },
+		  {
+			"item": 'ars_nouveau:glyph_dispel',
+			"count": 2
+		  },
+		  {
+			"item": 'kubejs:bottled_magic',
+			"count": 1
+		  }
+		],
+		"result": [
+		  {
+			"item": "ars_nouveau:wixie_shards",
+			"count": 2
+		  }
+		]
+	  }).id(`mbm2:crystallizer/hnn_wixie_shard`)
 	
 });

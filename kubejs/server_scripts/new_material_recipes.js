@@ -1,3 +1,15 @@
+
+
+onEvent('tags.items', event => {
+	//debris tag for potion
+	event.add(`forge:ingots`, 'extendedcrafting:black_iron_ingot')
+	event.add(`forge:ingots/black_iron`, 'extendedcrafting:black_iron_ingot')
+	event.add(`forge:nuggets`, 'extendedcrafting:black_iron_nugget')
+	event.add(`forge:nuggets/black_iron`, 'extendedcrafting:black_iron_nugget')
+	event.add(`forge:storage_blocks`, 'extendedcrafting:black_iron_block')
+	event.add(`forge:storage_blocks/black_iron`, 'extendedcrafting:black_iron_block')
+
+ });
 onEvent('recipes', event => {
 	
 
@@ -163,5 +175,14 @@ event.shaped('kubejs:reactive_blend', [
   global.anyFilling(event, 'extendedcrafting:ender_ingot', '#forge:ingots/graphite', Fluid.of('thermal:ender', 125))
 	//event.recipes.createMixing('extendedcrafting:ender_ingot', [Fluid.of('thermal:ender', 250), '#forge:ingots/graphite']).heated().id('mbm2:mixing/ender_ingot')
 
+  //crystalized_alloy
+  event.recipes.multiblocked.multiblock('mixer')
+  .inputItems('4x #forge:dusts/illuminated_menril', '#forge:dusts/signalum') //,'#forge:fine_dusts/rune'
+  .inputFluid(Fluid.of('integrateddynamics:menril_resin', 1000))
+  .outputItem(Item.of('#forge:dusts/crystalized_alloy'))
+  .setPerTick(true)
+  .inputFE(2000*8)
+  .duration(100)
+  
 
 });

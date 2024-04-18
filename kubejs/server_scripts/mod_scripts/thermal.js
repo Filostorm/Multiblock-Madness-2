@@ -346,5 +346,54 @@ event.custom({
 	],
 	"experience": 0.15
   }).id('mbm2:pyrolyzer/logs')
+
+//Dynamos
+event.remove({output: 'thermal:dynamo_compression'})
+event.shaped('thermal:dynamo_compression', [' A ','BCB','DED'], {A: 'thermal:rf_coil',B: 'kubejs:dielectric_alloy_ingot',C: 'thermal:bronze_gear',D: 'thermal:bronze_ingot',E: 'kubejs:dynamo_frame'}).id('mbm2:compression_dynamo')
+event.remove({output: 'thermal:dynamo_numismatic'})
+event.shaped('thermal:dynamo_numismatic', [' A ','BCB','DED'], {A: 'thermal:rf_coil',B: 'kubejs:dielectric_alloy_ingot',C: 'thermal:tin_gear',D: 'thermal:constantan_ingot',E: 'kubejs:dynamo_frame'}).id('mbm2:numismatic_dynamo')
+event.remove({output: 'thermal:dynamo_lapidary'})
+event.shaped('thermal:dynamo_lapidary', [' A ','BCB','DED'], {A: 'thermal:rf_coil',B: 'kubejs:dielectric_alloy_ingot',C: 'thermal:gold_gear',D: 'minecraft:lapis_lazuli',E: 'kubejs:dynamo_frame'}).id('mbm2:lapidary_dynamo')
+event.remove({output: 'thermal:dynamo_disenchantment'})
+event.shaped('thermal:dynamo_disenchantment', [' A ','BCB','DED'], {A: 'thermal:rf_coil',B: 'kubejs:dielectric_alloy_ingot',C: 'thermal:silver_gear',D: 'minecraft:experience_bottle',E: 'kubejs:dynamo_frame'}).id('mbm2:disenchantment_dynamo')
+event.remove({output: 'thermal:dynamo_gourmand'})
+event.shaped('thermal:dynamo_gourmand', [' A ','BCB','DED'], {A: 'thermal:rf_coil',B: 'kubejs:dielectric_alloy_ingot',C: 'thermal:copper_gear',D: 'thermal:tin_ingot',E: 'kubejs:dynamo_frame'}).id('mbm2:gourmand_dynamo')
+//Dynamo Frame miniaturization
+global.compactCrafting(event, 'kubejs:dynamo_frame', 1, 'kubejs:tier_1_mechanical_alloy_gear',
+	3, [
+	  {
+	  type: 'compactcrafting:mixed',
+	  pattern: [
+		['-','-','-'],
+		['-','C','-'],
+		['-','-','-']
+	  ]
+	  },
+	  {
+	  type: 'compactcrafting:mixed',
+	  pattern: [
+		['S','S','S'],
+		['S','C','S'],
+		['S','S','S']
+	  ]
+	  },
+	  {
+	  type: 'compactcrafting:mixed',
+	  pattern: [
+		['S','S','S'],
+		['S','S','S'],
+		['S','S','S']
+	  ]
+	  }
+	  ], {
+	  'C': {
+		type: 'compactcrafting:block',
+		block: 'extendedcrafting:redstone_ingot_block'
+	  },
+	  'S': {
+		type: 'compactcrafting:block',
+		block: 'kubejs:tier_1_structural_alloy_scaffolding'
+	  }
+	},  'mbm2:dynamo_frame')
 });
 

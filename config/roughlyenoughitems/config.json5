@@ -7,26 +7,19 @@
 			"{id:\"ftbquests:quests\",json:'{\"group\":\"ftblibrary:info\",\"icon\":\"ftbquests:item/book\",\"x\":610,\"click\":\"ftbquests:open_gui\",\"required_server_mods\":[\"ftbquests\"],\"custom_text\":true}',type:\"ftblibrary:sidebar_button\"}",
 			"{id:\"ftbessentials:trash_can\",json:'{\"group\":\"ftblibrary:util\",\"icon\":\"ftblibrary:icons/bin\",\"x\":150,\"click\":\"command:/trashcan\",\"required_server_mods\":[\"ftbessentials\"]}',type:\"ftblibrary:sidebar_button\"}",
 			"{id:\"ftbchunks:chunks\",json:'{\"group\":\"ftblibrary:util\",\"icon\":\"ftblibrary:icons/map\",\"x\":310,\"click\":\"ftbchunks:open_gui\"}',type:\"ftblibrary:sidebar_button\"}",
-			"{data:{Count:1b,id:\"immersiveengineering:heavy_engineering\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
-			"{data:{Count:1b,id:\"travel_anchors:travel_anchor\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
-			"{data:{Count:1b,id:\"hostilenetworks:data_model\",tag:{data_model:{data:6,id:\"hostilenetworks:enderman\"}},type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
-			"{data:{Amount:1000,FluidName:\"pneumaticcraft:vegetable_oil\",type:\"minecraft:fluid\"},type:\"roughlyenoughitems:entry_stack\"}",
-			"{data:{Amount:1000,FluidName:\"pneumaticcraft:ethanol\",type:\"minecraft:fluid\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"elementalcraft:growthshrine\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
 			"{data:{Count:1b,id:\"immersiveengineering:radiator\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"ae2:interface\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
 			"{data:{Count:1b,id:\"immersiveengineering:generator\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
-			"{data:{Count:1b,id:\"powah:energy_cable_basic\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
-			"{data:{Count:1b,id:\"ae2:energy_acceptor\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
-			"{data:{Count:1b,id:\"ae2:storage_bus\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
-			"{data:{Count:1b,id:\"sophisticatedstorage:advanced_pickup_upgrade\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
-			"{data:{Count:1b,id:\"minecraft:sticky_piston\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
-			"{data:{Count:1b,id:\"minecraft:piston\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
-			"{data:{Count:1b,id:\"immersiveengineering:cloche\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
-			"{data:{Count:1b,id:\"botania:travel_belt\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}"
+			"{data:{Count:1b,id:\"powah:capacitor_blazing\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"powah:crystal_blazing\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"reliquary:molten_core\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"ars_nouveau:ritual_awakening\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+			"{data:{Count:1b,id:\"ars_nouveau:manipulation_essence\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}"
 		],
 		"hiddenFavorites": [],
 		"displayHistory": [
-			"{DisplayHistoryCategory:\"immersiveengineering:arcfurnace\",DisplayHistoryContains:1b,DisplayHistoryData:{JEISerializer:\"immersiveengineering:arc_furnace\",data:\"AQGwVgIAAAAAAAMBAbYFAQACAAAAAQEB+S0BAAAAAAECAfs1AQABmjkBAAAAAABkAADIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\",id:\"mbm2:arc_furnace/tier_1_electrical_alloy_alloying\"},DisplayHistoryUUID:\"505b997c-36a8-4a30-b8bc-80c419e94247\"}",
-			"{DisplayHistoryCategory:\"create:mechanical_crafting\",DisplayHistoryContains:1b,DisplayHistoryData:{JEISerializer:\"create:mechanical_crafting\",data:\"BQQAAAABAbw7AQAAAAABAdItAQABAcmAAQEAAQHSLQEAAAEB0i0BAAEByYABAQABAfJDAQABAcmAAQEAAQHSLQEAAAEB0i0BAAEBu4ABAQABAdItAQAAAa2AAQEAAQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\",id:\"createaddition:mechanical_crafting/alternator\"},DisplayHistoryUUID:\"01d55df2-2662-4ac6-abe6-8ee79247014a\"}",
+			"{DisplayHistoryCategory:\"elementalcraft:binding\",DisplayHistoryContains:1b,DisplayHistoryData:{JEISerializer:\"elementalcraft:binding\",data:\"A2FpcgAABOIBhzkBAAUBAbgFAQABAYU5AQABAbYFAQABAckEAQABAZU5AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==\",id:\"elementalcraft:binding/swift_alloy_ingot\"},DisplayHistoryUUID:\"4f285b78-60c3-478a-9eac-79e7ebcbcb34\"}",
 			"{DisplayHistoryCategory:\"multiblocked:multiblock_info\",DisplayHistoryContains:0b,DisplayHistoryUUID:\"048f7c40-691d-420c-b9f6-4890227548c0\"}",
 			"{DisplayHistoryCategory:\"multiblocked:multiblock_info\",DisplayHistoryContains:0b,DisplayHistoryUUID:\"1749c1cc-a77c-406b-976b-8a14f6bb5d77\"}",
 			"{DisplayHistoryCategory:\"multiblocked:multiblock_info\",DisplayHistoryContains:0b,DisplayHistoryUUID:\"a99272c3-ea21-4d91-9e59-4748e9b8fe0e\"}",
@@ -89,7 +82,8 @@
 			"shouldFilterDisplays": true,
 			"filteringRules": [
 				"{id:\"roughlyenoughitems:manual\",rule:{}}",
-				"{id:\"roughlyenoughitems:basic\",rule:{}}"
+				"{id:\"roughlyenoughitems:basic\",rule:{}}",
+				"{id:\"roughlyenoughitems:hidden_from_recipe_viewers\",rule:{}}"
 			],
 			"filteringQuickCraftCategories": { },
 			"filteredStacks": [

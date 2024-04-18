@@ -372,6 +372,16 @@ event.shaped('3x kubejs:wood_scaffolding', [
 		I: 'extendedcrafting:ender_ingot',
 	 }).id("mbm2:travel_anchor")  
 
+	 //Molten Core
+	 event.shaped('4x reliquary:molten_core', [
+		'BBB',
+		'BRB',
+		'BBB'
+	  ], {
+		R: 'ars_nouveau:ritual_awakening',
+		B: 'minecraft:blaze_powder',
+	  }).id("mbm2:crafting/molten_core")
+	  global.tinkersMeltingPlain(event, 'tconstruct:blazing_blood', 250, Ingredient.of('reliquary:molten_core').toJson(), 900, 240, `mbm2:smeltery/melting/molten_core`)
 
 
 

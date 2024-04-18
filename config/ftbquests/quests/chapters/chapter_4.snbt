@@ -1840,6 +1840,17 @@
 				}
 			]
 		}
+		{
+			x: 10.0d
+			y: 3.0d
+			dependencies: ["627B714B402BEE67"]
+			id: "5380AA7BAC513908"
+			tasks: [{
+				id: "4DB6CEA0FAB83514"
+				type: "item"
+				item: "kubejs:pyrotheum_dust"
+			}]
+		}
 	]
 	quest_links: [ ]
 }

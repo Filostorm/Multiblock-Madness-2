@@ -12,6 +12,7 @@ onEvent('recipes', event => {
 	//blazing Quartz
 	event.remove({id: 'botania:quartz_blaze'})
 	event.recipes.tconstruct.casting_table('botania:quartz_blaze', 'tconstruct:blazing_blood', 25).cast('minecraft:quartz').consumeCast().coolingTime(80).id(`mbm2:casting/quartz_blaze`)
+	event.recipes.tconstruct.casting_table('botania:quartz_blaze', 'kubejs:blazing_pyrotheum', 25).cast('minecraft:quartz').consumeCast().coolingTime(80).id(`mbm2:casting/quartz_blaze/blazing_pyrotheum`)
     event.replaceInput({id: 'lazierae2:compat/botania/infuser/quartz_blaze'}, 'minecraft:blaze_powder', 'minecraft:blaze_rod')
 	
 	//Apothecary

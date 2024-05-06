@@ -68,6 +68,7 @@ var basicItems = [
 	'living_metal_seed',
 	'metal_seed',
 	'shaped_fluix_crystal',
+	'dimensional_mote',
 ]
 
 global.transitionalItems = [

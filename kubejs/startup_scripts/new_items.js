@@ -161,4 +161,5 @@ onEvent('item.registry', event => {
 	event.create(`water_filter`).unstackable()
 
 	event.create('bottled_magic').glow(true)
+	event.create('gavel_polish').unstackable().maxDamage(4)
   });

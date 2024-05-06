@@ -57,7 +57,7 @@ onEvent('recipes', event => {
   	}).id('mbm2:hardened_tank')
 
 	//Charging Quartz wioth Powah
-	global.powahEnergizing(event, [Item.of('ae2:certus_quartz_crystal').toJson()], 'ae2:charged_certus_quartz_crystal', 1,  25000, 'mbm2:powah/charged_quartz')
+	global.powahEnergizing(event, [Item.of('ae2:certus_quartz_crystal').toJson()], Item.of('ae2:charged_certus_quartz_crystal'), 25000, 'mbm2:powah/charged_quartz')
 
 
   // Printed Silicon

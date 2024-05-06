@@ -1,0 +1,16 @@
+{
+  "type": "powah:energizing",
+  "ingredients": [
+	{
+	  "tag": "forge:storage_blocks/steel"
+	},
+	{
+	  "item": "minecraft:gold_block"
+	}
+  ],
+  "energy": 90000,
+  "result": {
+	"item": "powah:energized_steel_block",
+	"count": 2
+  }
+}

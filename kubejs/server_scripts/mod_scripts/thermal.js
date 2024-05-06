@@ -275,7 +275,7 @@ event.smelting('kubejs:quicksilver', 'thermal:cinnabar')
 event.shaped('thermal:device_hive_extractor', [' A ','BCB',' D '], {A: 'littlelogistics:fluid_hopper',B: 'create:cogwheel',C: 'create:andesite_casing',D: 'engineersdecor:factory_hopper'}).id(`mbm2:hive_hopper`)
 
 //Charged Coil
-global.powahEnergizing(event, [Item.of('thermal:rf_coil').toJson()], 'kubejs:charged_coil', 1,  25000, 'mbm2:charged_coil')
+global.powahEnergizing(event, [Item.of('thermal:rf_coil').toJson()], Item.of('kubejs:charged_coil'), 25000, 'mbm2:charged_coil')
 
 //Extruder
 event.remove({output: 'thermal:device_rock_gen'})

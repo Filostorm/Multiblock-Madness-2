@@ -136,6 +136,13 @@ event.shaped('3x kubejs:ancient_wood_scaffolding', [
 
 	  //infused_stone
 	  event.replaceInput({id: 'naturesaura:altar/infused_stone'}, 'minecraft:stone', 'elementalcraft:whiterock')
+//Dimensional Rails
+	event.remove({output: 'naturesaura:dimension_rail_nether'})
+	event.shaped('naturesaura:dimension_rail_nether', ['ABA','CDC','AEA'], {A: '#forge:bolts/tainted_gold',B: 'naturesaura:token_terror',C: '#forge:plates/tainted_gold',D: 'minecraft:rail',E: Item.of('naturesaura:aura_bottle', '{stored_type:"naturesaura:nether"}')}).id('mbm2:naturesaura_rail_nether')
+	event.remove({output: 'naturesaura:dimension_rail_end'})
+	event.shaped('naturesaura:dimension_rail_end', ['ABA','CDC','AEA'], {A: '#forge:bolts/sky_metal',B: 'naturesaura:token_rage',C: '#forge:plates/sky_metal',D: 'minecraft:rail',E: Item.of('naturesaura:aura_bottle', '{stored_type:"naturesaura:end"}')}).id('mbm2:naturesaura_rail_end')
+	event.remove({output: 'naturesaura:dimension_rail_overworld'})
+	event.shaped('naturesaura:dimension_rail_overworld', ['ABA','CDC','AEA'], {A: '#forge:bolts/infused_mithril',B: 'naturesaura:token_euphoria',C: '#forge:plates/infused_mithril',D: 'minecraft:rail',E: Item.of('naturesaura:aura_bottle', '{stored_type:"naturesaura:overworld"}')}).id('mbm2:naturesaura_rail_overworld')
 });
 
 

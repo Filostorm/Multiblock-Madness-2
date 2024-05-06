@@ -1554,7 +1554,7 @@ global.newMaterialParts = [
       'material': 'infused_mithril',
       'color': 0x54b33b,
       'type': 'magic_alloy',
-      'itemParts': ['plate', 'gear', 'rod'],
+      'itemParts': ['plate', 'gear', 'rod', 'dust', 'bolt'],
       'blockParts': [],
       'fluid': 'thick',
       'fluid_id': 'kubejs:molten_infused_mithril',
@@ -1563,15 +1563,19 @@ global.newMaterialParts = [
       'material': 'tainted_gold',
       'color': 0xa66032,
       'type': 'magic_alloy',
-      'itemParts': ['plate', 'gear', 'rod', 'dust'],
-      'blockParts': []
+      'itemParts': ['plate', 'gear', 'rod', 'dust', 'bolt'],
+      'blockParts': [],
+      'fluid': 'thick',
+      'fluid_id': 'kubejs:molten_tainted_gold'
     },
     {
       'material': 'sky_metal',
       'color': 0x83d5de,
       'type': 'magic_alloy',
-      'itemParts': ['plate', 'gear', 'rod'],
-      'blockParts': ['storage_block']
+      'itemParts': ['plate', 'gear', 'rod', 'dust', 'bolt'],
+      'blockParts': ['storage_block'],
+      'fluid': 'thick',
+      'fluid_id': 'kubejs:molten_sky_metal'
     },
     {
       'material': 'air',

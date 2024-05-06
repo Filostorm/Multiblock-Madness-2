@@ -79,4 +79,40 @@ onEvent('recipes', event => {
 		console.log(sacrifice) 
 		return sacrifice
 	})*/
+	//Gavel Polish
+	event.recipes.multiblocked.multiblock('mixer')
+    .inputItems('#forge:gems/sulfur', 'forbidden_arcanus:wax', '#forge:ores/fine_dust/arcanite', 'gag:sacred_salve')
+	.inputFluid(Fluid.of('thermal:resin', 4000))
+    .outputItem(`kubejs:gavel_polish`)
+    .setPerTick(true)
+    .inputFE(2000)
+    .duration(200)
+
+	//Gavel polishing
+	var gavelTypes = {
+		'wooden':1,
+		'stone':3,
+		'golden':2,
+		'iron':10,
+		'diamond':30,
+		'netherite':60,
+		'arcane_golden':15,
+		'reinforced_arcane_golden':80
+	}
+	Object.entries(gavelTypes).forEach(([material, max_uses]) => {
+		event.shapeless(Item.of(`forbidden_arcanus:${material}_blacksmith_gavel`, `{RemainingRitualUses:${max_uses}}`), [
+			Item.of(`forbidden_arcanus:${material}_blacksmith_gavel`).ignoreNBT(),
+			Item.of('kubejs:gavel_polish').ignoreNBT(),
+			'forbidden_arcanus:cloth'
+		])
+		.damageIngredient(Item.of('kubejs:gavel_polish').ignoreNBT())
+		.modifyResult((grid, result) => {
+			let gavel = grid.find(Item.of(`forbidden_arcanus:${material}_blacksmith_gavel`).ignoreNBT())
+			if (gavel.nbt == null) return result
+			let nbt = gavel.nbt
+			nbt.RemainingRitualUses = max_uses
+			return result.withNBT(nbt)
+		  })
+		.id(`mbm2:polish_gavel_${material}`)
+	})
 });

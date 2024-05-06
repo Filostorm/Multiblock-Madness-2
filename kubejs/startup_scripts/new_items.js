@@ -69,6 +69,7 @@ var basicItems = [
 	'living_metal_seed',
 	'metal_seed',
 	'shaped_fluix_crystal',
+	'dimensional_mote',
 ]
 
 global.transitionalItems = [
@@ -162,4 +163,5 @@ onEvent('item.registry', event => {
 	event.create(`water_filter`).unstackable()
 
 	event.create('bottled_magic').glow(true)
+	event.create('gavel_polish').unstackable().maxDamage(4)
   });

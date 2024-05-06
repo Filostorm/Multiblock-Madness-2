@@ -273,7 +273,7 @@ event.shaped('3x kubejs:wood_scaffolding', [
 
 
 //Static Cloud
-  global.powahEnergizing(event, [Item.of('cloudstorage:cloud').toJson()], 'cloudstorage:static_cloud', 1, 25000, 'mbm2:cloudstorage/static_cloud')
+  global.powahEnergizing(event, [Item.of('cloudstorage:cloud').toJson()], Item.of('cloudstorage:static_cloud'), 25000, 'mbm2:cloudstorage/static_cloud')
 
 //Arcane Sand
   event.shapeless('8x kubejs:arcane_sand', ['forbidden_arcanus:arcane_crystal_dust_speck', '#forge:sand', '#forge:sand', '#forge:sand', '#forge:sand', '#forge:sand', '#forge:sand', '#forge:sand', '#forge:sand']).id('mbm2:arcane_sand')

@@ -586,12 +586,12 @@
 				{
 					id: "552F36CFC2175A89"
 					type: "item"
-					item: "kubejs:washed_chromium"
+					item: "kubejs:pure_chromium"
 				}
 				{
 					id: "6420E5A4867108E7"
 					type: "item"
-					item: "kubejs:washed_manganese"
+					item: "kubejs:pure_manganese"
 				}
 			]
 		}

@@ -1387,8 +1387,8 @@ global.newMaterialParts = [
       'fluid_id': 'kubejs:molten_tier_2_electrical_alloy',
       'fluid': 'thick',
       'amount': 2,
-      'dust_input': ['3x #forge:dusts/tier_1_electrical_alloy','2x #forge:dusts/amethest_bronze','#forge:dusts/uranium','immersiveengineering:component_electronic'],
-      'ingot_input': ['3x #forge:ingots/tier_1_electrical_alloy','2x #forge:ingots/amethest_bronze', '#forge:ingots/uranium','immersiveengineering:component_electronic'],
+      'dust_input': ['3x #forge:dusts/tier_1_electrical_alloy','2x #forge:dusts/amethyst_bronze','#forge:dusts/uranium','immersiveengineering:component_electronic'],
+      'ingot_input': ['3x #forge:ingots/tier_1_electrical_alloy','2x #forge:ingots/amethyst_bronze', '#forge:ingots/uranium','immersiveengineering:component_electronic'],
     },
     {
       'material': 'tier_2_structural_alloy',

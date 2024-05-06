@@ -59,6 +59,7 @@ var basicItems = [
 	'unfinished_advanced_control_circuit',
 	'unfinished_elite_control_circuit',
 	'unfinished_ultimate_control_circuit',
+	'unfinished_logic_unit',
 	'titanium_plated_obsidian',
 	'bolt_mold',
 	'resonating_dust',

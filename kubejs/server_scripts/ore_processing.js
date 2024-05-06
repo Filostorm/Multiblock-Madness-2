@@ -1357,3 +1357,56 @@ onEvent("lootjs", (event) => {
 		}
 	})
  });
+
+
+ onEvent('server.datapack.low_priority', event => {
+    global.newMaterialParts.forEach((item) => {
+        var  refinableOre = (tier) => {
+            let refinableOres = []
+            global.oreParts.forEach((part) => {
+                //processing has grade, refining has level
+                if(part.grade >= tier && part.grade >= item.tier-1) {
+                    refinableOres.push(`#forge:ores/${part.name}/${item.material}`)
+                }
+            })
+            return refinableOres
+        }
+        refinableOre(5).forEach((part) => {
+        
+        var logvar = {
+            "inputs": [
+                {
+                    "item": "minecraft:dragon_breath",
+                    "slot": 0
+                },
+                {
+                    "item": "minecraft:shulker_shell",
+                    "slot": 1
+                },
+                {
+                    "item": "minecraft:netherite_ingot",
+                    "slot": 2
+                },
+                {
+                    "item": "minecraft:dirt",
+                    "slot": 4
+                }
+            ],
+            "hephaestus_forge_item": Ingredient.of(part).itemIds[0],
+            "essences": {
+                "aureal": 75,
+                "experience": 80,
+                "blood": 2000,
+                "souls": 1
+            },
+            "result": {
+                "item": `kubejs:${global.oreRefiningParts[5].name}_${item.material}`,
+                "count": 32
+            }
+        }
+        event.addJson(`forbidden_arcanus:hephaestus_forge/rituals/${item.material}/${part.split('/')[1]}`, logvar
+        )
+        console.log(logvar)
+    })
+    })
+})

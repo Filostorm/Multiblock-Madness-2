@@ -396,6 +396,21 @@ onEvent('recipes', event => {
 
     
 
+	//4k Storage Component
+	event.remove({id: 'ae2:network/cells/item_storage_components_cell_4k_part'})
+	event.shaped('ae2:cell_component_4k', [
+	  'SPS',
+	  'KQK',
+	  'SKS'
+	], {
+		Q: 'ae2:quartz_glass',
+		S: '#forge:plates/tier_1_electrical_alloy',
+		P: 'ae2:calculation_processor',
+		K: 'ae2:cell_component_1k'
+	}).id('mbm2:cell_component_4k')
+
+    
+
 	//Resonating Crystal
 	global.mekanismMetallurgicInfusing(event, Item.of('lazierae2:resonating_crystal'), Item.of('kubejs:resonating_dust'), 'mekanism:diamond', 20, `mbm2:infusing/resonating_crystal`)
 	
@@ -479,5 +494,19 @@ onEvent('recipes', event => {
 
 	global.thermalCrystallizer(event, 'water', 2000, Item.of(`#forge:gems/fluix`).toResultJson(), 'ae2:fluix_crystal_seed', `mbm2:crystallizer/growing_fluix`)
 	global.thermalCrystallizer(event, 'water', 2000, Item.of(`#forge:gems/certus_quartz`).toResultJson(), 'ae2:certus_crystal_seed', `mbm2:crystallizer/growing_certus`)
+
+	//logic_unit
+	event.remove({output: 'lazierae2:logic_unit'})
+	event.shaped('kubejs:unfinished_logic_unit', ['ABA','CCC'], {A: 'pneumaticcraft:plastic',B: 'ae2:logic_processor',C: 'kubejs:fluix_steel_plate'}).id(`mbm2:unfinished_logic_unit`)
+	global.AssemblyLaser(event, 'lazierae2:logic_unit', `kubejs:unfinished_logic_unit`, `mbm2:finished_logic_unit`)
+
+	//crystal_growth
+	event.remove({output: 'ae2things:crystal_growth'})
+	event.shaped('ae2things:crystal_growth', ['ABA','CDC','AEA'], {A: 'kubejs:titanium_plated_obsidian',B: 'minecraft:hopper',C: 'thermal:obsidian_glass',D: 'lazierae2:growth_core',E: 'ae2:fluix_glass_cable'}).id(`mbm2:crystal_growth`)
+	//aggregator
+	event.remove({output: 'lazierae2:aggregator'})
+	event.shaped('lazierae2:aggregator', ['ABA','CDC','EFE'], {A: 'lazierae2:fluix_steel_ingot',B: 'ae2:charger',C: 'lazierae2:parallel_processor',D: 'lazierae2:logic_unit',E: 'ae2:dense_energy_cell',F: 'ae2things:crystal_growth'}).id(`mbm2:aggregator`)
+	
+
 
 });

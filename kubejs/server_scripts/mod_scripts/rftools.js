@@ -49,4 +49,10 @@ global.compactCrafting(event, 'rftoolsbase:machine_frame', 1, 'projectred_core:s
 	  block: 'thermal:sapphire_block'
 	}
   },  'mbm2:rftools_frame')
+
+//New Dimensional Shard recipe
+event.remove({id: 'rftoolsbase:dimensionalshard'})
+global.arsImbuement(event, 'kubejs:dimensional_mote', 1, 'botania:quartz_mana', 1500, [{"item": {"item": "naturesaura:dimension_rail_overworld"}}, {"item": {"item": "naturesaura:dimension_rail_nether"}}, {"item": {"item": "naturesaura:dimension_rail_end"}}], 'mbm2:dimensional_mote')
+global.arsEnchantment(event, Item.of('rftoolsbase:dimensionalshard'), Item.of('kubejs:dimensional_mote'), [Item.of('#forge:ingots/infused_mithril'), Item.of('#forge:ingots/sky_metal'), Item.of('minecraft:shroomlight'), Item.of('minecraft:glow_berries'), Item.of('minecraft:chorus_flower'), Item.of('#forge:ingots/tainted_gold')], 200, 'mbm2:rftools_dimensional_shard', false)
+
 })

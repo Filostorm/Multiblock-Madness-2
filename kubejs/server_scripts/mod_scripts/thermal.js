@@ -358,15 +358,16 @@ event.remove({output: 'thermal:dynamo_disenchantment'})
 event.shaped('thermal:dynamo_disenchantment', [' A ','BCB','DED'], {A: 'thermal:rf_coil',B: 'kubejs:dielectric_alloy_ingot',C: 'thermal:silver_gear',D: 'minecraft:experience_bottle',E: 'kubejs:dynamo_frame'}).id('mbm2:disenchantment_dynamo')
 event.remove({output: 'thermal:dynamo_gourmand'})
 event.shaped('thermal:dynamo_gourmand', [' A ','BCB','DED'], {A: 'thermal:rf_coil',B: 'kubejs:dielectric_alloy_ingot',C: 'thermal:copper_gear',D: 'thermal:tin_ingot',E: 'kubejs:dynamo_frame'}).id('mbm2:gourmand_dynamo')
+
 //Dynamo Frame miniaturization
-global.compactCrafting(event, 'kubejs:dynamo_frame', 1, 'kubejs:tier_1_mechanical_alloy_gear',
+global.compactCrafting(event, 'kubejs:dynamo_frame', 2, 'kubejs:tier_1_mechanical_alloy_gear',
 	3, [
 	  {
 	  type: 'compactcrafting:mixed',
 	  pattern: [
-		['-','-','-'],
-		['-','C','-'],
-		['-','-','-']
+		['H','H','H'],
+		['H','C','H'],
+		['H','H','H']
 	  ]
 	  },
 	  {
@@ -393,7 +394,22 @@ global.compactCrafting(event, 'kubejs:dynamo_frame', 1, 'kubejs:tier_1_mechanica
 	  'S': {
 		type: 'compactcrafting:block',
 		block: 'kubejs:tier_1_structural_alloy_scaffolding'
+	  },
+	  'H': {
+		type: 'compactcrafting:block',
+		block: 'thermal:obsidian_glass'
 	  }
-	},  'mbm2:dynamo_frame')
+	},  'mbm2:dynamo_frame_3d')
+event.shaped('kubejs:dynamo_frame', ['ABA','CBC','DCD'], {A: 'thermal:obsidian_glass',B: 'extendedcrafting:redstone_ingot_block',C: 'kubejs:tier_1_structural_alloy_scaffolding',D: 'kubejs:tier_1_structural_alloy_casing'}).id('mbm2:crafting/dynamo_frame')
+
+//Induction Smelter
+event.remove({output: 'thermal:machine_smelter'})
+event.shaped('thermal:machine_smelter', ['ABA','CDC','AEA'], {A: 'mekanism:induction_casing',B: 'engineersdecor:small_mineral_smelter',C: 'kubejs:tier_2_electrical_alloy_wire_coil',D: 'thermal:machine_frame',E: 'kubejs:charged_coil'}).id('mbm2:crafting/induction_smelter')
+
+//Blitz, Blizz, Basalz artifical dust recipe
+event.recipes.createMixing(['thermal:blitz_powder'], [Fluid.of('pneumaticcraft:memory_essence', 1000), '2x ars_nouveau:air_essence', '4x minecraft:glowstone_dust']).id(`mbm2:mixing/artifical_blitz`)
+event.recipes.createMixing(['thermal:blizz_powder'], [Fluid.of('pneumaticcraft:memory_essence', 1000), '2x ars_nouveau:water_essence', '4x minecraft:snowball']).id(`mbm2:mixing/artifical_blizz`)
+event.recipes.createMixing(['thermal:basalz_powder'], [Fluid.of('pneumaticcraft:memory_essence', 1000), '2x ars_nouveau:earth_essence', '4x create:powdered_obsidian']).id(`mbm2:mixing/artifical_basalz`)
+	
 });
 

@@ -160,6 +160,17 @@ onEvent('item.tooltip', tooltip => {
 	tooltip.addAdvanced('forbidden_arcanus:blood_test_tube', (item, advanced, text) => {
 		text.add(1, [Text.red('Filled With Blood By Hitting Mobs With The '), Text.gold('Mystical Dagger')])
 	})
+	tooltip.addAdvanced('summoningrituals:altar', (item, advanced, text) => {
+		text.add(1, [Text.of('Look At The "Useful Things" Chapter To See What Can Be Summoned').aqua()])
+	})
+	
+	//Summoning Altar
+	let summonable =['thermal:basalz_spawn_egg', 'naturalist:firefly_spawn_egg', 'thermal:blizz_spawn_egg', 'thermal:blitz_spawn_egg', 'artifacts:mimic_spawn_egg', 'minecraft:elder_guardian_spawn_egg', 'minecraft:blaze_spawn_egg', 'minecraft:phantom_spawn_egg']
+	summonable.forEach(spawnegg => {
+		tooltip.addAdvanced(`${spawnegg}`, (item, advanced, text) => {
+			text.add(1, [Text.of('Can Be Summoned At The Summoning Altar').darkGreen()])
+		})
+	})
 	
 	//ae2additions
 	var ae2aLoaded = Platform.isLoaded('ae2additions');

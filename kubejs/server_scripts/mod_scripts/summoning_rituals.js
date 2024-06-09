@@ -104,4 +104,62 @@ event.recipes.summoningrituals
     .input('minecraft:prismarine_shard')
     .input('minecraft:prismarine_shard')
     .recipeTime(200).id('kubejs:summoning/elder_guardian')
+
+	event.recipes.summoningrituals
+    .altar('forbidden_arcanus:soul')
+    .mobOutput(
+        SummoningOutput.mob('naturalist:firefly')
+            .count(4)
+            .offset(0, 3, 0)
+            .spread(4, 0, 4)
+	)
+    .input('minecraft:torch')
+    .input('minecraft:slime_ball')
+    .input('minecraft:honeycomb')
+    .recipeTime(200).id('kubejs:summoning/4x_firefly')
+
+    event.recipes.summoningrituals
+    .altar('forbidden_arcanus:soul')
+    .mobOutput(
+        SummoningOutput.mob('thermal:blitz')
+            .count(4)
+            .offset(0, 3, 0)
+            .spread(4, 0, 4)
+	)
+    .input('minecraft:glowstone')
+    .input('cloudstorage:static_cloud')
+    .input('elementalcraft:powerful_air_shard')
+    .input('thermal:blitz_powder')
+    .input('ars_nouveau:air_essence')
+    .recipeTime(200).id('kubejs:summoning/4x_blitz')
+
+    event.recipes.summoningrituals
+    .altar('forbidden_arcanus:soul')
+    .mobOutput(
+        SummoningOutput.mob('thermal:blizz')
+            .count(4)
+            .offset(0, 3, 0)
+            .spread(4, 0, 4)
+	)
+    .input('minecraft:snow_block')
+    .input('minecraft:packed_ice')
+    .input('elementalcraft:powerful_water_shard')
+    .input('thermal:blizz_powder')
+    .input('ars_nouveau:water_essence')
+    .recipeTime(200).id('kubejs:summoning/4x_blizz')
+
+    event.recipes.summoningrituals
+    .altar('forbidden_arcanus:soul')
+    .mobOutput(
+        SummoningOutput.mob('thermal:basalz')
+            .count(4)
+            .offset(0, 3, 0)
+            .spread(4, 0, 4)
+	)
+    .input('minecraft:obsidian')
+    .input('minecraft:basalt')
+    .input('elementalcraft:powerful_earth_shard')
+    .input('thermal:basalz_powder')
+    .input('ars_nouveau:earth_essence')
+    .recipeTime(200).id('kubejs:summoning/4x_basalz')
 });

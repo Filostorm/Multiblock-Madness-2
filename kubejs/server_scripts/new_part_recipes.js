@@ -176,9 +176,10 @@ onEvent('recipes', event => {
 
 	////////////////SHEETMETAL///////////////
 	if (Item.of(`#forge:sheetmetals/${item.material}`) != null) {
-		//event.remove({id:`tconstruct:smeltery/melting/metal/${item.material}/sheetmetal`})
-
-		
+		if (item.fluid_id != null) {
+			event.remove({id:`tconstruct:smeltery/melting/metal/${item.material}/sheetmetal`})
+			global.tinkersMeltingPlain(event, item.fluid_id, 90, Item.of(`#forge:sheetmetals/${item.material}`).toJson(), 800, 142, `mbm2:smeltery/melting/sheetmetal/${item.material}`)
+		}
 		event.shaped(`2x #forge:sheetmetals/${item.material}`, [
 			' P ',
 			'P P',

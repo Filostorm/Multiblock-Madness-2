@@ -643,6 +643,7 @@
 			title: "Explosions!"
 			x: -6.5d
 			y: -4.0d
+			description: ["Blow up some steel to start PneumaticCraft!"]
 			id: "418AC2EB203010CA"
 			tasks: [
 				{

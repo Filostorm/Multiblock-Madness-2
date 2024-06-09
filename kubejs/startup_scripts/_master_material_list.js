@@ -1401,8 +1401,8 @@ global.newMaterialParts = [
       'fluid_id': 'kubejs:molten_tier_2_structural_alloy',
       'fluid': 'thick',
       'amount': 2,
-      'dust_input': ['3x #forge:dusts/tier_1_structural_alloy','2x #forge:dusts/cobalt_brass','#forge:dusts/titanium'],
-      'ingot_input': ['3x #forge:ingots/tier_1_structural_alloy','2x #forge:ingots/cobalt_brass', '#forge:ingots/titanium'],
+      'dust_input': ['3x #forge:dusts/tier_1_structural_alloy','2x #forge:dusts/cobalt_brass','#forge:dusts/titanium', 'create:brass_casing'],
+      'ingot_input': ['3x #forge:ingots/tier_1_structural_alloy','2x #forge:ingots/cobalt_brass', '#forge:ingots/titanium', 'create:brass_casing'],
     },
     {
       'material': 'tier_2_magical_alloy',

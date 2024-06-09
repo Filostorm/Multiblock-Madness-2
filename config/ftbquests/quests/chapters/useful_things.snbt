@@ -1,0 +1,1150 @@
+{
+	id: "0D3FE6A30665DFF4"
+	group: "7571E15FFD2D3DD8"
+	order_index: 3
+	filename: "useful_things"
+	title: "Useful Things"
+	icon: "botania:cosmetic_questgiver_mark"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			x: -3.75d
+			y: -3.75d
+			shape: "gear"
+			subtitle: "Works just like a Time in a Bottle."
+			size: 2.5d
+			id: "1B0C1D970843D751"
+			tasks: [{
+				id: "6371D366F28FDA19"
+				type: "item"
+				item: {
+					id: "gag:time_sand_pouch"
+					Count: 1b
+					tag: { }
+				}
+				match_nbt: false
+			}]
+		}
+		{
+			x: -11.0d
+			y: -7.0d
+			shape: "octagon"
+			subtitle: "The surrounding quests indicate what mobs can be summoned using the altar."
+			size: 1.3d
+			id: "4A2D113EA7E182DF"
+			tasks: [{
+				id: "79684B755CAEF42E"
+				type: "item"
+				item: "summoningrituals:altar"
+			}]
+		}
+		{
+			x: -10.5d
+			y: -8.5d
+			subtitle: "Can be summoned at the Summoning Altar."
+			dependencies: ["4A2D113EA7E182DF"]
+			id: "440CDE1BD95C35A3"
+			tasks: [{
+				id: "165B44D39E3734FE"
+				type: "kill"
+				icon: {
+					id: "hostilenetworks:data_model"
+					Count: 1b
+					tag: {
+						data_model: {
+							id: "hostilenetworks:firefly"
+						}
+					}
+				}
+				entity: "naturalist:firefly"
+				value: 1L
+			}]
+		}
+		{
+			x: -9.5d
+			y: -7.5d
+			subtitle: "Can be summoned at the Summoning Altar."
+			dependencies: ["4A2D113EA7E182DF"]
+			id: "52C2529010D1B636"
+			tasks: [{
+				id: "5E7AB130439F0C8C"
+				type: "kill"
+				icon: {
+					id: "hostilenetworks:data_model"
+					Count: 1b
+					tag: {
+						data_model: {
+							id: "hostilenetworks:elder_guardian"
+						}
+					}
+				}
+				entity: "minecraft:elder_guardian"
+				value: 1L
+			}]
+		}
+		{
+			x: -9.5d
+			y: -6.5d
+			subtitle: "Can be summoned at the Summoning Altar."
+			dependencies: ["4A2D113EA7E182DF"]
+			id: "449A67612AD36AC8"
+			tasks: [{
+				id: "485984420BBF4D1C"
+				type: "kill"
+				icon: {
+					id: "hostilenetworks:data_model"
+					Count: 1b
+					tag: {
+						data_model: {
+							id: "hostilenetworks:artifacts/mimic"
+						}
+					}
+				}
+				entity: "artifacts:mimic"
+				value: 1L
+			}]
+		}
+		{
+			x: -10.5d
+			y: -5.5d
+			subtitle: "Can be summoned at the Summoning Altar."
+			dependencies: ["4A2D113EA7E182DF"]
+			id: "645BB508B4B3FBCE"
+			tasks: [{
+				id: "7BAB234850B58FC1"
+				type: "kill"
+				icon: {
+					id: "hostilenetworks:data_model"
+					Count: 1b
+					tag: {
+						data_model: {
+							id: "hostilenetworks:phantom"
+						}
+					}
+				}
+				entity: "minecraft:phantom"
+				value: 1L
+			}]
+		}
+		{
+			x: -11.5d
+			y: -5.5d
+			subtitle: "Can be summoned at the Summoning Altar."
+			dependencies: ["4A2D113EA7E182DF"]
+			id: "136463321F3E2486"
+			tasks: [{
+				id: "1E592834DD97B2F0"
+				type: "kill"
+				icon: {
+					id: "hostilenetworks:data_model"
+					Count: 1b
+					tag: {
+						data_model: {
+							id: "hostilenetworks:blaze"
+						}
+					}
+				}
+				entity: "minecraft:blaze"
+				value: 1L
+			}]
+		}
+		{
+			x: -12.5d
+			y: -6.5d
+			subtitle: "Can be summoned at the Summoning Altar."
+			dependencies: ["4A2D113EA7E182DF"]
+			id: "248AB6A264F98D7F"
+			tasks: [{
+				id: "2C8D75552BCF712B"
+				type: "kill"
+				icon: {
+					id: "hostilenetworks:data_model"
+					Count: 1b
+					tag: {
+						data_model: {
+							id: "hostilenetworks:thermal/blitz"
+						}
+					}
+				}
+				entity: "thermal:blitz"
+				value: 1L
+			}]
+		}
+		{
+			x: -12.5d
+			y: -7.5d
+			subtitle: "Can be summoned at the Summoning Altar."
+			dependencies: ["4A2D113EA7E182DF"]
+			id: "1A4DF80B83C64D59"
+			tasks: [{
+				id: "6C17B33962DA0DB6"
+				type: "kill"
+				icon: {
+					id: "hostilenetworks:data_model"
+					Count: 1b
+					tag: {
+						data_model: {
+							id: "hostilenetworks:thermal/blizz"
+						}
+					}
+				}
+				entity: "thermal:blizz"
+				value: 1L
+			}]
+		}
+		{
+			x: -11.5d
+			y: -8.5d
+			subtitle: "Can be summoned at the Summoning Altar."
+			dependencies: ["4A2D113EA7E182DF"]
+			id: "545D5A4DE7D2EA3E"
+			tasks: [{
+				id: "7E3CCB2468AAF2C7"
+				type: "kill"
+				icon: {
+					id: "hostilenetworks:data_model"
+					Count: 1b
+					tag: {
+						data_model: {
+							id: "hostilenetworks:thermal/basalz"
+						}
+					}
+				}
+				entity: "thermal:basalz"
+				value: 1L
+			}]
+		}
+		{
+			x: -3.0d
+			y: -0.5d
+			subtitle: "Fall protection."
+			id: "61A769F8BAD4B4AF"
+			tasks: [{
+				id: "716B27693718534B"
+				type: "item"
+				item: "reliquary:angelic_feather"
+				match_nbt: false
+			}]
+		}
+		{
+			x: -3.0d
+			y: -5.5d
+			subtitle: "Infinite water."
+			description: ["Acts as a infinite water source, and can be pumped out of."]
+			id: "5EEE20957A084692"
+			tasks: [{
+				id: "1A22EEE58580238E"
+				type: "item"
+				item: "cookingforblockheads:sink"
+			}]
+		}
+		{
+			x: -1.5d
+			y: -5.5d
+			subtitle: "Significantly boosts nearby crop growth."
+			id: "74F2712134151261"
+			tasks: [{
+				id: "7FC957D42379FCC1"
+				type: "item"
+				item: "reliquary:fertile_lily_pad"
+			}]
+		}
+		{
+			x: -1.5d
+			y: -0.5d
+			subtitle: "Auto places torches."
+			id: "3F6896F43986C485"
+			tasks: [{
+				id: "41E0E3803E567680"
+				type: "item"
+				item: "reliquary:lantern_of_paranoia"
+				match_nbt: false
+			}]
+		}
+		{
+			x: -10.0d
+			y: -1.0d
+			subtitle: "Infinite Food!"
+			description: [
+				"This relic can be found in chests."
+				"While in your inventory, the ham will slowly regenerate over time. Using the relic will let you eat part of the ham to recover hunger."
+				"Regeneration speed can be upgraded in the Researching Table."
+			]
+			dependencies: ["5D527235565D1B33"]
+			id: "12CA4D04E6BB7AAF"
+			tasks: [{
+				id: "2D0DC8312B3C2DB8"
+				type: "item"
+				item: {
+					id: "relics:infinity_ham"
+					Count: 1b
+					tag: {
+						abilities: {
+							autophagy: {
+								stats: {
+									feed: 1.51121d
+								}
+								points: 0
+							}
+							infusion: {
+								stats: {
+									duration: 2.10809d
+								}
+								points: 0
+							}
+						}
+						pieces: 10
+					}
+				}
+				match_nbt: false
+			}]
+		}
+		{
+			x: -8.75d
+			y: -3.75d
+			shape: "gear"
+			subtitle: "A must have for Create!"
+			description: ["Wearing this lets you see the stats of various create contraptions."]
+			size: 2.5d
+			id: "5474134673D967E1"
+			tasks: [{
+				id: "036E1F3B51AAAC9A"
+				type: "item"
+				item: "create:goggles"
+				match_nbt: false
+			}]
+		}
+		{
+			x: -6.5d
+			y: -7.0d
+			subtitle: "Auto feeds you when filled with liquid meat."
+			id: "2FAC0B5D65AAFC3D"
+			tasks: [{
+				id: "5C3F5429A8E40807"
+				type: "item"
+				item: "industrialforegoing:meat_feeder"
+			}]
+		}
+		{
+			x: -6.5d
+			y: -4.0d
+			subtitle: "Can be given various potion effects. Consumes mana."
+			id: "6FC3D0B0727C1B15"
+			tasks: [{
+				id: "608F9B05F4800DDB"
+				type: "item"
+				item: "botania:blood_pendant"
+			}]
+		}
+		{
+			x: -6.5d
+			y: -2.5d
+			subtitle: "A bauble that speeds up sleeping."
+			id: "71BF5AC0CD93A685"
+			tasks: [{
+				id: "33B90FECAA809874"
+				type: "item"
+				item: "darkutils:charm_sleep"
+			}]
+		}
+		{
+			x: -1.5d
+			y: -2.0d
+			subtitle: "Muffles suonds made by Immersive Engineering machines."
+			description: ["Can be applied to any helmet by putting the helmet in the crafting grid with them."]
+			id: "3D98B0825833F81B"
+			tasks: [{
+				id: "3D4CC1ED768FD9EB"
+				type: "item"
+				item: "immersiveengineering:earmuffs"
+			}]
+		}
+		{
+			x: -6.5d
+			y: -5.5d
+			subtitle: "Lets you go through portals faster."
+			id: "470E0FFA77346D99"
+			tasks: [{
+				id: "3CB377579BBEE91A"
+				type: "item"
+				item: "darkutils:charm_portal"
+			}]
+		}
+		{
+			x: -3.0d
+			y: -2.0d
+			subtitle: "Stores XP levels."
+			description: ["Can be enchanted with holding for more capacity."]
+			id: "449AF3E1F98281A9"
+			tasks: [{
+				id: "40C7E8B42A4AC9A6"
+				type: "item"
+				item: {
+					id: "thermal:xp_crystal"
+					Count: 1b
+					tag: { }
+				}
+				match_nbt: false
+			}]
+		}
+		{
+			x: -1.5d
+			y: 1.0d
+			subtitle: "Holds 20 buckets of fluid."
+			description: ["Can be augmented or enchanted with holding to increase it's capacity."]
+			id: "2BAB4D8405858E75"
+			tasks: [{
+				id: "009CE20D43ACB965"
+				type: "item"
+				item: {
+					id: "thermal:fluid_reservoir"
+					Count: 1b
+					tag: { }
+				}
+				match_nbt: false
+			}]
+		}
+		{
+			x: -12.0d
+			y: -1.0d
+			shape: "gear"
+			subtitle: "Provides information on the various relics added by the mod."
+			size: 1.5d
+			id: "5D527235565D1B33"
+			tasks: [{
+				id: "7E02AB46FC103F90"
+				type: "item"
+				item: "relics:researching_table"
+			}]
+		}
+		{
+			x: -10.0d
+			y: -2.0d
+			subtitle: "Shocking!"
+			description: ["A necklace that deals a small amount of damage to anything that runs into you. At higher levels, the necklace can also para things that touch you."]
+			dependencies: ["5D527235565D1B33"]
+			id: "513012723D98958C"
+			tasks: [{
+				id: "7814D5A5C074B0D0"
+				type: "item"
+				item: {
+					id: "relics:jellyfish_necklace"
+					Count: 1b
+					tag: {
+						abilities: {
+							paralysis: {
+								stats: {
+									duration: 1.29328d
+								}
+								points: 0
+							}
+							shock: {
+								stats: {
+									damage: 0.71545d
+								}
+								temp: {
+									ticking: 1b
+								}
+								points: 0
+							}
+						}
+					}
+				}
+			}]
+		}
+		{
+			x: -13.0d
+			y: 1.0d
+			subtitle: "Lava walking!"
+			description: ["A set of boots that let you walk and stand on top of lava or magma blocks without taking damage. The duration of this can be increased in the Researching Table."]
+			dependencies: ["5D527235565D1B33"]
+			id: "113379AC12F5072F"
+			tasks: [{
+				id: "231E1D2E90D132DA"
+				type: "item"
+				item: {
+					id: "relics:magma_walker"
+					Count: 1b
+					tag: {
+						leveling: {
+							level: 1
+							experience: 141
+							points: 1
+						}
+						abilities: {
+							pace: {
+								stats: {
+									time: 37.87782d
+								}
+								points: 0
+							}
+						}
+					}
+				}
+			}]
+		}
+		{
+			x: -11.0d
+			y: 1.0d
+			subtitle: "Water walking!"
+			description: ["A pair of shoes that alow the wearer to walk or stand on water for a limited amount of time. This can be increased in the Researching Table."]
+			dependencies: ["5D527235565D1B33"]
+			id: "10780FED7D03E707"
+			tasks: [{
+				id: "563C6B4E909BD5C4"
+				type: "item"
+				item: {
+					id: "relics:aqua_walker"
+					Count: 1b
+					tag: {
+						leveling: {
+							level: 1
+							experience: 73
+							points: 1
+						}
+						abilities: {
+							walking: {
+								stats: {
+									time: 56.65989d
+								}
+								points: 0
+							}
+						}
+					}
+				}
+			}]
+		}
+		{
+			x: -14.0d
+			y: -1.0d
+			subtitle: "Extra room!"
+			description: ["A relic that grants additional \"Talisman\" Curio slots. The amount given can be upgraded in the Researching Table."]
+			dependencies: ["5D527235565D1B33"]
+			id: "77761FE2DADF8594"
+			tasks: [{
+				id: "363BEAC14C3A712E"
+				type: "item"
+				item: {
+					id: "relics:leather_belt"
+					Count: 1b
+					tag: {
+						abilities: {
+							slots: {
+								stats: {
+									talisman: 1.96302d
+								}
+								points: 0
+							}
+						}
+						leveling: {
+							level: 1
+							experience: 151
+							points: 1
+						}
+					}
+				}
+				match_nbt: false
+			}]
+		}
+		{
+			x: -14.0d
+			y: 0.0d
+			subtitle: "\"I'm sinking in sucess!\""
+			description: [
+				"A belt that grants additional \"Talisman\" Curio slots as well as providing a damage boost underwater and letting you use tridents with the riptide enchant outside of water."
+				"However, the wearer will be a bit slower under water. All stats can be upgraded in the Researching Table."
+			]
+			dependencies: ["5D527235565D1B33"]
+			id: "50933FEA670910E9"
+			tasks: [{
+				id: "312D95A5C3F0DD81"
+				type: "item"
+				item: {
+					id: "relics:drowned_belt"
+					Count: 1b
+					tag: {
+						leveling: {
+							level: 1
+							experience: 77
+							points: 1
+						}
+						abilities: {
+							riptide: {
+								stats: {
+									cooldown: 8.30263d
+								}
+								points: 0
+							}
+							anchor: {
+								stats: {
+									sinking: 3.64484d
+									slowness: 0.2774d
+								}
+								points: 0
+							}
+							pressure: {
+								stats: {
+									damage: 1.91059d
+								}
+								points: 0
+							}
+							slots: {
+								stats: {
+									talisman: 1.15071d
+								}
+								points: 0
+							}
+						}
+					}
+				}
+			}]
+		}
+		{
+			x: -14.0d
+			y: -2.0d
+			subtitle: "Sneak attack!"
+			description: [
+				"A relic that when worn will give invisibility and increased movement speed in the dark."
+				"The speed increase and minimum light level needed can be upgraded in the Researching Table."
+			]
+			dependencies: ["5D527235565D1B33"]
+			id: "5FB31E7F1BC40391"
+			tasks: [{
+				id: "0A589DB2EF2F3C73"
+				type: "item"
+				item: {
+					id: "relics:midnight_robe"
+					Count: 1b
+					tag: {
+						leveling: {
+							level: 1
+							experience: 87
+							points: 1
+						}
+						abilities: {
+							vanish: {
+								stats: {
+									speed: 0.1725d
+									light: 1.71795d
+								}
+								temp: {
+									ticking: 1b
+								}
+								points: 0
+							}
+							backstab: {
+								stats: {
+									distance: 19.76524d
+									damage: 1.39309d
+								}
+								points: 0
+							}
+						}
+					}
+				}
+			}]
+		}
+		{
+			x: -13.0d
+			y: -3.0d
+			subtitle: "\"Oooh, shiny!\""
+			description: [
+				"A useful ring that when worn makes all piglins neutral to the player, regardless of if they are wearing gold armor."
+				"At level 5, the relic grants a 50% chance to grant double results from trading with piglins."
+			]
+			dependencies: ["5D527235565D1B33"]
+			id: "4F46F57C040D4F2B"
+			tasks: [{
+				id: "43DB5519AF3C823F"
+				type: "item"
+				item: {
+					id: "relics:bastion_ring"
+					Count: 1b
+					tag: {
+						abilities: {
+							trade: {
+								stats: {
+									rolls: 0.87998d
+								}
+								points: 0
+							}
+						}
+					}
+				}
+			}]
+		}
+		{
+			x: -10.0d
+			y: 0.0d
+			subtitle: "\"Mirror Mirror, on the wall...\""
+			description: ["A relic that when used will teleport you back to your spawn point if within a specified radius. The size of this radius can be greatly improved in the Researching Table."]
+			dependencies: ["5D527235565D1B33"]
+			id: "76CD326726263550"
+			tasks: [{
+				id: "5ADBEA007D366CED"
+				type: "item"
+				item: {
+					id: "relics:magic_mirror"
+					Count: 1b
+					tag: {
+						abilities: {
+							teleport: {
+								stats: {
+									distance: 577.62215d
+									cooldown: 118.45239d
+								}
+								points: 0
+							}
+						}
+					}
+				}
+			}]
+		}
+		{
+			x: -11.0d
+			y: -3.0d
+			subtitle: "A ranged weapon with 8 charges."
+			description: [
+				"The charges will slowly regenerate over time."
+				"The glaive's stats can be upgraded and rerolled in the Resarching Table."
+			]
+			dependencies: ["5D527235565D1B33"]
+			id: "529666144575962F"
+			tasks: [{
+				id: "405997E131D8AF5C"
+				type: "item"
+				item: {
+					id: "relics:shadow_glaive"
+					Count: 1b
+					tag: {
+						charges: 8
+						abilities: {
+							glaive: {
+								stats: {
+									bounces: 4.43085d
+									recharge: 15.9641d
+									damage: 3.6451d
+									radius: 3.01598d
+								}
+								points: 0
+							}
+							saw: {
+								stats: {
+									damage: 1.23964d
+									speed: 15.46919d
+								}
+								points: 0
+							}
+						}
+					}
+				}
+			}]
+		}
+		{
+			x: -12.0d
+			y: -3.0d
+			subtitle: "\"Bullseye!\""
+			description: [
+				"This relic is a must have for any bow fans out there!"
+				"It can hold anywhere between 1 to 5 stacks of arrows when first obtained, but can be upgraded in the Researching Table to hold up to 15."
+				"Other upgrades include increasing bow draw speed and granting an \"arrow rain\" ability!"
+			]
+			dependencies: ["5D527235565D1B33"]
+			id: "467585B6718695AB"
+			tasks: [{
+				id: "1E7FBF3BF716F1DB"
+				type: "item"
+				item: {
+					id: "relics:arrow_quiver"
+					Count: 1b
+					tag: {
+						abilities: {
+							agility: {
+								stats: {
+									modifier: 1.0d
+								}
+								points: 0
+							}
+							leap: {
+								stats: {
+									duration: 5.01196d
+									cooldown: 14.55756d
+									multiplier: 0.33263d
+								}
+								points: 0
+							}
+							rain: {
+								stats: {
+									duration: 14.39589d
+									delay: 0.79051d
+									radius: 4.77613d
+								}
+								points: 0
+							}
+							receptacle: {
+								stats: {
+									slots: 2.2209d
+								}
+								points: 0
+							}
+						}
+					}
+				}
+			}]
+		}
+		{
+			title: "Decorative Graves"
+			x: 0.0d
+			y: -5.5d
+			subtitle: "\"Rest in peace.\""
+			description: ["Will periodically generate a soul on it for use with Corail Tombstone. Having multiple is recomended."]
+			id: "202CE11964ECDCD8"
+			tasks: [{
+				id: "4EC3B16BD0BB88F6"
+				type: "item"
+				title: "Any #tombstone:decorative_graves"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "tombstone:decorative_graves"
+					}
+				}
+			}]
+		}
+		{
+			x: -3.0d
+			y: -7.0d
+			description: ["A upgradable hopper that can face any direction, even upside down!"]
+			id: "5C157D12120E7C3C"
+			tasks: [{
+				id: "463777435D51338E"
+				type: "item"
+				item: "pneumaticcraft:omnidirectional_hopper"
+				match_nbt: false
+			}]
+		}
+		{
+			icon: "hexerei:sage_burning_plate"
+			x: -1.5d
+			y: -7.0d
+			subtitle: "Mob repellant."
+			id: "780B64B8B0563C0B"
+			tasks: [
+				{
+					id: "5F154DCBE79A0F46"
+					type: "item"
+					item: "hexerei:sage_burning_plate"
+				}
+				{
+					id: "3E36B61627D9E19C"
+					type: "item"
+					item: {
+						id: "hexerei:dried_sage_bundle"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+			]
+			rewards: [{
+				id: "7FBDD93AB88EB7F3"
+				type: "item"
+				item: {
+					id: "hexerei:dried_sage_bundle"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+				count: 4
+			}]
+		}
+		{
+			x: 0.0d
+			y: -7.0d
+			subtitle: "Automated crop growth."
+			description: ["A method of automated crop growth using power and water. Growth speed can be boosted using various forms of bonemeal."]
+			id: "7462D6F28DFD466A"
+			tasks: [{
+				id: "0E720AFF2AD40978"
+				type: "item"
+				item: "immersiveengineering:cloche"
+			}]
+		}
+		{
+			x: 0.0d
+			y: -2.0d
+			subtitle: "Can rename items for free!"
+			id: "15CDA7D85ACDF3C2"
+			tasks: [{
+				id: "12FC17ACE199F816"
+				type: "item"
+				item: "gag:labeling_tool"
+				match_nbt: false
+			}]
+		}
+		{
+			x: 0.0d
+			y: -0.5d
+			subtitle: "Portable Waystone that does not need XP."
+			id: "0B59864B8A281F6D"
+			tasks: [{
+				id: "732391D330A4F48B"
+				type: "item"
+				item: {
+					id: "waystones:warp_stone"
+					Count: 1b
+					tag: {
+						Damage: 0
+					}
+				}
+				match_nbt: false
+			}]
+		}
+		{
+			title: "Mob Transport"
+			x: 0.0d
+			y: 1.0d
+			id: "38E8A27C455746B3"
+			tasks: [
+				{
+					id: "7DA44DB438B98C34"
+					type: "item"
+					item: "industrialforegoing:mob_imprisonment_tool"
+					match_nbt: false
+				}
+				{
+					id: "5DB5A1829FE08880"
+					type: "item"
+					item: "forbidden_arcanus:quantum_catcher"
+					match_nbt: false
+				}
+			]
+		}
+		{
+			x: -3.0d
+			y: -8.5d
+			subtitle: "Passive milk production."
+			id: "3CB44B5AF6B20723"
+			tasks: [{
+				id: "652C3725776A1C01"
+				type: "item"
+				item: "cookingforblockheads:cow_jar"
+				match_nbt: false
+			}]
+		}
+		{
+			icon: "forbidden_arcanus:hephaestus_forge"
+			x: -1.5d
+			y: -8.5d
+			subtitle: "Used to make Enchanted Books and Eternal Stellas"
+			id: "085CD7AD64352FDE"
+			tasks: [
+				{
+					id: "534A44D3DC073E10"
+					type: "item"
+					item: "minecraft:smithing_table"
+				}
+				{
+					id: "31F369F35CB70DE8"
+					type: "item"
+					item: "forbidden_arcanus:chiseled_arcane_polished_darkstone"
+					count: 4L
+				}
+				{
+					id: "0C98031A6D7F1E2B"
+					type: "item"
+					item: "forbidden_arcanus:polished_darkstone"
+					count: 48L
+				}
+				{
+					id: "4F969227F37BDBA9"
+					type: "item"
+					item: "forbidden_arcanus:arcane_chiseled_polished_darkstone"
+					count: 9L
+				}
+				{
+					id: "1FADEA50C4F9E9ED"
+					type: "item"
+					item: "forbidden_arcanus:mundabitur_dust"
+				}
+			]
+			rewards: [
+				{
+					id: "2D36D487469E621A"
+					type: "item"
+					item: {
+						id: "forbidden_arcanus:diamond_blacksmith_gavel"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+				{
+					id: "7585462ECBC0C66F"
+					type: "item"
+					item: {
+						id: "capsule:capsule"
+						Count: 1b
+						tag: {
+							size: 9
+							state: 3
+							sourceInventory: { }
+							label: "Hephaestus Forge"
+							structureName: "config/capsule/prefabs/hephaestus_forge"
+							display: {
+								color: 2963801
+							}
+						}
+					}
+				}
+			]
+		}
+		{
+			title: "Engineers Decor"
+			x: 0.0d
+			y: -8.5d
+			subtitle: "A bunch of handy little machines."
+			id: "53D61B63C529F0C5"
+			tasks: [
+				{
+					id: "04C8683D0F99131D"
+					type: "item"
+					item: "engineersdecor:factory_hopper"
+				}
+				{
+					id: "1C8168F7F42E1D0B"
+					type: "item"
+					item: "engineersdecor:small_freezer"
+				}
+				{
+					id: "54AD8E03881C35AA"
+					type: "item"
+					item: "engineersdecor:factory_placer"
+				}
+				{
+					id: "269F0560077A31C7"
+					type: "item"
+					item: "engineersdecor:small_block_breaker"
+				}
+				{
+					id: "197611BF6EEC8E71"
+					type: "item"
+					item: "engineersdecor:small_solar_panel"
+				}
+			]
+			rewards: [{
+				id: "703188AF3FC5E4B7"
+				type: "item"
+				item: "engineersdecor:metal_bar"
+				count: 16
+			}]
+		}
+		{
+			x: -3.0d
+			y: 1.0d
+			subtitle: "Disenchant items using graves."
+			id: "351C3B6F5DA9D737"
+			tasks: [{
+				id: "0041D86811ECD97A"
+				type: "item"
+				item: "tombstone:book_of_disenchantment"
+			}]
+		}
+		{
+			x: -6.5d
+			y: -1.0d
+			subtitle: "Stores Aura."
+			description: [
+				"The aura stored in this item can be used to repair tools from the Natures Aura mod, as well as any item enchanted with Natures Mend."
+				"Look in the book for more details."
+			]
+			id: "456335296D9F2CC1"
+			tasks: [{
+				id: "1F7A669AD191B968"
+				type: "item"
+				item: "naturesaura:aura_cache"
+			}]
+		}
+		{
+			x: 1.5d
+			y: -8.5d
+			subtitle: "Lets you interact with nearby inventories from a single block."
+			description: ["Requires a small amount of RF."]
+			id: "1745812407078318"
+			tasks: [{
+				id: "4B7BDF83FF7A8534"
+				type: "item"
+				item: "rftoolsstorage:storage_scanner"
+			}]
+		}
+		{
+			x: 1.5d
+			y: -7.0d
+			subtitle: "Like a Drawer Controller, but for chests!"
+			id: "6297FB66605ED8C9"
+			tasks: [
+				{
+					id: "7D141BE7F30844D5"
+					type: "item"
+					item: "sophisticatedstorage:controller"
+				}
+				{
+					id: "583B94079EA0F40C"
+					type: "item"
+					item: "sophisticatedstorage:storage_tool"
+				}
+			]
+		}
+		{
+			title: "LaserIO"
+			x: 1.5d
+			y: -5.5d
+			subtitle: "Modular item transport."
+			id: "0FA708B1BA54122E"
+			tasks: [
+				{
+					id: "62FA15667D5EF2CB"
+					type: "item"
+					item: "laserio:laser_node"
+				}
+				{
+					id: "5FD29972684A0CE6"
+					type: "item"
+					item: "laserio:laser_wrench"
+				}
+				{
+					id: "324F98056A9CDC8C"
+					type: "item"
+					title: "Any #mbm2:laserio/card"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "mbm2:laserio/card"
+						}
+					}
+					count: 2L
+				}
+				{
+					id: "606EA2F10CD014A9"
+					type: "item"
+					title: "Any #mbm2:laserio/filter"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "mbm2:laserio/filter"
+						}
+					}
+					match_nbt: false
+				}
+			]
+		}
+	]
+	quest_links: [ ]
+}

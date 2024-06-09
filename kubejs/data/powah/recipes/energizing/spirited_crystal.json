@@ -1,0 +1,25 @@
+{
+  "type": "powah:energizing",
+  "ingredients": [
+	{
+	  "item": "naturesaura:calling_spirit"
+	},
+	{
+	  "item": "forbidden_arcanus:dark_soul"
+	},
+	{
+	  "item": "kubejs:spirited_brick"
+	},
+	{
+	  "item": "tconstruct:soulsteel_ingot"
+	},
+	{
+	  "item": "lazierae2:resonating_crystal"
+	}
+  ],
+  "energy": 1000000,
+  "result": {
+	"item": "powah:crystal_spirited",
+	"count": 2
+  }
+}

@@ -23,7 +23,8 @@ onEvent('recipes', event => {
   	}).id(`mbm2:forbidden_arcanus/soul_extractor`)
 
 	//Arcane Gold Ingot
-	event.remove({output: 'forbidden_arcanus:arcane_gold_ingot'})/*
+	event.remove({id: 'forbidden_arcanus:arcane_gold_ingot'})
+	/*
   	event.shaped('forbidden_arcanus:arcane_gold_ingot', [
 		'LML',
 		'CIC',

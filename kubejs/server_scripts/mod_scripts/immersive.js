@@ -419,6 +419,20 @@ event.recipes.immersiveengineeringArcFurnace([outputs], input, [additives], slag
     event.remove({output: 'immersiveengineering:capacitor_hv'})
     event.shaped('immersiveengineering:capacitor_hv', ['ABA','CDC','AEA'],
      {A: 'immersiveengineering:treated_wood_horizontal',B: 'kubejs:aluminum_plating',C: '#forge:storage_blocks/steel',D: 'immersiveengineering:capacitor_mv',E: 'immersiveengineering:ingot_hop_graphite'}).id('mbm2:crafting/capacitor_hv')
+
+//engineers decor recipe tweaks
+  event.remove({output: '6x engineersdecor:metal_bar'})
+  event.shaped('6x engineersdecor:metal_bar', ['  A',' A ','A  '], {A: 'immersiveengineering:stick_iron'}).id('mbm2:engineers_decor/metal_bar')
+  event.remove({output: 'engineersdecor:small_solar_panel'})
+  event.shaped('engineersdecor:small_solar_panel', ['ABA',' C ','CDC'], {A: 'powah:photoelectric_pane',B: 'solarflux:photovoltaic_cell_3',C: 'engineersdecor:metal_bar',D: 'powah:energy_cell_basic'}).id('mbm2:engineers_decor/small_solar')
+
+  let signs =['engineersdecor:sign_hotwire', 'engineersdecor:sign_danger', 'engineersdecor:sign_radioactive', 'engineersdecor:sign_laser', 'engineersdecor:sign_caution', 'engineersdecor:sign_magichazard', 'engineersdecor:sign_firehazard', 'engineersdecor:sign_hotsurface', 'engineersdecor:sign_magneticfield', 'engineersdecor:sign_frost', 'engineersdecor:sign_exit', 'engineersdecor:sign_defense', 'engineersdecor:sign_factoryarea']
+  signs.forEach(signIn => {
+    signs.forEach(signOut => {
+      event.stonecutting(signOut, signIn)
+    })
+  });
+});
      
      //survey_tools
      event.shapeless('immersiveengineering:survey_tools', ['immersiveengineering:toolbox','minecraft:book','scannable:common_ores_module']).id(`mbm2:shapeless/survey_tools`)

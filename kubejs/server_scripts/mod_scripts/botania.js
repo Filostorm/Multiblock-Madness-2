@@ -139,6 +139,8 @@ event.custom({
 	"fromColor": 16777215,
 	"toColor": 2875403
 	}).id(`mbm2:mythicbotany_infusion/overgrowth`);
-
+	
+//mana pearl recipe change 
+event.replaceInput({id: 'botania:mana_infusion/mana_pearl'}, 'minecraft:ender_pearl', 'kubejs:source_pearl')
 
 });

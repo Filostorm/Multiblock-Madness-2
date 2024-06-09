@@ -101,5 +101,8 @@ onEvent('recipes', event => {
 		  }
 		]
 	  }).id(`mbm2:crystallizer/hnn_wixie_shard`)
+
+	//Source Pearl
+	global.arsEnchantment(event, Item.of('kubejs:source_pearl'), Item.of('ae2:fluix_pearl'), [Item.of('ars_nouveau:magebloom'), Item.of('ars_nouveau:abjuration_essence'), Item.of('ars_nouveau:magebloom'), Item.of('ars_nouveau:abjuration_essence'), Item.of('ars_nouveau:magebloom'), Item.of('ars_nouveau:abjuration_essence'), Item.of('ars_nouveau:magebloom'), Item.of('ars_nouveau:abjuration_essence')], 2000, 'mbm2:source_pearl')
 	
 });

@@ -729,6 +729,27 @@ onEvent('recipes', event => {
 			.inputFE(16000)
 			.duration(400)
 		}
+		if (Item.of(`#forge:part_bundles/${item.material}`) != null) {
+			event.shapeless(Item.of(`#forge:part_bundles/${item.material}`), [
+				'minecraft:bundle',
+				`#forge:wire_coils/${item.material}`,
+				`#forge:wire_coils/${item.material}`,
+				`#forge:spools/${item.material}`,
+				`#forge:spools/${item.material}`,
+				`#forge:spools/${item.material}`,
+				`#forge:spools/${item.material}`,
+				'kubejs:damascus_steel_rod',
+				'kubejs:damascus_steel_rod'
+			]).id(`mbm2:crafting/${item.material}_part_bundle`)
+		}
+		if (Item.of(`#forge:dual_coils/${item.material}`) != null) {
+			event.custom({
+				type: 'pneumaticcraft:assembly_laser',
+				input: Item.of(`#forge:part_bundles/${item.material}`).toResultJson(),
+				result: Item.of(`#forge:dual_coils/${item.material}`).toResultJson(),
+				program: 'laser',
+			  }).id(`mbm2:laser_assembly/${item.material}_dual_coil`)
+		}
 	})
 });
 	

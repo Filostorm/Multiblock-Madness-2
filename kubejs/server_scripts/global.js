@@ -435,4 +435,9 @@ global.removeAndHide = [
 	'projectred_exploration:silver_block',
 	'projectred_exploration:ruby_block',
 	'projectred_exploration:sapphire_block',
+
+	'extendedcrafting:basic_auto_table',
+	'extendedcrafting:advanced_auto_table',
+	'extendedcrafting:elite_auto_table',
+	'extendedcrafting:ultimate_auto_table',
 	]

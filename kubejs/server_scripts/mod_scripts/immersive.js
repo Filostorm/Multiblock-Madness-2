@@ -419,6 +419,7 @@ event.recipes.immersiveengineeringArcFurnace([outputs], input, [additives], slag
     event.remove({output: 'immersiveengineering:capacitor_hv'})
     event.shaped('immersiveengineering:capacitor_hv', ['ABA','CDC','AEA'],
      {A: 'immersiveengineering:treated_wood_horizontal',B: 'kubejs:aluminum_plating',C: '#forge:storage_blocks/steel',D: 'immersiveengineering:capacitor_mv',E: 'immersiveengineering:ingot_hop_graphite'}).id('mbm2:crafting/capacitor_hv')
+
 //engineers decor recipe tweaks
   event.remove({output: '6x engineersdecor:metal_bar'})
   event.shaped('6x engineersdecor:metal_bar', ['  A',' A ','A  '], {A: 'immersiveengineering:stick_iron'}).id('mbm2:engineers_decor/metal_bar')
@@ -432,3 +433,8 @@ event.recipes.immersiveengineeringArcFurnace([outputs], input, [additives], slag
     })
   });
 });
+     
+     //survey_tools
+     event.shapeless('immersiveengineering:survey_tools', ['immersiveengineering:toolbox','minecraft:book','scannable:common_ores_module']).id(`mbm2:shapeless/survey_tools`)
+     
+    });

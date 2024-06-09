@@ -105,7 +105,7 @@ onEvent('recipes', event => {
 	  'STS'
 	], {
 	  S: 'pneumaticcraft:reinforced_bricks',
-	  P: '#forge:plates/tier_1_structural_alloy',
+	  P: '#forge:plates/tier_2_structural_alloy',
 	  C: 'powah:dielectric_casing',
 	  T: 'pneumaticcraft:small_tank',
 	}).id('mbm2:pneumaticcraft_casing')
@@ -118,7 +118,7 @@ onEvent('recipes', event => {
 	  'GFG'
 	], {
 	  T: 'pneumaticcraft:pressure_tube',
-	  G: '#forge:gears/tier_1_mechanical_alloy',
+	  G: '#forge:gears/tier_2_mechanical_alloy',
 	  C: 'kubejs:pneumaticcraft_casing',
 	  F: 'engineersdecor:small_lab_furnace',
 	  P: 'create:propeller',

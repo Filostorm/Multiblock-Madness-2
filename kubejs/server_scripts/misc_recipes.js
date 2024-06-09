@@ -383,6 +383,16 @@ event.shaped('3x kubejs:wood_scaffolding', [
 	  }).id("mbm2:crafting/molten_core")
 	  global.tinkersMeltingPlain(event, 'tconstruct:blazing_blood', 250, Ingredient.of('reliquary:molten_core').toJson(), 900, 240, `mbm2:smeltery/melting/molten_core`)
 
+//Rabbit Hide from Leather
+global.naturesauraAltar(event, '4x minecraft:rabbit_hide', 'minecraft:leather', 'naturesaura:conversion_catalyst', 'overworld', 5000, 80, 'mbm2:conversion/rabbit_hide')
 
+//Glow Goop alt recipe
+global.arsEnchantment(event, Item.of('naturalist:glow_goop'), Item.of('minecraft:slime_ball'), [Item.of('minecraft:glow_berries'), Item.of('minecraft:glow_berries')], 0, 'mbm2:glow_goop_alt')
+
+//Ruby and Sapphire block fix
+event.shaped('#forge:storage_blocks/ruby', ['AAA','AAA','AAA'], {A: '#forge:gems/ruby'}).id("mbm2:crafting/ruby_block")
+event.shaped('#forge:storage_blocks/sapphire', ['AAA','AAA','AAA'], {A: '#forge:gems/sapphire'}).id("mbm2:crafting/sapphire_block")
+event.shapeless('9x #forge:gems/ruby', ['#forge:storage_blocks/ruby']).id("mbm2:crafting/ruby_block_to_ruby")
+event.shapeless('9x #forge:gems/sapphire', ['#forge:storage_blocks/sapphire']).id("mbm2:crafting/sapphire_block_to_sapphire")
 
 });

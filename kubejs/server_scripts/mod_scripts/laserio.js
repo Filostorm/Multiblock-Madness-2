@@ -1,4 +1,13 @@
-
+onEvent('tags.items', event => {
+    event.add('mbm2:laserio/card', 'laserio:card_item')
+    event.add('mbm2:laserio/card', 'laserio:card_fluid')
+    event.add('mbm2:laserio/card', 'laserio:card_energy')
+    event.add('mbm2:laserio/card', 'laserio:card_redstone')
+    event.add('mbm2:laserio/filter', 'laserio:filter_basic')
+    event.add('mbm2:laserio/filter', 'laserio:filter_count')
+    event.add('mbm2:laserio/filter', 'laserio:filter_tag')
+    event.add('mbm2:laserio/filter', 'laserio:filter_mod')
+})
 onEvent('recipes', event => {
 
     //Laserio Logic Chip

@@ -1,0 +1,31 @@
+{
+    "type": "bonsaitrees3:sapling/forbidden_arcanus/growing_edelwood",
+    "version": 3,
+    "ref": {
+      "a": {"block":"forbidden_arcanus:edelwood_log","properties":{"axis":"y","oily":"false","waterlogged":"false"}},
+      "b": {"block":"forbidden_arcanus:edelwood_branch","properties":{"facing":"east","waterlogged":"false"}},
+      "c": {"block":"forbidden_arcanus:edelwood_branch","properties":{"facing":"west","waterlogged":"false"}},
+      "d": {"block":"forbidden_arcanus:carved_edelwood_log","properties":{"facing":"north","leaves":"true","oily":"false","waterlogged":"false"}}
+    },
+    "shape": [
+      [
+        " ",
+        "b",
+        " ",
+        " "
+      ],
+      [
+        "d",
+        "a",
+        "a",
+        "a"
+      ],
+      [
+        " ",
+        "c",
+        " ",
+        " "
+      ]
+    ]
+  }
+  

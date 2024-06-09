@@ -1376,20 +1376,20 @@ onEvent("lootjs", (event) => {
         var logvar = {
             "inputs": [
                 {
-                    "item": "minecraft:dragon_breath",
-                    "slot": 0
-                },
-                {
-                    "item": "minecraft:shulker_shell",
+                    "item": "rftoolsbase:dimensionalshard",
                     "slot": 1
                 },
                 {
-                    "item": "minecraft:netherite_ingot",
+                    "item": "forbidden_arcanus:dark_matter",
                     "slot": 2
                 },
                 {
-                    "item": "minecraft:dirt",
+                    "item": "forbidden_arcanus:dark_matter",
                     "slot": 4
+                },
+                {
+                    "item": "rftoolsbase:dimensionalshard",
+                    "slot": 5
                 }
             ],
             "hephaestus_forge_item": Ingredient.of(part).itemIds[0],

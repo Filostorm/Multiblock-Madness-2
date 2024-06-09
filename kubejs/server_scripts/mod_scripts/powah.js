@@ -293,7 +293,8 @@ D: 'minecraft:furnace'
 
     //Spirited Crystal
     event.remove({id: 'powah:energizing/spirited_crystal'})
-    global.powahEnergizing(event, [Item.of('naturesaura:calling_spirit').toJson(), Item.of('forbidden_arcanus:dark_soul').toJson(), Item.of('kubejs:spirited_brick').toJson(), Item.of('tconstruct:soulsteel_ingot').toJson(), Item.of('lazierae2:resonating_crystal').toJson()], Item.of('powah:crystal_spirited'), 1000000, 'mbm2:powah/spirited_crystal')
+    //Moved to json for output change//
+    //global.powahEnergizing(event, [Item.of('naturesaura:calling_spirit').toJson(), Item.of('forbidden_arcanus:dark_soul').toJson(), Item.of('kubejs:spirited_brick').toJson(), Item.of('tconstruct:soulsteel_ingot').toJson(), Item.of('lazierae2:resonating_crystal').toJson()], Item.of('powah:crystal_spirited'), 1000000, 'mbm2:powah/spirited_crystal')
 
     //Nitro Crystal
     event.remove({id: 'powah:energizing/nitro_crystal'})
@@ -316,5 +317,165 @@ event.shaped('powah:energizing_rod_basic', [
 
 //Uranium Block to Uranite Block
   global.powahEnergizing(event, [Item.of('#forge:storage_blocks/uranium').toJson()], Item.of('powah:uraninite_block'), 270000, 'mbm2:powah/uranite_block')
-    
+
+//reactor recipe change
+event.remove({id: 'powah:crafting/reactor_basic'})
+event.shaped('2x powah:reactor_basic', ['ABA','BCB','ABA'], {A: 'powah:uraninite',B: 'powah:capacitor_basic_large',C: 'powah:dielectric_casing'}).id("mbm2:powah/reactor_basic")
+event.remove({id: 'powah:crafting/reactor_hardened'})
+event.custom({
+  "type": "extendedcrafting:shaped_table",
+  "pattern": [
+    "ABC",
+    "BDB",
+    "CBA"
+  ],
+  "key": {
+    "A": {
+      "item": "powah:reactor_basic"
+    },
+    "B": {
+      "item": "powah:capacitor_hardened"
+    },
+    "C": {
+      "item": "kubejs:tier_1_electrical_alloy_wire_coil"
+    },
+    "D": {
+      "item": "kubejs:energized_steel_gear"
+    }
+  },
+  "result": {
+    "item": "powah:reactor_hardened",
+    "count": 2
+  }
+}).id("mbm2:powah/reactor_hardened")
+event.remove({id: 'powah:crafting/reactor_blazing'})
+event.custom({
+  "type": "extendedcrafting:shaped_table",
+  "pattern": [
+    "ABC",
+    "BDB",
+    "CBA"
+  ],
+  "key": {
+    "A": {
+      "item": "powah:reactor_hardened"
+    },
+    "B": {
+      "item": "powah:capacitor_blazing"
+    },
+    "C": {
+      "item": "kubejs:tier_1_electrical_alloy_coil"
+    },
+    "D": {
+      "item": "kubejs:pyrotheum_dust"
+    }
+  },
+  "result": {
+    "item": "powah:reactor_blazing",
+    "count": 2
+  }
+}).id("mbm2:powah/reactor_blazing")
+event.remove({id: 'powah:crafting/reactor_niotic'})
+event.custom({
+  "type": "extendedcrafting:shaped_table",
+  "pattern": [
+    "ABC",
+    "BDB",
+    "CBA"
+  ],
+  "key": {
+    "A": {
+      "item": "powah:reactor_blazing"
+    },
+    "B": {
+      "item": "powah:capacitor_niotic"
+    },
+    "C": {
+      "item": "kubejs:tier_1_electrical_alloy_dual_coil"
+    },
+    "D": {
+      "item": "kubejs:charged_coil"
+    }
+  },
+  "result": {
+    "item": "powah:reactor_niotic",
+    "count": 2
+  }
+}).id("mbm2:powah/reactor_niotic")
+event.remove({id: 'powah:crafting/reactor_spirited'})
+event.custom({
+  "type": "extendedcrafting:shaped_table",
+  "pattern": [
+    "ABCDD",
+    "BEBFD",
+    "CBGBC",
+    "DFBEB",
+    "DDCBA"
+  ],
+  "key": {
+    "A": {
+      "item": "powah:reactor_niotic"
+    },
+    "B": {
+      "item": "powah:capacitor_spirited"
+    },
+    "C": {
+      "item": "kubejs:dielectric_alloy_gear"
+    },
+    "D": {
+      "item": "kubejs:tier_2_electrical_alloy_wire_coil"
+    },
+    "E": {
+      "item": "powah:ender_cell_niotic"
+    },
+    "F": {
+      "item": "kubejs:charged_coil"
+    },
+    "G": {
+      "item": "powah:spirited_crystal_block"
+    }
+  },
+  "result": {
+    "item": "powah:reactor_spirited",
+    "count": 2
+  }
+}).id("mbm2:powah/reactor_spirited")
+event.remove({id: 'powah:crafting/reactor_nitro'})
+event.custom({
+  "type": "extendedcrafting:shaped_table",
+  "pattern": [
+    "ABCDD",
+    "BEBFD",
+    "CBGBC",
+    "DFBEB",
+    "DDCBA"
+  ],
+  "key": {
+    "A": {
+      "item": "powah:reactor_spirited"
+    },
+    "B": {
+      "item": "powah:capacitor_nitro"
+    },
+    "C": {
+      "item": "kubejs:dielectric_alloy_gear"
+    },
+    "D": {
+      "item": "kubejs:tier_2_electrical_alloy_dual_coil"
+    },
+    "E": {
+      "item": "powah:ender_cell_spirited"
+    },
+    "F": {
+      "item": "kubejs:charged_coil"
+    },
+    "G": {
+      "item": "powah:nitro_crystal_block"
+    }
+  },
+  "result": {
+    "item": "powah:reactor_nitro",
+    "count": 2
+  }
+}).id("mbm2:powah/reactor_nitro")
 });

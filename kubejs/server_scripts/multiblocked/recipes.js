@@ -375,6 +375,10 @@ event.shaped('mbm2:energy_converter', ['ABA','CDC','AEA'], {A: 'kubejs:tier_1_el
 		O: '#forge:ingots/refined_obsidian'
 	  }).id('mbm2:tier3_casing')
 
-
+	// combo_input
+	event.shaped('multiblocked:combo_input', ['ABC','DEA','ABC'], {A: 'kubejs:tier_1_mechanical_alloy_gear',B: 'lazierae2:logic_unit',C: 'multiblocked:fluid_input',D: 'multiblocked:item_input',E: 'kubejs:tier2_casing'}).id("mbm2:combo_input")
+	
+	// big_combo_input
+	event.shaped('multiblocked:big_combo_input', ['ABC','DEA','ABF'], {A: 'kubejs:tier_2_mechanical_alloy_gear',B: 'lazierae2:logic_unit',C: 'multiblocked:fluid_input',D: 'multiblocked:combo_input',E: 'kubejs:tier3_casing',F: 'multiblocked:big_item_input'}).id("mbm2:big_combo_input")
 })
 

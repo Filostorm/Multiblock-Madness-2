@@ -35,5 +35,8 @@ onEvent('fluid.registry', event => {
     event.create(`liquid_mana`).thinTexture(0x5acbd1).bucketColor(0x5acbd1)
 
     event.create(`liquid_source`).thinTexture(0xbf32bf).bucketColor(0xbf32bf)
+
+    event.create(`raw_data`).stillTexture('kubejs:block/fluid/raw_data').flowingTexture('kubejs:block/fluid/raw_data').bucketColor(0x091209)
+    event.create(`processed_data`).stillTexture('kubejs:block/fluid/processed_data').flowingTexture('kubejs:block/fluid/processed_data').bucketColor(0x080b12)
   });
   

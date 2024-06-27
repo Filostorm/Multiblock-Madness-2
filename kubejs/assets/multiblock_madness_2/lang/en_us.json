@@ -109,6 +109,10 @@
     "block.multiblocked.big_item_input": "Big Item Input Bus",
     "block.multiblocked.big_item_output": "Big Item Output Bus",
 
+    "block.multiblocked.combo_input": "Combo Input Bus",
+    
+    "block.multiblocked.big_combo_input": "Big Combo Input Bus",
+
     "block.multiblocked.energy_input_mk1": "Mk1 Energy Input",
     "block.multiblocked.energy_output_mk1": "Mk1 Energy Output",
 
@@ -119,6 +123,7 @@
     "block.multiblocked.energy_output_mk3": "Mk3 Energy Output",
 
     "item.create.andesite_alloy": "Stone Alloy",
+    "block.create.andesite_alloy_block": "Block of Stone Alloy",
     "create.recipe.rolling": "Rolling Mill",
     "create.recipe.charginf": "Tesla Coil",
 

@@ -252,6 +252,7 @@ onEvent('rei.remove.categories', event => {
 		'industrialforegoing:ore_washer',
 		'industrialforegoing:fermenter',
 		'industrialforegoing:ore_sieve',
+		'elementalcraft:purification',
 	]
 
 	badCategories.forEach((item) => {

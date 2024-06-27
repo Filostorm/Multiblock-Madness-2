@@ -3,6 +3,7 @@
     "textures": {
         "reflector": "kubejs:block/reflector",
         "casing": "kubejs:block/ev_casing",
+        "glass": "kubejs:block/glass",
         "particle": "kubejs:block/ev_casing"
     },
     "display": {
@@ -39,7 +40,7 @@
     },
     "elements": [
         {
-            "name": "base_b",
+            "name": "Bottom",
             "from": [ 0, 0, 0 ], 
             "to": [ 16, 4, 16 ], 
             "faces": {
@@ -51,7 +52,7 @@
             }
         },
         {
-            "name": "base_t",
+            "name": "Top",
             "from": [ 0, 4, 0 ], 
             "to": [ 16, 8, 16 ], 
             "faces": {
@@ -60,6 +61,18 @@
                 "south": { "texture": "#casing", "uv": [ 0, 0, 16, 4 ] },
                 "west": { "texture": "#casing", "uv": [ 0, 0, 16, 4 ] },
                 "up": { "texture": "#reflector", "uv": [ 0, 0, 16, 16 ] }
+            }
+        },
+        {
+            "name": "Glass",
+            "from": [ 0, 8, 0 ], 
+            "to": [ 16, 9, 16 ], 
+            "faces": {
+                "north": { "texture": "#glass", "uv": [ 0, 0, 16, 1 ] },
+                "east": { "texture": "#glass", "uv": [ 0, 0, 16, 1 ] },
+                "south": { "texture": "#glass", "uv": [ 0, 0, 16, 1 ] },
+                "west": { "texture": "#glass", "uv": [ 0, 0, 16, 1 ] },
+                "up": { "texture": "#glass", "uv": [ 0, 0, 16, 16 ] }
             }
         }
     ]

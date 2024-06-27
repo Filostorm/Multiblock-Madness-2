@@ -28,7 +28,8 @@ var mods = [
 	'biggerreactors',
 	'beyond_earth',
 	'elementalcraft',
-	'lazierae2'
+	'lazierae2',
+	'powah'
 ]
 
 var smeltingList = [

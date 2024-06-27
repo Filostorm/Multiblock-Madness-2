@@ -389,6 +389,8 @@ event.recipes.immersiveengineeringArcFurnace([outputs], input, [additives], slag
     "b":{"tag":"forge:phenolic_resin","amount":1000,"type":"immersiveengineering:fluid"}},
     "result":{"item":"immersiveengineering:fiberboard","count":8}}).id('mbm2:crafting/fiberboard')
 
+    event.recipes.thermal.bottler('immersiveengineering:fiberboard', ['thermal:sawdust_block', Fluid.of('immersiveengineering:phenolic_resin', 125)]).id(`mbm2:thermal/bottling/fiberboard`)
+
 		//event.custom({"type":"immersiveengineering:sawmill",
 		//	"secondaries":[
 		//		{"output":{"tag":"forge:dusts/wood"}, "stripping":true},
@@ -432,9 +434,8 @@ event.recipes.immersiveengineeringArcFurnace([outputs], input, [additives], slag
       event.stonecutting(signOut, signIn)
     })
   });
+  //survey_tools
+  event.shapeless('immersiveengineering:survey_tools', ['immersiveengineering:toolbox','minecraft:book','scannable:common_ores_module']).id(`mbm2:shapeless/survey_tools`)
+  
 });
      
-     //survey_tools
-     event.shapeless('immersiveengineering:survey_tools', ['immersiveengineering:toolbox','minecraft:book','scannable:common_ores_module']).id(`mbm2:shapeless/survey_tools`)
-     
-    });

@@ -648,6 +648,7 @@
 			title: "Crushed Ore"
 			x: 2.0d
 			y: -6.0d
+			description: ["Crushed Ore can also be washed for a small boost in yield before you set up ore Purification"]
 			dependencies: ["665C67462A0C8CD1"]
 			id: "21F49B8439E00DAF"
 			tasks: [{
@@ -679,7 +680,10 @@
 			title: "Ore Chunks"
 			x: 5.5d
 			y: -6.0d
-			dependencies: ["24657EDFBAF51873"]
+			dependencies: [
+				"24657EDFBAF51873"
+				"21F49B8439E00DAF"
+			]
 			id: "4DE6A9BF08BD38DD"
 			tasks: [{
 				id: "1605C0BC3B1FD33A"
@@ -740,7 +744,10 @@
 			title: "Lump of Ore"
 			x: 9.0d
 			y: -6.0d
-			dependencies: ["2B17F5722136AB89"]
+			dependencies: [
+				"2B17F5722136AB89"
+				"4DE6A9BF08BD38DD"
+			]
 			id: "4BF0862881DCDE10"
 			tasks: [{
 				id: "443E93A93A0F8207"
@@ -795,7 +802,7 @@
 			title: "Venus Veins"
 			icon: "beyond_earth:venus_globe"
 			disable_toast: true
-			x: 14.5d
+			x: 15.0d
 			y: -2.5d
 			shape: "circle"
 			id: "686ECAA2B2C4E112"
@@ -810,7 +817,7 @@
 			title: "Mercury Veins"
 			icon: "beyond_earth:mercury_globe"
 			disable_toast: true
-			x: 15.5d
+			x: 16.0d
 			y: -2.5d
 			shape: "circle"
 			id: "3BCE38C8A18BA068"
@@ -842,7 +849,7 @@
 			}]
 		}
 		{
-			x: 14.5d
+			x: 15.0d
 			y: -1.5d
 			id: "720C01B02B7DEE1E"
 			tasks: [{
@@ -855,7 +862,7 @@
 			title: "Glacio Veins"
 			icon: "beyond_earth:glacio_globe"
 			disable_toast: true
-			x: 18.0d
+			x: 19.0d
 			y: -2.5d
 			shape: "circle"
 			id: "107BBC9E6D7F35F7"
@@ -867,7 +874,7 @@
 			}]
 		}
 		{
-			x: 18.0d
+			x: 19.0d
 			y: -1.5d
 			id: "4B54A9EF6B62C762"
 			tasks: [{
@@ -877,7 +884,7 @@
 			}]
 		}
 		{
-			x: 15.5d
+			x: 16.0d
 			y: -1.5d
 			id: "35AF50BDCB517849"
 			tasks: [{
@@ -887,7 +894,7 @@
 			}]
 		}
 		{
-			x: 18.0d
+			x: 19.0d
 			y: -0.5d
 			id: "2B4BD77280C48DC3"
 			tasks: [{
@@ -897,7 +904,7 @@
 			}]
 		}
 		{
-			x: 14.5d
+			x: 15.0d
 			y: -0.5d
 			id: "2613429BF2F4ADD8"
 			tasks: [{
@@ -907,7 +914,7 @@
 			}]
 		}
 		{
-			x: 15.5d
+			x: 16.0d
 			y: -0.5d
 			id: "52CC70B8491FE20F"
 			tasks: [{
@@ -931,7 +938,10 @@
 			title: "Ore Deposit"
 			x: 12.5d
 			y: -6.0d
-			dependencies: ["0C3EB21BEA2D34C9"]
+			dependencies: [
+				"0C3EB21BEA2D34C9"
+				"4BF0862881DCDE10"
+			]
 			id: "46F59AB0DA404B1A"
 			tasks: [{
 				id: "52D25A2415B85C41"
@@ -949,7 +959,7 @@
 		{
 			disable_toast: true
 			x: 11.5d
-			y: -5.0d
+			y: -4.5d
 			id: "0DC400230EF6616D"
 			tasks: [{
 				id: "5492ADF150555865"
@@ -959,7 +969,7 @@
 		}
 		{
 			disable_toast: true
-			x: 14.5d
+			x: 15.0d
 			y: -6.0d
 			id: "00859F9E64E640CB"
 			tasks: [{
@@ -970,9 +980,12 @@
 		}
 		{
 			title: "Leached Ore"
-			x: 15.5d
+			x: 16.0d
 			y: -6.0d
-			dependencies: ["00859F9E64E640CB"]
+			dependencies: [
+				"00859F9E64E640CB"
+				"46F59AB0DA404B1A"
+			]
 			id: "547BBD0D7412471D"
 			tasks: [{
 				id: "79B10EA54A73F6A3"
@@ -989,8 +1002,8 @@
 		}
 		{
 			disable_toast: true
-			x: 14.5d
-			y: -5.0d
+			x: 15.0d
+			y: -4.5d
 			id: "3BFFF4D5CAFC1A3D"
 			tasks: [{
 				id: "1E5B44061C98D744"
@@ -1000,7 +1013,7 @@
 		}
 		{
 			disable_toast: true
-			x: 18.0d
+			x: 19.0d
 			y: -6.0d
 			id: "6EA1FAD3986DBE8D"
 			tasks: [{
@@ -1011,9 +1024,12 @@
 		}
 		{
 			title: "Ore Crystal"
-			x: 19.0d
+			x: 20.0d
 			y: -6.0d
-			dependencies: ["6EA1FAD3986DBE8D"]
+			dependencies: [
+				"6EA1FAD3986DBE8D"
+				"547BBD0D7412471D"
+			]
 			id: "280FDDCAC78E2F8F"
 			tasks: [{
 				id: "1C953F015EEBC4F6"
@@ -1030,8 +1046,8 @@
 		}
 		{
 			disable_toast: true
-			x: 18.0d
-			y: -5.0d
+			x: 19.0d
+			y: -4.5d
 			id: "3C240ED6381FC643"
 			tasks: [{
 				id: "512A18E7DA252320"
@@ -1046,13 +1062,14 @@
 			tasks: [{
 				id: "506EDAE3B2AFDD04"
 				type: "item"
-				item: "create:encased_fan"
+				item: "ars_nouveau:imbuement_chamber"
 			}]
 		}
 		{
-			title: "Pure Ores (2x)"
+			title: "Pure Ore (2x)"
 			x: 2.0d
 			y: -8.5d
+			description: ["Ore Refining always ends at Pure Ore. You'll be able to add steps as you unlock new magical methods"]
 			dependencies: [
 				"04E530CE0867A595"
 				"21F49B8439E00DAF"
@@ -1061,7 +1078,7 @@
 			tasks: [{
 				id: "3A631CE3C385AC39"
 				type: "item"
-				title: "Washed Ores"
+				title: "Purified Ores"
 				item: {
 					id: "itemfilters:tag"
 					Count: 1b
@@ -1088,13 +1105,12 @@
 			dependencies: [
 				"1C8AAD5840B436DD"
 				"4DE6A9BF08BD38DD"
-				"0F775E2996F34054"
 			]
 			id: "29FBA2AD5DD2367B"
 			tasks: [{
 				id: "508882A8C6269E60"
 				type: "item"
-				title: "Any #forge:ores/crumbled"
+				title: "Crumbled Ore"
 				item: {
 					id: "itemfilters:tag"
 					Count: 1b
@@ -1130,7 +1146,6 @@
 			y: -8.5d
 			dependencies: [
 				"4BF0862881DCDE10"
-				"29FBA2AD5DD2367B"
 				"7E366CE8A15E4FFB"
 			]
 			id: "5AF8241E1B970137"
@@ -1152,7 +1167,6 @@
 			x: 12.5d
 			y: -8.5d
 			dependencies: [
-				"5AF8241E1B970137"
 				"46F59AB0DA404B1A"
 				"6BA6707B8E0C5935"
 			]
@@ -1166,6 +1180,312 @@
 					Count: 1b
 					tag: {
 						value: "forge:ores/infused"
+					}
+				}
+			}]
+		}
+		{
+			title: "Ore Cluster (32x)"
+			x: 16.0d
+			y: -8.5d
+			dependencies: [
+				"0CD24E6C27C20BAA"
+				"547BBD0D7412471D"
+			]
+			id: "07767F735C9AAE9F"
+			tasks: [{
+				id: "229EBC825343B21C"
+				type: "item"
+				title: "Ore Cluster"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "forge:ores/cluster"
+					}
+				}
+			}]
+		}
+		{
+			x: 15.0d
+			y: -7.5d
+			id: "0CD24E6C27C20BAA"
+			tasks: [{
+				id: "5B94A2E34C0B9534"
+				type: "item"
+				item: "forbidden_arcanus:hephaestus_forge"
+			}]
+		}
+		{
+			title: "Ore Shards (64x)"
+			x: 20.0d
+			y: -8.5d
+			description: ["No recipe yet, feel free to post suggestions in the discord!"]
+			dependencies: ["280FDDCAC78E2F8F"]
+			id: "315D43C53050EEF1"
+			tasks: [{
+				id: "775F264DE0823DC3"
+				type: "item"
+				title: "Any #forge:ores/shard"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "forge:ores/shard"
+					}
+				}
+			}]
+		}
+		{
+			title: "Tier 1 Metals"
+			x: -2.0d
+			y: -5.0d
+			dependencies: ["4418C0F5D9F2B232"]
+			id: "7206C90CCBF9B9F4"
+			tasks: [{
+				id: "4E143B688E5EB7FA"
+				type: "item"
+				title: "Tier 1 Ingot"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "mbm2:base_metals/tier_one"
+					}
+				}
+			}]
+		}
+		{
+			x: 3.0d
+			y: -5.0d
+			description: ["You'll need to upgrade your Ore Processing setup for each new tier of metal you have access to"]
+			dependencies: [
+				"7973F284698B786F"
+				"21F49B8439E00DAF"
+			]
+			id: "618D3DB314D52278"
+			tasks: [{
+				id: "735F29A502059F9B"
+				type: "item"
+				title: "Tier 2 Metals"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "mbm2:base_metals/tier_two"
+					}
+				}
+			}]
+		}
+		{
+			x: -2.0d
+			y: -4.0d
+			dependencies: ["374E9F1741E235E4"]
+			id: "44DB729FE8E73A26"
+			tasks: [{
+				id: "435B6793886452D5"
+				type: "item"
+				title: "Tier 1 Alloys"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "mbm2:alloys/tier_one"
+					}
+				}
+			}]
+		}
+		{
+			x: 3.0d
+			y: -4.0d
+			dependencies: ["04BF5087EE619C6C"]
+			id: "00CAD5B8F0DDF744"
+			tasks: [{
+				id: "4E6E31FEE7D08017"
+				type: "item"
+				title: "Tier 2 Alloys"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "mbm2:alloys/tier_two"
+					}
+				}
+			}]
+		}
+		{
+			x: 6.5d
+			y: -5.0d
+			dependencies: [
+				"097A3B834A7D46DD"
+				"4DE6A9BF08BD38DD"
+			]
+			id: "624D65014B20411F"
+			tasks: [{
+				id: "2FECD48059125D61"
+				type: "item"
+				title: "Tier 3 Metal"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "mbm2:base_metals/tier_three"
+					}
+				}
+			}]
+		}
+		{
+			x: 6.5d
+			y: -4.0d
+			dependencies: ["097A3B834A7D46DD"]
+			id: "0EA2F1D3A5985454"
+			tasks: [{
+				id: "306F756FF33C21F6"
+				type: "item"
+				title: "Tier 3 Alloys"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "mbm2:alloys/tier_three"
+					}
+				}
+			}]
+		}
+		{
+			x: 10.0d
+			y: -5.0d
+			dependencies: [
+				"02EA1B0663586E18"
+				"4BF0862881DCDE10"
+			]
+			id: "72DBD8D4EC2059AA"
+			tasks: [{
+				id: "057B3698F165D2DB"
+				type: "item"
+				title: "Tier 4 Metal"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "mbm2:base_metals/tier_four"
+					}
+				}
+			}]
+		}
+		{
+			x: 10.0d
+			y: -4.0d
+			dependencies: ["39D7F8D91CFCE5E9"]
+			id: "4D452D2D6B37F4CE"
+			tasks: [{
+				id: "5249F721771C4F1E"
+				type: "item"
+				title: "Tier 4 Alloys"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "mbm2:alloys/tier_four"
+					}
+				}
+			}]
+		}
+		{
+			x: 13.5d
+			y: -5.0d
+			dependencies: [
+				"0DC400230EF6616D"
+				"46F59AB0DA404B1A"
+			]
+			id: "77B482B0DC72F7CF"
+			tasks: [{
+				id: "4C6570EAC65DCEA9"
+				type: "item"
+				title: "Tier 5 Metal"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "mbm2:base_metals/tier_five"
+					}
+				}
+			}]
+		}
+		{
+			x: 13.5d
+			y: -4.0d
+			dependencies: ["0DC400230EF6616D"]
+			id: "495EEC7CAB9014BE"
+			tasks: [{
+				id: "5B3CE413C2409508"
+				type: "item"
+				title: "Tier 5 Alloys"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "mbm2:alloys/tier_five"
+					}
+				}
+			}]
+		}
+		{
+			x: 17.0d
+			y: -5.0d
+			dependencies: [
+				"3BFFF4D5CAFC1A3D"
+				"547BBD0D7412471D"
+			]
+			id: "108900C01052E7FD"
+			tasks: [{
+				id: "18FCD0117BC305D3"
+				type: "item"
+				title: "Tier 6 Metal"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "mbm2:base_metals/tier_six"
+					}
+				}
+			}]
+		}
+		{
+			x: 17.0d
+			y: -4.0d
+			dependencies: ["3BFFF4D5CAFC1A3D"]
+			id: "5AA9EF72329A105C"
+			tasks: [{
+				id: "6985475F2FE7AA2C"
+				type: "item"
+				title: "Tier 6 Alloys"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "mbm2:alloys/tier_six"
+					}
+				}
+			}]
+		}
+		{
+			x: 21.0d
+			y: -4.5d
+			dependencies: [
+				"3C240ED6381FC643"
+				"280FDDCAC78E2F8F"
+			]
+			id: "340B2181917188F2"
+			tasks: [{
+				id: "0E848A7C9E6BB5B8"
+				type: "item"
+				title: "Tier 7 Metal"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "mbm2:base_metals/tier_seven"
 					}
 				}
 			}]

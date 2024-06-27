@@ -439,8 +439,8 @@ global.newMaterialParts = [
       'itemParts': ['plate', 'gear', 'rod'],
       'blockParts': [],
       'fluid': 'thick',
-      'ore': true,
-      'raw_ore': true,
+      //'ore': true,
+      //'raw_ore': true,
     },
     {
       'material': 'boron',
@@ -543,7 +543,7 @@ global.newMaterialParts = [
       'dust_input': ['#forge:dusts/copper','3x #forge:dusts/redstone'],
       'ingot_input': ['#forge:ingots/copper','3x #forge:dusts/redstone'],
       'tinkers_input': [{tag: 'forge:molten_copper',amount: 90},{tag: 'forge:redstone',amount: 300}]
-    },
+    },/*
     {
       'material': 'pewter',
       'color': 0x9d96b5,
@@ -558,7 +558,7 @@ global.newMaterialParts = [
       'tinkers_input': [{tag: 'forge:molten_tin',amount: 180},{tag: 'forge:molten_silver',amount: 90},{tag: 'forge:molten_lead',amount: 90}],
       'allomancy': 'Pewter grants increased speed, jump height, damage, and damage resistance to the player. Be careful, though - Any damage incurred while burning pewter is remembered, and if you stop burning it at the wrong time you could end up being killed by all the built up damage.',
       'feruchemy': 'Strength--Haste/Strength or Weakness/Mining Fatigue'
-    },
+    },*/
     {
       'material': 'auric_gold',
       'color': 0xf2f274,
@@ -1378,7 +1378,7 @@ global.newMaterialParts = [
     },
     {
       'material': 'tier_2_electrical_alloy',
-      'color': 0xf09169,
+      'color': 0xf59247,
       'type': 'alloy',
       'tier': 3,
       'iconset': 'electrical',
@@ -1519,7 +1519,7 @@ global.newMaterialParts = [
       'material': 'manasteel',
       'color': 0x69a7ff,
       'type': 'magic_alloy',
-      'tier': 2,
+      'tier': 4,
       'itemParts': ['dust', 'plate', 'gear', 'rod'],
       'blockParts': [],
       'fluid': 'thick',
@@ -1527,6 +1527,7 @@ global.newMaterialParts = [
     },
     {
       'material': 'terrasteel',
+      'tier': 5,
       'color': 0x63e645,
       'type': 'magic_alloy',
       'itemParts': ['plate',  'gear', 'rod'],
@@ -1536,22 +1537,24 @@ global.newMaterialParts = [
     },
     {
       'material': 'elementium',
+      'tier': 6,
       'color': 0xf569b6,
       'type': 'magic_alloy',
       'itemParts': ['plate',  'gear', 'rod'],
       'blockParts': [],
       'fluid': 'thick',
       'fluid_id': 'kubejs:molten_elementium',
-    },
+    },/*
     {
       'material': 'transmuted_silver',
       'color': 0xa9d0d9,
       'type': 'magic_alloy',
       'itemParts': ['plate', 'gear', 'rod'],
       'blockParts': []
-    },
+    },*/
     {
       'material': 'infused_mithril',
+      'tier': 3,
       'color': 0x54b33b,
       'type': 'magic_alloy',
       'itemParts': ['plate', 'gear', 'rod', 'dust', 'bolt'],
@@ -1561,6 +1564,7 @@ global.newMaterialParts = [
     },
     {
       'material': 'tainted_gold',
+      'tier': 3,
       'color': 0xa66032,
       'type': 'magic_alloy',
       'itemParts': ['plate', 'gear', 'rod', 'dust', 'bolt'],
@@ -1570,6 +1574,7 @@ global.newMaterialParts = [
     },
     {
       'material': 'sky_metal',
+      'tier': 4,
       'color': 0x83d5de,
       'type': 'magic_alloy',
       'itemParts': ['plate', 'gear', 'rod', 'dust', 'bolt'],

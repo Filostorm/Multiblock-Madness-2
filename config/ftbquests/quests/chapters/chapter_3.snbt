@@ -364,7 +364,6 @@
 			icon: "mbm2:sorter_mk1"
 			x: 4.0d
 			y: 0.0d
-			subtitle: "The Imbuement Chamber is required for Mechanical Alloy"
 			description: ["This is required to extract higher tier Ores from Compound Ore."]
 			dependencies: ["51537052A03715D7"]
 			id: "23C9B04C7E4C834F"

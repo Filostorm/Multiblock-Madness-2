@@ -194,10 +194,11 @@
       "E": {
         "blocks": [
           {
-            "id": "thermal:signalum_block"
+            "id": "multiblocked:receiver_block"
           }
         ],
-        "type": "blocks"
+        "type": "blocks",
+        "io": "IN"
       },
       "F": {
         "blocks": [

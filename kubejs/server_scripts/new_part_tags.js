@@ -79,18 +79,29 @@ onEvent('tags.items', event => {
             event.add(`forge:storage_blocks/raw_${item.material}`, `kubejs:raw_${item.material}_block`)
           }
           
-          orePartCreation.forEach((part) => {
+
+        if (item.type == 'compound_ore') {
+          global.compoundOreParts.forEach((part) => { //compound ores don't get refined
+            event.add(`forge:ores/compound/${part.name}`, `kubejs:${part.name}_${item.material}`)
             if (part.name != 'raw'/* && !(part.grade == null && item.type == 'compound_ore')*/) {
               event.add(`forge:ores/${part.name}`, `kubejs:${part.name}_${item.material}`)
               event.add(`forge:ores/${part.name}/${item.material}`, `kubejs:${part.name}_${item.material}`)
-              if (item.type == 'compound_ore') {
-                event.add(`forge:ores/compound/${part.name}`, `kubejs:${part.name}_${item.material}`)
-              }
             } else {
               event.add(`forge:ores/${part.name}`, `#forge:raw_materials/${item.material}`)
               event.add(`forge:ores/${part.name}/${item.material}`, `#forge:raw_materials/${item.material}`)
             }
           })
+        } else {
+          orePartCreation.forEach((part) => { // all other ores get every part
+            if (part.name != 'raw'/* && !(part.grade == null && item.type == 'compound_ore')*/) {
+              event.add(`forge:ores/${part.name}`, `kubejs:${part.name}_${item.material}`)
+              event.add(`forge:ores/${part.name}/${item.material}`, `kubejs:${part.name}_${item.material}`)
+            } else {
+              event.add(`forge:ores/${part.name}`, `#forge:raw_materials/${item.material}`)
+              event.add(`forge:ores/${part.name}/${item.material}`, `#forge:raw_materials/${item.material}`)
+            }
+          })
+        }
 
         } 
         if (item.type != 'gem' && item.type != 'element') {

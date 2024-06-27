@@ -749,8 +749,8 @@
 			}]
 		}
 		{
-			x: 3.0d
-			y: 2.5d
+			x: 1.5d
+			y: 3.75d
 			shape: "circle"
 			dependencies: ["3DB2C9FEEFF74379"]
 			size: 1.5d
@@ -1009,8 +1009,8 @@
 		}
 		{
 			icon: "mbm2:mixer_mk1"
-			x: 10.0d
-			y: 1.25d
+			x: 5.625d
+			y: 3.75d
 			description: ["Can make almost any alloy in dust form."]
 			size: 1.25d
 			id: "627B714B402BEE67"
@@ -1120,12 +1120,12 @@
 		}
 		{
 			title: "Advanced Energetic Alloys"
-			x: 8.5d
-			y: 1.5d
+			x: 6.5d
+			y: 6.0d
 			description: ["You might want to set up some good power supply before mass producing AE components."]
 			dependencies: [
-				"75D4FF56D8BBF34A"
 				"627B714B402BEE67"
+				"52CA3CCD2B27CB98"
 			]
 			min_required_tasks: 1
 			id: "592A4D0BDEB062DB"
@@ -1213,7 +1213,7 @@
 			]
 		}
 		{
-			x: 7.0d
+			x: 3.0d
 			y: 4.0d
 			subtitle: "4k RF/t "
 			dependencies: [
@@ -1228,9 +1228,12 @@
 			}]
 		}
 		{
-			x: 8.5d
-			y: 4.0d
-			dependencies: ["592A4D0BDEB062DB"]
+			x: 10.0d
+			y: 0.5d
+			dependencies: [
+				"592A4D0BDEB062DB"
+				"7BB9213CBA0A5FCC"
+			]
 			id: "33A907176391C423"
 			tasks: [{
 				id: "3957BF8D199A31BB"
@@ -1506,8 +1509,8 @@
 			}]
 		}
 		{
-			x: 3.0d
-			y: 4.0d
+			x: 1.5d
+			y: 5.5d
 			dependencies: ["0D9ABDE851B5E722"]
 			id: "070F35D0E7EF8EAC"
 			tasks: [{
@@ -1787,7 +1790,7 @@
 		}
 		{
 			title: "Auto Crafting!"
-			x: 7.0d
+			x: 4.0d
 			y: 3.0d
 			description: [
 				"You'll need to convert the Crafting Unit by adding a Storage Disk of some size."
@@ -1842,8 +1845,9 @@
 			]
 		}
 		{
-			x: 10.0d
+			x: 7.0d
 			y: 3.0d
+			description: ["Can be used as a Tinkers Fuel"]
 			dependencies: ["627B714B402BEE67"]
 			id: "5380AA7BAC513908"
 			tasks: [{

@@ -103,7 +103,7 @@ global.oreRefiningParts = [
     },
 ]
 
-  global.oreParts = global.oreProcessingParts.concat(global.oreRefiningParts)
+global.oreParts = global.oreProcessingParts.concat(global.oreRefiningParts)
   
 
 global.oreBonusParts = [
@@ -120,3 +120,4 @@ global.oreBonusParts = [
         'model': false,
     },
 ]
+global.compoundOreParts = global.oreProcessingParts.concat(global.oreBonusParts)

@@ -25,7 +25,23 @@ global.refiningMultiplier = [
 	32,
 	64,
 ]
+/*
+const nameUpper = (name) => {
+	if(name != null) {
+		return name.charAt(0).toUpperCase() + name.slice(1)
+	} else {
+		return 'null'
+	}
+}*/
+const nameUpper = (material) => {
+	const name = material.split("_");
 
+	for (let i = 0; i < name.length; i++) {
+		name[i] = name[i][0].toUpperCase() + name[i].substr(1);
+	}
+	
+	return name.join(' ');
+  }
 
 onEvent('recipes', event => {
 	global.createCrushed.forEach((item) => {
@@ -124,9 +140,10 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 		event.remove({id: `mekanism:processing/${item.material}/dust/from_raw_ore`})
 		event.remove({id: `mekanism:processing/${item.material}/dust/from_dirty_dust`})
 		event.remove({id: `mekanism:processing/${item.material}/dust/from_raw_block`})
-		event.remove({id: `elementalcraft:pure_ore/mekanism/processing/${item.material}/dust/from_ore`})
-		event.remove({id: `elementalcraft:pure_ore/mekanism/processing/${item.material}/dust/from_ore`})
+		//event.remove({id: `elementalcraft:pure_ore/mekanism/processing/${item.material}/dust/from_ore`})
+		//event.remove({id: `elementalcraft:pure_ore/mekanism/processing/${item.material}/dust/from_ore`})
 		event.remove({id: `elementalcraft:forge_${item.material}_to_pure_ore`})
+		event.remove({id: /elementalcraft:pure_ore.*/})
 		
 		if (item.ore) {
 		// Fragmets
@@ -522,23 +539,33 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 		global.coilHeatValues = [
 			{
 				name: 'white_alloy',
-				heat: 100
+				heat: 100,
+				total: 1000,
+				fluid: 'mekanism:oxygen'
 			},
 			{
 				name: 'desh',
-				heat: 200
+				heat: 200,
+				total: 2000,
+				fluid: 'chemlib:xenon_fluid'
 			},
 			{
 				name: 'tungsten',
-				heat: 300
+				heat: 300,
+				total: 3000,
+				fluid: 'chemlib:xenon_fluid'
 			},
 			{
 				name: 'adamantium',
-				heat: 400
+				heat: 400,
+				total: 4000,
+				fluid: 'chemlib:argon_fluid'
 			},
 			{
 				name: 'vibranium',
-				heat: 1000
+				heat: 1000,
+				total: 10000,
+				fluid: 'chemlib:argon_fluid'
 			}
 		]
 		global.coilPos = [
@@ -570,6 +597,61 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 			{ x: 1, y: 3, z: 0 },
 		]
 
+		
+let blastFurnaceSmelting = (event, material, inputItem, tier) => {
+	if (tier <= 4) {
+		//Oxygen
+		event.recipes.multiblocked.multiblock("ebf")
+		.inputFluid(Fluid.of('mekanism:oxygen', 500))
+		.inputItem(inputItem)
+		.outputItem(Item.of(`#forge:ingots/${material}`))
+		.setPerTick(true)
+		.inputFE(tier*2000)
+		.duration(tier*50)
+
+		//Air
+		event.recipes.multiblocked.multiblock("ebf")
+		.inputFluid(Fluid.of('kubejs:liquid_air', 500))
+		.inputItem(inputItem)
+		.outputItem(Item.of(`#forge:ingots/${material}`))
+		.setPerTick(true)
+		.inputFE(tier*2000)
+		.duration(tier*50+50)
+	} else {
+		let tierSmeltingTemp = global.coilHeatValues[tier-4].total
+		let tierFluid = global.coilHeatValues[tier-4].fluid
+		console.log('look ' + tierSmeltingTemp)
+		event.recipes.multiblocked.multiblock("ebf")
+			.inputFluid(Fluid.of(tierFluid, 500))
+			.inputItem(inputItem)
+			.outputItem(Item.of(`#forge:ingots/${material}`))
+			.setPerTick(true)
+			.inputFE(tier*2000)
+			.duration(tier*50)
+			.data({ temperature: tierSmeltingTemp})
+			.text(`    Heat: §6${tierSmeltingTemp}`)
+			.predicate((recipe, recipeLogic) => {
+				let reqTemp = recipe.getData().getInt("temperature")
+				let controllerTe = recipeLogic.controller.self()
+				let level = controllerTe.getLevel()
+				let coilTotalHeat = 0
+				global.coilPos.forEach(pos => {
+					let coilName = level.getBlockState(controllerTe.getBlockPos().offset(pos.x, pos.y, pos.z)).getBlock()
+					global.coilHeatValues.forEach(coil => {
+						if (Block.getBlock(`kubejs:${coil.name}_coil`).equals(coilName)) {
+							coilTotalHeat += coil.heat
+						}
+					})
+				})
+				//If we have enough Heat, chillin
+				if (reqTemp <= coilTotalHeat) {
+					return true
+				} else  {
+					return false
+				}
+		}, Component.string('Requires at least '+ nameUpper(global.coilHeatValues[tier-4].name) +' Coils'))
+	}
+}
 
 				//Cash out at any time after Processing
 
@@ -598,22 +680,8 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 						//Retro Arcing
 						event.recipes.immersiveengineeringArcFurnace(Item.of(`#forge:ingots/${item.material}`), smeltProcessedOre).id(`mbm2:arc_furnace/${item.material}_t1_ore_part`)
 
-						//Retro Blasting
-						event.recipes.multiblocked.multiblock("ebf")
-						.inputFluid(Fluid.of('mekanism:oxygen', 500))
-						.inputItem(smeltProcessedOre)
-						.outputItem(Item.of(`#forge:ingots/${item.material}`))
-						.setPerTick(true)
-						.inputFE(4000)
-						.duration(150)
-						//Retro Blasting air
-						event.recipes.multiblocked.multiblock("ebf")
-						.inputFluid(Fluid.of('kubejs:liquid_air', 500))
-						.inputItem(smeltProcessedOre)
-						.outputItem(Item.of(`#forge:ingots/${item.material}`))
-						.setPerTick(true)
-						.inputFE(4000)
-						.duration(200)
+
+						blastFurnaceSmelting(event, item.material, smeltProcessedOre, 1)
 					
 				}
 
@@ -637,44 +705,15 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 					}
 					//Retro Arcing
 					event.recipes.immersiveengineeringArcFurnace(Item.of(`#forge:ingots/${item.material}`), smeltProcessedOre).id(`mbm2:arc_furnace/${item.material}_t2_ore_part`)
-					//Retro Blasting
-					event.recipes.multiblocked.multiblock("ebf")
-					.inputFluid(Fluid.of('kubejs:liquid_air', 500))
-					.inputItem(smeltProcessedOre)
-					.outputItem(Item.of(`#forge:ingots/${item.material}`))
-					.setPerTick(true)
-					.inputFE(4000)
-					.duration(200)
-					//Oxygen
-					event.recipes.multiblocked.multiblock("ebf")
-					.inputFluid(Fluid.of('mekanism:oxygen', 500))
-					.inputItem(smeltProcessedOre)
-					.outputItem(Item.of(`#forge:ingots/${item.material}`))
-					.setPerTick(true)
-					.inputFE(4000)
-					.duration(150)
+
+					blastFurnaceSmelting(event, item.material, smeltProcessedOre, 2)
 				}
 				
 			////////////// TIER 3 /////////////////////
 				if (item.tier == 3) {
 						event.recipes.immersiveengineeringArcFurnace(Item.of(`#forge:ingots/${item.material}`), smeltProcessedOre).id(`mbm2:arc_furnace/${item.material}_t3_ore_part`)
 
-						//Retro Blasting
-						event.recipes.multiblocked.multiblock("ebf")
-						.inputFluid(Fluid.of('kubejs:liquid_air', 500))
-						.inputItem(smeltProcessedOre)
-						.outputItem(Item.of(`#forge:ingots/${item.material}`))
-						.setPerTick(true)
-						.inputFE(4000)
-						.duration(200)
-						//Oxygen
-						event.recipes.multiblocked.multiblock("ebf")
-						.inputFluid(Fluid.of('mekanism:oxygen', 500))
-						.inputItem(smeltProcessedOre)
-						.outputItem(Item.of(`#forge:ingots/${item.material}`))
-						.setPerTick(true)
-						.inputFE(4000)
-						.duration(150)
+						blastFurnaceSmelting(event, item.material, smeltProcessedOre, 3)
 				}
 				
 				if (item.tier <= 3) {
@@ -683,171 +722,24 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 
 			////////////// TIER 4 /////////////////////
 				if (item.tier == 4) {
-					//Oxygen
-					event.recipes.multiblocked.multiblock("ebf")
-					.inputFluid(Fluid.of('mekanism:oxygen', 500))
-					.inputItem(smeltProcessedOre)
-					.outputItem(Item.of(`#forge:ingots/${item.material}`))
-					.setPerTick(true)
-					.inputFE(4000)
-					.duration(150)
-
-					//Air
-					event.recipes.multiblocked.multiblock("ebf")
-					.inputFluid(Fluid.of('kubejs:liquid_air', 500))
-					.inputItem(smeltProcessedOre)
-					.outputItem(Item.of(`#forge:ingots/${item.material}`))
-					.setPerTick(true)
-					.inputFE(4000)
-					.duration(200)
+					blastFurnaceSmelting(event, item.material, smeltProcessedOre, 4)
 				}
 				if (item.tier <= 4) {
-					//Oxygen
-					event.recipes.multiblocked.multiblock("ebf")
-					.inputFluid(Fluid.of('mekanism:oxygen', 500))
-					.inputItem(smeltRefinedOre)
-					.outputItem(Item.of(`#forge:ingots/${item.material}`))
-					.setPerTick(true)
-					.inputFE(4000)
-					.duration(150)
-
-					//Air
-					event.recipes.multiblocked.multiblock("ebf")
-					.inputFluid(Fluid.of('kubejs:liquid_air', 500))
-					.inputItem(smeltRefinedOre)
-					.outputItem(Item.of(`#forge:ingots/${item.material}`))
-					.setPerTick(true)
-					.inputFE(4000)
-					.duration(200)
+					blastFurnaceSmelting(event, item.material, smeltRefinedOre, 4)
 				}
 
 				////////////// TIER 5 /////////////////////
 				if (item.tier == 5) {
-					let tier5Temp = 2000
-						event.recipes.multiblocked.multiblock("ebf")
-							.inputFluid(Fluid.of('mekanism:oxygen', 500))
-							.inputItem(smeltProcessedOre)
-							.outputItem(Item.of(`#forge:ingots/${item.material}`))
-							.setPerTick(true)
-							.inputFE(4000)
-							.duration(200)
-							.data({ temperature: tier5Temp })
-							.text(`    Heat: §6${tier5Temp}`)
-							.predicate((recipe, recipeLogic) => {
-								let reqTemp = recipe.getData().getInt("temperature")
-								let controllerTe = recipeLogic.controller.self()
-								let level = controllerTe.getLevel()
-								let coilTotalHeat = 0
-								global.coilPos.forEach(pos => {
-									let coilName = level.getBlockState(controllerTe.getBlockPos().offset(pos.x, pos.y, pos.z)).getBlock()
-									global.coilHeatValues.forEach(material => {
-										if (Block.getBlock(`kubejs:${material.name}_coil`).equals(coilName)) {
-											coilTotalHeat += material.heat
-										}
-									})
-								})
-								//If we have enough Heat, chillin
-								if (reqTemp <= coilTotalHeat) {
-									return true
-								} else  {
-									return false
-								}
-							}, Component.string('Requires at least Desh Coils'))
-												event.recipes.multiblocked.multiblock("ebf")
-							.inputFluid(Fluid.of('mekanism:oxygen', 500))
-							.inputItem(smeltRefinedOre)
-							.outputItem(Item.of(`#forge:ingots/${item.material}`))
-							.setPerTick(true)
-							.inputFE(4000)
-							.duration(200)
-							.data({ temperature: tier5Temp })
-							.text(`    Heat: §6${tier5Temp}`)
-							.predicate((recipe, recipeLogic) => {
-								let reqTemp = recipe.getData().getInt("temperature")
-								let controllerTe = recipeLogic.controller.self()
-								let level = controllerTe.getLevel()
-								let coilTotalHeat = 0
-								global.coilPos.forEach(pos => {
-									let coilName = level.getBlockState(controllerTe.getBlockPos().offset(pos.x, pos.y, pos.z)).getBlock()
-									global.coilHeatValues.forEach(material => {
-										if (Block.getBlock(`kubejs:${material.name}_coil`).equals(coilName)) {
-											coilTotalHeat += material.heat
-										}
-									})
-								})
-								//If we have enough Heat, chillin
-								if (reqTemp <= coilTotalHeat) {
-									return true
-								} else  {
-									return false
-								}
-							}, Component.string('Requires at least Desh Coils'))
+					blastFurnaceSmelting(event, item.material, smeltProcessedOre, 5)
+					blastFurnaceSmelting(event, item.material, smeltRefinedOre, 5)
 				}
 				////////////// TIER 6 /////////////////////
 				if (item.tier == 6) {
-					let tier6Temp = 3000
-						event.recipes.multiblocked.multiblock("ebf")
-							.inputFluid(Fluid.of('chemlib:argon_fluid', 500))
-							.inputItem(smeltProcessedOre)
-							.outputItem(Item.of(`#forge:ingots/${item.material}`))
-							.setPerTick(true)
-							.inputFE(4000*4)
-							.duration(200)
-							.data({ temperature: tier6Temp })
-							.text(`    Heat: §6${tier6Temp}`)
-							.predicate((recipe, recipeLogic) => {
-								let reqTemp = recipe.getData().getInt("temperature")
-								let controllerTe = recipeLogic.controller.self()
-								let level = controllerTe.getLevel()
-								let coilTotalHeat = 0
-								global.coilPos.forEach(pos => {
-									let coilName = level.getBlockState(controllerTe.getBlockPos().offset(pos.x, pos.y, pos.z)).getBlock()
-									global.coilHeatValues.forEach(material => {
-										if (Block.getBlock(`kubejs:${material.name}_coil`).equals(coilName)) {
-											coilTotalHeat += material.heat
-										}
-									})
-								})
-								//If we have enough Heat, chillin
-								if (reqTemp <= coilTotalHeat) {
-									return true
-								} else  {
-									return false
-								}
-							}, Component.string('Requires at least Tungsten Coils'))
+					blastFurnaceSmelting(event, item.material, smeltProcessedOre, 6)
 				}
 				////////////// TIER 7 /////////////////////
 				if (item.tier == 7) {
-					let tier7Temp = 4000
-						event.recipes.multiblocked.multiblock("ebf")
-							.inputFluid(Fluid.of('chemlib:xenon_fluid', 500))
-							.inputItem(smeltProcessedOre)
-							.outputItem(Item.of(`#forge:ingots/${item.material}`))
-							.setPerTick(true)
-							.inputFE(4000*4)
-							.duration(200)
-							.data({ temperature: tier7Temp })
-							.text(`    Heat: §6${tier7Temp}`)
-							.predicate((recipe, recipeLogic) => {
-								let reqTemp = recipe.getData().getInt("temperature")
-								let controllerTe = recipeLogic.controller.self()
-								let level = controllerTe.getLevel()
-								let coilTotalHeat = 0
-								global.coilPos.forEach(pos => {
-									let coilName = level.getBlockState(controllerTe.getBlockPos().offset(pos.x, pos.y, pos.z)).getBlock()
-									global.coilHeatValues.forEach(material => {
-										if (Block.getBlock(`kubejs:${material.name}_coil`).equals(coilName)) {
-											coilTotalHeat += material.heat
-										}
-									})
-								})
-								//If we have enough Heat, chillin
-								if (reqTemp <= coilTotalHeat) {
-									return true
-								} else  {
-									return false
-								}
-							}, Component.string('Requires at least Adamantium Coils'))
+					blastFurnaceSmelting(event, item.material, smeltProcessedOre, 7)
 				}
 
 		}

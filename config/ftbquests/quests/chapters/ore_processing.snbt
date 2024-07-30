@@ -8,7 +8,7 @@
 	default_hide_dependency_lines: false
 	quests: [
 		{
-			x: -4.0d
+			x: -3.0d
 			y: -1.5d
 			subtitle: "Y150 - -64"
 			description: ["Found in high quantities in most dimensions, this versitile metal commonly spawns with small amounts of Gold, Nickel, or Earth."]
@@ -32,7 +32,7 @@
 			}]
 		}
 		{
-			x: -4.0d
+			x: -3.0d
 			y: 0.5d
 			subtitle: "Y256 - 0"
 			description: ["Tin is common in the Overworld, and spawns with small amounts of Fluorite, Apatite, and Air."]
@@ -44,7 +44,7 @@
 			}]
 		}
 		{
-			x: -4.0d
+			x: -3.0d
 			y: -0.5d
 			subtitle: "Y256 - -15"
 			description: ["Copper spawns commonly in the Overworld, and veins can contain Gold and Water."]
@@ -56,7 +56,7 @@
 			}]
 		}
 		{
-			x: -4.0d
+			x: -3.0d
 			y: 3.5d
 			subtitle: "Y256 - -64"
 			description: ["Commonly found in the overworld, with diamonds if its deep enough."]
@@ -68,7 +68,7 @@
 			}]
 		}
 		{
-			x: -4.0d
+			x: -3.0d
 			y: 2.5d
 			subtitle: "Y20 - -60"
 			description: ["Rare Overworld Vein, found with Vinteum and Sapphire, and can spawn with Niter if below deepslate level."]
@@ -80,7 +80,7 @@
 			}]
 		}
 		{
-			x: -3.0d
+			x: -2.0d
 			y: 3.5d
 			subtitle: "Y-10 - -64"
 			id: "528E2CC9DA56D0A8"
@@ -91,7 +91,7 @@
 			}]
 		}
 		{
-			x: -4.0d
+			x: -3.0d
 			y: 4.5d
 			subtitle: "Y20 - -64"
 			description: ["Uncommonly found in the Overworld or Nether at Y100 - 0."]
@@ -148,7 +148,7 @@
 			}]
 		}
 		{
-			x: -3.0d
+			x: -2.0d
 			y: 4.5d
 			description: ["Spawns as part of Redstone veins."]
 			id: "31E4E00C8803DA63"
@@ -159,7 +159,7 @@
 			}]
 		}
 		{
-			x: -2.0d
+			x: -1.0d
 			y: 4.5d
 			description: ["Spawns as part of Redstone veins."]
 			id: "73B604D13A5FAE52"
@@ -170,7 +170,7 @@
 			}]
 		}
 		{
-			x: -3.0d
+			x: -2.0d
 			y: 0.5d
 			description: ["Spawns as part of Overworld Tin veins."]
 			id: "61F516784B649993"
@@ -181,7 +181,7 @@
 			}]
 		}
 		{
-			x: -2.0d
+			x: -1.0d
 			y: 0.5d
 			description: ["Spawns as part of Overworld Tin veins."]
 			id: "077AE9F2753A1217"
@@ -192,7 +192,7 @@
 			}]
 		}
 		{
-			x: -4.0d
+			x: -3.0d
 			y: 1.5d
 			subtitle: "Y80 - -48"
 			id: "1E84D9A013177358"
@@ -203,7 +203,7 @@
 			}]
 		}
 		{
-			x: -3.0d
+			x: -2.0d
 			y: 1.5d
 			subtitle: "Y200 - 32 In the Nether"
 			id: "3F03F79E1CD352F5"
@@ -232,7 +232,7 @@
 			title: "Overworld Veins"
 			icon: "beyond_earth:earth_globe"
 			disable_toast: true
-			x: -4.0d
+			x: -3.0d
 			y: -2.5d
 			shape: "circle"
 			id: "161CE4353277D490"
@@ -245,7 +245,7 @@
 			}]
 		}
 		{
-			x: -3.0d
+			x: -2.0d
 			y: 5.5d
 			subtitle: "Spawns as part of Overworld Arcanite veins."
 			id: "7F721ADE2B2549C2"
@@ -256,7 +256,7 @@
 			}]
 		}
 		{
-			x: -2.0d
+			x: -1.0d
 			y: 5.5d
 			subtitle: "Spawns as part of Overworld Arcanite veins."
 			description: [""]
@@ -389,8 +389,8 @@
 			}]
 		}
 		{
-			x: -4.0d
-			y: -10.0d
+			x: 24.0d
+			y: -3.5d
 			id: "0BAC4F3AD0800A45"
 			tasks: [{
 				id: "05C6F2373ED082B7"
@@ -399,8 +399,8 @@
 			}]
 		}
 		{
-			x: -4.0d
-			y: -11.0d
+			x: 24.0d
+			y: -4.5d
 			id: "7FA29068486FCB01"
 			tasks: [{
 				id: "05C908B726A9468E"
@@ -409,8 +409,8 @@
 			}]
 		}
 		{
-			x: -4.0d
-			y: -12.0d
+			x: 24.0d
+			y: -5.5d
 			id: "59663F168755F312"
 			tasks: [{
 				id: "17D6A9009EC729A0"
@@ -419,8 +419,8 @@
 			}]
 		}
 		{
-			x: -4.0d
-			y: -7.0d
+			x: 24.0d
+			y: -0.5d
 			id: "4E78300F04776252"
 			tasks: [{
 				id: "5C68FDA94B105BBC"
@@ -429,8 +429,8 @@
 			}]
 		}
 		{
-			x: -4.0d
-			y: -8.0d
+			x: 24.0d
+			y: -1.5d
 			id: "07A0649720C8F7B5"
 			tasks: [{
 				id: "4EBFEC1BC69BB122"
@@ -439,8 +439,8 @@
 			}]
 		}
 		{
-			x: -4.0d
-			y: -9.0d
+			x: 24.0d
+			y: -2.5d
 			id: "54E7157340600EB6"
 			tasks: [{
 				id: "7E183FF810B98BF3"
@@ -470,7 +470,7 @@
 			}]
 		}
 		{
-			x: -3.0d
+			x: -2.0d
 			y: 2.5d
 			id: "29FF83E81F4EF64C"
 			tasks: [{
@@ -480,7 +480,7 @@
 			}]
 		}
 		{
-			x: -2.0d
+			x: -1.0d
 			y: 2.5d
 			id: "61CE7BEBA6005FD2"
 			tasks: [{
@@ -538,8 +538,9 @@
 		}
 		{
 			disable_toast: true
-			x: -4.0d
+			x: -3.0d
 			y: -5.0d
+			dependencies: ["7681154856E3706C"]
 			id: "4418C0F5D9F2B232"
 			tasks: [{
 				id: "27C2221BF6D82054"
@@ -550,8 +551,9 @@
 		}
 		{
 			disable_toast: true
-			x: -4.0d
+			x: -3.0d
 			y: -4.0d
+			dependencies: ["35358105C8DF8729"]
 			id: "374E9F1741E235E4"
 			tasks: [{
 				id: "24E0A5B61C4657E7"
@@ -636,6 +638,8 @@
 			disable_toast: true
 			x: 1.0d
 			y: -6.0d
+			subtitle: "Required for Tier 2 Metals"
+			dependencies: ["5DC786D48AD3886E"]
 			id: "665C67462A0C8CD1"
 			tasks: [{
 				id: "7E194A20289E6488"
@@ -669,6 +673,7 @@
 			disable_toast: true
 			x: 8.0d
 			y: -6.0d
+			subtitle: "Required for Tier 4 Metals"
 			id: "2B17F5722136AB89"
 			tasks: [{
 				id: "0C3A51BB2AB56006"
@@ -699,8 +704,8 @@
 			}]
 		}
 		{
-			x: -1.5d
-			y: -11.0d
+			x: 26.5d
+			y: -4.5d
 			dependencies: [
 				"0BAC4F3AD0800A45"
 				"7FA29068486FCB01"
@@ -714,8 +719,8 @@
 			}]
 		}
 		{
-			x: -1.5d
-			y: -8.0d
+			x: 26.5d
+			y: -1.5d
 			dependencies: [
 				"4E78300F04776252"
 				"54E7157340600EB6"
@@ -734,6 +739,7 @@
 			disable_toast: true
 			x: 4.5d
 			y: -6.0d
+			subtitle: "Required for Tier 3 Metals"
 			id: "24657EDFBAF51873"
 			tasks: [{
 				id: "139E5E075EAEAE34"
@@ -763,7 +769,7 @@
 			}]
 		}
 		{
-			x: -4.0d
+			x: -3.0d
 			y: 5.5d
 			subtitle: "Y100 - 32"
 			id: "42C1EE252075FE79"
@@ -927,6 +933,7 @@
 			disable_toast: true
 			x: 11.5d
 			y: -6.0d
+			subtitle: "Required for Tier 5 Metals"
 			id: "0C3EB21BEA2D34C9"
 			tasks: [{
 				id: "2343817F7CDB82AC"
@@ -971,6 +978,7 @@
 			disable_toast: true
 			x: 15.0d
 			y: -6.0d
+			subtitle: "Required for Tier 6 Metals"
 			id: "00859F9E64E640CB"
 			tasks: [{
 				id: "3B5CFABFD2DC4AFB"
@@ -1015,6 +1023,7 @@
 			disable_toast: true
 			x: 19.0d
 			y: -6.0d
+			subtitle: "Required for Tier 7 Metals"
 			id: "6EA1FAD3986DBE8D"
 			tasks: [{
 				id: "1FFD110CFADC963A"
@@ -1057,7 +1066,8 @@
 		}
 		{
 			x: 1.0d
-			y: -7.5d
+			y: -8.0d
+			dependencies: ["1ADA7638B0075CB3"]
 			id: "04E530CE0867A595"
 			tasks: [{
 				id: "506EDAE3B2AFDD04"
@@ -1068,8 +1078,8 @@
 		{
 			title: "Pure Ore (2x)"
 			x: 2.0d
-			y: -8.5d
-			description: ["Ore Refining always ends at Pure Ore. You'll be able to add steps as you unlock new magical methods"]
+			y: -7.0d
+			description: ["Ore §bRefining§r always ends at Pure Ore. You'll be able to add steps as you unlock new magical methods"]
 			dependencies: [
 				"04E530CE0867A595"
 				"21F49B8439E00DAF"
@@ -1090,7 +1100,7 @@
 		}
 		{
 			x: 4.5d
-			y: -7.5d
+			y: -8.0d
 			id: "1C8AAD5840B436DD"
 			tasks: [{
 				id: "5CA015BFF9674404"
@@ -1101,7 +1111,7 @@
 		{
 			title: "Crumbled Ore (4x)"
 			x: 5.5d
-			y: -8.5d
+			y: -7.0d
 			dependencies: [
 				"1C8AAD5840B436DD"
 				"4DE6A9BF08BD38DD"
@@ -1122,7 +1132,7 @@
 		}
 		{
 			x: 8.0d
-			y: -7.5d
+			y: -8.0d
 			id: "7E366CE8A15E4FFB"
 			tasks: [{
 				id: "7EA92BBE0BB37477"
@@ -1132,7 +1142,7 @@
 		}
 		{
 			x: 11.5d
-			y: -7.5d
+			y: -8.0d
 			id: "6BA6707B8E0C5935"
 			tasks: [{
 				id: "4F908F9B2DD3C6D7"
@@ -1143,7 +1153,7 @@
 		{
 			title: "Ore Brick (8x)"
 			x: 9.0d
-			y: -8.5d
+			y: -7.0d
 			dependencies: [
 				"4BF0862881DCDE10"
 				"7E366CE8A15E4FFB"
@@ -1165,7 +1175,7 @@
 		{
 			title: "Infused Ore (16x)"
 			x: 12.5d
-			y: -8.5d
+			y: -7.0d
 			dependencies: [
 				"46F59AB0DA404B1A"
 				"6BA6707B8E0C5935"
@@ -1187,7 +1197,7 @@
 		{
 			title: "Ore Cluster (32x)"
 			x: 16.0d
-			y: -8.5d
+			y: -7.0d
 			dependencies: [
 				"0CD24E6C27C20BAA"
 				"547BBD0D7412471D"
@@ -1208,7 +1218,7 @@
 		}
 		{
 			x: 15.0d
-			y: -7.5d
+			y: -8.0d
 			id: "0CD24E6C27C20BAA"
 			tasks: [{
 				id: "5B94A2E34C0B9534"
@@ -1219,7 +1229,7 @@
 		{
 			title: "Ore Shards (64x)"
 			x: 20.0d
-			y: -8.5d
+			y: -7.0d
 			description: ["No recipe yet, feel free to post suggestions in the discord!"]
 			dependencies: ["280FDDCAC78E2F8F"]
 			id: "315D43C53050EEF1"
@@ -1237,28 +1247,42 @@
 			}]
 		}
 		{
-			title: "Tier 1 Metals"
-			x: -2.0d
+			title: "Tier 0-1 Metals"
+			x: -1.0d
 			y: -5.0d
 			dependencies: ["4418C0F5D9F2B232"]
 			id: "7206C90CCBF9B9F4"
-			tasks: [{
-				id: "4E143B688E5EB7FA"
-				type: "item"
-				title: "Tier 1 Ingot"
-				item: {
-					id: "itemfilters:tag"
-					Count: 1b
-					tag: {
-						value: "mbm2:base_metals/tier_one"
+			tasks: [
+				{
+					id: "4E143B688E5EB7FA"
+					type: "item"
+					title: "Tier 1 Ingot"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "mbm2:base_metals/tier_one"
+						}
 					}
 				}
-			}]
+				{
+					id: "11ED3E68806F206B"
+					type: "item"
+					title: "Tier 0 Ingot"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "mbm2:base_metals/tier_zero"
+						}
+					}
+				}
+			]
 		}
 		{
 			x: 3.0d
 			y: -5.0d
-			description: ["You'll need to upgrade your Ore Processing setup for each new tier of metal you have access to"]
+			description: ["You'll need to upgrade your ore §aProcessing§r setup for each new tier of metal you have access to"]
 			dependencies: [
 				"7973F284698B786F"
 				"21F49B8439E00DAF"
@@ -1278,7 +1302,7 @@
 			}]
 		}
 		{
-			x: -2.0d
+			x: -1.0d
 			y: -4.0d
 			dependencies: ["374E9F1741E235E4"]
 			id: "44DB729FE8E73A26"
@@ -1471,7 +1495,7 @@
 		}
 		{
 			x: 21.0d
-			y: -4.5d
+			y: -5.0d
 			dependencies: [
 				"3C240ED6381FC643"
 				"280FDDCAC78E2F8F"
@@ -1488,6 +1512,171 @@
 						value: "mbm2:base_metals/tier_seven"
 					}
 				}
+			}]
+		}
+		{
+			icon: "botania:cosmetic_questgiver_mark"
+			x: -0.5d
+			y: -7.0d
+			shape: "diamond"
+			description: [
+				"§bRefining§r is an optional step, which is used for ore multiplication."
+				""
+				"This is most similar to the default Mekanisim ore processing. Each Grade you §aprocess§r your ore to will enable a higher multiplying step, which splits a graded ore piece into a set amount of fragments based on which level of §bRefining§r you choose."
+				""
+				"Each of those pieces must be then sent through each previous §brefining§r step before being able to smelt them."
+			]
+			dependencies: [
+				"23222631E2D6EDF3"
+				"5DC786D48AD3886E"
+			]
+			size: 2.0d
+			id: "1ADA7638B0075CB3"
+			tasks: [{
+				id: "27C08A6DBB1333A5"
+				type: "checkmark"
+				title: "Refining"
+			}]
+		}
+		{
+			icon: "botania:cosmetic_questgiver_mark"
+			x: -1.5d
+			y: -8.0d
+			shape: "diamond"
+			description: ["§aProcessing§r is required, and each Tier of metal will require the equivalent §aprocessing§r Grade before you're able to smelt or Refine it."]
+			dependencies: ["23222631E2D6EDF3"]
+			size: 2.0d
+			id: "5DC786D48AD3886E"
+			tasks: [{
+				id: "6D084F1B558AC8D6"
+				type: "checkmark"
+				title: "Processing"
+			}]
+		}
+		{
+			icon: "botania:cosmetic_questgiver_mark"
+			x: -3.5d
+			y: -8.0d
+			shape: "diamond"
+			description: [
+				"Once you have the minimum required grade for your material, you can then smelt it into ingots. "
+				""
+				"You'll only be able to smelt tiers 0-1 in the normal furnace, then you can check in the tooltip to check what is required for each other metal."
+			]
+			dependencies: ["23222631E2D6EDF3"]
+			size: 2.0d
+			id: "7681154856E3706C"
+			tasks: [{
+				id: "1A2A5FCADCAAFF8D"
+				type: "checkmark"
+				title: "Smelting"
+			}]
+		}
+		{
+			icon: "botania:cosmetic_questgiver_mark"
+			x: -4.5d
+			y: -7.0d
+			shape: "diamond"
+			description: ["You'll only need to upgrade your alloy setup a few times until you unlock The Mixer multiblock."]
+			dependencies: [
+				"23222631E2D6EDF3"
+				"7681154856E3706C"
+			]
+			size: 2.0d
+			id: "35358105C8DF8729"
+			tasks: [{
+				id: "0753419AF13D3C5D"
+				type: "checkmark"
+				title: "Alloys"
+			}]
+		}
+		{
+			icon: "botania:cosmetic_questgiver_mark"
+			x: -2.5d
+			y: -9.0d
+			shape: "diamond"
+			description: [
+				"Welcome to Multiblock Madness 2! This comes with a fully custom ore §aprocessing§r experience. Read the next few quests to get an overview."
+				""
+				"In general as you progress through the chapters, you will unlock access to higher tiers of materials. In order to actually use them, you'll have to upgrade your systems to be able to handle the new metals."
+			]
+			size: 2.0d
+			id: "23222631E2D6EDF3"
+			tasks: [{
+				id: "37468D1862BDF9AA"
+				type: "checkmark"
+				title: "Metal Tiers"
+			}]
+		}
+		{
+			title: "Tier 7 Alloys"
+			x: 21.0d
+			y: -4.0d
+			dependencies: ["3C240ED6381FC643"]
+			id: "76AB97D8CF9C43EA"
+			tasks: [{
+				id: "34CE1AF2C9AFA521"
+				type: "item"
+				title: "Tier 7 Alloys"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "mbm2:alloys/tier_seven"
+					}
+				}
+			}]
+		}
+		{
+			icon: "botania:cosmetic_questgiver_mark"
+			x: -1.5d
+			y: -10.0d
+			shape: "diamond"
+			description: [
+				"This is a brand new ore type that needs to be §eSorted§r into base metals before it can be used (Besides smelting into tier 0 metals)"
+				""
+				"Each additional Grade you process a Compound ore will yield a new base metal ore from that tier when you §eSort§r it."
+			]
+			dependencies: ["23222631E2D6EDF3"]
+			size: 2.0d
+			id: "285CDED8ED5043B7"
+			tasks: [{
+				id: "751CD06D1BFC5B3C"
+				type: "checkmark"
+				title: "Compound Ores"
+			}]
+		}
+		{
+			icon: "mbm2:sorter_mk1"
+			x: 1.0d
+			y: -10.0d
+			description: ["This is a multiblock which is used to convert Compound ores into regular metal ores."]
+			dependencies: ["285CDED8ED5043B7"]
+			progression_mode: "flexible"
+			min_required_tasks: 1
+			id: "752675EFEF1544B0"
+			tasks: [
+				{
+					id: "67FB907A1E9DAF98"
+					type: "item"
+					item: "mbm2:sorter_mk1"
+				}
+				{
+					id: "71763D370BFC0FA1"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			x: 8.0d
+			y: -10.0d
+			description: ["This upgraded version can §esort§r higher grade ores and also has a better yield."]
+			dependencies: ["752675EFEF1544B0"]
+			id: "797F788361330B42"
+			tasks: [{
+				id: "293BAD032135C6EA"
+				type: "item"
+				item: "mbm2:sorter_mk2"
 			}]
 		}
 	]

@@ -102,6 +102,9 @@
     "mbm2.mechanical_crafter.description": "The Brass Casing can be replaced by anything",
     "multiblocked.recipe_map.mechanical_crafting": "Mechanical Crafting",
 
+    "block.mbm2.fusion_reactor": "Fusion Control Computer",
+    "mbm2.fusion_reactor.description": "Smash tiny things  to get new things!",
+    "multiblocked.recipe_map.fusion": "Fusion Crafting",
 
     "block.multiblocked.create_item_input": "Input Vault Part",
     "block.multiblocked.create_item_output": "Output Vault Part",
@@ -121,6 +124,8 @@
     
     "block.multiblocked.energy_input_mk3": "Mk3 Energy Input",
     "block.multiblocked.energy_output_mk3": "Mk3 Energy Output",
+
+    "block.multiblocked.receiver_block": "Signal Receiver",
 
     "item.create.andesite_alloy": "Stone Alloy",
     "block.create.andesite_alloy_block": "Block of Stone Alloy",
@@ -393,5 +398,10 @@
 
   
   "item.naturesaura.infused_iron": "Infused Mithril Ingot",
-  "block.naturesaura.infused_iron_block": "Infused Mithril Block"
+  "block.naturesaura.infused_iron_block": "Infused Mithril Block",
+
+  "material.elementalcraft.drenched_iron": "Drenched Arcanite",
+  "block.elementalcraft.drenched_iron_block": "Drenched Arcanite Block",
+  "item.elementalcraft.drenched_iron_ingot": "Drenched Arcanite Ingot",
+  "item.elementalcraft.drenched_iron_nugget": "Drenched Arcanite Nugget"
 }

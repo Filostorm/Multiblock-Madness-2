@@ -348,7 +348,7 @@ event.shaped('mbm2:chemical_reactor', ['ABA','CDC','ECE'], {A: 'thermal:obsidian
 event.shaped('mbm2:heater', ['AAA','BCB','DED'], {A: 'beyond_earth:compressed_desh',B: 'kubejs:tier_2_electrical_alloy_wire_coil',C: 'mekanism:resistive_heater',D: 'kubejs:plastic_scaffolding',E: 'kubejs:tier1_casing'}).id("mbm2:heater")
 
 // vaccum_chamber
-event.shaped('mbm2:vaccum_chamber', ['ABA','CDC','EFE'], {A: 'pneumaticcraft:vacuum_pump',B: 'pneumaticcraft:unassembled_pcb',C: 'kubejs:exoskeleton_composit_reinforced_plating',D: 'kubejs:high_pressure_casing',E: 'kubejs:desh_coil',F: 'kubejs:stainless_steel_gear'}).id("mbm2:vaccum_chamber")
+event.shaped('mbm2:vaccum_chamber', ['ABA','CDC','EFE'], {A: 'pneumaticcraft:vacuum_pump',B: 'pneumaticcraft:printed_circuit_board',C: 'kubejs:exoskeleton_composit_reinforced_plating',D: 'kubejs:high_pressure_casing',E: 'kubejs:desh_coil',F: 'kubejs:stainless_steel_gear'}).id("mbm2:vaccum_chamber")
 
 // sintering_oven
 event.shaped('mbm2:sintering_oven', ['ABA','CDC','EFE'], {A: 'kubejs:tier_2_structural_alloy_bolt',B: 'immersiveengineering:component_electronic_adv',C: 'immersiveengineering:blastbrick_reinforced',D: 'pneumaticcraft:advanced_air_compressor',E: 'kubejs:compressed_steel_component',F: 'kubejs:tier2_casing'}).id("mbm2:sintering_oven")
@@ -369,7 +369,7 @@ event.shaped('mbm2:energy_converter', ['ABA','CDC','AEA'], {A: 'kubejs:tier_1_el
 	  ], {
 		H: '#forge:hull_panels/exoskeleton_composit',
 		R: '#forge:rods/stainless_steel',
-		S: '#forge:scaffoldings/tier_2_structural_alloy',
+		S: '#forge:scaffoldings/tier_3_structural_alloy',
 		P: '#forge:platings/tungsten',
 		C: 'kubejs:tier2_casing',
 		O: '#forge:ingots/refined_obsidian'
@@ -380,5 +380,111 @@ event.shaped('mbm2:energy_converter', ['ABA','CDC','AEA'], {A: 'kubejs:tier_1_el
 	
 	// big_combo_input
 	event.shaped('multiblocked:big_combo_input', ['ABC','DEA','ABF'], {A: 'kubejs:tier_2_mechanical_alloy_gear',B: 'lazierae2:logic_unit',C: 'multiblocked:fluid_input',D: 'multiblocked:combo_input',E: 'kubejs:tier3_casing',F: 'multiblocked:big_item_input'}).id("mbm2:big_combo_input")
+
+	// machine_casing_fusion_coil
+	event.shaped('kubejs:machine_casing_fusion_coil', ['ABA','CDC','ABA'], {A: 'kubejs:tier_3_structural_alloy_bolt',B: '#forge:hull_panels/inconel',C: 'mekanism:ultimate_control_circuit',D: 'kubejs:tier3_casing'}).id("mbm2:machine_casing_fusion_coil")
+
+	// machine_casing_fusion_glass
+	event.shaped('kubejs:machine_casing_fusion_glass', [' A ','ABA',' A '], {A: 'thermal:enderium_glass',B: 'kubejs:machine_casing_fusion_coil'}).id("mbm2:machine_casing_fusion_glass")
+
+	// fusion_reactor
+	event.shaped('mbm2:fusion_reactor', ['ABA','CDC','EAE'], {A: 'kubejs:ai_chip',B: 'mekanism:ultimate_tier_installer',C: 'alchemistry:fusion_core',D: 'kubejs:machine_casing_fusion_glass',E: '#forge:reinforced_platings/adamantine_alloy'}).id("mbm2:fusion_reactor")
+
+	// receiver_block
+	event.shaped('multiblocked:receiver_block', ['ABA','CDC','ABA'], {A: 'kubejs:stainless_steel_rod',B: 'kubejs:energy_crystal_full',C: 'kubejs:desh_gear',D: 'thermal:signalum_block'}).id("mbm2:receiver_block")
+
+	//crystal_chamber
+	event.custom({
+		"type": "extendedcrafting:shaped_table",
+		"pattern": [
+		  "ABCBA",
+		  "ADEDA",
+		  "CFGFC",
+		  "AHIJA",
+		  "AACAA"
+		],
+		"key": {
+		  "A": {
+			"item": "kubejs:tier_3_structural_alloy_reinforced_plating"
+		  },
+		  "B": {
+			"item": "kubejs:tier_3_mechanical_alloy_robot_arm"
+		  },
+		  "C": {
+			"item": "ae2:singularity"
+		  },
+		  "D": {
+			"item": "kubejs:ai_chip"
+		  },
+		  "E": {
+			"item": "kubejs:energy_orb_full"
+		  },
+		  "F": {
+			"item": "kubejs:tier_3_electrical_alloy_dual_coil"
+		  },
+		  "G": {
+			"item": "kubejs:tier3_casing"
+		  },
+		  "H": {
+			"item": "mekanism:chemical_crystallizer"
+		  },
+		  "I": {
+			"item": "ae2things:crystal_growth"
+		  },
+		  "J": {
+			"item": "alchemistry:atomizer"
+		  }
+		},
+		"result": {
+		  "item": 'mbm2:crystal_chamber'
+		}
+	  }).id("mbm2:crystal_chamber")
+
+	  //Railgun
+	  event.custom({
+		"type": "extendedcrafting:shaped_table",
+		"pattern": [
+		  "AAAAAAA",
+		  "ABBBBBA",
+		  "ABCDCBA",
+		  "AEFGFEA",
+		  "AEHIHEA",
+		  "AEEEEEA",
+		  "AAAAAAA"
+		],
+		"key": {
+		  "A": {
+			"item": "kubejs:tier_3_structural_alloy_hull_panel"
+		  },
+		  "B": {
+			"item": "kubejs:titanite_scaffolding"
+		  },
+		  "C": {
+			"item": "mythicbotany:asgard_rune"
+		  },
+		  "D": {
+			"item": "kubejs:sky_metal_gear"
+		  },
+		  "E": {
+			"item": "beyond_earth:rocket_launch_pad"
+		  },
+		  "F": {
+			"item": "kubejs:ai_chip"
+		  },
+		  "G": {
+			"item": "kubejs:tier3_casing"
+		  },
+		  "H": {
+			"item": "beyond_earth:calorite_engine"
+		  },
+		  "I": {
+			"item": "kubejs:terrasteel_gear"
+		  }
+		},
+		"result": {
+		  "item": 'mbm2:railgun'
+		}
+	  })
+
 })
 

@@ -7,7 +7,69 @@ onEvent('tags.items', event => {
  */
 onEvent('recipes', event => {
 
-	global.compactCrafting(event, 'kubejs:standard_dyson_panel', 1, 'mekanism:ultimate_control_circuit',
+	//Dyson Panel
+	event.custom({
+		"type": "extendedcrafting:shaped_table",
+		"pattern": [
+		  "ABCBA",
+		  "ADDDA",
+		  "AEFEA",
+		  "ADDDA",
+		  "ABCBA"
+		],
+		"key": {
+		  "A": {
+			"item": "kubejs:aerospace_alloy_sheet"
+		  },
+		  "B": {
+			"item": "mekanism:alloy_reinforced"
+		  },
+		  "C": {
+			"item": "kubejs:tier_3_mechanical_alloy_interlocking_component"
+		  },
+		  "D": {
+			"item": "pneumaticcraft:solar_cell"
+		  },
+		  "E": {
+			"item": "mekanism:ultimate_control_circuit"
+		  },
+		  "F": {
+			"item": "solarflux:photovoltaic_cell_6"
+		  }
+		},
+		"result": {
+		  "item": 'kubejs:solar_panel'
+		}
+	  }).id('mbm2:dyson_panel')
+
+	  event.custom({
+		"type": "extendedcrafting:shaped_table",
+		"pattern": [
+		  "AABAA",
+		  "ACBCA",
+		  "BBDBB",
+		  "ACBCA",
+		  "AABAA"
+		],
+		"key": {
+		  "A": {
+			"item": "solarflux:photovoltaic_cell_6"
+		  },
+		  "B": {
+			"item": "kubejs:tier_3_structural_alloy_rod"
+		  },
+		  "C": {
+			"item": "kubejs:solar_panel"
+		  },
+		  "D": {
+			"item": "kubejs:tier_3_structural_alloy_frame_box"
+		  }
+		},
+		"result": Item.of('4x kubejs:solar_bar').toResultJson()
+	  }).id('mbm2:dyson_support')
+
+
+	global.compactCrafting(event, 'kubejs:standard_dyson_panel', 1, 'solarflux:sp_8',
 	7, [
 	  {
 		  type: 'compactcrafting:mixed',
@@ -98,6 +160,10 @@ onEvent('recipes', event => {
 		.duration(20)
 
 
+
+
+
+
 		//Single Dyson Panel
 		event.recipes.multiblocked.multiblock("energy_receiver")
 		.setChance(0)
@@ -162,36 +228,56 @@ onEvent('recipes', event => {
 		.outputItem('kubejs:lapatron_orb_full')
 		.duration(global.batteryStorage[5]/(100000*512))
 		
-	/*
-	event.remove({output: 'tconstruct:smeltery_controller'})
-  	event.shapeless(`kubejs:carbon_covered_iron`, [`#forge:ingots/iron`, '#forge:dusts/coal_coke']).id(`mbm2:carbon_covered_iron`)
-	//Item.of(`#forge:grits/${item.material}`).withChance(0.25)
-	event.recipes.createMixing(`${item.amount}x #forge:ingots/${item.material}`, item.ingot_input).heated().id(`create:mixing/${item.material}_ingot`).id('mbm2:hardened_tank')
-		
-	global.newMaterialParts.forEach((item) => {
-		if (item.type == "compound_ore") {
-			const materialNameUpper = item.material.charAt(0).toUpperCase() + item.material.slice(1)
-			const veinName = materialNameUpper + ' Vein'
-			
-			//.charAt(0).toUpperCase()
-			event.recipes.createoreexcavation.drilling([Item.of(`#forge:raw_materials/${item.material}`), Item.of(`#forge:grits/${item.material}`).withChance(0.25)], `{"text": "${veinName}"}`, 75, 200).id(`mbm2:drilling/${item.material}_vein`);
-		}
-	})
 
-	
-    event.replaceInput({id: 'immersiveengineering:crafting/blueprint_components'}, '#forge:ingots/aluminum', '#forge:ingots/constantan')
-
-event.remove({id:'sophisticatedbackpacks:gold_backpack'})
-event.shapeless('sophisticatedbackpacks:gold_backpack',[
-    'sophisticatedbackpacks:iron_backpack',
-    'quark:ravager_hide'
-]).modifyResult((inventory, itemstack) => {
-        item = inventory.find(Item.of('sophisticatedbackpacks:iron_backpack').ignoreNBT())
-    if (item.nbt == null) return itemstack
-    nbt = item.nbt
-    nbt.inventorySlots = 54
-    nbt.upgradeSlots = 4
-    return itemstack.withNBT(nbt)
-})*/
+		//Worldshaper, this recipe will probably get changed many times
+		event.custom({
+			"type": "extendedcrafting:shaped_table",
+			"pattern": [
+			  "         ",
+			  "AAAABBB  ",
+			  "CCCCDEEFF",
+			  "AAAAGEEHH",
+			  "CCCCDEEFF",
+			  "AAAABBBII",
+			  "      IJI",
+			  "       II",
+			  "         "
+			],
+			"key": {
+			  "A": {
+				"item": "kubejs:uru_hull_panel"
+			  },
+			  "B": {
+				"item": "kubejs:tier_4_magical_alloy_plate"
+			  },
+			  "C": {
+				"item": "kubejs:draconium_rod"
+			  },
+			  "D": {
+				"item": "kubejs:lapatron_orb_full"
+			  },
+			  "E": {
+				"item": "kubejs:tier_4_magical_alloy_sprocket"
+			  },
+			  "F": {
+				"item": "kubejs:uru_reinforced_plating"
+			  },
+			  "G": {
+				"item": "kubejs:world_shaper_blueprint"
+			  },
+			  "H": {
+				"item": "kubejs:uru_bolt"
+			  },
+			  "I": {
+				"item": "kubejs:vibranium_plating"
+			  },
+			  "J": {
+				"item": "kubejs:vibranium_interlocking_component"
+			  }
+			},
+			"result": {
+			  "item": 'create:handheld_worldshaper'
+			}
+		  }).id('mbm2:worldshaper')
 
 });

@@ -66,6 +66,7 @@
 		{
 			x: 3.0d
 			y: -0.5d
+			shape: "gear"
 			dependencies: [
 				"13A76B63A6E8833D"
 				"6C3EBA1AD09FEE6C"
@@ -181,11 +182,12 @@
 			}]
 		}
 		{
-			x: 3.5d
-			y: -2.0d
+			x: 6.0d
+			y: -0.5d
 			dependencies: [
 				"1CF39FE5E8135E08"
 				"66520CE078BFCC2F"
+				"44302F55B2C258AA"
 			]
 			id: "23C9DE786EB00B38"
 			tasks: [
@@ -203,8 +205,8 @@
 		}
 		{
 			title: "Tier 3 Rocket to Venus and Mercury"
-			x: 3.25d
-			y: -3.5d
+			x: 5.25d
+			y: 1.5d
 			shape: "hexagon"
 			size: 1.5d
 			id: "66520CE078BFCC2F"
@@ -247,7 +249,10 @@
 		{
 			x: 2.5d
 			y: 1.0d
-			dependencies: ["34F1D7C257F4D2FD"]
+			dependencies: [
+				"34F1D7C257F4D2FD"
+				"4270C15F46FFA1B0"
+			]
 			id: "6C3EBA1AD09FEE6C"
 			tasks: [{
 				id: "7DF9C3CEA7DB604D"
@@ -278,24 +283,24 @@
 			}]
 		}
 		{
-			x: 4.0d
-			y: 4.0d
-			id: "2A1BEFED976CD540"
-			tasks: [{
-				id: "7277C05EE221398A"
-				type: "item"
-				item: "kubejs:adamantium_ingot"
-			}]
-		}
-		{
-			x: 4.0d
+			x: 3.0d
 			y: 2.5d
-			dependencies: ["2A1BEFED976CD540"]
 			id: "4270C15F46FFA1B0"
 			tasks: [{
 				id: "271CE7B158DBC982"
 				type: "item"
 				item: "kubejs:exoskeleton_composit_ingot"
+			}]
+		}
+		{
+			title: "Blast Furnace Upgrades (again)"
+			x: 5.5d
+			y: -2.5d
+			id: "44302F55B2C258AA"
+			tasks: [{
+				id: "628A5BCE5E2F0EFA"
+				type: "item"
+				item: "kubejs:tungsten_coil"
 			}]
 		}
 	]

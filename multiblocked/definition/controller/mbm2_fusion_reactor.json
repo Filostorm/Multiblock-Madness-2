@@ -1,0 +1,950 @@
+{
+  "version": 3,
+  "location": "mbm2:fusion_reactor",
+  "traits": {},
+  "properties": {
+    "rotationState": "ALL",
+    "showInJei": true,
+    "isOpaque": true,
+    "hasDynamicShape": false,
+    "hasCollision": true,
+    "destroyTime": 1.5,
+    "explosionResistance": 6.0,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "friction": 0.6,
+    "harvestLevel": 0,
+    "stackSize": 64,
+    "tabGroup": "multiblocked.all"
+  },
+  "status": {
+    "unformed": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/fusion_glass",
+        "frontTexture": "multiblocked:overlay/void",
+        "type": "gregtech",
+        "postRenderer": false
+      }
+    },
+    "idle": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/fusion_blue",
+        "frontTexture": "multiblocked:overlay/void",
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "parent": "unformed"
+    },
+    "working": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/fusion_yellow",
+        "frontTexture": "multiblocked:overlay/void",
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "lightEmissive": 15,
+      "parent": "idle"
+    },
+    "suspend": {
+      "parent": "working"
+    }
+  },
+  "recipeMap": "fusion",
+  "basePattern": {
+    "structureDir": [
+      "BACK",
+      "UP",
+      "RIGHT"
+    ],
+    "pattern": [
+      [
+        "AAAAAA                                                       ",
+        "                                                             ",
+        "                           BB   BB                           ",
+        "                           BB   BB                           ",
+        "                           BB   BB                           ",
+        "                                                             ",
+        "                                                            C"
+      ],
+      [
+        "AAA                                                          ",
+        "                           BB   BB                           ",
+        "                          DDDDEDDDD                          ",
+        "                          DDDEEEDDD                          ",
+        "                          DDDDEDDDD                          ",
+        "                           BB   BB                           ",
+        "                                                             "
+      ],
+      [
+        "                           BB   BB                           ",
+        "                          DDDDDDDDD                          ",
+        "                      DDDD         DDDD                      ",
+        "                      DDDD         DDDD                      ",
+        "                      DDDD         DDDD                      ",
+        "                          DDDDDDDDD                          ",
+        "                           BB   BB                           "
+      ],
+      [
+        "                           BB   BB                           ",
+        "                      DDDDDDDDDDDDDDDDD                      ",
+        "                   DDD                 DDD                   ",
+        "                   DDD                 DDD                   ",
+        "                   DDD                 DDD                   ",
+        "                      DDDDDDDDDDDDDDDDD                      ",
+        "                           BB   BB                           "
+      ],
+      [
+        "                           BB   BB                           ",
+        "                   DDDDDDDDDDDDDDDDDDDDDDD                   ",
+        "                 DD                       DD                 ",
+        "                 DD                       DD                 ",
+        "                 DD                       DD                 ",
+        "                   DDDDDDDDDDDDDDDDDDDDDDD                   ",
+        "                           BB   BB                           "
+      ],
+      [
+        "                                                             ",
+        "                 DDDDDDDDD BB   BB DDDDDDDDD                 ",
+        "               DD         DDDDDDDDD         DD               ",
+        "               DD         DDDDDDDDD         DD               ",
+        "               DD         DDDDDDDDD         DD               ",
+        "                 DDDDDDDDD BB   BB DDDDDDDDD                 ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "                DDDDDD                 DDDDDD                ",
+        "              DD      DDDD BB   BB DDDD      DD              ",
+        "              D       DDDD BB   BB DDDD       D              ",
+        "              DD      DDDD BB   BB DDDD      DD              ",
+        "                DDDDDD                 DDDDDD                ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "              DDDDDD                     DDDDDD              ",
+        "             D      DD                 DD      D             ",
+        "             D      DD                 DD      D             ",
+        "             D      DD                 DD      D             ",
+        "              DDDDDD                     DDDDDD              ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "             DDDDD                         DDDDD             ",
+        "           DD     DD                     DD     DD           ",
+        "           DD     DD                     DD     DD           ",
+        "           DD     DD                     DD     DD           ",
+        "             DDDDD                         DDDDD             ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "            DDDD                             DDDD            ",
+        "          DD    DD                         DD    DD          ",
+        "          D      D                         D      D          ",
+        "          DD    DD                         DD    DD          ",
+        "            DDDD                             DDDD            ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "           DDDD                               DDDD           ",
+        "         DD    DD                           DD    DD         ",
+        "         D     DD                           DD     D         ",
+        "         DD    DD                           DD    DD         ",
+        "           DDDD                               DDDD           ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "          DDDD                                 DDDD          ",
+        "        DD    D                               D    DD        ",
+        "        D     D                               D     D        ",
+        "        DD    D                               D    DD        ",
+        "          DDDD                                 DDDD          ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "         DDDD                                   DDDD         ",
+        "        D    D                                 D    D        ",
+        "        D    D                                 D    D        ",
+        "        D    D                                 D    D        ",
+        "         DDDD                                   DDDD         ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "        DDDD                                     DDDD        ",
+        "       D    D                                   D    D       ",
+        "       D    D                                   D    D       ",
+        "       D    D                                   D    D       ",
+        "        DDDD                                     DDDD        ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "       DDDD                                       DDDD       ",
+        "      D    D                                     D    D      ",
+        "      D    D                                     D    D      ",
+        "      D    D                                     D    D      ",
+        "       DDDD                                       DDDD       ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "       DDD                                         DDD       ",
+        "     DD   D                                       D   DD     ",
+        "     D    D                                       D    D     ",
+        "     DD   D                                       D   DD     ",
+        "       DDD                                         DDD       ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "      DDD                                           DDD      ",
+        "     D   DD                                       DD   D     ",
+        "     D    D                                       D    D     ",
+        "     D   DD                                       DD   D     ",
+        "      DDD                                           DDD      ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "     DDDD                                           DDDD     ",
+        "    D    D                                         D    D    ",
+        "    D    D                                         D    D    ",
+        "    D    D                                         D    D    ",
+        "     DDDD                                           DDDD     ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "     DDD                                             DDD     ",
+        "    D   D                                           D   D    ",
+        "    D   D                                           D   D    ",
+        "    D   D                                           D   D    ",
+        "     DDD                                             DDD     ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "    DDDD                                             DDDD    ",
+        "   D    D                                           D    D   ",
+        "   D    D                                           D    D   ",
+        "   D    D                                           D    D   ",
+        "    DDDD                                             DDDD    ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "    DDD                                               DDD    ",
+        "   D   D                                             D   D   ",
+        "   D   D                                             D   D   ",
+        "   D   D                                             D   D   ",
+        "    DDD                                               DDD    ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "    DDD                                               DDD    ",
+        "   D   D                                             D   D   ",
+        "   D   D                                             D   D   ",
+        "   D   D                                             D   D   ",
+        "    DDD                                               DDD    ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "   DDD                                                 DDD   ",
+        "  D   D                                               D   D  ",
+        "  D   D                                               D   D  ",
+        "  D   D                                               D   D  ",
+        "   DDD                                                 DDD   ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "   DDD                                                 DDD   ",
+        "  D   D                                               D   D  ",
+        "  D   D                                               D   D  ",
+        "  D   D                                               D   D  ",
+        "   DDD                                                 DDD   ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "   DDD                                                 DDD   ",
+        "  D   D                                               D   D  ",
+        "  D   D                                               D   D  ",
+        "  D   D                                               D   D  ",
+        "   DDD                                                 DDD   ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "   DDD                                                 DDD   ",
+        "  D   D                                               D   D  ",
+        "  D   D                                               D   D  ",
+        "  D   D                                               D   D  ",
+        "   DDD                                                 DDD   ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "  DDD                                                   DDD  ",
+        " D   D                                                 D   D ",
+        " D   D                                                 D   D ",
+        " D   D                                                 D   D ",
+        "  DDD                                                   DDD  ",
+        "                                                             "
+      ],
+      [
+        "  BBB                                                   BBB  ",
+        " BDDDB                                                 BDDDB ",
+        "BD   DB                                               BD   DB",
+        "BD   DB                                               BD   DB",
+        "BD   DB                                               BD   DB",
+        " BDDDB                                                 BDDDB ",
+        "  BBB                                                   BBB  "
+      ],
+      [
+        "  BBB                                                   BBB  ",
+        " BDDDB                                                 BDDDB ",
+        "BD   DB                                               BD   DB",
+        "BD   DB                                               BD   DB",
+        "BD   DB                                               BD   DB",
+        " BDDDB                                                 BDDDB ",
+        "  BBB                                                   BBB  "
+      ],
+      [
+        "                                                             ",
+        "  DDD                                                   DDD  ",
+        " D   D                                                 D   D ",
+        " E   D                                                 D   E ",
+        " D   D                                                 D   D ",
+        "  DDD                                                   DDD  ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "  DDD                                                   DDD  ",
+        " E   D                                                 D   E ",
+        " @   D                                                 D   E ",
+        " E   D                                                 D   E ",
+        "  DDD                                                   DDD  ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "  DDD                                                   DDD  ",
+        " D   D                                                 D   D ",
+        " E   D                                                 D   E ",
+        " D   D                                                 D   D ",
+        "  DDD                                                   DDD  ",
+        "                                                             "
+      ],
+      [
+        "  BBB                                                   BBB  ",
+        " BDDDB                                                 BDDDB ",
+        "BD   DB                                               BD   DB",
+        "BD   DB                                               BD   DB",
+        "BD   DB                                               BD   DB",
+        " BDDDB                                                 BDDDB ",
+        "  BBB                                                   BBB  "
+      ],
+      [
+        "  BBB                                                   BBB  ",
+        " BDDDB                                                 BDDDB ",
+        "BD   DB                                               BD   DB",
+        "BD   DB                                               BD   DB",
+        "BD   DB                                               BD   DB",
+        " BDDDB                                                 BDDDB ",
+        "  BBB                                                   BBB  "
+      ],
+      [
+        "                                                             ",
+        "  DDD                                                   DDD  ",
+        " D   D                                                 D   D ",
+        " D   D                                                 D   D ",
+        " D   D                                                 D   D ",
+        "  DDD                                                   DDD  ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "   DDD                                                 DDD   ",
+        "  D   D                                               D   D  ",
+        "  D   D                                               D   D  ",
+        "  D   D                                               D   D  ",
+        "   DDD                                                 DDD   ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "   DDD                                                 DDD   ",
+        "  D   D                                               D   D  ",
+        "  D   D                                               D   D  ",
+        "  D   D                                               D   D  ",
+        "   DDD                                                 DDD   ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "   DDD                                                 DDD   ",
+        "  D   D                                               D   D  ",
+        "  D   D                                               D   D  ",
+        "  D   D                                               D   D  ",
+        "   DDD                                                 DDD   ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "   DDD                                                 DDD   ",
+        "  D   D                                               D   D  ",
+        "  D   D                                               D   D  ",
+        "  D   D                                               D   D  ",
+        "   DDD                                                 DDD   ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "    DDD                                               DDD    ",
+        "   D   D                                             D   D   ",
+        "   D   D                                             D   D   ",
+        "   D   D                                             D   D   ",
+        "    DDD                                               DDD    ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "    DDD                                               DDD    ",
+        "   D   D                                             D   D   ",
+        "   D   D                                             D   D   ",
+        "   D   D                                             D   D   ",
+        "    DDD                                               DDD    ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "    DDDD                                             DDDD    ",
+        "   D    D                                           D    D   ",
+        "   D    D                                           D    D   ",
+        "   D    D                                           D    D   ",
+        "    DDDD                                             DDDD    ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "     DDD                                             DDD     ",
+        "    D   D                                           D   D    ",
+        "    D   D                                           D   D    ",
+        "    D   D                                           D   D    ",
+        "     DDD                                             DDD     ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "     DDDD                                           DDDD     ",
+        "    D    D                                         D    D    ",
+        "    D    D                                         D    D    ",
+        "    D    D                                         D    D    ",
+        "     DDDD                                           DDDD     ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "      DDD                                           DDD      ",
+        "     D   DD                                       DD   D     ",
+        "     D    D                                       D    D     ",
+        "     D   DD                                       DD   D     ",
+        "      DDD                                           DDD      ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "       DDD                                         DDD       ",
+        "     DD   D                                       D   DD     ",
+        "     D    D                                       D    D     ",
+        "     DD   D                                       D   DD     ",
+        "       DDD                                         DDD       ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "       DDDD                                       DDDD       ",
+        "      D    D                                     D    D      ",
+        "      D    D                                     D    D      ",
+        "      D    D                                     D    D      ",
+        "       DDDD                                       DDDD       ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "        DDDD                                     DDDD        ",
+        "       D    D                                   D    D       ",
+        "       D    D                                   D    D       ",
+        "       D    D                                   D    D       ",
+        "        DDDD                                     DDDD        ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "         DDDD                                   DDDD         ",
+        "        D    D                                 D    D        ",
+        "        D    D                                 D    D        ",
+        "        D    D                                 D    D        ",
+        "         DDDD                                   DDDD         ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "          DDDD                                 DDDD          ",
+        "        DD    D                               D    DD        ",
+        "        D     D                               D     D        ",
+        "        DD    D                               D    DD        ",
+        "          DDDD                                 DDDD          ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "           DDDD                               DDDD           ",
+        "         DD    DD                           DD    DD         ",
+        "         D     DD                           DD     D         ",
+        "         DD    DD                           DD    DD         ",
+        "           DDDD                               DDDD           ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "            DDDD                             DDDD            ",
+        "          DD    DD                         DD    DD          ",
+        "          D      D                         D      D          ",
+        "          DD    DD                         DD    DD          ",
+        "            DDDD                             DDDD            ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "             DDDDD                         DDDDD             ",
+        "           DD     DD                     DD     DD           ",
+        "           DD     DD                     DD     DD           ",
+        "           DD     DD                     DD     DD           ",
+        "             DDDDD                         DDDDD             ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "              DDDDDD                     DDDDDD              ",
+        "             D      DD                 DD      D             ",
+        "             D      DD                 DD      D             ",
+        "             D      DD                 DD      D             ",
+        "              DDDDDD                     DDDDDD              ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "                DDDDDD                 DDDDDD                ",
+        "              DD      DDDD BB   BB DDDD      DD              ",
+        "              D       DDDD BB   BB DDDD       D              ",
+        "              DD      DDDD BB   BB DDDD      DD              ",
+        "                DDDDDD                 DDDDDD                ",
+        "                                                             "
+      ],
+      [
+        "                                                             ",
+        "                 DDDDDDDDD BB   BB DDDDDDDDD                 ",
+        "               DD         DDDDDDDDD         DD               ",
+        "               DD         DDDDDDDDD         DD               ",
+        "               DD         DDDDDDDDD         DD               ",
+        "                 DDDDDDDDD BB   BB DDDDDDDDD                 ",
+        "                                                             "
+      ],
+      [
+        "                           BB   BB                           ",
+        "                   DDDDDDDDDDDDDDDDDDDDDDD                   ",
+        "                 DD                       DD                 ",
+        "                 DD                       DD                 ",
+        "                 DD                       DD                 ",
+        "                   DDDDDDDDDDDDDDDDDDDDDDD                   ",
+        "                           BB   BB                           "
+      ],
+      [
+        "                           BB   BB                           ",
+        "                      DDDDDDDDDDDDDDDDD                      ",
+        "                   DDD                 DDD                   ",
+        "                   DDD                 DDD                   ",
+        "                   DDD                 DDD                   ",
+        "                      DDDDDDDDDDDDDDDDD                      ",
+        "                           BB   BB                           "
+      ],
+      [
+        "                           BB   BB                           ",
+        "                          DDDDDDDDD                          ",
+        "                      DDDD         DDDD                      ",
+        "                      DDDD         DDDD                      ",
+        "                      DDDD         DDDD                      ",
+        "                          DDDDDDDDD                          ",
+        "                           BB   BB                           "
+      ],
+      [
+        "                                                             ",
+        "                           BB   BB                           ",
+        "                          DDDDEDDDD                          ",
+        "                          DDDEEEDDD                          ",
+        "                          DDDDEDDDD                          ",
+        "                           BB   BB                           ",
+        "                                                             "
+      ],
+      [
+        "C                                                            ",
+        "                                                             ",
+        "                           BB   BB                           ",
+        "                           BB   BB                           ",
+        "                           BB   BB                           ",
+        "                                                             ",
+        "                                                             "
+      ]
+    ],
+    "aisleRepetitions": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "predicates": {
+      "P": {
+        "blocks": [
+          {
+            "id": "multiblocked:energy_input_mk1"
+          },
+          {
+            "id": "multiblocked:energy_input_mk2"
+          },
+          {
+            "id": "multiblocked:energy_input_mk3"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 8
+      },
+      "controller": {
+        "location": "mbm2:fusion_reactor",
+        "type": "component"
+      },
+      "B": {
+        "blocks": [
+          {
+            "id": "kubejs:tungsten_coil"
+          }
+        ],
+        "type": "blocks"
+      },
+      "D": {
+        "blocks": [
+          {
+            "id": "kubejs:machine_casing_fusion_coil"
+          }
+        ],
+        "type": "blocks"
+      },
+      "E": {
+        "blocks": [
+          {
+            "id": "kubejs:machine_casing_fusion_glass"
+          }
+        ],
+        "type": "blocks"
+      },
+      "I": {
+        "blocks": [
+          {
+            "id": "multiblocked:fluid_input"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 2,
+        "maxCount": 2,
+        "io": "IN"
+      },
+      "any": {
+        "type": "any"
+      },
+      "O": {
+        "blocks": [
+          {
+            "id": "multiblocked:fluid_output"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 1,
+        "io": "OUT"
+      }
+    },
+    "symbolMap": {
+      "@": [
+        "controller"
+      ],
+      " ": [
+        "any"
+      ],
+      "A": [],
+      "B": [
+        "B"
+      ],
+      "C": [],
+      "D": [
+        "D"
+      ],
+      "E": [
+        "P",
+        "E",
+        "I",
+        "O"
+      ]
+    }
+  }
+}

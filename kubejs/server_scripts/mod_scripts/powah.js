@@ -206,12 +206,12 @@ E: 'powah:dielectric_rod'
   
 //Blazing Redstone
 	event.recipes.createMixing('kubejs:blazing_redstone', ['minecraft:blaze_powder','#forge:dusts/redstone']).id(`mbd2:create/mixing/blazing_redstone`)
-  event.recipes.multiblocked.multiblock('mixer')
-    .inputItems('minecraft:blaze_powder','#forge:dusts/redstone')
-    .outputItem(`kubejs:blazing_redstone`)
-    .setPerTick(true)
-    .inputFE(500)
-    .duration(100)
+  //event.recipes.multiblocked.multiblock('mixer')
+  //  .inputItems('minecraft:blaze_powder','#forge:dusts/redstone')
+  //  .outputItem(`kubejs:blazing_redstone`)
+  //  .setPerTick(true)
+  //  .inputFE(500)
+  //  .duration(100)
 
   //Thermoelectric Plate
   event.remove({id: 'powah:crafting/thermoelectric_plate'})
@@ -295,6 +295,34 @@ D: 'minecraft:furnace'
     event.remove({id: 'powah:energizing/spirited_crystal'})
     //Moved to json for output change//
     //global.powahEnergizing(event, [Item.of('naturesaura:calling_spirit').toJson(), Item.of('forbidden_arcanus:dark_soul').toJson(), Item.of('kubejs:spirited_brick').toJson(), Item.of('tconstruct:soulsteel_ingot').toJson(), Item.of('lazierae2:resonating_crystal').toJson()], Item.of('powah:crystal_spirited'), 1000000, 'mbm2:powah/spirited_crystal')
+
+    event.custom({
+        "type": "powah:energizing",
+        "ingredients": [
+        {
+          "item": "naturesaura:calling_spirit"
+        },
+        {
+          "item": "forbidden_arcanus:dark_soul"
+        },
+        {
+          "item": "kubejs:spirited_brick"
+        },
+        {
+          "item": "tconstruct:soulsteel_ingot"
+        },
+        {
+          "item": "lazierae2:resonating_crystal"
+        }
+        ],
+        "energy": 1000000,
+        "result": {
+        "item": "powah:crystal_spirited",
+        "count": 2
+        }
+      }
+    ).id('mbm2:powah/spirited_crystal')
+
 
     //Nitro Crystal
     event.remove({id: 'powah:energizing/nitro_crystal'})

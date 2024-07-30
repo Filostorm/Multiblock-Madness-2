@@ -4,26 +4,20 @@
 		"{id:\"ftbquests:quests\",json:'{\"group\":\"ftblibrary:info\",\"icon\":\"ftbquests:item/book\",\"x\":610,\"click\":\"ftbquests:open_gui\",\"required_server_mods\":[\"ftbquests\"],\"custom_text\":true}',type:\"ftblibrary:sidebar_button\"}",
 		"{id:\"ftbessentials:trash_can\",json:'{\"group\":\"ftblibrary:util\",\"icon\":\"ftblibrary:icons/bin\",\"x\":150,\"click\":\"command:/trashcan\",\"required_server_mods\":[\"ftbessentials\"]}',type:\"ftblibrary:sidebar_button\"}",
 		"{id:\"ftbchunks:chunks\",json:'{\"group\":\"ftblibrary:util\",\"icon\":\"ftblibrary:icons/map\",\"x\":310,\"click\":\"ftbchunks:open_gui\"}',type:\"ftblibrary:sidebar_button\"}",
-		"{data:{Count:1b,id:\"thermal:machine_speed_augment\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
 		"{id:\"ftblibrary:toggle.gamemode\",json:'{\"group\":\"ftblibrary:cheat\",\"icon\":[\"ftblibrary:icons/blue_button\",\"ftblibrary:textures/icons/toggle_gamemode.png\"],\"x\":100,\"click\":\"command:/ftblibrary gamemode\",\"hide_with_nei\":true,\"requires_op\":true}',type:\"ftblibrary:sidebar_button\"}",
-		"{data:{Count:1b,id:\"immersiveengineering:component_electronic_adv\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
-		"{data:{Count:1b,id:\"immersiveengineering:electron_tube\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
-		"{data:{Count:1b,id:\"ae2:pattern_access_terminal\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
-		"{data:{Count:1b,id:\"ae2:crafting_unit\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
-		"{data:{Count:1b,id:\"ae2:pattern_provider\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
-		"{data:{Count:1b,id:\"ae2:blank_pattern\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
-		"{data:{Count:1b,id:\"ae2:4k_crafting_storage\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
-		"{data:{Count:1b,id:\"kubejs:energetic_alloy_sheet\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
-		"{data:{Count:1b,id:\"ae2:cell_component_1k\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
-		"{data:{Count:1b,id:\"mbm2:leaching_vat\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
-		"{data:{Count:1b,id:\"lazierae2:logic_unit\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
-		"{data:{Count:1b,id:\"kubejs:tier_2_electrical_alloy_wire_coil\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
-		"{data:{Count:1b,id:\"mekanism:induction_casing\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
-		"{data:{Count:1b,id:\"kubejs:small_battery_full\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
-		"{data:{Count:1b,id:\"kubejs:adamantium_ingot\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}"
+		"{data:{Count:1b,id:\"kubejs:pneumaticcraft_casing\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+		"{data:{Count:1b,id:\"pneumaticcraft:advanced_air_compressor\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+		"{data:{Count:1b,id:\"pneumaticcraft:empty_pcb\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+		"{data:{Count:1b,id:\"botania:rune_mana\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+		"{data:{Count:1b,id:\"beyond_earth:rocket_launch_pad\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+		"{data:{Count:1b,id:\"kubejs:aluminum_plate\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+		"{data:{Count:1b,id:\"engineersdecor:rebar_concrete\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+		"{data:{Count:1b,id:\"kubejs:world_shaper_blueprint\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+		"{data:{Count:1b,id:\"create:handheld_worldshaper\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+		"{data:{Count:1b,id:\"mbm2:railgun\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+		"{data:{Count:1b,id:\"kubejs:tier3_casing\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
+		"{data:{Count:1b,id:\"mythicbotany:asgard_rune\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}"
 	],
 	"hiddenFavorites": [],
-	"displays": [
-		"{DisplayHistoryCategory:\"minecraft:plugins/crafting\",DisplayHistoryContains:1b,DisplayHistoryData:{REIRecipeType:\"Shaped\",RecipeHeight:3,RecipeWidth:3,input:[[{Count:1b,id:\"mekanism:induction_casing\",type:\"minecraft:item\"}],[{Count:1b,id:\"engineersdecor:small_mineral_smelter\",type:\"minecraft:item\"}],[{Count:1b,id:\"mekanism:induction_casing\",type:\"minecraft:item\"}],[{Count:1b,id:\"kubejs:tier_2_electrical_alloy_wire_coil\",type:\"minecraft:item\"}],[{Count:1b,id:\"thermal:machine_frame\",type:\"minecraft:item\"}],[{Count:1b,id:\"kubejs:tier_2_electrical_alloy_wire_coil\",type:\"minecraft:item\"}],[{Count:1b,id:\"mekanism:induction_casing\",type:\"minecraft:item\"}],[{Count:1b,id:\"kubejs:charged_coil\",type:\"minecraft:item\"}],[{Count:1b,id:\"mekanism:induction_casing\",type:\"minecraft:item\"}]],location:\"mbm2:crafting/induction_smelter\",output:[[{Count:1b,id:\"thermal:machine_smelter\",type:\"minecraft:item\"}]]},DisplayHistoryUUID:\"61f5e0c4-a3b6-427a-b3dd-71ee1738d92f\"}"
-	]
+	"displays": []
 }

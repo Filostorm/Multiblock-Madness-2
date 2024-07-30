@@ -10,11 +10,8 @@
 	quests: [
 		{
 			x: -2.0d
-			y: 0.5d
-			dependencies: [
-				"09B9B831214F6072"
-				"43F8546BD8107D1C"
-			]
+			y: -0.5d
+			dependencies: ["09B9B831214F6072"]
 			id: "61B47177E307B079"
 			tasks: [{
 				id: "40A75A68DDC671EB"
@@ -23,8 +20,8 @@
 			}]
 		}
 		{
-			x: -3.0d
-			y: -0.5d
+			x: -2.0d
+			y: -2.0d
 			description: ["Place the molten plastic in world to have it solidify into a Plastic Sheet, or place inside a chest that has been cooled via Heat Frame."]
 			dependencies: ["444E392EA0BB8807"]
 			dependency_requirement: "one_completed"
@@ -43,12 +40,12 @@
 			]
 		}
 		{
-			x: -1.5d
-			y: -0.5d
+			x: -3.5d
+			y: -2.0d
 			description: ["You can use Bio Diesel or LPG (from Refining Oil) to make Plastic."]
 			dependencies: [
 				"2F38722F9A7D89CC"
-				"2F6A6631A7BAAE8E"
+				"14C449A154C78D7E"
 			]
 			id: "444E392EA0BB8807"
 			tasks: [{
@@ -58,25 +55,9 @@
 			}]
 		}
 		{
-			disable_toast: true
-			x: -5.5d
-			y: 2.0d
-			shape: "circle"
-			dependencies: ["75D4FF56D8BBF34A"]
-			id: "43F8546BD8107D1C"
-			tasks: [{
-				id: "643843CCC59774D1"
-				type: "item"
-				item: "chemlib:titanium_ingot"
-			}]
-		}
-		{
-			x: -5.0d
-			y: -2.5d
-			dependencies: [
-				"2F38722F9A7D89CC"
-				"09B9B831214F6072"
-			]
+			x: -2.0d
+			y: -3.5d
+			dependencies: ["2F38722F9A7D89CC"]
 			id: "72DC15C390A992F6"
 			tasks: [
 				{
@@ -92,12 +73,9 @@
 			]
 		}
 		{
-			x: -5.0d
-			y: -0.5d
-			dependencies: [
-				"02285A69B0A09A44"
-				"09B9B831214F6072"
-			]
+			x: -0.5d
+			y: -2.0d
+			dependencies: ["09B9B831214F6072"]
 			id: "01D41BC5B499F063"
 			tasks: [{
 				id: "498221C41233E562"
@@ -107,12 +85,15 @@
 		}
 		{
 			title: "Better Circuits"
-			x: -4.0d
-			y: -1.5d
+			x: -0.5d
+			y: -3.5d
+			shape: "gear"
 			dependencies: [
 				"72DC15C390A992F6"
 				"01D41BC5B499F063"
+				"1F060A2843541330"
 			]
+			size: 1.5d
 			id: "281E051C6D348B35"
 			tasks: [
 				{
@@ -140,7 +121,7 @@
 				tag: { }
 			}
 			x: 0.0d
-			y: 2.0d
+			y: 2.25d
 			shape: "hexagon"
 			description: [
 				"After placing the Rocket on the 3x3 Launch Pad, shift right click to open the gui for fueling."
@@ -149,9 +130,9 @@
 			]
 			dependencies: [
 				"61B47177E307B079"
-				"2DFADAC92EFECDFD"
-				"70A8DBCE5978F640"
 				"5E914AEBF8D378B9"
+				"2DFADAC92EFECDFD"
+				"3BB743C226858D7A"
 			]
 			size: 1.5d
 			id: "06E62336B0646B17"
@@ -174,21 +155,11 @@
 			]
 		}
 		{
-			x: -2.0d
-			y: 2.0d
-			dependencies: ["12523E152182734F"]
-			id: "70A8DBCE5978F640"
-			tasks: [{
-				id: "449C6F6128FBF864"
-				type: "item"
-				item: "beyond_earth:oxygen_loader"
-			}]
-		}
-		{
 			title: "Space Suit"
 			x: -2.0d
-			y: 3.5d
+			y: 1.0d
 			description: ["You'll need to fill your suit with Oxygen before heading to space."]
+			dependencies: ["12523E152182734F"]
 			id: "2DFADAC92EFECDFD"
 			tasks: [
 				{
@@ -236,11 +207,16 @@
 					}
 					match_nbt: false
 				}
+				{
+					id: "05B3948744C3C3E1"
+					type: "item"
+					item: "beyond_earth:oxygen_loader"
+				}
 			]
 		}
 		{
-			x: 0.0d
-			y: 0.5d
+			x: -5.0d
+			y: 1.0d
 			dependencies: ["591233C3DDD3FE04"]
 			id: "5E914AEBF8D378B9"
 			tasks: [{
@@ -251,15 +227,14 @@
 			}]
 		}
 		{
-			x: 0.0d
-			y: -1.0d
+			x: -5.0d
+			y: -0.5d
 			description: ["Stacking up to 4 Refinery Outputs on the top (and insulating them), will allow you to get the maximum amount of products from your Crude Oil."]
 			min_required_dependencies: 3
 			dependencies: [
-				"598DE255BBB061C3"
 				"2F38722F9A7D89CC"
-				"2F6A6631A7BAAE8E"
 				"0C98A801E8A7FE66"
+				"14C449A154C78D7E"
 			]
 			id: "591233C3DDD3FE04"
 			tasks: [
@@ -278,13 +253,9 @@
 		}
 		{
 			icon: "mbm2:ebf"
-			x: 0.0d
-			y: 4.0d
-			dependencies: [
-				"75D4FF56D8BBF34A"
-				"43F8546BD8107D1C"
-				"2F6A6631A7BAAE8E"
-			]
+			x: -2.0d
+			y: 3.0d
+			dependencies: ["75D4FF56D8BBF34A"]
 			id: "4668A1BA6F4E9EC6"
 			tasks: [
 				{
@@ -340,8 +311,8 @@
 		}
 		{
 			title: "Tier 4 Metals"
-			x: 2.5d
-			y: 4.0d
+			x: 0.0d
+			y: 3.75d
 			shape: "gear"
 			dependencies: [
 				"06E62336B0646B17"
@@ -350,25 +321,25 @@
 			]
 			size: 1.5d
 			id: "13C4C068E2EB695E"
-			tasks: [
-				{
-					id: "4E248D82865F574E"
-					type: "item"
-					item: "mekanism:ingot_osmium"
+			tasks: [{
+				id: "4E248D82865F574E"
+				type: "item"
+				title: "Tier 4 Metals"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "mbm2:base_metals/tier_four"
+					}
 				}
-				{
-					id: "12208AF435CF6A3E"
-					type: "item"
-					item: "kubejs:platinum_ingot"
-				}
-			]
+			}]
 		}
 		{
 			icon: "mbm2:air_collector_mk1"
 			x: -3.5d
-			y: 2.0d
+			y: -0.5d
 			description: ["You'll need to craft up some Pressurized Aluminum Alloy in the Pressure Chamber for this multiblock."]
-			dependencies: ["43F8546BD8107D1C"]
+			dependencies: ["14C449A154C78D7E"]
 			id: "12523E152182734F"
 			tasks: [
 				{
@@ -419,21 +390,9 @@
 			]
 		}
 		{
-			x: 0.0d
-			y: -3.0d
-			shape: "circle"
-			dependencies: ["75D4FF56D8BBF34A"]
-			id: "2F6A6631A7BAAE8E"
-			tasks: [{
-				id: "6B769139B688EB05"
-				type: "item"
-				item: "chemlib:magnesium_ingot"
-			}]
-		}
-		{
 			icon: "mbm2:flotation"
-			x: 2.5d
-			y: 2.0d
+			x: -2.0d
+			y: 5.5d
 			description: ["You'll also need to cover the Cog Blocks with water."]
 			dependencies: ["63D72477BB0F83A4"]
 			dependency_requirement: "one_completed"
@@ -491,13 +450,12 @@
 		}
 		{
 			title: "Purified Water"
-			x: 2.0d
-			y: 0.5d
+			x: 0.0d
+			y: 5.5d
 			description: ["If used in the Flotation Tank, you'll be able to get some byproducts!"]
 			dependencies: [
 				"02E4BADB1F8BEB33"
 				"0E2B25A2429C9556"
-				"2F6A6631A7BAAE8E"
 			]
 			id: "31EF1A8086E0512F"
 			tasks: [
@@ -521,7 +479,7 @@
 		}
 		{
 			icon: "mbm2:sorter_mk2"
-			x: 3.5d
+			x: 2.0d
 			y: 5.5d
 			dependencies: ["13C4C068E2EB695E"]
 			id: "67A63CB65FEDF5AC"
@@ -575,7 +533,7 @@
 		{
 			title: "Compressing Air"
 			x: -5.0d
-			y: -4.0d
+			y: -3.5d
 			description: ["Attach the Safety Tube Module to keep your system from exploding if pressure gets too high."]
 			dependencies: ["418AC2EB203010CA"]
 			id: "02285A69B0A09A44"
@@ -584,13 +542,7 @@
 					id: "63B0B7FC57DC0DFA"
 					type: "item"
 					title: "Any Basic Compressor"
-					item: {
-						id: "itemfilters:tag"
-						Count: 1b
-						tag: {
-							value: "pneumaticcraft:compressor/basic"
-						}
-					}
+					item: "pneumaticcraft:air_compressor"
 				}
 				{
 					id: "3F4FFF3F8F58CD0A"
@@ -606,8 +558,8 @@
 		}
 		{
 			title: "Using Heat"
-			x: -2.5d
-			y: -3.0d
+			x: -3.5d
+			y: -3.5d
 			description: [
 				"The Vortex Tube will passively cool the blue side while heating the red side. If supplied Air Pressure, it will enhance this function significantly. Additionally, by adding a Heat Sink to the hot side, the cold side will be able to go much lower."
 				""
@@ -642,7 +594,7 @@
 		{
 			title: "Explosions!"
 			x: -6.5d
-			y: -4.0d
+			y: -3.5d
 			description: ["Blow up some steel to start PneumaticCraft!"]
 			id: "418AC2EB203010CA"
 			tasks: [
@@ -659,13 +611,10 @@
 			]
 		}
 		{
-			x: -7.0d
-			y: -1.0d
+			x: 1.5d
+			y: -3.75d
 			description: ["Running out of channels yet? Each ME Controller can handle up to 64 Channels per side! (Normally 32)"]
-			dependencies: [
-				"43F8546BD8107D1C"
-				"281E051C6D348B35"
-			]
+			dependencies: ["281E051C6D348B35"]
 			size: 1.5d
 			id: "094B760566E1D22C"
 			tasks: [{
@@ -681,8 +630,8 @@
 			}]
 		}
 		{
-			x: 5.5d
-			y: -4.0d
+			x: 6.5d
+			y: -0.5d
 			dependencies: ["13D02E1465C8913E"]
 			id: "65E0754BC5138500"
 			tasks: [{
@@ -692,8 +641,8 @@
 			}]
 		}
 		{
-			x: 4.0d
-			y: -3.0d
+			x: 6.5d
+			y: -2.0d
 			dependencies: ["65E0754BC5138500"]
 			id: "6150C63B77F8E6D8"
 			tasks: [{
@@ -703,8 +652,8 @@
 			}]
 		}
 		{
-			x: 3.5d
-			y: -1.5d
+			x: 5.0d
+			y: -2.0d
 			dependencies: ["6150C63B77F8E6D8"]
 			id: "78B61F638A702484"
 			tasks: [{
@@ -714,8 +663,8 @@
 			}]
 		}
 		{
-			x: 4.5d
-			y: -1.5d
+			x: 5.0d
+			y: -3.5d
 			dependencies: ["6150C63B77F8E6D8"]
 			id: "207551C54C784815"
 			tasks: [{
@@ -725,23 +674,34 @@
 			}]
 		}
 		{
-			x: 4.5d
-			y: 0.0d
+			x: 3.5d
+			y: -3.5d
 			description: ["You'll need the Wand of the Forest to link this to the Mana Pool, in order for the flower's mana to be collected."]
-			dependencies: [
-				"207551C54C784815"
-				"60255993C8EFE1D2"
-			]
+			dependencies: ["207551C54C784815"]
 			id: "343E2A3C2342E08A"
-			tasks: [{
-				id: "28DC11FC6D73A531"
-				type: "item"
-				item: "botania:mana_spreader"
-			}]
+			tasks: [
+				{
+					id: "28DC11FC6D73A531"
+					type: "item"
+					item: "botania:mana_spreader"
+				}
+				{
+					id: "0A7BE3780B18AF4B"
+					type: "item"
+					item: {
+						id: "botania:twig_wand"
+						Count: 1b
+						tag: {
+							color1: 0
+							color2: 0
+						}
+					}
+				}
+			]
 		}
 		{
 			x: 3.5d
-			y: 0.0d
+			y: -2.0d
 			dependencies: ["78B61F638A702484"]
 			id: "24AB6B3E3C29F3CD"
 			tasks: [{
@@ -751,29 +711,9 @@
 			}]
 		}
 		{
-			title: "Wand of the Forest"
-			x: 5.5d
-			y: -1.5d
-			dependencies: ["207551C54C784815"]
-			id: "60255993C8EFE1D2"
-			tasks: [{
-				id: "70DDBD8792048E93"
-				type: "item"
-				item: {
-					id: "botania:twig_wand"
-					Count: 1b
-					tag: {
-						color2: 0
-						color1: 0
-					}
-				}
-				match_nbt: false
-			}]
-		}
-		{
 			title: "Mana Infused Items"
-			x: 4.5d
-			y: 1.5d
+			x: 3.5d
+			y: -0.5d
 			dependencies: [
 				"24AB6B3E3C29F3CD"
 				"343E2A3C2342E08A"
@@ -795,8 +735,8 @@
 		}
 		{
 			title: "First Tier Generating Flowers"
-			x: 5.5d
-			y: 0.0d
+			x: 5.0d
+			y: -0.5d
 			dependencies: ["65E0754BC5138500"]
 			id: "469495A371AA465F"
 			tasks: [
@@ -813,8 +753,9 @@
 			]
 		}
 		{
-			x: 4.5d
-			y: 3.0d
+			x: 2.0d
+			y: -0.5d
+			description: ["Drop the items shown in the recipe, then a living rock, followed by a swing of your wand of the forest. If you've got a Mana Spreader linked to the altar, it will then start."]
 			dependencies: ["26C90FCCFBBEBD70"]
 			id: "3BB743C226858D7A"
 			tasks: [{
@@ -826,12 +767,9 @@
 		{
 			title: "Mana Compressor (8x Ore Refining)"
 			icon: "mbm2:mana_compressor"
-			x: 4.5d
-			y: 4.5d
-			dependencies: [
-				"13C4C068E2EB695E"
-				"3BB743C226858D7A"
-			]
+			x: 2.0d
+			y: 3.0d
+			dependencies: ["13C4C068E2EB695E"]
 			id: "5A00E4928B51CBF5"
 			tasks: [
 				{
@@ -876,8 +814,8 @@
 		}
 		{
 			title: "Mystical Flowers"
-			x: 4.0d
-			y: -5.0d
+			x: 8.0d
+			y: -0.5d
 			id: "13D02E1465C8913E"
 			tasks: [{
 				id: "0D788CD792C63848"
@@ -894,8 +832,8 @@
 		}
 		{
 			title: "More of that strange oil"
-			x: -2.5d
-			y: -4.5d
+			x: -5.0d
+			y: -5.0d
 			subtitle: "Its probably nothing"
 			description: ["Use the Sensor on the ground to find an oil deposit, which you can then drill up to the surface with the Gas Lift."]
 			dependencies: ["02285A69B0A09A44"]
@@ -921,7 +859,7 @@
 		{
 			title: "Pressure Chamber"
 			x: -5.0d
-			y: -5.5d
+			y: -2.0d
 			description: [
 				"You will need to pipe items in and out of the Pressure Chamber for crafting."
 				""
@@ -954,6 +892,94 @@
 					count: 2L
 				}
 			]
+		}
+		{
+			title: "Laser Circuit Assembly"
+			x: 1.0d
+			y: -2.0d
+			dependencies: ["7F7EC08E0D521059"]
+			id: "1F060A2843541330"
+			tasks: [
+				{
+					id: "465E84854E29FC91"
+					type: "item"
+					item: "pneumaticcraft:assembly_controller"
+				}
+				{
+					id: "5E923135629863ED"
+					type: "item"
+					item: "pneumaticcraft:assembly_laser"
+				}
+				{
+					id: "2C84D688B6BDAAEA"
+					type: "item"
+					item: "pneumaticcraft:assembly_io_unit_import"
+				}
+				{
+					id: "282D9CE7FFB1FBE4"
+					type: "item"
+					item: "pneumaticcraft:assembly_io_unit_export"
+				}
+				{
+					id: "634BE93F36FA5B8D"
+					type: "item"
+					item: "pneumaticcraft:assembly_platform"
+				}
+				{
+					id: "33F3AFB97B50C99A"
+					type: "item"
+					item: "pneumaticcraft:assembly_program_laser"
+				}
+			]
+			rewards: [
+				{
+					id: "399834E5793DD286"
+					type: "item"
+					item: "pneumaticcraft:security_upgrade"
+				}
+				{
+					id: "3618C8C1A7575C9F"
+					type: "item"
+					item: "pneumaticcraft:empty_pcb"
+					count: 8
+				}
+			]
+		}
+		{
+			x: -0.5d
+			y: -0.5d
+			dependencies: ["09B9B831214F6072"]
+			id: "7F7EC08E0D521059"
+			tasks: [
+				{
+					id: "4D29C6EE2BE6CDD3"
+					type: "item"
+					item: "pneumaticcraft:amadron_tablet"
+				}
+				{
+					id: "11442EB89D6B4FD8"
+					type: "item"
+					item: "pneumaticcraft:charging_station"
+				}
+			]
+		}
+		{
+			x: -3.5d
+			y: -5.0d
+			dependencies: ["02285A69B0A09A44"]
+			id: "50BDCFC5C61EAAF3"
+			tasks: [{
+				id: "0506F92DAB67DD6F"
+				type: "item"
+				title: "Compressor Upgrades"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "pneumaticcraft:compressor/basic"
+					}
+				}
+			}]
 		}
 	]
 	quest_links: [ ]

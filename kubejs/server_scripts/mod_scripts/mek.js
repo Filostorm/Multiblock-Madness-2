@@ -11,21 +11,6 @@ onEvent('recipes', event => {
   event.remove({output: 'mekanism:steel_casing'})
   
 
-	//Small Battery
-	event.shaped('kubejs:small_battery_empty', [
-		'TBT',
-		'LCL',
-		'LCL'
-	  ], {
-		T: '#forge:plates/tin',
-		L: '#forge:plates/lead',
-		B: 'kubejs:reactive_blend',
-		C: 'powah:capacitor_hardened'
-	  }).id("mbm2:small_battery")
-
-	// Large Battery 
-	event.shaped('kubejs:large_battery_empty', ['AAA','BCB','BDB'], {A: 'kubejs:stainless_steel_plate',B: '#forge:platings/advanced_battery_alloy', C: 'kubejs:small_battery_empty',D: 'kubejs:tier_1_electrical_alloy_wire_coil'}).id("mbm2:large_battery")
-
 
 	//Bat-tries
 	event.replaceInput({mod: 'mekanism'}, 'mekanism:energy_tablet', 'kubejs:small_battery_empty')

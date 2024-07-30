@@ -70,6 +70,7 @@ var basicItems = [
 	'metal_seed',
 	'shaped_fluix_crystal',
 	'dimensional_mote',
+	'world_shaper_blueprint'
 ]
 
 global.transitionalItems = [

@@ -249,6 +249,76 @@ onEvent('recipes', event => {
 		}
 	 }).id('mbm2:tier3_rocket')
 
+	  //Tier 4 Rocket
+	  event.remove({id: 'beyond_earth:nasa_workbenching/tier4'})
+	  event.custom({
+		"type":"beyond_earth:nasa_workbench",
+		"input":{
+		   "parts":{
+			  "beyond_earth:nose":[
+				 {
+					"item":'kubejs:adamantine_alloy_rocket_nose_cone'
+				 }
+			  ],
+			  "beyond_earth:body":[
+				 {
+					"tag":"forge:platings/calorite"
+				 },
+				 {
+					"tag":"forge:platings/calorite"
+				 },
+				 {
+					"tag":"forge:platings/calorite"
+				 },
+				 {
+					"tag":"forge:platings/calorite"
+				 },
+				 {
+					"tag":"forge:platings/calorite"
+				 },
+				 {
+					"tag":"forge:platings/calorite"
+				 }
+			  ],
+			  "beyond_earth:tank":[
+				 {
+					"tag":"beyond_earth:tanks/calorite"
+				 },
+				 {
+					"tag":"beyond_earth:tanks/calorite"
+				 }
+			  ],
+			  "beyond_earth:fin_left":[
+				 {
+					"item":"kubejs:adamantine_alloy_rocket_fin"
+				 },
+				 {
+					"item":"kubejs:adamantine_alloy_rocket_fin"
+				 }
+			  ],
+			  "beyond_earth:fin_right":[
+				 {
+					"item":"kubejs:adamantine_alloy_rocket_fin"
+				 },
+				 {
+					"item":"kubejs:adamantine_alloy_rocket_fin"
+				 }
+			  ],
+			  "beyond_earth:engine":[
+				 {
+					"tag":"beyond_earth:engines/calorite"
+				 }
+			  ]
+		   }
+		},
+		"output":{
+		   "item":"beyond_earth:rocket_t4",
+		   "count":1
+		}
+	 }).id('mbm2:tier4_rocket')
+
+
+
      //Tanks
 	 event.remove({output: 'beyond_earth:steel_tank'})
 	 event.shaped('beyond_earth:steel_tank', ['ABA','BCB','ABA'], {A: 'kubejs:aluminum_plating',B: 'kubejs:steel_rod',C: Item.of('thermal:fluid_cell', '{BlockEntityTag:{TankInv:[{Amount:0,Capacity:32000,FluidName:"minecraft:empty",Tank:0b}]}}')}).id('mbm2:steel_tank')
@@ -259,6 +329,9 @@ onEvent('recipes', event => {
 	 event.remove({output: 'beyond_earth:calorite_tank'})
 	 event.shaped('beyond_earth:calorite_tank', ['ABA','BCB','ABA'], {A: 'beyond_earth:compressed_calorite',B: 'kubejs:steel_rod',C: 'beyond_earth:ostrum_tank'}).id('mbm2:calorite_tank')
 
+//Launch Pads
+	 event.remove({output: 'beyond_earth:rocket_launch_pad'})
+	event.recipes.botania.runic_altar('9x beyond_earth:rocket_launch_pad', ['botania:rune_mana', 'engineersdecor:rebar_concrete', 'engineersdecor:rebar_concrete', 'engineersdecor:rebar_concrete', 'engineersdecor:rebar_concrete'], 5000)
 
 });
 

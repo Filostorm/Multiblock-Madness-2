@@ -611,7 +611,7 @@ let blastFurnaceSmelting = (event, material, inputItem, tier) => {
 
 		//Air
 		event.recipes.multiblocked.multiblock("ebf")
-		.inputFluid(Fluid.of('kubejs:liquid_air', 500))
+		.inputFluid(Fluid.of('kubejs:liquid_air', 250))
 		.inputItem(inputItem)
 		.outputItem(Item.of(`#forge:ingots/${material}`))
 		.setPerTick(true)
@@ -622,7 +622,7 @@ let blastFurnaceSmelting = (event, material, inputItem, tier) => {
 		let tierFluid = global.coilHeatValues[tier-4].fluid
 		console.log('look ' + tierSmeltingTemp)
 		event.recipes.multiblocked.multiblock("ebf")
-			.inputFluid(Fluid.of(tierFluid, 500))
+			.inputFluid(Fluid.of(tierFluid, 250))
 			.inputItem(inputItem)
 			.outputItem(Item.of(`#forge:ingots/${material}`))
 			.setPerTick(true)
@@ -920,44 +920,44 @@ let blastFurnaceSmelting = (event, material, inputItem, tier) => {
 	
 	//Tier 1
 	//oreMixer(event, 4, '#forge:ores/raw/nickel', ['kubejs:catalyst_basic', '2x kubejs:raw_kharaxium', '2x kubejs:raw_vincyte'], 2)
-	oreMixer(event, 4, '#forge:ores/raw/zinc', ['kubejs:catalyst_basic', '2x kubejs:raw_jimmium', '2x kubejs:raw_vincyte'], 2)
-	oreMixer(event, 4, '#forge:ores/raw/lead', ['kubejs:catalyst_basic', '2x kubejs:raw_densite','2x kubejs:raw_potentium'], 2)
-	oreMixer(event, 4, '#forge:ores/raw/silver', ['kubejs:catalyst_basic', '2x kubejs:raw_potentium','2x kubejs:raw_imortite'], 2)
+	oreMixer(event, 3, '#forge:ores/raw/zinc', ['kubejs:catalyst_basic', '2x kubejs:raw_jimmium', '2x kubejs:raw_vincyte'], 2)
+	oreMixer(event, 3, '#forge:ores/raw/lead', ['kubejs:catalyst_basic', '2x kubejs:raw_densite','2x kubejs:raw_potentium'], 2)
+	oreMixer(event, 3, '#forge:ores/raw/silver', ['kubejs:catalyst_basic', '2x kubejs:raw_potentium','2x kubejs:raw_imortite'], 2)
 
-	oreMixer(event, 2, '#forge:ores/raw/arcanite', ['kubejs:catalyst_magic', '2x #forge:ores/compound/raw'], 2)
+	oreMixer(event, 3, '#forge:ores/raw/arcanite', ['kubejs:catalyst_magic', '4x #forge:ores/compound/raw'], 2)
 	
 	//Tier 2
-	oreMixer(event, 3, '#forge:ores/crushed/cobalt', ['kubejs:catalyst_basic', '2x kubejs:crushed_vincyte','2x kubejs:crushed_imortite'], 4)
-	oreMixer(event, 3, '#forge:ores/crushed/aluminum', ['kubejs:catalyst_basic', '2x kubejs:crushed_densite','2x kubejs:crushed_kharaxium'], 4)
-	oreMixer(event, 3, '#forge:ores/crushed/nickel', ['kubejs:catalyst_basic', '2x kubejs:crushed_jimmium','2x kubejs:crushed_vincyte'], 4)
-	//oreMixer(event, 3, '#forge:ores/crushed/thorium', ['kubejs:catalyst_basic', '2x kubejs:crushed_jimmium','2x kubejs:crushed_vincyte'], 4)
-	oreMixer(event, 3, '#forge:ores/crushed/mithril', ['kubejs:catalyst_magic', '2x kubejs:crushed_potentium','2x kubejs:crushed_densite'], 4)
+	oreMixer(event, 2, '#forge:ores/crushed/cobalt', ['kubejs:catalyst_basic', '2x kubejs:crushed_vincyte','2x kubejs:crushed_imortite'], 4)
+	oreMixer(event, 2, '#forge:ores/crushed/aluminum', ['kubejs:catalyst_basic', '2x kubejs:crushed_densite','2x kubejs:crushed_kharaxium'], 4)
+	oreMixer(event, 2, '#forge:ores/crushed/nickel', ['kubejs:catalyst_basic', '2x kubejs:crushed_jimmium','2x kubejs:crushed_vincyte'], 4)
+	oreMixer(event, 2, '#forge:ores/crushed/mithril', ['kubejs:catalyst_magic', '2x kubejs:crushed_potentium','2x kubejs:crushed_densite'], 4)
 	
 	//Tier 3
-	oreMixer(event, 2, '#forge:ores/chunk/magnesium', ['kubejs:catalyst_basic', '2x kubejs:chunk_densite','2x kubejs:chunk_kharaxium'], 8)
-	oreMixer(event, 2, '#forge:ores/chunk/titanium', ['kubejs:catalyst_basic', '2x kubejs:chunk_vincyte','2x kubejs:chunk_jimmium'], 8)
-	oreMixer(event, 2, '#forge:ores/chunk/uranium', ['kubejs:catalyst_basic', '2x kubejs:chunk_imortite','2x kubejs:chunk_densite'], 8)
-	oreMixer(event, 2, '#forge:ores/chunk/rune', ['kubejs:catalyst_magic', '2x kubejs:chunk_potentium','2x kubejs:chunk_vincyte'], 8)
+	oreMixer(event, 1, '#forge:ores/chunk/magnesium', ['kubejs:catalyst_basic', '2x kubejs:chunk_densite','2x kubejs:chunk_kharaxium'], 8)
+	oreMixer(event, 1, '#forge:ores/chunk/titanium', ['kubejs:catalyst_basic', '2x kubejs:chunk_vincyte','2x kubejs:chunk_jimmium'], 8)
+	oreMixer(event, 1, '#forge:ores/chunk/uranium', ['kubejs:catalyst_basic', '2x kubejs:chunk_imortite','2x kubejs:chunk_densite'], 8)
+	oreMixer(event, 1, '#forge:ores/chunk/aetherium', ['kubejs:catalyst_magic', '2x kubejs:chunk_potentium','2x kubejs:chunk_vincyte'], 8)
 
 	//Tier 4
-	oreMixer(event, 3, '#forge:ores/lump/platinum', ['kubejs:catalyst_basic', '2x kubejs:lump_kharaxium','2x kubejs:lump_imortite','2x kubejs:lump_vincyte'], 16)
-	oreMixer(event, 3, '#forge:ores/lump/osmium', ['kubejs:catalyst_basic', '2x kubejs:lump_densite','2x kubejs:lump_jimmium','2x kubejs:lump_potentium'], 16)
-	oreMixer(event, 3, '#forge:ores/lump/cadmium', ['kubejs:catalyst_basic', '2x kubejs:lump_kharaxium','2x kubejs:lump_jimmium','2x kubejs:lump_imortite'], 16)
-	oreMixer(event, 3, '#forge:ores/lump/desh', ['kubejs:catalyst_basic', '2x kubejs:lump_potentium','2x kubejs:lump_vincyte','2x kubejs:lump_densite'], 16)
+	oreMixer(event, 2, '#forge:ores/lump/platinum', ['kubejs:catalyst_basic', '2x kubejs:lump_kharaxium','2x kubejs:lump_imortite','2x kubejs:lump_vincyte'], 16)
+	oreMixer(event, 2, '#forge:ores/lump/osmium', ['kubejs:catalyst_basic', '2x kubejs:lump_densite','2x kubejs:lump_jimmium','2x kubejs:lump_potentium'], 16)
+	oreMixer(event, 2, '#forge:ores/lump/desh', ['kubejs:catalyst_basic', '2x kubejs:lump_potentium','2x kubejs:lump_vincyte','2x kubejs:lump_densite'], 16)
+	oreMixer(event, 2, '#forge:ores/lump/rune', ['kubejs:catalyst_magic', '2x kubejs:lump_kharaxium','2x kubejs:lump_jimmium','2x kubejs:lump_imortite'], 16)
 
 	//Tier 5
-	oreMixer(event, 2, '#forge:ores/deposit/ostrum', ['kubejs:catalyst_basic', '2x kubejs:deposit_kharaxium','2x kubejs:deposit_densite','2x kubejs:deposit_imortite'], 32)
-	oreMixer(event, 2, '#forge:ores/deposit/tungsten', ['kubejs:catalyst_basic', '2x kubejs:deposit_vincyte','2x kubejs:deposit_jimmium','2x kubejs:deposit_densite'], 32)
-	oreMixer(event, 2, '#forge:ores/deposit/orichalcum', ['kubejs:catalyst_magic', '2x kubejs:deposit_imortite','2x kubejs:deposit_potentium','2x kubejs:deposit_kharaxium'], 32)
+	oreMixer(event, 1, '#forge:ores/deposit/cadmium', ['kubejs:catalyst_basic', '2x kubejs:potentium','2x kubejs:deposit_vincyte','2x kubejs:deposit_jimmium'], 32)
+	oreMixer(event, 1, '#forge:ores/deposit/ostrum', ['kubejs:catalyst_basic', '2x kubejs:deposit_kharaxium','2x kubejs:deposit_densite','2x kubejs:deposit_imortite'], 32)
+	oreMixer(event, 1, '#forge:ores/deposit/tungsten', ['kubejs:catalyst_basic', '2x kubejs:deposit_vincyte','2x kubejs:deposit_jimmium','2x kubejs:deposit_densite'], 32)
+	oreMixer(event, 1, '#forge:ores/deposit/orichalcum', ['kubejs:catalyst_magic', '2x kubejs:deposit_imortite','2x kubejs:deposit_potentium','2x kubejs:deposit_kharaxium'], 32)
 
 	//Tier 6
-	oreMixer(event, 1, '#forge:ores/leached/iridium', ['kubejs:catalyst_basic', '2x kubejs:leached_vincyte','2x kubejs:leached_densite','2x kubejs:leached_jimmium'], 64)
-	oreMixer(event, 1, '#forge:ores/leached/calorite', ['kubejs:catalyst_basic', '2x kubejs:leached_potentium','2x kubejs:leached_jimmium','2x kubejs:leached_imortite'], 64)
-	oreMixer(event, 1, '#forge:ores/leached/adamantium', ['kubejs:catalyst_magic', '2x kubejs:leached_imortite','2x kubejs:leached_kharaxium','2x kubejs:leached_potentium'], 64)
+	oreMixer(event, 1, '#forge:ores/leached/iridium', ['kubejs:catalyst_basic', '3x kubejs:leached_vincyte','3x kubejs:leached_densite','3x kubejs:leached_jimmium'], 64)
+	oreMixer(event, 1, '#forge:ores/leached/calorite', ['kubejs:catalyst_basic', '3x kubejs:leached_potentium','3x kubejs:leached_jimmium','3x kubejs:leached_imortite'], 64)
+	oreMixer(event, 1, '#forge:ores/leached/adamantium', ['kubejs:catalyst_magic', '3x kubejs:leached_imortite','3x kubejs:leached_kharaxium','3x kubejs:leached_potentium'], 64)
 
 	//Tier 7
-	oreMixer(event, 1, '#forge:ores/crystal/vibranium', ['kubejs:catalyst_basic', '3x kubejs:crystal_imortite','3x kubejs:crystal_potentium','3x kubejs:crystal_kharaxium'], 128)
-	oreMixer(event, 1, '#forge:ores/crystal/uru', ['kubejs:catalyst_basic', '3x kubejs:crystal_jimmium','3x kubejs:crystal_vincyte','3x kubejs:crystal_densite'], 128)
+	oreMixer(event, 1, '#forge:ores/crystal/vibranium', ['kubejs:catalyst_basic', '4x kubejs:crystal_imortite','4x kubejs:crystal_potentium','4x kubejs:crystal_kharaxium'], 128)
+	oreMixer(event, 1, '#forge:ores/crystal/uru', ['kubejs:catalyst_basic', '4x kubejs:crystal_jimmium','4x kubejs:crystal_vincyte','4x kubejs:crystal_densite'], 128)
 
 
 

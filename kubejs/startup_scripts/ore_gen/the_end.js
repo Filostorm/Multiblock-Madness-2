@@ -46,13 +46,13 @@ onEvent('worldgen.add', event => {
 		ore.biomes = "minecraft:the_end"
 	})
 	
-	// Inserted Runite
-	console.log('rune')
+	// Inserted Aetherium
+	console.log('aetherium')
 	event.addOre((ore) => {
-		ore.id = 'kubejs:the_end_rune_ore'
+		ore.id = 'kubejs:the_end_aetherium_ore'
 			global.stoneTypes.forEach((type) => {
 				if (type.material != 'bedrock' && type.material != 'deepslate') {
-					ore.addTarget(`kubejs:${type.material}_titanium_ore`, `kubejs:${type.material}_rune_ore`)
+					ore.addTarget(`kubejs:${type.material}_titanium_ore`, `kubejs:${type.material}_aetherium_ore`)
 				}
 			})
 		ore.count(200)

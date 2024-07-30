@@ -395,4 +395,12 @@ event.shaped('#forge:storage_blocks/sapphire', ['AAA','AAA','AAA'], {A: '#forge:
 event.shapeless('9x #forge:gems/ruby', ['#forge:storage_blocks/ruby']).id("mbm2:crafting/ruby_block_to_ruby")
 event.shapeless('9x #forge:gems/sapphire', ['#forge:storage_blocks/sapphire']).id("mbm2:crafting/sapphire_block_to_sapphire")
 
+//Gem Dust
+	global.ieCrusher(event, 
+		{"count":1,"base_ingredient":Item.of(`kubejs:crystal_slag`).toJson()}, //Output
+		[{chance: 0.25, output: Item.of('#forge:gems/amethyst').toJson()}, {'chance': 0.05, 'output': Item.of('apotheosis:gem_dust').toJson()}],
+		{"item":`ars_nouveau:source_gem`}, //Input
+		6000, `mbm2:crushing/gem_dust_from_source_gem`)
+
+
 });

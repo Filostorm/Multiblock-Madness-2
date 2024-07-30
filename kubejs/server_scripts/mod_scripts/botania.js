@@ -58,7 +58,7 @@ event.remove({id: 'botania:mana_infusion/manasteel'})
   event.custom({
 	"type": "botania:mana_infusion",
 	"input": {
-	  "item": 'kubejs:rune_ingot'
+	  "item": 'kubejs:aetherium_ingot'
 	},
 	"output": {
 	  "item": "botania:manasteel_ingot"
@@ -70,7 +70,7 @@ event.remove({id: 'botania:mana_infusion/manasteel_block'})
   event.custom({
 	"type": "botania:mana_infusion",
 	"input": {
-	  "item": 'kubejs:rune_storage_block'
+	  "item": 'kubejs:aetherium_storage_block'
 	},
 	"output": {
 	  "item": "botania:manasteel_block"
@@ -142,5 +142,8 @@ event.custom({
 	
 //mana pearl recipe change 
 event.replaceInput({id: 'botania:mana_infusion/mana_pearl'}, 'minecraft:ender_pearl', 'kubejs:source_pearl')
+
+
+
 
 });

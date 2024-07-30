@@ -634,7 +634,9 @@ onEvent('item.tooltip', tooltip => {
 			}
 		})
 		}
-	});
+	})
 	
+	//Dyson info
+	tooltip.add('kubejs:standard_dyson_panel', `Generates 100,000 RF/t while in space`)
 	
 });

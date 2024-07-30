@@ -45,7 +45,7 @@ onEvent('recipes', event => {
 		], {
 		E: 'immersiveengineering:component_electronic_adv',
 		C: 'elementalcraft:strongly_contained_crystal',
-		P: '#forge:platings/enderium',
+		P: '#forge:platings/nethersteel',
 		G: 'glassential:glass_ethereal',
 		H: 'kubejs:hostile_casing'
 		}).id(`mbm2:loot_fabricator`)
@@ -113,6 +113,11 @@ onEvent('recipes', event => {
 		{
 		  'mob': 'wither_skeleton',
 		  'drop_item': 'wither_skeleton_skull',
+		  'second_item': '#forge:platings/steel',
+		},
+		{
+		  'mob': 'elder_guardian',
+		  'drop_item': 'prismarine',
 		  'second_item': '#forge:platings/steel',
 		},
 

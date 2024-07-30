@@ -27,7 +27,12 @@ onEvent('client.generate_assets', event => {
 			let newName = types[materialSplit[2]]/**this grabs a color based on the type of alloy */ + newTierName + tier +' '+ materialNameUpper(materialName) + ' ' 
 
 			item.itemParts.forEach((partName) => {
+				if (partName.includes('model')) {
+					event.addLang(`item.kubejs.${item.material}_${partName.slice(6)}`, newName + materialNameUpper(partName.slice(6)))
+				} else {
 					event.addLang(`item.kubejs.${item.material}_${partName}`, newName + materialNameUpper(partName))
+
+				}
 			})
 			item.blockParts.forEach((blockName) => {
 				event.addLang(`block.kubejs.${item.material}_${blockName}`, newName + materialNameUpper(blockName))

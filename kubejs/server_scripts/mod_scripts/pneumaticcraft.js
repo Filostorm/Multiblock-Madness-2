@@ -1,12 +1,12 @@
-	var basicCompressor = [
-		'pneumaticcraft:air_compressor', 
+	var advancedCompressors = [
+		'pneumaticcraft:advanced_air_compressor', 
 		'pneumaticcraft:thermal_compressor', 
 		'pneumaticcraft:liquid_compressor',
 		'compressedcreativity:rotational_compressor'
 	  ]
 
 onEvent('tags.items', event => {
-	  basicCompressor.forEach(gen => {
+	advancedCompressors.forEach(gen => {
 		  event.add('pneumaticcraft:compressor/basic', gen)
 	  });
 	//Fix Tags 
@@ -201,11 +201,11 @@ onEvent('recipes', event => {
 		'BBECEBB',
 		'  BBB  '
 	  ], {
-		R: 'compressedcreativity:engine_rotor',
+		R: 'pneumaticcraft:air_compressor',
 		C: '#forge:components/compressed_steel',
 		M: '#forge:cog_blocks/brass',
 		B: 'create:brass_casing',
-		E: 'immersiveengineering:component_electronic_adv',
+		E: 'compressedcreativity:engine_rotor',
 	  }).id('mbm2:rotational_compressor')
 
 //Pneumatic Dynamo

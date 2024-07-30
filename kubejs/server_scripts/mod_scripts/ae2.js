@@ -445,34 +445,28 @@ onEvent('recipes', event => {
 	var ae2aLoaded = Platform.isLoaded('ae2additions');
     if(ae2aLoaded){ 
 	let ae2aRemoval = [
-		'ae2additions:network/cells/item_advanced_cell_housing',
-		'ae2additions:network/cells/item_ultimate_cell_housing',
-		'ae2additions:network/cells/item_storage_cell_1kk',
-		'ae2additions:network/cells/item_storage_cell_4kk',
-		'ae2additions:network/cells/item_storage_cell_16kk',
-		'ae2additions:network/cells/item_storage_cell_64kk',
-		'ae2additions:network/cells/item_storage_cell_256kk',
-		'ae2additions:network/cells/item_storage_cell_1kkk_1th',
-		'ae2additions:network/cells/item_storage_cell_1kkk_2th',
-		'ae2additions:network/cells/item_storage_cell_1kkk_3th',
-		'ae2additions:network/cells/item_storage_cell_1kkk_4th',
-		'ae2additions:network/cells/item_storage_cell_1kk_storage',
-		'ae2additions:network/cells/item_storage_cell_4kk_storage',
-		'ae2additions:network/cells/item_storage_cell_16kk_storage',
-		'ae2additions:network/cells/item_storage_cell_64kk_storage',
-		'ae2additions:network/cells/item_storage_cell_256kk_storage',
-		'ae2additions:network/cells/item_storage_cell_1kkk_1th_storage',
-		'ae2additions:network/cells/item_storage_cell_1kkk_2th_storage',
-		'ae2additions:network/cells/item_storage_cell_1kkk_3th_storage',
-		'ae2additions:network/cells/item_storage_cell_1kkk_4th_storage',
+		//'ae2additions:network/cells/item_advanced_cell_housing',
+		//'ae2additions:network/cells/item_ultimate_cell_housing',
+		//'ae2additions:network/cells/item_storage_cell_1kk',
+		//'ae2additions:network/cells/item_storage_cell_4kk',
+		//'ae2additions:network/cells/item_storage_cell_16kk',
+		//'ae2additions:network/cells/item_storage_cell_64kk',
+		//'ae2additions:network/cells/item_storage_cell_256kk',
+		//'ae2additions:network/cells/item_storage_cell_1kkk_1th',
+		//'ae2additions:network/cells/item_storage_cell_1kkk_2th',
+		//'ae2additions:network/cells/item_storage_cell_1kkk_3th',
+		//'ae2additions:network/cells/item_storage_cell_1kkk_4th',
+		//'ae2additions:network/cells/item_storage_cell_1kk_storage',
+		//'ae2additions:network/cells/item_storage_cell_4kk_storage',
+		//'ae2additions:network/cells/item_storage_cell_16kk_storage',
+		//'ae2additions:network/cells/item_storage_cell_64kk_storage',
+		//'ae2additions:network/cells/item_storage_cell_256kk_storage',
+		//'ae2additions:network/cells/item_storage_cell_1kkk_1th_storage',
+		//'ae2additions:network/cells/item_storage_cell_1kkk_2th_storage',
+		//'ae2additions:network/cells/item_storage_cell_1kkk_3th_storage',
+		//'ae2additions:network/cells/item_storage_cell_1kkk_4th_storage',
 		'ae2additions:network/crafting/pattern_provider_3th_gen',
 		'ae2additions:network/crafting/pattern_provider_4th_gen',
-		'ae2additions:network/crafting/pattern_provider_5th_gen',
-		'ae2additions:network/crafting/pattern_provider_6th_gen',
-		'ae2additions:parts/pattern_provider_5th_gen_part',
-		'ae2additions:parts/pattern_provider_6th_gen_part', 
-		'ae2additions:parts/pattern_provider_5th_gen_block',
-		'ae2additions:parts/pattern_provider_6th_gen_block'
 	]
 	ae2aRemoval.forEach(item => {
 		event.remove({id: item})
@@ -497,7 +491,7 @@ onEvent('recipes', event => {
 
 	//logic_unit
 	event.remove({output: 'lazierae2:logic_unit'})
-	event.shaped('kubejs:unfinished_logic_unit', ['ABA','CCC'], {A: 'pneumaticcraft:plastic',B: 'ae2:logic_processor',C: 'kubejs:fluix_steel_plate'}).id(`mbm2:unfinished_logic_unit`)
+	event.shaped('kubejs:unfinished_logic_unit', [' F ', 'ABA','CCC'], {A: 'pneumaticcraft:plastic',B: 'ae2:logic_processor',C: 'kubejs:fluix_steel_plate', F: 'kubejs:shaped_fluix_crystal'}).id(`mbm2:unfinished_logic_unit`)
 	global.AssemblyLaser(event, 'lazierae2:logic_unit', `kubejs:unfinished_logic_unit`, `mbm2:finished_logic_unit`)
 
 	//crystal_growth
@@ -507,6 +501,8 @@ onEvent('recipes', event => {
 	event.remove({output: 'lazierae2:aggregator'})
 	event.shaped('lazierae2:aggregator', ['ABA','CDC','EFE'], {A: 'lazierae2:fluix_steel_ingot',B: 'ae2:charger',C: 'lazierae2:parallel_processor',D: 'lazierae2:logic_unit',E: 'ae2:dense_energy_cell',F: 'ae2things:crystal_growth'}).id(`mbm2:aggregator`)
 	
-
+	// Shaped Fluix
+	event.recipes.createCutting('kubejs:shaped_fluix_crystal', 'ae2:fluix_crystal').id('mbm2:cutting/shaped_fluix_crystal')
+	event.recipes.mekanismSawing(`2x kubejs:shaped_fluix_crystal`, `ae2:fluix_crystal`).id(`mbm2:mek_sawmill/shaped_fluix_crystal`)
 
 });

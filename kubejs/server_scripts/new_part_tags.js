@@ -4,7 +4,11 @@ onEvent('tags.items', event => {
 
     global.newMaterialParts.forEach((item) => {
       
-        if (item.type == 'base_metal' && item.tier == 1) {
+        if (item.type == 'base_metal' && item.tier == 0) {
+          event.add(`mbm2:base_metals/tier_zero`, `#forge:ingots/${item.material}`)
+          event.add(`mbm2:base_metals/dusts/tier_zero`, `#forge:dusts/${item.material}`)
+          event.add(`mbm2:base_metals/plates/tier_zero`, `#forge:plates/${item.material}`)
+        } else if (item.type == 'base_metal' && item.tier == 1) {
           event.add(`mbm2:base_metals/tier_one`, `#forge:ingots/${item.material}`)
           event.add(`mbm2:base_metals/dusts/tier_one`, `#forge:dusts/${item.material}`)
           event.add(`mbm2:base_metals/plates/tier_one`, `#forge:plates/${item.material}`)
@@ -81,6 +85,8 @@ onEvent('tags.items', event => {
           
 
         if (item.type == 'compound_ore') {
+          event.add(`forge:ores/fine_dust/${item.material}`, `kubejs:fine_dust_${item.material}`)
+
           global.compoundOreParts.forEach((part) => { //compound ores don't get refined
             event.add(`forge:ores/compound/${part.name}`, `kubejs:${part.name}_${item.material}`)
             if (part.name != 'raw'/* && !(part.grade == null && item.type == 'compound_ore')*/) {

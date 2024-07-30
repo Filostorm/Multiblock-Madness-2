@@ -32,15 +32,6 @@ onEvent('recipes', event => {
   ]).transitionalItem('kubejs:partially_folded_damascus_steel').loops(20).id(`mbm2:damascus_steel_ingot`)
 
 
-  //Signalum
-  event.recipes.multiblocked.multiblock('mixer')
-  .inputItems('3x #forge:dusts/dielectric_alloy','2x #forge:dusts/energetic_alloy','8x create:experience_nugget') //,'#forge:fine_dusts/rune'
-  .inputFluid(Fluid.of('thermal:redstone', 1000))
-  .outputItem(Item.of('4x #forge:dusts/signalum'))
-  .setPerTick(true)
-  .inputFE(2000)
-  .duration(300)
-
   //Lumium
   event.recipes.multiblocked.multiblock('mixer')
   .inputItems('3x #forge:dusts/aluminum','2x #forge:dusts/white_alloy','8x create:experience_nugget') //,'#forge:fine_dusts/rune'
@@ -50,9 +41,18 @@ onEvent('recipes', event => {
   .inputFE(2000)
   .duration(300)
 
+  //Signalum
+  event.recipes.multiblocked.multiblock('mixer')
+  .inputItems('2x #forge:dusts/lumium', '3x #forge:dusts/titanium','2x #forge:dusts/energetic_alloy','8x create:experience_nugget') //,'#forge:fine_dusts/rune'
+  .inputFluid(Fluid.of('thermal:redstone', 1000))
+  .outputItem(Item.of('4x #forge:dusts/signalum'))
+  .setPerTick(true)
+  .inputFE(2000)
+  .duration(300)
+
   //Enderium
   event.recipes.multiblocked.multiblock('mixer')
-  .inputItems('3x #forge:dusts/rune', '2x #forge:dusts/titanium', '4x hostilenetworks:end_prediction') //,'#forge:fine_dusts/rune'
+  .inputItems('2x #forge:dusts/signalum', '3x #forge:dusts/rune', '#forge:dusts/molybdenum', '4x hostilenetworks:end_prediction') //,'#forge:fine_dusts/rune'
   .inputFluid(Fluid.of('thermal:ender', 1000))
   .outputItem(Item.of('4x #forge:dusts/enderium'))
   .setPerTick(true)
@@ -96,7 +96,7 @@ event.shaped('2x kubejs:industrial_alloy_ingot', [
 
 
   
-  //Brick Chain
+  ///////////// Brick Chain /////////////
   //Clay Bricks
 	event.recipes.createPressing('kubejs:unfired_clay_brick', 'minecraft:clay_ball').id(`mbm2:pressing/unfired_clay_brick`)
   //Brik
@@ -168,7 +168,7 @@ event.shaped('kubejs:reactive_blend', [
   global.mekanismInfusionConversion(event, Item.of('chemlib:chitin'), 'kubejs:chitin', 10, 'mbm2:infuse/chitin_from_chitin')
   global.mekanismInfusionConversion(event, Item.of('chemlib:chitin_dust'), 'kubejs:chitin', 100, 'mbm2:infuse/chitin_from_chitin_dust')
   //global.mekanismMetallurgicInfusing(event, Item.of('kubejs:exoskeleton_compound_ingot'), Item.of('#forge:ingots/adamantine_alloy'), 'mbm2:chitin', 1040, `mbm2:exoskeleton_compound_ingot`)
-  event.recipes.mekanismMetallurgicInfusing('kubejs:exoskeleton_composit_ingot', Item.of('#forge:ingots/adamantine_alloy'), {infuse_type: 'kubejs:chitin', amount: 100}).id(`mbm2:exoskeleton_composit_ingot`);
+  event.recipes.mekanismMetallurgicInfusing('kubejs:exoskeleton_composit_ingot', Item.of('#forge:ingots/ostrum'), {infuse_type: 'kubejs:chitin', amount: 100}).id(`mbm2:exoskeleton_composit_ingot`);
 
 
 	//ender ingot recipe rework
@@ -184,5 +184,7 @@ event.shaped('kubejs:reactive_blend', [
   .inputFE(2000*8)
   .duration(100)
   
+  //So you want to melt slag, eh?
+event.recipes.thermal.crucible(Fluid.of('kubejs:molten_slag', 250), ['thermal:slag','kubejs:slag_dust'])
 
 });

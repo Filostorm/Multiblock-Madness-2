@@ -4,6 +4,7 @@
 	order_index: 6
 	filename: "chapter_7"
 	title: "Chapter 7"
+	icon: "kubejs:draconium_ingot"
 	default_quest_shape: ""
 	default_hide_dependency_lines: false
 	quests: [
@@ -39,7 +40,9 @@
 		}
 		{
 			x: 5.5d
-			y: 1.0d
+			y: 1.5d
+			shape: "gear"
+			description: ["Last step of ore processing!"]
 			id: "70C3B2C93E84B058"
 			tasks: [{
 				id: "7EDABADA56C3C5A1"
@@ -49,7 +52,9 @@
 		}
 		{
 			x: 5.5d
-			y: 2.0d
+			y: 2.5d
+			shape: "gear"
+			description: ["Last step of ore processing! (For real this time)"]
 			id: "5569DCB96EFC4C15"
 			tasks: [{
 				id: "51BCAD03FD857A87"
@@ -74,9 +79,11 @@
 		{
 			x: 7.5d
 			y: -1.5d
+			description: ["Batteries can be filled with an Energy Reciever or a Battery Interface."]
 			dependencies: [
 				"70537424EB7030A2"
 				"371A0F8E03702DF1"
+				"73050C7FD526E29E"
 			]
 			id: "20C6AB385FF387C9"
 			tasks: [{
@@ -88,11 +95,120 @@
 		{
 			x: 7.5d
 			y: -0.5d
+			description: ["This Multiblock can fill and empty batteries"]
 			id: "73050C7FD526E29E"
 			tasks: [{
 				id: "187CE15F9B534004"
 				type: "item"
 				item: "mbm2:energy_converter"
+			}]
+		}
+		{
+			x: 10.0d
+			y: 2.0d
+			dependencies: [
+				"0F95C6AAAFC57189"
+				"7BE978AD006DF824"
+				"3E0280696B934863"
+			]
+			id: "4E3DE9101E98034E"
+			tasks: [{
+				id: "71AAC8F2E50BE46D"
+				type: "item"
+				title: "Tier 7 Metal"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "mbm2:base_metals/tier_seven"
+					}
+				}
+			}]
+		}
+		{
+			x: 8.5d
+			y: 1.0d
+			shape: "hexagon"
+			size: 1.5d
+			id: "0F95C6AAAFC57189"
+			tasks: [{
+				id: "54902B4495F57A7C"
+				type: "item"
+				item: {
+					id: "beyond_earth:rocket_t4"
+					Count: 1b
+					tag: { }
+				}
+			}]
+		}
+		{
+			x: 8.5d
+			y: 3.0d
+			description: ["Upgrade that Blast Furnace again!"]
+			dependencies: ["7BE3E64710F4EFEC"]
+			id: "7BE978AD006DF824"
+			tasks: [
+				{
+					id: "187E0A1A37DCE822"
+					type: "item"
+					item: "kubejs:adamantium_coil"
+				}
+				{
+					id: "0DB6DCD7F0007ECB"
+					type: "item"
+					item: "chemlib:argon"
+				}
+			]
+		}
+		{
+			x: 12.0d
+			y: 2.0d
+			shape: "pentagon"
+			description: ["This is the Final item in the current pack! I'm hoping to add chapter 8, which would have a lot more custom content and have you crafting a world or greater, but for now we'll see. Thanks for playing!"]
+			dependencies: ["4E3DE9101E98034E"]
+			size: 2.0d
+			id: "76F29E585A979695"
+			tasks: [{
+				id: "33FD612CCD81DB42"
+				type: "item"
+				item: "create:handheld_worldshaper"
+			}]
+			rewards: [{
+				id: "612E31B0657CB40E"
+				type: "custom"
+				title: "You Win!"
+			}]
+		}
+		{
+			x: 7.0d
+			y: 2.0d
+			dependencies: [
+				"70C3B2C93E84B058"
+				"5569DCB96EFC4C15"
+			]
+			id: "3E0280696B934863"
+			tasks: [{
+				id: "39DAF1AACA294BA0"
+				type: "item"
+				title: "Crystalized Ores"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "forge:ores/crystal"
+					}
+				}
+			}]
+		}
+		{
+			x: 7.0d
+			y: 4.0d
+			description: ["You'll need this for the Argon required by Tier 7 Metals"]
+			id: "7BE3E64710F4EFEC"
+			tasks: [{
+				id: "20D47871CBEF3E42"
+				type: "item"
+				item: "alchemistry:fusion_chamber_controller"
 			}]
 		}
 	]

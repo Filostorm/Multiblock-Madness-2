@@ -3,30 +3,34 @@
 
 onEvent('tags.items', event => {
 	global.newMaterialParts.forEach((item) => {
-		if (item.type == 'alloy' && item.tier == 1) {
+		if ((item.type == 'alloy' ||item.type == 'magic_alloy') && item.tier == 1) {
 			event.add(`mbm2:alloys/tier_one`, `#forge:ingots/${item.material}`)
 			event.add(`mbm2:alloys/dusts/tier_one`, `#forge:dusts/${item.material}`)
 			event.add(`mbm2:alloys/plates/tier_one`, `#forge:plates/${item.material}`)
-		} else if (item.type == 'alloy' && item.tier == 2) {
+		} else if ((item.type == 'alloy' ||item.type == 'magic_alloy') && item.tier == 2) {
 			event.add(`mbm2:alloys/tier_two`, `#forge:ingots/${item.material}`)
 			event.add(`mbm2:alloys/dusts/tier_two`, `#forge:dusts/${item.material}`)
 			event.add(`mbm2:alloys/plates/tier_two`, `#forge:plates/${item.material}`)
-		} else if (item.type == 'alloy' && item.tier == 3) {
+		} else if ((item.type == 'alloy' ||item.type == 'magic_alloy') && item.tier == 3) {
 			event.add(`mbm2:alloys/tier_three`, `#forge:ingots/${item.material}`)
 			event.add(`mbm2:alloys/dusts/tier_three`, `#forge:dusts/${item.material}`)
 			event.add(`mbm2:alloys/plates/tier_three`, `#forge:plates/${item.material}`)
-		} else if (item.type == 'alloy' && item.tier == 4) {
+		} else if ((item.type == 'alloy' ||item.type == 'magic_alloy') && item.tier == 4) {
 			event.add(`mbm2:alloys/tier_four`, `#forge:ingots/${item.material}`)
 			event.add(`mbm2:alloys/dusts/tier_four`, `#forge:dusts/${item.material}`)
 			event.add(`mbm2:alloys/plates/tier_four`, `#forge:plates/${item.material}`)
-		} else if (item.type == 'alloy' && item.tier == 5) {
+		} else if ((item.type == 'alloy' ||item.type == 'magic_alloy') && item.tier == 5) {
 			event.add(`mbm2:alloys/tier_five`, `#forge:ingots/${item.material}`)
 			event.add(`mbm2:alloys/dusts/tier_five`, `#forge:dusts/${item.material}`)
 			event.add(`mbm2:alloys/plates/tier_five`, `#forge:plates/${item.material}`)
-		} else if (item.type == 'alloy' && item.tier == 6) {
+		} else if ((item.type == 'alloy' ||item.type == 'magic_alloy') && item.tier == 6) {
 			event.add(`mbm2:alloys/tier_six`, `#forge:ingots/${item.material}`)
 			event.add(`mbm2:alloys/dusts/tier_six`, `#forge:dusts/${item.material}`)
 			event.add(`mbm2:alloys/plates/tier_six`, `#forge:plates/${item.material}`)
+		} else if ((item.type == 'alloy' ||item.type == 'magic_alloy') && item.tier == 7) {
+			event.add(`mbm2:alloys/tier_seven`, `#forge:ingots/${item.material}`)
+			event.add(`mbm2:alloys/dusts/tier_seven`, `#forge:dusts/${item.material}`)
+			event.add(`mbm2:alloys/plates/tier_seven`, `#forge:plates/${item.material}`)
 		}
 	})
 });

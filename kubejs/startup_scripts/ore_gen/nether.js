@@ -70,7 +70,7 @@ onEvent('worldgen.add', event => {
 		})
 		    
 
-		ore.count([1, 5])
+		ore.count([1, 10])
 				.squared()
 				.uniformHeight(
 						anchors.aboveBottom(32),
@@ -94,7 +94,7 @@ onEvent('worldgen.add', event => {
 		})
 		    
 
-		ore.count([1, 5])
+		ore.count([1, 10])
 				.squared()
 				.uniformHeight(
 						anchors.aboveBottom(32),
@@ -118,7 +118,7 @@ onEvent('worldgen.add', event => {
 		})
 		    
 
-		ore.count([2, 7])
+		ore.count([2, 10])
 				.squared()
 				.uniformHeight(
 						anchors.aboveBottom(32),
@@ -142,7 +142,7 @@ onEvent('worldgen.add', event => {
 		})
 		    
 
-		ore.count([1, 4])
+		ore.count([1, 6])
 				.squared()
 				.uniformHeight(
 						anchors.aboveBottom(75),
@@ -167,7 +167,7 @@ onEvent('worldgen.add', event => {
 		})
 		    
 
-		ore.count([1, 4])
+		ore.count([1, 6])
 				.squared()
 				.uniformHeight(
 						anchors.aboveBottom(5),
@@ -195,7 +195,7 @@ onEvent('worldgen.add', event => {
 		})
 		    
 
-		ore.count([3, 8])
+		ore.count([3, 10])
 				.squared()
 				.uniformHeight(
 						anchors.aboveBottom(30),
@@ -245,7 +245,7 @@ onEvent('worldgen.add', event => {
 			}
 		})
 
-		ore.count([1, 4])
+		ore.count([1, 6])
 				.squared()
 				.uniformHeight(
 						anchors.aboveBottom(0),

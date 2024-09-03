@@ -402,5 +402,62 @@ event.shapeless('9x #forge:gems/sapphire', ['#forge:storage_blocks/sapphire']).i
 		{"item":`ars_nouveau:source_gem`}, //Input
 		6000, `mbm2:crushing/gem_dust_from_source_gem`)
 
-
+		// Modular Rourters
+		event.remove({output: '2x modularrouters:modular_router'})
+		event.shaped('2x modularrouters:modular_router', ['ABC','BDB','CBA'], {A: 'thermal:redstone_servo',B: 'botania:livingrock',C: 'kubejs:tier_2_mechanical_alloy_robot_arm',D: 'kubejs:titanium_scaffolding'}).id("mbm2:crafting/modular_router")
+		event.remove({output: 'modularrouters:blank_module'})
+		event.shaped('modularrouters:blank_module', [' A ','BCB','DED'], {A: 'extendedcrafting:black_iron_slate',B: 'solarflux:blank_upgrade',C: 'kubejs:mana_diamond_dust',D: 'kubejs:tier_2_electrical_alloy_spool',E: 'pneumaticcraft:programming_puzzle'}).id("mbm2:crafting/blank_module")
+		event.remove({output: 'modularrouters:blank_upgrade'})
+		event.shaped('modularrouters:blank_upgrade', ['ABC','DEB',' DA'], {A: 'kubejs:tier_2_electrical_alloy_spool',B: 'solarflux:blank_upgrade',C: 'compressedcreativity:brass_coated_upgrade_matrix',D: 'extendedcrafting:black_iron_slate',E: 'kubejs:mana_diamond_dust'}).id("mbm2:crafting/blank_upgrade")
+	
+	//Nether Scrap
+	event.custom({
+		"type": "thermal:centrifuge",
+		"ingredient": {
+		  "item": "minecraft:lava_bucket"
+		},
+		"result": [
+		  {
+			"item": 'minecraft:basalt',
+			"chance": 0.50
+		  },
+		  {
+			"item": 'minecraft:obsidian',
+			"chance": 0.25
+		  },
+		  {
+			"item": 'kubejs:fragment_kharaxium',
+			"chance": 0.20
+		  },
+		  {
+			"item": 'minecraft:netherite_scrap',
+			"chance": 0.05
+		  },
+		  {
+			"fluid": 'kubejs:enriched_lava',
+			"amount": 10
+		  }
+		],
+		"energy": 20000
+	  }).id('mbm2:centrifuge/netherite_scrap_automatable')
+	
+	//Dragon's Breath
+	event.custom({
+		"type": "thermal:centrifuge",
+		"ingredient": {
+		  "item": "minecraft:dragon_breath"
+		},
+		"result": [
+		  {
+			"item": 'quark:clear_shard',
+		  },
+		  {
+			"fluid": 'kubejs:liquid_dragon_breath',
+			"amount": 250
+		  }
+		],
+		"energy": 20000
+	  }).id('mbm2:centrifuge/dragon_breath')
+	
+		
 });

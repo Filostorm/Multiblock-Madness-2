@@ -251,7 +251,7 @@
 		{
 			x: 7.0d
 			y: -2.0d
-			description: ["You can find Edelwood saplings be crushing Leaves."]
+			description: ["You can find Edelwood saplings by crushing Leaves."]
 			dependencies: ["20FA1AFF0BD65177"]
 			id: "0C62C2532E374205"
 			tasks: [{
@@ -564,6 +564,7 @@
 			icon: "tconstruct:scorched_brick"
 			x: 6.5d
 			y: 1.5d
+			description: ["You'll want to automate the brick chain at some point, so why not now?"]
 			dependencies: ["51537052A03715D7"]
 			id: "4C7F486D0CCC38E0"
 			tasks: [{
@@ -1156,7 +1157,11 @@
 			x: 14.0d
 			y: 0.0d
 			description: ["These are a great help when automating Elementalcraft!"]
-			dependencies: ["61CCA7FA3C371180"]
+			min_required_dependencies: 1
+			dependencies: [
+				"61CCA7FA3C371180"
+				"4187F705E4356142"
+			]
 			id: "2DACD33891F1AB19"
 			tasks: [
 				{
@@ -1324,6 +1329,26 @@
 				{
 					id: "086C29A018EFCF38"
 					type: "checkmark"
+				}
+			]
+		}
+		{
+			title: "Paint the Trees Gold"
+			x: 14.0d
+			y: -1.5d
+			description: ["You'll be able to find the Book of Natural Aura in your Akashic Tome."]
+			dependencies: ["143FA2A8FD6E4E10"]
+			id: "4187F705E4356142"
+			tasks: [
+				{
+					id: "207E8A7F752042D0"
+					type: "item"
+					item: "naturesaura:gold_fiber"
+				}
+				{
+					id: "29FF7F7D6BDD7E50"
+					type: "item"
+					item: "naturesaura:gold_leaf"
 				}
 			]
 		}

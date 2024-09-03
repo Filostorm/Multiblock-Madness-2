@@ -228,6 +228,7 @@ const INFUSETYPE = new $InfuseTypeDeferredRegister('kubejs')
 //GASES.register('example_gas', 0xA020F0)
 //SLURRY.register('example_slurry', builder => builder.color(0xA020F0))
 INFUSETYPE.register('chitin', 0x634f34)
+INFUSETYPE.register('matrix', 0xa091ed)
 
 
 
@@ -240,8 +241,8 @@ INFUSETYPE.register($EventBuses.getModEventBus('kubejs').get())
 
 
 onEvent('client.generate_assets', event => {
-  //ALSO HERE
     //event.addLang('slurry.kubejs.dirty_example_slurry', `Dirty Example Slurry`)
     event.addLang('infuse_type.kubejs.chitin', `Chitin`)
+    event.addLang('infuse_type.kubejs.matrix', `Matrix`)
   
 })

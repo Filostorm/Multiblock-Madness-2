@@ -61,16 +61,30 @@ onEvent('recipes', event => {
 			//Mixing
 			if (item.dust_input != null && item.tier != null) {
 				if (item.amount != null) {
-		 			event.recipes.multiblocked.multiblock('mixer')
-		 			.inputItems(item.dust_input)
-		 			.outputItem(`${item.amount}x #forge:dusts/${item.material}`)
-					.setPerTick(true)
-					.inputFE(250 * (2**item.tier))
-		 			.duration(100 * item.amount)
+					if (item.fluid_input != null) {
+		 				event.recipes.multiblocked.multiblock('mixer')
+		 				.inputItems(item.dust_input)
+						.inputFluid(Fluid.of(item.fluid_input, item.fluid_amount*item.amount))
+		 				.outputItem(`${item.amount}x #forge:dusts/${item.material}`)
+						.setPerTick(true)
+						.inputFE(250 * (2**item.tier))
+		 				.duration(100 * item.amount)
+					} else {
+						event.recipes.multiblocked.multiblock('mixer')
+						.inputItems(item.dust_input)
+						.outputItem(`${item.amount}x #forge:dusts/${item.material}`)
+					    .setPerTick(true)
+					    .inputFE(250 * (2**item.tier))
+						.duration(100 * item.amount)
+					}
 				} else {
 					console.log(`[MBM2 ERROR]: ${item.material} needs an amount in MML to get a mixer recipe!`)
 				}
 			}
+			if (item.base && item.fluid_input != null && item.tier <= 3) {
+				global.anyFilling(event, `#forge:ingots/${item.material}`, `#forge:base_ingots/${item.material}`, Fluid.of(item.fluid_input, item.fluid_amount))
+			}
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////////// Each Tier check represents the lowest tier an action can be preformed in. ///////////////////
@@ -119,12 +133,22 @@ onEvent('recipes', event => {
 				//Alloying
 				if (item.ingot_input != null) {
 					if (item.ingot_input.length <= 5) {
-						//Arc Furnace
-						event.recipes.immersiveengineeringArcFurnace(`${item.amount}x #forge:ingots/${item.material}`, item.ingot_input[0], item.ingot_input.slice(1)).id(`mbm2:arc_furnace/${item.material}_alloying`)
+						if (item.base) {
+							//Arc Furnace
+							event.recipes.immersiveengineeringArcFurnace(`${item.amount}x #forge:base_ingots/${item.material}`, item.ingot_input[0], item.ingot_input.slice(1)).id(`mbm2:arc_furnace/${item.material}_alloying_base_ingot`)
+						} else {
+							//Arc Furnace
+							event.recipes.immersiveengineeringArcFurnace(`${item.amount}x #forge:ingots/${item.material}`, item.ingot_input[0], item.ingot_input.slice(1)).id(`mbm2:arc_furnace/${item.material}_alloying`)
+						}
 					}
 					if (item.ingot_input.length <= 3) {
-						//Induction
-						event.recipes.thermal.smelter(`${item.amount}x #forge:ingots/${item.material}`, item.ingot_input).id(`mbm2:induction/${item.material}_ingot`)
+						if (item.base) {
+							//Induction
+							event.recipes.thermal.smelter(`${item.amount}x #forge:base_ingots/${item.material}`, item.ingot_input).id(`mbm2:induction/${item.material}_base_ingot`)
+						} else {
+							//Induction
+							event.recipes.thermal.smelter(`${item.amount}x #forge:ingots/${item.material}`, item.ingot_input).id(`mbm2:induction/${item.material}_ingot`)
+						}
 					}
 				}
 

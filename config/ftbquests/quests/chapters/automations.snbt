@@ -1,0 +1,299 @@
+{
+	id: "6B922E82C8D0305E"
+	group: "7571E15FFD2D3DD8"
+	order_index: 4
+	filename: "automations"
+	title: "Automations"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			x: -11.0d
+			y: 0.0d
+			dependencies: ["4C0A7CAE6A4EE7A8"]
+			progression_mode: "flexible"
+			id: "0EB83A8878362B58"
+			tasks: [{
+				id: "53524B5B336C28A0"
+				type: "item"
+				item: "kubejs:unfired_clay_brick"
+			}]
+		}
+		{
+			x: -9.5d
+			y: 0.0d
+			dependencies: [
+				"0EB83A8878362B58"
+				"51718AB985463F1E"
+			]
+			progression_mode: "flexible"
+			id: "2AAD64103B628E45"
+			tasks: [{
+				id: "45959B9DB9CEC8E7"
+				type: "item"
+				item: "kubejs:sandy_brick"
+			}]
+		}
+		{
+			x: -8.0d
+			y: 0.0d
+			dependencies: [
+				"2AAD64103B628E45"
+				"73F1B1F071890F00"
+			]
+			progression_mode: "flexible"
+			id: "5CDAF5605282D0F7"
+			tasks: [{
+				id: "2106E17FE37FA3BB"
+				type: "item"
+				item: "kubejs:sturdy_brick"
+			}]
+		}
+		{
+			x: -6.5d
+			y: 0.0d
+			dependencies: [
+				"5CDAF5605282D0F7"
+				"7C35033B860324CE"
+				"55A10457F33BA38F"
+			]
+			progression_mode: "flexible"
+			id: "3D6DDEDF01AF19AD"
+			tasks: [{
+				id: "3345C7C8DC37A957"
+				type: "item"
+				item: "kubejs:tough_brick"
+			}]
+		}
+		{
+			x: -5.0d
+			y: 0.0d
+			dependencies: [
+				"3D6DDEDF01AF19AD"
+				"2FBCEC1ED55C93EB"
+			]
+			progression_mode: "flexible"
+			id: "466D2DAA0270082C"
+			tasks: [{
+				id: "0CCFF79568017C1D"
+				type: "item"
+				item: "kubejs:heated_brick"
+			}]
+		}
+		{
+			x: -3.5d
+			y: 0.0d
+			dependencies: [
+				"466D2DAA0270082C"
+				"0BB7CDAEAC3D1793"
+			]
+			progression_mode: "flexible"
+			id: "1CCE730629B38042"
+			tasks: [{
+				id: "6755C851CC2EEFC8"
+				type: "item"
+				item: "kubejs:spirited_brick"
+			}]
+		}
+		{
+			x: -2.0d
+			y: 0.0d
+			dependencies: ["1CCE730629B38042"]
+			progression_mode: "flexible"
+			id: "2E7BC258236E126E"
+			tasks: [{
+				id: "4C846ABC8929CEE6"
+				type: "item"
+				item: "hostilenetworks:empty_prediction"
+			}]
+		}
+		{
+			x: -8.0d
+			y: 1.5d
+			dependencies: ["5CDAF5605282D0F7"]
+			id: "1637748E6581FC7D"
+			tasks: [{
+				id: "25D031468B99DF2E"
+				type: "item"
+				item: "tconstruct:seared_brick"
+			}]
+		}
+		{
+			x: -6.5d
+			y: 1.5d
+			dependencies: ["3D6DDEDF01AF19AD"]
+			id: "20E3FFA6CEEB68BC"
+			tasks: [{
+				id: "55B7337FF777A034"
+				type: "item"
+				item: "tconstruct:scorched_brick"
+			}]
+		}
+		{
+			x: -8.0d
+			y: 3.0d
+			dependencies: ["1637748E6581FC7D"]
+			id: "0E9223A39783FD45"
+			tasks: [{
+				id: "1CE0D2EE4FE6A8FC"
+				type: "item"
+				item: "kubejs:coke_oven_brick"
+			}]
+		}
+		{
+			x: -6.5d
+			y: 3.0d
+			dependencies: ["20E3FFA6CEEB68BC"]
+			id: "06736B4EC33C940C"
+			tasks: [{
+				id: "7FC40B4C3BD35798"
+				type: "item"
+				item: "kubejs:blast_brick"
+			}]
+		}
+		{
+			x: -11.0d
+			y: -1.5d
+			id: "4C0A7CAE6A4EE7A8"
+			tasks: [{
+				id: "01E191B066FA7565"
+				type: "item"
+				item: "minecraft:clay_ball"
+			}]
+		}
+		{
+			x: -9.5d
+			y: -1.5d
+			id: "51718AB985463F1E"
+			tasks: [{
+				id: "58EF55108DA0AD57"
+				type: "item"
+				item: "minecraft:sand"
+			}]
+		}
+		{
+			x: -8.0d
+			y: -1.5d
+			id: "73F1B1F071890F00"
+			tasks: [{
+				id: "11DB15C03F0E1B00"
+				type: "item"
+				item: "minecraft:gravel"
+			}]
+		}
+		{
+			x: -7.0d
+			y: -1.5d
+			dependencies: ["141063962AD64660"]
+			id: "7C35033B860324CE"
+			tasks: [{
+				id: "066C8D1F331ABF6F"
+				type: "item"
+				item: "create:cinder_flour"
+			}]
+		}
+		{
+			x: -6.0d
+			y: -1.5d
+			dependencies: ["4DA98B635FC16C31"]
+			min_required_tasks: 1
+			id: "55A10457F33BA38F"
+			tasks: [
+				{
+					id: "085E31737B85F7B9"
+					type: "item"
+					item: "kubejs:molten_slag_bucket"
+				}
+				{
+					id: "0496CAC6A697C909"
+					type: "checkmark"
+				}
+			]
+		}
+		{
+			x: -5.0d
+			y: -1.5d
+			dependencies: ["5E01AA77D0473220"]
+			id: "2FBCEC1ED55C93EB"
+			tasks: [{
+				id: "39E949F182268CF1"
+				type: "item"
+				item: "tconstruct:magma_bucket"
+			}]
+		}
+		{
+			x: -3.5d
+			y: -1.5d
+			dependencies: ["1541202EE917A548"]
+			id: "0BB7CDAEAC3D1793"
+			tasks: [{
+				id: "0FD10B3C580EDCB0"
+				type: "item"
+				item: "spirit:soul_powder"
+			}]
+		}
+		{
+			x: -7.0d
+			y: -3.0d
+			id: "141063962AD64660"
+			tasks: [{
+				id: "449F186666662948"
+				type: "item"
+				item: "minecraft:netherrack"
+			}]
+		}
+		{
+			x: -6.0d
+			y: -3.0d
+			id: "4DA98B635FC16C31"
+			tasks: [{
+				id: "2330152F290F4628"
+				type: "item"
+				item: "thermal:slag"
+			}]
+		}
+		{
+			x: -5.0d
+			y: -3.0d
+			dependencies: ["7F4B43931F0E293F"]
+			id: "5E01AA77D0473220"
+			tasks: [{
+				id: "2FEAB194406A3B2C"
+				type: "item"
+				item: "minecraft:magma_block"
+			}]
+		}
+		{
+			x: -3.5d
+			y: -3.0d
+			id: "1541202EE917A548"
+			tasks: [{
+				id: "3F488C24ABE35FC6"
+				type: "item"
+				item: "minecraft:glowstone_dust"
+			}]
+		}
+		{
+			x: -5.0d
+			y: -4.5d
+			dependencies: ["5E5FAA4A270F54B0"]
+			id: "7F4B43931F0E293F"
+			tasks: [{
+				id: "4A9AF27B16B7CAFB"
+				type: "item"
+				item: "create:scoria"
+			}]
+		}
+		{
+			x: -5.0d
+			y: -6.0d
+			id: "5E5FAA4A270F54B0"
+			tasks: [{
+				id: "7FECA698F2C2738D"
+				type: "item"
+				item: "minecraft:soul_sand"
+			}]
+		}
+	]
+	quest_links: [ ]
+}

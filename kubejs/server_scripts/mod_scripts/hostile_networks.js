@@ -6,6 +6,15 @@ onEvent('tags.items', event => {
  });
  */
 onEvent('recipes', event => {
+
+	let remove = [
+		'hostilenetworks:living_matter/extraterrestrial/nether_star'
+	]
+	
+	remove.forEach((item) => {
+		event.remove({id: item})
+	})
+
 	//Casing
 	global.elementalcraftBinding(event, 'earth', 2500, 'kubejs:captured_soul', [Item.of('spirit:soul_crystal_shard').toJson(), Item.of('forbidden_arcanus:soul').toJson(), Item.of('apotheosis:gem_dust').toJson(), Item.of('forbidden_arcanus:aureal_bottle').toJson()], 'mbm2:captured_soul')
   
@@ -120,6 +129,11 @@ onEvent('recipes', event => {
 		  'drop_item': 'prismarine',
 		  'second_item': '#forge:platings/steel',
 		},
+		{
+		  'mob': 'ars_nouveau/wilden_mobs',
+		  'drop_item': 'bone',
+		  'second_item': '#forge:platings/steel',
+		},
 
 		{
 		  'mob': 'wither',
@@ -128,7 +142,7 @@ onEvent('recipes', event => {
 		},
 		{
 		  'mob': 'ender_dragon',
-		  'drop_item': 'dragon_egg',
+		  'drop_item': 'dragon_breath',
 		  'second_item': '#forge:platings/stainless_steel',
 		},
 

@@ -582,8 +582,8 @@ global.newMaterialParts = [
       'itemParts': ['ingot', 'dust', 'nugget'],
       'blockParts': ['storage_block'],
       'amount': 1,
-      'dust_input': ['#forge:dusts/arcanite','2x naturesaura:gold_powder'],
-      'ingot_input': ['#forge:ingots/arcanite','2x naturesaura:gold_powder'],
+      'dust_input': ['#forge:dusts/arcanite',['naturesaura:gold_powder','naturesaura:gold_leaf']],
+      'ingot_input': ['#forge:ingots/arcanite',['naturesaura:gold_powder','naturesaura:gold_leaf']],
       },
       //{
       //  'material': 'cast_iron',
@@ -605,14 +605,14 @@ global.newMaterialParts = [
         'amount': 2,
       },
       {
-        'material': 'drenched_iron',
+        'material': 'drenched_arcanite',
         'color': 0xb1f0fc,
         'tier': 1,
         'type': 'magic_alloy',
         'itemParts': ['rod', 'gear', 'plate', 'dust'],
         'blockParts': [],
         'fluid': 'thick',
-        'fluid_id': 'kubejs:molten_drenched_iron',
+        'fluid_id': 'kubejs:molten_drenched_arcanite',
       },
     /////////////// Tier 2 Alloys: Tinkers or chapter 2 /////////////////////////////
     
@@ -677,6 +677,8 @@ global.newMaterialParts = [
       'itemParts': ['plate',  'gear', 'rod', 'sheet', 'plating'],
       'blockParts': ['casing'],
       'amount': 1,
+      //'dust_input': ['#forge:dusts/iron',['#forge:dusts/coal','#minecraft:coals', '#forge:dusts/coal_coke', '#forge:coal_coke']],
+      //'ingot_input': ['#forge:ingots/iron',['#forge:dusts/coal','#minecraft:coals', '#forge:dusts/coal_coke', '#forge:coal_coke']],
       'tinkers_input': [{tag: 'forge:molten_iron',amount: 90},{name: 'kubejs:molten_carbon',amount: 200}],
       'allomancy': 'Steel allows you to Push on metals. This means moving metal items away from you, or pushing yourself off of metal blocks. This can be used as a sort of rudimentary flight, though it is more falling with style than anything else. Steel also allows you to use the Coin Bag item. If you have gold nuggets in your inventory and are burning steel, you can use this as a ranged weapon similar to the old Beta-edition Bow. Iron nuggets can also be used, causing more damage but far less accurately',
       'feruchemy': 'Speed--Speed Boost or Slowness'
@@ -806,6 +808,7 @@ global.newMaterialParts = [
       'amount': 2,
       'dust_input': ['2x #forge:dusts/iron', '#forge:dusts/graphite', '#forge:dusts/obsidian'],
       'ingot_input': ['2x #forge:ingots/iron', '#forge:ingots/graphite', '#forge:ingots/obsidian'],
+      'tinkers_input': [{name: 'tconstruct:molten_iron',amount: 90},{name: 'kubejs:molten_carbon',amount: 100},{name: 'tconstruct:molten_obsidian',amount: 1000}],
       'fluid': 'thick',
       'fluid_id': 'kubejs:molten_black_iron',
     },
@@ -845,7 +848,7 @@ global.newMaterialParts = [
       'color': 0xe9f1f5,
       'type': 'alloy',
       'tier': 3,
-      'itemParts': ['ingot', 'dust', 'nugget', 'plate', 'sheet', 'wire', 'model_spool', 'model_wire_coil'],
+      'itemParts': ['ingot', 'dust', 'nugget', 'plate', 'rod', 'wire', 'model_spool', 'model_wire_coil'],
       'blockParts': ['storage_block', 'coil'],
       'amount': 3,
       'dust_input': ['2x #forge:dusts/silver', '#forge:dusts/magnesium', '#forge:dusts/quartz'],
@@ -919,9 +922,12 @@ global.newMaterialParts = [
       'blockParts': [],
       'type': 'alloy',
       'fluid_id': 'tconstruct:molten_lumium',
-      //'amount': 2,
-      //'dust_input': ['#forge:dusts/aluminum','#forge:dusts/electrum','2x #forge:dusts/glowstone'],
-      //'ingot_input': ['#forge:ingots/aluminum','#forge:ingots/electrum','2x #forge:dusts/glowstone'],
+      'amount': 4,
+      'base': true,
+      'dust_input': ['3x #forge:dusts/aluminum','2x #forge:dusts/white_alloy','8x create:experience_nugget'],
+      'ingot_input': ['3x #forge:ingots/aluminum','2x #forge:ingots/white_alloy','8x create:experience_nugget'],
+      'fluid_input': 'thermal:glowstone',
+      'fluid_amount': 250,
     },
 
     {
@@ -1081,9 +1087,12 @@ global.newMaterialParts = [
       'blockParts': ['scaffolding'],
       'type': 'alloy',
       'fluid_id': 'tconstruct:molten_signalum',
-      //'amount': 4,
-      //'dust_input': ['3x #forge:dusts/bronze','#forge:dusts/silver','4x #forge:dusts/redstone'],
-      //'ingot_input': ['3x #forge:ingots/bronze','#forge:ingots/silver','4x #forge:dusts/redstone'],
+      'amount': 4,
+      'base': true,
+      'dust_input': ['2x #forge:dusts/lumium', '3x #forge:dusts/titanium','2x #forge:dusts/energetic_alloy','4x hostilenetworks:nether_prediction'],
+      'ingot_input': ['2x #forge:ingots/lumium', '3x #forge:ingots/titanium','2x #forge:ingots/energetic_alloy','4x hostilenetworks:nether_prediction'],
+      'fluid_input': 'thermal:redstone',
+      'fluid_amount': 250,
     },
     
     /////////////// Tier 5 Alloys /////////////////////////////
@@ -1167,9 +1176,12 @@ global.newMaterialParts = [
       'blockParts': [],
       'type': 'alloy',
       'fluid_id': 'tconstruct:molten_enderium',
-      //'amount': 3,
-      //'dust_input': ['2x #forge:dusts/pewter','#forge:dusts/platinum', '#forge:dusts/tungsten','2x minecraft:ender_pearl'],
-      //'ingot_input': ['2x #forge:ingots/pewter','#forge:ingots/platinum', '#forge:ingots/tungsten','2x minecraft:ender_pearl'],
+      'amount': 4,
+      'base': true,
+      'dust_input': ['2x #forge:dusts/signalum', '3x #forge:dusts/rune', '#forge:dusts/molybdenum', '4x hostilenetworks:end_prediction'],
+      'ingot_input': ['2x #forge:ingots/signalum', '3x #forge:ingots/rune', '#forge:ingots/molybdenum', '4x hostilenetworks:end_prediction'],
+      'fluid_input': 'thermal:ender',
+      'fluid_amount': 250,
     },
 
     /////////////// Tier 6 Alloys /////////////////////////////
@@ -1447,8 +1459,8 @@ global.newMaterialParts = [
       'fluid_id': 'kubejs:molten_tier_1_magical_alloy',
       'fluid': 'thick',
       'amount': 2,
-      'dust_input': ['3x #forge:dusts/gold', '#forge:dusts/drenched_iron',['ars_nouveau:water_essence','elementalcraft:powerful_water_shard']],
-      'ingot_input': ['3x #forge:ingots/gold', '#forge:ingots/drenched_iron',['ars_nouveau:water_essence','elementalcraft:powerful_water_shard']],
+      'dust_input': ['3x #forge:dusts/gold', '#forge:dusts/drenched_arcanite',['ars_nouveau:water_essence','elementalcraft:powerful_water_shard']],
+      'ingot_input': ['3x #forge:ingots/gold', '#forge:ingots/drenched_arcanite',['ars_nouveau:water_essence','elementalcraft:powerful_water_shard']],
     },
     {
       'material': 'tier_2_magical_alloy',
@@ -1619,7 +1631,6 @@ global.newMaterialParts = [
       'tier': 1,
       'itemParts': ['dust'],
       'blockParts': [],
-      'ore': true
     },
     {
       'material': 'sulfur',
@@ -1841,7 +1852,7 @@ global.newMaterialParts = [
       'type': 'alloy',
       'itemParts': ['custom_dust'],
       'blockParts': [],
-      'dust_input': ['minecraft:blaze_powder','#forge:dusts/redstone', '#forge:gems/sulfur', 'ars_nouveau:fire_essence'],
+      'dust_input': ['kubejs:blazing_redstone', '#forge:gems/sulfur', 'ars_nouveau:fire_essence'],
       'amount': 2,
     },
     {

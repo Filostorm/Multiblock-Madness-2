@@ -105,4 +105,6 @@ onEvent('recipes', event => {
 	//Source Pearl
 	global.arsEnchantment(event, Item.of('kubejs:source_pearl'), Item.of('ae2:fluix_pearl'), [Item.of('ars_nouveau:magebloom'), Item.of('ars_nouveau:abjuration_essence'), Item.of('ars_nouveau:magebloom'), Item.of('ars_nouveau:abjuration_essence'), Item.of('ars_nouveau:magebloom'), Item.of('ars_nouveau:abjuration_essence'), Item.of('ars_nouveau:magebloom'), Item.of('ars_nouveau:abjuration_essence')], 2000, 'mbm2:source_pearl')
 	
+	//liquid_source
+	event.recipes.createEmptying([Fluid.of('kubejs:liquid_source', 1000), 'bucket'], ['ars_nouveau:bucket_of_source']).id('mbm2:emptying/liquid_source')
 });

@@ -303,6 +303,18 @@
 				item: "kubejs:tungsten_coil"
 			}]
 		}
+		{
+			x: -4.0d
+			y: -2.0d
+			description: ["Using this machine to kill mobs will collect the drops for a propper mob farm."]
+			dependencies: ["766FA3877A259983"]
+			id: "12BBBA932AABA97C"
+			tasks: [{
+				id: "667AFD2A54FD0B42"
+				type: "item"
+				item: "industrialforegoing:mob_crusher"
+			}]
+		}
 	]
 	quest_links: [ ]
 }

@@ -18,10 +18,7 @@
 			x: 2.5d
 			y: 1.5d
 			shape: "hexagon"
-			dependencies: [
-				"573198C8B96038A8"
-				"0B635C1D49C9F9AC"
-			]
+			dependencies: ["573198C8B96038A8"]
 			size: 1.5d
 			id: "1E282A0E8363FD74"
 			tasks: [
@@ -83,7 +80,10 @@
 			x: -2.5d
 			y: 6.0d
 			description: ["This is primarily used for more efficient Metallurgic Infuser recipes."]
-			dependencies: ["35C4C2060E205DAC"]
+			dependencies: [
+				"35C4C2060E205DAC"
+				"1F060A2843541330"
+			]
 			id: "6D96C22AED8671A4"
 			tasks: [{
 				id: "2EF8AE94CE2F2D52"
@@ -408,6 +408,7 @@
 		{
 			x: 2.0d
 			y: -6.5d
+			description: ["This will spawn mobs as long as one of the blocks has a supply of Liquid Meat."]
 			dependencies: ["6033214E0C26DFA0"]
 			id: "26FBF22972815A83"
 			tasks: [{
@@ -557,8 +558,8 @@
 			]
 		}
 		{
-			x: 5.0d
-			y: 3.0d
+			x: 2.5d
+			y: 3.5d
 			dependencies: ["12B7444358A1347F"]
 			id: "0B635C1D49C9F9AC"
 			tasks: [{
@@ -568,9 +569,12 @@
 			}]
 		}
 		{
-			x: 5.0d
-			y: 1.5d
-			dependencies: ["1E282A0E8363FD74"]
+			x: 4.0d
+			y: 3.5d
+			dependencies: [
+				"1E282A0E8363FD74"
+				"0B635C1D49C9F9AC"
+			]
 			id: "11D33990B9BC8DDD"
 			tasks: [{
 				id: "7D222422E9E20938"
@@ -579,8 +583,8 @@
 			}]
 		}
 		{
-			x: 5.0d
-			y: 4.5d
+			x: 2.5d
+			y: 5.0d
 			dependencies: ["3C2C3C5BED4E830A"]
 			id: "12B7444358A1347F"
 			tasks: [{
@@ -590,8 +594,8 @@
 			}]
 		}
 		{
-			x: 3.5d
-			y: 3.0d
+			x: 4.0d
+			y: 5.0d
 			description: ["You can move elemental Sources with this"]
 			dependencies: ["12B7444358A1347F"]
 			id: "5986396A93E625F1"
@@ -608,8 +612,8 @@
 			}]
 		}
 		{
-			x: 5.0d
-			y: 6.0d
+			x: 2.5d
+			y: 6.5d
 			dependencies: ["63D72477BB0F83A4"]
 			id: "3C2C3C5BED4E830A"
 			tasks: [
@@ -667,6 +671,7 @@
 			x: -4.0d
 			y: -1.5d
 			description: ["You'll need to upgrade your Blast Furnace before you can smelt the next tier of Metal"]
+			min_required_tasks: 3
 			id: "767E691E21C2ABDC"
 			tasks: [
 				{
@@ -675,9 +680,88 @@
 					item: "kubejs:desh_coil"
 				}
 				{
-					id: "3B277AE1BA53E875"
+					id: "2ECAF1DA9DA39B45"
+					type: "item"
+					item: "minecraft:dragon_breath"
+				}
+				{
+					id: "394646305C0ECA61"
 					type: "item"
 					item: "chemlib:xenon"
+				}
+				{
+					id: "59060DCAC4080BF4"
+					type: "item"
+					item: "chemlib:xenon_bucket"
+				}
+			]
+		}
+		{
+			title: "Laser Circuit Assembly"
+			x: -4.0d
+			y: 7.5d
+			dependencies: ["7F7EC08E0D521059"]
+			id: "1F060A2843541330"
+			tasks: [
+				{
+					id: "465E84854E29FC91"
+					type: "item"
+					item: "pneumaticcraft:assembly_controller"
+				}
+				{
+					id: "5E923135629863ED"
+					type: "item"
+					item: "pneumaticcraft:assembly_laser"
+				}
+				{
+					id: "2C84D688B6BDAAEA"
+					type: "item"
+					item: "pneumaticcraft:assembly_io_unit_import"
+				}
+				{
+					id: "282D9CE7FFB1FBE4"
+					type: "item"
+					item: "pneumaticcraft:assembly_io_unit_export"
+				}
+				{
+					id: "634BE93F36FA5B8D"
+					type: "item"
+					item: "pneumaticcraft:assembly_platform"
+				}
+				{
+					id: "33F3AFB97B50C99A"
+					type: "item"
+					item: "pneumaticcraft:assembly_program_laser"
+				}
+			]
+			rewards: [
+				{
+					id: "399834E5793DD286"
+					type: "item"
+					item: "pneumaticcraft:security_upgrade"
+				}
+				{
+					id: "3618C8C1A7575C9F"
+					type: "item"
+					item: "pneumaticcraft:empty_pcb"
+					count: 8
+				}
+			]
+		}
+		{
+			x: -5.5d
+			y: 7.5d
+			id: "7F7EC08E0D521059"
+			tasks: [
+				{
+					id: "4D29C6EE2BE6CDD3"
+					type: "item"
+					item: "pneumaticcraft:amadron_tablet"
+				}
+				{
+					id: "11442EB89D6B4FD8"
+					type: "item"
+					item: "pneumaticcraft:charging_station"
 				}
 			]
 		}

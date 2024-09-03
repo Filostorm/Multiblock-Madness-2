@@ -400,7 +400,7 @@ onEvent('recipes', event => {
 				//Cheaper recipe
 				event.recipes.multiblocked.multiblock("mechanical_crafting")
 				.inputItem(`#forge:scaffoldings/${item.material}`)
-				.inputItem(`3x #forge:platings/${item.material}`)
+				.inputItem(`3x #forge:plates/${item.material}`)
 				.inputItem(`4x #forge:bolts/${item.material}`)
 				.outputItem(Item.of(`#forge:frame_boxs/${item.material}`))
 				.setPerTick(true)
@@ -590,7 +590,7 @@ onEvent('recipes', event => {
 
 	////////////////////// DUST //////////////////////
     if (Item.of(`#forge:dusts/${item.material}`) != null) {
-		if (item.fluid_id != null) {
+		if (item.fluid_id != null && item.ore == false) {
 			global.tinkersMeltingPlain(event, item.fluid_id, 90, Item.of(`#forge:dusts/${item.material}`).toJson(), 800, 142, `mbm2:smeltery/melting/${item.material}_dust`)
 		}
 		if (item.type == 'gem') {

@@ -292,8 +292,8 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 					'SWS'
 				], {
 					W: 'thermal:white_rockwool',
-					S: `#forge:sheets/white_alloy`,
-					R: '#forge:rods/iron'
+					S: `#forge:plastic`,
+					R: '#forge:rods/white_alloy'
 				}).id(`mbm2:water_filter`)
 
 				//Filtered Water
@@ -598,7 +598,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 		]
 
 		
-let blastFurnaceSmelting = (event, material, inputItem, tier) => {
+var blastFurnaceSmelting = (event, material, inputItem, tier) => {
 	if (tier <= 4) {
 		//Oxygen
 		event.recipes.multiblocked.multiblock("ebf")
@@ -1230,11 +1230,35 @@ onEvent("lootjs", (event) => {
 			})
 			return refinableOres
 		}
+		//This is for adding smeltable tags
+		//I need to check if a given item is smeltable, then add the tag
+		//However, I only want to give the tag if it can be smelted in a given smelter
+		//this means I want to give the furnace tag to only tier 0-1 metals, the foundry 0-2, etc
+		// but I need to be sure it also is at least the min processing, or last tier refining
+		//so I need to check tier X metals if they can be 
+
+		var  smeltingTag = (furnaceTier) => {
+			let smeltableOres = []
+			global.oreParts.forEach((part) => {
+				if(item.tier == furnaceTier && (item.tier-1 <= part.grade || part.level == 1) ) {
+					smeltableOres.push(`#forge:ores/${part.name}/${item.material}`)
+				}
+			})
+			return smeltableOres
+		}
 
 		if(item.type == 'base_metal' || item.type == 'rare_metal') {
 
 			event.add(`mbm2:ore_part/refinable_tier_1/${item.material}`, refinableOre(1))
 			event.add(`mbm2:ore_part/refinable_tier_2/${item.material}`, refinableOre(2))
+
+			event.add(`mbm2:ore_part/smelting/furnace`, smeltingTag(1))
+			event.add(`mbm2:ore_part/smelting/foundry`, smeltingTag(2))
+			event.add(`mbm2:ore_part/smelting/arc_furnace`, smeltingTag(3))
+			event.add(`mbm2:ore_part/smelting/blast_furnace`, smeltingTag(4))
+			event.add(`mbm2:ore_part/smelting/blast_furnace_2000`, smeltingTag(5))
+			event.add(`mbm2:ore_part/smelting/blast_furnace_3000`, smeltingTag(6))
+			event.add(`mbm2:ore_part/smelting/blast_furnace_4000`, smeltingTag(7))
 			
 			//let refineProcessedOre = [] // this needs to be redone so that you're required to process to a certain grade before unlocking the next level of refining
 			//global.oreProcessingParts.forEach((part) => {

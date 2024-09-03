@@ -570,3 +570,29 @@ global.createCharging = (event, input, output, energy, ID) => {
 	}).id(ID)
 }
 	
+
+
+//////////////////BOTANIA MANA POOL///////////////////////
+global.botaniaPool = (event, input, output, mana, block, ID) => {
+	if(block == 'normal') {
+		event.custom({
+			"type": "botania:mana_infusion",
+			"input": Item.of(input).toJson(),
+			"output": Item.of(output).toResultJson(),
+			"mana": mana,
+		}).id(ID)
+	} else {
+		event.custom({
+			"type": "botania:mana_infusion",
+			"input": Item.of(input).toJson(),
+			"output": Item.of(output).toResultJson(),
+			"mana": mana,
+			"catalyst": {
+			  "type": "block",
+			  "block": block
+			}
+		}).id(ID)
+	}
+}
+
+///////////////////////////////////////////////////////////////////

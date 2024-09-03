@@ -70,7 +70,17 @@ var basicItems = [
 	'metal_seed',
 	'shaped_fluix_crystal',
 	'dimensional_mote',
-	'world_shaper_blueprint'
+	'world_shaper_blueprint',
+	'nether_shard',
+	'nether_shard_west',
+	'nether_shard_east',
+	'nether_shard_south',
+	'elemental_core',
+	'elemental_star',
+	'asteroid_tier_1',
+	'asteroid_tier_2',
+	'asteroid_tier_3',
+	'harvester_drone',
 ]
 
 global.transitionalItems = [

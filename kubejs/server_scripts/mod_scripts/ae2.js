@@ -382,35 +382,6 @@ onEvent('recipes', event => {
 
 
 
-	//1k Storage Component
-	event.remove({id: 'ae2:network/cells/item_storage_components_cell_1k_part'})
-	event.shaped('ae2:cell_component_1k', [
-	  'SQS',
-	  'QPQ',
-	  'SQS'
-	], {
-		Q: 'ae2:certus_quartz_crystal',
-		S: '#forge:sheets/energetic_alloy',
-		P: 'ae2:logic_processor',
-	}).id('mbm2:cell_component_1k')
-
-    
-
-	//4k Storage Component
-	event.remove({id: 'ae2:network/cells/item_storage_components_cell_4k_part'})
-	event.shaped('ae2:cell_component_4k', [
-	  'SPS',
-	  'KQK',
-	  'SKS'
-	], {
-		Q: 'ae2:quartz_glass',
-		S: '#forge:plates/tier_1_electrical_alloy',
-		P: 'ae2:calculation_processor',
-		K: 'ae2:cell_component_1k'
-	}).id('mbm2:cell_component_4k')
-
-    
-
 	//Resonating Crystal
 	global.mekanismMetallurgicInfusing(event, Item.of('lazierae2:resonating_crystal'), Item.of('kubejs:resonating_dust'), 'mekanism:diamond', 20, `mbm2:infusing/resonating_crystal`)
 	
@@ -491,7 +462,7 @@ onEvent('recipes', event => {
 
 	//logic_unit
 	event.remove({output: 'lazierae2:logic_unit'})
-	event.shaped('kubejs:unfinished_logic_unit', [' F ', 'ABA','CCC'], {A: 'pneumaticcraft:plastic',B: 'ae2:logic_processor',C: 'kubejs:fluix_steel_plate', F: 'kubejs:shaped_fluix_crystal'}).id(`mbm2:unfinished_logic_unit`)
+	event.shaped('kubejs:unfinished_logic_unit', ['FFF', 'ABA','CCC'], {A: 'pneumaticcraft:plastic',B: 'ae2:logic_processor',C: 'kubejs:fluix_steel_plate', F: 'kubejs:shaped_fluix_crystal'}).id(`mbm2:unfinished_logic_unit`)
 	global.AssemblyLaser(event, 'lazierae2:logic_unit', `kubejs:unfinished_logic_unit`, `mbm2:finished_logic_unit`)
 
 	//crystal_growth
@@ -504,5 +475,68 @@ onEvent('recipes', event => {
 	// Shaped Fluix
 	event.recipes.createCutting('kubejs:shaped_fluix_crystal', 'ae2:fluix_crystal').id('mbm2:cutting/shaped_fluix_crystal')
 	event.recipes.mekanismSawing(`2x kubejs:shaped_fluix_crystal`, `ae2:fluix_crystal`).id(`mbm2:mek_sawmill/shaped_fluix_crystal`)
+	event.custom({type:'immersiveengineering:sawmill',
+		secondaries:[
+			{output:Item.of(`#forge:dusts/fluix`).toJson(), stripping:'false'}
+		],
+		result:Item.of(`5x kubejs:shaped_fluix_crystal`).toResultJson(),
+		input:Ingredient.of('ae2:fluix_block').toJson(),
+		energy:1000
+	}).id(`mbm2:ie_sawmill/shaped_fluix_crystal`)
+
+
+	//1k Storage Component
+	event.remove({id: 'ae2:network/cells/item_storage_components_cell_1k_part'})
+	event.shaped('ae2:cell_component_1k', [
+	  'SQS',
+	  'QPQ',
+	  'SQS'
+	], {
+		Q: 'ae2:certus_quartz_crystal',
+		S: '#forge:plates/tier_1_electrical_alloy',
+		P: 'ae2:logic_processor',
+	}).id('mbm2:cell_component_1k')
+
+    
+
+	//4k Storage Component
+	event.remove({id: 'ae2:network/cells/item_storage_components_cell_4k_part'})
+	event.shaped('ae2:cell_component_4k', [
+	  'SPS',
+	  'KQK',
+	  'SKS'
+	], {
+		Q: 'kubejs:shaped_fluix_crystal',
+		S: '#forge:plates/tier_1_electrical_alloy',
+		P: 'ae2:calculation_processor',
+		K: 'ae2:cell_component_1k'
+	}).id('mbm2:cell_component_4k')
+
+    
+	//16k Storage Component
+	event.remove({output: 'ae2:cell_component_16k'})
+	event.shaped('ae2:cell_component_16k', ['ABA','CDC','ACA'], {A: 'kubejs:tier_1_electrical_alloy_plate',B: 'ae2:calculation_processor',C: 'ae2:cell_component_4k',D: 'pneumaticcraft:plastic'}).id(`mbm2:crafting/cell_component_16k`)
+
+	//64k Storage Component
+	event.remove({output: 'ae2:cell_component_64k'})
+	event.shaped('ae2:cell_component_64k', ['ABA','CDC','ACA'], {A: 'kubejs:tier_2_electrical_alloy_plate',B: 'ae2:calculation_processor',C: 'ae2:cell_component_16k',D: 'botania:mana_diamond'}).id(`mbm2:crafting/cell_component_64k`)
+
+	//256k Storage Component
+	event.remove({output: 'ae2:cell_component_256k'})
+	event.shaped('ae2:cell_component_256k', ['ABA','CDC','ACA'], {A: 'kubejs:tier_2_electrical_alloy_plate',B: 'ae2:calculation_processor',C: 'ae2:cell_component_64k',D: 'chemlib:lithium_dust'}).id(`mbm2:crafting/cell_component_256k`)
+
+	//1kk Storage Component
+	event.remove({output: 'ae2additions:cell_component_1kk'})
+	event.shaped('ae2additions:cell_component_1kk', ['ABA','CDC','ACA'], {A: 'kubejs:tier_3_electrical_alloy_plate',B: 'ae2:calculation_processor',C: 'ae2:cell_component_256k',D: 'minecraft:dragon_breath'}).id(`mbm2:crafting/cell_component_1kk`)
+
+	//Basic Card
+	event.remove({output: 'ae2:basic_card'})
+	event.shaped('ae2:basic_card', ['AB ','CDB','AB '], {A: 'minecraft:gold_ingot',B: 'kubejs:titanium_plate',C: 'kubejs:tier_2_electrical_alloy_spool',D: 'ae2:calculation_processor'}).id(`mbm2:crafting/basic_card`)
+	
+	//Advanced Card
+	event.remove({output: 'ae2:advanced_card'})
+	event.shaped('ae2:advanced_card', ['AB ','CDB','AB '], {A: 'minecraft:diamond',B: 'kubejs:titanium_plate',C: 'kubejs:tier_2_electrical_alloy_spool',D: 'ae2:engineering_processor'}).id(`mbm2:crafting/advanced_card`)
+
+
 
 });

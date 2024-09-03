@@ -48,4 +48,16 @@
 		.setPerTick(true)
 		.inputFE(1000*2)
 		.duration(200)
+
+	//Luminite
+	event.recipes.multiblocked.multiblock("chemical_reactor")
+		.inputFluid(Fluid.of('mekanism:brine', 500))
+		.inputFluid(Fluid.of('tconstruct:molten_lumium', 45))
+		.inputItem('16x chemlib:phosphorus')
+		.inputItem('thermal:coal_coke')
+		//.outputFluid(Fluid.of('chemlib:nitric_acid_fluid', 250))
+		.outputItem('kubejs:luminite')
+		.setPerTick(true)
+		.inputFE(4000)
+		.duration(200)
   })

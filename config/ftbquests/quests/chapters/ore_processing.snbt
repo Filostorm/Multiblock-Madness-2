@@ -379,7 +379,7 @@
 		}
 		{
 			x: 8.0d
-			y: -0.5d
+			y: 0.5d
 			description: ["Common ore on the Moon, can spawn with Runite."]
 			id: "3A97404A93628B41"
 			tasks: [{
@@ -389,8 +389,9 @@
 			}]
 		}
 		{
-			x: 24.0d
-			y: -3.5d
+			x: 1.0d
+			y: -11.5d
+			dependencies: ["285CDED8ED5043B7"]
 			id: "0BAC4F3AD0800A45"
 			tasks: [{
 				id: "05C6F2373ED082B7"
@@ -399,8 +400,9 @@
 			}]
 		}
 		{
-			x: 24.0d
-			y: -4.5d
+			x: 1.0d
+			y: -12.5d
+			dependencies: ["285CDED8ED5043B7"]
 			id: "7FA29068486FCB01"
 			tasks: [{
 				id: "05C908B726A9468E"
@@ -409,8 +411,9 @@
 			}]
 		}
 		{
-			x: 24.0d
-			y: -5.5d
+			x: 1.0d
+			y: -13.5d
+			dependencies: ["285CDED8ED5043B7"]
 			id: "59663F168755F312"
 			tasks: [{
 				id: "17D6A9009EC729A0"
@@ -419,8 +422,9 @@
 			}]
 		}
 		{
-			x: 24.0d
-			y: -0.5d
+			x: 2.5d
+			y: -11.5d
+			dependencies: ["285CDED8ED5043B7"]
 			id: "4E78300F04776252"
 			tasks: [{
 				id: "5C68FDA94B105BBC"
@@ -429,8 +433,9 @@
 			}]
 		}
 		{
-			x: 24.0d
-			y: -1.5d
+			x: 2.5d
+			y: -12.5d
+			dependencies: ["285CDED8ED5043B7"]
 			id: "07A0649720C8F7B5"
 			tasks: [{
 				id: "4EBFEC1BC69BB122"
@@ -439,8 +444,9 @@
 			}]
 		}
 		{
-			x: 24.0d
-			y: -2.5d
+			x: 2.5d
+			y: -13.5d
+			dependencies: ["285CDED8ED5043B7"]
 			id: "54E7157340600EB6"
 			tasks: [{
 				id: "7E183FF810B98BF3"
@@ -449,8 +455,8 @@
 			}]
 		}
 		{
-			x: 5.5d
-			y: -1.5d
+			x: 9.0d
+			y: -0.5d
 			id: "48996316A1E382C2"
 			tasks: [{
 				id: "39E3A8FB54DD3B94"
@@ -517,7 +523,7 @@
 		}
 		{
 			x: 8.0d
-			y: 0.5d
+			y: -0.5d
 			id: "37957A7CAE2F9967"
 			tasks: [{
 				id: "0D43F80765DA7014"
@@ -704,13 +710,9 @@
 			}]
 		}
 		{
-			x: 26.5d
-			y: -4.5d
-			dependencies: [
-				"0BAC4F3AD0800A45"
-				"7FA29068486FCB01"
-				"59663F168755F312"
-			]
+			x: 5.5d
+			y: -11.0d
+			dependencies: ["74FC586E4D606AC5"]
 			id: "3D6F5260B3B4242F"
 			tasks: [{
 				id: "44BA8299E0D078F1"
@@ -719,13 +721,9 @@
 			}]
 		}
 		{
-			x: 26.5d
-			y: -1.5d
-			dependencies: [
-				"4E78300F04776252"
-				"54E7157340600EB6"
-				"07A0649720C8F7B5"
-			]
+			x: 5.5d
+			y: -12.0d
+			dependencies: ["74FC586E4D606AC5"]
 			id: "3D715130569810A9"
 			tasks: [{
 				id: "2DF6D87316B87028"
@@ -1677,6 +1675,61 @@
 				id: "293BAD032135C6EA"
 				type: "item"
 				item: "mbm2:sorter_mk2"
+			}]
+		}
+		{
+			x: 5.5d
+			y: -1.5d
+			id: "05BE89044960E0B5"
+			tasks: [{
+				id: "4AE426AA89C0B4FA"
+				type: "item"
+				item: "kubejs:raw_aetherium"
+			}]
+		}
+		{
+			icon: "botania:cosmetic_questgiver_mark"
+			x: -0.5d
+			y: -11.0d
+			shape: "diamond"
+			description: ["By combining multiple sets of compound ore, you're able to create Rare Metals."]
+			dependencies: ["285CDED8ED5043B7"]
+			size: 2.0d
+			id: "74FC586E4D606AC5"
+			tasks: [{
+				id: "1CE42E14DFED6B9A"
+				type: "checkmark"
+				title: "Thermo Blends"
+			}]
+		}
+		{
+			icon: "botania:cosmetic_questgiver_mark"
+			x: -2.5d
+			y: -7.0d
+			shape: "diamond"
+			description: ["As you explore this world and others, you'll find many large ore veins, some with various other ores mixed in. You'll also notice Poor ores more commonly scattered around the Overworld."]
+			dependencies: ["23222631E2D6EDF3"]
+			size: 2.0d
+			id: "457FCA9B39399AD1"
+			tasks: [{
+				id: "7BC92C56675D47DD"
+				type: "checkmark"
+				title: "Mining"
+			}]
+		}
+		{
+			icon: "botania:cosmetic_questgiver_mark"
+			x: -0.5d
+			y: -9.0d
+			shape: "diamond"
+			description: ["All ore generation in this pack will create Compound Ore, of increasing amounts, until you unlock the Ore Laser Drill which never runs out."]
+			dependencies: ["285CDED8ED5043B7"]
+			size: 2.0d
+			id: "5EEDBCC7BEC4735B"
+			tasks: [{
+				id: "127E8B6CBAC763A2"
+				type: "checkmark"
+				title: "Ore Generation"
 			}]
 		}
 	]

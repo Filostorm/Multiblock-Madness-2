@@ -54,7 +54,7 @@ onEvent('recipes', event => {
 		'GCMCG',
 		' PPP '
 	  ], {
-		A: 'create:mechanical_arm',
+		A: '#forge:robot_arms/tier_2_mechanical_alloy', //'create:mechanical_arm',
 		B: 'pneumaticcraft:pneumatic_cylinder',
 		H: 'immersiveengineering:coil_hv',
 		C: 'compressedcreativity:compressed_iron_casing',

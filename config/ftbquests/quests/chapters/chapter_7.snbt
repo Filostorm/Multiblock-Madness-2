@@ -10,7 +10,7 @@
 	quests: [
 		{
 			x: 4.5d
-			y: -1.5d
+			y: -4.0d
 			id: "5F949EED9E1FDB6A"
 			tasks: [{
 				id: "21050308EF20EEE1"
@@ -20,7 +20,8 @@
 		}
 		{
 			x: 4.5d
-			y: -0.5d
+			y: -3.0d
+			description: ["The Railgun is used to launch satellites into space, in this case its Dyson Swarm Panels"]
 			id: "4E899924B02D0D37"
 			tasks: [{
 				id: "66BF294EFB0CB0B2"
@@ -30,7 +31,7 @@
 		}
 		{
 			x: 6.0d
-			y: -0.5d
+			y: -3.0d
 			id: "70537424EB7030A2"
 			tasks: [{
 				id: "2B7A13A14C7ED6A5"
@@ -64,7 +65,7 @@
 		}
 		{
 			x: 6.0d
-			y: -1.5d
+			y: -4.0d
 			dependencies: [
 				"4E899924B02D0D37"
 				"5F949EED9E1FDB6A"
@@ -78,7 +79,7 @@
 		}
 		{
 			x: 7.5d
-			y: -1.5d
+			y: -4.0d
 			description: ["Batteries can be filled with an Energy Reciever or a Battery Interface."]
 			dependencies: [
 				"70537424EB7030A2"
@@ -89,12 +90,13 @@
 			tasks: [{
 				id: "796E1759D3DC6AC8"
 				type: "item"
-				item: "kubejs:energy_crystal_full"
+				item: "kubejs:lapatron_crystal_full"
+				consume_items: false
 			}]
 		}
 		{
 			x: 7.5d
-			y: -0.5d
+			y: -3.0d
 			description: ["This Multiblock can fill and empty batteries"]
 			id: "73050C7FD526E29E"
 			tasks: [{

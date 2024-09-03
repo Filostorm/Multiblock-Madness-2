@@ -5,6 +5,10 @@ onEvent('tags.items', event => {
 	event.add(`elementalcraft:basic_infused`, 'elementalcraft:air_silk')
 	event.add(`elementalcraft:basic_infused`, 'elementalcraft:whiterock')
 	event.add(`elementalcraft:basic_infused`, 'elementalcraft:burnt_glass')
+	
+	event.add(`forge:ingots/drenched_arcanite`, 'elementalcraft:drenched_iron_ingot')
+	event.add(`forge:storage_blocks/drenched_arcanite`, 'elementalcraft:drenched_iron_block')
+	
 });
  
 onEvent('recipes', event => {
@@ -65,5 +69,11 @@ onEvent('recipes', event => {
 		//Air Mill
 		event.remove({output: 'elementalcraft:air_mill'})
 		event.shaped('elementalcraft:air_mill', ['ABA','BCB','DED'], {A: 'kubejs:source_tube',B: 'kubejs:tier_1_magical_alloy_ingot',C: 'minecraft:grindstone',D: 'elementalcraft:whiterock',E: 'elementalcraft:aircrystal'}).id("mbm2:elementalcraft/air_mill")
+
+
+		event.replaceInput({output: 'elementalcraft:instrument_retriever'}, 'elementalcraft:swift_alloy_ingot', ['#forge:ingots/auric_gold','#forge:ingots/swift_alloy'])
+		event.replaceInput({output: 'elementalcraft:sorter'}, 'elementalcraft:swift_alloy_ingot', ['#forge:ingots/auric_gold','#forge:ingots/swift_alloy'])
+		
+
 
 });

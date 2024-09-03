@@ -9,7 +9,7 @@ onEvent('recipes', event => {
 	B: 'createsifter:andesite_mesh',
 	C: '#forge:glass/colorless',
 	D: 'create:copper_casing',
-	E: '#forge:plates/drenched_iron',
+	E: '#forge:plates/drenched_arcanite',
 	F: 'thermal:gold_gear'
   }).id(`mbm2:multiblocked/sludge_sifter`)
 
@@ -265,8 +265,8 @@ event.shaped('mbm2:flotation', [
 	T: '#forge:interlocking_components/titanite',
 	E: '#elementalcraft:gems/fine_earth',
 	W: '#elementalcraft:gems/fine_water',
-	A: 'immersiveengineering:component_electronic_adv',
-	P: '#forge:plates/drenched_iron',
+	A: 'pneumaticcraft:printed_circuit_board',
+	P: '#forge:plates/drenched_arcanite',
   }).id(`mbm2:flotation`)
   
 // Mixer

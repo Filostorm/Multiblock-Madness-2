@@ -164,7 +164,7 @@ onEvent('recipes', event => {
 	  H: 'thermal:obsidian_glass',
 	  R: '#forge:rods/rose_gold',
 	  C: 'kubejs:pneumaticcraft_casing',
-	  D: '#forge:plates/drenched_iron',
+	  D: '#forge:plates/drenched_arcanite',
 	}).id('mbm2:refinery_output')
 
 	//Fluid Mixer
@@ -212,5 +212,12 @@ onEvent('recipes', event => {
 	event.remove({output: 'pneumaticcraft:pneumatic_dynamo'})
 	event.shaped('pneumaticcraft:pneumatic_dynamo', [' A ','BCB','DED'], {A: 'pneumaticcraft:advanced_pressure_tube',B: 'pneumaticcraft:compressed_iron_gear',C: 'pneumaticcraft:printed_circuit_board',D: 'pneumaticcraft:ingot_iron_compressed',E: 'kubejs:dynamo_frame'}).id('mbm2:pneumatic_dynamo')
 
+//transistor
+	event.remove({id: 'pneumaticcraft:pressure_chamber/transistor'})
+	event.shaped('pneumaticcraft:transistor', ['ABA','ACA','DDD'], {A: 'kubejs:lead_sheet',B: 'pneumaticcraft:plastic',C: 'projectred_core:silicon',D: 'kubejs:tier_2_electrical_alloy_wire'}).id('mbm2:transistor')
+
+//capacitor
+	event.remove({id: 'pneumaticcraft:pressure_chamber/capacitor'})
+	event.shaped('pneumaticcraft:capacitor', ['ABA','ACA','DDD'], {A: 'kubejs:cobalt_sheet',B: 'pneumaticcraft:plastic',C: 'kubejs:battery_alloy_plate',D: 'kubejs:tier_2_electrical_alloy_wire'}).id('mbm2:capacitor')
 
 });

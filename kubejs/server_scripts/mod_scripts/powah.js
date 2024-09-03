@@ -204,14 +204,6 @@ E: 'powah:dielectric_rod'
   }).id("powah:crafting/energizing_rod_basic")
 
   
-//Blazing Redstone
-	event.recipes.createMixing('kubejs:blazing_redstone', ['minecraft:blaze_powder','#forge:dusts/redstone']).id(`mbd2:create/mixing/blazing_redstone`)
-  //event.recipes.multiblocked.multiblock('mixer')
-  //  .inputItems('minecraft:blaze_powder','#forge:dusts/redstone')
-  //  .outputItem(`kubejs:blazing_redstone`)
-  //  .setPerTick(true)
-  //  .inputFE(500)
-  //  .duration(100)
 
   //Thermoelectric Plate
   event.remove({id: 'powah:crafting/thermoelectric_plate'})

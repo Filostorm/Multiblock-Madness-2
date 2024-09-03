@@ -8,7 +8,7 @@
 		.outputItem(Item.of('naturesaura:aura_bottle', '{stored_type:"naturesaura:overworld"}'))
 		.setPerTick(true)
 		.inputFE(500)
-		.duration(200)
+		.duration(50)
 
 	event.recipes.multiblocked.multiblock("air_collector")
 		.dimension('minecraft:overworld')
@@ -25,7 +25,7 @@
 		.outputItem(Item.of('naturesaura:aura_bottle', '{stored_type:"naturesaura:nether"}'))
 		.setPerTick(true)
 		.inputFE(1000)
-		.duration(200)
+		.duration(50)
 
 	event.recipes.multiblocked.multiblock("air_collector")
 		.dimension('minecraft:the_nether')
@@ -41,7 +41,7 @@
 	.outputItem('botania:ender_air_bottle')
 	.setPerTick(true)
 	.inputFE(2000)
-	.duration(200)
+	.duration(50)
 
 	event.recipes.multiblocked.multiblock("air_collector")
 		.dimension('minecraft:the_end')

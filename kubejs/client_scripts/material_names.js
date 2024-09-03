@@ -20,7 +20,7 @@ let newTierName = 'Stage '
 
 onEvent('client.generate_assets', event => {
 	global.newMaterialParts.forEach((item) => {
-		if(item.material.includes('tier')) {
+		if (item.material.includes('tier')) {
 			let materialSplit = item.material.split('_');
 			let tier = materialSplit[1]
 			let materialName = materialSplit[2] +'_' + materialSplit[3]
@@ -38,5 +38,14 @@ onEvent('client.generate_assets', event => {
 				event.addLang(`block.kubejs.${item.material}_${blockName}`, newName + materialNameUpper(blockName))
 			})
 		}
+		/*
+		if (item.material.includes('drenched_iron')) {
+			let materialSplit = item.material.split('_');
+			let materialName = materialNameUpper(materialSplit[1]) +' Arcanite '
+			item.itemParts.forEach((partName) => {
+				event.addLang(`item.kubejs.${item.material}_${partName}`, materialName + materialNameUpper(partName))
+			})
+		}
+		*/
 	})
 })

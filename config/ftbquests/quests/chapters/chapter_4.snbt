@@ -1013,9 +1013,8 @@
 		{
 			icon: "mbm2:mixer_mk1"
 			x: -2.5d
-			y: 6.25d
+			y: 6.5d
 			description: ["Can make almost any alloy in dust form."]
-			size: 1.25d
 			id: "627B714B402BEE67"
 			tasks: [
 				{
@@ -1140,7 +1139,7 @@
 		}
 		{
 			x: 10.0d
-			y: -0.5d
+			y: -1.0d
 			dependencies: ["7BB9213CBA0A5FCC"]
 			id: "6881A552DF61AD73"
 			tasks: [{
@@ -1151,7 +1150,7 @@
 		}
 		{
 			x: 10.0d
-			y: -1.5d
+			y: -2.0d
 			dependencies: ["7BB9213CBA0A5FCC"]
 			id: "6DEB9BB02E28A823"
 			tasks: [{
@@ -1217,7 +1216,7 @@
 		}
 		{
 			x: 10.0d
-			y: 0.5d
+			y: 0.0d
 			dependencies: ["7BB9213CBA0A5FCC"]
 			id: "33A907176391C423"
 			tasks: [{
@@ -1410,7 +1409,7 @@
 		}
 		{
 			title: "Fast Multiblock Creation"
-			x: -5.5d
+			x: -8.5d
 			y: -2.5d
 			description: [
 				"Select a Schematic for your blueprint in the table, then after placing it in world, load it in your cannon. Make sure it has Gunpowder and a chest nearby with every block needed."
@@ -1608,33 +1607,12 @@
 			}]
 		}
 		{
-			title: "Paint the Trees Gold"
-			x: -3.0d
-			y: -4.5d
-			description: ["You'll be able to find the Book of Natural Aura in your Akashic Tome."]
-			dependencies: ["143FA2A8FD6E4E10"]
-			id: "4187F705E4356142"
-			tasks: [
-				{
-					id: "207E8A7F752042D0"
-					type: "item"
-					item: "naturesaura:gold_fiber"
-				}
-				{
-					id: "29FF7F7D6BDD7E50"
-					type: "item"
-					item: "naturesaura:gold_leaf"
-				}
-			]
-		}
-		{
 			title: "Ritual of the Forest"
 			icon: "naturesaura:wood_stand"
 			x: -1.5d
 			y: -5.5d
 			min_required_dependencies: 2
 			dependencies: [
-				"4187F705E4356142"
 				"38B7849EB717422A"
 				"4489F9C5F2899DFE"
 			]
@@ -1777,7 +1755,7 @@
 		{
 			title: "Auto Crafting!"
 			x: -0.5d
-			y: 8.0d
+			y: 5.0d
 			description: [
 				"You'll need to convert the Crafting Unit by adding a Storage Disk of some size."
 				""
@@ -1829,7 +1807,7 @@
 		}
 		{
 			x: -2.5d
-			y: 4.5d
+			y: 5.0d
 			description: ["Can be used as a Tinkers Fuel"]
 			dependencies: ["627B714B402BEE67"]
 			id: "5380AA7BAC513908"
@@ -1864,6 +1842,30 @@
 					item: "immersiveengineering:sample_drill"
 				}
 			]
+		}
+		{
+			x: 3.5d
+			y: -5.5d
+			dependencies: ["4691F3E2268FD78F"]
+			id: "2DBC4A733422AD0B"
+			tasks: [{
+				id: "039C7F01E5658E3F"
+				type: "item"
+				item: "naturesaura:offering_table"
+			}]
+		}
+		{
+			x: -5.5d
+			y: -2.5d
+			description: ["Stand on one and right click the other to teleport."]
+			dependencies: ["44B029D2AFEC131D"]
+			id: "3A7FCFC8A6686A6A"
+			tasks: [{
+				id: "3C8530894E331FCD"
+				type: "item"
+				item: "travel_anchors:travel_anchor"
+				count: 2L
+			}]
 		}
 	]
 	quest_links: [ ]

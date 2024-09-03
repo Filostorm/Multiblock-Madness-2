@@ -25,7 +25,7 @@ onEvent('recipes', event => {
 			"item": "mekanism:alloy_reinforced"
 		  },
 		  "C": {
-			"item": "kubejs:tier_3_mechanical_alloy_interlocking_component"
+			"item": "kubejs:tier_4_mechanical_alloy_interlocking_component"
 		  },
 		  "D": {
 			"item": "pneumaticcraft:solar_cell"
@@ -56,13 +56,13 @@ onEvent('recipes', event => {
 			"item": "solarflux:photovoltaic_cell_6"
 		  },
 		  "B": {
-			"item": "kubejs:tier_3_structural_alloy_rod"
+			"item": "kubejs:tier_4_structural_alloy_rod"
 		  },
 		  "C": {
 			"item": "kubejs:solar_panel"
 		  },
 		  "D": {
-			"item": "kubejs:tier_3_structural_alloy_frame_box"
+			"item": "kubejs:tier_4_structural_alloy_frame_box"
 		  }
 		},
 		"result": Item.of('4x kubejs:solar_bar').toResultJson()

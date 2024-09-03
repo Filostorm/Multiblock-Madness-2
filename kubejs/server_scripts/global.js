@@ -441,5 +441,5 @@ global.removeAndHide = [
 	'extendedcrafting:elite_auto_table',
 	'extendedcrafting:ultimate_auto_table',
 	
-	'elementalcraft:pureinfuser'
+	//'elementalcraft:pureinfuser'
 	]

@@ -158,6 +158,21 @@
         "previewCount": 1,
         "io": "IN"
       },
+      "J": {
+        "blocks": [
+          {
+            "id": "multiblocked:combo_input"
+          },
+          {
+            "id": "multiblocked:big_combo_input"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 0,
+        "maxCount": 1,
+        "previewCount": 1,
+        "io": "IN"
+      },
       "H": {
         "blocks": [
           {
@@ -190,6 +205,7 @@
         "U",
         "F",
         "G",
+        "J",
         "H"
       ],
       "B": [

@@ -20,14 +20,23 @@ onEvent('recipes', event => {
 	event.replaceInput({id: 'extendedcrafting:black_iron_slate'}, 'extendedcrafting:black_iron_ingot', '#forge:plates/black_iron')
 
 	//luminessence
-	event.recipes.createMixing(['2x extendedcrafting:luminessence'], [Fluid.of('kubejs:molten_luminite', 1000), '4x tconstruct:glow_ball', '2x naturalist:glow_goop', 'botania:light_relay']).superheated().id('mbm2:mixing/luminessence_create')
-	event.recipes.multiblocked.multiblock('mixer')
-  	.inputItems('4x tconstruct:glow_ball', '2x naturalist:glow_goop', 'botania:light_relay')
-  	.inputFluid(Fluid.of('kubejs:molten_luminite', 1000))
-  	.outputItem(Item.of('4x extendedcrafting:luminessence'))
-  	.setPerTick(true)
-  	.inputFE(2000)
-  	.duration(300)
+	//event.recipes.createMixing(['2x extendedcrafting:luminessence'], [Fluid.of('kubejs:molten_luminite', 1000), '4x tconstruct:glow_ball', '2x naturalist:glow_goop', 'botania:light_relay']).superheated().id('mbm2:mixing/luminessence_create')
+	//event.recipes.multiblocked.multiblock('mixer')
+  	//.inputItems('4x tconstruct:glow_ball', '2x naturalist:glow_goop', 'botania:light_relay')
+  	//.inputFluid(Fluid.of('kubejs:molten_luminite', 1000))
+  	//.outputItem(Item.of('4x extendedcrafting:luminessence'))
+  	//.setPerTick(true)
+  	//.inputFE(2000)
+  	//.duration(300)
+
+	//luminessence
+	event.recipes.multiblocked.multiblock("chemical_reactor")
+	.inputItems('4x tconstruct:glow_ball', '2x naturalist:glow_goop', 'botania:light_relay')
+	.inputFluid(Fluid.of('kubejs:molten_luminite', 1000))
+	.outputItem(Item.of('4x extendedcrafting:luminessence'))
+	.setPerTick(true)
+	.inputFE(4000)
+	.duration(200)
 
 	//Catalyst and Components
 	event.remove({output: 'extendedcrafting:redstone_component'})

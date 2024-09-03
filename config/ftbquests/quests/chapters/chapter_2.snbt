@@ -462,7 +462,7 @@
 			}]
 		}
 		{
-			title: "Furnace Upgrades"
+			title: "Furnace Upgrades!"
 			icon: "ironfurnaces:iron_furnace"
 			x: 3.0d
 			y: 9.0d

@@ -106,6 +106,10 @@
     "mbm2.fusion_reactor.description": "Smash tiny things  to get new things!",
     "multiblocked.recipe_map.fusion": "Fusion Crafting",
 
+    "block.mbm2.elemental_stabilizer": "Elemental Stabilizer",
+    "mbm2.elemental_stabilizer.description": "Stabilize Elemental fluid using gems",
+    "multiblocked.recipe_map.elemental_stabilizer": "Elemental Stabilization",
+
     "block.multiblocked.create_item_input": "Input Vault Part",
     "block.multiblocked.create_item_output": "Output Vault Part",
 
@@ -403,5 +407,8 @@
   "material.elementalcraft.drenched_iron": "Drenched Arcanite",
   "block.elementalcraft.drenched_iron_block": "Drenched Arcanite Block",
   "item.elementalcraft.drenched_iron_ingot": "Drenched Arcanite Ingot",
-  "item.elementalcraft.drenched_iron_nugget": "Drenched Arcanite Nugget"
+  "item.elementalcraft.drenched_iron_nugget": "Drenched Arcanite Nugget",
+
+  
+  "item.projectred_core.silicon": "Silicon Wafer"
 }

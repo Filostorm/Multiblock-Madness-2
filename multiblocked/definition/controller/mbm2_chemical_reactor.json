@@ -122,18 +122,6 @@
         ],
         "type": "blocks"
       },
-      "E": {
-        "blocks": [
-          {
-            "id": "ae2:sky_stone_tank"
-          }
-        ],
-        "type": "blocks",
-        "minCount": 0,
-        "maxCount": 4,
-        "previewCount": 1,
-        "io": "OUT"
-      },
       "F": {
         "blocks": [
           {
@@ -208,8 +196,7 @@
         "A"
       ],
       "B": [
-        "B",
-        "E"
+        "B"
       ],
       "C": [
         "C"

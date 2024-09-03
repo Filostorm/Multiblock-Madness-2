@@ -1,0 +1,270 @@
+{
+  "version": 3,
+  "location": "mbm2:elemental_stabilizer",
+  "traits": {},
+  "properties": {
+    "rotationState": "ALL",
+    "showInJei": true,
+    "isOpaque": true,
+    "hasDynamicShape": false,
+    "hasCollision": true,
+    "destroyTime": 1.5,
+    "explosionResistance": 6.0,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "friction": 0.6,
+    "harvestLevel": 0,
+    "stackSize": 64,
+    "tabGroup": "multiblocked.all"
+  },
+  "status": {
+    "unformed": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/transmuted",
+        "frontTexture": "multiblocked:overlay/improved_manaweaver_front_inactivev2",
+        "type": "gregtech",
+        "postRenderer": false
+      }
+    },
+    "idle": {
+      "parent": "unformed"
+    },
+    "working": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/transmuted",
+        "frontTexture": "multiblocked:overlay/improved_manaweaver_frontv2",
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "parent": "idle"
+    },
+    "suspend": {
+      "parent": "working"
+    }
+  },
+  "recipeMap": "elemental_stabilizer",
+  "basePattern": {
+    "structureDir": [
+      "LEFT",
+      "UP",
+      "BACK"
+    ],
+    "pattern": [
+      [
+        "AAA   AAA",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         "
+      ],
+      [
+        "AAAA@AAAA",
+        " BB   BB ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         "
+      ],
+      [
+        "AAAAAAAAA",
+        " BAAAAAB ",
+        "  ACDCA  ",
+        "  ACCCA  ",
+        "  ACCCA  ",
+        "  AACAA  ",
+        "   AAA   "
+      ],
+      [
+        " AAAAAAA ",
+        "  AEEEA  ",
+        "  C   C  ",
+        "  C   C  ",
+        "  C   C  ",
+        "  A   A  ",
+        "  ACCCA  "
+      ],
+      [
+        " AAAAAAA ",
+        "  AEEEA  ",
+        "  D   D  ",
+        "  C   C  ",
+        "  C   C  ",
+        "  C   C  ",
+        "  ACCCA  "
+      ],
+      [
+        " AAAAAAA ",
+        "  AEEEA  ",
+        "  C   C  ",
+        "  C   C  ",
+        "  C   C  ",
+        "  A   A  ",
+        "  ACCCA  "
+      ],
+      [
+        "AAAAAAAAA",
+        " BAAAAAB ",
+        "  ACDCA  ",
+        "  ACCCA  ",
+        "  ACCCA  ",
+        "  AACAA  ",
+        "   AAA   "
+      ],
+      [
+        "AAAAAAAAA",
+        " BB   BB ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         "
+      ],
+      [
+        "AAA   AAA",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         "
+      ]
+    ],
+    "aisleRepetitions": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "predicates": {
+      "A": {
+        "blocks": [
+          {
+            "id": "kubejs:transmuted_casing"
+          }
+        ],
+        "type": "blocks"
+      },
+      "controller": {
+        "location": "mbm2:elemental_stabilizer",
+        "type": "component"
+      },
+      "B": {
+        "blocks": [
+          {
+            "id": "botania:chiseled_livingrock_bricks"
+          }
+        ],
+        "type": "blocks"
+      },
+      "C": {
+        "blocks": [
+          {
+            "id": "botania:bifrost_perm"
+          }
+        ],
+        "type": "blocks"
+      },
+      "D": {
+        "blocks": [
+          {
+            "id": "multiblocked:pedestal"
+          }
+        ],
+        "type": "blocks"
+      },
+      "E": {
+        "blocks": [
+          {
+            "id": "kubejs:reflector"
+          }
+        ],
+        "type": "blocks"
+      },
+      "F": {
+        "blocks": [
+          {
+            "id": "multiblocked:fluid_input"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 1,
+        "io": "IN"
+      },
+      "any": {
+        "type": "any"
+      },
+      "O": {
+        "blocks": [
+          {
+            "id": "multiblocked:fluid_output"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 1,
+        "io": "OUT"
+      }
+    },
+    "symbolMap": {
+      "@": [
+        "controller"
+      ],
+      " ": [
+        "any"
+      ],
+      "A": [
+        "A",
+        "F",
+        "O"
+      ],
+      "B": [
+        "B"
+      ],
+      "C": [
+        "C"
+      ],
+      "D": [
+        "D"
+      ],
+      "E": [
+        "E"
+      ]
+    }
+  }
+}

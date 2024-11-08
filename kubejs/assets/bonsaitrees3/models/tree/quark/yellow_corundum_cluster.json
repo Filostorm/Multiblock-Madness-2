@@ -1,0 +1,51 @@
+{
+    "type": "bonsaitrees3:sapling/quark/yellow_corundum_cluster",
+    "version": 3,
+    "ref": {
+      "a": {"block":"quark:yellow_corundum"},
+      "b": {"block":"quark:yellow_corundum_cluster","properties":{"facing":"up","waterlogged":"false"}},
+      "c": {"block":"quark:yellow_corundum_cluster","properties":{"facing":"east","waterlogged":"false"}},
+      "d": {"block":"quark:yellow_corundum_cluster","properties":{"facing":"west","waterlogged":"false"}},
+      "e": {"block":"quark:yellow_corundum_cluster","properties":{"facing":"south","waterlogged":"false"}},
+      "f": {"block":"quark:yellow_corundum_cluster","properties":{"facing":"north","waterlogged":"false"}}
+    },
+    "shape": [
+      [
+        "      ",
+        "      ",
+        "   b  ",
+        " aaaa "
+      ],
+      [
+        "      ",
+        "   cb ",
+        "b caa ",
+        "aaaaaa"
+      ],
+      [
+        "   b  ",
+        "  aae ",
+        " aaaaa",
+        "aaaaaa"
+      ],
+      [
+        "      ",
+        "   b  ",
+        " faaa ",
+        "aaaaaa"
+      ],
+      [
+        "      ",
+        "  b   ",
+        "  aad ",
+        " aaaa "
+      ],
+      [
+        "      ",
+        "      ",
+        "      ",
+        "  aa  "
+      ]
+    ]
+  }
+  

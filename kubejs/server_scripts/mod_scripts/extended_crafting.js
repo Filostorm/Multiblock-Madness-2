@@ -65,7 +65,7 @@ onEvent('recipes', event => {
 	event.remove({output: 'extendedcrafting:elite_component'})
 	event.shaped('extendedcrafting:elite_component', ['AAB','CDA','CCA'], {A: 'mekanism:enriched_diamond',B: 'extendedcrafting:luminessence',C: 'extendedcrafting:black_iron_slate',D: 'powah:dielectric_paste'}).id('mbm2:ex_crafting/elite_component')
 	event.remove({output: 'extendedcrafting:ultimate_component'})
-	event.shaped('extendedcrafting:ultimate_component', ['AAB','CDA','CCA'], {A: 'chemlib:beryllium_ingot',B: 'extendedcrafting:luminessence',C: 'extendedcrafting:black_iron_slate',D: 'powah:dielectric_paste'}).id('mbm2:ex_crafting/ultimate_component')
+	event.shaped('extendedcrafting:ultimate_component', ['AAB','CDA','CCA'], {A: '#forge:spools/beryllium',B: 'extendedcrafting:luminessence',C: 'extendedcrafting:black_iron_slate',D: 'powah:dielectric_paste'}).id('mbm2:ex_crafting/ultimate_component')
 
 
 	//table recipe reworks
@@ -73,12 +73,70 @@ onEvent('recipes', event => {
 	event.shaped('extendedcrafting:basic_table', ['ABA','CDC','AEA'], {A: 'extendedcrafting:basic_component',B: 'extendedcrafting:basic_catalyst',C: 'ars_nouveau:glyph_craft',D: 'kubejs:white_alloy_storage_block',E: 'extendedcrafting:pedestal'}).id('mbm2:ex_crafting/basic_table')
 	event.remove({output: 'extendedcrafting:advanced_table'})
 	event.shaped('extendedcrafting:advanced_table', ['ABA','CDC','AEA'], {A: 'extendedcrafting:advanced_component',B: 'extendedcrafting:advanced_catalyst',C: 'ars_nouveau:glyph_craft',D: 'kubejs:lunar_alloy_storage_block',E: 'extendedcrafting:basic_table'}).id('mbm2:ex_crafting/advanced_table')
-	
+	event.remove({output: 'extendedcrafting:elite_table'})
+	event.recipes.createMechanicalCrafting('extendedcrafting:elite_table', [
+		'ECE',
+		'RBR',
+		'ETE'
+	],{
+		E: 'extendedcrafting:elite_component',
+		C: 'extendedcrafting:elite_catalyst',
+		R: 'kubejs:assembly_rune',
+		B: '#forge:storage_blocks/cadmium',
+		T: 'extendedcrafting:advanced_table',
+	}).id('mbm2:ex_crafting/elite_table')
+	event.remove({output: 'extendedcrafting:ultimate_table'})
+	event.recipes.createMechanicalCrafting('extendedcrafting:ultimate_table', [
+		'AABAA',
+		'ACDCA',
+		'CDBDC',
+		'ACDCA',
+		'BAEAB'
+	],{
+		A: 'extendedcrafting:ultimate_component',
+		B: 'extendedcrafting:ultimate_catalyst',
+		C: 'kubejs:assembly_rune',
+		D: '#forge:storage_blocks/beryllium',
+		E: 'extendedcrafting:elite_table',
+	}).id('mbm2:ex_crafting/ultimate_table')
+
 	//Packagedex crafting
 	event.remove({output: 'packagedexcrafting:basic_crafter'})
 	event.shaped('packagedexcrafting:basic_crafter', ['ABA','CDC','AEA'], {A: 'kubejs:black_iron_plate',B: 'packagedauto:me_package_component',C: 'ae2:molecular_assembler',D: 'extendedcrafting:redstone_catalyst',E: 'extendedcrafting:basic_table'}).id('mbm2:ex_crafting/basic_packager')
 	event.remove({output: 'packagedexcrafting:advanced_crafter'})
 	event.shaped('packagedexcrafting:advanced_crafter', ['ABA','CDC','AEA'], {A: 'extendedcrafting:advanced_component',B: 'extendedcrafting:advanced_catalyst',C: 'ae2:molecular_assembler',D: 'kubejs:lunar_alloy_storage_block',E: 'packagedexcrafting:basic_crafter'}).id('mbm2:ex_crafting/advanced_packager')
+	event.remove({output: 'extendedcrafting:elite_crafter'})
+	event.recipes.createMechanicalCrafting('packagedexcrafting:elite_crafter', [
+		'  M  ',
+		' ECE ',
+		'MRBRM',
+		' ETE ',
+		'  M  '
+	],{
+		E: 'extendedcrafting:elite_component',
+		C: 'extendedcrafting:elite_catalyst',
+		R: 'kubejs:assembly_rune',
+		B: '#forge:storage_blocks/cadmium',
+		T: 'packagedexcrafting:advanced_crafter',
+		M: 'ae2:molecular_assembler'
+	}).id('mbm2:ex_crafting/elite_packager')
+	event.remove({output: 'packagedexcrafting:ultimate_crafter'})
+	event.recipes.createMechanicalCrafting('packagedexcrafting:ultimate_crafter', [
+		'  FFF  ',
+		' AABAA ',
+		'FACDCAF',
+		'FCDBDCF',
+		'FACDCAF',
+		' BAEAB ',
+		'  FFF  '
+	],{
+		A: 'extendedcrafting:ultimate_component',
+		B: 'extendedcrafting:ultimate_catalyst',
+		C: 'kubejs:assembly_rune',
+		D: '#forge:storage_blocks/beryllium',
+		E: 'packagedexcrafting:elite_crafter',
+		F: 'ae2:molecular_assembler'
+	}).id('mbm2:ex_crafting/ultimate_packager')
 
 	//Removed for use later //Bruh don't hide stuff without adding new recipes
 	//let useLater =[

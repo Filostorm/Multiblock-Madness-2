@@ -458,6 +458,23 @@ event.shapeless('9x #forge:gems/sapphire', ['#forge:storage_blocks/sapphire']).i
 		],
 		"energy": 20000
 	  }).id('mbm2:centrifuge/dragon_breath')
-	
+
+//Frozen Core alt recipe
+event.shaped('2x reliquary:frozen_core', ['ABA','BCB','ABA'], {A: 'minecraft:packed_ice',B: 'minecraft:snow_block',C: 'ars_nouveau:ritual_awakening'}).id( 'mbm2:crafting/frozen_core_alt')
+
+//Sapphire can be made now
+event.custom({
+	"type": "thermal:crystallizer",
+	"ingredients": [
+	  {"fluid": 'minecraft:water',
+		"amount": 3500},
+	  {"tag": 'forge:ores/fine_dust/vincyte',
+		"count": 1},
+	  {"item": 'kubejs:crystal_slag',
+		"count": 1}],
+	"result": [
+	  {"tag": 'forge:gems/sapphire',
+		"count": 1}]
+}).id(`mbm2:crystallizer/sapphire_from_vincyte`)	
 		
 });

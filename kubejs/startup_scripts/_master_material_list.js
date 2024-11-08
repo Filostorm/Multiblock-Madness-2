@@ -302,8 +302,8 @@ global.newMaterialParts = [
       'color': 0x97b7bf,
       'type': 'base_metal',
       'tier': 5,
-      'itemParts': ['ingot', 'plate',  'gear', 'rod', 'dust'],
-      'blockParts': [],
+      'itemParts': ['ingot', 'plate',  'gear', 'rod', 'dust', 'wire', 'model_spool'],
+      'blockParts': ['storage_block'],
       'fluid': 'thick',
       'ore': true,
       'raw_ore': true,
@@ -444,7 +444,14 @@ global.newMaterialParts = [
       'blockParts': [],
       'ore': true,
     },
-    
+    {
+      'material': 'beryllium',
+      'color': 0x3C894B,
+      'type': 'base_metal',
+      'tier': 5,
+      'itemParts': ['wire', 'model_spool'],
+      'blockParts': [],
+    },
     {
       'material': 'molybdenum',
       'color': 0x78c4b6,

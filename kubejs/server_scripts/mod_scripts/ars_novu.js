@@ -75,7 +75,7 @@ onEvent('recipes', event => {
 	event.shaped('4x ars_nouveau:blank_glyph', [' A ','ABA',' A '], {A: 'ars_nouveau:conjuration_essence',B: 'ars_nouveau:blank_parchment'}).id('mbm2:blank_glyph')
 
 	//Automatable Dispel Glyph
-	global.arsEnchantment(event, Item.of('ars_nouveau:glyph_dispel'), Item.of('ars_nouveau:blank_glyph'), [Item.of('ars_nouveau:abjuration_essence'), Item.of('minecraft:milk_bucket'), Item.of('minecraft:milk_bucket'), Item.of('minecraft:milk_bucket')], 50, 'mbm2:dispel_glyph', true)
+	global.arsEnchantment(event, Item.of('ars_nouveau:glyph_dispel'), Item.of('ars_nouveau:blank_glyph'), [Item.of('ars_nouveau:abjuration_essence'), Item.of('minecraft:milk_bucket'), Item.of('minecraft:milk_bucket'), Item.of('minecraft:milk_bucket')], 50, 'mbm2:ars_novu/enchantment/dispel_glyph', true)
 
 	//Automatable Wixie Shards
 	event.custom({
@@ -107,4 +107,17 @@ onEvent('recipes', event => {
 	
 	//liquid_source
 	event.recipes.createEmptying([Fluid.of('kubejs:liquid_source', 1000), 'bucket'], ['ars_nouveau:bucket_of_source']).id('mbm2:emptying/liquid_source')
+
+	//Automatable Glyph of Harvest
+	global.arsEnchantment(event, Item.of('ars_nouveau:glyph_harvest'), Item.of('ars_nouveau:blank_glyph'), [Item.of('ars_nouveau:earth_essence'), Item.of('minecraft:iron_hoe')], 50, 'mbm2:ars_novu/enchantment/glyph_harvest', false)
+
+	//Automatable Glyph of Grow
+	global.arsEnchantment(event, Item.of('ars_nouveau:glyph_grow'), Item.of('ars_nouveau:blank_glyph'), [Item.of('ars_nouveau:earth_essence'), Item.of('minecraft:bone_block'), Item.of('minecraft:bone_block'), Item.of('minecraft:bone_block'), Item.of('minecraft:bone_block'), Item.of('minecraft:bone_block'), Item.of('#forge:seeds'), Item.of('#forge:seeds'), Item.of('#forge:seeds')], 100, 'mbm2:ars_novu/enchantment/glyph_grow')
+
+	//Automatable Glyph of Evaporate
+	global.arsEnchantment(event, Item.of('ars_nouveau:glyph_evaporate'), Item.of('ars_nouveau:blank_glyph'), [Item.of('ars_nouveau:manipulation_essence'), Item.of('minecraft:sponge'), Item.of('minecraft:sponge'), Item.of('minecraft:sponge')], 50, 'mbm2:ars_novu/enchantment/glyph_evaporate')
+
+	//Automatable Glyph of Freeze
+	global.arsEnchantment(event, Item.of('ars_nouveau:glyph_freeze'), Item.of('ars_nouveau:blank_glyph'), [Item.of('ars_nouveau:water_essence'), Item.of('minecraft:snow_block'), Item.of('minecraft:snow_block')], 50, 'mbm2:ars_novu/enchantment/glyph_freeze')
+
 });

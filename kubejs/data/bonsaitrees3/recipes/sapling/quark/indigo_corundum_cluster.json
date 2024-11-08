@@ -1,0 +1,24 @@
+{
+    "type": "bonsaitrees3:sapling",
+    "conditions": [{
+      "type": "forge:mod_loaded",
+      "modid": "quark" },
+      {
+        "type": "forge:mod_loaded",
+        "modid": "ae2" }                     
+     ],
+    "sapling": { "item": "quark:indigo_corundum_cluster" },
+    "drops": [
+      {
+        "rolls": 3, "chance": 0.95,
+        "result": { "item": "quark:indigo_corundum_cluster" }
+      },
+      {
+        "rolls": 2, "chance": 0.5,
+        "result": { "item": "quark:indigo_corundum" },
+        "requiresSilkTouch": true
+      }
+    ],
+    "compatibleSoilTags": ["crystal"],
+    "ticks":1200
+  }

@@ -1,0 +1,17 @@
+{
+    "type": "bonsaitrees3:soil",
+    "conditions": [{
+      "type": "forge:mod_loaded",
+      "modid": "ae2" }
+     ],
+    "tickModifier": 1.0,
+    "soil": {
+      "item": "ae2:quartz_growth_accelerator"
+    },
+    "compatibleSoilTags": [
+      "crystal"
+    ],
+    "display": {
+      "block": "ae2:quartz_growth_accelerator"
+    }
+  }

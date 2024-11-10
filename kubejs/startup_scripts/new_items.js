@@ -191,4 +191,6 @@ onEvent('item.registry', event => {
 
 	event.create('bottled_magic').glow(true)
 	event.create('gavel_polish').unstackable().maxDamage(4)
+
+	event.create('assembly_rune').displayName('Rune of Assembly')
   });

@@ -351,6 +351,7 @@ event.recipes.multiblocked.multiblock('mixer')
     }
   }).id(`mbm2:extendedcrafting/elemental_star`)
  
-
+//////////////////Rune Of Assembly////////////////////
+event.recipes.botania.runic_altar('kubejs:assembly_rune', ['botania:crafty_crate', 'ars_nouveau:glyph_craft', 'quark:rainbow_rune', 'elementalcraft:major_rune_slate', 'naturesaura:auto_crafter'], 250000).id(`mbm2:assembly_rune`)
 
 });

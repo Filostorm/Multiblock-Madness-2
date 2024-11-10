@@ -26,7 +26,21 @@ onEvent('recipes', event => {
     event.remove({id: 'laserio:overclocker_card'})
     event.shaped('laserio:overclocker_card', [' A ','BCB','AAA'], {A: 'elementalcraft:swift_alloy_ingot',B: 'kubejs:red_alloy_wire',C: 'laserio:logic_chip'}).id("mbm2:laserio_card_overclocker")
 
-    //laserio Node Overclocker
+    //Laserio Node Overclocker
     event.remove({id: 'laserio:overclocker_node'})
-    event.shaped('laserio:overclocker_node', [' A ','BCB','AAA'], {A: '#forge:ingots/cadmium',B: 'kubejs:red_alloy_wire',C: 'laserio:logic_chip'})
+    event.shaped('laserio:overclocker_node', [' A ','BCB','AAA'], {A: '#forge:ingots/cadmium',B: 'kubejs:red_alloy_wire',C: 'laserio:logic_chip'}).id("mbm2:laserio_node_overclocker")
+
+    //Laserio Filter
+    event.remove({output: Item.of('laserio:filter_basic', 4, '{allowList:1b,compareNBT:0b,inv:{Items:[],Size:15}}')})
+    event.shaped(Item.of('laserio:filter_basic', 4, '{allowList:1b,compareNBT:0b,inv:{Items:[],Size:15}}'), ['ABA','BCB','ABA'], {A: 'thermal:item_filter_augment',B: 'thermal:white_rockwool',C: 'laserio:logic_chip'}).id("mbm2:laserio_filter_basic")
+    
+    //Laserio Cards
+    event.remove({output: 'laserio:card_fluid'})
+    event.shaped('laserio:card_fluid', ['ABA','ACA','DED'], {A: 'pipez:fluid_pipe',B: 'pipez:improved_upgrade',C: 'laserio:logic_chip',D: 'thermal:servo_attachment',E: 'kubejs:tier_1_electrical_alloy_wire_coil'}).id("mbm2:laserio_card_fluid")
+    event.remove({output: 'laserio:card_energy'})
+    event.shaped('laserio:card_energy', [' A ','ABA','CDC'], {A: 'powah:energy_cable_blazing',B: 'laserio:logic_chip',C: 'thermal:energy_limiter_attachment',D: 'kubejs:tier_1_electrical_alloy_wire_coil'}).id("mbm2:laserio_card_energy")
+    event.remove({output: 'laserio:card_item'})
+    event.shaped('laserio:card_item', ['ABA','ACA','DED'], {A: 'pipez:item_pipe',B: 'pipez:improved_upgrade',C: 'laserio:logic_chip',D: 'thermal:servo_attachment',E: 'kubejs:tier_1_electrical_alloy_wire_coil'}).id("mbm2:laserio_card_item")
+    event.remove({output: 'laserio:card_redstone'})
+    event.shaped('laserio:card_redstone', [' A ','ABA','CDC'], {A: 'kubejs:red_alloy_spool',B: 'laserio:logic_chip',C: 'thermal:rs_control_augment',D: 'kubejs:tier_1_electrical_alloy_wire_coil'}).id("mbm2:laserio_card_redstone")
 });

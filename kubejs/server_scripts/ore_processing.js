@@ -1042,6 +1042,8 @@ onEvent("lootjs", (event) => {
 					pool.addLoot('forbidden_arcanus:rune');
 					pool.applyOreBonus("minecraft:fortune");
 			});
+		event.addBlockLootModifier('#forge:ores/tin')
+			.removeLoot(Item.of('mekanism:raw_tin'));
 		global.newMaterialParts.forEach((item) => {
 			if (item.ore /*&& item.material != 'arcanite'*/) {
 				console.log('adding ore drops for: ' + item.material)

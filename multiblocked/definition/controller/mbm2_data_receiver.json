@@ -1,0 +1,489 @@
+{
+  "version": 3,
+  "location": "mbm2:data_receiver",
+  "traits": {},
+  "properties": {
+    "rotationState": "ALL",
+    "showInJei": true,
+    "isOpaque": true,
+    "hasDynamicShape": false,
+    "hasCollision": true,
+    "destroyTime": 1.5,
+    "explosionResistance": 6.0,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "friction": 0.6,
+    "harvestLevel": 0,
+    "stackSize": 64,
+    "tabGroup": "multiblocked.all"
+  },
+  "status": {
+    "unformed": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier3_casing",
+        "frontTexture": "multiblocked:overlay/blast_furnace",
+        "type": "gregtech",
+        "postRenderer": false
+      }
+    },
+    "idle": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier3_casing",
+        "frontTexture": "multiblocked:overlay/bf_paused",
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "parent": "unformed"
+    },
+    "working": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier3_casing",
+        "frontTexture": "multiblocked:overlay/bf_active",
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "parent": "idle"
+    },
+    "suspend": {
+      "parent": "working"
+    }
+  },
+  "recipeMap": "data_receiver",
+  "basePattern": {
+    "structureDir": [
+      "LEFT",
+      "UP",
+      "BACK"
+    ],
+    "pattern": [
+      [
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "      AAA      ",
+        "     AAAAA     ",
+        "               ",
+        "               "
+      ],
+      [
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "      AAA      ",
+        "    AAAAAAA    ",
+        "    AAA AAA    ",
+        "   AAA   AAA   ",
+        "               ",
+        "               "
+      ],
+      [
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "     AAAAA     ",
+        "    AAAAAAA    ",
+        "   AA     AA   ",
+        "  AA       AA  ",
+        "  AA       AA  ",
+        "               ",
+        "               "
+      ],
+      [
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "      AAA      ",
+        "    AAAAAAA    ",
+        "   AA  B  AA   ",
+        "  AA       AA  ",
+        "  A         A  ",
+        " AA         AA ",
+        "               ",
+        "               "
+      ],
+      [
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "       C       ",
+        "       C       ",
+        "    AAAAAAA    ",
+        "   AA     AA   ",
+        "  AA   B   AA  ",
+        " AA    B    AA ",
+        " A           A ",
+        " A           A ",
+        "               ",
+        "               "
+      ],
+      [
+        "      C@C      ",
+        "               ",
+        "               ",
+        "       C       ",
+        "       C       ",
+        "      AAA      ",
+        "    AAA AAA    ",
+        "  AA       AA  ",
+        "  A         A  ",
+        " A     B     A ",
+        " A     B     A ",
+        "AA           AA",
+        "               ",
+        "               "
+      ],
+      [
+        "     CCCCC     ",
+        "      CCC      ",
+        "      CCC      ",
+        "      CCC      ",
+        "      CCC      ",
+        "     AAAAA     ",
+        "   AAA   AAA   ",
+        "  AA       AA  ",
+        " AA         AA ",
+        " A           A ",
+        "AA     B     AA",
+        "A      B      A",
+        "               ",
+        "               "
+      ],
+      [
+        "     CCCCC     ",
+        "      C C      ",
+        "      C C      ",
+        "     CC CC     ",
+        "    CCC CCC    ",
+        "    CAAAAAC    ",
+        "   AA     AA   ",
+        "  AA       AA  ",
+        " AABB     BBAA ",
+        " A  BB   BB  A ",
+        "A    BB BB    A",
+        "A     BDB     A",
+        "       D       ",
+        "       E       "
+      ],
+      [
+        "     CCCCC     ",
+        "      CCC      ",
+        "      CCC      ",
+        "      CCC      ",
+        "      CCC      ",
+        "     AAAAA     ",
+        "   AAA   AAA   ",
+        "  AA       AA  ",
+        " AA         AA ",
+        " A           A ",
+        "AA     B     AA",
+        "A      B      A",
+        "               ",
+        "               "
+      ],
+      [
+        "      CCC      ",
+        "               ",
+        "               ",
+        "       C       ",
+        "       C       ",
+        "      AAA      ",
+        "    AAA AAA    ",
+        "  AA       AA  ",
+        "  A         A  ",
+        " A     B     A ",
+        " A     B     A ",
+        "AA           AA",
+        "               ",
+        "               "
+      ],
+      [
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "       C       ",
+        "       C       ",
+        "    AAAAAAA    ",
+        "   AA     AA   ",
+        "  AA   B   AA  ",
+        " AA    B    AA ",
+        " A           A ",
+        " A           A ",
+        "               ",
+        "               "
+      ],
+      [
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "      AAA      ",
+        "    AAAAAAA    ",
+        "   AA  B  AA   ",
+        "  AA       AA  ",
+        "  A         A  ",
+        " AA         AA ",
+        "               ",
+        "               "
+      ],
+      [
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "     AAAAA     ",
+        "    AAAAAAA    ",
+        "   AA     AA   ",
+        "  AA       AA  ",
+        "  AA       AA  ",
+        "               ",
+        "               "
+      ],
+      [
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "      AAA      ",
+        "    AAAAAAA    ",
+        "    AAA AAA    ",
+        "   AAA   AAA   ",
+        "               ",
+        "               "
+      ],
+      [
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "               ",
+        "      AAA      ",
+        "     AAAAA     ",
+        "               ",
+        "               "
+      ]
+    ],
+    "aisleRepetitions": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "predicates": {
+      "A": {
+        "blocks": [
+          {
+            "id": "minecraft:white_concrete"
+          }
+        ],
+        "type": "blocks"
+      },
+      "controller": {
+        "location": "mbm2:data_receiver",
+        "type": "component"
+      },
+      "B": {
+        "blocks": [
+          {
+            "id": "kubejs:tier_2_structural_alloy_scaffolding"
+          }
+        ],
+        "type": "blocks"
+      },
+      "C": {
+        "blocks": [
+          {
+            "id": "kubejs:tier3_casing"
+          }
+        ],
+        "type": "blocks"
+      },
+      "D": {
+        "blocks": [
+          {
+            "id": "kubejs:tier_1_mechanical_alloy_cog_block"
+          }
+        ],
+        "type": "blocks"
+      },
+      "R": {
+        "blocks": [
+          {
+            "id": "multiblocked:receiver_block"
+          }
+        ],
+        "type": "blocks"
+      },
+      "E": {
+        "blocks": [
+          {
+            "id": "multiblocked:energy_input_mk2"
+          },
+          {
+            "id": "multiblocked:energy_input_mk1"
+          },
+          {
+            "id": "multiblocked:energy_input_mk3"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 1,
+        "previewCount": 1,
+        "io": "IN"
+      },
+      "F": {
+        "blocks": [
+          {
+            "id": "multiblocked:fluid_output"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 1,
+        "previewCount": 1,
+        "io": "OUT"
+      },
+      "O": {
+        "blocks": [
+          {
+            "id": "multiblocked:big_item_output"
+          },
+          {
+            "id": "multiblocked:item_output"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 1,
+        "previewCount": 1,
+        "io": "OUT"
+      },
+      "air": {
+        "type": "air"
+      },
+      "any": {
+        "type": "any"
+      }
+    },
+    "symbolMap": {
+      "@": [
+        "controller"
+      ],
+      " ": [
+        "any"
+      ],
+      "A": [
+        "A"
+      ],
+      "B": [
+        "B"
+      ],
+      "C": [
+        "C",
+        "E",
+        "F",
+        "O"
+      ],
+      "D": [
+        "D"
+      ],
+      "E": [
+        "R"
+      ],
+      "-": [
+        "air"
+      ]
+    }
+  }
+}

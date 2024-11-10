@@ -74,19 +74,19 @@ event.shaped('mekanism:superheating_element', [
   
 //
   event.remove({output:`mekanism:metallurgic_infuser`})
-  event.shaped('mekanism:metallurgic_infuser', ['ABA','ACA','DDD'], {A: 'kubejs:osmium_plate',B: 'pneumaticcraft:printed_circuit_board',C: 'mekanism:steel_casing',D: 'create:sturdy_sheet'})
+  event.shaped('mekanism:metallurgic_infuser', ['ABA','ACA','DDD'], {A: 'kubejs:osmium_plate',B: 'pneumaticcraft:printed_circuit_board',C: 'mekanism:steel_casing',D: 'create:sturdy_sheet'}).id(`mbm2:metallurgic_infuser`)
 
   event.remove({output:`mekanism:electrolytic_separator`})
-  event.shaped('mekanism:electrolytic_separator', ['ABA','ACA','DED'], {A: 'mekanism:alloy_infused',B: 'pneumaticcraft:printed_circuit_board',C: 'mekanism:steel_casing',D: 'kubejs:tier_1_electrical_alloy_wire_coil',E: 'mekanism:electrolytic_core'})
+  event.shaped('mekanism:electrolytic_separator', ['ABA','ACA','DED'], {A: 'mekanism:alloy_infused',B: 'pneumaticcraft:printed_circuit_board',C: 'mekanism:steel_casing',D: 'kubejs:tier_1_electrical_alloy_wire_coil',E: 'mekanism:electrolytic_core'}).id(`mbm2:electrolytic_separator`)
 
   event.remove({output:`mekanism:dynamic_tank`})
-  event.shaped('4x mekanism:dynamic_tank', [' A ','ABA',' A '], {A: 'beyond_earth:compressed_steel',B: 'mekanism:basic_fluid_tank'})
+  event.shaped('4x mekanism:dynamic_tank', [' A ','ABA',' A '], {A: 'beyond_earth:compressed_steel',B: 'mekanism:basic_fluid_tank'}).id(`mbm2:dynamic_tank`)
 
   event.remove({output:`mekanism:thermal_evaporation_block`})
-  event.shaped('4x mekanism:thermal_evaporation_block', ['ABA','BCB','ABA'], {A: 'kubejs:osmium_plate',B: 'create:copper_sheet',C: 'kubejs:tier_1_structural_alloy_frame_box'})
+  event.shaped('4x mekanism:thermal_evaporation_block', ['ABA','BCB','ABA'], {A: 'kubejs:osmium_plate',B: 'create:copper_sheet',C: 'kubejs:tier_2_structural_alloy_frame_box'}).id(`mbm2:thermal_evaporation_block`)
 
   event.remove({output:`mekanism:basic_fluid_tank`})
-  event.shaped('mekanism:basic_fluid_tank', ['ABA','ACA','ABA'], {A: 'kubejs:osmium_rod',B: 'pneumaticcraft:plastic',C: 'thermal:fluid_cell'})
+  event.shaped('mekanism:basic_fluid_tank', ['ABA','ACA','ABA'], {A: 'kubejs:osmium_rod',B: 'pneumaticcraft:plastic',C: 'thermal:fluid_cell'}).id(`mbm2:basic_fluid_tank`)
 
   /////////crafting to upgrade the machines///////////
 let tiers = [

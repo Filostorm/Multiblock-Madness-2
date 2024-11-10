@@ -736,10 +736,12 @@ var blastFurnaceSmelting = (event, material, inputItem, tier) => {
 				////////////// TIER 6 /////////////////////
 				if (item.tier == 6) {
 					blastFurnaceSmelting(event, item.material, smeltProcessedOre, 6)
+					blastFurnaceSmelting(event, item.material, smeltRefinedOre, 6)
 				}
 				////////////// TIER 7 /////////////////////
 				if (item.tier == 7) {
 					blastFurnaceSmelting(event, item.material, smeltProcessedOre, 7)
+					blastFurnaceSmelting(event, item.material, smeltRefinedOre, 7)
 				}
 
 		}

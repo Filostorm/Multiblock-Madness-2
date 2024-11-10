@@ -39,7 +39,7 @@ onEvent('fluid.registry', event => {
     event.create(`liquid_dragon_breath`).thinTexture(0xc560f0).bucketColor(0xc560f0)
 
     event.create(`raw_data`).stillTexture('kubejs:block/fluid/raw_data').flowingTexture('kubejs:block/fluid/raw_data').bucketColor(0x091209)
-    event.create(`processed_data`).stillTexture('kubejs:block/fluid/processed_data').flowingTexture('kubejs:block/fluid/processed_data').bucketColor(0x080b12)
+    event.create(`refined_data`).stillTexture('kubejs:block/fluid/refined_data').flowingTexture('kubejs:block/fluid/refined_data').bucketColor(0x080b12)
 
     event.create(`enriched_lava`).thickTexture(0xe04216).bucketColor(0xe04216)
 

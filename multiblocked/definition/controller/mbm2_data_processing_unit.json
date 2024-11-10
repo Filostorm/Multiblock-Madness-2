@@ -1,0 +1,194 @@
+{
+  "version": 3,
+  "location": "mbm2:data_processing_unit",
+  "traits": {},
+  "properties": {
+    "rotationState": "ALL",
+    "showInJei": true,
+    "isOpaque": true,
+    "hasDynamicShape": false,
+    "hasCollision": true,
+    "destroyTime": 1.5,
+    "explosionResistance": 6.0,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "friction": 0.6,
+    "harvestLevel": 0,
+    "stackSize": 64,
+    "tabGroup": "multiblocked.all"
+  },
+  "status": {
+    "unformed": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/uhv_casing",
+        "frontTexture": "multiblocked:overlay/blast_furnace",
+        "type": "gregtech",
+        "postRenderer": false
+      }
+    },
+    "idle": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/uhv_casing",
+        "frontTexture": "multiblocked:overlay/bf_paused",
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "parent": "unformed"
+    },
+    "working": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/uhv_casing",
+        "frontTexture": "multiblocked:overlay/bf_active",
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "parent": "idle"
+    },
+    "suspend": {
+      "parent": "working"
+    }
+  },
+  "recipeMap": "data_processing_unit",
+  "basePattern": {
+    "structureDir": [
+      "BACK",
+      "UP",
+      "RIGHT"
+    ],
+    "pattern": [
+      [
+        "AAA",
+        "A A",
+        "AAA"
+      ],
+      [
+        "@ A",
+        "   ",
+        "A A"
+      ],
+      [
+        "AAA",
+        "A A",
+        "AAA"
+      ]
+    ],
+    "aisleRepetitions": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "predicates": {
+      "A": {
+        "blocks": [
+          {
+            "id": "kubejs:data_casing"
+          }
+        ],
+        "type": "blocks"
+      },"E": {
+    "blocks": [
+      {
+        "id": "multiblocked:energy_input_mk1"
+      },
+      {
+        "id": "multiblocked:energy_input_mk2"
+      },
+      {
+        "id": "multiblocked:energy_input_mk3"
+      }
+    ],
+    "type": "blocks",
+    "minCount": 1,
+    "maxCount": 2,
+    "previewCount": 1,
+    "io": "IN"
+  },
+  "F": {
+    "blocks": [
+      {
+        "id": "multiblocked:item_input"
+      },
+      {
+        "id": "multiblocked:big_item_input"
+      }
+    ],
+    "type": "blocks",
+    "minCount": 0,
+    "maxCount": 1,
+    "previewCount": 1,
+    "io": "IN"
+  },
+  "G": {
+    "blocks": [
+      {
+        "id": "multiblocked:big_item_output"
+      },
+      {
+        "id": "multiblocked:item_output"
+      }
+    ],
+    "type": "blocks",
+    "minCount": 1,
+    "maxCount": 1,
+    "previewCount": 1,
+    "io": "OUT"
+  },
+  "H": {
+    "blocks": [
+      {
+        "id": "multiblocked:fluid_input"
+      },
+      {
+        "id": "multiblocked:combo_input"
+      },
+      {
+        "id": "multiblocked:big_combo_input"
+      }
+    ],
+    "type": "blocks",
+    "minCount": 1,
+    "maxCount": 2,
+    "previewCount": 1,
+    "io": "IN"
+  },
+      "controller": {
+        "location": "mbm2:data_processing_unit",
+        "type": "component"
+      },
+      "air": {
+        "type": "air"
+      },
+      "any": {
+        "type": "any"
+      }
+    },
+    "symbolMap": {
+      "@": [
+        "controller"
+      ],
+      " ": [
+        "any"
+      ],
+      "A": [
+        "A",
+        "E",
+        "F",
+        "G",
+        "H"
+
+      ],
+      "-": [
+        "air"
+      ]
+    }
+  }
+}

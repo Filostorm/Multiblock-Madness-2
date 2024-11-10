@@ -110,6 +110,25 @@
     "mbm2.elemental_stabilizer.description": "Stabilize Elemental fluid using gems",
     "multiblocked.recipe_map.elemental_stabilizer": "Elemental Stabilization",
 
+
+    "block.mbm2.super_computational_matrix": "Super Computational Matrix",
+    "mbm2.super_computational_matrix.description": "Extreme Processing Power",
+    "multiblocked.recipe_map.super_computational_matrix": "Refining Data",
+
+    "block.mbm2.data_processing_unit": "Data Processing Unit",
+    "mbm2.data_processing_unit.description": "Transforming Data into usable locations",
+    "multiblocked.recipe_map.data_processing_unit": "Data Processing Unit",
+    
+    "block.mbm2.drone_bay": "Drone Bay",
+    "mbm2.drone_bay.description": "Harvest resources from asteroids",
+    "multiblocked.recipe_map.drone_bay": "Drone Bay",
+    
+    "block.mbm2.data_receiver": "Data Receiver",
+    "mbm2.data_receiver.description": "Capture data beamed down from deep space",
+    "multiblocked.recipe_map.data_receiver": "Data Receiving",
+
+
+
     "block.multiblocked.create_item_input": "Input Vault Part",
     "block.multiblocked.create_item_output": "Output Vault Part",
 

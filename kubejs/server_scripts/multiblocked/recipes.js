@@ -1,4 +1,56 @@
 onEvent('recipes', event => {
+
+
+
+	//Solar Casing
+	event.shaped('kubejs:ev_casing', ['ABA','CDC','ECE'], {A: 'pneumaticcraft:solar_cell',B: 'engineersdecor:small_solar_panel',C: 'kubejs:tier_3_structural_alloy_reinforced_plating',D: 'kubejs:tier2_casing',E: 'rftoolspower:blazing_rod'}).id(`mbm2:solar_casing`)
+
+	//Transmuted Casing
+	event.shaped('kubejs:transmuted_casing', ['ABA','CDC','ABA'], {A: 'kubejs:tier_3_magical_alloy_sprocket',B: 'botania:shimmerrock',C: 'kubejs:nature_gem',D: 'kubejs:tier2_casing'}).id(`mbm2:transmuted_casing`)
+
+// pedestal
+	event.shaped('multiblocked:pedestal', ['AAA',' B ','AAA'], {A: 'botania:shimmerrock',B: 'ars_nouveau:arcane_pedestal'}).id(`mbm2:multiblocked/pedestal`)
+
+
+// tier1_casing
+event.shaped('kubejs:tier1_casing', [
+	'RPR',
+	'PCP',
+	'RPR'
+  ], {
+	C: 'kubejs:invar_casing',
+	P: '#forge:plates/steel',
+	R: '#forge:rods/cobalt_brass',
+  }).id(`mbm2:tier1_casing`)
+
+// tier2_casing
+event.shaped('2x kubejs:tier2_casing', [
+	'PTP',
+	'NCN',
+	'PTP'
+  ], {
+	C: 'kubejs:tier1_casing',
+	T: 'mekanism:alloy_reinforced',
+	P: '#forge:platings/platinum',
+	N: 'pneumaticcraft:pneumatic_cylinder',
+  }).id(`mbm2:tier2_casing`)
+
+	//Tier 3 Casing: suck it
+	event.recipes.createMechanicalCrafting('kubejs:tier3_casing', [
+		'HRRRH',
+		'ROSOR',
+		'RPCPR',
+		'ROSOR',
+		'HRRRH'
+	  ], {
+		H: '#forge:hull_panels/exoskeleton_composit',
+		R: '#forge:rods/stainless_steel',
+		S: '#forge:scaffoldings/tier_3_structural_alloy',
+		P: '#forge:platings/tungsten',
+		C: 'kubejs:tier2_casing',
+		O: '#forge:ingots/refined_obsidian'
+	  }).id('mbm2:tier3_casing')
+
 	// Sludge Sifter
   event.shaped('mbm2:sludge_sifter', [
 	'ABA',
@@ -193,17 +245,6 @@ event.shaped('multiblocked:energy_output_mk3', [
   }).id(`mbm2:multiblocked/energy_output_mk3`)
   event.shapeless(`multiblocked:energy_output_mk3`, ['multiblocked:energy_input_mk3']).id(`mbm2:multiblocked/energy_output_mk3_switch`)
 
-// tier1_casing
-event.shaped('kubejs:tier1_casing', [
-	'RPR',
-	'PCP',
-	'RPR'
-  ], {
-	C: 'kubejs:invar_casing',
-	P: '#forge:plates/steel',
-	R: '#forge:rods/cobalt_brass',
-  }).id(`mbm2:tier1_casing`)
-
   
 // Factory Fan
 event.shaped('kubejs:factory_fan', [
@@ -298,18 +339,6 @@ event.shaped('mbm2:sorter_mk2', [
 	G: '#forge:gears/osmium',
   }).id(`mbm2:sorter_mk2`)
 
-// tier2_casing
-event.shaped('2x kubejs:tier2_casing', [
-	'PTP',
-	'NCN',
-	'PTP'
-  ], {
-	C: 'kubejs:tier1_casing',
-	T: 'mekanism:alloy_reinforced',
-	P: '#forge:platings/platinum',
-	N: 'pneumaticcraft:pneumatic_cylinder',
-  }).id(`mbm2:tier2_casing`)
-
 
 // leaching_vat
 event.shaped('mbm2:leaching_vat', [
@@ -358,22 +387,6 @@ event.shaped('mbm2:mechanical_crafter', ['ABA','CDC','AEA'], {A: 'kubejs:tier_2_
 
 // energy_converter
 event.shaped('mbm2:energy_converter', ['ABA','CDC','AEA'], {A: 'kubejs:tier_1_electrical_alloy_wire_coil',B: 'pneumaticcraft:printed_circuit_board',C: 'immersiveengineering:coil_hv',D: 'thermal:charge_bench',E: 'kubejs:tier2_casing'}).id("mbm2:energy_converter")
-
-	//Tier 3 Casing: suck it
-	event.recipes.createMechanicalCrafting('kubejs:tier3_casing', [
-		'HRRRH',
-		'ROSOR',
-		'RPCPR',
-		'ROSOR',
-		'HRRRH'
-	  ], {
-		H: '#forge:hull_panels/exoskeleton_composit',
-		R: '#forge:rods/stainless_steel',
-		S: '#forge:scaffoldings/tier_3_structural_alloy',
-		P: '#forge:platings/tungsten',
-		C: 'kubejs:tier2_casing',
-		O: '#forge:ingots/refined_obsidian'
-	  }).id('mbm2:tier3_casing')
 
 	// combo_input
 	event.shaped('multiblocked:combo_input', ['ABC','DEA','ABC'], {A: 'kubejs:tier_1_mechanical_alloy_gear',B: 'lazierae2:logic_unit',C: 'multiblocked:fluid_input',D: 'multiblocked:item_input',E: 'kubejs:tier2_casing'}).id("mbm2:combo_input")
@@ -484,7 +497,182 @@ event.shaped('mbm2:energy_converter', ['ABA','CDC','AEA'], {A: 'kubejs:tier_1_el
 		"result": {
 		  "item": 'mbm2:railgun'
 		}
-	  })
+	  }).id("mbm2:raingun")
 
+	  //Drone Bay
+	  event.custom({
+		"type": "extendedcrafting:shaped_table",
+		"pattern": [
+		  "ABCBA",
+		  "BDEDB",
+		  "DFGFD",
+		  "HIJIH",
+		  "HHIHH"
+		],
+		"key": {
+		  "A": {
+			"item": "minecraft:beacon"
+		  },
+		  "B": {
+			"item": "kubejs:tier_3_mechanical_alloy_robot_arm"
+		  },
+		  "C": {
+			"item": "travel_anchors:travel_anchor"
+		  },
+		  "D": {
+			"item": "kubejs:crystaltine_reinforced_plating"
+		  },
+		  "E": {
+			"item": "pneumaticcraft:vacuum_pump"
+		  },
+		  "F": {
+			"item": "thermal:upgrade_augment_3"
+		  },
+		  "G": {
+			"item": "kubejs:ai_chip"
+		  },
+		  "H": {
+			"item": "beyond_earth:rocket_launch_pad"
+		  },
+		  "I": {
+			"item": "kubejs:tier3_casing"
+		  },
+		  "J": {
+			"item": "rftoolspower:power_core3"
+		  }
+		},
+		"result": {
+		  "item": 'mbm2:drone_bay'
+		}
+	  }).id('mbm2:drone_bay')
+
+	  //energy_receiver -- maybe change out the hull panel material type?
+	  event.custom({
+		"type": "extendedcrafting:shaped_table",
+		"pattern": [
+		  "AABAA",
+		  "ACDCA",
+		  "ECFCE",
+		  "GCDCG",
+		  "GGHGG"
+		],
+		"key": {
+		  "A": {
+			"item": "botania:shimmerrock"
+		  },
+		  "B": {
+			"item": "botania:spark_upgrade_recessive"
+		  },
+		  "C": {
+			"item": "powah:reactor_nitro"
+		  },
+		  "D": {
+			"item": "powah:energy_hopper_nitro"
+		  },
+		  "E": {
+			"item": "forbidden_arcanus:golden_dragon_scale"
+		  },
+		  "F": {
+			"item": "kubejs:tier3_casing"
+		  },
+		  "G": {
+			"item": "kubejs:enderium_hull_panel"
+		  },
+		  "H": {
+			"item": "rftoolspower:power_core3"
+		  }
+		},
+		"result": {
+		  "item": 'mbm2:energy_receiver'
+		}
+	  }).id('mbm2:energy_receiver')
+
+	  //data_receiver
+	  event.custom({
+		"type": "extendedcrafting:shaped_table",
+		"pattern": [
+		  "AABAA",
+		  "CDEDC",
+		  "FGHGF",
+		  "CDIDC",
+		  "CCCCC"
+		],
+		"key": {
+		  "A": {
+			"item": "botania:detector_light_relay"
+		  },
+		  "B": {
+			"item": "pneumaticcraft:universal_sensor"
+		  },
+		  "C": {
+			"item": "kubejs:inconel_hull_panel"
+		  },
+		  "D": {
+			"item": "kubejs:ai_chip"
+		  },
+		  "E": {
+			"item": "solarflux:photovoltaic_cell_6"
+		  },
+		  "F": {
+			"item": "extendedcrafting:crystaltine_catalyst"
+		  },
+		  "G": {
+			"item": "ars_nouveau:glyph_sense_magic"
+		  },
+		  "H": {
+			"item": "kubejs:tier3_casing"
+		  },
+		  "I": {
+			"item": "aeinfinitybooster:infinity_card"
+		  }
+		},
+		"result": {
+		  "item": 'mbm2:data_receiver'
+		}
+	  }).id('mbm2:data_receiver')
+
+	  //data_processing_unit
+	  event.custom({
+		"type": "extendedcrafting:shaped_table",
+		"pattern": [
+		  "AABAA",
+		  "ACDCA",
+		  "EDFDE",
+		  "ACDCA",
+		  "AAGAA"
+		],
+		"key": {
+		  "A": {
+			"item": "kubejs:lunar_alloy_plating"
+		  },
+		  "B": {
+			"item": "pneumaticcraft:programmable_controller"
+		  },
+		  "C": {
+			"item": "kubejs:blueprint_fragment"
+		  },
+		  "D": {
+			"item": "kubejs:data_casing"
+		  },
+		  "E": {
+			"item": "kubejs:energy_orb_full"
+		  },
+		  "F": {
+			"item": "ae2:controller"
+		  },
+		  "G": {
+			"item": "rftoolspower:cell3"
+		  }
+		},
+		"result": {
+		  "item": 'mbm2:data_processing_unit'
+		}
+	  }).id('mbm2:data_processing_unit')
+
+
+
+
+	  //Elemental Stabilizer
+	  event.shaped('mbm2:elemental_stabilizer', ['ABA','CDE','AFA'], {A: 'kubejs:rune_ingot',B: 'botania:dirt_rod',C: 'botania:water_rod',D: 'kubejs:transmuted_casing',E: 'botania:tornado_rod',F: 'botania:fire_rod'})
 })
 

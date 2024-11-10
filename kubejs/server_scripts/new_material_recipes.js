@@ -226,6 +226,16 @@ event.recipes.createMixing([Fluid.of('kubejs:molten_slag', 250)], ['kubejs:slag_
 //Luminite
 event.recipes.thermal.crucible(Fluid.of('kubejs:molten_luminite', 250), ['kubejs:luminite','kubejs:luminite_dust'])
 
+//Luminite
+event.recipes.multiblocked.multiblock("chemical_reactor")
+	.inputFluid(Fluid.of('mekanism:brine', 1000))
+	.inputFluid(Fluid.of('tconstruct:molten_lumium', 45))
+	.inputItem('16x chemlib:phosphorus')
+	.inputItem('thermal:coal_coke')
+	.outputItem('kubejs:luminite')
+	.setPerTick(true)
+	.inputFE(4000)
+	.duration(100)
 
 
 //Blazing Redstone
@@ -294,10 +304,10 @@ event.recipes.multiblocked.multiblock('mixer')
 
 
     //Get Rotated
-    global.botaniaPool(event, 'kubejs:nether_shard_east', 'kubejs:nether_shard', 250, 'botania:alchemy_catalyst', `mbm2:nether_shard_east`)
-    global.botaniaPool(event, 'kubejs:nether_shard_south', 'kubejs:nether_shard_east', 250, 'botania:alchemy_catalyst', `mbm2:nether_shard_south`)
-    global.botaniaPool(event, 'kubejs:nether_shard_west', 'kubejs:nether_shard_south', 250, 'botania:alchemy_catalyst', `mbm2:nether_shard_west`)
-    global.botaniaPool(event, 'kubejs:nether_shard', 'kubejs:nether_shard_west', 250, 'botania:alchemy_catalyst', `mbm2:nether_shard_west`)
+    global.botaniaPool(event, 'kubejs:nether_shard_east', 'kubejs:nether_shard', 250, 'botania:alchemy_catalyst', `mbm2:botania/alchemy_catalyst/nether_shard_east`)
+    global.botaniaPool(event, 'kubejs:nether_shard_south', 'kubejs:nether_shard_east', 250, 'botania:alchemy_catalyst', `mbm2:botania/alchemy_catalyst/nether_shard_south`)
+    global.botaniaPool(event, 'kubejs:nether_shard_west', 'kubejs:nether_shard_south', 250, 'botania:alchemy_catalyst', `mbm2:botania/alchemy_catalyst/nether_shard_west`)
+    global.botaniaPool(event, 'kubejs:nether_shard', 'kubejs:nether_shard_west', 250, 'botania:alchemy_catalyst', `mbm2:botania/alchemy_catalyst/nether_shard`)
 
   //Elemental Star
     event.recipes.createMechanicalCrafting('kubejs:elemental_star', [

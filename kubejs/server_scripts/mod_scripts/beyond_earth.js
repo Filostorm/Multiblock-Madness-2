@@ -331,7 +331,7 @@ onEvent('recipes', event => {
 
 //Launch Pads
 	 event.remove({output: 'beyond_earth:rocket_launch_pad'})
-	event.recipes.botania.runic_altar('9x beyond_earth:rocket_launch_pad', ['botania:rune_mana', 'engineersdecor:rebar_concrete', 'engineersdecor:rebar_concrete', 'engineersdecor:rebar_concrete', 'engineersdecor:rebar_concrete'], 5000)
+	event.recipes.botania.runic_altar('3x beyond_earth:rocket_launch_pad', ['botania:rune_mana', 'engineersdecor:rebar_concrete', 'engineersdecor:rebar_concrete', 'engineersdecor:rebar_concrete'], 5000)
 
 });
 

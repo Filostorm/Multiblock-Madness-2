@@ -244,7 +244,7 @@ onEvent('recipes', event => {
 			.outputItem(Item.of(`#forge:cog_blocks/${item.material}`))
 			.setPerTick(true)
 			.inputFE(2000)
-			.duration(200)
+			.duration(150)
 			}
 		}
 
@@ -401,7 +401,7 @@ onEvent('recipes', event => {
 				event.recipes.multiblocked.multiblock("mechanical_crafting")
 				.inputItem(`#forge:scaffoldings/${item.material}`)
 				.inputItem(`3x #forge:plates/${item.material}`)
-				.inputItem(`4x #forge:bolts/${item.material}`)
+				.inputItem(`3x #forge:bolts/${item.material}`)
 				.outputItem(Item.of(`#forge:frame_boxs/${item.material}`))
 				.setPerTick(true)
 				.inputFE(2000)
@@ -423,11 +423,11 @@ onEvent('recipes', event => {
 						event.recipes.multiblocked.multiblock("mechanical_crafting")
 						.inputItem(`#forge:frame_boxs/${item.material}`)
 						.inputItem(`3x #forge:hull_panels/${item.material}`)
-						.inputItem(`4x #forge:bolts/${item.material}`)
-						.outputItem(Item.of(`2x #forge:hull_casings/${item.material}`))
+						.inputItem(`3x #forge:bolts/${item.material}`)
+						.outputItem(Item.of(`#forge:hull_casings/${item.material}`))
 						.setPerTick(true)
 						.inputFE(2000)
-						.duration(100)
+						.duration(200)
 					}
 				}
 		}

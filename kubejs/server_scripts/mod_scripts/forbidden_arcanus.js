@@ -116,4 +116,7 @@ onEvent('recipes', event => {
 		  })
 		.id(`mbm2:polish_gavel_${material}`)
 	})
+
+	event.replaceInput({id: 'forbidden_arcanus:golden_dragon_scale'}, 'forbidden_arcanus:dragon_scale', 'forbidden_arcanus:silver_dragon_scale')
+	event.replaceInput({id: 'forbidden_arcanus:silver_dragon_scale'}, '#forge:ingots/iron', '#forge:ingots/silver')
 });

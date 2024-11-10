@@ -1,20 +1,58 @@
 {
   "shaders": [
+    null,
     {
-      "resourceLocation": "darkmodeeverywhere:perfect_dark",
-      "displayName": "Perfect Dark",
+      "texShaderLocation": {
+        "f_135804_": "darkmodeeverywhere",
+        "f_135805_": "dark_position_tex",
+        "hash": 1093128533
+      },
+      "texColorShaderLocation": {
+        "f_135804_": "darkmodeeverywhere",
+        "f_135805_": "dark_position_tex_color",
+        "hash": -187936711
+      },
+      "displayName": {
+        "translate": "gui.darkmodeeverywhere.perfect_dark"
+      },
+      "divideFactor": 5.5,
       "darkColorReplacement": 16777215
     },
     {
-      "resourceLocation": "darkmodeeverywhere:less_perfect_dark",
-      "displayName": "Less Perfect Dark",
+      "texShaderLocation": {
+        "f_135804_": "darkmodeeverywhere",
+        "f_135805_": "dark_position_tex",
+        "hash": 1093128533
+      },
+      "texColorShaderLocation": {
+        "f_135804_": "darkmodeeverywhere",
+        "f_135805_": "dark_position_tex_color",
+        "hash": -187936711
+      },
+      "displayName": {
+        "translate": "gui.darkmodeeverywhere.less_perfect_dark"
+      },
+      "divideFactor": 3.5,
       "darkColorReplacement": 16777215
     },
     {
-      "resourceLocation": "darkmodeeverywhere:toasted_light",
-      "displayName": "Toasted Light Mode",
+      "texShaderLocation": {
+        "f_135804_": "darkmodeeverywhere",
+        "f_135805_": "dark_position_tex",
+        "hash": 1093128533
+      },
+      "texColorShaderLocation": {
+        "f_135804_": "darkmodeeverywhere",
+        "f_135805_": "dark_position_tex_color",
+        "hash": -187936711
+      },
+      "displayName": {
+        "translate": "gui.darkmodeeverywhere.toasted_light"
+      },
+      "divideFactor": 2.0,
       "darkColorReplacement": 16777215
     }
   ],
-  "version": 1
+  "version": 2,
+  "selectedShaderIndex": 3
 }

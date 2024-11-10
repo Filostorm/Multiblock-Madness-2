@@ -46,5 +46,17 @@ let colors = [
 	event.recipes.createMixing(['projectred_core:electrotine_ingot'], ['4x projectred_core:electrotine_dust', '4x powah:dielectric_paste', '#forge:ingots/tier_1_electrical_alloy']).heated().id('mbm2:mixing/electrotine_ingot')
 
 
+// Red Alloy Wire
+event.remove({output:`projectred_core:silicon`})
+event.shaped('2x projectred_core:silicon', [
+	'S',
+	'B'
+  ], {
+	S: 'cb_microblock:diamond_saw',
+	B: 'projectred_core:boule'
+  }).id(`mbm2:crafting/silicon`)
+
+  event.recipes.createCutting('4x projectred_core:silicon', 'projectred_core:boule').id('mbm2:cutting/silicon')
+  event.recipes.mekanismSawing(`8x projectred_core:silicon`, `projectred_core:boule`).id(`mbm2:mek_sawmill/silicon`)
 
 });

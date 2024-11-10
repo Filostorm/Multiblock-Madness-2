@@ -9,6 +9,15 @@ onEvent('tags.items', event => {
 
 		event.add(`forge:nuggets`, 'extendedcrafting:redstone_nugget')
 		event.add(`forge:nuggets/red_alloy`, 'extendedcrafting:redstone_nugget')
+		
+		event.add(`forge:storage_blocks`, 'extendedcrafting:crystaltine_block')
+		event.add(`forge:storage_blocks/crystaltine`, 'extendedcrafting:crystaltine_block')
+
+		event.add(`forge:ingots`, 'extendedcrafting:crystaltine_ingot')
+		event.add(`forge:ingots/crystaltine`, 'extendedcrafting:crystaltine_ingot')
+
+		event.add(`forge:nuggets`, 'extendedcrafting:crystaltine_nugget')
+		event.add(`forge:nuggets/crystaltine`, 'extendedcrafting:crystaltine_nugget')
   });
 
 onEvent('recipes', event => {
@@ -38,34 +47,94 @@ onEvent('recipes', event => {
 	.inputFE(4000)
 	.duration(200)
 
+
 	//Catalyst and Components
-	event.remove({output: 'extendedcrafting:redstone_component'})
-	event.shaped('extendedcrafting:redstone_component', ['AAB','CDA','CCA'], {A: '#forge:spools/red_alloy',B: 'extendedcrafting:luminessence',C: 'extendedcrafting:black_iron_slate',D: 'powah:dielectric_paste'}).id('mbm2:ex_crafting/redstone_component')
-	event.remove({output: 'extendedcrafting:redstone_catalyst'})
-	event.shaped('extendedcrafting:redstone_catalyst', ['ABA','BCB','ABA'], {A: 'extendedcrafting:redstone_component',B: 'extendedcrafting:luminessence',C: 'kubejs:black_iron_plating'}).id('mbm2:ex_crafting/redstone_catalyst')
+	var ExtendedRecipes = [
+		{
+		  'type': 'redstone',
+		  'base_item': 'extendedcrafting:black_iron_slate',
+		  'add_item': 'powah:dielectric_paste',
+		  'flavor_item': '#forge:spools/red_alloy',
+		},
+		{
+		  'type': 'basic',
+		  'base_item': 'extendedcrafting:black_iron_slate',
+		  'add_item': 'powah:dielectric_paste',
+		  'flavor_item': '#forge:spools/white_alloy',
+		},
+		{
+		  'type': 'advanced',
+		  'base_item': 'extendedcrafting:black_iron_slate',
+		  'add_item': 'powah:dielectric_paste',
+		  'flavor_item': '#forge:spools/lunar_alloy',
+		},
+		{
+		  'type': 'elite',
+		  'base_item': 'extendedcrafting:black_iron_slate',
+		  'add_item': 'powah:dielectric_paste',
+		  'flavor_item': 'mekanism:enriched_diamond',
+		},
+		{
+		  'type': 'ultimate',
+		  'base_item': 'extendedcrafting:black_iron_slate',
+		  'add_item': 'powah:dielectric_paste',
+		  'flavor_item': 'chemlib:beryllium_ingot',
+		},
+		{
+		  'type': 'ender',
+		  'base_item': 'extendedcrafting:black_iron_slate',
+		  'add_item': 'powah:dielectric_paste',
+		  'flavor_item': 'extendedcrafting:ender_ingot',
+		},
+		{
+		  'type': 'enhanced_ender',
+		  'base_item': 'extendedcrafting:black_iron_slate',
+		  'add_item': 'powah:dielectric_paste',
+		  'flavor_item': 'extendedcrafting:enhanced_ender_ingot',
+		},
+		{
+		  'type': 'crystaltine',
+		  'base_item': 'extendedcrafting:black_iron_slate',
+		  'add_item': 'powah:dielectric_paste',
+		  'flavor_item': 'extendedcrafting:crystaltine_ingot',
+		},
+		{
+		  'type': 'the_ultimate',
+		  'base_item': 'extendedcrafting:black_iron_slate',
+		  'add_item': 'powah:dielectric_paste',
+		  'flavor_item': 'extendedcrafting:the_ultimate_ingot',
+		},
+	]
+	ExtendedRecipes.forEach(item => {
+		//Component
+		event.remove({output: `extendedcrafting:${item.type}_component`})
+		event.shaped(`extendedcrafting:${item.type}_component`, 
+			[
+				'AAB',
+				'CDA',
+				'CCA'
+			],
+		{
+			A: item.flavor_item,
+			B: 'extendedcrafting:luminessence',
+			C: item.base_item,
+			D: item.add_item,
+		}).id(`mbm2:ex_crafting/${item.type}_component`)
 
-	event.remove({output: 'extendedcrafting:basic_component'})
-	event.shaped('extendedcrafting:basic_component', ['AAB','CDA','CCA'], {A: '#forge:spools/white_alloy',B: 'extendedcrafting:luminessence',C: 'extendedcrafting:black_iron_slate',D: 'powah:dielectric_paste'}).id('mbm2:ex_crafting/basic_component')
-
-	event.remove({output: 'extendedcrafting:basic_catalyst'})
-	event.shaped('extendedcrafting:basic_catalyst', ['ABA','BCB','ABA'], {A: 'extendedcrafting:basic_component',B: 'extendedcrafting:luminessence',C: 'kubejs:black_iron_plating'}).id('mbm2:ex_crafting/basic_catalyst')
-
-	event.remove({output: 'extendedcrafting:advanced_component'})
-	event.shaped('extendedcrafting:advanced_component', ['AAB','CDA','CCA'], {A: '#forge:spools/lunar_alloy',B: 'extendedcrafting:luminessence',C: 'extendedcrafting:black_iron_slate',D: 'powah:dielectric_paste'}).id('mbm2:ex_crafting/advanced_component')
-
-	event.remove({output: 'extendedcrafting:advanced_catalyst'})
-	event.shaped('extendedcrafting:advanced_catalyst', ['ABA','BCB','ABA'], {A: 'extendedcrafting:advanced_component',B: 'extendedcrafting:luminessence',C: 'extendedcrafting:basic_catalyst'}).id('mbm2:ex_crafting/advanced_catalyst')
-	
-	//More Catalyst stuff
-	event.remove({output: 'extendedcrafting:elite_catalyst'})
-	event.shaped('extendedcrafting:elite_catalyst', ['ABA','BCB','ABA'], {A: 'extendedcrafting:elite_component',B: 'extendedcrafting:luminessence',C: 'extendedcrafting:advanced_catalyst'}).id('mbm2:ex_crafting/elite_catalyst')
-	event.remove({output: 'extendedcrafting:ultimate_catalyst'})
-	event.shaped('extendedcrafting:ultimate_catalyst', ['ABA','BCB','ABA'], {A: 'extendedcrafting:ultimate_component',B: 'extendedcrafting:luminessence',C: 'extendedcrafting:elite_catalyst'}).id('mbm2:ex_crafting/ultimate_catalyst')
-
-	event.remove({output: 'extendedcrafting:elite_component'})
-	event.shaped('extendedcrafting:elite_component', ['AAB','CDA','CCA'], {A: 'mekanism:enriched_diamond',B: 'extendedcrafting:luminessence',C: 'extendedcrafting:black_iron_slate',D: 'powah:dielectric_paste'}).id('mbm2:ex_crafting/elite_component')
-	event.remove({output: 'extendedcrafting:ultimate_component'})
-	event.shaped('extendedcrafting:ultimate_component', ['AAB','CDA','CCA'], {A: 'chemlib:beryllium_ingot',B: 'extendedcrafting:luminessence',C: 'extendedcrafting:black_iron_slate',D: 'powah:dielectric_paste'}).id('mbm2:ex_crafting/ultimate_component')
+		//Catalyst
+		event.remove({output: `extendedcrafting:${item.type}_catalyst`})
+		event.shaped(`extendedcrafting:${item.type}_catalyst`, 
+			[
+				'ABA',
+				'BCB',
+				'ABA'
+			], 
+		{
+			A: `extendedcrafting:${item.type}_component`,
+			B: 'extendedcrafting:luminessence',
+			C: item.base_item
+		}).id(`mbm2:ex_crafting/${item.type}_catalyst`)
+	})
 
 
 	//table recipe reworks
@@ -104,4 +173,35 @@ onEvent('recipes', event => {
 	//useLater.forEach(exOutput =>{
 	//	event.remove({output: `${exOutput}`})
 	//})
+
+	event.remove({output: 'extendedcrafting:crystaltine_ingot'})
+	event.custom({
+		"type": "extendedcrafting:shaped_table",
+		"pattern": [
+		  "ABBBBBA",
+		  "ACDEDCA",
+		  "ACDEDCA",
+		  "ABBBBBA",
+		],
+		"key": {
+		  "A": {
+			"item": "botania:mana_diamond"
+		  },
+		  "B": {
+			"item": "compressedcreativity:brass_gilded_lapis_lazuli"
+		  },
+		  "C": {
+			"item": "forbidden_arcanus:arcane_gold_ingot"
+		  },
+		  "D": {
+			"item": "kubejs:crystalized_alloy_ingot"
+		  },
+		  "E": {
+			"item": "kubejs:elemental_star"
+		  }
+		},
+		"result": Item.of('2x extendedcrafting:crystaltine_ingot').toResultJson()
+	  }).id('mbm2:ex_crafting/crystaltine_ingot')
+
+
 });

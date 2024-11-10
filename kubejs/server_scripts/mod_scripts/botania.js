@@ -143,7 +143,17 @@ event.custom({
 //mana pearl recipe change 
 event.replaceInput({id: 'botania:mana_infusion/mana_pearl'}, 'minecraft:ender_pearl', 'kubejs:source_pearl')
 
+//Mana Pool
+event.remove({output: 'botania:mana_pool'})
+event.shaped('botania:mana_pool', ['ABA','AAA','   '], {A: 'botania:livingrock',B: 'kubejs:nature_gem'}).id(`mbm2:mana_pool`)
 
+//Mana Spreader
+event.remove({output: 'botania:mana_spreader'})
+event.shaped('botania:mana_spreader', ['AAA','BC ','AAA'], {A: 'botania:livingwood_log',B: 'kubejs:nature_gem',C: 'botania:white_petal'}).id(`mbm2:mana_spreader`)
+
+//Astrolabe is NeStEd
+event.remove({output: 'botania:astrolabe'})
+event.shaped('botania:astrolabe', [' AB','ACA','BAD'], {A: 'botania:elementium_ingot',B: 'botania:life_essence',C: 'botania:sextant',D: 'botania:dreamwood_log'})
 
 
 });

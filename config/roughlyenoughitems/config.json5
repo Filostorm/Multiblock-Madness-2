@@ -41,7 +41,7 @@
 				"modifier": 0
 			},
 			"exportImageKeybind": {
-				"keyCode": "key.keyboard.f8",
+				"keyCode": "key.keyboard.keypad.1",
 				"modifier": 0
 			},
 			"previousScreenKeybind": {
@@ -92,6 +92,8 @@
 		// Declares whether subsets is enabled.
 		"isSubsetsEnabled": false,
 		"allowInventoryHighlighting": true,
+		"inventoryHighlightingDarkenOpacity": 0.85,
+		"inventoryHighlightingOpacity": 1.0,
 		"itemCheatingMode": "REI_LIKE"
 	},
 	"advanced": {
@@ -488,13 +490,26 @@
 					"ae2:attunement",
 					"ae2:entropy",
 					"roughlyenoughitems:plugins/information",
-					"minecraft:plugins/tag"
+					"minecraft:plugins/tag",
+					"tconstruct:tool_recipes",
+					"rechiseled:chiseling",
+					"multiblocked:data_receiver",
+					"multiblocked:data_processing_unit",
+					"multiblocked:super_computational_matrix",
+					"multiblocked:cosmic_collector",
+					"multiblocked:fusion",
+					"multiblocked:elemental_stabilizer",
+					"multiblocked:drone_bay"
 				],
 				"hiddenCategories": []
 			}
 		},
 		"filtering": {
 			"filteredStacks": [
+				"{Count:1b,id:\"elementalcraft:pure_ore\",tag:{elementalcraft:{ore:\"forge:sulfur\"}},type:\"minecraft:item\"}",
+				"{Count:1b,id:\"elementalcraft:pure_ore\",tag:{elementalcraft:{ore:\"forge:platinum\"}},type:\"minecraft:item\"}",
+				"{Count:1b,id:\"elementalcraft:pure_ore\",tag:{elementalcraft:{ore:\"forge:coal\"}},type:\"minecraft:item\"}",
+				"{Count:1b,id:\"elementalcraft:pure_ore\",tag:{elementalcraft:{ore:\"forge:gold\"}},type:\"minecraft:item\"}",
 				"{Count:1b,id:\"elementalcraft:pure_ore\",tag:{elementalcraft:{ore:\"forge:niter\"}},type:\"minecraft:item\"}",
 				"{Count:1b,id:\"elementalcraft:pure_ore\",tag:{elementalcraft:{ore:\"forge:lapis\"}},type:\"minecraft:item\"}",
 				"{Count:1b,id:\"elementalcraft:pure_ore\",tag:{elementalcraft:{ore:\"mythicbotany:elementium\"}},type:\"minecraft:item\"}",
@@ -516,17 +531,12 @@
 				"{Count:1b,id:\"elementalcraft:pure_ore\",tag:{elementalcraft:{ore:\"forge:fluorite\"}},type:\"minecraft:item\"}",
 				"{Count:1b,id:\"elementalcraft:pure_ore\",tag:{elementalcraft:{ore:\"forge:osmium\"}},type:\"minecraft:item\"}",
 				"{Count:1b,id:\"elementalcraft:pure_ore\",tag:{elementalcraft:{ore:\"forge:apatite\"}},type:\"minecraft:item\"}",
-				"{Count:1b,id:\"elementalcraft:pure_ore\",tag:{elementalcraft:{ore:\"forge:quartz\"}},type:\"minecraft:item\"}",
-				"{Count:1b,id:\"elementalcraft:pure_ore\",tag:{elementalcraft:{ore:\"forge:sulfur\"}},type:\"minecraft:item\"}",
-				"{Count:1b,id:\"elementalcraft:pure_ore\",tag:{elementalcraft:{ore:\"forge:platinum\"}},type:\"minecraft:item\"}",
-				"{Count:1b,id:\"elementalcraft:pure_ore\",tag:{elementalcraft:{ore:\"forge:coal\"}},type:\"minecraft:item\"}",
-				"{Count:1b,id:\"elementalcraft:pure_ore\",tag:{elementalcraft:{ore:\"forge:gold\"}},type:\"minecraft:item\"}"
+				"{Count:1b,id:\"elementalcraft:pure_ore\",tag:{elementalcraft:{ore:\"forge:quartz\"}},type:\"minecraft:item\"}"
 			],
 			"shouldFilterDisplays": true,
 			"filteringRules": [
 				"{id:\"roughlyenoughitems:manual\",rule:{}}",
-				"{id:\"roughlyenoughitems:basic\",rule:{}}",
-				"{id:\"roughlyenoughitems:hidden_from_recipe_viewers\",rule:{}}"
+				"{id:\"roughlyenoughitems:basic\",rule:{}}"
 			]
 		}
 	}

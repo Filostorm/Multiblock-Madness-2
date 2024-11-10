@@ -1,0 +1,351 @@
+{
+  "version": 3,
+  "location": "mbm2:drone_bay",
+  "traits": {},
+  "properties": {
+    "rotationState": "ALL",
+    "showInJei": true,
+    "isOpaque": true,
+    "hasDynamicShape": false,
+    "hasCollision": true,
+    "destroyTime": 1.5,
+    "explosionResistance": 6.0,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "friction": 0.6,
+    "harvestLevel": 0,
+    "stackSize": 64,
+    "tabGroup": "multiblocked.all"
+  },
+  "status": {
+    "unformed": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier3_casing",
+        "frontTexture": "multiblocked:overlay/blast_furnace",
+        "type": "gregtech",
+        "postRenderer": false
+      }
+    },
+    "idle": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier3_casing",
+        "frontTexture": "multiblocked:overlay/bf_paused",
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "parent": "unformed"
+    },
+    "working": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier3_casing",
+        "frontTexture": "multiblocked:overlay/bf_active",
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "parent": "idle"
+    },
+    "suspend": {
+      "parent": "working"
+    }
+  },
+  "recipeMap": "drone_bay",
+  "basePattern": {
+    "structureDir": [
+      "BACK",
+      "UP",
+      "RIGHT"
+    ],
+    "pattern": [
+      [
+        "AAAAAAA",
+        "AAAAAAA",
+        "       ",
+        "       "
+      ],
+      [
+        "ABBBBBA",
+        "A     A",
+        "       ",
+        "       "
+      ],
+      [
+        "ABCCCBA",
+        "A     A",
+        "       ",
+        "       "
+      ],
+      [
+        "ABCCCBA",
+        "A     A",
+        "       ",
+        "       "
+      ],
+      [
+        "ABCCCBA",
+        "A     A",
+        "       ",
+        "       "
+      ],
+      [
+        "ABBBBBA",
+        "A     A",
+        "       ",
+        "       "
+      ],
+      [
+        "AAAAAAA",
+        "AAA AAA",
+        "  A A  ",
+        "  AAA  "
+      ],
+      [
+        "  AAA  ",
+        "  D D  ",
+        "  D D  ",
+        "  ADA  "
+      ],
+      [
+        "  @AA  ",
+        "  D D  ",
+        "  D D  ",
+        "  ADA  "
+      ],
+      [
+        "  AAA  ",
+        "  D D  ",
+        "  D D  ",
+        "  ADA  "
+      ],
+      [
+        "AAAAAAA",
+        "AAA AAA",
+        "  A A  ",
+        "  AAA  "
+      ],
+      [
+        "ABBBBBA",
+        "A     A",
+        "       ",
+        "       "
+      ],
+      [
+        "ABCCCBA",
+        "A     A",
+        "       ",
+        "       "
+      ],
+      [
+        "ABCCCBA",
+        "A     A",
+        "       ",
+        "       "
+      ],
+      [
+        "ABCCCBA",
+        "A     A",
+        "       ",
+        "       "
+      ],
+      [
+        "ABBBBBA",
+        "A     A",
+        "       ",
+        "       "
+      ],
+      [
+        "AAAAAAA",
+        "AAAAAAA",
+        "       ",
+        "       "
+      ]
+    ],
+    "aisleRepetitions": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "predicates": {
+      "A": {
+        "blocks": [
+          {
+            "id": "kubejs:tier3_casing"
+          }
+        ],
+        "type": "blocks"
+      },
+      "controller": {
+        "location": "mbm2:drone_bay",
+        "type": "component"
+      },
+      "B": {
+        "blocks": [
+          {
+            "id": "kubejs:tier_3_mechanical_alloy_cog_block"
+          }
+        ],
+        "type": "blocks"
+      },
+      "C": {
+        "blocks": [
+          {
+            "id": "kubejs:inconel_hull_casing"
+          }
+        ],
+        "type": "blocks"
+      },
+      "D": {
+        "blocks": [
+          {
+            "id": "thermal:obsidian_glass"
+          }
+        ],
+        "type": "blocks"
+      },
+      "E": {
+          "blocks": [
+            {
+              "id": "multiblocked:energy_input_mk1"
+            },
+            {
+              "id": "multiblocked:energy_input_mk2"
+            },
+            {
+              "id": "multiblocked:energy_input_mk3"
+            }
+          ],
+          "type": "blocks",
+          "minCount": 1,
+          "maxCount": 2,
+          "previewCount": 1,
+          "io": "IN"
+        },
+        "F": {
+          "blocks": [
+            {
+              "id": "multiblocked:item_input"
+            },
+            {
+              "id": "multiblocked:big_item_input"
+            }
+          ],
+          "type": "blocks",
+          "minCount": 0,
+          "maxCount": 1,
+          "previewCount": 1,
+          "io": "IN"
+        },
+        "G": {
+          "blocks": [
+            {
+              "id": "multiblocked:big_item_output"
+            },
+            {
+              "id": "multiblocked:item_output"
+            }
+          ],
+          "type": "blocks",
+          "minCount": 1,
+          "maxCount": 1,
+          "previewCount": 1,
+          "io": "OUT"
+        },
+      "air": {
+        "type": "air"
+      },
+      "any": {
+        "type": "any"
+      }
+    },
+    "symbolMap": {
+      "@": [
+        "controller"
+      ],
+      " ": [
+        "any"
+      ],
+      "A": [
+        "A",
+        "E",
+        "F",
+        "G"
+      ],
+      "B": [
+        "B"
+      ],
+      "C": [
+        "C"
+      ],
+      "D": [
+        "D"
+      ],
+      "-": [
+        "air"
+      ]
+    }
+  }
+}

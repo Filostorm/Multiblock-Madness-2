@@ -835,8 +835,8 @@ global.newMaterialParts = [
       'itemParts': ['ingot', 'dust', 'nugget', 'plate', 'wire', 'plating'],
       'blockParts': ['storage_block'],
       'amount': 1,
-      'dust_input': ['2x #forge:dusts/dielectric_alloy', '#forge:dusts/glowstone', 'integrateddynamics:crystalized_menril_chunk'],
-      'ingot_input': ['2x #forge:ingots/dielectric_alloy', '#forge:dusts/glowstone', 'integrateddynamics:crystalized_menril_chunk'],
+      'dust_input': ['2x #forge:dusts/dielectric_alloy', '2x integrateddynamics:crystalized_menril_chunk', '#forge:dusts/glowstone'],
+      'ingot_input': ['2x #forge:ingots/dielectric_alloy', '2x integrateddynamics:crystalized_menril_chunk', '#forge:dusts/glowstone'],
       'fluid': 'thick',
       'fluid_id': 'kubejs:molten_illuminated_menril',
     },
@@ -983,19 +983,6 @@ global.newMaterialParts = [
       'fluid_id': 'kubejs:molten_titanite',
     },
 
-    {
-      'material': 'crystalized_alloy',
-      'color': 0x12fff7,
-      'type': 'alloy',
-      'tier': 3,
-      'itemParts': ['ingot', 'dust', 'nugget', 'plate', 'wire', 'plating'],
-      'blockParts': ['storage_block'],
-      'amount': 1,
-      //'dust_input': ['2x #forge:dusts/illuminated_menril', '#forge:dusts/glowstone', 'integrateddynamics:crystalized_menril_chunk'],
-      //'ingot_input': ['2x #forge:ingots/illuminated_menril', '#forge:dusts/glowstone', 'integrateddynamics:crystalized_menril_chunk'],
-      'fluid': 'thick',
-      'fluid_id': 'kubejs:molten_crystalized_alloy',
-    },
 
     
     /////////////// Tier 4 Alloys Mixer Only or chapter 4 /////////////////////////////custom
@@ -1094,6 +1081,19 @@ global.newMaterialParts = [
       'fluid_input': 'thermal:redstone',
       'fluid_amount': 250,
     },
+    {
+      'material': 'crystalized_alloy',
+      'color': 0x12fff7,
+      'type': 'alloy',
+      'tier': 4,
+      'itemParts': ['ingot', 'dust', 'nugget', 'plate', 'wire', 'plating'],
+      'blockParts': ['storage_block'],
+      'amount': 1,
+      //'dust_input': ['2x #forge:dusts/illuminated_menril', '#forge:dusts/glowstone', 'integrateddynamics:crystalized_menril_chunk'],
+      //'ingot_input': ['2x #forge:ingots/illuminated_menril', '#forge:dusts/glowstone', 'integrateddynamics:crystalized_menril_chunk'],
+      'fluid': 'thick',
+      'fluid_id': 'kubejs:molten_crystalized_alloy',
+    },
     
     /////////////// Tier 5 Alloys /////////////////////////////
     {
@@ -1123,7 +1123,7 @@ global.newMaterialParts = [
       'type': 'alloy',
       'tier': 5,
       'itemParts': ['ingot', 'nugget', 'dust',  'plate', 'gear', 'rod', 'plating', 'hull_panel'],
-      'blockParts': ['storage_block'],
+      'blockParts': ['storage_block', 'scaffolding', 'frame_box', 'hull_casing'],
       'fluid_id': 'kubejs:molten_inconel',
       'fluid': 'thick',
       'amount': 7,
@@ -1197,6 +1197,19 @@ global.newMaterialParts = [
       'amount': 3,
       'dust_input': ['3x #forge:dusts/adamantium','#forge:dusts/energetic_alloy','#forge:dusts/manasteel'],
       'ingot_input': ['3x #forge:ingots/adamantium','#forge:ingots/energetic_alloy', '#forge:ingots/manasteel'],
+    },
+    {
+      'material': 'crystaltine',
+      'color': 0x30e0ff,
+      'type': 'alloy',
+      'tier': 6,
+      'itemParts': ['plate', 'gear', 'rod', 'ring', 'plating', 'reinforced_plating'],
+      'blockParts': ['storage_block'],
+      'fluid_id': 'kubejs:molten_crystaltine',
+      'fluid': 'thick',
+      //'amount': 3,
+      //'dust_input': ['3x #forge:dusts/adamantium','#forge:dusts/energetic_alloy','#forge:dusts/manasteel'],
+      //'ingot_input': ['3x #forge:ingots/adamantium','#forge:ingots/energetic_alloy', '#forge:ingots/manasteel'],
     },
     /////////////// Ore /////////////////////////////
     /*

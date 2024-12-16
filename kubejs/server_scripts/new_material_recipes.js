@@ -354,4 +354,57 @@ event.recipes.multiblocked.multiblock('mixer')
 //////////////////Rune Of Assembly////////////////////
 event.recipes.botania.runic_altar('kubejs:assembly_rune', ['botania:crafty_crate', 'ars_nouveau:glyph_craft', 'quark:rainbow_rune', 'elementalcraft:major_rune_slate', 'naturesaura:auto_crafter'], 250000).id(`mbm2:assembly_rune`)
 
+
+//////////////////VOID DRAGON Breath////////////////////
+//Shadow Dragon Breath
+event.recipes.multiblocked.multiblock("chemical_reactor")
+	.inputFluid(Fluid.of('kubejs:liquid_dragon_breath', 1000))
+	.inputFluid(Fluid.of('kubejs:liquid_shadows', 1000))
+	.inputItem('forbidden_arcanus:dark_matter')
+	.inputItem('forbidden_arcanus:dragon_scale')
+	.outputFluid(Fluid.of('kubejs:shadow_dragon_breath', 1000))
+	.setPerTick(true)
+	.inputFE(64000)
+	.duration(200)
+
+      
+  //Cosmonium
+  event.recipes.multiblocked.multiblock('mixer')
+  .inputItems('kubejs:astral_fusion_fine_dust','kubejs:adamantine_alloy_fine_dust','kubejs:exoskeleton_composit_fine_dust','2x kubejs:asteroid_dust_tier_3', 'kubejs:einsteinium_dust') //,'#forge:fine_dusts/rune'
+  .inputFluid(Fluid.of('chemlib:krypton_fluid', 1000))
+  .outputItem('#forge:base_dusts/cosmonium')
+  .setPerTick(true)
+  .inputFE(200000)
+  .duration(300)
+
+
+//////////////////Coolant////////////////////
+//Coolant
+event.recipes.multiblocked.multiblock("chemical_reactor")
+	.inputFluid(Fluid.of('tconstruct:powdered_snow', 1000))
+	.inputFluid(Fluid.of('kubejs:purified_water', 1000))
+	.inputItem('potionsmaster:calcinatedlapis_powder')
+	.outputFluid(Fluid.of('kubejs:coolant', 1000))
+	.setPerTick(true)
+	.inputFE(16000)
+	.duration(100)
+  
+//Coolant w/heated
+event.recipes.multiblocked.multiblock("chemical_reactor")
+  .inputFluid(Fluid.of('tconstruct:powdered_snow', 1000))
+  .inputFluid(Fluid.of('kubejs:heated_coolant', 1000))
+  .outputFluid(Fluid.of('kubejs:coolant', 1000))
+  .setPerTick(true)
+  .inputFE(16000)
+  .duration(100)
+
+//High Capacity Coolant
+event.recipes.multiblocked.multiblock("chemical_reactor")
+  .inputFluid(Fluid.of('kubejs:coolant', 1000))
+  .inputFluid(Fluid.of('kubejs:gelid_cryotheum', 1000))
+  .outputFluid(Fluid.of('kubejs:high_capacity_coolant', 1000))
+  .setPerTick(true)
+  .inputFE(16000)
+  .duration(100)
+
 });

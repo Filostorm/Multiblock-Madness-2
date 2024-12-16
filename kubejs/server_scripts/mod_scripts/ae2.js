@@ -445,9 +445,9 @@ onEvent('recipes', event => {
 
 	event.replaceInput({id: 'ae2additions:network/crafting/pattern_provider_2th_gen'}, 'ae2:fluix_block', 'powah:uraninite_block')
 
-	event.shaped('ae2additions:pattern_provider_3th', ['ABA','CDC','ABA'], {A: 'kubejs:lunar_alloy_plating',B: 'laserio:logic_chip',C: 'pneumaticcraft:module_expansion_card',D: 'ae2additions:pattern_provider_2th'})
+	event.shaped('ae2additions:pattern_provider_3th', ['ABA','CDC','ABA'], {A: 'kubejs:lunar_alloy_plating',B: 'laserio:logic_chip',C: 'pneumaticcraft:module_expansion_card',D: 'ae2additions:pattern_provider_2th'}).id(`mbm2:pattern_provider_3rd`)
 	
-	event.shaped('ae2additions:pattern_provider_4th', ['ABA','CDC','ABA'], {A: 'kubejs:tier_3_structural_alloy_plating',B: 'lazierae2:parallel_processor',C: 'mekanism:ultimate_control_circuit',D: 'ae2additions:pattern_provider_3th'})
+	event.shaped('ae2additions:pattern_provider_4th', ['ABA','CDC','ABA'], {A: 'kubejs:space_alloy_plating',B: 'lazierae2:parallel_processor',C: 'mekanism:ultimate_control_circuit',D: 'ae2additions:pattern_provider_3th'}).id(`mbm2:pattern_provider_4th`)
 }
 
 	  //crystal_processing_quartz_growth_accelerator

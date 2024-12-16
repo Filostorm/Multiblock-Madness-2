@@ -363,7 +363,7 @@
       "A": {
         "blocks": [
           {
-            "id": "minecraft:white_concrete"
+            "id": "kubejs:ev_casing"
           }
         ],
         "type": "blocks"

@@ -228,6 +228,10 @@ onEvent("rei.group", (event) => {
 
     // you can also group fluids in much the same way as you can group items, for instance:
     event.groupFluidsByTag("kubejs:rei_groups/fluid_tagged_as_water", `"Water" (yeah right lmao)`, "minecraft:water");*/
+	
+	event.groupItems("mbm2:rei_groups/cargo_drones", "Full Cargo Drones", [
+        /kubejs:cargo_drone_.*/,
+    ]);
 });
 
 onEvent('rei.remove.categories', event => {
@@ -269,4 +273,5 @@ onEvent('rei.hide.fluids', event => {
 	global.fluidsToRemove.forEach((item) => {
 		event.hide(item)
 	})
+
 });

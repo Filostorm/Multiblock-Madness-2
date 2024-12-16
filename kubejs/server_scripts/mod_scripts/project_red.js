@@ -59,4 +59,10 @@ event.shaped('2x projectred_core:silicon', [
   event.recipes.createCutting('4x projectred_core:silicon', 'projectred_core:boule').id('mbm2:cutting/silicon')
   event.recipes.mekanismSawing(`8x projectred_core:silicon`, `projectred_core:boule`).id(`mbm2:mek_sawmill/silicon`)
 
+	//Dimensional Stuff
+  event.replaceInput({output: 'rftoolsbase:infused_diamond'}, '#forge:gems/diamond', 'botania:mana_diamond')
+  event.replaceInput({output: 'rftoolsbase:infused_enderpearl'}, 'ender_pearl', 'botania:mana_pearl')
+  event.recipes.mekanismMetallurgicInfusing('rftoolsbase:infused_diamond', Item.of('botania:mana_diamond'), {infuse_type: 'kubejs:dimensional', amount: 100}).id(`mbm2:infused_diamond`);
+  event.recipes.mekanismMetallurgicInfusing('rftoolsbase:infused_enderpearl', Item.of('botania:mana_pearl'), {infuse_type: 'kubejs:dimensional', amount: 100}).id(`mbm2:infused_enderpearl`);
+  
 });

@@ -1,0 +1,228 @@
+{
+  "version": 3,
+  "location": "mbm2:precision_milling_unit",
+  "traits": {},
+  "properties": {
+    "rotationState": "ALL",
+    "showInJei": true,
+    "isOpaque": true,
+    "hasDynamicShape": false,
+    "hasCollision": true,
+    "destroyTime": 1.5,
+    "explosionResistance": 6.0,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "friction": 0.6,
+    "harvestLevel": 0,
+    "stackSize": 64,
+    "tabGroup": "multiblocked.all"
+  },
+  "status": {
+    "unformed": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier2_casing",
+        "frontTexture": "multiblocked:overlay/centrifuge",
+        "type": "gregtech",
+        "postRenderer": false
+      }
+    },
+    "idle": {
+      "parent": "unformed"
+    },
+    "working": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier2_casing",
+        "frontTexture": "multiblocked:overlay/centrifuge_active",
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "parent": "idle"
+    },
+    "suspend": {
+      "parent": "working"
+    }
+  },
+  "recipeMap": "powder_mill",
+  "basePattern": {
+    "structureDir": [
+      "BACK",
+      "UP",
+      "RIGHT"
+    ],
+    "pattern": [
+      [
+        "AAAAA",
+        "B   B",
+        "B   B",
+        "B   B",
+        "B   B",
+        "AAAAA"
+      ],
+      [
+        "AAAAA",
+        " CCC ",
+        " CCC ",
+        " CCC ",
+        " CCC ",
+        "AAAAA"
+      ],
+      [
+        "@AAAA",
+        " CDC ",
+        " CDC ",
+        " CDC ",
+        " CDC ",
+        "AAAAA"
+      ],
+      [
+        "AAAAA",
+        " CCC ",
+        " CCC ",
+        " CCC ",
+        " CCC ",
+        "AAAAA"
+      ],
+      [
+        "AAAAA",
+        "B   B",
+        "B   B",
+        "B   B",
+        "B   B",
+        "AAAAA"
+      ]
+    ],
+    "aisleRepetitions": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "predicates": {
+      "A": {
+        "blocks": [
+          {
+            "id": "kubejs:tier2_casing"
+          }
+        ],
+        "type": "blocks"
+      },
+      "controller": {
+        "location": "mbm2:precision_milling_unit",
+        "type": "component"
+      },
+      "B": {
+        "blocks": [
+          {
+            "id": "kubejs:plastic_scaffolding"
+          }
+        ],
+        "type": "blocks"
+      },
+      "C": {
+        "blocks": [
+          {
+            "id": "immersiveengineering:sheetmetal_steel"
+          }
+        ],
+        "type": "blocks"
+      },
+      "D": {
+        "blocks": [
+          {
+            "id": "kubejs:tier_2_mechanical_alloy_cog_block"
+          }
+        ],
+        "type": "blocks"
+      },"E": {
+    "blocks": [
+      {
+        "id": "multiblocked:energy_input_mk1"
+      },
+      {
+        "id": "multiblocked:energy_input_mk2"
+      },
+      {
+        "id": "multiblocked:energy_input_mk3"
+      }
+    ],
+    "type": "blocks",
+    "minCount": 1,
+    "maxCount": 2,
+    "previewCount": 1,
+    "io": "IN"
+  },
+  "F": {
+    "blocks": [
+      {
+        "id": "multiblocked:item_input"
+      },
+      {
+        "id": "multiblocked:big_item_input"
+      }
+    ],
+    "type": "blocks",
+    "minCount": 0,
+    "maxCount": 1,
+    "previewCount": 1,
+    "io": "IN"
+  },
+  "G": {
+    "blocks": [
+      {
+        "id": "multiblocked:big_item_output"
+      },
+      {
+        "id": "multiblocked:item_output"
+      }
+    ],
+    "type": "blocks",
+    "minCount": 1,
+    "maxCount": 1,
+    "previewCount": 1,
+    "io": "OUT"
+  },
+      "any": {
+        "type": "any"
+      }
+    },
+    "symbolMap": {
+      "@": [
+        "controller"
+      ],
+      " ": [
+        "any"
+      ],
+      "A": [
+        "A",
+        "E",
+        "F",
+        "G"
+      ],
+      "B": [
+        "B"
+      ],
+      "C": [
+        "C"
+      ],
+      "D": [
+        "D"
+      ]
+    }
+  }
+}

@@ -7,7 +7,7 @@
 	#Note: If compatibility is disabled, but BYG or BoP are installed, compatibility will be forced.
 	#
 	#Options: true, false
-	terrablender_compatibility = false
+	terrablender_compatibility = true
 	#This option determines whether Skylands will be cursed - ONLY takes effect when Terrablender compatibility is enabled!
 	#The options are listed below. DO NOT use "some" or "very" in a real world, unless you know what you're doing!
 	#It should be noted that if Terrablender compatibility is disabled, the cursed generation will not occur, no matter what.

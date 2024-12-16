@@ -143,7 +143,7 @@ onEvent('item.tooltip', tooltip => {
 	//Battie tooltips
 	global.batteryItems.forEach((item, index) => {
 	  let storage = global.batteryStorage[index].toLocaleString();
-	  console.log(item +' ' +storage)
+	  //console.log(item +' ' +storage)
 	  tooltip.addAdvanced(`kubejs:${item}_empty`, (item, advanced, text) => {
 		  text.add(1, [Text.of(`(0/${storage})`).red()])
 		})
@@ -347,7 +347,8 @@ onEvent('item.tooltip', tooltip => {
 			
 				global.oreProcessingParts.forEach((part, index) => {
 					if(item.type != 'compound_ore') {
-					console.log(part.prefix + item.material + part.suffix)
+					//console.log(part.prefix + item.material + part.suffix)
+					
 					//red = error
 					//yellow = smelting
 					//green = processing
@@ -495,6 +496,30 @@ onEvent('item.tooltip', tooltip => {
 			let compoundLine = (line) => {
 				let tooltipLine = ""
 						if (line <= part.grade + 1) {
+							if (part.grade == 0) { // raw sorting
+								if (line == 0) { //yellow = smeltable
+									tooltipLine = Text.yellow(`- ${nameUpper(item.components[line])}`)
+								} else {
+									tooltipLine = Text.white(`- ${nameUpper(item.components[line])}`)
+								}
+							} else { //can sort into
+								tooltipLine = [gradeLetterColor[index], Text.white(` ${nameUpper(item.components[line])}`)]
+							}
+						} else if (line == part.grade + 2) {
+							if (line != 8) { // replaces a line with this text 
+								tooltipLine = [Text.white(`Increase `),Text.green(`Processing`),Text.white(` for:`)]
+							} else {
+								tooltipLine = Text.darkGray(`Maximum yield achieved`)
+							}
+						} else { //process further
+							tooltipLine = [gradeLetterColor[line-2], Text.gray(` [Shift]`)]
+						}
+				return tooltipLine
+			}
+
+			let compoundLineShift = (line) => {
+				let tooltipLine = ""
+						if (line <= part.grade + 1) {
 							if (part.grade == 0) {
 								tooltipLine = Text.white(`- ${nameUpper(item.components[line])}`)
 							} else {
@@ -502,7 +527,7 @@ onEvent('item.tooltip', tooltip => {
 							}
 						} else if (line == part.grade + 2) {
 							if (line != 8) {
-								tooltipLine = Text.green(`Can be processed further before sorting for these ores:`)
+								tooltipLine = [Text.white(`Increase `),Text.green(`Processing`),Text.white(` for:`)]
 							} else {
 								tooltipLine = Text.darkGray(`Maximum yield achieved`)
 							}
@@ -514,11 +539,9 @@ onEvent('item.tooltip', tooltip => {
 			let compoundToolTipCreation = (name) => {
 				//Make the Compound part Tooltip
 				tooltip.addAdvanced(name, (items, advanced, text) => {
+					text.add(1, [Text.gold('Sort'),Text.white(' at this grade for:')])
 						if (!tooltip.shift) {
-							text.add(1, [compoundSmeltingFunction(part.grade)])
-							text.add(2, [Text.of('Hold ').gray(), Text.of('Shift ').gold(), Text.of('for sorting information.').gray()])
-						} else {
-							text.add(1, [Text.gold('Sort at this grade for:')])
+							//text.add(1, [compoundSmeltingFunction(part.grade)])
 							text.add(2, compoundLine(0))
 							text.add(3, compoundLine(1))
 							text.add(4, compoundLine(2))
@@ -528,6 +551,16 @@ onEvent('item.tooltip', tooltip => {
 							text.add(8, compoundLine(6))
 							text.add(9, compoundLine(7))
 							text.add(10, compoundLine(8))
+						} else {
+							text.add(2, compoundLineShift(0))
+							text.add(3, compoundLineShift(1))
+							text.add(4, compoundLineShift(2))
+							text.add(5, compoundLineShift(3))
+							text.add(6, compoundLineShift(4))
+							text.add(7, compoundLineShift(5))
+							text.add(8, compoundLineShift(6))
+							text.add(9, compoundLineShift(7))
+							text.add(10, compoundLineShift(8))
 						}
 					
 				})

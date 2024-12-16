@@ -28,7 +28,7 @@ var fluidCentrifugeRecipes = [
 	  output4: Fluid.of('kubejs:liquid_shadows', 120),
 	  output1: Fluid.of('chemlib:argon_fluid', 20),
 	  output2: Fluid.of('chemlib:xenon_fluid', 20),
-	  output3: Fluid.of('chemlib:krypton_fluid', 20),
+	  output3: Fluid.of('chemlib:methane_fluid', 20),
 	  duration: 400
 	}
   ]

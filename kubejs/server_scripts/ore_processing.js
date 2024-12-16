@@ -109,7 +109,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 
 	//////magic Catlyst//////
 	global.ieMixer(event, Fluid.of('kubejs:magic_catalyst_mixture', 1000), {"tag":"forge:experience","amount":1000}, Item.of('ars_nouveau:source_gem'), 4000, 'mbm2:mixer/magic_catalyst_mixture')
-	global.ieMixer(event, Fluid.of('kubejs:magic_catalyst_mixture', 500), {"tag":"forge:experience","amount":500}, Item.of('botania:mana_powder'), 4000, 'mbm2:mixer/magic_catalyst_mixture_slag')
+	global.ieMixer(event, Fluid.of('kubejs:magic_catalyst_mixture', 500), {"tag":"forge:experience","amount":1000}, Item.of('botania:mana_powder'), 4000, 'mbm2:mixer/magic_catalyst_mixture_slag')
 	
 	//Filling
 	event.recipes.createFilling('kubejs:catalyst_magic', [Fluid.of('kubejs:magic_catalyst_mixture', fillingAmount), 'kubejs:catalyst_empty']).id('mbm2:filling/catalyst_magic')
@@ -250,9 +250,9 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				event.recipes.createSplashing([Item.of(`#forge:dusts/${item.material}`).withChance(0.75), Item.of('gravel').withChance(0.25)], `#forge:ores/grit/${item.material}`).id(`mbm2:washing/grit_${item.material}`)
 				}
 				//Fine Dust
-				if (Item.of(`#forge:ores/fine_dust/${item.material}`) != null) {
-					event.recipes.createsifterSifting([Item.of(`#forge:ores/fine_dust/${item.material}`).withChance(0.5), Item.of(`sand`).withChance(0.1)], [Item.of(`#forge:dusts/${item.material}`),'createsifter:brass_mesh']).processingTime(200).id(`mbm2:sifting/${item.material}_fine_dust`)
-				}
+				//if (Item.of(`#forge:ores/fine_dust/${item.material}`) != null) {
+				//	event.recipes.createsifterSifting([Item.of(`#forge:ores/fine_dust/${item.material}`).withChance(0.5), Item.of(`sand`).withChance(0.1)], [Item.of(`#forge:dusts/${item.material}`),'createsifter:brass_mesh']).processingTime(200).id(`mbm2:sifting/${item.material}_fine_dust`)
+				//}
 			}
 
 			if (item.type == 'base_metal' || item.type == 'compound_ore' || item.type == 'rare_metal') {
@@ -263,7 +263,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 					`#forge:ores/crushed/${item.material}`,
 					Item.of(byproduct('grit', 1)).withChance(0.1), 
 					Item.of('create:experience_nugget').withChance(0.15)
-				], `#forge:raw_materials/${item.material}`).id(`mbm2:crushing/raw_${item.material}`)
+				], `#forge:ores/raw/${item.material}`).id(`mbm2:crushing/raw_${item.material}`)
 
 				//Ores give more byproduct or something
 				event.recipes.createCrushing([
@@ -352,6 +352,16 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				}).id(`mbm2:mesh`)
 
 				//Zinc Mesh
+				event.shaped('4x kubejs:zinc_mesh', [
+					' M ',
+					'MZM',
+					' M '
+				], {
+					M: 'kubejs:mesh',
+					Z: '#forge:ores/dust/zinc'
+				}).id(`mbm2:zinc_mesh`)
+
+				//Zinc Mesh
 				event.shaped('8x kubejs:zinc_mesh', [
 					'MMM',
 					'MZM',
@@ -359,7 +369,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				], {
 					M: 'kubejs:mesh',
 					Z: '#forge:ores/fine_dust/zinc'
-				}).id(`mbm2:zinc_mesh`)
+				}).id(`mbm2:zinc_mesh_fine_dust`)
 				//Carbon Mesh
 				//event.recipes.mekanismMetallurgicInfusing('kubejs:carbon_mesh', 'kubejs:mesh', 'mekanism:carbon', 10) //cant seem to change the amount from 10
 				global.mekanismMetallurgicInfusing(event, Item.of('kubejs:carbon_mesh'), Item.of('kubejs:zinc_mesh'), 'mekanism:carbon', 10, `mbm2:carbon_mesh`)
@@ -626,7 +636,7 @@ var blastFurnaceSmelting = (event, material, inputItem, tier) => {
 			.inputItem(inputItem)
 			.outputItem(Item.of(`#forge:ingots/${material}`))
 			.setPerTick(true)
-			.inputFE(tier*2000)
+			.inputFE(500*(4**tier))
 			.duration(tier*50)
 			.data({ temperature: tierSmeltingTemp})
 			.text(`    Heat: §6${tierSmeltingTemp}`)
@@ -971,7 +981,7 @@ var blastFurnaceSmelting = (event, material, inputItem, tier) => {
 						console.log(`${item.gem_components[0]} has no gem!`);
 					}
 					if (Item.of(`#forge:gems/${item.gem_components[1]}`) != null) {
-						global.pneumaticcraftThermoPlant(event, Item.of(`#forge:gems/${item.gem_components[1]}`), Ingredient.of(`#forge:ores/fine_dust/${item.material}`), {"type": "pneumaticcraft:fluid", "fluid": "kubejs:crystal_catalyst_mixture", "amount": 250}, 423, 4, 0.75, 1.0, false, `mbm2:thermo_plant/${item.gem_components[1]}_from_${item.material}`)
+						global.pneumaticcraftThermoPlant(event, Item.of(`#forge:gems/${item.gem_components[1]}`), Ingredient.of(`#forge:ores/dust/${item.material}`), {"type": "pneumaticcraft:fluid", "fluid": "kubejs:crystal_catalyst_mixture", "amount": 250}, 423, 4, 0.75, 1.0, false, `mbm2:thermo_plant/${item.gem_components[1]}_from_${item.material}`)
 					} else {
 						console.log(`${item.gem_components[1]} has no gem!`);
 					}

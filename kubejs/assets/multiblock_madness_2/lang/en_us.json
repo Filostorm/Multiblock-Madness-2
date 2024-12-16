@@ -127,6 +127,14 @@
     "mbm2.data_receiver.description": "Capture data beamed down from deep space",
     "multiblocked.recipe_map.data_receiver": "Data Receiving",
 
+    "block.mbm2.precision_milling_unit": "Precision Milling Unit",
+    "mbm2.precision_milling_unit.description": "Crush down items and capture fine dusts",
+    "multiblocked.recipe_map.powder_mill": "Powder Milling",
+    
+
+    "block.mbm2.galactic_trade_center": "Galactic Trade Outpost",
+    "mbm2.galactic_trade_center.description": "Trade with civilizations across the Galaxy",
+    "multiblocked.recipe_map.trade_center": "Galactic Trading",
 
 
     "block.multiblocked.create_item_input": "Input Vault Part",

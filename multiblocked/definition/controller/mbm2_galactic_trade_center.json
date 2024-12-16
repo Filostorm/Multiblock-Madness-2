@@ -1,0 +1,257 @@
+{
+  "version": 3,
+  "location": "mbm2:galactic_trade_center",
+  "traits": {},
+  "properties": {
+    "rotationState": "ALL",
+    "showInJei": true,
+    "isOpaque": true,
+    "hasDynamicShape": false,
+    "hasCollision": true,
+    "destroyTime": 1.5,
+    "explosionResistance": 6.0,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "friction": 0.6,
+    "harvestLevel": 0,
+    "stackSize": 64,
+    "tabGroup": "multiblocked.all"
+  },
+  "status": {
+    "unformed": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/space_age",
+        "frontTexture": "multiblocked:overlay/blast_furnace",
+        "type": "gregtech",
+        "postRenderer": false
+      }
+    },
+    "idle": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/space_age",
+        "frontTexture": "multiblocked:overlay/bf_paused",
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "parent": "unformed"
+    },
+    "working": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/space_age",
+        "frontTexture": "multiblocked:overlay/bf_active",
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "parent": "idle"
+    },
+    "suspend": {
+      "parent": "working"
+    }
+  },
+  "recipeMap": "trade_center",
+  "basePattern": {
+    "structureDir": [
+      "LEFT",
+      "UP",
+      "BACK"
+    ],
+    "pattern": [
+      [
+        " A@A ",
+        "B A  ",
+        "BBA  ",
+        "  A  ",
+        "  A  ",
+        "  A  ",
+        "  A  ",
+        "     ",
+        "     "
+      ],
+      [
+        "AAAAA",
+        " C C ",
+        " C C ",
+        " C C ",
+        " C C ",
+        " C C ",
+        " CAC ",
+        "  A  ",
+        "     "
+      ],
+      [
+        "EAAAE",
+        "A   A",
+        "A   A",
+        "A   A",
+        "A   A",
+        "A   A",
+        "AAAAA",
+        " AAA ",
+        "  D  "
+      ],
+      [
+        "AAAAA",
+        " C C ",
+        " C C ",
+        " C C ",
+        " C C ",
+        " C C ",
+        " CAC ",
+        "  A  ",
+        "     "
+      ],
+      [
+        " AEA ",
+        "  A  ",
+        "  A  ",
+        "  A  ",
+        "  A  ",
+        "  A  ",
+        "  A  ",
+        "     ",
+        "     "
+      ]
+    ],
+    "aisleRepetitions": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "predicates": {
+      "A": {
+        "blocks": [
+          {
+            "id": "kubejs:space_age_casing"
+          }
+        ],
+        "type": "blocks"
+      },
+      "controller": {
+        "location": "mbm2:galactic_trade_center",
+        "type": "component"
+      },
+      "B": {
+        "blocks": [
+          {
+            "id": "kubejs:uhv_casing"
+          }
+        ],
+        "type": "blocks"
+      },
+      "C": {
+        "blocks": [
+          {
+            "id": "glassential:glass_ethereal"
+          }
+        ],
+        "type": "blocks"
+      },
+      "D": {
+        "blocks": [
+          {
+            "id": "multiblocked:receiver_block"
+          }
+        ],
+        "type": "blocks"
+      },
+      "E": {
+        "blocks": [
+          {
+            "id": "multiblocked:energy_input_mk1"
+          },
+          {
+            "id": "multiblocked:energy_input_mk2"
+          },
+          {
+            "id": "multiblocked:energy_input_mk3"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 4,
+        "previewCount": 1,
+        "io": "IN"
+      },
+      "F": {
+        "blocks": [
+          {
+            "id": "industrialforegoing:simple_black_hole_unit"
+          },
+          {
+            "id": "industrialforegoing:advanced_black_hole_unit"
+          },
+          {
+            "id": "industrialforegoing:pity_black_hole_unit"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 2,
+        "previewCount": 1,
+        "io": "IN"
+      },
+      "G": {
+        "blocks": [
+          {
+            "id": "multiblocked:big_item_output"
+          },
+          {
+            "id": "multiblocked:item_output"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 1,
+        "previewCount": 1,
+        "io": "OUT"
+      },
+      "any": {
+        "type": "any"
+      }
+    },
+    "symbolMap": {
+      "@": [
+        "controller"
+      ],
+      " ": [
+        "any"
+      ],
+      "A": [
+        "A",
+        "E",
+        "F",
+        "G"
+      ],
+      "B": [
+        "B"
+      ],
+      "C": [
+        "C"
+      ],
+      "D": [
+        "D"
+      ],
+      "E": [
+        "A",
+        "any"
+      ]
+    }
+  }
+}

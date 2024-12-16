@@ -209,7 +209,7 @@ event.shaped('create:hose_pulley', [
 		Item.of('hexerei:mahogany_sapling').withChance(0.01),
 		Item.of('hexerei:willow_sapling').withChance(0.01),
 		Item.of('forbidden_arcanus:growing_edelwood').withChance(0.01),
-		//Item.of('malum:runewood_sapling').withChance(0.01)
+		Item.of('integrateddynamics:menril_sapling').withChance(0.01)
 	  ], '#minecraft:leaves').id(`mbm2:crushing/leaves_into_saplings`)
 
 	/// Blaze Burner

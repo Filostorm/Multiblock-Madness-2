@@ -6,9 +6,8 @@ var basicMetalBlocks = [
 	'machine_casing_fusion_coil',
 	'machine_casing_fusion_glass',
 	'machine_casing_fusion_glass_yellow',
-	'data_casing',
 	'super_casing',
-	'mm_casing',
+	'data_casing',
 	'protype_casing',
 	'high_pressure_casing',
 	'factory_fan',
@@ -71,6 +70,8 @@ onEvent('block.registry', event => {
 	event.create(`dynamo_frame`).material('metal').hardness(1).resistance(1).tagBlock('minecraft:mineable/pickaxe').renderType('cutout').defaultCutout().model(`kubejs:block/incomplete_dynamo`).color(0, 0x76b090).item(itemForm => {itemForm.color(0, 0x76b090)}).fullBlock(false).notSolid().box(0,0,0,16,15,16, true)
 	
 	event.create('ev_casing').displayName('Solar Casing').hardness(3).resistance(3).tagBlock('minecraft:mineable/pickaxe').material('metal')
+	
+	event.create('space_age_casing').displayName('§3Space Age Casing').hardness(3).resistance(3).tagBlock('minecraft:mineable/pickaxe').material('metal')
 	
 
 });

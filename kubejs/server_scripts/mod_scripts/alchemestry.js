@@ -63,4 +63,104 @@ global.mekanismInfusionConversion(event, Item.of('chemlib:carbon'), 'mekanism:ca
 global.mekanismInfusionConversion(event, Item.of('chemlib:carbon_dust'), 'mekanism:carbon', 160, 'mbm2:infuse/carbon_from_carbon_dust')
 global.mekanismInfusionConversion(event, Item.of('chemlib:graphite_dust'), 'mekanism:carbon', 320, 'mbm2:infuse/carbon_from_graphite')
 
+//Fusion Controller
+event.remove({output: 'alchemistry:fusion_chamber_controller'})
+event.custom({
+	"type": "extendedcrafting:shaped_table",
+	"pattern": [
+	  "ABCCCCCBA",
+	  "BDDDDDDDB",
+	  "CDEFGFEDC",
+	  "CDFHHHFDC",
+	  "CDGHIHGDC",
+	  "CDFHHHFDC",
+	  "CDEFGFEDC",
+	  "BDDDDDDDB",
+	  "ABCCCCCBA"
+	],
+	"key": {
+	  "A": {
+		"item": "extendedcrafting:crystaltine_catalyst"
+	  },
+	  "B": {
+		"item": "rftoolspower:cell3"
+	  },
+	  "C": {
+		"item": "powah:reactor_nitro"
+	  },
+	  "D": {
+		"item": "kubejs:astral_fusion_reinforced_plating"
+	  },
+	  "E": {
+		"item": "kubejs:ai_chip"
+	  },
+	  "F": {
+		"item": "botania:corporea_block"
+	  },
+	  "G": {
+		"item": "kubejs:tier3_casing"
+	  },
+	  "H": {
+		"item": "alchemistry:reactor_casing"
+	  },
+	  "I": {
+		"item": "kubejs:hypercoil"
+	  }
+	},
+	"result": {
+	  "item": 'alchemistry:fusion_chamber_controller'
+	}
+  }).id('mbm2:fusion_chamber_controller')
+
+
+//Fission Controller
+event.remove({output: 'alchemistry:fission_chamber_controller'})
+event.custom({
+	"type": "extendedcrafting:shaped_table",
+	"pattern": [
+	  "ABCCCCCBA",
+	  "BDDDDDDDB",
+	  "CDEFGFEDC",
+	  "CDFHHHFDC",
+	  "CDGHIHGDC",
+	  "CDFHHHFDC",
+	  "CDEFGFEDC",
+	  "BDDDDDDDB",
+	  "ABCCCCCBA"
+	],
+	"key": {
+	  "A": {
+		"item": "extendedcrafting:crystaltine_catalyst"
+	  },
+	  "B": {
+		"item": "rftoolspower:cell3"
+	  },
+	  "C": {
+		"item": "powah:reactor_nitro"
+	  },
+	  "D": {
+		"item": "kubejs:space_alloy_reinforced_plating"
+	  },
+	  "E": {
+		"item": "kubejs:ai_chip"
+	  },
+	  "F": {
+		"item": "botania:corporea_block"
+	  },
+	  "G": {
+		"item": "kubejs:tier3_casing"
+	  },
+	  "H": {
+		"item": "alchemistry:reactor_casing"
+	  },
+	  "I": {
+		"item": "kubejs:hypercoil"
+	  }
+	},
+	"result": {
+	  "item": 'alchemistry:fission_chamber_controller'
+	}
+  }).id('mbm2:fission_chamber_controller')
+
+
 });

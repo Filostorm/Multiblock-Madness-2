@@ -184,6 +184,43 @@ event.remove({output: 'mekanism:teleportation_core'})
 event.shaped('mekanism:teleportation_core', ['ABA','CCC','ABA'], {A: 'rftoolsbase:dimensionalshard',B: 'mekanism:alloy_atomic',C: 'kubejs:orichalcum_sprocket'})
 
 //Polonium Replacement in Mek Mtems
-event.replaceInput({id: 'mekanism:module_vein_mining_unit'}, 'mekanism:pellet_polonium', '#mbm2:polonium_subsitute')
+//event.replaceInput({id: 'mekanism:module_vein_mining_unit'}, 'mekanism:pellet_polonium', '#mbm2:polonium_subsitute')
+//event.replaceInput({mod: 'mekanism'}, 'mekanism:pellet_polonium', '#mbm2:polonium_subsitute')
+
+//We dont belive in reactors
+event.custom({
+	"type":"mekanism:reaction",
+	"itemInput":{
+		"ingredient":{"item":'chemlib:polonium_dust'}
+	},
+	"fluidInput":{
+		"amount":1000,"fluid":"minecraft:water"
+	},
+	"gasInput":{
+		"amount":1000,"gas":"mekanism:fissile_fuel"
+	},
+	"duration":200,
+	"itemOutput":{
+		"item":'mekanism:pellet_polonium'
+	}
+	}).id("mbm2:pellet_polonium")
+
+event.custom({
+	"type":"mekanism:reaction",
+	"itemInput":{
+		"ingredient":{"item":'kubejs:plutonium_dust'}
+	},
+	"fluidInput":{
+		"amount":1000,"fluid":"minecraft:water"
+	},
+	"gasInput":{
+		"amount":1000,"gas":"mekanism:fissile_fuel"
+	},
+	"duration":200,
+	"itemOutput":{
+		"item":'mekanism:pellet_plutonium'
+	}
+	}).id("mbm2:pellet_plutonium")
+
 
 });

@@ -1,10 +1,6 @@
 var basicItems = [
 	'unfired_clay_brick',
 	'blank_rune',
-	//'curcuit_board',
-	//'curcuit_board_1',
-	//'curcuit_board_2',
-	//'curcuit_board_3',
 	'silver_coil',
 	'shifting_cube',
 	'source_ingot',
@@ -18,10 +14,6 @@ var basicItems = [
 	//'unfired_coke_oven_brick',
 	'coke_oven_brick',
 	'steel_scraps',
-	//'aerotheum_dust',
-	//'cryotheum_dust',
-	//'petrotheum_dust',
-	//'pyrotheum_dust',
 	't1_blank_board',
 	't1_circuit_board',
 	't1_circuit',
@@ -54,8 +46,6 @@ var basicItems = [
 	'activated_carbon_mesh',
 	'standard_dyson_panel',
 	'hull_panel_sand_cast',
-	'blank_ai_chip',
-	'ai_chip',
 	'unfinished_basic_control_circuit',
 	'unfinished_advanced_control_circuit',
 	'unfinished_elite_control_circuit',
@@ -77,7 +67,6 @@ var basicItems = [
 	'nether_shard_east',
 	'nether_shard_south',
 	'elemental_core',
-	'elemental_star',
 	'asteroid_tier_1',
 	'asteroid_chunk_tier_1',
 	'asteroid_dust_tier_1',
@@ -87,16 +76,32 @@ var basicItems = [
 	'asteroid_tier_3',
 	'asteroid_chunk_tier_3',
 	'asteroid_dust_tier_3',
-	'harvester_drone',
-	'harvester_drone_active',
-	'scout_drone',
-	'scout_drone_active',
 	'blueprint_fragment',
-	'location_data_chip',
+	'asteroid_location_data_chip',
+	'planet_location_data_chip',
 	'blank_location_data_chip',
 	'tracking_chip',
-	'blank_cosmic_blueprint',
 	'ripped_blueprint',
+	'pellet',
+	'tech_widget',
+	'magic_widget',
+	'hypercoil',
+	'mind_shard',
+	'empty_request_chip',
+	'raw_dimensional_wafer',
+	'iridium_infused_wafer',
+	'mechanical_component',
+	'advanced_mechanical_component',
+	'blaze_core',
+	'amethyst_gate',
+	'quantum_processor',
+	'empty_cannister',
+	'luminite_cannister',
+	'mana_cannister',
+	'aura_cannister',
+	'source_cannister',
+	'arcstone',
+	'plasma_orb',
 ]
 
 global.transitionalItems = [
@@ -137,11 +142,22 @@ global.batteryStorage = [
 	1000000000000, //1T
 ]
 
-var nameUpperWSpace = (name, status) => {
-	let partOne = name.split('_')[0]
-	let partTwo = name.split('_')[1]
-	let fullName = partOne.charAt(0).toUpperCase() + partOne.slice(1) + ' ' + partTwo.charAt(0).toUpperCase() + partTwo.slice(1) + ` (${status})`
-	return fullName
+var nameUpperWSpace = (name) => {
+	if (name.includes("_")) {
+		let partOne = name.split('_')[0]
+		let partTwo = name.split('_')[1]
+		let partThree = name.split('_')[2]
+		if (partThree != null) {// we got a three word name
+			let fullName = partOne.charAt(0).toUpperCase() + partOne.slice(1) + ' ' + partTwo.charAt(0).toUpperCase() + partTwo.slice(1)+ ' ' + partThree.charAt(0).toUpperCase() + partThree.slice(1)
+			return fullName
+		} else {// we got a two word name
+			let fullName = partOne.charAt(0).toUpperCase() + partOne.slice(1) + ' ' + partTwo.charAt(0).toUpperCase() + partTwo.slice(1)
+			return fullName
+		}
+	} else {
+		let fullName = name.charAt(0).toUpperCase() + name.slice(1)
+		return fullName
+	}
 }
 
 onEvent('item.registry', event => {
@@ -149,8 +165,8 @@ onEvent('item.registry', event => {
 		event.create(item)
 	})
 	global.batteryItems.forEach((item) => {
-		event.create(`${item}_empty`).displayName(nameUpperWSpace(item, 'Empty')).texture(`kubejs:item/battery/${item}_empty`)
-		event.create(`${item}_full`).displayName(nameUpperWSpace(item, 'Full')).texture(`kubejs:item/battery/${item}_full`)//.unstackable()
+		event.create(`${item}_empty`).displayName(nameUpperWSpace(item) + ' (Empty)').texture(`kubejs:item/battery/${item}_empty`)
+		event.create(`${item}_full`).displayName(nameUpperWSpace(item) + ' (Full)').texture(`kubejs:item/battery/${item}_full`)//.unstackable()
 	})
 	global.transitionalItems.forEach((item) => {
 		event.create(`incomplete_${item}`, 'create:sequenced_assembly').texture('kubejs:item/package')
@@ -192,5 +208,187 @@ onEvent('item.registry', event => {
 	event.create('bottled_magic').glow(true)
 	event.create('gavel_polish').unstackable().maxDamage(4)
 
-	event.create('assembly_rune').displayName('Rune of Assembly')
+	event.create('assembly_rune').displayName('Rune of Assembly').rarity('rare')
+
+	event.create('galactic_standard_currency').displayName('§3Galactic Standard Currency')
+	
+
+	event.create('dimensional_alloy').displayName('§bDimensional Alloy')
+	event.create('extra_dimensional_alloy').displayName('§dExtra Dimensional Alloy')
+
+
+	event.create('sentient_processor').displayName('§bSentient Processor')
+	
+
+	event.create('reinforced_hdpe_sheet').displayName('§7Reinforced HDPE Sheet')
+	
+
+	event.create('blank_ai_chip').displayName('Blank AI Chip').rarity('uncommon')
+	event.create('ai_chip').displayName('§eAI Chip')
+	event.create('hostile_ai_chip').displayName('§cHostile AI Chip')
+	event.create('advanced_ai_chip').displayName('§bAdvanced AI Chip')
+
+	event.create('blank_cosmic_blueprint').glow(true).rarity('epic')
+	event.create('scarab_of_hours').glow(true).rarity('epic')
+	event.create('elemental_star').glow(true).rarity('epic')
+
+
+	global.dronesTypes = [
+		'harvester',
+		'scout',
+		'fighter',
+		//'cargo',
+		'trade'
+	]
+	global.dronesTypes.forEach(type => {
+		event.create(`${type}_drone`)
+		event.create(`${type}_drone_active`).displayName(nameUpperWSpace(type) + ' Drone §a[Active]')
+	});
+	event.create('cargo_drone').displayName('Cargo Drone §b[Empty]')
+
+	global.planetTypes = [
+		'green',
+		'red',
+		'blue',
+	]
+	global.planetTypes.forEach(type => {
+		event.create(`planet_${type}`).displayName(nameUpperWSpace(type) + ' Planet')
+	});
+
+
+	global.droneTrades = [
+		//{
+		//  'name': 'kubejs:tech_widget',
+		//  'amount': 1,
+		//  'pay': 10,
+		//  'planet': ['green','blue'],
+		//},
+		{
+		  'name': 'kubejs:magic_widget',
+		  'amount': 1,
+		  'pay': 75,
+		  'planet': ['blue'],
+		},
+		{
+		  'name': 'naturesaura:token_grief',
+		  'amount': 1,
+		  'pay': 50,
+		  'planet': ['blue'],
+		},
+		{
+		  'name': 'botania:gaia_ingot',
+		  'amount': 1,
+		  'pay': 50,
+		  'planet': ['green'],
+		},
+		{
+		  'name': 'botania:terraform_rod',
+		  'amount': 1,
+		  'pay': 50,
+		  'planet': ['red'],
+		},
+		{
+		  'name': 'botania:overgrowth_seed',
+		  'amount': 1,
+		  'pay': 100,
+		  'planet': ['red'],
+		},
+		{
+		  'name': 'elementalcraft:pure_element_holder',
+		  'amount': 1,
+		  'pay': 100,
+		  'planet': ['blue'],
+		},
+		{
+		  'name': 'kubejs:assembly_rune',
+		  'amount': 2,
+		  'pay': 50,
+		  'planet': ['green'],
+		},
+		{
+		  'name': 'kubejs:nature_gem',
+		  'amount': 10,
+		  'pay': 100,
+		  'planet': ['red'],
+		},
+		{
+		  'name': 'artifacts:bunny_hoppers',
+		  'amount': 1,
+		  'pay': 50,
+		  'planet': ['red'],
+		},
+		{
+		  'name': 'ars_nouveau:amethyst_golem_charm',
+		  'path': 'items/',
+		  'amount': 1,
+		  'pay': 50,
+		  'planet': ['green'],
+		},
+	]
+	
+	global.droneTrades.forEach(item => {
+		let modName = item.name.split(':')[0]
+		let itemName = item.name.split(':')[1]
+		if (item.path != null) {
+			event.create(`trade_${itemName}`).displayName(nameUpperWSpace(itemName) + ' Trade').texture(`${modName}:${item.path}${itemName}`).parentModel(`kubejs:item/trade`) 
+		} else {
+			event.create(`trade_${itemName}`).displayName(nameUpperWSpace(itemName) + ' Trade').texture(`${modName}:item/${itemName}`).parentModel(`kubejs:item/trade`) 
+		}
+
+		event.create(`cargo_drone_${itemName}`).displayName('Cargo Drone §6[' + nameUpperWSpace(itemName)+']').texture(`kubejs:item/cargo_drone_full`)
+		event.create(`cargo_drone_${itemName}_active`).displayName('Cargo Drone §e[' + nameUpperWSpace(itemName)+']').texture(`kubejs:item/cargo_drone_full_active`)
+	});
+
+	global.droneRequests = [
+		{
+			'name': 'kubejs:mind_shard',
+			'input': 'kubejs:sentient_processor',
+			'amount': 4,
+			'cost': 600,
+			'planet': ['green'],
+		},
+		{
+			'name': 'kubejs:extra_dimensional_alloy',
+			'input': 'kubejs:dimensional_alloy',
+			'amount': 2,
+			'cost': 800,
+			'planet': ['blue'],
+		},
+		{
+			'name': 'kubejs:hypercoil',
+			'input': 'kubejs:vibranium_dual_coil',
+			'amount': 1,
+			'cost': 1000,
+			'planet': ['red'],
+		},
+		{
+			'name': 'kubejs:quantum_processor',
+			'input': 'mekanism:ultimate_control_circuit',
+			'amount': 1,
+			'cost': 500,
+			'planet': ['red'],
+		},
+		{
+			'name': 'kubejs:empty_cannister',
+			'input': 'ae2:portable_fluid_cell_4k',
+			'amount': 1,
+			'cost': 100,
+			'planet': ['blue'],
+		},
+		{
+			'name': 'kubejs:scarab_of_hours',
+			'input': 'reliquary:chelicerae',
+			'amount': 1,
+			'cost': 10000,
+			'planet': ['green'],
+		},
+	]
+	global.droneRequests.forEach(item => {
+		let modName = item.name.split(':')[0]
+		let itemName = item.name.split(':')[1]
+		event.create(`request_${itemName}`).displayName(nameUpperWSpace(itemName) + ' Request').texture(`${modName}:item/${itemName}`).parentModel(`kubejs:item/request`) 
+		//event.create(`cargo_drone_${itemName}`).displayName('Cargo Drone §3[' + nameUpperWSpace(itemName)+']').texture(`kubejs:item/cargo_drone_empty`)
+		//event.create(`cargo_drone_${itemName}_active`).displayName('Cargo Drone §b[' + nameUpperWSpace(itemName)+']').texture(`kubejs:item/cargo_drone_active`)
+	});
+
   });

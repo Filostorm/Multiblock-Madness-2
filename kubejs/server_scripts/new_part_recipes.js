@@ -609,6 +609,16 @@ onEvent('recipes', event => {
 			}
 		}
 	}
+	
+	////////////////////// FINE DUST //////////////////////
+	if (Item.of(`#forge:ores/fine_dust/${item.material}`) != null) {
+		event.recipes.multiblocked.multiblock("powder_mill")
+		.inputItem(`#forge:ingots/${item.material}`)
+		.duration(200)
+		.outputItem(`#forge:ores/fine_dust/${item.material}`)
+		.setPerTick(true)
+		.inputFE(2000*(10**item.tier))
+	}
 
     if (Item.of(`#forge:ingots/${item.material}`) != null) {
 		//Ingots

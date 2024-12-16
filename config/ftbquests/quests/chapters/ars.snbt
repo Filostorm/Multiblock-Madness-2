@@ -442,10 +442,7 @@
 			x: -26.0d
 			y: 2.5d
 			subtitle: "Infinite Waystones"
-			description: [
-				"Portals can be life savers for those who don't want to search the world, or craft for waystones. Just some arcane stones, a bound warp scroll and source. Only works in the Overworld."
-				"{image:#FFFFFF width:100 height:100 align:1}"
-			]
+			description: ["Portals can be life savers for those who don't want to search the world, or craft for waystones. Just some arcane stones, a bound warp scroll and source. Only works in the Overworld."]
 			dependencies: ["27716E90D4AA1997"]
 			id: "1B0E98499256D198"
 			tasks: [{

@@ -36,6 +36,9 @@ onEvent('fluid.registry', event => {
 
     event.create(`liquid_source`).thinTexture(0xbf32bf).bucketColor(0xbf32bf)
 
+    event.create(`liquid_magic`).thinTexture(0x2d43c2).bucketColor(0x2d43c2)
+
+
     event.create(`liquid_dragon_breath`).thinTexture(0xc560f0).bucketColor(0xc560f0)
 
     event.create(`raw_data`).stillTexture('kubejs:block/fluid/raw_data').flowingTexture('kubejs:block/fluid/raw_data').bucketColor(0x091209)
@@ -46,5 +49,64 @@ onEvent('fluid.registry', event => {
     event.create(`volatile_elemental_mixture`).thinTexture(0x587025).bucketColor(0x587025)
 
     event.create(`stable_elemental_fusion`).thickTexture(0x7814db).bucketColor(0x7814db)
+
+
+    event.create(`shadow_dragon_breath`).thickTexture(0x151742).bucketColor(0x151742)
+
+    event.create(`hot_shadow_dragon_breath`).thinTexture(0x47002e).bucketColor(0x47002e)
+
+    event.create(`cold_shadow_dragon_breath`).thinTexture(0x002840).bucketColor(0x002840)
+
+    event.create(`metastable_void_dragon_breath`).thickTexture(0x070b63).bucketColor(0x070b63)
+
+    event.create(`void_dragon_breath`).thickTexture(0x090017).bucketColor(0x090017)
+
+
+
+    
+    event.create(`coolant`).thinTexture(0x3c81c9).bucketColor(0x3c81c9)
+    event.create(`high_capacity_coolant`).thinTexture(0x61dfe8).bucketColor(0x61dfe8)
+    event.create(`heated_coolant`).thickTexture(0xc23055).bucketColor(0xc23055)
   });
   
+
+// TO DO ADD SLURRY FOR ORE PROCESSING (maybe)
+const $EventBuses = java('dev.architectury.platform.forge.EventBuses')
+const $GasDeferredRegister = java('mekanism.common.registration.impl.GasDeferredRegister')
+const $SlurryDeferredRegister = java('mekanism.common.registration.impl.SlurryDeferredRegister')
+const $InfuseTypeDeferredRegister = java('mekanism.common.registration.impl.InfuseTypeDeferredRegister')
+
+const GASES = new $GasDeferredRegister('kubejs')
+const SLURRY = new $SlurryDeferredRegister('kubejs')
+const INFUSETYPE = new $InfuseTypeDeferredRegister('kubejs')
+
+
+//ADD STUFF HERE
+//GASES.register('example_gas', 0xA020F0)
+//SLURRY.register('example_slurry', builder => builder.color(0xA020F0))
+INFUSETYPE.register('chitin', 0x634f34)
+INFUSETYPE.register('matrix', 0xa091ed)
+INFUSETYPE.register('data', 0x84bfc2)
+INFUSETYPE.register('dimensional', 0x00fbff)
+
+
+
+
+
+GASES.register($EventBuses.getModEventBus('kubejs').get())
+SLURRY['register(net.minecraftforge.eventbus.api.IEventBus)']($EventBuses.getModEventBus('kubejs').get())
+INFUSETYPE.register($EventBuses.getModEventBus('kubejs').get())
+
+//global.mekanismInfusionConversion(event, Item.of('chemlib:chitin_dust'), 'kubejs:chitin', 100, 'mbm2:infuse/chitin_from_chitin_dust')
+//event.recipes.mekanismMetallurgicInfusing('kubejs:exoskeleton_composit_ingot', Item.of('#forge:ingots/ostrum'), {infuse_type: 'kubejs:chitin', amount: 100}).id(`mbm2:exoskeleton_composit_ingot`);
+
+
+
+onEvent('client.generate_assets', event => {
+    //event.addLang('slurry.kubejs.dirty_example_slurry', `Dirty Example Slurry`)
+    event.addLang('infuse_type.kubejs.chitin', `Chitin`)
+    event.addLang('infuse_type.kubejs.matrix', `Matrix`)
+    event.addLang('infuse_type.kubejs.data', `Data`)
+    event.addLang('infuse_type.kubejs.dimensional', `Dimensional`)
+  
+})

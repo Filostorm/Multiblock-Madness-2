@@ -280,7 +280,6 @@
 					id: "relics:infinity_ham"
 					Count: 1b
 					tag: {
-						pieces: 10
 						abilities: {
 							autophagy: {
 								stats: {
@@ -295,6 +294,7 @@
 								points: 0
 							}
 						}
+						pieces: 10
 					}
 				}
 				match_nbt: false
@@ -467,6 +467,11 @@
 					id: "relics:magma_walker"
 					Count: 1b
 					tag: {
+						leveling: {
+							level: 1
+							experience: 141
+							points: 1
+						}
 						abilities: {
 							pace: {
 								stats: {
@@ -474,11 +479,6 @@
 								}
 								points: 0
 							}
-						}
-						leveling: {
-							level: 1
-							experience: 141
-							points: 1
 						}
 					}
 				}
@@ -498,6 +498,11 @@
 					id: "relics:aqua_walker"
 					Count: 1b
 					tag: {
+						leveling: {
+							level: 1
+							experience: 73
+							points: 1
+						}
 						abilities: {
 							walking: {
 								stats: {
@@ -505,11 +510,6 @@
 								}
 								points: 0
 							}
-						}
-						leveling: {
-							level: 1
-							experience: 73
-							points: 1
 						}
 					}
 				}
@@ -529,11 +529,6 @@
 					id: "relics:leather_belt"
 					Count: 1b
 					tag: {
-						leveling: {
-							level: 1
-							experience: 151
-							points: 1
-						}
 						abilities: {
 							slots: {
 								stats: {
@@ -541,6 +536,11 @@
 								}
 								points: 0
 							}
+						}
+						leveling: {
+							level: 1
+							experience: 151
+							points: 1
 						}
 					}
 				}
@@ -564,6 +564,11 @@
 					id: "relics:drowned_belt"
 					Count: 1b
 					tag: {
+						leveling: {
+							level: 1
+							experience: 77
+							points: 1
+						}
 						abilities: {
 							riptide: {
 								stats: {
@@ -578,23 +583,18 @@
 								}
 								points: 0
 							}
-							slots: {
-								stats: {
-									talisman: 1.15071d
-								}
-								points: 0
-							}
 							pressure: {
 								stats: {
 									damage: 1.91059d
 								}
 								points: 0
 							}
-						}
-						leveling: {
-							level: 1
-							experience: 77
-							points: 1
+							slots: {
+								stats: {
+									talisman: 1.15071d
+								}
+								points: 0
+							}
 						}
 					}
 				}
@@ -617,11 +617,16 @@
 					id: "relics:midnight_robe"
 					Count: 1b
 					tag: {
+						leveling: {
+							level: 1
+							experience: 87
+							points: 1
+						}
 						abilities: {
 							vanish: {
 								stats: {
-									light: 1.71795d
 									speed: 0.1725d
+									light: 1.71795d
 								}
 								temp: {
 									ticking: 1b
@@ -635,11 +640,6 @@
 								}
 								points: 0
 							}
-						}
-						leveling: {
-							level: 1
-							experience: 87
-							points: 1
 						}
 					}
 				}
@@ -723,16 +723,16 @@
 							glaive: {
 								stats: {
 									bounces: 4.43085d
-									damage: 3.6451d
 									recharge: 15.9641d
+									damage: 3.6451d
 									radius: 3.01598d
 								}
 								points: 0
 							}
 							saw: {
 								stats: {
-									speed: 15.46919d
 									damage: 1.23964d
+									speed: 15.46919d
 								}
 								points: 0
 							}
@@ -993,9 +993,9 @@
 						tag: {
 							size: 9
 							state: 3
-							structureName: "config/capsule/prefabs/hephaestus_forge"
-							label: "Hephaestus Forge"
 							sourceInventory: { }
+							label: "Hephaestus Forge"
+							structureName: "config/capsule/prefabs/hephaestus_forge"
 							display: {
 								color: 2963801
 							}

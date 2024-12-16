@@ -61,5 +61,182 @@ onEvent('recipes', event => {
 			}
 		  }).id('mbm2:reflector')
 
+		//Data + Casing
+		global.mekanismInfusionConversion(event, Ingredient.of('#ae2:interface'), 'kubejs:data', 25, 'mbm2:infuse/data_from_interface')
+		event.recipes.mekanismMetallurgicInfusing('kubejs:data_casing', Item.of('kubejs:space_age_casing'), {infuse_type: 'kubejs:data', amount: 100}).id(`mbm2:data_casing`);
 
+		//Dimensional + Wafer
+		global.mekanismInfusionConversion(event, Item.of('rftoolsbase:dimensionalshard'), 'kubejs:dimensional', 50, 'mbm2:infuse/dimensionalshard')
+		event.recipes.mekanismMetallurgicInfusing('kubejs:raw_dimensional_wafer', Item.of('kubejs:iridium_infused_wafer'), {infuse_type: 'kubejs:dimensional', amount: 100}).id(`mbm2:raw_dimensional_wafer`);
+
+		//iridium_infused_wafer
+		event.shaped('kubejs:iridium_infused_wafer', ['AAA','ABA','AAA'], {A: 'chemlib:iridium',B: 'projectred_core:electrotine_silicon'}).id('mbm2:iridium_infused_wafer')
+
+		//dimensional_alloy
+		event.recipes.mekanismMetallurgicInfusing('kubejs:dimensional_alloy', Item.of('mekanism:alloy_atomic'), {infuse_type: 'kubejs:dimensional', amount: 50}).id(`mbm2:dimensional_alloy`);
+		
+		//sentient_processor
+		event.custom({
+			"type": "lazierae2:etcher",
+			"output": {
+			  "item": "kubejs:sentient_processor"
+			},
+			"input": [
+			  {
+				"item": 'kubejs:ai_chip'
+			  },
+			  {
+				"tag": "forge:dusts/redstone"
+			  },
+			  {
+				"item": 'kubejs:raw_dimensional_wafer'
+			  }
+			],
+			"process_time": 120,
+			"energy_cost": 25000
+		  }).id('mbm2:sentient_processor')
+
+		  //Reinforced Sheet
+		  event.custom({
+			"type": "alchemistry:combiner",
+			"group": "alchemistry:combiner",
+			"input": [
+				{
+				  "ingredient": {
+					"item": 'chemlib:tungsten'
+				  },
+				  "count": 32
+				},
+				{
+				  "ingredient": {
+					"item": 'chemlib:silicon'
+				  },
+				  "count": 16
+				},
+				{
+				  "ingredient": {
+					"item": 'chemlib:carbon'
+				  },
+				  "count": 16
+				},
+			  {
+				"ingredient": {
+				  "item": 'mekanism:hdpe_sheet'
+				},
+				"count": 1
+			  }
+			],
+			"result": {
+			  "item": "kubejs:reinforced_hdpe_sheet"
+			}
+		  }).id('mbm2:reinforced_hdpe_sheet')
+
+		  //Tracking Chip
+		  event.custom({
+			"input": [
+			  {
+				"item": 'kubejs:reinforced_hdpe_sheet'
+			  },
+			  {
+				"item": 'mekanism:ultimate_control_circuit'
+			  },
+			  {
+				"item": 'kubejs:reinforced_hdpe_sheet'
+			  },
+			  {
+				"item": 'ae2additions:cell_component_1kk'
+			  },
+			  {
+				"item": 'ae2additions:cell_component_1kk'
+			  },
+			  {
+				"item": 'kubejs:reinforced_hdpe_sheet'
+			  },
+			  {
+				"item": 'mekanism:ultimate_control_circuit'
+			  },
+			  {
+				"item": 'kubejs:reinforced_hdpe_sheet'
+			  }
+			],
+			"inputFluid": "{FluidName:\"industrialforegoing:pink_slime\",Amount:1000}",
+			"processingTime": 300,
+			"output": {
+			  "item": 'kubejs:tracking_chip',
+			  "count": 1
+			},
+			"type": "industrialforegoing:dissolution_chamber"
+		  }).id('mbm2:tracking_chip')
+
+		  //Tracking Chip
+		  event.custom({
+			"input": [
+			  {
+				"item": 'kubejs:reinforced_hdpe_sheet'
+			  },
+			  {
+				"item": 'kubejs:sentient_processor'
+			  },
+			  {
+				"item": 'kubejs:reinforced_hdpe_sheet'
+			  },
+			  {
+				"item": 'kubejs:dimensional_alloy'
+			  },
+			  {
+				"item": 'kubejs:dimensional_alloy'
+			  },
+			  {
+				"item": 'kubejs:reinforced_hdpe_sheet'
+			  },
+			  {
+				"item": 'kubejs:sentient_processor'
+			  },
+			  {
+				"item": 'kubejs:reinforced_hdpe_sheet'
+			  }
+			],
+			"inputFluid": "{FluidName:\"kubejs:raw_data\",Amount:1000}",
+			"processingTime": 300,
+			"output": {
+			  "item": 'kubejs:blank_location_data_chip',
+			  "count": 1
+			},
+			"type": "industrialforegoing:dissolution_chamber"
+		  }).id('mbm2:blank_location_data_chip')
+		  
+		  //Magic Widget
+		  event.custom({
+			"type": "extendedcrafting:shaped_table",
+			"pattern": [
+			  "ABBBA",
+			  "BCDCB",
+			  "B E B",
+			  "BCFCB",
+			  "ABBBA"
+			],
+			"key": {
+			  "A": {
+				"item": "botania:thorn_chakram"
+			  },
+			  "B": {
+				"item": "botania:glimmering_dreamwood_log"
+			  },
+			  "C": {
+				"item": "kubejs:tier_4_magical_alloy_ring"
+			  },
+			  "D": {
+				"item": "botania:corporea_crystal_cube"
+			  },
+			  "E": {
+				"item": "ars_nouveau:archmage_robes"
+			  },
+			  "F": {
+				"item": "ars_nouveau:arcane_pedestal"
+			  }
+			},
+			"result": {
+			  "item": 'kubejs:magic_widget'
+			}
+		  }).id('mbm2:magic_widget')
 });

@@ -203,8 +203,8 @@ onEvent('fluid.registry', event => {
       let slurryColor = newShade(item.color.toString(16), -20)
       event.create(`${item.material}_slurry`).thinTexture(slurryColor).bucketColor(slurryColor)
 
-      let cleanSlurryColor = newShade(item.color.toString(16), 25)
-      event.create(`clean_${item.material}_slurry`).thinTexture(cleanSlurryColor).bucketColor(cleanSlurryColor)
+      //let cleanSlurryColor = newShade(item.color.toString(16), 25)
+      //event.create(`clean_${item.material}_slurry`).thinTexture(cleanSlurryColor).bucketColor(cleanSlurryColor)
 
       let concentratedSlurryColor = newShade(item.color.toString(16), -50)
       event.create(`concentrated_${item.material}_slurry`).thickTexture(concentratedSlurryColor).bucketColor(concentratedSlurryColor)
@@ -212,37 +212,3 @@ onEvent('fluid.registry', event => {
 
   })
 });
-
-// TO DO ADD SLURRY FOR ORE PROCESSING (maybe)
-const $EventBuses = java('dev.architectury.platform.forge.EventBuses')
-const $GasDeferredRegister = java('mekanism.common.registration.impl.GasDeferredRegister')
-const $SlurryDeferredRegister = java('mekanism.common.registration.impl.SlurryDeferredRegister')
-const $InfuseTypeDeferredRegister = java('mekanism.common.registration.impl.InfuseTypeDeferredRegister')
-
-const GASES = new $GasDeferredRegister('kubejs')
-const SLURRY = new $SlurryDeferredRegister('kubejs')
-const INFUSETYPE = new $InfuseTypeDeferredRegister('kubejs')
-
-
-//ADD STUFF HERE
-//GASES.register('example_gas', 0xA020F0)
-//SLURRY.register('example_slurry', builder => builder.color(0xA020F0))
-INFUSETYPE.register('chitin', 0x634f34)
-INFUSETYPE.register('matrix', 0xa091ed)
-
-
-
-
-
-GASES.register($EventBuses.getModEventBus('kubejs').get())
-SLURRY['register(net.minecraftforge.eventbus.api.IEventBus)']($EventBuses.getModEventBus('kubejs').get())
-INFUSETYPE.register($EventBuses.getModEventBus('kubejs').get())
-
-
-
-onEvent('client.generate_assets', event => {
-    //event.addLang('slurry.kubejs.dirty_example_slurry', `Dirty Example Slurry`)
-    event.addLang('infuse_type.kubejs.chitin', `Chitin`)
-    event.addLang('infuse_type.kubejs.matrix', `Matrix`)
-  
-})

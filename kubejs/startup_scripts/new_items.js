@@ -53,6 +53,7 @@ var basicItems = [
 	'unfinished_logic_unit',
 	'titanium_plated_obsidian',
 	'bolt_mold',
+	'ingot_mold',
 	'resonating_dust',
 	'charged_coil',
 	'nature_gem',
@@ -94,7 +95,6 @@ var basicItems = [
 	'advanced_mechanical_component',
 	'blaze_core',
 	'amethyst_gate',
-	'quantum_processor',
 	'empty_cannister',
 	'luminite_cannister',
 	'mana_cannister',
@@ -222,8 +222,9 @@ onEvent('item.registry', event => {
 
 	event.create('reinforced_hdpe_sheet').displayName('§7Reinforced HDPE Sheet')
 	
+	event.create('quantum_processor').rarity('epic').displayName('§5Quantum Processor')
 
-	event.create('blank_ai_chip').displayName('Blank AI Chip').rarity('uncommon')
+	event.create('blank_ai_chip').displayName('Blank AI Chip')
 	event.create('ai_chip').displayName('§eAI Chip')
 	event.create('hostile_ai_chip').displayName('§cHostile AI Chip')
 	event.create('advanced_ai_chip').displayName('§bAdvanced AI Chip')
@@ -232,6 +233,7 @@ onEvent('item.registry', event => {
 	event.create('scarab_of_hours').glow(true).rarity('epic')
 	event.create('elemental_star').glow(true).rarity('epic')
 
+	
 
 	global.dronesTypes = [
 		'harvester',
@@ -350,8 +352,8 @@ onEvent('item.registry', event => {
 		{
 			'name': 'kubejs:extra_dimensional_alloy',
 			'input': 'kubejs:dimensional_alloy',
-			'amount': 2,
-			'cost': 800,
+			'amount': 4,
+			'cost': 200,
 			'planet': ['blue'],
 		},
 		{

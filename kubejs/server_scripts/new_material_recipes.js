@@ -368,14 +368,72 @@ event.recipes.multiblocked.multiblock("chemical_reactor")
 	.duration(200)
 
       
-  //Cosmonium
+  //Cosmonium Base
   event.recipes.multiblocked.multiblock('mixer')
-  .inputItems('kubejs:astral_fusion_fine_dust','kubejs:adamantine_alloy_fine_dust','kubejs:exoskeleton_composit_fine_dust','2x kubejs:asteroid_dust_tier_3', 'kubejs:einsteinium_dust') //,'#forge:fine_dusts/rune'
+  .inputItems('kubejs:astral_fusion_fine_dust','kubejs:adamantine_alloy_fine_dust','kubejs:exoskeleton_composit_fine_dust','2x kubejs:asteroid_dust_tier_3', 'kubejs:einsteinium_dust')
   .inputFluid(Fluid.of('chemlib:krypton_fluid', 1000))
   .outputItem('#forge:base_dusts/cosmonium')
   .setPerTick(true)
   .inputFE(200000)
   .duration(300)
+
+//Cosmonium Pellet
+event.recipes.multiblocked.multiblock("chemical_reactor")
+	.inputFluid(Fluid.of('kubejs:shadow_dragon_breath', 1000))
+  .inputItem('#forge:base_dusts/cosmonium')
+	.inputItem('#forge:fine_dusts/draconium')
+	.inputItem('kubejs:extra_dimensional_alloy')
+	.outputItem('#forge:pellets/cosmonium')
+	.setPerTick(true)
+	.inputFE(300000)
+	.duration(100)
+
+//Cosmonium Base Ingot
+  event.recipes.multiblocked.multiblock("sintering")
+  .setChance(0)
+  .inputItem('kubejs:ingot_mold')
+  .setChance(1)
+  .inputItem('#forge:pellets/cosmonium')
+  .inputItem(Item.of(`#forge:fine_dusts/elite_iridium_alloy`))
+  .inputFluid(Fluid.of(`kubejs:hot_air`, 250))
+  .outputItem('#forge:base_ingots/cosmonium')
+  .setPerTick(true)
+  .inputFE(100000)
+  .duration(200)
+
+let list = ['dusts','base_ingots']
+list.forEach(type => {
+//Cosmonium Ingot
+  event.recipes.multiblocked.multiblock("ebf")
+    .inputFluid(Fluid.of('kubejs:refined_data', 250))
+    .inputItem(`#forge:${type}/cosmonium`)
+    .outputItem(`#forge:ingots/cosmonium`)
+    .setPerTick(true)
+    .inputFE(1000000)
+    .duration(160)
+    .data({ temperature: 10000})
+    .text(`    Heat: §610000`)
+    .predicate((recipe, recipeLogic) => {
+      let reqTemp = recipe.getData().getInt("temperature")
+      let controllerTe = recipeLogic.controller.self()
+      let level = controllerTe.getLevel()
+      let coilTotalHeat = 0
+      global.coilPos.forEach(pos => {
+        let coilName = level.getBlockState(controllerTe.getBlockPos().offset(pos.x, pos.y, pos.z)).getBlock()
+        global.coilHeatValues.forEach(coil => {
+          if (Block.getBlock(`kubejs:${coil.name}_coil`).equals(coilName)) {
+            coilTotalHeat += coil.heat
+          }
+        })
+      })
+      //If we have enough Heat, chillin
+      if (reqTemp <= coilTotalHeat) {
+        return true
+      } else  {
+        return false
+      }
+  }, Component.string('Requires at least Vibranium Coils'))
+});
 
 
 //////////////////Coolant////////////////////
@@ -407,4 +465,15 @@ event.recipes.multiblocked.multiblock("chemical_reactor")
   .inputFE(16000)
   .duration(100)
 
+  //Ender Air
+  event.recipes.thermal.centrifuge([
+    Item.of('minecraft:ender_pearl').withChance(0.50),
+    Fluid.of('kubejs:liquid_ender_air', 500)
+  ], Item.of('hostilenetworks:prediction', '{data_model:{id:"hostilenetworks:enderman"}}')).id(`mbm2:centrifuge/enderman_data`)
+
+  //Shadows
+  event.recipes.thermal.refinery([
+    Item.of('minecraft:dragon_breath').withChance(0.50),
+    Fluid.of('kubejs:liquid_shadows', 500)
+  ], Fluid.of('kubejs:liquid_ender_air', 1000)).id(`mbm2:refinery/liquid_ender_air`)
 });

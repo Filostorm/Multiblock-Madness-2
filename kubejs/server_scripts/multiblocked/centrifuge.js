@@ -25,10 +25,10 @@ var fluidCentrifugeRecipes = [
 	},
 	{
 	  input: Fluid.of('kubejs:liquid_ender_air', 200),
-	  output4: Fluid.of('kubejs:liquid_shadows', 120),
-	  output1: Fluid.of('chemlib:argon_fluid', 20),
-	  output2: Fluid.of('chemlib:xenon_fluid', 20),
-	  output3: Fluid.of('chemlib:methane_fluid', 20),
+	  output1: Fluid.of('kubejs:liquid_shadows', 120),
+	  output2: Fluid.of('chemlib:argon_fluid', 20),
+	  output3: Fluid.of('chemlib:xenon_fluid', 20),
+	  output4: Fluid.of('chemlib:methane_fluid', 20),
 	  duration: 400
 	}
   ]
@@ -45,6 +45,14 @@ var fluidCentrifugeRecipes = [
 			  .outputFluid(r.output4)
 			  .inputStress(512)
 			  .duration(r.duration)
+			event.recipes.multiblocked.multiblock("centrifuge")
+				.inputFluid(r.input*2)
+				.outputFluid(r.output1*2)
+				.outputFluid(r.output2*2)
+				.outputFluid(r.output3*2)
+				.outputFluid(r.output4*2)
+				.inputFE(10000)
+				.duration(r.duration/2)
 		} else if (r.output3 != null) {
 			event.recipes.multiblocked.multiblock("fluid_centrifuge_mk1")
 			  .inputFluid(r.input)

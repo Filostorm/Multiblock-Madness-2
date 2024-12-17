@@ -130,11 +130,14 @@
     "block.mbm2.precision_milling_unit": "Precision Milling Unit",
     "mbm2.precision_milling_unit.description": "Crush down items and capture fine dusts",
     "multiblocked.recipe_map.powder_mill": "Powder Milling",
-    
 
     "block.mbm2.galactic_trade_center": "Galactic Trade Outpost",
     "mbm2.galactic_trade_center.description": "Trade with civilizations across the Galaxy",
     "multiblocked.recipe_map.trade_center": "Galactic Trading",
+
+    "block.mbm2.centrifuge_mk2": "Centrifuge Mk2",
+    "mbm2.centrifuge_mk2.description": "Separates Fluids or Items into their components",
+    "multiblocked.recipe_map.centrifuge": "Mk2 Centrifuging",
 
 
     "block.multiblocked.create_item_input": "Input Vault Part",

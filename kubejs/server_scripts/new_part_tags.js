@@ -85,7 +85,7 @@ onEvent('tags.items', event => {
           
 
         if (item.type == 'compound_ore') {
-          event.add(`forge:ores/fine_dust/${item.material}`, `kubejs:fine_dust_${item.material}`)
+          //event.add(`forge:ores/fine_dust/${item.material}`, `kubejs:fine_dust_${item.material}`)
 
           global.compoundOreParts.forEach((part) => { //compound ores don't get refined
             event.add(`forge:ores/compound/${part.name}`, `kubejs:${part.name}_${item.material}`)

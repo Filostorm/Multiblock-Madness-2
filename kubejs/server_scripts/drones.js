@@ -416,7 +416,7 @@ onEvent('recipes', event => {
 				.setPerTick(true)
 				.setChance(1)
 				.inputFE(4000*16)
-				.duration(1200)
+				.duration(600)
 			});
 
 			//Loading Cargo Drones
@@ -449,7 +449,7 @@ onEvent('recipes', event => {
 				.outputItem(Item.of(`kubejs:galactic_standard_currency`, item.pay))
 				.setPerTick(true)
 				.inputFE(100000)
-				.duration(2000)
+				.duration(1000)
 			})
 		});
 		/////////////////////////REQUESTS///////////////////////////

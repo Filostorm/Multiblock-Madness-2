@@ -49,7 +49,7 @@ global.newMaterialParts = [
       'blockParts': ['cog_block'],
       'fluid_id': 'tconstruct:molten_copper',
       'ore': true,
-      'byproducts': ['gold', 'sulfur'],
+      'byproducts': ['gold', 'sulfur','copper','molybdenum'],
       'allomancy': 'Copper hides your Allomancy from detection. When you are burning copper, yourself and other allomancers nearby are cloaked from the senses of a Bronze burner. However, your own ability to use Bronze is nullified when burning Copper',
       'feruchemy': 'Memories--Stores Experience or Retrieved Stored Experience'
     },
@@ -111,7 +111,7 @@ global.newMaterialParts = [
       'blockParts': ['cog_block', 'casing', 'coil', 'scaffolding', 'frame_box'],
       'ore': true,
       'fluid_id': 'tconstruct:molten_cobalt',
-      'byproducts': ['gold', 'mithril'],
+      'byproducts': ['gold', 'mithril', 'mithril'],
     },
     {
       'material': 'aluminum',
@@ -274,7 +274,7 @@ global.newMaterialParts = [
       'blockParts': ['coil'],
       'ore': true,
       'raw_ore': true,
-      'byproducts': ['thorium'],
+      'byproducts': ['thorium','tungsten','molybdenum','molybdenum','molybdenum'],
     },
     {
       'material': 'orichalcum',
@@ -387,7 +387,7 @@ global.newMaterialParts = [
       'color': 0x421c63,
       'tier': 7,
       'type': 'base_metal',
-      'itemParts': ['ingot', 'nugget','dust', 'plate', 'gear', 'rod', 'reinforced_plating', 'sheet', 'hull_panel', 'plating', 'bolt'/*, 'wire', 'model_spool', 'model_wire_coil', */],
+      'itemParts': ['ingot', 'nugget','dust', 'plate', 'gear', 'rod', 'reinforced_plating', 'sheet', 'hull_panel', 'plating', 'bolt', 'fine_dust'/*, 'wire', 'model_spool', 'model_wire_coil', */],
       'blockParts': ['storage_block'],
       'ore': true,
       'raw_ore': true,
@@ -1252,7 +1252,7 @@ global.newMaterialParts = [
       'type': 'alloy',
       'iconset': 'mechanical',
       'tier': 7,
-      'itemParts': ['ingot', 'nugget', 'dust',  'plate', 'gear', 'rod', 'plating', 'hull_panel', 'reinforced_plating'],
+      'itemParts': ['ingot', 'nugget', 'dust',  'plate', 'gear', 'rod', 'plating', 'hull_panel', 'reinforced_plating', 'fine_dust'],
       'blockParts': ['storage_block'],
       'fluid_id': 'kubejs:molten_elite_iridium_alloy',
       'fluid': 'thick',
@@ -1263,11 +1263,11 @@ global.newMaterialParts = [
     /////////////// Tier 8 Alloys /////////////////////////////
     {
       'material': 'cosmonium',
-      'color': 0x3ec25b,
+      'color': 0xfc0384,
       'type': 'alloy',
       'iconset': 'magical',
       'tier': 8,
-      'itemParts': ['ingot', 'nugget', 'dust',  'plate', 'gear', 'rod', 'plating', 'hull_panel', 'reinforced_plating', 'base_dust'],
+      'itemParts': ['ingot', 'nugget', 'dust',  'plate', 'gear', 'rod', 'plating', 'hull_panel', 'reinforced_plating', 'base_dust', 'base_ingot', 'pellet'],
       'blockParts': ['storage_block'],
       'fluid_id': 'kubejs:molten_cosmonium',
       'fluid': 'thick',

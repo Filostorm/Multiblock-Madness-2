@@ -495,7 +495,7 @@ event.shaped('mbm2:elemental_stabilizer', ['ABA','CDE','AFA'], {A: 'kubejs:rune_
 			"item": "create:crushing_wheel"
 		  },
 		  "E": {
-			"item": "mekanism:ultimate_crushing_factory"
+			"item": "mekanism:basic_crushing_factory"
 		  }
 		},
 		"result": {

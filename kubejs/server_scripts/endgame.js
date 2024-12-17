@@ -240,17 +240,17 @@ onEvent('recipes', event => {
 			"pattern": [
 			  "         ",
 			  "AAAABBB  ",
-			  "CCCCDEEFF",
-			  "AAAAGEEHH",
-			  "CCCCDEEFF",
-			  "AAAABBBII",
-			  "      IJI",
-			  "       II",
+			  "CCCCDEFGG",
+			  "HHHHIJKKK",
+			  "CCCCDEFGG",
+			  "AAAABBBLL",
+			  "      LML",
+			  "       LL",
 			  "         "
 			],
 			"key": {
 			  "A": {
-				"item": "kubejs:uru_hull_panel"
+				"item": "kubejs:cosmonium_hull_panel"
 			  },
 			  "B": {
 				"item": "kubejs:tier_4_magical_alloy_plate"
@@ -259,24 +259,33 @@ onEvent('recipes', event => {
 				"item": "kubejs:draconium_rod"
 			  },
 			  "D": {
-				"item": "kubejs:lapatron_orb_full"
+				"item": "kubejs:hypercoil"
 			  },
 			  "E": {
-				"item": "kubejs:tier_4_magical_alloy_sprocket"
+				"item": "kubejs:lapatron_orb_full"
 			  },
 			  "F": {
-				"item": "kubejs:uru_reinforced_plating"
+				"item": "kubejs:advanced_ai_chip"
 			  },
 			  "G": {
-				"item": "kubejs:world_shaper_blueprint"
+				"item": "kubejs:cosmonium_reinforced_plating"
 			  },
 			  "H": {
-				"item": "kubejs:uru_bolt"
+				"item": "kubejs:uru_hull_panel"
 			  },
 			  "I": {
-				"item": "kubejs:vibranium_plating"
+				"item": "kubejs:world_shaper_blueprint"
 			  },
 			  "J": {
+				"item": "kubejs:scarab_of_hours"
+			  },
+			  "K": {
+				"item": "kubejs:tier_4_magical_alloy_sprocket"
+			  },
+			  "L": {
+				"item": "kubejs:vibranium_plating"
+			  },
+			  "M": {
 				"item": "kubejs:vibranium_interlocking_component"
 			  }
 			},

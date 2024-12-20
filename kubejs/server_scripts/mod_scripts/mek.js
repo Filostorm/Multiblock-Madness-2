@@ -221,6 +221,8 @@ event.custom({
 		"item":'mekanism:pellet_plutonium'
 	}
 	}).id("mbm2:pellet_plutonium")
-
-
+	
+	//Configurator
+	event.replaceInput({id: 'mekanism:configurator'}, 'mekanism:alloy_infused', 'kubejs:red_alloy_gear')
+	
 });

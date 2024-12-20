@@ -142,8 +142,9 @@ onEvent('item.tooltip', tooltip => {
 
 	//Battie tooltips
 	global.batteryItems.forEach((item, index) => {
-	  let storage = global.batteryStorage[index].toLocaleString();
-	  //console.log(item +' ' +storage)
+		let number = global.batteryStorage[index]
+		const storage = number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	  console.log('[LOOK] '+ item +' ' +storage)
 	  tooltip.addAdvanced(`kubejs:${item}_empty`, (item, advanced, text) => {
 		  text.add(1, [Text.of(`(0/${storage})`).red()])
 		})

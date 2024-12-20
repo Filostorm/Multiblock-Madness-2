@@ -355,7 +355,7 @@ event.recipes.multiblocked.multiblock('mixer')
 event.recipes.botania.runic_altar('kubejs:assembly_rune', ['botania:crafty_crate', 'ars_nouveau:glyph_craft', 'quark:rainbow_rune', 'elementalcraft:major_rune_slate', 'naturesaura:auto_crafter'], 250000).id(`mbm2:assembly_rune`)
 
 
-//////////////////VOID DRAGON Breath////////////////////
+//////////////////-V-O-I-D- shadow DRAGON Breath////////////////////
 //Shadow Dragon Breath
 event.recipes.multiblocked.multiblock("chemical_reactor")
 	.inputFluid(Fluid.of('kubejs:liquid_dragon_breath', 1000))
@@ -371,7 +371,7 @@ event.recipes.multiblocked.multiblock("chemical_reactor")
   //Cosmonium Base
   event.recipes.multiblocked.multiblock('mixer')
   .inputItems('kubejs:astral_fusion_fine_dust','kubejs:adamantine_alloy_fine_dust','kubejs:exoskeleton_composit_fine_dust','2x kubejs:asteroid_dust_tier_3', 'kubejs:einsteinium_dust')
-  .inputFluid(Fluid.of('chemlib:krypton_fluid', 1000))
+  .inputFluid(Fluid.of('chemlib:radon_fluid', 1000))
   .outputItem('#forge:base_dusts/cosmonium')
   .setPerTick(true)
   .inputFE(200000)
@@ -387,6 +387,9 @@ event.recipes.multiblocked.multiblock("chemical_reactor")
 	.setPerTick(true)
 	.inputFE(300000)
 	.duration(100)
+
+  //Ingot Mold
+event.shaped('kubejs:ingot_mold', ['   ','A A','AAA'], {A: 'thermal:iron_plate'}).id("mbm2:ingot_mold")
 
 //Cosmonium Base Ingot
   event.recipes.multiblocked.multiblock("sintering")

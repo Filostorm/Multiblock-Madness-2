@@ -1453,6 +1453,7 @@
 			}]
 		}
 		{
+			disable_toast: true
 			x: 17.0d
 			y: -5.0d
 			dependencies: [

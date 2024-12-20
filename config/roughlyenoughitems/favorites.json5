@@ -4,14 +4,7 @@
 		"{id:\"ftbquests:quests\",json:'{\"group\":\"ftblibrary:info\",\"icon\":\"ftbquests:item/book\",\"x\":610,\"click\":\"ftbquests:open_gui\",\"required_server_mods\":[\"ftbquests\"],\"custom_text\":true}',type:\"ftblibrary:sidebar_button\"}",
 		"{id:\"ftbessentials:trash_can\",json:'{\"group\":\"ftblibrary:util\",\"icon\":\"ftblibrary:icons/bin\",\"x\":150,\"click\":\"command:/trashcan\",\"required_server_mods\":[\"ftbessentials\"]}',type:\"ftblibrary:sidebar_button\"}",
 		"{id:\"ftbchunks:chunks\",json:'{\"group\":\"ftblibrary:util\",\"icon\":\"ftblibrary:icons/map\",\"x\":310,\"click\":\"ftbchunks:open_gui\"}',type:\"ftblibrary:sidebar_button\"}",
-		"{id:\"ftblibrary:toggle.gamemode\",json:'{\"group\":\"ftblibrary:cheat\",\"icon\":[\"ftblibrary:icons/blue_button\",\"ftblibrary:textures/icons/toggle_gamemode.png\"],\"x\":100,\"click\":\"command:/ftblibrary gamemode\",\"hide_with_nei\":true,\"requires_op\":true}',type:\"ftblibrary:sidebar_button\"}",
-		"{data:{Count:1b,id:\"kubejs:ingot_mold\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
-		"{data:{Count:1b,id:\"mbm2:centrifuge_mk2\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
-		"{data:{Count:1b,id:\"kubejs:cargo_drone\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
-		"{data:{Count:1b,id:\"kubejs:trade_drone\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
-		"{data:{Count:1b,id:\"mekanism:basic_mechanical_pipe\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
-		"{data:{Count:1b,id:\"mekanism:basic_logistical_transporter\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}",
-		"{data:{Count:1b,id:\"mekanism:basic_universal_cable\",type:\"minecraft:item\"},type:\"roughlyenoughitems:entry_stack\"}"
+		"{id:\"ftblibrary:toggle.gamemode\",json:'{\"group\":\"ftblibrary:cheat\",\"icon\":[\"ftblibrary:icons/blue_button\",\"ftblibrary:textures/icons/toggle_gamemode.png\"],\"x\":100,\"click\":\"command:/ftblibrary gamemode\",\"hide_with_nei\":true,\"requires_op\":true}',type:\"ftblibrary:sidebar_button\"}"
 	],
 	"hiddenFavorites": [],
 	"displays": [

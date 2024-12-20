@@ -1301,8 +1301,8 @@ onEvent("lootjs", (event) => {
             })
             return refinableOres
         }
+        if (item.type == 'base_metal') {
         refinableOre(5).forEach((part) => {
-        
         var logvar = {
             "inputs": [
                 {
@@ -1337,6 +1337,6 @@ onEvent("lootjs", (event) => {
         event.addJson(`forbidden_arcanus:hephaestus_forge/rituals/${item.material}/${part.split('/')[1]}`, logvar
         )
         console.log(logvar)
-    })
+    })}
     })
 })

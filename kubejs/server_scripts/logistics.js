@@ -4,9 +4,9 @@ onEvent('recipes', event => {
 
 
 
-	//Pipez Item Pipe
-	event.remove({output: 'pipez:item_pipe'})
-  	event.shaped('4x pipez:item_pipe', [
+	//mek Item Pipe
+	event.remove({output: 'mekanism:basic_logistical_transporter'})
+  	event.shaped('4x mekanism:basic_logistical_transporter', [
 		'PPP',
 		'BSB',
 		'PPP'
@@ -14,11 +14,11 @@ onEvent('recipes', event => {
 		P: '#forge:plates/invar',
 		B: 'immersiveengineering:conveyor_basic',
 		S: 'thermal:servo_attachment'
-  	}).id('mbm2:pipez/item_pipe')
+  	}).id('mbm2:mek/item_pipe')
 
-	//Pipez Fluid Pipe
-	event.remove({output: 'pipez:fluid_pipe'})
-  	event.shaped('4x pipez:fluid_pipe', [
+	//mek Fluid Pipe
+	event.remove({output: 'mekanism:basic_mechanical_pipe'})
+  	event.shaped('4x mekanism:basic_mechanical_pipe', [
 		'PPP',
 		'BSB',
 		'PPP'
@@ -26,11 +26,11 @@ onEvent('recipes', event => {
 		P: '#forge:plates/cobalt_brass',
 		B: 'thermal:fluid_duct',
 		S: 'thermal:servo_attachment'
-  	}).id('mbm2:pipez/fluid_pipe')
+  	}).id('mbm2:mek/fluid_pipe')
 
-	//Pipez Energy Pipe
-	event.remove({output: 'pipez:energy_pipe'})
-  	event.shaped('4x pipez:energy_pipe', [
+	//mek Energy Pipe
+	event.remove({output: 'mekanism:basic_universal_cable'})
+  	event.shaped('4x mekanism:basic_universal_cable', [
 		'PPP',
 		'BSB',
 		'PPP'
@@ -38,11 +38,11 @@ onEvent('recipes', event => {
 		P: '#forge:plates/reinforced_electrum',
 		B: '#forge:wire_coils/tier_1_electrical_alloy',
 		S: 'thermal:servo_attachment'
-  	}).id('mbm2:pipez/energy_pipe')
+  	}).id('mbm2:mek/energy_pipe')
 
-	//Pipez Gas Pipe
-	event.remove({output: 'pipez:gas_pipe'})
-  	event.shaped('4x pipez:gas_pipe', [
+	//mek Gas Pipe
+	event.remove({output: 'mekanism:basic_pressurized_tube'})
+  	event.shaped('4x mekanism:basic_pressurized_tube', [
 		'PPP',
 		'BSB',
 		'PPP'
@@ -50,7 +50,7 @@ onEvent('recipes', event => {
 		P: '#forge:plates/chemically_inert_alloy',
 		B: 'mekanism:alloy_infused',
 		S: 'mekanism:basic_chemical_tank'
-  	}).id('mbm2:pipez/gas_pipe')
+  	}).id('mbm2:mek/gas_pipe')
 
 	//basic_upgrade
 	  event.remove({output: 'pipez:basic_upgrade'})
@@ -67,7 +67,7 @@ onEvent('recipes', event => {
 	//ultimate_upgrade
 	  event.remove({output: 'pipez:ultimate_upgrade'})
 	  event.shaped('pipez:ultimate_upgrade', [' AB','ACA','BA '], {A: 'kubejs:nethersteel_ingot',B: 'pneumaticcraft:pneumatic_cylinder',C: 'pipez:advanced_upgrade'}).id('mbm2:pipez/ultimate_upgrade')
-
+/*
 	//basic_logistical_transporter
 	  event.remove({output: '4x mekanism:basic_logistical_transporter'})
 	  event.shaped('4x mekanism:basic_logistical_transporter', ['AAA','BCB','AAA'], {A: 'kubejs:steel_plate',B: 'pipez:item_pipe',C: 'mekanism:basic_control_circuit'}).id('mbm2:mekanism/basic_logistical_transporter')
@@ -83,7 +83,7 @@ onEvent('recipes', event => {
 	//basic_pressurized_tube
 	  event.remove({output: '4x mekanism:basic_pressurized_tube'})
 	  event.shaped('4x mekanism:basic_pressurized_tube', ['AAA','BCB','AAA'], {A: 'kubejs:steel_plate',B: 'pipez:gas_pipe',C: 'mekanism:basic_control_circuit'}).id('mbm2:mekanism/basic_pressurized_tube')
-
+*/
 	  //fluid_duct
 	  event.remove({output: '2x thermal:fluid_duct'})
 	  event.shaped('2x thermal:fluid_duct', ['ABA','   ','ABA'], {A: 'thermal:bronze_plate',B: 'thermal:lead_plate'}).id('mbm2:thermal/fluid_duct')

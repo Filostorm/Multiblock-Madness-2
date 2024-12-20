@@ -182,6 +182,7 @@
 			}]
 		}
 		{
+			title: "Tier 6 Metal"
 			x: 6.0d
 			y: -0.5d
 			dependencies: [
@@ -190,18 +191,18 @@
 				"44302F55B2C258AA"
 			]
 			id: "23C9DE786EB00B38"
-			tasks: [
-				{
-					id: "7DEBDACE63667AD4"
-					type: "item"
-					item: "chemlib:iridium_ingot"
+			tasks: [{
+				id: "7DEBDACE63667AD4"
+				type: "item"
+				title: "Any Tier 6 Base Metal"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "mbm2:base_metals/tier_six"
+					}
 				}
-				{
-					id: "19BAD22A7DB00B7D"
-					type: "item"
-					item: "chemlib:palladium_ingot"
-				}
-			]
+			}]
 		}
 		{
 			title: "Tier 3 Rocket to Venus and Mercury"
@@ -297,11 +298,18 @@
 			x: 5.5d
 			y: -2.5d
 			id: "44302F55B2C258AA"
-			tasks: [{
-				id: "628A5BCE5E2F0EFA"
-				type: "item"
-				item: "kubejs:tungsten_coil"
-			}]
+			tasks: [
+				{
+					id: "628A5BCE5E2F0EFA"
+					type: "item"
+					item: "kubejs:tungsten_coil"
+				}
+				{
+					id: "708DBCF33A637B3F"
+					type: "item"
+					item: "chemlib:xenon"
+				}
+			]
 		}
 		{
 			x: -4.0d

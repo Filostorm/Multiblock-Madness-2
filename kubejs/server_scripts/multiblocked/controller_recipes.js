@@ -153,6 +153,8 @@ event.shaped('mbm2:fusion_reactor', ['ABA','CDC','EAE'], {A: 'kubejs:ai_chip',B:
 //Elemental Stabilizer
 event.shaped('mbm2:elemental_stabilizer', ['ABA','CDE','AFA'], {A: 'kubejs:rune_ingot',B: 'botania:dirt_rod',C: 'botania:water_rod',D: 'kubejs:transmuted_casing',E: 'botania:tornado_rod',F: 'botania:fire_rod'})
 
+//cENTREFUGE
+event.shaped('mbm2:centrifuge_mk2', ['ABA','CDC','AEA'], {A: 'kubejs:osmium_plating',B: 'pneumaticcraft:printed_circuit_board',C: 'kubejs:tier_2_mechanical_alloy_interlocking_component',D: 'thermal:machine_centrifuge',E: 'kubejs:tier2_casing'}).id("mbm2:centrifuge_mk2")
 	//crystal_chamber
 	event.custom({
 		"type": "extendedcrafting:shaped_table",

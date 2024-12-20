@@ -62,7 +62,6 @@ var basicItems = [
 	'metal_seed',
 	'shaped_fluix_crystal',
 	'dimensional_mote',
-	'world_shaper_blueprint',
 	'nether_shard',
 	'nether_shard_west',
 	'nether_shard_east',
@@ -83,7 +82,6 @@ var basicItems = [
 	'blank_location_data_chip',
 	'tracking_chip',
 	'ripped_blueprint',
-	'pellet',
 	'tech_widget',
 	'magic_widget',
 	'hypercoil',
@@ -102,6 +100,7 @@ var basicItems = [
 	'source_cannister',
 	'arcstone',
 	'plasma_orb',
+	'enriched_dimensional_shard',
 ]
 
 global.transitionalItems = [
@@ -230,6 +229,7 @@ onEvent('item.registry', event => {
 	event.create('advanced_ai_chip').displayName('§bAdvanced AI Chip')
 
 	event.create('blank_cosmic_blueprint').glow(true).rarity('epic')
+	event.create('world_shaper_blueprint').glow(true).rarity('epic')
 	event.create('scarab_of_hours').glow(true).rarity('epic')
 	event.create('elemental_star').glow(true).rarity('epic')
 
@@ -361,7 +361,7 @@ onEvent('item.registry', event => {
 			'input': 'kubejs:vibranium_dual_coil',
 			'amount': 1,
 			'cost': 1000,
-			'planet': ['red'],
+			'planet': ['green'],
 		},
 		{
 			'name': 'kubejs:quantum_processor',
@@ -382,7 +382,7 @@ onEvent('item.registry', event => {
 			'input': 'reliquary:chelicerae',
 			'amount': 1,
 			'cost': 10000,
-			'planet': ['green'],
+			'planet': ['red'],
 		},
 	]
 	global.droneRequests.forEach(item => {

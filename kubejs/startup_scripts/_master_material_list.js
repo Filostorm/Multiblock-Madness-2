@@ -1193,19 +1193,6 @@ global.newMaterialParts = [
 
     /////////////// Tier 6 Alloys /////////////////////////////
     {
-      'material': 'space_alloy',
-      'color': 0x8492ad,
-      'type': 'alloy',
-      'tier': 6,
-      'itemParts': ['ingot', 'nugget', 'dust',  'plate', 'gear', 'rod', 'plating', 'hull_panel', 'reinforced_plating', 'bolt'],
-      'blockParts': ['storage_block'],
-      'fluid_id': 'kubejs:molten_space_alloy',
-      'fluid': 'thick',
-      'amount': 4,
-      'dust_input': ['3x #forge:dusts/lunar_alloy','#forge:dusts/aerospace_alloy','8x kubejs:asteroid_dust_tier_1', '16x chemlib:krypton'],
-      'ingot_input': ['3x #forge:ingots/lunar_alloy','#forge:ingots/aerospace_alloy','8x kubejs:asteroid_dust_tier_1', '16x chemlib:krypton'],
-    },
-    {
       'material': 'adamantine_alloy',
       'color': 0xd1193b,
       'type': 'alloy',
@@ -1232,6 +1219,19 @@ global.newMaterialParts = [
       //'ingot_input': ['3x #forge:ingots/adamantium','#forge:ingots/energetic_alloy', '#forge:ingots/manasteel'],
     },
     /////////////// Tier 7 Alloys /////////////////////////////
+    {
+      'material': 'space_alloy',
+      'color': 0x8492ad,
+      'type': 'alloy',
+      'tier': 7,
+      'itemParts': ['ingot', 'nugget', 'dust',  'plate', 'gear', 'rod', 'plating', 'hull_panel', 'reinforced_plating', 'bolt', 'model_rocket_nose_cone', 'rocket_fin'],
+      'blockParts': ['storage_block'],
+      'fluid_id': 'kubejs:molten_space_alloy',
+      'fluid': 'thick',
+      'amount': 4,
+      'dust_input': ['3x #forge:dusts/lunar_alloy','#forge:dusts/aerospace_alloy','8x kubejs:asteroid_dust_tier_1', '16x chemlib:krypton'],
+      'ingot_input': ['3x #forge:ingots/lunar_alloy','#forge:ingots/aerospace_alloy','8x kubejs:asteroid_dust_tier_1', '16x chemlib:krypton'],
+    },
     {
       'material': 'astral_fusion',
       'color': 0xa645de,

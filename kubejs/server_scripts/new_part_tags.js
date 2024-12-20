@@ -128,6 +128,26 @@ onEvent('tags.items', event => {
         })
       }
     })
+    //Planets
+    global.planetTypes.forEach(planet => {
+      event.add(`forge:planets`, `kubejs:planet_${planet}`)
+    });
+
+    //Trades
+    global.droneTrades.forEach(trade => {
+      let itemName = trade.name.split(':')[1]
+      event.add(`forge:trades`, `kubejs:trade_${itemName}`)
+    });
+
+    //Requests
+    global.droneRequests.forEach(request => {
+      let itemName = request.name.split(':')[1]
+      event.add(`forge:requests`, `kubejs:request_${itemName}`)
+    });
+    //Asteroids
+    event.add(`forge:asteroids`, `kubejs:asteroid_tier_1`)
+    event.add(`forge:asteroids`, `kubejs:asteroid_tier_2`)
+    event.add(`forge:asteroids`, `kubejs:asteroid_tier_3`)
 });
 
 

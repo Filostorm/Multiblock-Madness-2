@@ -9,8 +9,10 @@
 	default_hide_dependency_lines: false
 	quests: [
 		{
-			x: 4.5d
-			y: -4.0d
+			x: 12.0d
+			y: -1.5d
+			subtitle: "100,000 Power/t"
+			dependencies: ["5BE7575508D59194"]
 			id: "5F949EED9E1FDB6A"
 			tasks: [{
 				id: "21050308EF20EEE1"
@@ -19,8 +21,8 @@
 			}]
 		}
 		{
-			x: 4.5d
-			y: -3.0d
+			x: 15.0d
+			y: -0.5d
 			description: ["The Railgun is used to launch satellites into space, in this case its Dyson Swarm Panels"]
 			id: "4E899924B02D0D37"
 			tasks: [{
@@ -30,8 +32,9 @@
 			}]
 		}
 		{
-			x: 6.0d
+			x: 12.0d
 			y: -3.0d
+			dependencies: ["371A0F8E03702DF1"]
 			id: "70537424EB7030A2"
 			tasks: [{
 				id: "2B7A13A14C7ED6A5"
@@ -40,7 +43,7 @@
 			}]
 		}
 		{
-			x: 5.5d
+			x: 7.0d
 			y: 1.5d
 			shape: "gear"
 			description: ["Last step of ore processing!"]
@@ -52,7 +55,7 @@
 			}]
 		}
 		{
-			x: 5.5d
+			x: 7.0d
 			y: 2.5d
 			shape: "gear"
 			description: ["Last step of ore processing! (For real this time)"]
@@ -64,11 +67,13 @@
 			}]
 		}
 		{
-			x: 6.0d
-			y: -4.0d
+			x: 14.0d
+			y: -3.0d
+			description: ["You'll be needing a lot of power, so might want to get your Dyson Sphere started!"]
 			dependencies: [
-				"4E899924B02D0D37"
 				"5F949EED9E1FDB6A"
+				"4E899924B02D0D37"
+				"68E2A6FD57BC851E"
 			]
 			id: "371A0F8E03702DF1"
 			tasks: [{
@@ -78,11 +83,10 @@
 			}]
 		}
 		{
-			x: 7.5d
-			y: -4.0d
+			x: 13.5d
+			y: -4.5d
 			description: ["Batteries can be filled with an Energy Reciever or a Battery Interface."]
 			dependencies: [
-				"70537424EB7030A2"
 				"371A0F8E03702DF1"
 				"73050C7FD526E29E"
 			]
@@ -95,8 +99,8 @@
 			}]
 		}
 		{
-			x: 7.5d
-			y: -3.0d
+			x: 12.0d
+			y: -4.5d
 			description: ["This Multiblock can fill and empty batteries"]
 			id: "73050C7FD526E29E"
 			tasks: [{
@@ -106,7 +110,7 @@
 			}]
 		}
 		{
-			x: 10.0d
+			x: 12.0d
 			y: 2.0d
 			dependencies: [
 				"0F95C6AAAFC57189"
@@ -128,7 +132,7 @@
 			}]
 		}
 		{
-			x: 8.5d
+			x: 10.0d
 			y: 1.0d
 			shape: "hexagon"
 			size: 1.5d
@@ -144,7 +148,7 @@
 			}]
 		}
 		{
-			x: 8.5d
+			x: 10.0d
 			y: 3.0d
 			description: ["Upgrade that Blast Furnace again!"]
 			dependencies: ["7BE3E64710F4EFEC"]
@@ -163,11 +167,22 @@
 			]
 		}
 		{
-			x: 12.0d
+			x: 40.0d
 			y: 2.0d
 			shape: "pentagon"
-			description: ["This is the Final item in the current pack! I'm hoping to add chapter 8, which would have a lot more custom content and have you crafting a world or greater, but for now we'll see. Thanks for playing!"]
-			dependencies: ["4E3DE9101E98034E"]
+			subtitle: "The Ultimate Tool"
+			description: [
+				""
+				""
+				"(its you)"
+			]
+			dependencies: [
+				"381F02D6BC2C9425"
+				"494F461386B644C0"
+				"3D59D95BB61B6662"
+				"4A2CE1CDBAB94263"
+				"068A81A1A3132365"
+			]
 			size: 2.0d
 			id: "76F29E585A979695"
 			tasks: [{
@@ -182,7 +197,7 @@
 			}]
 		}
 		{
-			x: 7.0d
+			x: 8.5d
 			y: 2.0d
 			dependencies: [
 				"70C3B2C93E84B058"
@@ -203,7 +218,7 @@
 			}]
 		}
 		{
-			x: 7.0d
+			x: 8.5d
 			y: 4.0d
 			description: ["You'll need this for the Argon required by Tier 7 Metals"]
 			id: "7BE3E64710F4EFEC"
@@ -211,6 +226,615 @@
 				id: "20D47871CBEF3E42"
 				type: "item"
 				item: "alchemistry:fusion_chamber_controller"
+			}]
+		}
+		{
+			x: 37.0d
+			y: 0.0d
+			dependencies: ["251851814926A584"]
+			id: "3D59D95BB61B6662"
+			tasks: [{
+				id: "0DC36849F9AB96FB"
+				type: "item"
+				item: "kubejs:cosmonium_ingot"
+			}]
+		}
+		{
+			x: 14.5d
+			y: 2.0d
+			dependencies: [
+				"4D35B17C19F6F639"
+				"5114CFCD3802F95F"
+				"703AF18516D6BE21"
+				"4E3DE9101E98034E"
+			]
+			id: "40977AB1CDDB7C35"
+			tasks: [{
+				id: "5348D35077672B92"
+				type: "item"
+				item: "kubejs:scout_drone"
+			}]
+		}
+		{
+			x: 20.5d
+			y: 3.0d
+			id: "3AF6C4D045AD4864"
+			tasks: [{
+				id: "1614A9A4699313E9"
+				type: "item"
+				item: "kubejs:harvester_drone"
+			}]
+		}
+		{
+			x: 26.5d
+			y: 3.5d
+			dependencies: ["61580BDED40BAEE8"]
+			id: "41A71474B801EF81"
+			tasks: [{
+				id: "69AE2ACE3B514337"
+				type: "item"
+				item: "kubejs:trade_drone"
+			}]
+		}
+		{
+			x: 26.5d
+			y: 5.0d
+			dependencies: ["61580BDED40BAEE8"]
+			id: "15544C98901CAD95"
+			tasks: [{
+				id: "79E9C82C07D32FAB"
+				type: "item"
+				item: "kubejs:cargo_drone"
+			}]
+		}
+		{
+			x: 26.5d
+			y: 2.0d
+			dependencies: ["7AB11BDE334D5583"]
+			id: "42ACBBB15EE13626"
+			tasks: [{
+				id: "3A26CB42616583FD"
+				type: "item"
+				item: "mbm2:data_processing_unit"
+			}]
+		}
+		{
+			x: 20.5d
+			y: 1.0d
+			id: "528F0F0B742139D6"
+			tasks: [{
+				id: "594447EE69F250F2"
+				type: "item"
+				item: "mbm2:drone_bay"
+			}]
+		}
+		{
+			x: 37.0d
+			y: 3.0d
+			dependencies: ["4D3AC4853A55E8A6"]
+			id: "494F461386B644C0"
+			tasks: [{
+				id: "1774FF5B8586FE7A"
+				type: "item"
+				item: "kubejs:advanced_ai_chip"
+			}]
+		}
+		{
+			x: 37.0d
+			y: 4.0d
+			dependencies: ["4D3AC4853A55E8A6"]
+			id: "381F02D6BC2C9425"
+			tasks: [{
+				id: "75A3EFCE89933AA0"
+				type: "item"
+				item: "kubejs:scarab_of_hours"
+			}]
+		}
+		{
+			x: 14.0d
+			y: 5.0d
+			id: "3C1EF0D1168BA944"
+			tasks: [{
+				id: "51E54A3D595B08ED"
+				type: "item"
+				item: "kubejs:energy_crystal_empty"
+			}]
+		}
+		{
+			x: 16.0d
+			y: 3.5d
+			dependencies: ["3C1EF0D1168BA944"]
+			id: "4D35B17C19F6F639"
+			tasks: [{
+				id: "740585E12D47EDA0"
+				type: "item"
+				item: "kubejs:energy_orb_empty"
+			}]
+		}
+		{
+			x: 16.0d
+			y: 5.0d
+			dependencies: [
+				"4D35B17C19F6F639"
+				"703AF18516D6BE21"
+			]
+			id: "3AAEE3B4751310B9"
+			tasks: [{
+				id: "24DCD19C68BCFE82"
+				type: "item"
+				item: "kubejs:lapatron_crystal_empty"
+			}]
+		}
+		{
+			x: 17.5d
+			y: 5.0d
+			dependencies: ["3AAEE3B4751310B9"]
+			id: "2ACB9F2710DC6175"
+			tasks: [{
+				id: "35FA1DE79D733C92"
+				type: "item"
+				item: "kubejs:lapatron_orb_empty"
+			}]
+		}
+		{
+			x: 19.0d
+			y: 2.0d
+			dependencies: [
+				"27236BC9CA70995C"
+				"73BC3E0C1862606B"
+			]
+			id: "00F98E3E051028C1"
+			tasks: [{
+				id: "42A28F45F431343C"
+				type: "item"
+				item: "kubejs:blank_location_data_chip"
+			}]
+		}
+		{
+			x: 19.0d
+			y: 3.5d
+			dependencies: ["00F98E3E051028C1"]
+			id: "3E50C386D6D1A385"
+			tasks: [{
+				id: "4CB023E263AA95E6"
+				type: "item"
+				item: "kubejs:asteroid_location_data_chip"
+			}]
+		}
+		{
+			x: 23.5d
+			y: 3.5d
+			dependencies: ["71684109DE42FABB"]
+			id: "384103D8A709F912"
+			tasks: [{
+				id: "09ABC0F4B91B339A"
+				type: "item"
+				item: "kubejs:planet_location_data_chip"
+			}]
+		}
+		{
+			x: 29.5d
+			y: 4.0d
+			id: "36027D9E4172B9C9"
+			tasks: [{
+				id: "7C9ABE62EED10349"
+				type: "item"
+				item: "kubejs:empty_request_chip"
+			}]
+		}
+		{
+			x: 13.5d
+			y: -0.5d
+			dependencies: ["03FD2967D091B9C8"]
+			id: "68E2A6FD57BC851E"
+			tasks: [{
+				id: "016017792B5E885B"
+				type: "item"
+				item: "kubejs:tracking_chip"
+			}]
+		}
+		{
+			x: 12.0d
+			y: 0.0d
+			id: "03FD2967D091B9C8"
+			tasks: [{
+				id: "088C26F8B6FDA571"
+				type: "item"
+				item: "kubejs:reinforced_hdpe_sheet"
+			}]
+		}
+		{
+			x: 31.0d
+			y: 3.0d
+			dependencies: [
+				"75BF1DF61BB5E4B1"
+				"36027D9E4172B9C9"
+			]
+			id: "0451E5DBA77B5EB4"
+			tasks: [{
+				id: "50E62641842A2FCF"
+				type: "item"
+				item: "mbm2:galactic_trade_center"
+			}]
+		}
+		{
+			x: 33.5d
+			y: 2.0d
+			dependencies: [
+				"50D5BCE00059F96C"
+				"0C176B79E0B9A16A"
+			]
+			id: "6B1905EB676D0698"
+			tasks: [{
+				id: "15C00C4BD6728C33"
+				type: "item"
+				item: "mbm2:super_computational_matrix"
+			}]
+		}
+		{
+			x: 32.5d
+			y: 2.0d
+			dependencies: [
+				"391B10E475D335B9"
+				"75BF1DF61BB5E4B1"
+			]
+			id: "50D5BCE00059F96C"
+			tasks: [{
+				id: "78F21891946D1DB0"
+				type: "item"
+				item: "kubejs:super_casing"
+			}]
+		}
+		{
+			x: 25.0d
+			y: 2.0d
+			dependencies: ["33F1A463CBE0408D"]
+			id: "7AB11BDE334D5583"
+			tasks: [{
+				id: "1CAE08C6EEF5A26A"
+				type: "item"
+				item: "kubejs:data_casing"
+			}]
+		}
+		{
+			x: 25.0d
+			y: 0.5d
+			dependencies: ["61580BDED40BAEE8"]
+			id: "33F1A463CBE0408D"
+			tasks: [{
+				id: "6847246D67B0F35A"
+				type: "item"
+				item: "kubejs:space_age_casing"
+			}]
+		}
+		{
+			x: 13.5d
+			y: 1.0d
+			description: ["You'll need this for the QOI Drive"]
+			id: "5114CFCD3802F95F"
+			tasks: [{
+				id: "1026856EF4A68F47"
+				type: "item"
+				item: "mekanism:pellet_polonium"
+			}]
+		}
+		{
+			x: 37.0d
+			y: 2.0d
+			dependencies: ["408785BE135B0AAC"]
+			id: "4A2CE1CDBAB94263"
+			tasks: [{
+				id: "4FFBF0861BE75082"
+				type: "item"
+				item: "kubejs:world_shaper_blueprint"
+			}]
+		}
+		{
+			x: 13.5d
+			y: 3.0d
+			dependencies: ["3281794FC36C5BB4"]
+			id: "703AF18516D6BE21"
+			tasks: [{
+				id: "093E90E9AB2E8779"
+				type: "item"
+				item: "extendedcrafting:crystaltine_ingot"
+			}]
+		}
+		{
+			x: 12.0d
+			y: 5.0d
+			id: "3281794FC36C5BB4"
+			tasks: [{
+				id: "3142927210E5E234"
+				type: "item"
+				item: "mbm2:elemental_stabilizer"
+			}]
+		}
+		{
+			x: 17.5d
+			y: 2.0d
+			dependencies: ["6A9A95385892B6ED"]
+			id: "4CC7393E9AE8D9A6"
+			tasks: [{
+				id: "7189E64B27D1BD6C"
+				type: "item"
+				item: "mbm2:data_receiver"
+			}]
+		}
+		{
+			x: 16.0d
+			y: 2.0d
+			dependencies: [
+				"40977AB1CDDB7C35"
+				"4E899924B02D0D37"
+				"68E2A6FD57BC851E"
+			]
+			id: "6A9A95385892B6ED"
+			tasks: [{
+				id: "2C1293CB856E6F6F"
+				type: "item"
+				item: "kubejs:scout_drone_active"
+			}]
+		}
+		{
+			title: "Raw Data"
+			x: 17.5d
+			y: 3.5d
+			dependencies: ["4CC7393E9AE8D9A6"]
+			id: "27236BC9CA70995C"
+			tasks: [{
+				id: "38FA20BA80479A9D"
+				type: "fluid"
+				fluid: "kubejs:flowing_raw_data"
+				amount: 1000L
+			}]
+		}
+		{
+			x: 10.5d
+			y: -1.5d
+			id: "5BE7575508D59194"
+			tasks: [{
+				id: "4E9E251323CA1BFD"
+				type: "item"
+				item: "solarflux:sp_8"
+			}]
+		}
+		{
+			x: 37.0d
+			y: 1.0d
+			id: "068A81A1A3132365"
+			tasks: [{
+				id: "5894B1070C4E3D43"
+				type: "item"
+				item: "kubejs:lapatron_orb_full"
+			}]
+		}
+		{
+			x: 28.0d
+			y: 5.0d
+			dependencies: [
+				"41A71474B801EF81"
+				"47E773999DCE125E"
+			]
+			id: "4A01C13BDA7E355A"
+			tasks: [{
+				id: "3E5C91D7B628E40A"
+				type: "item"
+				title: "Any Trade"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "forge:trades"
+					}
+				}
+			}]
+		}
+		{
+			title: "Planet Locations"
+			x: 28.0d
+			y: 3.5d
+			dependencies: [
+				"384103D8A709F912"
+				"42ACBBB15EE13626"
+			]
+			id: "47E773999DCE125E"
+			tasks: [
+				{
+					id: "36388850D22EFFE6"
+					type: "item"
+					item: "kubejs:planet_green"
+				}
+				{
+					id: "0DB609F5B7910145"
+					type: "item"
+					item: "kubejs:planet_blue"
+				}
+			]
+		}
+		{
+			x: 31.0d
+			y: 5.0d
+			dependencies: [
+				"15544C98901CAD95"
+				"4A01C13BDA7E355A"
+			]
+			id: "60FE33DBE08D3D8D"
+			tasks: [{
+				id: "42988CA50A984B2D"
+				type: "item"
+				item: "kubejs:galactic_standard_currency"
+			}]
+		}
+		{
+			x: 20.5d
+			y: 2.0d
+			dependencies: ["3E50C386D6D1A385"]
+			id: "004B9DD34618DC5A"
+			tasks: [{
+				id: "705078B07FE5CE2E"
+				type: "item"
+				item: "kubejs:asteroid_tier_1"
+			}]
+		}
+		{
+			x: 22.0d
+			y: 2.0d
+			dependencies: [
+				"528F0F0B742139D6"
+				"004B9DD34618DC5A"
+				"3AF6C4D045AD4864"
+			]
+			id: "71684109DE42FABB"
+			tasks: [
+				{
+					id: "0B49E158823BD583"
+					type: "item"
+					item: "kubejs:asteroid_chunk_tier_1"
+				}
+				{
+					id: "3BCCEF06927671A5"
+					type: "item"
+					item: "kubejs:blueprint_fragment"
+				}
+			]
+		}
+		{
+			x: 23.5d
+			y: 2.0d
+			dependencies: [
+				"12EB651B1E8F3829"
+				"71684109DE42FABB"
+			]
+			id: "61580BDED40BAEE8"
+			tasks: [{
+				id: "5B4D3CAC03ED6F83"
+				type: "item"
+				item: "kubejs:space_alloy_ingot"
+			}]
+		}
+		{
+			x: 22.0d
+			y: 3.5d
+			id: "12EB651B1E8F3829"
+			tasks: [{
+				id: "2E94BBBF94040433"
+				type: "item"
+				item: "mbm2:precision_milling_unit"
+			}]
+		}
+		{
+			x: 28.0d
+			y: 2.0d
+			dependencies: ["42ACBBB15EE13626"]
+			id: "5CAF1761BCA7485F"
+			tasks: [{
+				id: "655E5D91ACD120CA"
+				type: "item"
+				item: "kubejs:asteroid_tier_2"
+			}]
+		}
+		{
+			x: 19.0d
+			y: 0.5d
+			id: "73BC3E0C1862606B"
+			tasks: [{
+				id: "008645CD36B21F0C"
+				type: "item"
+				item: "kubejs:sentient_processor"
+			}]
+		}
+		{
+			x: 35.0d
+			y: 2.0d
+			dependencies: ["6B1905EB676D0698"]
+			id: "408785BE135B0AAC"
+			tasks: [{
+				id: "6AC08816496B7D5A"
+				type: "fluid"
+				title: "Refined Data"
+				fluid: "kubejs:flowing_refined_data"
+				amount: 1000L
+			}]
+		}
+		{
+			x: 29.5d
+			y: 1.5d
+			dependencies: ["5CAF1761BCA7485F"]
+			id: "391B10E475D335B9"
+			tasks: [{
+				id: "473D8DF872156334"
+				type: "item"
+				item: "kubejs:elite_iridium_alloy_ingot"
+			}]
+		}
+		{
+			x: 29.5d
+			y: 2.5d
+			dependencies: ["5CAF1761BCA7485F"]
+			id: "75BF1DF61BB5E4B1"
+			tasks: [{
+				id: "6241313C5446CB39"
+				type: "item"
+				item: "kubejs:astral_fusion_ingot"
+			}]
+		}
+		{
+			x: 33.5d
+			y: 5.0d
+			dependencies: [
+				"60FE33DBE08D3D8D"
+				"0451E5DBA77B5EB4"
+			]
+			id: "0C176B79E0B9A16A"
+			tasks: [{
+				id: "58D0B4CC30F3E64D"
+				type: "item"
+				item: "kubejs:request_mind_shard"
+			}]
+		}
+		{
+			x: 35.5d
+			y: 4.0d
+			dependencies: ["408785BE135B0AAC"]
+			id: "4D3AC4853A55E8A6"
+			tasks: [{
+				id: "05317ED9DC4A85E7"
+				type: "item"
+				item: "kubejs:planet_red"
+			}]
+		}
+		{
+			x: 35.5d
+			y: 0.0d
+			dependencies: ["408785BE135B0AAC"]
+			id: "251851814926A584"
+			tasks: [{
+				id: "6192FEC68F1FBB52"
+				type: "item"
+				item: "kubejs:asteroid_tier_3"
+			}]
+		}
+		{
+			x: 35.0d
+			y: 5.5d
+			dependencies: ["4D3AC4853A55E8A6"]
+			id: "06DAB12F0F477038"
+			tasks: [{
+				id: "32DDFBF493FBB7BC"
+				type: "item"
+				item: "alchemistry:fusion_chamber_controller"
+			}]
+		}
+		{
+			x: 36.0d
+			y: 5.5d
+			dependencies: ["4D3AC4853A55E8A6"]
+			id: "718AE210A4687C02"
+			tasks: [{
+				id: "4C7B595D76BE56A1"
+				type: "item"
+				item: "alchemistry:fission_chamber_controller"
 			}]
 		}
 	]

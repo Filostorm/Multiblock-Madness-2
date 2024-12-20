@@ -151,7 +151,23 @@ onEvent('recipes', event => {
 		.outputItem('kubejs:energy_orb_empty')
 		//.inputFE(4000*64)
 		.duration(800)
-	  
+
+		//Refined Data
+	  event.recipes.multiblocked.multiblock("super_computational_matrix")
+		  .inputFluid(Fluid.of('kubejs:raw_data', 10000))
+		  //.inputFluid(Fluid.of('kubejs:gelid_cryotheum', 1000))
+		  .inputFluid(Fluid.of('kubejs:high_capacity_coolant', 1000))
+		  .inputItem('4x kubejs:ai_chip')
+		  .inputItem('kubejs:extra_dimensional_alloy')
+		  .outputFluid(Fluid.of('kubejs:refined_data', 2000))
+		  .outputFluid(Fluid.of('kubejs:heated_coolant', 500))
+		  .setPerTick(true)
+		  .inputItem('kubejs:energy_orb_full')
+		  .outputItem('kubejs:energy_orb_empty')
+		  //.inputFE(4000*64)
+		  .duration(600)
+
+		
 		//Baby's first Asteroid
 	event.custom({
 		"type":"mekanism:reaction",
@@ -349,7 +365,7 @@ onEvent('recipes', event => {
 				'tier': 1,
 				'chunk': ['platinum','iridium', 'vibranium'],
 				'dust': ['molybdenum','niobium', 'scandium'],
-				'fluid': 'chemlib:helium_fluid',
+				'fluid': 'chemlib:krypton_fluid',
 			},
 			{
 				'tier': 2,
@@ -361,7 +377,7 @@ onEvent('recipes', event => {
 				'tier': 3,
 				'chunk': ['vibranium','uru', 'draconium'],
 				'dust': ['vanadium','polonium', 'niobium'],
-				'fluid': 'chemlib:krypton_fluid',
+				'fluid': 'chemlib:neon_fluid',
 			},
 		]
 
@@ -499,6 +515,18 @@ onEvent('recipes', event => {
 				.inputFE(1000000)
 				.duration(2000)
 
+				//Posting Requests quik
+				event.recipes.multiblocked.multiblock("trade_center")
+				.inputItem(`kubejs:request_${itemName}`)
+				.inputItem(Item.of(`kubejs:galactic_standard_currency`, item.cost))
+				.inputItem('kubejs:extra_dimensional_alloy')
+				.setChance(0.00)
+				.inputItem(`kubejs:planet_${planet}`)
+				.setChance(1)
+				.outputItem(Item.of(item.name, item.amount))
+				.setPerTick(true)
+				.inputFE(1000000)
+				.duration(1000)
 
 				////Trading
 				//event.recipes.multiblocked.multiblock("drone_bay")
@@ -641,4 +669,107 @@ onEvent('recipes', event => {
 		}
 	  }).id('mbm2:scout_drone')
 
+	  //Trade Drone
+	  event.custom({
+		"type": "extendedcrafting:shaped_table",
+		"pattern": [
+		  "   A   ",
+		  "  BBB  ",
+		  "  BCB  ",
+		  " DBEBD ",
+		  "DFDGDFD",
+		  "DHD DHD",
+		  " I   I "
+		],
+		"key": {
+		  "A": {
+			"item": "kubejs:space_alloy_rocket_nose_cone"
+		  },
+		  "B": {
+			"item": "kubejs:space_alloy_hull_panel"
+		  },
+		  "C": {
+			"item": "kubejs:planet_location_data_chip"
+		  },
+		  "D": {
+			"item": "kubejs:space_alloy_rocket_fin"
+		  },
+		  "E": {
+			"type": "forge:nbt",
+			"item": "pneumaticcraft:drone",
+			"count": 1,
+			"nbt": "{\"pneumaticcraft:air\":120000}"
+		  },
+		  "F": {
+			"item": "kubejs:sentient_processor"
+		  },
+		  "G": {
+			"item": "extendedcrafting:crystaltine_catalyst"
+		  },
+		  "H": {
+			"item": "kubejs:vibranium_dual_coil"
+		  },
+		  "I": {
+			"item": "beyond_earth:calorite_engine"
+		  }
+		},
+		"result": {
+		  "item": 'kubejs:trade_drone'
+		}
+	  }).id('mbm2:trade_drone')
+
+	  //Cargo Drone
+	  event.custom({
+		"type": "extendedcrafting:shaped_table",
+		"pattern": [
+		  "   A   ",
+		  "  BCB  ",
+		  " BBDBB ",
+		  "EBFGFBE",
+		  "EHIJIHE",
+		  " HEKEH ",
+		  "   B   "
+		],
+		"key": {
+		  "A": {
+			"item": "kubejs:space_alloy_rocket_nose_cone"
+		  },
+		  "B": {
+			"item": "kubejs:space_alloy_hull_panel"
+		  },
+		  "C": {
+			"item": "kubejs:energy_orb_full"
+		  },
+		  "D": {
+			"item": "extendedcrafting:crystaltine_catalyst"
+		  },
+		  "E": {
+			"item": "kubejs:space_alloy_rocket_fin"
+		  },
+		  "F": {
+			"item": "ae2:singularity"
+		  },
+		  "G": {
+			"type": "forge:nbt",
+			"item": "pneumaticcraft:drone",
+			"count": 1,
+			"nbt": "{\"pneumaticcraft:air\":120000}"
+		  },
+		  "H": {
+			"item": "beyond_earth:calorite_engine"
+		  },
+		  "I": {
+			"item": "kubejs:tier_4_mechanical_alloy_robot_arm"
+		  },
+		  "J": {
+			"item": "industrialforegoing:supreme_black_hole_unit"
+		  },
+		  "K": {
+			"item": "ae2:spatial_storage_cell_128"
+		  }
+		},
+		"result": {
+		  "item": 'kubejs:cargo_drone'
+		}
+	  }).id('mbm2:cargo_drone')
 });

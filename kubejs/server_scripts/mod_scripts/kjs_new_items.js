@@ -27,8 +27,11 @@ onEvent('recipes', event => {
 		//lapatron_orb_empty
 		event.shaped('kubejs:lapatron_orb_empty', ['ABA','BCB','ABA'], {A: 'extendedcrafting:crystaltine_catalyst',B: 'kubejs:lapatron_crystal_empty',C: 'ae2additions:cell_component_1kkk_1th'}).id('mbm2:lapatron_orb_empty')
 
+		//blank AI chip
+		event.shaped('kubejs:ai_chip', ['ABA','BCB','ABA'], {A: 'kubejs:reinforced_hdpe_sheet',B: 'kubejs:tier_3_electrical_alloy_wire',C: 'pneumaticcraft:unassembled_pcb'}).id('mbm2:blank_ai_chip')
+		
 		//ai_chip
-		event.shaped('kubejs:ai_chip', ['ABA','BCB','ABA'], {A: 'hostilenetworks:empty_prediction',B: 'laserio:logic_chip',C: 'pneumaticcraft:unassembled_pcb'}).id('mbm2:ai_chip')
+		event.shaped('kubejs:ai_chip', ['ABA','BCB','ABA'], {A: 'hostilenetworks:empty_prediction',B: 'laserio:logic_chip',C: 'kubejs:blank_ai_chip'}).id('mbm2:ai_chip')
 		
 	  //Reflector
 		event.custom({
@@ -67,6 +70,8 @@ onEvent('recipes', event => {
 
 		//Dimensional + Wafer
 		global.mekanismInfusionConversion(event, Item.of('rftoolsbase:dimensionalshard'), 'kubejs:dimensional', 50, 'mbm2:infuse/dimensionalshard')
+		global.mekanismInfusionConversion(event, Item.of('kubejs:enriched_dimensional_shard'), 'kubejs:dimensional', 100, 'mbm2:infuse/enriched_dimensionalshard')
+		event.recipes.mekanismEnriching('kubejs:enriched_dimensional_shard', 'rftoolsbase:dimensionalshard')
 		event.recipes.mekanismMetallurgicInfusing('kubejs:raw_dimensional_wafer', Item.of('kubejs:iridium_infused_wafer'), {infuse_type: 'kubejs:dimensional', amount: 100}).id(`mbm2:raw_dimensional_wafer`);
 
 		//iridium_infused_wafer

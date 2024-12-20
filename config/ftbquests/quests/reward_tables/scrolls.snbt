@@ -1,0 +1,130 @@
+{
+	id: "03DE8555A4E067AA"
+	order_index: 11
+	title: "Scrolls"
+	icon: "elementalcraft:scroll_paper"
+	loot_size: 1
+	rewards: [
+		{
+			item: {
+				id: "elementalcraft:scroll"
+				Count: 1b
+				tag: {
+					elementalcraft: {
+						spell: "elementalcraft:gravelfall"
+					}
+				}
+			}
+		}
+		{
+			item: {
+				id: "elementalcraft:scroll"
+				Count: 1b
+				tag: {
+					elementalcraft: {
+						spell: "elementalcraft:stonewall"
+					}
+				}
+			}
+		}
+		{
+			item: {
+				id: "elementalcraft:scroll"
+				Count: 1b
+				tag: {
+					elementalcraft: {
+						spell: "elementalcraft:fireball"
+					}
+				}
+			}
+		}
+		{
+			item: {
+				id: "elementalcraft:scroll"
+				Count: 1b
+				tag: {
+					elementalcraft: {
+						spell: "elementalcraft:item_pull"
+					}
+				}
+			}
+		}
+		{
+			item: {
+				id: "elementalcraft:scroll"
+				Count: 1b
+				tag: {
+					elementalcraft: {
+						spell: "elementalcraft:flame_cleave"
+					}
+				}
+			}
+		}
+		{
+			item: {
+				id: "elementalcraft:scroll"
+				Count: 1b
+				tag: {
+					elementalcraft: {
+						spell: "elementalcraft:dash"
+					}
+				}
+			}
+		}
+		{
+			item: {
+				id: "elementalcraft:scroll"
+				Count: 1b
+				tag: {
+					elementalcraft: {
+						spell: "elementalcraft:silk_vein"
+					}
+				}
+			}
+		}
+		{
+			item: {
+				id: "elementalcraft:scroll"
+				Count: 1b
+				tag: {
+					elementalcraft: {
+						spell: "elementalcraft:animal_growth"
+					}
+				}
+			}
+		}
+		{
+			item: {
+				id: "elementalcraft:scroll"
+				Count: 1b
+				tag: {
+					elementalcraft: {
+						spell: "elementalcraft:ripening"
+					}
+				}
+			}
+		}
+		{
+			item: {
+				id: "elementalcraft:scroll"
+				Count: 1b
+				tag: {
+					elementalcraft: {
+						spell: "elementalcraft:tree_fall"
+					}
+				}
+			}
+		}
+		{
+			item: {
+				id: "elementalcraft:scroll"
+				Count: 1b
+				tag: {
+					elementalcraft: {
+						spell: "elementalcraft:air_shield"
+					}
+				}
+			}
+		}
+	]
+}

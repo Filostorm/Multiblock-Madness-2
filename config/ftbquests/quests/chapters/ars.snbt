@@ -928,7 +928,7 @@
 			x: -38.5d
 			y: -0.5d
 			shape: "circle"
-			description: ["Can be obtained by growing a tree nearby"]
+			description: ["Can be obtained by growing a tree next to whirlsprigs."]
 			hide_dependency_lines: true
 			dependencies: ["01AB47D4DCA342A5"]
 			id: "385F92381188F6C9"

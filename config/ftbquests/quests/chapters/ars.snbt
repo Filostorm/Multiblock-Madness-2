@@ -851,7 +851,7 @@
 			subtitle: "Pacifist Route"
 			description: [
 				"Drygmys can be summoned by using their charm in a mossy stone. Multiple of them can be summoned and will work at the same time."
-				"By having nearby source and a inventory, Drygmys will generate drops based on the mobs nearby their home (10 blocks from the Shrine). By having hostile entities, Drygmys will generate experience gems. The efficiency will be based on the variety of mobs in their home."
+				"By having nearby source and a inventory, Drygmys will generate drops based on the mobs around their home (10 blocks from the Shrine). By having hostile entities, Drygmys will generate experience gems. The efficiency will be based on the variety of mobs in their home."
 			]
 			dependencies: ["08D84719159B579F"]
 			id: "12D9F5EB29DBAF06"
@@ -871,7 +871,7 @@
 			y: -1.0d
 			shape: "circle"
 			subtitle: "Green Thumb"
-			description: ["Whirlsprigs can be summoned by using the charm on a flower. They can create natural resources based on the natural items nearby the flower, such as trees and crops. Needs source and a nearby inventory. Natural diversity will be required to make the Whirlsprig happy and produce the items."]
+			description: ["Whirlsprigs can be summoned by using the charm on a flower. They can create natural resources based on the natural items around that flower, such as trees and crops. Needs source and a nearby inventory. Natural diversity will be required to make the Whirlsprig happy and produce the items."]
 			dependencies: ["08D84719159B579F"]
 			id: "421948570E7E1CAB"
 			tasks: [{

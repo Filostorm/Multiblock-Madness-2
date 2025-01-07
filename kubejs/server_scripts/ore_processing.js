@@ -76,7 +76,7 @@ Fluid.getTypes().forEach(fluid => {
 })
 console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 */
-	global.ieSqueezer(event, Fluid.of('pneumaticcraft:memory_essence', 100), Item.of('create:experience_nugget'), 6400, 'kubejs:squeezer/experience')
+	global.ieSqueezer(event, Fluid.of('pneumaticcraft:memory_essence', 100), Item.of('create:experience_nugget'), 6400, 'mbm2:squeezer/experience')
 
 	event.shaped('4x kubejs:catalyst_empty', [' A ','BBB',' A '], {A: 'thermal:iron_plate',B: 'minecraft:glass'})
 	event.shaped('16x kubejs:catalyst_empty', [' A ','BBB',' A '], {A: 'kubejs:steel_plate',B: 'minecraft:glass'})

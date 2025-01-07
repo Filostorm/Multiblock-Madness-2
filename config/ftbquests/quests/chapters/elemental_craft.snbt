@@ -1,0 +1,1341 @@
+{
+	id: "733667C9A71D6AB6"
+	group: "7571E15FFD2D3DD8"
+	order_index: 3
+	filename: "elemental_craft"
+	title: "Elemental Craft"
+	icon: "elementalcraft:contained_crystal"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			title: "All The Elements"
+			x: -0.5d
+			y: -0.5d
+			subtitle: "Don't put these on a blender"
+			description: ["Elemental Crystals are a important resource for ElementalCraft crafts, it's a good idea to stack a bunch of them. &l&dFor more info about getting them, check Chapter 1&r."]
+			dependencies: [
+				"08C3C85483A79429"
+				"70E221DBF04BC533"
+			]
+			id: "5C26AD4BFF752032"
+			tasks: [
+				{
+					id: "476E7801A29C65BB"
+					type: "item"
+					item: "elementalcraft:firecrystal"
+				}
+				{
+					id: "15A31D0F718F044F"
+					type: "item"
+					item: "elementalcraft:watercrystal"
+				}
+				{
+					id: "57923E5912EB9968"
+					type: "item"
+					item: "elementalcraft:earthcrystal"
+				}
+				{
+					id: "77D365B984D3B770"
+					type: "item"
+					item: "elementalcraft:aircrystal"
+				}
+			]
+		}
+		{
+			x: -0.5d
+			y: 1.5d
+			subtitle: "Renewable Source!"
+			description: [
+				"For extracting elements, you first will need to find element sources. Each source has a corresponding color that relates to the element. When you find them, place a small element container with a extractor on top, pointing to the element node that you will extract. "
+				"&6Orange&r nodes are &6Fire&r element."
+				"&9Blue&r nodes are &9Water&r element."
+				"&2Green&r nodes are &2Earth&r Element."
+				"&eYellow&r nodes are &eWind&r element."
+			]
+			dependencies: ["08C3C85483A79429"]
+			id: "70E221DBF04BC533"
+			tasks: [
+				{
+					id: "4F5EFC3EBD259F29"
+					type: "item"
+					item: "elementalcraft:extractor"
+					only_from_crafting: false
+				}
+				{
+					id: "22E3D028EF20BE6A"
+					type: "item"
+					item: "elementalcraft:small_container"
+				}
+			]
+			rewards: [{
+				id: "0E2D47B32F040FF9"
+				type: "item"
+				item: "elementalcraft:elementpipe_impaired"
+				count: 5
+			}]
+		}
+		{
+			title: "Elemental Crafting Table"
+			x: -0.5d
+			y: -2.5d
+			shape: "gear"
+			subtitle: "Follow to the letter"
+			description: ["Element Binder will have a good amount of functions, but you'll need it for some important craftings of components and devices. Each crafting have a order that &l&2MUST&r be respected, otherwise, it won't work."]
+			dependencies: [
+				"5C26AD4BFF752032"
+				"6B06707ECFAFD263"
+			]
+			dependency_requirement: "one_completed"
+			size: 1.75d
+			id: "28F45CF9D514202B"
+			tasks: [{
+				id: "3813E631690FF287"
+				type: "item"
+				item: "elementalcraft:binder"
+			}]
+		}
+		{
+			x: 1.0d
+			y: -1.5d
+			subtitle: "&6I WILL HAVE ORDER!"
+			description: [
+				"Element Binder needs things to be put in a specific order, and ordered sorters are here to let the things work out easier. It will insert items in the exact order you configured them to."
+				"{image:kubejs:textures/quests/sorter.png width:150 height:100 align:1}"
+			]
+			hide_dependency_lines: true
+			dependencies: ["28F45CF9D514202B"]
+			id: "1E837639DAA7DF3F"
+			tasks: [{
+				id: "460ED3D82E848A9D"
+				type: "item"
+				item: "elementalcraft:sorter"
+			}]
+		}
+		{
+			x: 1.5d
+			y: 1.5d
+			description: ["Each node can have traits that differ them. Some have better recovery, some better capacity and othe things. You can see each node using this item at cost of 1 springaline for operation."]
+			hide_dependency_lines: true
+			dependencies: [
+				"70E221DBF04BC533"
+				"28F45CF9D514202B"
+			]
+			secret: true
+			id: "4B7D752BE53A895C"
+			tasks: [{
+				id: "7ACBD626B21D6804"
+				type: "item"
+				item: "elementalcraft:source_analysis_glass"
+			}]
+		}
+		{
+			title: "Traits"
+			x: 4.5d
+			y: 1.5d
+			description: [
+				"Source traits are an ensemble of traits that define how sources behave. This affect things like the amount they can hold or the speed it takes for them to recover."
+				"&3&lCapacity&r&3: The element capacity of the source, the bigger the capacity the longer it will take to exhaust and replenish the source"
+				"&6&lRecovery&r&6: The speed at which the source recover elements once exhausted"
+				"&e&lDiurnal&r&e: Increase recovery speed during the day, decrease recovery speed during the night"
+				"&9&lNocturnal&r&9: Increase recovery speed during the night, decrease recovery speed during the day"
+				"&a&lGenerous&r&a: Increase the extraction speed from the source"
+				"&c&lSelfish&r&c: Decrease the extraction speed from the source"
+				"&b&lThrifty&r&b: Decrease the element lost by the source during extraction"
+				"&7&lWasteful&r&7: Increase the element lost by the source during extraction"
+			]
+			dependencies: ["4B7D752BE53A895C"]
+			id: "7BFF3ECF9488DF09"
+			tasks: [{
+				id: "20A232980E4EC1AF"
+				type: "checkmark"
+			}]
+		}
+		{
+			x: -2.0d
+			y: -1.5d
+			dependencies: ["28F45CF9D514202B"]
+			id: "60FE66A2EC4D0459"
+			tasks: [{
+				id: "70F9474416B86759"
+				type: "item"
+				item: "elementalcraft:spell_desk"
+			}]
+		}
+		{
+			title: "Spells"
+			icon: "elementalcraft:scroll_paper"
+			x: -3.5d
+			y: -1.5d
+			description: ["Spells can do a variety of things, from creating walls to teleporting. Some spells can be very useful, but they all use some element."]
+			dependencies: ["60FE66A2EC4D0459"]
+			id: "4AB3FAC4AE38A215"
+			tasks: [{
+				id: "4A0B9E536E86A7F2"
+				type: "observation"
+				icon: "elementalcraft:spell_desk"
+				timer: 0L
+				observe_type: 0
+				to_observe: "elementalcraft:spell_desk"
+			}]
+			rewards: [{
+				id: "14347FBB95ECCFCA"
+				type: "random"
+				icon: "elementalcraft:scroll_paper"
+				table_id: 278806829828433834L
+			}]
+		}
+		{
+			title: "Element Holder"
+			x: -5.0d
+			y: -2.5d
+			subtitle: "Element backpacks"
+			description: [
+				"The same way instruments use elements to work, spells and jewels use them too. You can use element holders to store element and use your spells when they are needed. Jewels use them passively."
+				"To fill them, just hold RMB on a corresponding element source."
+			]
+			dependencies: [
+				"4AB3FAC4AE38A215"
+				"71D8C1416BD779EB"
+			]
+			dependency_requirement: "one_started"
+			id: "3F260EDD3E3F518B"
+			tasks: [
+				{
+					id: "3B39773CDC23BC01"
+					type: "item"
+					item: {
+						id: "elementalcraft:element_holder_fire"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+						ForgeCaps: {
+							Parent: {
+								element_capacity: 10000
+								element_type: "fire"
+								element_amount: 0
+							}
+						}
+					}
+				}
+				{
+					id: "73E0CB288083BBFB"
+					type: "item"
+					item: {
+						id: "elementalcraft:element_holder_water"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+						ForgeCaps: {
+							Parent: {
+								element_capacity: 10000
+								element_type: "water"
+								element_amount: 0
+							}
+						}
+					}
+				}
+				{
+					id: "0D888998A70DB65B"
+					type: "item"
+					item: {
+						id: "elementalcraft:element_holder_earth"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+						ForgeCaps: {
+							Parent: {
+								element_capacity: 10000
+								element_type: "earth"
+								element_amount: 0
+							}
+						}
+					}
+				}
+				{
+					id: "1533BAB863A3B993"
+					type: "item"
+					item: {
+						id: "elementalcraft:element_holder_air"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+						ForgeCaps: {
+							Parent: {
+								element_capacity: 10000
+								element_type: "air"
+								element_amount: 0
+							}
+						}
+					}
+				}
+			]
+			rewards: [{
+				id: "1EA7DD311BF4889C"
+				type: "random"
+				icon: "elementalcraft:scroll_paper"
+				table_id: 278806829828433834L
+			}]
+		}
+		{
+			x: 1.0d
+			y: -2.5d
+			subtitle: "Not the malevolent one"
+			description: [
+				"Shrines are devices that can use elements to do a variety of tasks, such as: "
+				"Improving plants growth speed"
+				"Grow amethyst/springaline clusters"
+				"Increase the tick speed of a block"
+				"Spawn mobs"
+				"and do a lot of other things."
+			]
+			dependencies: ["28F45CF9D514202B"]
+			id: "66E491622AC4F15F"
+			tasks: [{
+				id: "46B44F89D3C1C7EA"
+				type: "item"
+				item: "elementalcraft:shrinebase"
+			}]
+		}
+		{
+			title: "Magic Machinery"
+			x: 2.5d
+			y: -2.5d
+			description: ["As mentioned before, shrines have some nice utilities. &2Growth&r shrine is really useful for plants, &5Ender Lock&r is really a good device for ender farms, but there are some shrines that can be used with other mods, such as the &aWild Grove&r Shrine for a Nature's Aura Herbivorous Absorber aura automation, or the &dMystical Grove&r upgrade for Botania flowers."]
+			dependencies: ["66E491622AC4F15F"]
+			id: "20E0A0A18E0C1C47"
+			tasks: [{
+				id: "45F30DB218B94942"
+				type: "item"
+				title: "Any #elementalcraft:shrines"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "elementalcraft:shrines"
+					}
+				}
+			}]
+			rewards: [
+				{
+					id: "09EE0BAEC553F734"
+					type: "random"
+					exclude_from_claim_all: true
+					table_id: 6594349084625110702L
+				}
+				{
+					id: "27AC2544A66A52C4"
+					type: "item"
+					item: "elementalcraft:shrine_upgrade_core"
+				}
+			]
+		}
+		{
+			x: 4.0d
+			y: -2.5d
+			description: [
+				"Shrines can be upgraded with some devices that improve speed, production, and do other things."
+				"Some upgrades are restricted to a specific shrines, so keep an eye on the Elementopedia for more info."
+			]
+			dependencies: ["20E0A0A18E0C1C47"]
+			id: "2453044DD037ED6C"
+			tasks: [{
+				id: "47D5BF8317A6F1DA"
+				type: "item"
+				title: "Any #elementalcraft:shrine_upgrades"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "elementalcraft:shrine_upgrades"
+					}
+				}
+			}]
+		}
+		{
+			x: -2.0d
+			y: -3.5d
+			dependencies: ["28F45CF9D514202B"]
+			id: "5445C707CBEEAFD7"
+			tasks: [{
+				id: "055447444AECD2DE"
+				type: "item"
+				item: "elementalcraft:unset_jewel"
+			}]
+		}
+		{
+			title: "Jewels"
+			icon: {
+				id: "elementalcraft:jewel"
+				Count: 1b
+				tag: {
+					elementalcraft: {
+						jewel: "elementalcraft:arctic_hares"
+					}
+				}
+			}
+			x: -3.5d
+			y: -3.5d
+			description: ["Jewels give the player some effects that can help in many situations. They'll use source from your inventory to activate the effects."]
+			dependencies: ["5445C707CBEEAFD7"]
+			id: "71D8C1416BD779EB"
+			tasks: [{
+				id: "07D8135FFAAEA70A"
+				type: "item"
+				item: "elementalcraft:jewel"
+			}]
+		}
+		{
+			x: -6.5d
+			y: -2.5d
+			shape: "diamond"
+			subtitle: "All for one, and one for all!"
+			description: ["This item can hold all the elements at the same time."]
+			hide_dependency_lines: true
+			dependencies: [
+				"3F260EDD3E3F518B"
+				"3B244ACC959125F2"
+			]
+			size: 1.5d
+			id: "0BCBEF4DF75748FB"
+			tasks: [{
+				id: "57719007320AFF3A"
+				type: "item"
+				item: {
+					id: "elementalcraft:pure_element_holder"
+					Count: 1b
+					ForgeCaps: {
+						Parent: {
+							earth: 0
+							air: 0
+							water: 0
+							fire: 0
+						}
+					}
+				}
+			}]
+			rewards: [{
+				id: "73B8124D3EAB1564"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 6594349084625110702L
+			}]
+		}
+		{
+			x: -0.5d
+			y: -5.0d
+			description: [
+				"Pure Infuser is a instrument that can make the &dPure Crystal&r, which is a key component for most advanced recipes in ElementalCraft. "
+				"In this modpack, this instrument is also used in the &7&lOre Processing Chain&r."
+			]
+			dependencies: ["28F45CF9D514202B"]
+			id: "3B244ACC959125F2"
+			tasks: [
+				{
+					id: "447C97060BDE0D71"
+					type: "item"
+					item: "elementalcraft:pureinfuser"
+				}
+				{
+					id: "325C9A15A3FD9287"
+					type: "item"
+					item: "elementalcraft:pedestal_fire"
+				}
+				{
+					id: "1E35D32DFC981CDF"
+					type: "item"
+					item: "elementalcraft:pedestal_water"
+				}
+				{
+					id: "41209F8EFB50D42A"
+					type: "item"
+					item: "elementalcraft:pedestal_earth"
+				}
+				{
+					id: "67F844AA0868BF77"
+					type: "item"
+					item: "elementalcraft:pedestal_air"
+				}
+			]
+			rewards: [{
+				id: "0B5D12926B899158"
+				type: "item"
+				item: "elementalcraft:purecrystal"
+			}]
+		}
+		{
+			x: 0.5d
+			y: -4.5d
+			dependencies: ["28F45CF9D514202B"]
+			id: "65D0ED1814790B26"
+			tasks: [{
+				id: "0D96444B73FAB4EA"
+				type: "item"
+				item: "elementalcraft:crystallizer"
+			}]
+		}
+		{
+			title: "Jewel Collectionist"
+			x: -3.5d
+			y: -7.0d
+			shape: "hexagon"
+			subtitle: "Jackie Chan would be proud"
+			dependencies: ["16A534BCC327711E"]
+			size: 1.75d
+			optional: true
+			id: "7FFD2243F2BF481F"
+			tasks: [
+				{
+					id: "35F902973E76DA96"
+					type: "item"
+					item: {
+						id: "elementalcraft:jewel"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								jewel: "elementalcraft:salmon"
+							}
+						}
+					}
+				}
+				{
+					id: "7AF3BF99B67131C3"
+					type: "item"
+					item: {
+						id: "elementalcraft:jewel"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								jewel: "elementalcraft:phoenix"
+							}
+						}
+					}
+				}
+				{
+					id: "56032473390342CC"
+					type: "item"
+					item: {
+						id: "elementalcraft:jewel"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								jewel: "elementalcraft:basilisk"
+							}
+						}
+					}
+				}
+				{
+					id: "393F8F3E1ED429CD"
+					type: "item"
+					item: {
+						id: "elementalcraft:jewel"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								jewel: "elementalcraft:bear"
+							}
+						}
+					}
+				}
+				{
+					id: "65B2511AF612E74A"
+					type: "item"
+					item: {
+						id: "elementalcraft:jewel"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								jewel: "elementalcraft:tiger"
+							}
+						}
+					}
+				}
+				{
+					id: "28A85D130839F3EC"
+					type: "item"
+					item: {
+						id: "elementalcraft:jewel"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								jewel: "elementalcraft:leopard"
+							}
+						}
+					}
+				}
+				{
+					id: "0169F56128F5E044"
+					type: "item"
+					item: {
+						id: "elementalcraft:jewel"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								jewel: "elementalcraft:dolphin"
+							}
+						}
+					}
+				}
+				{
+					id: "754726738D40EA1B"
+					type: "item"
+					item: {
+						id: "elementalcraft:jewel"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								jewel: "elementalcraft:kirin"
+							}
+						}
+					}
+				}
+				{
+					id: "02355ED01B914AC0"
+					type: "item"
+					item: {
+						id: "elementalcraft:jewel"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								jewel: "elementalcraft:viper"
+							}
+						}
+					}
+				}
+				{
+					id: "7E8651EFE4DA3C3D"
+					type: "item"
+					item: {
+						id: "elementalcraft:jewel"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								jewel: "elementalcraft:tortoise"
+							}
+						}
+					}
+				}
+				{
+					id: "77921AEC9F813FE0"
+					type: "item"
+					item: {
+						id: "elementalcraft:jewel"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								jewel: "elementalcraft:tortoise"
+							}
+						}
+					}
+				}
+				{
+					id: "02CE08971FCCAA72"
+					type: "item"
+					item: {
+						id: "elementalcraft:jewel"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								jewel: "elementalcraft:arctic_hares"
+							}
+						}
+					}
+				}
+				{
+					id: "0CB03A68520CCD00"
+					type: "item"
+					item: {
+						id: "elementalcraft:jewel"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								jewel: "elementalcraft:mole"
+							}
+						}
+					}
+				}
+				{
+					id: "540AA58E31D8CEA7"
+					type: "item"
+					item: {
+						id: "elementalcraft:jewel"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								jewel: "elementalcraft:hawk"
+							}
+						}
+					}
+				}
+				{
+					id: "74716A906C89BABF"
+					type: "item"
+					item: {
+						id: "elementalcraft:jewel"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								jewel: "elementalcraft:hawk"
+							}
+						}
+					}
+				}
+				{
+					id: "0AE41A281A41F3F9"
+					type: "item"
+					item: {
+						id: "elementalcraft:jewel"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								jewel: "elementalcraft:demigod"
+							}
+						}
+					}
+				}
+				{
+					id: "7CA46D77AB706B66"
+					type: "item"
+					item: {
+						id: "elementalcraft:jewel"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								jewel: "elementalcraft:strider"
+							}
+						}
+					}
+				}
+				{
+					id: "0C08AB526E03116F"
+					type: "item"
+					item: {
+						id: "elementalcraft:jewel"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								jewel: "elementalcraft:water_strider"
+							}
+						}
+					}
+				}
+			]
+			rewards: [
+				{
+					id: "6991C4D626E7F7BC"
+					type: "random"
+					icon: "elementalcraft:scroll_paper"
+					table_id: 278806829828433834L
+				}
+				{
+					id: "2F8AFA51D05A63B5"
+					type: "random"
+					exclude_from_claim_all: true
+					table_id: 6594349084625110702L
+				}
+				{
+					id: "5395E75ED1F812E0"
+					type: "xp_levels"
+					xp_levels: 15
+				}
+			]
+		}
+		{
+			title: "Editor's Choice"
+			x: -3.5d
+			y: -5.0d
+			description: ["Just some recommendations that can be useful."]
+			dependencies: ["71D8C1416BD779EB"]
+			id: "16A534BCC327711E"
+			tasks: [
+				{
+					id: "1D3E0E9FD75922A5"
+					type: "item"
+					item: {
+						id: "elementalcraft:jewel"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								jewel: "elementalcraft:leopard"
+							}
+						}
+					}
+				}
+				{
+					id: "24EE52E432D9CCDF"
+					type: "item"
+					item: {
+						id: "elementalcraft:jewel"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								jewel: "elementalcraft:water_strider"
+							}
+						}
+					}
+				}
+				{
+					id: "6E53F0630F7752E1"
+					type: "item"
+					item: {
+						id: "elementalcraft:jewel"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								jewel: "elementalcraft:mole"
+							}
+						}
+					}
+				}
+				{
+					id: "10BC2628F485A23F"
+					type: "item"
+					item: {
+						id: "elementalcraft:jewel"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								jewel: "elementalcraft:strider"
+							}
+						}
+					}
+				}
+			]
+		}
+		{
+			title: "Editor's Choice"
+			x: -3.5d
+			y: 0.0d
+			description: ["Just some recommendations that can be useful."]
+			dependencies: ["4AB3FAC4AE38A215"]
+			id: "62D22C766FC911C4"
+			tasks: [
+				{
+					id: "73033A4316EBA2C2"
+					type: "item"
+					item: {
+						id: "elementalcraft:scroll"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								spell: "elementalcraft:heal"
+							}
+						}
+					}
+				}
+				{
+					id: "15C2CC22773CB33C"
+					type: "item"
+					item: {
+						id: "elementalcraft:scroll"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								spell: "elementalcraft:silk_vein"
+							}
+						}
+					}
+				}
+				{
+					id: "03B7D57652731887"
+					type: "item"
+					item: {
+						id: "elementalcraft:scroll"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								spell: "elementalcraft:dash"
+							}
+						}
+					}
+				}
+				{
+					id: "791F55D9593C6DAF"
+					type: "item"
+					item: {
+						id: "elementalcraft:scroll"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								spell: "elementalcraft:fireball"
+							}
+						}
+					}
+				}
+			]
+		}
+		{
+			title: "Scroll Collectionist"
+			x: -3.5d
+			y: 2.0d
+			shape: "hexagon"
+			subtitle: "All the Spells"
+			description: ["Now you can start a DnD campaign"]
+			dependencies: ["62D22C766FC911C4"]
+			size: 1.75d
+			optional: true
+			id: "481D8881FAC1F928"
+			tasks: [
+				{
+					id: "0DCD0F97219223D7"
+					type: "item"
+					item: {
+						id: "elementalcraft:scroll"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								spell: "elementalcraft:air_shield"
+							}
+						}
+					}
+				}
+				{
+					id: "736C435D2AD1801A"
+					type: "item"
+					item: {
+						id: "elementalcraft:scroll"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								spell: "elementalcraft:stonewall"
+							}
+						}
+					}
+				}
+				{
+					id: "687660DF44F10B21"
+					type: "item"
+					item: {
+						id: "elementalcraft:scroll"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								spell: "elementalcraft:fireball"
+							}
+						}
+					}
+				}
+				{
+					id: "516D72B42C8ADB49"
+					type: "item"
+					item: {
+						id: "elementalcraft:scroll"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								spell: "elementalcraft:item_pull"
+							}
+						}
+					}
+				}
+				{
+					id: "7EDCDA19EB7587A7"
+					type: "item"
+					item: {
+						id: "elementalcraft:scroll"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								spell: "elementalcraft:ender_strike"
+							}
+						}
+					}
+				}
+				{
+					id: "277A24FD53D422EA"
+					type: "item"
+					item: {
+						id: "elementalcraft:scroll"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								spell: "elementalcraft:flame_cleave"
+							}
+						}
+					}
+				}
+				{
+					id: "7412927A6C687B65"
+					type: "item"
+					item: {
+						id: "elementalcraft:scroll"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								spell: "elementalcraft:translocation"
+							}
+						}
+					}
+				}
+				{
+					id: "2346C860137F5C14"
+					type: "item"
+					item: {
+						id: "elementalcraft:scroll"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								spell: "elementalcraft:dash"
+							}
+						}
+					}
+				}
+				{
+					id: "50496A006096E3B2"
+					type: "item"
+					item: {
+						id: "elementalcraft:scroll"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								spell: "elementalcraft:silk_vein"
+							}
+						}
+					}
+				}
+				{
+					id: "408B08DB01E80242"
+					type: "item"
+					item: {
+						id: "elementalcraft:scroll"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								spell: "elementalcraft:animal_growth"
+							}
+						}
+					}
+				}
+				{
+					id: "365F72BF1078D74E"
+					type: "item"
+					item: {
+						id: "elementalcraft:scroll"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								spell: "elementalcraft:ripening"
+							}
+						}
+					}
+				}
+				{
+					id: "35D6C1623756AA30"
+					type: "item"
+					item: {
+						id: "elementalcraft:scroll"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								spell: "elementalcraft:purification"
+							}
+						}
+					}
+				}
+				{
+					id: "2D3F82259E312E40"
+					type: "item"
+					item: {
+						id: "elementalcraft:scroll"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								spell: "elementalcraft:feather_spikes"
+							}
+						}
+					}
+				}
+				{
+					id: "0E32E5E73A28FE45"
+					type: "item"
+					item: {
+						id: "elementalcraft:scroll"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								spell: "elementalcraft:tree_fall"
+							}
+						}
+					}
+				}
+				{
+					id: "61CF970F2D8F9799"
+					type: "item"
+					item: {
+						id: "elementalcraft:scroll"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								spell: "elementalcraft:inferno"
+							}
+						}
+					}
+				}
+				{
+					id: "798BFD00AFFF6469"
+					type: "item"
+					item: {
+						id: "elementalcraft:scroll"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								spell: "elementalcraft:heal"
+							}
+						}
+					}
+				}
+				{
+					id: "1A5F3FB8BF481768"
+					type: "item"
+					item: {
+						id: "elementalcraft:scroll"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								spell: "elementalcraft:speed"
+							}
+						}
+					}
+				}
+				{
+					id: "5D3162B2D7D80EE6"
+					type: "item"
+					item: {
+						id: "elementalcraft:scroll"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								spell: "elementalcraft:shockwave"
+							}
+						}
+					}
+				}
+				{
+					id: "09292F4D8C36AEBC"
+					type: "item"
+					item: {
+						id: "elementalcraft:scroll"
+						Count: 1b
+						tag: {
+							elementalcraft: {
+								spell: "elementalcraft:air_shield"
+							}
+						}
+					}
+				}
+			]
+			rewards: [
+				{
+					id: "189A8021393887CB"
+					type: "random"
+					exclude_from_claim_all: true
+					table_id: 6594349084625110702L
+				}
+				{
+					id: "21FBF32897229D6E"
+					type: "xp_levels"
+					xp_levels: 15
+				}
+			]
+		}
+		{
+			x: 3.0d
+			y: 1.5d
+			description: ["The source stabilizer is an item that can be used on sources. It prevents them from being replaced by blocks. It also slightly increase the source &l&2recovery rate."]
+			hide_dependency_lines: true
+			dependencies: [
+				"28F45CF9D514202B"
+				"4B7D752BE53A895C"
+			]
+			id: "339A744CFDA1D135"
+			tasks: [{
+				id: "3BFACBD7C294242D"
+				type: "item"
+				item: "elementalcraft:source_stabilizer"
+			}]
+		}
+		{
+			x: 4.0d
+			y: -1.5d
+			description: ["Can be used as facade for your pipes."]
+			hide_dependency_lines: true
+			dependencies: ["28F45CF9D514202B"]
+			id: "310BF5742A0EE8D0"
+			tasks: [{
+				id: "44D13E0A1538B460"
+				type: "item"
+				item: "elementalcraft:cover_frame"
+			}]
+		}
+		{
+			x: 1.0d
+			y: -3.5d
+			subtitle: "Upgrade the machines"
+			description: ["Runes are used to upgrade your instruments. Each rune have specific effects that can be used to make craftings &efaster&r, &apreserve&r some portion of elements, or boost the &9luck&r factor for crafting gems."]
+			hide_dependency_lines: true
+			dependencies: ["28F45CF9D514202B"]
+			id: "4D4C29FEAD80B539"
+			tasks: [
+				{
+					id: "7D8EFADC7B439E9F"
+					type: "item"
+					item: "elementalcraft:inscriber"
+				}
+				{
+					id: "1B9EFCDF74E070B8"
+					type: "item"
+					item: {
+						id: "elementalcraft:chisel"
+						Count: 1b
+						tag: {
+							Damage: 0
+						}
+					}
+				}
+			]
+			rewards: [
+				{
+					id: "553AC07BAA0991EF"
+					type: "item"
+					item: "elementalcraft:minor_rune_slate"
+				}
+				{
+					id: "3E6A441EFEB2E472"
+					type: "item"
+					item: "elementalcraft:rune_slate"
+				}
+				{
+					id: "7094FE521E7AD0F7"
+					type: "item"
+					item: "elementalcraft:major_rune_slate"
+				}
+			]
+		}
+		{
+			x: -1.5d
+			y: -4.5d
+			description: ["Has some uses for grinding materials. Can turn one &eGold Leaf&r into 2 &eGold Powders&r."]
+			dependencies: ["28F45CF9D514202B"]
+			id: "0311F130ED6F7375"
+			tasks: [{
+				id: "685536F358067FD2"
+				type: "item"
+				item: "elementalcraft:air_mill"
+			}]
+			rewards: [
+				{
+					id: "3B74E0CBC69E16D8"
+					type: "xp_levels"
+					xp_levels: 2
+				}
+				{
+					id: "0ED09BF6D1268F20"
+					type: "item"
+					item: "elementalcraft:minor_rune_slate"
+				}
+			]
+		}
+		{
+			title: "Ore Shrine"
+			x: 2.5d
+			y: -3.5d
+			shape: "square"
+			subtitle: "Digital Miner, is that you?"
+			description: ["Ore Shrines work as a miner that collects ores in a 24x24 area, down to bedrock. Each operation takes 10 seconds (less if you use acceleration upgrades). It's compatible with Silk Touch and Fortune Shrine Upgrade, and also some other good upgrades. Needs a good amount of &2Earth Element&r."]
+			hide_dependency_lines: true
+			dependencies: ["20E0A0A18E0C1C47"]
+			size: 1.25d
+			id: "422A9AD44C189BD8"
+			tasks: [{
+				id: "0DB8CF9213B0CFCC"
+				type: "item"
+				item: "elementalcraft:oreshrine"
+			}]
+			rewards: [{
+				id: "3B1BA2FE9D3AF02F"
+				type: "item"
+				item: "elementalcraft:shrine_upgrade_core"
+			}]
+		}
+		{
+			title: "Improving Instruments"
+			x: 4.0d
+			y: -3.5d
+			description: [
+				"Better version of the original instuments. "
+				"&3Improved Binder&r works faster and works as Infuser and Binder."
+				"&2Improved Element Extractor&r works faster."
+			]
+			hide_dependency_lines: true
+			dependencies: [
+				"28F45CF9D514202B"
+				"3B244ACC959125F2"
+			]
+			id: "6E4EE7A6383C0D4B"
+			tasks: [
+				{
+					id: "06DF9299C82ACAEE"
+					type: "item"
+					item: "elementalcraft:extractor_improved"
+				}
+				{
+					id: "6428FADC14BBCB21"
+					type: "item"
+					item: "elementalcraft:binder_improved"
+				}
+			]
+			rewards: [{
+				id: "213CB15200E57A5A"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 278806829828433834L
+			}]
+		}
+		{
+			x: 2.5d
+			y: -1.5d
+			description: ["Will retrieve any crafting result from Instruments into a inventory."]
+			hide_dependency_lines: true
+			dependencies: ["28F45CF9D514202B"]
+			id: "540A62454E121113"
+			tasks: [{
+				id: "0AE2A9928944EB9C"
+				type: "item"
+				item: "elementalcraft:instrument_retriever"
+			}]
+		}
+		{
+			title: "Receptacles"
+			x: -0.5d
+			y: -6.5d
+			shape: "diamond"
+			subtitle: "Moving Day!"
+			description: ["Can be used to move element nodes around. Can be enchanted, but they'll lose the enchantments after each use, so, be careful."]
+			dependencies: ["3B244ACC959125F2"]
+			size: 1.75d
+			id: "0B1F4BCF4C0FA13A"
+			tasks: [{
+				id: "0D421344360E4567"
+				type: "item"
+				title: "Any #elementalcraft:receptacles/empty"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "elementalcraft:receptacles/empty"
+					}
+				}
+			}]
+			rewards: [{
+				id: "585C0EF881B616FC"
+				type: "xp_levels"
+				xp_levels: 5
+			}]
+		}
+	]
+	quest_links: [ ]
+}

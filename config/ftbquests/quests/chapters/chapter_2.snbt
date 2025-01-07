@@ -59,6 +59,7 @@
 		{
 			x: -2.5d
 			y: 6.5d
+			description: ["You can use this Instrument to turn Inert Crystal into Element Crystals."]
 			dependencies: ["08C3C85483A79429"]
 			id: "0828BD31B9F3CD36"
 			tasks: [{

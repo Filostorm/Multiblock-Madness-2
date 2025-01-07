@@ -526,7 +526,7 @@ onEvent('recipes', event => {
 				.outputItem(Item.of(item.name, item.amount))
 				.setPerTick(true)
 				.inputFE(1000000)
-				.duration(1000)
+				.duration(500)
 
 				////Trading
 				//event.recipes.multiblocked.multiblock("drone_bay")

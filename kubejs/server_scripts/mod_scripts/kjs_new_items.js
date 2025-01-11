@@ -31,7 +31,7 @@ onEvent('recipes', event => {
 		event.shaped('kubejs:lapatron_crystal_empty', ['ABA','BCB','ABA'], {A: 'extendedcrafting:ultimate_catalyst',B: 'kubejs:energy_orb_empty',C: 'forbidden_arcanus:dark_nether_star_block'}).id('mbm2:lapatron_crystal_empty')
 
 		//lapatron_orb_empty
-		event.shaped('kubejs:lapatron_orb_empty', ['ABA','BCB','ABA'], {A: 'extendedcrafting:crystaltine_catalyst',B: 'kubejs:lapatron_crystal_empty',C: 'ae2additions:cell_component_1kkk_1th'}).id('mbm2:lapatron_orb_empty')
+		event.shaped('kubejs:lapatron_orb_empty', ['ABA','BCB','ABA'], {A: 'extendedcrafting:crystaltine_catalyst',B: 'kubejs:lapatron_crystal_empty',C: 'ae2_additions:cell_component_1kkk_1th'}).id('mbm2:lapatron_orb_empty')
 
 		//blank AI chip
 		event.shaped('kubejs:blank_ai_chip', ['ABA','BCB','ABA'], {A: 'kubejs:reinforced_hdpe_sheet',B: 'kubejs:tier_3_electrical_alloy_wire',C: 'pneumaticcraft:unassembled_pcb'}).id('mbm2:blank_ai_chip')
@@ -155,10 +155,10 @@ onEvent('recipes', event => {
 				"item": 'kubejs:reinforced_hdpe_sheet'
 			  },
 			  {
-				"item": 'ae2additions:cell_component_1kk'
+				"item": 'ae2_additions:cell_component_1kk'
 			  },
 			  {
-				"item": 'ae2additions:cell_component_1kk'
+				"item": 'ae2_additions:cell_component_1kk'
 			  },
 			  {
 				"item": 'kubejs:reinforced_hdpe_sheet'

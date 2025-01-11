@@ -175,29 +175,29 @@ onEvent('item.tooltip', tooltip => {
 	})
 	
 	//ae2additions
-	var ae2aLoaded = Platform.isLoaded('ae2additions');
+	var ae2aLoaded = Platform.isLoaded('ae2_additions');
    	if(ae2aLoaded){
-	tooltip.addAdvanced('ae2additions:pattern_provider_2th', (item, advanced, text) => {
+	tooltip.addAdvanced('ae2_additions:pattern_provider_2th', (item, advanced, text) => {
 		text.add(1, [Text.of('Holds 18 Patterns').lightPurple()])
 		text.add(2, [Text.of('Only Shows Up On The Advanced Pattern Access Terminal').red()])
   	})
-	tooltip.addAdvanced('ae2additions:pattern_provider_3th', (item, advanced, text) => {
+	tooltip.addAdvanced('ae2_additions:pattern_provider_3th', (item, advanced, text) => {
 		text.add(1, [Text.of('Holds 27 Patterns').lightPurple()])
 		text.add(2, [Text.of('Only Shows Up On The Advanced Pattern Access Terminal').red()])
   	})
-	tooltip.addAdvanced('ae2additions:pattern_provider_4th', (item, advanced, text) => {
+	tooltip.addAdvanced('ae2_additions:pattern_provider_4th', (item, advanced, text) => {
 		text.add(1, [Text.of('Holds 36 Patterns').lightPurple()])
 		text.add(2, [Text.of('Only Shows Up On The Advanced Pattern Access Terminal').red()])
   	})
-	tooltip.addAdvanced('ae2additions:part_pattern_provider_2th', (item, advanced, text) => {
+	tooltip.addAdvanced('ae2_additions:part_pattern_provider_2th', (item, advanced, text) => {
 		text.add(1, [Text.of('Holds 18 Patterns').lightPurple()])
 		text.add(2, [Text.of('Only Shows Up On The Advanced Pattern Access Terminal').red()])
   	})
-	tooltip.addAdvanced('ae2additions:part_pattern_provider_3th', (item, advanced, text) => {
+	tooltip.addAdvanced('ae2_additions:part_pattern_provider_3th', (item, advanced, text) => {
 		text.add(1, [Text.of('Holds 27 Patterns').lightPurple()])
 		text.add(2, [Text.of('Only Shows Up On The Advanced Pattern Access Terminal').red()])
   	})
-	tooltip.addAdvanced('ae2additions:part_pattern_provider_4th', (item, advanced, text) => {
+	tooltip.addAdvanced('ae2_additions:part_pattern_provider_4th', (item, advanced, text) => {
 		text.add(1, [Text.of('Holds 36 Patterns').lightPurple()])
 		text.add(2, [Text.of('Only Shows Up On The Advanced Pattern Access Terminal').red()])
   	})

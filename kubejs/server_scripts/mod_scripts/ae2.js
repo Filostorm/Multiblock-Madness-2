@@ -413,41 +413,41 @@ onEvent('recipes', event => {
 
 	//ae2 additions scripts
 
-	var ae2aLoaded = Platform.isLoaded('ae2additions');
+	var ae2aLoaded = Platform.isLoaded('ae2_additions');
     if(ae2aLoaded){ 
 	let ae2aRemoval = [
-		//'ae2additions:network/cells/item_advanced_cell_housing',
-		//'ae2additions:network/cells/item_ultimate_cell_housing',
-		//'ae2additions:network/cells/item_storage_cell_1kk',
-		//'ae2additions:network/cells/item_storage_cell_4kk',
-		//'ae2additions:network/cells/item_storage_cell_16kk',
-		//'ae2additions:network/cells/item_storage_cell_64kk',
-		//'ae2additions:network/cells/item_storage_cell_256kk',
-		//'ae2additions:network/cells/item_storage_cell_1kkk_1th',
-		//'ae2additions:network/cells/item_storage_cell_1kkk_2th',
-		//'ae2additions:network/cells/item_storage_cell_1kkk_3th',
-		//'ae2additions:network/cells/item_storage_cell_1kkk_4th',
-		//'ae2additions:network/cells/item_storage_cell_1kk_storage',
-		//'ae2additions:network/cells/item_storage_cell_4kk_storage',
-		//'ae2additions:network/cells/item_storage_cell_16kk_storage',
-		//'ae2additions:network/cells/item_storage_cell_64kk_storage',
-		//'ae2additions:network/cells/item_storage_cell_256kk_storage',
-		//'ae2additions:network/cells/item_storage_cell_1kkk_1th_storage',
-		//'ae2additions:network/cells/item_storage_cell_1kkk_2th_storage',
-		//'ae2additions:network/cells/item_storage_cell_1kkk_3th_storage',
-		//'ae2additions:network/cells/item_storage_cell_1kkk_4th_storage',
-		'ae2additions:network/crafting/pattern_provider_3th_gen',
-		'ae2additions:network/crafting/pattern_provider_4th_gen',
+		//'ae2_additions:network/cells/item_advanced_cell_housing',
+		//'ae2_additions:network/cells/item_ultimate_cell_housing',
+		//'ae2_additions:network/cells/item_storage_cell_1kk',
+		//'ae2_additions:network/cells/item_storage_cell_4kk',
+		//'ae2_additions:network/cells/item_storage_cell_16kk',
+		//'ae2_additions:network/cells/item_storage_cell_64kk',
+		//'ae2_additions:network/cells/item_storage_cell_256kk',
+		//'ae2_additions:network/cells/item_storage_cell_1kkk_1th',
+		//'ae2_additions:network/cells/item_storage_cell_1kkk_2th',
+		//'ae2_additions:network/cells/item_storage_cell_1kkk_3th',
+		//'ae2_additions:network/cells/item_storage_cell_1kkk_4th',
+		//'ae2_additions:network/cells/item_storage_cell_1kk_storage',
+		//'ae2_additions:network/cells/item_storage_cell_4kk_storage',
+		//'ae2_additions:network/cells/item_storage_cell_16kk_storage',
+		//'ae2_additions:network/cells/item_storage_cell_64kk_storage',
+		//'ae2_additions:network/cells/item_storage_cell_256kk_storage',
+		//'ae2_additions:network/cells/item_storage_cell_1kkk_1th_storage',
+		//'ae2_additions:network/cells/item_storage_cell_1kkk_2th_storage',
+		//'ae2_additions:network/cells/item_storage_cell_1kkk_3th_storage',
+		//'ae2_additions:network/cells/item_storage_cell_1kkk_4th_storage',
+		'ae2_additions:network/crafting/pattern_provider_3th_gen',
+		'ae2_additions:network/crafting/pattern_provider_4th_gen',
 	]
 	ae2aRemoval.forEach(item => {
 		event.remove({id: item})
 	});
 
-	event.replaceInput({id: 'ae2additions:network/crafting/pattern_provider_2th_gen'}, 'ae2:fluix_block', 'powah:uraninite_block')
+	event.replaceInput({id: 'ae2_additions:network/crafting/pattern_provider_2th_gen'}, 'ae2:fluix_block', 'powah:uraninite_block')
 
-	event.shaped('ae2additions:pattern_provider_3th', ['ABA','CDC','ABA'], {A: 'kubejs:lunar_alloy_plating',B: 'laserio:logic_chip',C: 'pneumaticcraft:module_expansion_card',D: 'ae2additions:pattern_provider_2th'}).id(`mbm2:pattern_provider_3rd`)
+	event.shaped('ae2_additions:pattern_provider_3th', ['ABA','CDC','ABA'], {A: 'kubejs:lunar_alloy_plating',B: 'laserio:logic_chip',C: 'pneumaticcraft:module_expansion_card',D: 'ae2_additions:pattern_provider_2th'}).id(`mbm2:pattern_provider_3rd`)
 	
-	event.shaped('ae2additions:pattern_provider_4th', ['ABA','CDC','ABA'], {A: 'kubejs:space_alloy_plating',B: 'lazierae2:parallel_processor',C: 'mekanism:ultimate_control_circuit',D: 'ae2additions:pattern_provider_3th'}).id(`mbm2:pattern_provider_4th`)
+	event.shaped('ae2_additions:pattern_provider_4th', ['ABA','CDC','ABA'], {A: 'kubejs:space_alloy_plating',B: 'lazierae2:parallel_processor',C: 'mekanism:ultimate_control_circuit',D: 'ae2_additions:pattern_provider_3th'}).id(`mbm2:pattern_provider_4th`)
 }
 
 	  //crystal_processing_quartz_growth_accelerator
@@ -526,8 +526,8 @@ onEvent('recipes', event => {
 	event.shaped('ae2:cell_component_256k', ['ABA','CDC','ACA'], {A: 'kubejs:tier_2_electrical_alloy_plate',B: 'ae2:calculation_processor',C: 'ae2:cell_component_64k',D: 'chemlib:lithium_dust'}).id(`mbm2:crafting/cell_component_256k`)
 
 	//1kk Storage Component
-	event.remove({output: 'ae2additions:cell_component_1kk'})
-	event.shaped('ae2additions:cell_component_1kk', ['ABA','CDC','ACA'], {A: 'kubejs:tier_3_electrical_alloy_plate',B: 'ae2:calculation_processor',C: 'ae2:cell_component_256k',D: 'minecraft:dragon_breath'}).id(`mbm2:crafting/cell_component_1kk`)
+	event.remove({output: 'ae2_additions:cell_component_1kk'})
+	event.shaped('ae2_additions:cell_component_1kk', ['ABA','CDC','ACA'], {A: 'kubejs:tier_3_electrical_alloy_plate',B: 'ae2:calculation_processor',C: 'ae2:cell_component_256k',D: 'minecraft:dragon_breath'}).id(`mbm2:crafting/cell_component_1kk`)
 
 	//Basic Card
 	event.remove({output: 'ae2:basic_card'})

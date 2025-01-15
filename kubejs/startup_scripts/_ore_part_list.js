@@ -52,13 +52,13 @@ global.oreProcessingParts = [
 ]
 
 global.oreRefiningParts = [
-    //{
-    //    'name': `fine_dust`,
-    //    'prefix': `Fine `,
-    //    'suffix': ` Dust`,
-    //    'model': false,
-    //    'level': 0,
-    //},
+    {
+        'name': `fine_dust`,
+        'prefix': `Fine `,
+        'suffix': ` Dust`,
+        'model': false,
+        'level': 0,
+    },
     {
         'name': `pure`,
         'prefix': `Purified `,

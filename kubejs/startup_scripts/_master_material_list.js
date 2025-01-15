@@ -855,7 +855,7 @@ global.newMaterialParts = [
       'color': 0xe9f1f5,
       'type': 'alloy',
       'tier': 3,
-      'itemParts': ['ingot', 'dust', 'nugget', 'plate', 'rod', 'wire', 'model_spool', 'model_wire_coil'],
+      'itemParts': ['ingot', 'dust', 'nugget', 'plate', 'rod', 'wire', 'model_spool', 'model_wire_coil', 'sheet'],
       'blockParts': ['storage_block', 'coil'],
       'amount': 3,
       'dust_input': ['2x #forge:dusts/silver', '#forge:dusts/magnesium', '#forge:dusts/quartz'],

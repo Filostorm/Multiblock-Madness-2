@@ -1542,7 +1542,7 @@
 			x: -1.5d
 			y: -8.0d
 			shape: "diamond"
-			description: ["§aProcessing§r is required, and each Tier of metal will require the equivalent §aprocessing§r Grade before you're able to smelt or Refine it."]
+			description: ["§aProcessing§r is required, and each Tier of metal will require the equivalent §aprocessing§r Grade before you're able to smelt or §bRefine§r it."]
 			dependencies: ["23222631E2D6EDF3"]
 			size: 2.0d
 			id: "5DC786D48AD3886E"

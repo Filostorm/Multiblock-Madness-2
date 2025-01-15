@@ -346,7 +346,7 @@
 			tasks: [{
 				id: "47D5BF8317A6F1DA"
 				type: "item"
-				title: "Any #elementalcraft:shrine_upgrades"
+				title: "Shrine Upgrades"
 				item: {
 					id: "itemfilters:tag"
 					Count: 1b
@@ -384,9 +384,8 @@
 			dependencies: ["5445C707CBEEAFD7"]
 			id: "71D8C1416BD779EB"
 			tasks: [{
-				id: "07D8135FFAAEA70A"
-				type: "item"
-				item: "elementalcraft:jewel"
+				id: "55FAE921460C6E9B"
+				type: "checkmark"
 			}]
 		}
 		{

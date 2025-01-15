@@ -358,7 +358,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 					' M '
 				], {
 					M: 'kubejs:mesh',
-					Z: '#forge:ores/dust/zinc'
+					Z: '#forge:dusts/zinc'
 				}).id(`mbm2:zinc_mesh`)
 
 				//Zinc Mesh
@@ -368,7 +368,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 					'MMM'
 				], {
 					M: 'kubejs:mesh',
-					Z: '#forge:ores/fine_dust/zinc'
+					Z: '#forge:fine_dusts/zinc'
 				}).id(`mbm2:zinc_mesh_fine_dust`)
 				//Carbon Mesh
 				//event.recipes.mekanismMetallurgicInfusing('kubejs:carbon_mesh', 'kubejs:mesh', 'mekanism:carbon', 10) //cant seem to change the amount from 10
@@ -981,7 +981,7 @@ var blastFurnaceSmelting = (event, material, inputItem, tier) => {
 						console.log(`${item.gem_components[0]} has no gem!`);
 					}
 					if (Item.of(`#forge:gems/${item.gem_components[1]}`) != null) {
-						global.pneumaticcraftThermoPlant(event, Item.of(`#forge:gems/${item.gem_components[1]}`), Ingredient.of(`#forge:ores/dust/${item.material}`), {"type": "pneumaticcraft:fluid", "fluid": "kubejs:crystal_catalyst_mixture", "amount": 250}, 423, 4, 0.75, 1.0, false, `mbm2:thermo_plant/${item.gem_components[1]}_from_${item.material}`)
+						global.pneumaticcraftThermoPlant(event, Item.of(`#forge:gems/${item.gem_components[1]}`), Ingredient.of(`#forge:dusts/${item.material}`), {"type": "pneumaticcraft:fluid", "fluid": "kubejs:crystal_catalyst_mixture", "amount": 250}, 423, 4, 0.75, 1.0, false, `mbm2:thermo_plant/${item.gem_components[1]}_from_${item.material}`)
 					} else {
 						console.log(`${item.gem_components[1]} has no gem!`);
 					}

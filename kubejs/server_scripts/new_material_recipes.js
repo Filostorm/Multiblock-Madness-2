@@ -374,7 +374,7 @@ event.recipes.multiblocked.multiblock("chemical_reactor")
   .inputFluid(Fluid.of('chemlib:radon_fluid', 1000))
   .outputItem('#forge:base_dusts/cosmonium')
   .setPerTick(true)
-  .inputFE(200000)
+  .inputFE(2000000)
   .duration(300)
 
 //Cosmonium Pellet
@@ -385,7 +385,7 @@ event.recipes.multiblocked.multiblock("chemical_reactor")
 	.inputItem('kubejs:extra_dimensional_alloy')
 	.outputItem('#forge:pellets/cosmonium')
 	.setPerTick(true)
-	.inputFE(300000)
+	.inputFE(2000000)
 	.duration(100)
 
   //Ingot Mold
@@ -412,8 +412,9 @@ list.forEach(type => {
     .inputItem(`#forge:${type}/cosmonium`)
     .outputItem(`#forge:ingots/cosmonium`)
     .setPerTick(true)
-    .inputFE(1000000)
-    .duration(160)
+    .inputItem('kubejs:lapatron_crystal_full')
+    .outputItem('kubejs:lapatron_crystal_empty')
+    .duration(40)
     .data({ temperature: 10000})
     .text(`    Heat: §610000`)
     .predicate((recipe, recipeLogic) => {

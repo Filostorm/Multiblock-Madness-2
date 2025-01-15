@@ -4,14 +4,12 @@
 	#The time in minutes before a grave is unlocked to anyone (-1 = disabled) [-1..MAX|default:-1]
 	#Range: > -1
 	decay_time = -1
-
-#Miscellaneous options
-[general]
+	#Experience lost on death [0..100|default:95]
+	#Range: 0 ~ 100
+	xp_loss_on_death = 95
 	#The duration of the Ghostly Shape effect in seconds [0..MAX|default:120]
 	#Range: > 0
 	ghostly_shape_duration = 120
-	#Always Keep xp on death [false/true|default:false]
-	always_keep_xp_on_death = false
 
 #Allows to customize or disable the enchantments
 [enchantments]
@@ -47,6 +45,10 @@
 	enable_enchantment_spectral_bite = true
 	#Allows Spectral Bite at enchanting table [false/true|default:false]
 	spectral_bite_enchanting_table = false
+	#Enables the enchantment Spectral Conjurer [false/true|default:true]
+	enable_enchantment_spectral_conjurer = true
+	#Allows Spectral Conjurer at enchanting table [false/true|default:false]
+	spectral_conjurer_enchanting_table = true
 
 #For settings related to magic items
 [magic_item]
@@ -77,8 +79,6 @@
 [allowedMagicItems]
 	#Voodoo Poppet [false/true|default:true]
 	allow_voodoo_poppet = true
-	#Familiar Receptacle [false/true|default:true]
-	allow_familiar_receptacle = true
 	#Book of Disenchantment [false/true|default:true]
 	allow_book_of_disenchantment = true
 	#Scroll of Preservation [false/true|default:true]
@@ -137,12 +137,18 @@
 	allow_bag_of_seeds = true
 	#Magic Scroll [false/true|default:true]
 	allow_magic_scroll = true
-	#Familiar Stone [false/true|default:true]
-	allow_familiar_stone = true
-	#Merchant Stone [false/true|default:true]
-	allow_merchant_stone = true
-	#Prayer Stone [false/true|default:true]
-	allow_prayer_stone = true
+	#Receptacle of Familiar [false/true|default:true]
+	allow_receptacle_of_familiar = true
+	#Tablet of Guard [false/true|default:true]
+	allow_tablet_of_guard = true
+	#Gemstone of Familiar [false/true|default:true]
+	allow_gemstone_of_familiar = true
+	#Gemstone of Merchant [false/true|default:true]
+	allow_gemstone_of_merchant = true
+	#Gemstone of Prayer [false/true|default:true]
+	allow_gemstone_of_prayer = true
+	#Gemstone of Guardian [false/true|default:true]
+	allow_gemstone_of_guardian = true
 
 #Allows to enable some features related to others mods
 [compatibility]
@@ -206,4 +212,17 @@
 	#The cooldown in minutes to reset the perks with the ankh of Prayer [20..1440|default:120]
 	#Range: 20 ~ 1440
 	cooldown_reset_perk = 120
+
+#Allows to customize or disable the potions
+[potions]
+	#Allows Earthly Garden [false/true|default:true]
+	allow_earthly_garden = true
+	#Allows Bait [false/true|default:true]
+	allow_bait = true
+	#Allows Frostbite [false/true|default:true]
+	allow_frostbite = true
+	#Allows Discretion [false/true|default:true]
+	allow_discretion = true
+	#Allows Restoration [false/true|default:true]
+	allow_restoration = true
 

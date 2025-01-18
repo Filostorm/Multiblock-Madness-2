@@ -1129,7 +1129,7 @@ global.newMaterialParts = [
       'color': 0x484e5e,
       'type': 'alloy',
       'tier': 5,
-      'itemParts': ['ingot', 'nugget', 'dust',  'plate', 'gear', 'rod', 'plating', 'hull_panel'],
+      'itemParts': ['ingot', 'nugget', 'dust',  'plate', 'gear', 'rod', 'plating', 'hull_panel', 'bolt'],
       'blockParts': ['storage_block', 'scaffolding', 'frame_box', 'hull_casing'],
       'fluid_id': 'kubejs:molten_inconel',
       'fluid': 'thick',

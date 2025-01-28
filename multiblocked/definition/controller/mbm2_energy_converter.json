@@ -142,6 +142,22 @@
         "minCount": 1,
         "maxCount": 2
       },
+      "E": {
+        "blocks": [
+          {
+            "id": "multiblocked:energy_output_mk1"
+          },
+          {
+            "id": "multiblocked:energy_output_mk2"
+          },
+          {
+            "id": "multiblocked:energy_output_mk3"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 2
+      },
       "any": {
         "type": "any"
       }
@@ -156,7 +172,8 @@
       "A": [
         "A",
         "C",
-        "D"
+        "D",
+        "E"
       ],
       "B": [
         "B"

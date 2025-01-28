@@ -174,8 +174,7 @@ onEvent('item.tooltip', tooltip => {
 		})
 	})
 	
-	//ae2_additions
-	var ae2aLoaded = Platform.isLoaded('ae2_additions');
+  var ae2aLoaded = Platform.isLoaded('ae2_additions');
    	if(ae2aLoaded){
 	tooltip.addAdvanced('ae2_additions:pattern_provider_2th', (item, advanced, text) => {
 		text.add(1, [Text.of('Holds 18 Patterns').lightPurple()])

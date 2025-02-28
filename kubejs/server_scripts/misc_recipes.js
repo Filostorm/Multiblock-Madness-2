@@ -468,7 +468,7 @@ event.custom({
 	"ingredients": [
 	  {"fluid": 'minecraft:water',
 		"amount": 3500},
-	  {"tag": 'forge:ores/fine_dust/vincyte',
+	  {"tag": 'forge:dusts/vincyte',
 		"count": 1},
 	  {"item": 'kubejs:crystal_slag',
 		"count": 1}],

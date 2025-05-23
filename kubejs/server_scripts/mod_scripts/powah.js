@@ -40,7 +40,7 @@ onEvent('recipes', event => {
   event.remove({id: 'powah:energizing/uraninite_from_ore_dense'})
   event.remove({id: 'powah:energizing/uraninite_from_ore_poor'})
   
-  
+  event.remove({ id: 'powah:crafting/reactor_basic'})
   
 
 	//Dielectric Casing

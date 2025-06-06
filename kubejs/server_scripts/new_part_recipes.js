@@ -443,6 +443,13 @@ onEvent('recipes', event => {
 			  ], {
 				R: `#forge:rings/${item.material}`,
 			  }).id(`mbm2:crafting/${item.material}_sprockets`)
+			//Cheaper recipe
+			event.recipes.multiblocked.multiblock("mechanical_crafting")
+			.inputItem(`3x #forge:rings/${item.material}`)
+			.outputItem(Item.of(`#forge:sprockets/${item.material}`))
+			.setPerTick(true)
+			.inputFE(2000)
+			.duration(100)
 		}
 	}
 

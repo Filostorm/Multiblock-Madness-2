@@ -2140,5 +2140,10 @@ global.newMaterialParts = [
         'material': 'glacio_stone',
         'hardness': 4,
         'resistance': 4
-      }
+      },
+      {
+        'material': 'livingrock',
+        'hardness': 3,
+        'resistance': 3
+      },
     ]

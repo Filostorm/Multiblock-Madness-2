@@ -1,4 +1,3 @@
-
 /*onEvent('block.loot_tables', event => {
 	//Ore should drop the dust
 	event.addSimpleBlock('mna:vinteum_ore', 'mna:vinteum_dust')

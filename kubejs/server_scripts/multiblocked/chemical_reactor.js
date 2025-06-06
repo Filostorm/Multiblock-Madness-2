@@ -1,6 +1,5 @@
-
-  onEvent('recipes', event => {
-	/*
+onEvent('recipes', (event) => {
+    /*
 // Input and Output
  // Items
  .inputItem('Item').ignoreNBT()) | .outputItem('Item').ignoreNBT())
@@ -27,26 +26,27 @@
  .setPerTick(boolean) // Switch perTick on/off
 */
 
-	//Sulfuric Acid
-	event.recipes.multiblocked.multiblock("chemical_reactor")
-		.inputFluid(Fluid.of('mekanism:oxygen', 125))
-		//.inputFluid(r.input)
-		.inputItem([Ingredient.of('#forge:dusts/sulfur'), Ingredient.of('#forge:gems/sulfur')])
-		//.outputItem(r.output1)
-		.outputFluid(Fluid.of('mekanism:sulfuric_acid', 250))
-		.setPerTick(true)
-		.inputFE(2000)
-		.duration(100)
+    //Sulfuric Acid
+    event.recipes.multiblocked
+        .multiblock('chemical_reactor')
+        .inputFluid(Fluid.of('mekanism:oxygen', 125))
+        //.inputFluid(r.input)
+        .inputItem([Ingredient.of('#forge:dusts/sulfur'), Ingredient.of('#forge:gems/sulfur')])
+        //.outputItem(r.output1)
+        .outputFluid(Fluid.of('mekanism:sulfuric_acid', 250))
+        .setPerTick(true)
+        .inputFE(2000)
+        .duration(100);
 
-	//Nitric Acid
-	event.recipes.multiblocked.multiblock("chemical_reactor")
-		.inputFluid(Fluid.of('mekanism:oxygen', 500))
-		.inputFluid(Fluid.of('mekanism:hydrogen', 250))
-		.inputItem('2x chemlib:nitrogen')
-		//.inputFluid(Fluid.of('chemlib:nitrogen_fluid', 100))
-		.outputFluid(Fluid.of('chemlib:nitric_acid_fluid', 250))
-		.setPerTick(true)
-		.inputFE(1000*2)
-		.duration(150)
-
-  })
+    //Nitric Acid
+    event.recipes.multiblocked
+        .multiblock('chemical_reactor')
+        .inputFluid(Fluid.of('mekanism:oxygen', 500))
+        .inputFluid(Fluid.of('mekanism:hydrogen', 250))
+        .inputItem('2x chemlib:nitrogen')
+        //.inputFluid(Fluid.of('chemlib:nitrogen_fluid', 100))
+        .outputFluid(Fluid.of('chemlib:nitric_acid_fluid', 250))
+        .setPerTick(true)
+        .inputFE(1000 * 2)
+        .duration(150);
+});

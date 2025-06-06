@@ -1,61 +1,67 @@
+onEvent('recipes', (event) => {
+    //Overworld
+    event.recipes.multiblocked
+        .multiblock('air_collector')
+        .dimension('minecraft:overworld')
+        .inputItem('naturesaura:bottle_two_the_rebottling')
+        .inputItem('kubejs:auric_gold_nugget')
+        .outputItem(Item.of('naturesaura:aura_bottle', '{stored_type:"naturesaura:overworld"}'))
+        .setPerTick(true)
+        .inputFE(500)
+        .duration(50);
 
-  onEvent('recipes', event => {
-	//Overworld
-	event.recipes.multiblocked.multiblock("air_collector")
-		.dimension('minecraft:overworld')
-		.inputItem('naturesaura:bottle_two_the_rebottling')
-		.inputItem('kubejs:auric_gold_nugget')
-		.outputItem(Item.of('naturesaura:aura_bottle', '{stored_type:"naturesaura:overworld"}'))
-		.setPerTick(true)
-		.inputFE(500)
-		.duration(50)
+    event.recipes.multiblocked
+        .multiblock('air_collector')
+        .dimension('minecraft:overworld')
+        .outputFluid(Fluid.of('kubejs:liquid_air', 100))
+        .setPerTick(true)
+        .inputFE(500)
+        .duration(100);
 
-	event.recipes.multiblocked.multiblock("air_collector")
-		.dimension('minecraft:overworld')
-		.outputFluid(Fluid.of('kubejs:liquid_air', 100))
-		.setPerTick(true)
-		.inputFE(500)
-		.duration(100)
+    //Nether
+    event.recipes.multiblocked
+        .multiblock('air_collector')
+        .dimension('minecraft:the_nether')
+        .inputItem('naturesaura:bottle_two_the_rebottling')
+        .inputItem('kubejs:auric_gold_nugget')
+        .outputItem(Item.of('naturesaura:aura_bottle', '{stored_type:"naturesaura:nether"}'))
+        .setPerTick(true)
+        .inputFE(1000)
+        .duration(50);
 
-	//Nether
-	event.recipes.multiblocked.multiblock("air_collector")
-		.dimension('minecraft:the_nether')
-		.inputItem('naturesaura:bottle_two_the_rebottling')
-		.inputItem('kubejs:auric_gold_nugget')
-		.outputItem(Item.of('naturesaura:aura_bottle', '{stored_type:"naturesaura:nether"}'))
-		.setPerTick(true)
-		.inputFE(1000)
-		.duration(50)
+    event.recipes.multiblocked
+        .multiblock('air_collector')
+        .dimension('minecraft:the_nether')
+        .outputFluid(Fluid.of('kubejs:liquid_nether_air', 100))
+        .setPerTick(true)
+        .inputFE(1000)
+        .duration(100);
 
-	event.recipes.multiblocked.multiblock("air_collector")
-		.dimension('minecraft:the_nether')
-		.outputFluid(Fluid.of('kubejs:liquid_nether_air', 100))
-		.setPerTick(true)
-		.inputFE(1000)
-		.duration(100)
+    //Ender
+    event.recipes.multiblocked
+        .multiblock('air_collector')
+        .dimension('minecraft:the_end')
+        .inputItem('minecraft:glass_bottle')
+        .outputItem('botania:ender_air_bottle')
+        .setPerTick(true)
+        .inputFE(2000)
+        .duration(50);
 
-	//Ender
-	event.recipes.multiblocked.multiblock("air_collector")
-	.dimension('minecraft:the_end')
-	.inputItem('minecraft:glass_bottle')
-	.outputItem('botania:ender_air_bottle')
-	.setPerTick(true)
-	.inputFE(2000)
-	.duration(50)
+    event.recipes.multiblocked
+        .multiblock('air_collector')
+        .dimension('minecraft:the_end')
+        .inputItem('naturesaura:bottle_two_the_rebottling')
+        .inputItem('kubejs:auric_gold_nugget')
+        .outputItem(Item.of('naturesaura:aura_bottle', '{stored_type:"naturesaura:end"}'))
+        .setPerTick(true)
+        .inputFE(2000)
+        .duration(200);
 
-	event.recipes.multiblocked.multiblock("air_collector")
-		.dimension('minecraft:the_end')
-		.inputItem('naturesaura:bottle_two_the_rebottling')
-		.inputItem('kubejs:auric_gold_nugget')
-		.outputItem(Item.of('naturesaura:aura_bottle', '{stored_type:"naturesaura:end"}'))
-		.setPerTick(true)
-		.inputFE(2000)
-		.duration(200)
-
-	event.recipes.multiblocked.multiblock("air_collector")
-		.dimension('minecraft:the_end')
-		.outputFluid(Fluid.of('kubejs:liquid_ender_air', 100))
-		.setPerTick(true)
-		.inputFE(2000)
-		.duration(100)
-  })
+    event.recipes.multiblocked
+        .multiblock('air_collector')
+        .dimension('minecraft:the_end')
+        .outputFluid(Fluid.of('kubejs:liquid_ender_air', 100))
+        .setPerTick(true)
+        .inputFE(2000)
+        .duration(100);
+});

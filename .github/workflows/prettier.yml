@@ -1,0 +1,24 @@
+name: Automatic formatting via Prettier
+
+on:
+  workflow_dispatch:
+  push:
+
+permissions:
+  contents: write
+
+jobs:
+  job:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+      - uses: denoland/setup-deno@v1
+
+      - run: npx --yes prettier -v
+      - run: deno run --allow-run .github/actions/prettier.ts
+      - run: git pull --ff-only
+      - run: git push

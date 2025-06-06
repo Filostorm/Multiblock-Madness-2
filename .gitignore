@@ -8,6 +8,8 @@
 !/defaultconfigs
 !*.md
 !.gitignore
+!.github
+!.prettierrc
 .zsrc
 Probe.cfg
 config/awesomedungeon.properties

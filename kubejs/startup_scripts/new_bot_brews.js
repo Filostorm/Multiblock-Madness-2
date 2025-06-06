@@ -1,7 +1,6 @@
-
-
-onEvent("botania.brews.registry", event => {
-    event.create("bargaining")
+onEvent('botania.brews.registry', (event) => {
+    event
+        .create('bargaining')
         /**
          * The cost of mana per brew.
          * For Tainted Blood Pendant, it is cost / duration / effectLevel * 2.5 per tick.
@@ -14,46 +13,45 @@ onEvent("botania.brews.registry", event => {
          * The parameters come the same as /effect,
          * except for duration is in ticks, not seconds.
          */
-        .effect("minecraft:hero_of_the_village", 360 * 20, 0, true, true)
+        .effect('minecraft:hero_of_the_village', 360 * 20, 0, true, true)
         /**
          * Set to deny incense for this brew.
          */
-        .noIncense()
-        
-    event.create("greater_bargaining")
+        .noIncense();
+
+    event
+        .create('greater_bargaining')
         .cost(8000)
-        .effect("minecraft:hero_of_the_village", 180 * 20, 1, true, true)
-        .noIncense()
+        .effect('minecraft:hero_of_the_village', 180 * 20, 1, true, true)
+        .noIncense();
 
     let sightmaterials = [
-        "coal",
-        "diamond",
-        "emerald",
-        "gold",
-        "iron",
-        "lapis",
-        "redstone",
-        "aluminium",
-        "copper",
-        "tin",
-        "nickel",
-        "uranium",
-        "lead",
-        "silver",
-        "zinc",
-        "osmium",
-        "quartz",
-        "platinum",
-        "netherite"
-    ]
+        'coal',
+        'diamond',
+        'emerald',
+        'gold',
+        'iron',
+        'lapis',
+        'redstone',
+        'aluminium',
+        'copper',
+        'tin',
+        'nickel',
+        'uranium',
+        'lead',
+        'silver',
+        'zinc',
+        'osmium',
+        'quartz',
+        'platinum',
+        'netherite'
+    ];
 
-    sightmaterials.forEach(material => {
-        event.create(`${material}_sight`)
-        .cost(6000)
-        .effect(`potionsmaster:${material}potioneffect`, 240 * 20, 0, true, true)
-        .noIncense()
-    })
-
-
-
-})
+    sightmaterials.forEach((material) => {
+        event
+            .create(`${material}_sight`)
+            .cost(6000)
+            .effect(`potionsmaster:${material}potioneffect`, 240 * 20, 0, true, true)
+            .noIncense();
+    });
+});

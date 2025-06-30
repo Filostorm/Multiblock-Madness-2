@@ -9,12 +9,12 @@ var router_removal = [
     'modularrouters:fluid_module_2_x4',
     'modularrouters:fluid_module_2',
     'modularrouters:placer_module',
-    //'modularrouters:puller_module_1',
+    'modularrouters:puller_module_1',
     'modularrouters:puller_module_2_x4',
-    //'modularrouters:puller_module_2',
-    //'modularrouters:sender_module_1',
+    'modularrouters:puller_module_2',
+    'modularrouters:sender_module_1',
     'modularrouters:sender_module_2_x4',
-    //'modularrouters:sender_module_2',
+    'modularrouters:sender_module_2',
     'modularrouters:sender_module_3',
     'modularrouters:range_up_augment',
     'modularrouters:range_down_augment'
@@ -38,13 +38,11 @@ event.replaceInput({id: 'modularrouters:flinger_module'}, 'gunpowder', 'create:w
 event.replaceInput({id: 'modularrouters:detector_module'}, 'minecraft:comparator', 'laserio:card_redstone')
 event.replaceInput({id: 'modularrouters:sender_module_1_alt'}, 'minecraft:piston', 'laserio:card_item')
 
-//Casuing issues
-//event.shapeless(Item.of('modularrouters:puller_module_1', '{modularrouters:{Direction:"NONE",ModuleFilter:{}}}'), [Item.of('modularrouters:sender_module_1', '{modularrouters:{Direction:"NONE",ModuleFilter:{}}}')])
-//event.shapeless(Item.of('modularrouters:sender_module_1', '{modularrouters:{Direction:"NONE",ModuleFilter:{}}}'), [Item.of('modularrouters:puller_module_1', '{modularrouters:{Direction:"NONE",ModuleFilter:{}}}')])
-//event.shapeless(Item.of('modularrouters:sender_module_2', '{modularrouters:{ModuleFilter:{}}}'), [Item.of('modularrouters:sender_module_1', '{modularrouters:{Direction:"NONE",ModuleFilter:{}}}'),Item.of('industrialforegoing:range_addon7', '{TitaniumAugment:{Range:7.0f}}'),Item.of('industrialforegoing:range_addon7', '{TitaniumAugment:{Range:7.0f}}')])
-//event.shapeless(Item.of('modularrouters:puller_module_2', '{modularrouters:{ModuleFilter:{}}}'), [Item.of('modularrouters:sender_module_2', '{modularrouters:{ModuleFilter:{}}}')])
-//event.shapeless(Item.of('modularrouters:sender_module_2', '{modularrouters:{ModuleFilter:{}}}'), [Item.of('modularrouters:puller_module_2', '{modularrouters:{ModuleFilter:{}}}')])
-
+event.shapeless(Item.of('modularrouters:puller_module_1', '{modularrouters:{Direction:"NONE",ModuleFilter:{}}}'), [Item.of('modularrouters:sender_module_1', '{modularrouters:{Direction:"NONE",ModuleFilter:{}}}')])
+event.shapeless(Item.of('modularrouters:sender_module_1', '{modularrouters:{Direction:"NONE",ModuleFilter:{}}}'), [Item.of('modularrouters:puller_module_1', '{modularrouters:{Direction:"NONE",ModuleFilter:{}}}')])
+event.shapeless(Item.of('modularrouters:sender_module_2', '{modularrouters:{ModuleFilter:{}}}'), [Item.of('modularrouters:sender_module_1', '{modularrouters:{Direction:"NONE",ModuleFilter:{}}}'),Item.of('industrialforegoing:range_addon7', '{TitaniumAugment:{Range:7.0f}}'),Item.of('industrialforegoing:range_addon7', '{TitaniumAugment:{Range:7.0f}}')])
+event.shapeless(Item.of('modularrouters:puller_module_2', '{modularrouters:{ModuleFilter:{}}}'), [Item.of('modularrouters:sender_module_2', '{modularrouters:{ModuleFilter:{}}}')])
+event.shapeless(Item.of('modularrouters:sender_module_2', '{modularrouters:{ModuleFilter:{}}}'), [Item.of('modularrouters:puller_module_2', '{modularrouters:{ModuleFilter:{}}}')])
 event.shapeless(Item.of('modularrouters:sender_module_3', '{modularrouters:{ModuleFilter:{}}}'), [Item.of('modularrouters:sender_module_2', '{modularrouters:{ModuleFilter:{}}}'),'enderstorage:ender_chest'])
 event.shapeless('modularrouters:range_up_augment', ['modularrouters:augment_core','thermal:area_radius_augment'])
 event.remove({output: 'modularrouters:regulator_augment'})

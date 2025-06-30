@@ -305,9 +305,9 @@
 					item: "kubejs:tungsten_coil"
 				}
 				{
-					id: "7F8FE477C3065FFC"
+					id: "708DBCF33A637B3F"
 					type: "item"
-					item: "multiblocked:energy_input_mk3"
+					item: "chemlib:xenon"
 				}
 			]
 		}

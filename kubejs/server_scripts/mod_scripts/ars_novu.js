@@ -120,4 +120,50 @@ onEvent('recipes', event => {
 	//Automatable Glyph of Freeze
 	global.arsEnchantment(event, Item.of('ars_nouveau:glyph_freeze'), Item.of('ars_nouveau:blank_glyph'), [Item.of('ars_nouveau:water_essence'), Item.of('minecraft:snow_block'), Item.of('minecraft:snow_block')], 50, 'mbm2:ars_novu/enchantment/glyph_freeze')
 
+	//Arcane Core now 3d craft
+	event.remove({output: 'ars_nouveau:arcane_core'})
+	global.compactCrafting(event, 'ars_nouveau:arcane_core', 1, 'ars_nouveau:source_jar', 3, [
+		{
+		  type: 'compactcrafting:mixed',
+		  pattern: [
+			  ['G', 'S','G'],
+			  ['S', 'S','S'],
+			  ['G', 'S','G']
+		  ]
+	  },
+	  {
+		  type: 'compactcrafting:mixed',
+		  pattern: [
+			  ['C', '-','C'],
+			  ['-', 'A','-'],
+			  ['C', '-','C']
+		  ]
+	  },
+	  {
+		  type: 'compactcrafting:mixed',
+		  pattern: [
+			  ['G', 'S','G'],
+			  ['S', 'S','S'],
+			  ['G', 'S','G']
+		  ]
+	  }
+	], {
+		'S': {
+		type: 'compactcrafting:block',
+		block: 'ars_nouveau:arcane_stone'
+	  },
+	  'A': {
+		type: 'compactcrafting:block',
+		block: 'minecraft:amethyst_block'
+	  },
+	  'G': {
+		type: 'compactcrafting:block',
+		block: 'immersiveengineering:sheetmetal_gold'
+	  },
+	  'C': {
+		type: 'compactcrafting:block',
+		block: 'minecraft:chain'
+	  }
+	}, 'mbm2:compact_crafting/ars_novu/arcane_core')
+
 });

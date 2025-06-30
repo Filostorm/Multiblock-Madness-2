@@ -23,6 +23,9 @@ onEvent('tags.items', event => {
 	//give coal it's own tag
 	event.add(`mbm2:coal`, 'minecraft:coal')
 	
+	//smokey quartz producing molten quartz fix
+	event.remove('forge:storage_blocks/quartz', 'botania:dark_quartz')
+	event.remove('c:quartz_blocks', 'botania:dark_quartz')
  });
 
 // Add the minecraft:axe tag to the mattocks (Thanks Totto!)
@@ -468,13 +471,16 @@ event.custom({
 	"ingredients": [
 	  {"fluid": 'minecraft:water',
 		"amount": 3500},
-	  {"tag": 'forge:fine_dusts/vincyte',
+	  {"tag": 'forge:ores/fine_dust/vincyte',
 		"count": 1},
 	  {"item": 'kubejs:crystal_slag',
 		"count": 1}],
 	"result": [
 	  {"tag": 'forge:gems/sapphire',
 		"count": 1}]
-}).id(`mbm2:crystallizer/sapphire_from_vincyte`)	
+}).id(`mbm2:crystallizer/sapphire_from_vincyte`)
+
+event.remove({output: '4x fluxnetworks:flux_core'})
+event.shaped('4x fluxnetworks:flux_core', ['ABC','BDB','CBA'], {A: 'tconstruct:ender_slime_crystal',B: 'fluxnetworks:flux_dust',C: 'powah:dielectric_paste',D: 'powah:ender_gate_niotic'}).id('mbm2:crafting/fluxnetworks_flux_core')
 		
 });

@@ -1,0 +1,222 @@
+{
+  "version": 3,
+  "location": "mbm2:botanical_sourcelink",
+  "traits": {},
+  "properties": {
+    "rotationState": "ALL",
+    "showInJei": true,
+    "isOpaque": true,
+    "hasDynamicShape": false,
+    "hasCollision": true,
+    "destroyTime": 1.5,
+    "explosionResistance": 6.0,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "friction": 0.6,
+    "harvestLevel": 0,
+    "stackSize": 64,
+    "tabGroup": "multiblocked.all"
+  },
+  "status": {
+    "unformed": {
+      "renderer": {
+        "state": {
+          "id": "botania:glimmering_stripped_livingwood",
+          "meta": 1
+        },
+        "type": "blockstate",
+        "postRenderer": true
+      }
+    },
+    "idle": {
+      "parent": "unformed"
+    },
+    "working": {
+      "parent": "idle"
+    },
+    "suspend": {
+      "parent": "working"
+    }
+  },
+  "recipeMap": "botanical_sourcelink",
+  "basePattern": {
+    "structureDir": [
+      "FRONT",
+      "UP",
+      "LEFT"
+    ],
+    "pattern": [
+      [
+        "ABC",
+        "DED"
+      ],
+      [
+        "BF@",
+        " G "
+      ],
+      [
+        "HBI",
+        "DJD"
+      ]
+    ],
+    "aisleRepetitions": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "predicates": {
+      "A": {
+        "blocks": [
+          {
+            "id": "kubejs:drygmy_shard_block"
+          }
+        ],
+        "type": "blocks"
+      },
+      "controller": {
+        "location": "mbm2:botanical_sourcelink",
+        "type": "component"
+      },
+      "B": {
+        "blocks": [
+          {
+            "id": "botania:glimmering_stripped_livingwood"
+          }
+        ],
+        "type": "blocks"
+      },
+      "C": {
+        "blocks": [
+          {
+            "id": "kubejs:whirlisprig_shard_block"
+          }
+        ],
+        "type": "blocks"
+      },
+      "D": {
+        "blocks": [
+          {
+            "id": "botania:mana_pylon"
+          }
+        ],
+        "type": "blocks"
+      },
+      "E": {
+        "blocks": [
+          {
+            "id": "ars_nouveau:source_jar"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 1,
+        "previewCount": 1
+      },
+      "F": {
+        "blocks": [
+          {
+            "id": "botania:mana_diamond_block"
+          }
+        ],
+        "type": "blocks"
+      },
+      "G": {
+        "blocks": [
+          {
+            "id": "multiblocked:pedestal"
+          }
+        ],
+        "type": "blocks",
+        "io": "IN"
+      },
+      "H": {
+        "blocks": [
+          {
+            "id": "kubejs:wixie_shard_block"
+          }
+        ],
+        "type": "blocks"
+      },
+      "I": {
+        "blocks": [
+          {
+            "id": "kubejs:starbuncle_shard_block"
+          }
+        ],
+        "type": "blocks"
+      },
+      "J": {
+        "blocks": [
+          {
+            "id": "botania:mana_pool"
+          },
+          {
+            "id": "botania:fabulous_pool"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 1,
+        "previewCount": 1
+      },
+      "K": {
+        "capability": "arsnouveau.source",
+        "type": "capability"
+      },
+      "any": {
+        "type": "any"
+      }
+    },
+    "symbolMap": {
+      "@": [
+        "controller"
+      ],
+      " ": [
+        "any"
+      ],
+      "A": [
+        "A"
+      ],
+      "B": [
+        "B"
+      ],
+      "C": [
+        "C"
+      ],
+      "D": [
+        "D"
+      ],
+      "E": [
+        "E",
+        "J",
+        "K"
+      ],
+      "F": [
+        "F"
+      ],
+      "G": [
+        "G"
+      ],
+      "H": [
+        "H"
+      ],
+      "I": [
+        "I"
+      ],
+      "J": [
+        "E",
+        "J",
+        "K"
+      ]
+    }
+  }
+}

@@ -4,6 +4,7 @@
 	order_index: 1
 	filename: "power"
 	title: "Power"
+	icon: "mininggadgets:upgrade_battery_3"
 	default_quest_shape: ""
 	default_hide_dependency_lines: false
 	quests: [
@@ -207,6 +208,646 @@
 					item: "createaddition:large_connector"
 				}
 			]
+		}
+		{
+			x: -3.5d
+			y: -8.5d
+			id: "22DAC8F16A9D9F65"
+			tasks: [{
+				id: "53BD2038A754D3F3"
+				type: "item"
+				item: "solarflux:sp_1"
+			}]
+		}
+		{
+			x: -3.5d
+			y: -7.0d
+			dependencies: ["22DAC8F16A9D9F65"]
+			id: "4D49B97BFB502B0E"
+			tasks: [{
+				id: "68FE90172633D3AA"
+				type: "item"
+				item: "solarflux:sp_2"
+			}]
+		}
+		{
+			x: -3.5d
+			y: -5.5d
+			dependencies: ["4D49B97BFB502B0E"]
+			id: "15B01E1CC4A41161"
+			tasks: [{
+				id: "7E4BA246CEA93DD6"
+				type: "item"
+				item: "solarflux:sp_3"
+			}]
+		}
+		{
+			x: -3.5d
+			y: -4.0d
+			dependencies: ["15B01E1CC4A41161"]
+			id: "39A5FB8F0F255229"
+			tasks: [{
+				id: "10617DAC04BF6384"
+				type: "item"
+				item: "solarflux:sp_4"
+			}]
+		}
+		{
+			x: -3.5d
+			y: -2.5d
+			dependencies: ["39A5FB8F0F255229"]
+			id: "4DB958952D1F1A46"
+			tasks: [{
+				id: "174A19710075BBEC"
+				type: "item"
+				item: "solarflux:sp_5"
+			}]
+		}
+		{
+			x: -3.5d
+			y: -1.0d
+			dependencies: ["4DB958952D1F1A46"]
+			id: "27A9D681F5B6DD92"
+			tasks: [{
+				id: "665B93A375F84E46"
+				type: "item"
+				item: "solarflux:sp_6"
+			}]
+		}
+		{
+			x: -3.5d
+			y: 0.5d
+			dependencies: ["27A9D681F5B6DD92"]
+			id: "5A1246A55A7122A6"
+			tasks: [{
+				id: "2B57631B86FB01A2"
+				type: "item"
+				item: "solarflux:sp_7"
+			}]
+		}
+		{
+			x: -3.5d
+			y: 2.0d
+			dependencies: ["5A1246A55A7122A6"]
+			id: "53D64D20F24FCA6D"
+			tasks: [{
+				id: "40D59D58E43E4D00"
+				type: "item"
+				item: "solarflux:sp_8"
+			}]
+		}
+		{
+			x: 5.0d
+			y: -4.5d
+			id: "53DEC7DA99CBFFBC"
+			tasks: [{
+				id: "550BDBE49D0FB8C8"
+				type: "item"
+				item: "kubejs:dynamo_frame"
+			}]
+		}
+		{
+			x: 5.5d
+			y: -6.0d
+			subtitle: "Generates RF from burnable fuels."
+			dependencies: ["53DEC7DA99CBFFBC"]
+			id: "03C07D714FA08E11"
+			tasks: [{
+				id: "06CDA92822BFF275"
+				type: "item"
+				item: "thermal:dynamo_compression"
+			}]
+		}
+		{
+			x: 6.5d
+			y: -6.0d
+			subtitle: "Generates RF from coins."
+			dependencies: ["53DEC7DA99CBFFBC"]
+			id: "6B7BC7AB0D81DEFC"
+			tasks: [{
+				id: "783F2A1FDE5614B5"
+				type: "item"
+				item: "thermal:dynamo_numismatic"
+			}]
+		}
+		{
+			x: 7.0d
+			y: -5.0d
+			subtitle: "Generates RF from gems or precious minerals."
+			dependencies: ["53DEC7DA99CBFFBC"]
+			id: "6049EBE7E1E178DE"
+			tasks: [{
+				id: "3B84DDFB619E99B9"
+				type: "item"
+				item: "thermal:dynamo_lapidary"
+			}]
+		}
+		{
+			x: 7.0d
+			y: -4.0d
+			subtitle: "Generates RF from enchanted items or Bottles o' Enchanting."
+			dependencies: ["53DEC7DA99CBFFBC"]
+			id: "7E0B10F3FE1780AE"
+			tasks: [{
+				id: "321449D5B266CFC3"
+				type: "item"
+				item: "thermal:dynamo_disenchantment"
+			}]
+		}
+		{
+			x: 6.5d
+			y: -3.0d
+			subtitle: "Generates RF from food."
+			dependencies: ["53DEC7DA99CBFFBC"]
+			id: "4FFBD8EDF2CFE1E8"
+			tasks: [{
+				id: "34DB88DB3EA12049"
+				type: "item"
+				item: "thermal:dynamo_gourmand"
+			}]
+			rewards: [{
+				id: "65040640B602FCF6"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 2582656620646881183L
+			}]
+		}
+		{
+			x: 5.5d
+			y: -3.0d
+			subtitle: "Generates RF from compressed air."
+			dependencies: [
+				"53DEC7DA99CBFFBC"
+				"02285A69B0A09A44"
+			]
+			id: "4D701391E4CF3E7E"
+			tasks: [{
+				id: "0D224A6D18CDFE16"
+				type: "item"
+				item: "pneumaticcraft:pneumatic_dynamo"
+			}]
+		}
+		{
+			x: 4.0d
+			y: -5.5d
+			subtitle: "Doubles amount of RF/t dynamos can output, at the cost of greater fuel consumption."
+			id: "2066E68DB9FC74F3"
+			tasks: [{
+				id: "6CF6F056BFE3802D"
+				type: "item"
+				item: "thermal:dynamo_output_augment"
+			}]
+		}
+		{
+			x: 4.0d
+			y: -4.5d
+			id: "1BD953EF094D595E"
+			tasks: [{
+				id: "2D38C5BB06645EC9"
+				type: "item"
+				item: "thermal:dynamo_fuel_augment"
+			}]
+		}
+		{
+			x: 4.0d
+			y: -3.5d
+			description: ["This augment prevents fuel loss while it's internal buffer is full."]
+			id: "632C14442BF61074"
+			tasks: [{
+				id: "0BB9236CCEE55AD5"
+				type: "item"
+				item: "thermal:dynamo_throttle_augment"
+			}]
+		}
+		{
+			x: 8.5d
+			y: -10.5d
+			id: "211FB837D2EB256C"
+			tasks: [{
+				id: "1BA77C2CEFC6443E"
+				type: "item"
+				item: "powah:capacitor_basic_large"
+			}]
+		}
+		{
+			x: 10.0d
+			y: -10.5d
+			dependencies: ["211FB837D2EB256C"]
+			id: "37718774389C065F"
+			tasks: [{
+				id: "2E5D9E644AA68800"
+				type: "item"
+				item: "powah:furnator_basic"
+			}]
+		}
+		{
+			x: 11.5d
+			y: -10.5d
+			dependencies: ["211FB837D2EB256C"]
+			id: "40B9F0B08EC389B7"
+			tasks: [{
+				id: "7FC50118720D6E96"
+				type: "item"
+				item: "powah:magmator_basic"
+			}]
+		}
+		{
+			x: 13.0d
+			y: -10.5d
+			dependencies: ["211FB837D2EB256C"]
+			id: "373C534790233E1A"
+			tasks: [{
+				id: "7F18A71D3399D767"
+				type: "item"
+				item: "powah:thermo_generator_basic"
+			}]
+		}
+		{
+			x: 14.5d
+			y: -10.5d
+			dependencies: [
+				"211FB837D2EB256C"
+				"24B218E172CFF22C"
+			]
+			id: "02A350203763173F"
+			tasks: [{
+				id: "310D442FF90CD4E9"
+				type: "item"
+				item: "powah:reactor_basic"
+			}]
+		}
+		{
+			x: 14.5d
+			y: -12.0d
+			id: "24B218E172CFF22C"
+			tasks: [{
+				id: "5D2C83DDADBA1A96"
+				type: "item"
+				item: "powah:uraninite"
+			}]
+		}
+		{
+			x: 8.5d
+			y: -6.5d
+			dependencies: ["177131620FEFB502"]
+			id: "399939CFD0E5EEDE"
+			tasks: [{
+				id: "533489BB941810D1"
+				type: "item"
+				item: "powah:capacitor_blazing"
+			}]
+		}
+		{
+			x: 10.0d
+			y: -6.5d
+			dependencies: [
+				"399939CFD0E5EEDE"
+				"44E46152E1778C11"
+			]
+			id: "0B109C4A63109C81"
+			tasks: [{
+				id: "53DA05C1D4B1E53C"
+				type: "item"
+				item: "powah:furnator_blazing"
+			}]
+		}
+		{
+			x: 11.5d
+			y: -6.5d
+			dependencies: [
+				"399939CFD0E5EEDE"
+				"68E3BF9C2D681C44"
+			]
+			id: "1CE514C05325AFD1"
+			tasks: [{
+				id: "639EEC7F10BE4766"
+				type: "item"
+				item: "powah:magmator_blazing"
+			}]
+		}
+		{
+			x: 13.0d
+			y: -6.5d
+			dependencies: [
+				"399939CFD0E5EEDE"
+				"6F915CFD0B59CFE0"
+			]
+			id: "61D247F1E01AAB8E"
+			tasks: [{
+				id: "14770677E314BBD7"
+				type: "item"
+				item: "powah:thermo_generator_blazing"
+			}]
+		}
+		{
+			x: 14.5d
+			y: -6.5d
+			dependencies: [
+				"399939CFD0E5EEDE"
+				"731DD294A7F6B8E5"
+				"5607241E1E83DD7B"
+			]
+			id: "28130DB36A23A849"
+			tasks: [{
+				id: "5D0BD5DE703992F3"
+				type: "item"
+				item: "powah:reactor_blazing"
+			}]
+		}
+		{
+			x: 8.5d
+			y: -4.5d
+			dependencies: ["399939CFD0E5EEDE"]
+			id: "28FFEEBBA2FCDCEB"
+			tasks: [{
+				id: "7EF67E203AD615DF"
+				type: "item"
+				item: "powah:capacitor_niotic"
+			}]
+		}
+		{
+			x: 10.0d
+			y: -4.5d
+			dependencies: [
+				"0B109C4A63109C81"
+				"28FFEEBBA2FCDCEB"
+			]
+			id: "55A7D40F10E48B4B"
+			tasks: [{
+				id: "1F350A6FD177AAF2"
+				type: "item"
+				item: "powah:furnator_niotic"
+			}]
+		}
+		{
+			x: 11.5d
+			y: -4.5d
+			dependencies: [
+				"1CE514C05325AFD1"
+				"28FFEEBBA2FCDCEB"
+			]
+			id: "43C15C26626779A2"
+			tasks: [{
+				id: "52C75FA93E4D4E98"
+				type: "item"
+				item: "powah:magmator_niotic"
+			}]
+		}
+		{
+			x: 13.0d
+			y: -4.5d
+			dependencies: [
+				"61D247F1E01AAB8E"
+				"28FFEEBBA2FCDCEB"
+			]
+			id: "426B76838261DF6E"
+			tasks: [{
+				id: "034E58E57A6AE9B9"
+				type: "item"
+				item: "powah:thermo_generator_niotic"
+			}]
+		}
+		{
+			x: 14.5d
+			y: -4.5d
+			dependencies: [
+				"28130DB36A23A849"
+				"28FFEEBBA2FCDCEB"
+				"5607241E1E83DD7B"
+			]
+			id: "0D4B3184B5BB59F0"
+			tasks: [{
+				id: "180A91E020E422EA"
+				type: "item"
+				item: "powah:reactor_niotic"
+			}]
+		}
+		{
+			x: 8.5d
+			y: -2.5d
+			dependencies: ["28FFEEBBA2FCDCEB"]
+			id: "7CE9C7C44E6CA69A"
+			tasks: [{
+				id: "47AFFB0AAEC39656"
+				type: "item"
+				item: "powah:capacitor_spirited"
+			}]
+		}
+		{
+			x: 10.0d
+			y: -2.5d
+			dependencies: [
+				"55A7D40F10E48B4B"
+				"7CE9C7C44E6CA69A"
+			]
+			id: "11BFEC5C846DA2FC"
+			tasks: [{
+				id: "0439136ED0C6206A"
+				type: "item"
+				item: "powah:furnator_spirited"
+			}]
+		}
+		{
+			x: 11.5d
+			y: -2.5d
+			dependencies: [
+				"43C15C26626779A2"
+				"7CE9C7C44E6CA69A"
+			]
+			id: "2D6EA55451D8FAFF"
+			tasks: [{
+				id: "43C99BB828EF58BC"
+				type: "item"
+				item: "powah:magmator_spirited"
+			}]
+		}
+		{
+			x: 13.0d
+			y: -2.5d
+			dependencies: [
+				"426B76838261DF6E"
+				"7CE9C7C44E6CA69A"
+			]
+			id: "64C48FF7E7F87E6E"
+			tasks: [{
+				id: "72C49A5CAC918ED9"
+				type: "item"
+				item: "powah:thermo_generator_spirited"
+			}]
+		}
+		{
+			x: 14.5d
+			y: -2.5d
+			dependencies: [
+				"0D4B3184B5BB59F0"
+				"7CE9C7C44E6CA69A"
+				"797E601F3F1A0EBD"
+			]
+			id: "25970555B1400F69"
+			tasks: [{
+				id: "4A1D5920DA25C3E8"
+				type: "item"
+				item: "powah:reactor_spirited"
+			}]
+		}
+		{
+			x: 8.5d
+			y: -0.5d
+			dependencies: ["7CE9C7C44E6CA69A"]
+			id: "3F98FBADBD4B4CF3"
+			tasks: [{
+				id: "3DA35C74F053F65E"
+				type: "item"
+				item: "powah:capacitor_nitro"
+			}]
+		}
+		{
+			x: 10.0d
+			y: -0.5d
+			dependencies: [
+				"11BFEC5C846DA2FC"
+				"3F98FBADBD4B4CF3"
+			]
+			id: "438E0CD2A27B20F7"
+			tasks: [{
+				id: "705676B5B5AFF616"
+				type: "item"
+				item: "powah:furnator_nitro"
+			}]
+		}
+		{
+			x: 11.5d
+			y: -0.5d
+			dependencies: [
+				"2D6EA55451D8FAFF"
+				"3F98FBADBD4B4CF3"
+			]
+			id: "2827DE7E0B79C616"
+			tasks: [{
+				id: "7CF5F237A400C95E"
+				type: "item"
+				item: "powah:magmator_nitro"
+			}]
+		}
+		{
+			x: 13.0d
+			y: -0.5d
+			dependencies: [
+				"64C48FF7E7F87E6E"
+				"3F98FBADBD4B4CF3"
+			]
+			id: "304812046B046BDF"
+			tasks: [{
+				id: "1E592A41AB1F0B8B"
+				type: "item"
+				item: "powah:thermo_generator_nitro"
+			}]
+		}
+		{
+			title: "Reactor (Nitro)"
+			icon: "powah:reactor_nitro"
+			x: 14.5d
+			y: -0.5d
+			dependencies: [
+				"25970555B1400F69"
+				"3F98FBADBD4B4CF3"
+				"797E601F3F1A0EBD"
+			]
+			id: "62B3F427CACA1A27"
+			tasks: [{
+				id: "16727F7C3AAE9D51"
+				type: "item"
+				item: "powah:reactor_nitro"
+				count: 36L
+			}]
+		}
+		{
+			x: 16.5d
+			y: -5.5d
+			id: "5607241E1E83DD7B"
+			tasks: [{
+				id: "592A189C94C9A773"
+				type: "item"
+				item: "extendedcrafting:basic_table"
+			}]
+		}
+		{
+			x: 8.5d
+			y: -8.5d
+			dependencies: ["211FB837D2EB256C"]
+			id: "177131620FEFB502"
+			tasks: [{
+				id: "14782632A8146B14"
+				type: "item"
+				item: "powah:capacitor_hardened"
+			}]
+		}
+		{
+			x: 10.0d
+			y: -8.5d
+			dependencies: [
+				"177131620FEFB502"
+				"37718774389C065F"
+			]
+			id: "44E46152E1778C11"
+			tasks: [{
+				id: "6FE80A43B20DFC1E"
+				type: "item"
+				item: "powah:furnator_hardened"
+			}]
+		}
+		{
+			x: 11.5d
+			y: -8.5d
+			dependencies: [
+				"177131620FEFB502"
+				"40B9F0B08EC389B7"
+			]
+			id: "68E3BF9C2D681C44"
+			tasks: [{
+				id: "7FBE0B815EDBA6B5"
+				type: "item"
+				item: "powah:magmator_hardened"
+			}]
+		}
+		{
+			x: 13.0d
+			y: -8.5d
+			dependencies: [
+				"177131620FEFB502"
+				"373C534790233E1A"
+			]
+			id: "6F915CFD0B59CFE0"
+			tasks: [{
+				id: "786BCC2D8711635D"
+				type: "item"
+				item: "powah:thermo_generator_hardened"
+			}]
+		}
+		{
+			x: 14.5d
+			y: -8.5d
+			dependencies: [
+				"177131620FEFB502"
+				"02A350203763173F"
+			]
+			id: "731DD294A7F6B8E5"
+			tasks: [{
+				id: "4B40673DF71D36B7"
+				type: "item"
+				item: "powah:reactor_hardened"
+			}]
+		}
+		{
+			x: 16.5d
+			y: -1.5d
+			dependencies: ["5607241E1E83DD7B"]
+			id: "797E601F3F1A0EBD"
+			tasks: [{
+				id: "4EF54B62196FCDAF"
+				type: "item"
+				item: "extendedcrafting:advanced_table"
+			}]
 		}
 	]
 	quest_links: [ ]

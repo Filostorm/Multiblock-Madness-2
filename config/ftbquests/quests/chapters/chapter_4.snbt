@@ -1611,7 +1611,7 @@
 			icon: "naturesaura:wood_stand"
 			x: -1.5d
 			y: -5.5d
-			min_required_dependencies: 1
+			min_required_dependencies: 2
 			dependencies: [
 				"38B7849EB717422A"
 				"4489F9C5F2899DFE"

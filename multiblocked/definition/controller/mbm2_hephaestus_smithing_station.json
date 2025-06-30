@@ -1,0 +1,297 @@
+{
+  "version": 3,
+  "location": "mbm2:hephaestus_smithing_station",
+  "traits": {
+    "background": "multiblocked:textures/gui/1_slot.png"
+  },
+  "properties": {
+    "rotationState": "ALL",
+    "showInJei": true,
+    "isOpaque": true,
+    "hasDynamicShape": false,
+    "hasCollision": true,
+    "destroyTime": 1.5,
+    "explosionResistance": 6.0,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "friction": 0.6,
+    "harvestLevel": 0,
+    "stackSize": 64,
+    "tabGroup": "multiblocked.all"
+  },
+  "status": {
+    "unformed": {
+      "renderer": {
+        "state": {
+          "id": "ars_nouveau:as_gold_stone",
+          "meta": 0
+        },
+        "type": "blockstate",
+        "postRenderer": true
+      }
+    },
+    "idle": {
+      "parent": "unformed"
+    },
+    "working": {
+      "parent": "idle"
+    },
+    "suspend": {
+      "parent": "working"
+    }
+  },
+  "recipeMap": "hephaestus_smithing_station",
+  "basePattern": {
+    "structureDir": [
+      "RIGHT",
+      "UP",
+      "FRONT"
+    ],
+    "pattern": [
+      [
+        "   AAA   ",
+        "         ",
+        "         ",
+        "         "
+      ],
+      [
+        " AAABAAA ",
+        "         ",
+        "         ",
+        "         "
+      ],
+      [
+        " ACAAACA ",
+        "  D   D  ",
+        "         ",
+        "         "
+      ],
+      [
+        "AAAAEAAAA",
+        "   EFE   ",
+        "   GHG   ",
+        "   I I   "
+      ],
+      [
+        "ACAECEACA",
+        " D FJF D ",
+        "   HDH   ",
+        "         "
+      ],
+      [
+        "AAAAEAAAA",
+        "   E@E   ",
+        "   GHG   ",
+        "   I I   "
+      ],
+      [
+        " ACAAACA ",
+        "  D   D  ",
+        "         ",
+        "         "
+      ],
+      [
+        " AAAKAAA ",
+        "         ",
+        "         ",
+        "         "
+      ],
+      [
+        "   AAA   ",
+        "         ",
+        "         ",
+        "         "
+      ]
+    ],
+    "aisleRepetitions": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "predicates": {
+      "A": {
+        "blocks": [
+          {
+            "id": "forbidden_arcanus:polished_darkstone"
+          }
+        ],
+        "type": "blocks"
+      },
+      "controller": {
+        "location": "mbm2:hephaestus_smithing_station",
+        "type": "component"
+      },
+      "B": {
+        "blocks": [
+          {
+            "id": "multiblocked:energy_input_mk1"
+          },
+          {
+            "id": "multiblocked:energy_input_mk2"
+          },
+          {
+            "id": "multiblocked:energy_input_mk3"
+          }
+        ],
+        "type": "blocks",
+        "io": "IN"
+      },
+      "C": {
+        "blocks": [
+          {
+            "id": "forbidden_arcanus:arcane_chiseled_polished_darkstone"
+          }
+        ],
+        "type": "blocks"
+      },
+      "D": {
+        "blocks": [
+          {
+            "id": "multiblocked:pedestal"
+          }
+        ],
+        "type": "blocks",
+        "io": "IN"
+      },
+      "E": {
+        "blocks": [
+          {
+            "id": "forbidden_arcanus:chiseled_arcane_polished_darkstone"
+          }
+        ],
+        "type": "blocks"
+      },
+      "F": {
+        "blocks": [
+          {
+            "id": "kubejs:arcane_gold_cog_block"
+          }
+        ],
+        "type": "blocks"
+      },
+      "G": {
+        "blocks": [
+          {
+            "id": "forbidden_arcanus:arcane_gold_block"
+          }
+        ],
+        "type": "blocks"
+      },
+      "H": {
+        "blocks": [
+          {
+            "id": "ae2:sky_stone_tank"
+          }
+        ],
+        "type": "blocks",
+        "io": "IN"
+      },
+      "I": {
+        "blocks": [
+          {
+            "id": "forbidden_arcanus:arcane_crystal_block"
+          }
+        ],
+        "type": "blocks"
+      },
+      "J": {
+        "blocks": [
+          {
+            "id": "forbidden_arcanus:hephaestus_forge"
+          }
+        ],
+        "type": "blocks",
+        "io": "null"
+      },
+      "K": {
+        "blocks": [
+          {
+            "id": "multiblocked:item_output"
+          },
+          {
+            "id": "multiblocked:big_item_output"
+          }
+        ],
+        "type": "blocks",
+        "io": "OUT"
+      },
+      "any": {
+        "type": "any"
+      }
+    },
+    "symbolMap": {
+      "@": [
+        "controller"
+      ],
+      " ": [
+        "any"
+      ],
+      "A": [
+        "A"
+      ],
+      "B": [
+        "B"
+      ],
+      "C": [
+        "C"
+      ],
+      "D": [
+        "D"
+      ],
+      "E": [
+        "E"
+      ],
+      "F": [
+        "F"
+      ],
+      "G": [
+        "G"
+      ],
+      "H": [
+        "H"
+      ],
+      "I": [
+        "I"
+      ],
+      "J": [
+        "J"
+      ],
+      "K": [
+        "K"
+      ]
+    }
+  }
+}

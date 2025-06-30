@@ -17,8 +17,7 @@ onEvent('tags.items', event => {
 	event.add(`forge:storage_blocks`, 'pneumaticcraft:compressed_iron_block')
 	event.add(`forge:storage_blocks/compressed_steel`, 'pneumaticcraft:compressed_iron_block')
 	event.add(`forge:plastic`, 'pneumaticcraft:plastic')
-	event.remove(`forge:stone`, 'pneumaticcraft:reinforced_stone')
-	event.remove(`forge:stone`, 'pneumaticcraft:compressed_stone')
+	event.add(`mbm2:pnc_stone_acceptable`, ['minecraft:stone', 'minecraft:granite', 'minecraft:diorite', 'minecraft:andesite', 'minecraft:deepslate', 'minecraft:tuff'])
 	
  });
  
@@ -94,7 +93,7 @@ onEvent('recipes', event => {
 		'R R',
 		'SRS'
 	  ], {
-		S: '#forge:stone',
+		S: '#mbm2:pnc_stone_acceptable',
 		R: '#forge:rods/compressed_steel',
 	  }).id('mbm2:reinforced_stone')
 
@@ -220,4 +219,8 @@ onEvent('recipes', event => {
 	event.remove({id: 'pneumaticcraft:pressure_chamber/capacitor'})
 	event.shaped('pneumaticcraft:capacitor', ['ABA','ACA','DDD'], {A: 'kubejs:cobalt_sheet',B: 'pneumaticcraft:plastic',C: 'kubejs:battery_alloy_plate',D: 'kubejs:tier_2_electrical_alloy_wire'}).id('mbm2:capacitor')
 
+
+//Solar wafer
+event.remove({id: 'pneumaticcraft:pressure_chamber/solar_wafer'})
+global.pressureChamber(event, [Item.of('pneumaticcraft:solar_wafer').toResultJson()], [{"item": 'pneumaticcraft:upgrade_matrix'}, {"item": 'powah:photoelectric_pane'}, {"item": 'minecraft:amethyst_shard'}], 2.5, 'mbm2:pressure_chamber/solar_wafer')
 });

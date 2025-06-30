@@ -1,0 +1,319 @@
+{
+  "version": 3,
+  "location": "mbm2:ore_purification_infuser",
+  "traits": {},
+  "properties": {
+    "rotationState": "ALL",
+    "showInJei": true,
+    "isOpaque": true,
+    "hasDynamicShape": false,
+    "hasCollision": true,
+    "destroyTime": 1.5,
+    "explosionResistance": 6.0,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "friction": 0.6,
+    "harvestLevel": 0,
+    "stackSize": 64,
+    "tabGroup": "multiblocked.all"
+  },
+  "status": {
+    "unformed": {
+      "renderer": {
+        "state": {
+          "id": "elementalcraft:inertcrystal_block",
+          "meta": 0
+        },
+        "type": "blockstate",
+        "postRenderer": true
+      }
+    },
+    "idle": {
+      "parent": "unformed"
+    },
+    "working": {
+      "parent": "idle"
+    },
+    "suspend": {
+      "parent": "working"
+    }
+  },
+  "recipeMap": "ore_purification_infuser",
+  "basePattern": {
+    "structureDir": [
+      "BACK",
+      "UP",
+      "RIGHT"
+    ],
+    "pattern": [
+      [
+        " A B A ",
+        "A  C  A",
+        "D     D",
+        "       "
+      ],
+      [
+        "A EFE A",
+        "       ",
+        "       ",
+        "       "
+      ],
+      [
+        " GFHFI ",
+        "   J   ",
+        "       ",
+        "       "
+      ],
+      [
+        "BFH@HFB",
+        "C KLM C",
+        "   L   ",
+        "   C   "
+      ],
+      [
+        " GFHFI ",
+        "   N   ",
+        "       ",
+        "       "
+      ],
+      [
+        "A OFO A",
+        "       ",
+        "       ",
+        "       "
+      ],
+      [
+        " A B A ",
+        "A  C  A",
+        "D     D",
+        "       "
+      ]
+    ],
+    "aisleRepetitions": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "predicates": {
+      "A": {
+        "blocks": [
+          {
+            "id": "elementalcraft:springaline_glass"
+          }
+        ],
+        "type": "blocks"
+      },
+      "controller": {
+        "location": "mbm2:ore_purification_infuser",
+        "type": "component"
+      },
+      "B": {
+        "blocks": [
+          {
+            "id": "elementalcraft:purerock"
+          }
+        ],
+        "type": "blocks"
+      },
+      "C": {
+        "blocks": [
+          {
+            "id": "multiblocked:pedestal"
+          }
+        ],
+        "type": "blocks",
+        "io": "IN"
+      },
+      "D": {
+        "blocks": [
+          {
+            "id": "elementalcraft:springaline_cluster"
+          }
+        ],
+        "type": "blocks"
+      },
+      "E": {
+        "blocks": [
+          {
+            "id": "elementalcraft:aircrystal_block"
+          }
+        ],
+        "type": "blocks"
+      },
+      "F": {
+        "blocks": [
+          {
+            "id": "elementalcraft:burnt_glass"
+          }
+        ],
+        "type": "blocks"
+      },
+      "G": {
+        "blocks": [
+          {
+            "id": "elementalcraft:earthcrystal_block"
+          }
+        ],
+        "type": "blocks"
+      },
+      "H": {
+        "blocks": [
+          {
+            "id": "elementalcraft:fireite_block"
+          }
+        ],
+        "type": "blocks"
+      },
+      "I": {
+        "blocks": [
+          {
+            "id": "elementalcraft:firecrystal_block"
+          }
+        ],
+        "type": "blocks"
+      },
+      "J": {
+        "blocks": [
+          {
+            "id": "elementalcraft:reservoir_air"
+          }
+        ],
+        "type": "blocks"
+      },
+      "K": {
+        "blocks": [
+          {
+            "id": "elementalcraft:reservoir_earth"
+          }
+        ],
+        "type": "blocks"
+      },
+      "L": {
+        "blocks": [
+          {
+            "id": "elementalcraft:purerock_wall"
+          }
+        ],
+        "type": "blocks"
+      },
+      "any": {
+        "type": "any"
+      },
+      "M": {
+        "blocks": [
+          {
+            "id": "elementalcraft:reservoir_fire"
+          }
+        ],
+        "type": "blocks"
+      },
+      "N": {
+        "blocks": [
+          {
+            "id": "elementalcraft:reservoir_water"
+          }
+        ],
+        "type": "blocks"
+      },
+      "O": {
+        "blocks": [
+          {
+            "id": "elementalcraft:watercrystal_block"
+          }
+        ],
+        "type": "blocks"
+      },
+      "P": {
+        "blocks": [
+          {
+            "id": "multiblocked:item_output"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 1,
+        "maxCount": 1,
+        "previewCount": 1,
+        "io": "OUT"
+      }
+    },
+    "symbolMap": {
+      "@": [
+        "controller"
+      ],
+      " ": [
+        "any"
+      ],
+      "A": [
+        "A"
+      ],
+      "B": [
+        "B"
+      ],
+      "C": [
+        "C"
+      ],
+      "D": [
+        "D"
+      ],
+      "E": [
+        "E"
+      ],
+      "F": [
+        "P",
+        "F"
+      ],
+      "G": [
+        "G"
+      ],
+      "H": [
+        "H"
+      ],
+      "I": [
+        "I"
+      ],
+      "J": [
+        "J"
+      ],
+      "K": [
+        "K"
+      ],
+      "L": [
+        "L"
+      ],
+      "M": [
+        "M"
+      ],
+      "N": [
+        "N"
+      ],
+      "O": [
+        "O"
+      ]
+    }
+  }
+}

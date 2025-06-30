@@ -85,12 +85,10 @@ onEvent('tags.items', event => {
           
 
         if (item.type == 'compound_ore') {
-          event.add(`forge:fine_dusts/${item.material}`, `kubejs:fine_dust_${item.material}`)
+          //event.add(`forge:ores/fine_dust/${item.material}`, `kubejs:fine_dust_${item.material}`)
 
           global.compoundOreParts.forEach((part) => { //compound ores don't get refined
-            //if (part.name != 'fine_dust') {
-              event.add(`forge:ores/compound/${part.name}`, `kubejs:${part.name}_${item.material}`)
-            //}
+            event.add(`forge:ores/compound/${part.name}`, `kubejs:${part.name}_${item.material}`)
             if (part.name != 'raw'/* && !(part.grade == null && item.type == 'compound_ore')*/) {
               event.add(`forge:ores/${part.name}`, `kubejs:${part.name}_${item.material}`)
               event.add(`forge:ores/${part.name}/${item.material}`, `kubejs:${part.name}_${item.material}`)

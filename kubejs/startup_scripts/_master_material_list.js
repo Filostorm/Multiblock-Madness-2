@@ -855,7 +855,7 @@ global.newMaterialParts = [
       'color': 0xe9f1f5,
       'type': 'alloy',
       'tier': 3,
-      'itemParts': ['ingot', 'dust', 'nugget', 'plate', 'rod', 'wire', 'model_spool', 'model_wire_coil', 'sheet'],
+      'itemParts': ['ingot', 'dust', 'nugget', 'plate', 'rod', 'wire', 'model_spool', 'model_wire_coil'],
       'blockParts': ['storage_block', 'coil'],
       'amount': 3,
       'dust_input': ['2x #forge:dusts/silver', '#forge:dusts/magnesium', '#forge:dusts/quartz'],
@@ -943,7 +943,7 @@ global.newMaterialParts = [
       'type': 'alloy',
       'tier': 3,
       'itemParts': ['plate', 'gear', 'rod', 'dust'], 
-      'blockParts': [],
+      'blockParts': ['cog_block'],
       'fluid': 'thick',
       'fluid_id': 'kubejs:molten_arcane_gold',
       'amount': 1,
@@ -1077,7 +1077,7 @@ global.newMaterialParts = [
       'material': 'signalum',
       'color': 0xff6e4a,
       'tier': 4,
-      'itemParts': ['rod', 'base_ingot', 'base_dust', 'plating'],
+      'itemParts': ['rod', 'base_ingot', 'base_dust', 'plating', 'interlocking_component'],
       'blockParts': ['scaffolding'],
       'type': 'alloy',
       'fluid_id': 'tconstruct:molten_signalum',
@@ -2137,8 +2137,19 @@ global.newMaterialParts = [
         'resistance': 4
       },
       {
+        'material': 'mercury_stone',
+        'hardness': 4,
+        'resistance': 4
+      },
+      {
+        'material': 'livingrock',
+        'hardness': 3,
+        'resistance': 3
+      },
+      {
         'material': 'glacio_stone',
         'hardness': 4,
         'resistance': 4
-      }
+      },
+      
     ]

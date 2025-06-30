@@ -7,6 +7,7 @@ onEvent('tags.items', event => {
 	event.add(`forge:ores/runic`, 'forbidden_arcanus:runic_deepslate')
 	event.add(`forge:ores`, 'forbidden_arcanus:runic_darkstone')
 	event.add(`forge:ores/runic`, 'forbidden_arcanus:runic_darkstone')
+	event.add('tconstruct:anvil_metal', 'forbidden_arcanus:arcane_gold_block')
  });
 onEvent('recipes', event => {
 	//Soul Extractor

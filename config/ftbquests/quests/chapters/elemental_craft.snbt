@@ -1,7 +1,7 @@
 {
 	id: "733667C9A71D6AB6"
 	group: "7571E15FFD2D3DD8"
-	order_index: 3
+	order_index: 4
 	filename: "elemental_craft"
 	title: "Elemental Craft"
 	icon: "elementalcraft:contained_crystal"
@@ -346,7 +346,7 @@
 			tasks: [{
 				id: "47D5BF8317A6F1DA"
 				type: "item"
-				title: "Shrine Upgrades"
+				title: "Any #elementalcraft:shrine_upgrades"
 				item: {
 					id: "itemfilters:tag"
 					Count: 1b
@@ -384,8 +384,9 @@
 			dependencies: ["5445C707CBEEAFD7"]
 			id: "71D8C1416BD779EB"
 			tasks: [{
-				id: "55FAE921460C6E9B"
-				type: "checkmark"
+				id: "07D8135FFAAEA70A"
+				type: "item"
+				item: "elementalcraft:jewel"
 			}]
 		}
 		{

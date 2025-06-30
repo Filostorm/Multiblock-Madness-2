@@ -40,7 +40,7 @@ onEvent('recipes', event => {
   event.remove({id: 'powah:energizing/uraninite_from_ore_dense'})
   event.remove({id: 'powah:energizing/uraninite_from_ore_poor'})
   
-  
+  event.remove({ id: 'powah:crafting/reactor_basic'})
   
 
 	//Dielectric Casing
@@ -155,16 +155,6 @@ D: 'powah:dielectric_casing',
 E: 'powah:dielectric_rod'
   }).id("powah:crafting/player_tranmitter_basic")
 
-// [| reactor_basic |] //
-event.shaped('4x powah:reactor_basic', [
-  'ABA',
-'BCB',
-'ABA'
-  ], {
-  A: 'powah:uraninite',
-B: 'powah:capacitor_basic',
-C: 'powah:dielectric_casing'
-  }).id("powah:crafting/reactor_basic")
 /*
 // [| solar_panel_basic |] //
 event.shaped('powah:solar_panel_basic', [
@@ -368,6 +358,16 @@ event.custom({
     "count": 2
   }
 }).id("mbm2:powah/reactor_hardened")
+event.recipes.createMechanicalCrafting('2x powah:reactor_hardened',[
+  'ABC',
+  'BDB',
+  'CBA'
+],{
+  A: 'powah:reactor_basic',
+  B: 'powah:capacitor_hardened',
+  C: 'kubejs:tier_1_electrical_alloy_wire_coil',
+  D: 'kubejs:energized_steel_gear'
+}).id('mbm2:powah/reactor_hardened_mechcrafting')
 event.remove({id: 'powah:crafting/reactor_blazing'})
 event.custom({
   "type": "extendedcrafting:shaped_table",
@@ -498,4 +498,9 @@ event.custom({
     "count": 2
   }
 }).id("mbm2:powah/reactor_nitro")
+
+//photoelectric pane
+event.replaceInput({id: 'powah:crafting/photoelectric_pane'}, 'minecraft:lapis_lazuli', 'projectred_core:electrotine_dust')
+
+event.recipes.createDeploying('powah:lens_of_ender', ['powah:photoelectric_pane', Item.of('hostilenetworks:prediction', '{data_model:{id:"hostilenetworks:endermite"}}')]).id('mbm2:deploying/powah/lens_of_ender')
 });

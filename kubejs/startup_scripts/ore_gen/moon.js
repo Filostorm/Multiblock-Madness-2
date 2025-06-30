@@ -96,8 +96,8 @@ onEvent('worldgen.add', event => {
 		ore.id = 'kubejs:moon_osmium_ore'
 	
 		global.stoneTypes.forEach((type) => {
-			if (Item.of(`excavated_variants:${type.material}_osmium_ore`) != null) {
-				ore.addTarget(`#forge:${type.material}`, `excavated_variants:${type.material}_osmium_ore`)
+			if (Item.of(`excavated_variants:moon_stone_osmium_ore`) != null) {
+				ore.addTarget(`#forge:${type.material}`, `excavated_variants:moon_stone_osmium_ore`)
 			}
 		})
 		    
@@ -118,11 +118,11 @@ onEvent('worldgen.add', event => {
 	// Inserted Aluminum
 	event.addOre((ore) => {
 		ore.id = 'kubejs:moon_aluminum'
-			global.stoneTypes.forEach((type) => {
-				if (type.material != 'bedrock' && type.material != 'deepslate') {
-				ore.addTarget(`excavated_variants:${type.material}_osmium_ore`, `kubejs:${type.material}_aluminum_ore`)
-				}
-			})
+			//global.stoneTypes.forEach((type) => {
+			//	if (type.material != 'bedrock' && type.material != 'deepslate') {
+				ore.addTarget(`excavated_variants:moon_stone_osmium_ore`, `kubejs:moon_stone_aluminum_ore`)
+			//	}
+			//})
 		ore.count(200)
 				.squared()
 				.uniformHeight(
@@ -222,12 +222,12 @@ onEvent('worldgen.add', event => {
 	// Inserted Cadmium
 	event.addOre((ore) => {
 		ore.id = 'kubejs:moon_cadmium'
-			global.stoneTypes.forEach((type) => {
-				if (Item.of(`kubejs:${type.material}_cadmium_ore`) != null) {
-					ore.addTarget(`excavated_variants:${type.material}_uranium_ore`, `kubejs:${type.material}_cadmium_ore`)
-				}
-			})
-		ore.count(100)
+		//	global.stoneTypes.forEach((type) => {
+			//	if (Item.of(`kubejs:${type.material}_cadmium_ore`) != null) {
+					ore.addTarget(`excavated_variants:moon_stone_uranium_ore`, `kubejs:moon_stone_cadmium_ore`)
+		//		}
+		//	})
+		ore.count(200)
 				.squared()
 				.uniformHeight(
 						anchors.aboveBottom(0),

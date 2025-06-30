@@ -1,7 +1,24 @@
 {
   "version": 3,
   "location": "mbm2:mechanical_crafter",
-  "traits": {},
+  "traits": {
+    "background": "multiblocked:textures/gui/1_slot.png",
+    "item": [
+      {
+        "cIO": 3,
+        "gIO": 2,
+        "mIO": 2,
+        "slotName": "augment",
+        "x": 79,
+        "y": 71,
+        "autoIO": false,
+        "valid": [
+          "\"{Count:1b,id:\\\"kubejs:multiblock_accelerator_mk1\\\"}\"",
+          "\"{Count:1b,id:\\\"kubejs:multiblock_accelerator_mk2\\\"}\""
+        ]
+      }
+    ]
+  },
   "properties": {
     "rotationState": "ALL",
     "showInJei": true,

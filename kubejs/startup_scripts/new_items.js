@@ -233,6 +233,9 @@ onEvent('item.registry', event => {
 	event.create('scarab_of_hours').glow(true).rarity('epic')
 	event.create('elemental_star').glow(true).rarity('epic')
 
+	event.create('multiblock_accelerator_mk1').displayName('Multiblock Accelerator Mk1').rarity('rare')
+	event.create('multiblock_accelerator_mk2').displayName('Multiblock Accelerator Mk2').rarity('epic')
+
 	
 
 	global.dronesTypes = [

@@ -41,7 +41,8 @@ let colors = [
 		}).id(`mbm2:${color}_insulated_wire`)
 	});
 //Electrotine
-	global.createCharging(event, Item.of('minecraft:redstone').toJson(), Item.of('projectred_core:electrotine_dust').toJson(), 2000, 'mbm2:electrotine_dust')
+	global.createCharging(event, Item.of('minecraft:redstone').toJson(), Item.of('projectred_core:electrotine_dust').toJson(), 1000, 'mbm2:electrotine_dust')
+	global.createCharging(event, Item.of('minecraft:redstone_block').toJson(), Item.of('projectred_exploration:electrotine_block').toJson(), 9000, 'mbm2:electrotine_dust_block')
 	event.remove({output: 'projectred_core:electrotine_ingot'})
 	event.recipes.createMixing(['projectred_core:electrotine_ingot'], ['4x projectred_core:electrotine_dust', '4x powah:dielectric_paste', '#forge:ingots/tier_1_electrical_alloy']).heated().id('mbm2:mixing/electrotine_ingot')
 
@@ -65,4 +66,7 @@ event.shaped('2x projectred_core:silicon', [
   event.recipes.mekanismMetallurgicInfusing('rftoolsbase:infused_diamond', Item.of('botania:mana_diamond'), {infuse_type: 'kubejs:dimensional', amount: 100}).id(`mbm2:infused_diamond`);
   event.recipes.mekanismMetallurgicInfusing('rftoolsbase:infused_enderpearl', Item.of('botania:mana_pearl'), {infuse_type: 'kubejs:dimensional', amount: 100}).id(`mbm2:infused_enderpearl`);
   
+  //More Wafer stuff
+  event.recipes.createMixing(['projectred_core:sand_coal_comp', Item.of('projectred_core:sand_coal_comp').withChance(0.50)], ['minecraft:coal_block', '8x engineersdecor:dense_grit_sand_block']).heated().id('mbm2:mixing/better_sand_coal_compound')
+
 });

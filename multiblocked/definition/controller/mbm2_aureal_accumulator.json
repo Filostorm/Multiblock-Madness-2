@@ -1,0 +1,155 @@
+{
+  "version": 3,
+  "location": "mbm2:aureal_accumulator",
+  "traits": {},
+  "properties": {
+    "rotationState": "ALL",
+    "showInJei": true,
+    "isOpaque": true,
+    "hasDynamicShape": false,
+    "hasCollision": true,
+    "destroyTime": 1.5,
+    "explosionResistance": 6.0,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "friction": 0.6,
+    "harvestLevel": 0,
+    "stackSize": 64,
+    "tabGroup": "multiblocked.all"
+  },
+  "status": {
+    "unformed": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/dark_rune_block_rings",
+        "frontTexture": "multiblocked:overlay/void",
+        "type": "gregtech",
+        "postRenderer": false
+      }
+    },
+    "idle": {
+      "parent": "unformed"
+    },
+    "working": {
+      "parent": "idle"
+    },
+    "suspend": {
+      "parent": "working"
+    }
+  },
+  "recipeMap": "aureal_accumulator",
+  "basePattern": {
+    "structureDir": [
+      "BACK",
+      "UP",
+      "RIGHT"
+    ],
+    "pattern": [
+      [
+        "ABA",
+        "C C",
+        "   ",
+        "   "
+      ],
+      [
+        "BDB",
+        " @ ",
+        " E ",
+        "   "
+      ],
+      [
+        "ABA",
+        "C C",
+        "   ",
+        "   "
+      ]
+    ],
+    "aisleRepetitions": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "predicates": {
+      "A": {
+        "blocks": [
+          {
+            "id": "forbidden_arcanus:arcane_polished_darkstone_pillar"
+          }
+        ],
+        "type": "blocks"
+      },
+      "controller": {
+        "location": "mbm2:aureal_accumulator",
+        "type": "component"
+      },
+      "B": {
+        "blocks": [
+          {
+            "id": "kubejs:arcane_gold_cog_block"
+          }
+        ],
+        "type": "blocks"
+      },
+      "C": {
+        "blocks": [
+          {
+            "id": "forbidden_arcanus:arcane_crystal_obelisk"
+          }
+        ],
+        "type": "blocks",
+        "customTips": "You only need to place 4, the multiblock render is just bugged."
+      },
+      "D": {
+        "blocks": [
+          {
+            "id": "forbidden_arcanus:arcane_chiseled_darkstone"
+          }
+        ],
+        "type": "blocks"
+      },
+      "E": {
+        "blocks": [
+          {
+            "id": "tconstruct:seared_fuel_tank"
+          }
+        ],
+        "type": "blocks",
+        "io": "OUT"
+      },
+      "any": {
+        "type": "any"
+      }
+    },
+    "symbolMap": {
+      "@": [
+        "controller"
+      ],
+      " ": [
+        "any"
+      ],
+      "A": [
+        "A"
+      ],
+      "B": [
+        "B"
+      ],
+      "C": [
+        "C"
+      ],
+      "D": [
+        "D"
+      ],
+      "E": [
+        "E"
+      ]
+    }
+  }
+}

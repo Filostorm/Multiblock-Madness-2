@@ -67,6 +67,9 @@ onEvent('fluid.registry', event => {
     event.create(`coolant`).thinTexture(0x3c81c9).bucketColor(0x3c81c9)
     event.create(`high_capacity_coolant`).thinTexture(0x61dfe8).bucketColor(0x61dfe8)
     event.create(`heated_coolant`).thickTexture(0xc23055).bucketColor(0xc23055)
+
+    event.create(`concentrated_aureal`).thickTexture(0xe4dfe6).bucketColor(0xe4dfe6)
+    event.create('concentrated_soul').stillTexture('kubejs:block/fluid/concentrated_soul_still').flowingTexture('kubejs:block/fluid/concentrated_soul_flowing').bucketColor(0xedeae8)
   });
   
 

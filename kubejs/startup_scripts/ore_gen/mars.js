@@ -40,7 +40,7 @@ onEvent('worldgen.add', event => {
 		ore.noSurface = marsSurfaceChance
 		ore.worldgenLayer = "underground_ores"
 		ore.chance = 0
-		ore.biomes = ["beyond_earth:mars_ice_spikes", "beyond_earth:mars"]
+		ore.biomes = ["beyond_earth:mars_ice_spikes", "beyond_earth:mars_desert", "beyond_earth:mars_rocky_plains"]
 	})
 
 	// Base orichalcum Veins
@@ -62,7 +62,7 @@ onEvent('worldgen.add', event => {
 		ore.noSurface = marsSurfaceChance
 		ore.worldgenLayer = "underground_ores"
 		ore.chance = 0
-		ore.biomes = ["beyond_earth:mars_ice_spikes", "beyond_earth:mars"]
+		ore.biomes = ["beyond_earth:mars_ice_spikes", "beyond_earth:mars_desert", "beyond_earth:mars_rocky_plains"]
 	})
 
 	// Base ostrum Veins
@@ -81,7 +81,7 @@ onEvent('worldgen.add', event => {
 		ore.noSurface = marsSurfaceChance
 		ore.worldgenLayer = "underground_ores"
 		ore.chance = 0
-		ore.biomes = ["beyond_earth:mars_ice_spikes", "beyond_earth:mars"]
+		ore.biomes = ["beyond_earth:mars_ice_spikes", "beyond_earth:mars_desert", "beyond_earth:mars_rocky_plains"]
 	})
 
 	// Base titanium Veins
@@ -103,6 +103,6 @@ onEvent('worldgen.add', event => {
 		ore.noSurface = marsSurfaceChance
 		ore.worldgenLayer = "underground_ores"
 		ore.chance = 0
-		ore.biomes = ["beyond_earth:mars_ice_spikes", "beyond_earth:mars"]
+		ore.biomes = ["beyond_earth:mars_ice_spikes", "beyond_earth:mars_desert", "beyond_earth:mars_rocky_plains"]
 	})
 })

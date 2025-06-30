@@ -41,7 +41,7 @@ onEvent('worldgen.add', event => {
 		ore.noSurface = glacioSurfaceChance
 		ore.worldgenLayer = "underground_ores"
 		ore.chance = 0
-		ore.biomes = "beyond_earth:glacio_ice_spikes"
+		ore.biomes = ["beyond_earth:glacio_ice_spikes", "beyond_earth:glacio"]
 	})
 
 

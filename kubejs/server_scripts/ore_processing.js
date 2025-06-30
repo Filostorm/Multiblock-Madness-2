@@ -649,7 +649,7 @@ var blastFurnaceSmelting = (event, material, inputItem, tier) => {
 		.inputItem(inputItem)
 		.outputItem(Item.of(`#forge:ingots/${material}`))
 		.setPerTick(true)
-		.inputFE(tier*2000)
+		.inputFE(500*(2**tier))
 		.duration(tier*50)
 
 		//Air
@@ -658,7 +658,7 @@ var blastFurnaceSmelting = (event, material, inputItem, tier) => {
 		.inputItem(inputItem)
 		.outputItem(Item.of(`#forge:ingots/${material}`))
 		.setPerTick(true)
-		.inputFE(tier*2000)
+		.inputFE(500*(2**tier))
 		.duration(tier*50+50)
 	} else {
 		let tierSmeltingTemp = global.coilHeatValues[tier-4].total

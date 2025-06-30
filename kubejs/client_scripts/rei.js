@@ -35,7 +35,10 @@ onEvent('rei.hide.items', event => {
 			}
 		})
 	})
-
+	
+//get rid of that pesky fine dust
+		event.hide(`#forge:ores/fine_dust/${item.material}`)
+	
 	global.createCrushed.forEach((item) => {
 		event.hide(`kubejs:crushed_${item}`)
 	})
@@ -190,7 +193,7 @@ onEvent("rei.group", (event) => {
 				`#forge:ores/clump/${item.material}`,
 				`#forge:ores/crushed/${item.material}`,
 				`#forge:ores/washed/${item.material}`,
-				`#forge:ores/fine_dust/${item.material}`,
+				//`#forge:ores/fine_dust/${item.material}`,
 				`#forge:ores/leached/${item.material}`,
 				`#forge:ores/deposit/${item.material}`,
 				`#forge:ores/cluster/${item.material}`,

@@ -131,13 +131,13 @@ onEvent('item.tooltip', tooltip => {
 
 	//Multiblocked Tooltips
 	tooltip.addAdvanced(`multiblocked:energy_input_mk1`, (item, advanced, text) => {
-		text.add(1, [Text.of('Max transfer: ').gold(), Text.of('16,000').green()])
+		text.add(1, [Text.of('Max transfer: ').gold(), Text.of('128,000').green()])
  	})
   	tooltip.addAdvanced(`multiblocked:energy_input_mk2`, (item, advanced, text) => {
-		text.add(1, [Text.of('Max transfer: ').gold(), Text.of('128,000').green()])
+		text.add(1, [Text.of('Max transfer: ').gold(), Text.of('1,028,000').green()])
   	})
   	tooltip.addAdvanced(`multiblocked:energy_input_mk3`, (item, advanced, text) => {
-		text.add(1, [Text.of('Max transfer: ').gold(), Text.of('1,024,000').green()])
+		text.add(1, [Text.of('Max transfer: ').gold(), Text.of('8,192,000').green()])
   	})
 
 	//Battie tooltips

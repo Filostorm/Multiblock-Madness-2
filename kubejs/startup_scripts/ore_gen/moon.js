@@ -223,8 +223,8 @@ onEvent('worldgen.add', event => {
 	event.addOre((ore) => {
 		ore.id = 'kubejs:moon_cadmium'
 			global.stoneTypes.forEach((type) => {
-				if (Item.of(`excavated_variants:${type.material}_cadmium_ore`) != null) {
-					ore.addTarget(`excavated_variants:${type.material}_uranium_ore`, `excavated_variants:${type.material}_cadmium_ore`)
+				if (Item.of(`kubejs:${type.material}_cadmium_ore`) != null) {
+					ore.addTarget(`excavated_variants:${type.material}_uranium_ore`, `kubejs:${type.material}_cadmium_ore`)
 				}
 			})
 		ore.count(100)

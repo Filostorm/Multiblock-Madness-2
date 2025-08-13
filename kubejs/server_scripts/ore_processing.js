@@ -368,7 +368,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 					'MMM'
 				], {
 					M: 'kubejs:mesh',
-					Z: '#forge:fine_dusts/zinc'
+					Z: '#forge:ores/fine_dust/zinc'
 				}).id(`mbm2:zinc_mesh_fine_dust`)
 				//Carbon Mesh
 				//event.recipes.mekanismMetallurgicInfusing('kubejs:carbon_mesh', 'kubejs:mesh', 'mekanism:carbon', 10) //cant seem to change the amount from 10
@@ -539,6 +539,39 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 						Item.of(`#forge:ores/${global.oreRefiningParts[4].name}/${item.material}`)
 					
 				}).id(`mbm2:chain_recipe/${global.oreRefiningParts[4].name}/${item.material}`)
+				//multiblock test
+				event.recipes.multiblocked.multiblock("ore_purification_infuser")
+				.inputItems([Item.of(`#forge:ores/${global.oreRefiningParts[5].name}/${item.material}`), 'minecraft:prismarine_crystals', 'minecraft:prismarine_crystals', 'forbidden_arcanus:arcane_crystal_dust_speck', 'forbidden_arcanus:arcane_crystal_dust_speck'])
+				.inputECElement('air', 1000)
+				.inputECElement('earth', 1000)
+				.inputECElement('fire', 1000)
+				.inputECElement('water', 1000)
+				.outputItems([Item.of(`#forge:ores/${global.oreRefiningParts[4].name}/${item.material}`)])
+				.duration(50)
+				.id(`mbm2:chain_recipe/${global.oreRefiningParts[4].name}/${item.material}/multiblocked`)
+
+				event.recipes.multiblocked.multiblock("ore_purification_infuser")
+				.inputItems([refinableOre(4), 'elementalcraft:springaline_shard', 'elementalcraft:springaline_shard', 'elementalcraft:contained_crystal', 'elementalcraft:contained_crystal'])
+				.inputECElement('air', 32000)
+				.inputECElement('earth', 32000)
+				.inputECElement('fire', 32000)
+				.inputECElement('water', 32000)
+				.outputItems([Item.of(`#forge:ores/${global.oreRefiningParts[4].name}/${item.material}`, global.refiningMultiplier[4])])
+				.duration(200)
+				.id(`mbm2:${global.oreRefiningParts[4].name}/${item.material}/multiblocked`)
+
+
+				//////////////////Ore Refining five test///////
+				event.recipes.multiblocked.multiblock("hephaestus_smithing_station")
+				.inputFluid(Fluid.of('kubejs:concentrated_aureal', 750))
+        		.inputFluid(Fluid.of('kubejs:concentrated_soul', 1000))
+        		.inputFluid(Fluid.of('tconstruct:blood', 2000))
+        		.inputFluid(Fluid.of('pneumaticcraft:memory_essence', 1000))
+        		.inputItems([refinableOre(5), 'rftoolsbase:dimensionalshard', 'rftoolsbase:dimensionalshard', 'forbidden_arcanus:dark_matter', 'forbidden_arcanus:dark_matter'])
+        		.outputItems([Item.of(`#forge:ores/${global.oreRefiningParts[5].name}/${item.material}`, global.refiningMultiplier[5])])
+        		.setPerTick(true)
+        		.inputFE(10000)
+        		.duration(300)
 
 
 		////////////////////////////////////////////////////////////////
@@ -981,7 +1014,7 @@ var blastFurnaceSmelting = (event, material, inputItem, tier) => {
 						console.log(`${item.gem_components[0]} has no gem!`);
 					}
 					if (Item.of(`#forge:gems/${item.gem_components[1]}`) != null) {
-						global.pneumaticcraftThermoPlant(event, Item.of(`#forge:gems/${item.gem_components[1]}`), Ingredient.of(`#forge:dusts/${item.material}`), {"type": "pneumaticcraft:fluid", "fluid": "kubejs:crystal_catalyst_mixture", "amount": 250}, 423, 4, 0.75, 1.0, false, `mbm2:thermo_plant/${item.gem_components[1]}_from_${item.material}`)
+						global.pneumaticcraftThermoPlant(event, Item.of(`#forge:gems/${item.gem_components[1]}`), Ingredient.of(`#forge:ores/dust/${item.material}`), {"type": "pneumaticcraft:fluid", "fluid": "kubejs:crystal_catalyst_mixture", "amount": 250}, 423, 4, 0.75, 1.0, false, `mbm2:thermo_plant/${item.gem_components[1]}_from_${item.material}`)
 					} else {
 						console.log(`${item.gem_components[1]} has no gem!`);
 					}

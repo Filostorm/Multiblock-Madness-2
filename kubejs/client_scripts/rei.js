@@ -34,10 +34,11 @@ onEvent('rei.hide.items', event => {
 			event.hide(`kubejs:${part.name}_${item.material}`)
 			}
 		})
-		//get rid of that pesky fine dust
-		event.hide(`#forge:ores/fine_dust/${item.material}`)
 	})
-
+	
+//get rid of that pesky fine dust
+		event.hide(`#forge:ores/fine_dust/${item.material}`)
+	
 	global.createCrushed.forEach((item) => {
 		event.hide(`kubejs:crushed_${item}`)
 	})
@@ -213,7 +214,6 @@ onEvent("rei.group", (event) => {
 			])
 		}
 	})
-
 
     // Items can also be grouped using anything that can be expressed as an IngredientJS,
     // including for example regular expressions or lists of ingredients

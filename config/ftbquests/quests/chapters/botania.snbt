@@ -1,0 +1,1695 @@
+{
+	id: "7E12390A26CD985F"
+	group: "7571E15FFD2D3DD8"
+	order_index: 3
+	filename: "botania"
+	title: "Botania"
+	icon: {
+		id: "botania:lexicon"
+		Count: 1b
+		tag: {
+			"botania:elven_unlock": 1b
+		}
+	}
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			x: 0.0d
+			y: 0.0d
+			subtitle: "Where all good mods start, the guide book!"
+			description: ["If you have questions about how almost anything in the mod works, this book can probably answer them!"]
+			id: "7C8153DF458F001A"
+			tasks: [{
+				id: "1C2D351E3CC8B52A"
+				type: "item"
+				item: "botania:lexicon"
+			}]
+		}
+		{
+			x: 2.0d
+			y: 0.0d
+			subtitle: "And now, we watch it bloom!"
+			dependencies: ["7C8153DF458F001A"]
+			id: "36DA0771D1477548"
+			tasks: [{
+				id: "77104D0705E4C774"
+				type: "item"
+				item: "botania:apothecary_default"
+			}]
+		}
+		{
+			x: 4.0d
+			y: 0.0d
+			description: ["Used to transmute one block into a different one."]
+			dependencies: ["36DA0771D1477548"]
+			id: "0E30662A9958AE69"
+			tasks: [{
+				id: "045C267FFF43EE44"
+				type: "item"
+				item: "botania:pure_daisy"
+			}]
+		}
+		{
+			x: 0.0d
+			y: -2.0d
+			subtitle: "\"Do you got the goods?\""
+			description: ["While in your inventory, any mystical flower you pick up will be stored in here for easy access."]
+			id: "6C82501030A4131E"
+			tasks: [{
+				id: "02FE1EFCA30F4B1F"
+				type: "item"
+				item: "botania:flower_bag"
+				consume_items: false
+				match_nbt: false
+			}]
+		}
+		{
+			x: 5.5d
+			y: 1.5d
+			dependencies: ["0E30662A9958AE69"]
+			id: "401EDCC6F9B0E9E7"
+			tasks: [{
+				id: "5F73E26BC76529DC"
+				type: "item"
+				item: "botania:livingrock"
+			}]
+		}
+		{
+			x: 5.5d
+			y: -1.5d
+			dependencies: ["0E30662A9958AE69"]
+			id: "110D599F09CFF77E"
+			tasks: [{
+				id: "50C6FD55F4D0D898"
+				type: "item"
+				item: "botania:livingwood_log"
+			}]
+		}
+		{
+			x: 7.5d
+			y: 1.5d
+			description: ["Used to hold and store Mana for all of your Botania needs!"]
+			dependencies: ["401EDCC6F9B0E9E7"]
+			id: "47ABC86D6865CF9B"
+			tasks: [{
+				id: "735C89978B27594F"
+				type: "item"
+				item: "botania:mana_pool"
+			}]
+		}
+		{
+			x: 7.5d
+			y: -1.5d
+			subtitle: "\"Pew Pew! Shots Fired!\""
+			description: ["Essential to transfering Mana in and out of flowers Mana Pools, and other devices from the mod."]
+			dependencies: ["110D599F09CFF77E"]
+			id: "172C16CB31F79537"
+			tasks: [{
+				id: "24213E47F6CCC507"
+				type: "item"
+				item: "botania:mana_spreader"
+			}]
+		}
+		{
+			title: "Basic Mana Resources"
+			x: 9.0d
+			y: 0.0d
+			dependencies: [
+				"7B0C5CA1F825026E"
+				"172C16CB31F79537"
+				"47ABC86D6865CF9B"
+			]
+			id: "4CBC47C230C200E1"
+			tasks: [
+				{
+					id: "59E52C85482D08D3"
+					type: "item"
+					item: "botania:manasteel_ingot"
+				}
+				{
+					id: "711EB2E6C011B8C7"
+					type: "item"
+					item: "botania:mana_diamond"
+				}
+				{
+					id: "3719C9984BA210BF"
+					type: "item"
+					item: "botania:mana_pearl"
+				}
+			]
+		}
+		{
+			title: "Basic Generating Flowers"
+			x: 6.5d
+			y: 0.0d
+			subtitle: "\"Flower Power!\""
+			hide_dependency_lines: true
+			dependencies: ["36DA0771D1477548"]
+			id: "7B0C5CA1F825026E"
+			tasks: [{
+				id: "111A0E3AC3891359"
+				type: "item"
+				title: "\"Obtain either an Endoflame or Hydroangea\""
+				item: {
+					id: "itemfilters:or"
+					Count: 1b
+					tag: {
+						items: [
+							{
+								id: "botania:endoflame"
+								Count: 1b
+							}
+							{
+								id: "botania:hydroangeas"
+								Count: 1b
+							}
+						]
+					}
+				}
+			}]
+		}
+		{
+			x: 5.5d
+			y: -3.5d
+			subtitle: "\"Walk softly and carry a big stick.\""
+			dependencies: ["110D599F09CFF77E"]
+			id: "6C681AED6EF0CFDB"
+			tasks: [{
+				id: "09EF98EA952ABF8E"
+				type: "item"
+				item: {
+					id: "botania:twig_wand"
+					Count: 1b
+					tag: {
+						color1: 0
+						color2: 0
+					}
+				}
+				match_nbt: false
+			}]
+		}
+		{
+			x: 11.0d
+			y: 0.0d
+			shape: "gear"
+			description: ["Runes from Botania are not consumed during crafts on the Runic Altar."]
+			dependencies: ["4CBC47C230C200E1"]
+			size: 2.0d
+			id: "0983AEA89345D905"
+			tasks: [{
+				id: "2394634ED6D6E586"
+				type: "item"
+				item: "botania:runic_altar"
+			}]
+		}
+		{
+			icon: "botania:terra_plate"
+			x: 13.0d
+			y: 0.0d
+			dependencies: ["0983AEA89345D905"]
+			id: "2BA18B6406C760E1"
+			tasks: [
+				{
+					id: "39C8F9DA8DD79140"
+					type: "item"
+					item: "botania:terra_plate"
+				}
+				{
+					id: "0F98A06A54645B98"
+					type: "item"
+					item: "botania:livingrock"
+					count: 5L
+				}
+				{
+					id: "66D1BA8E72222545"
+					type: "item"
+					item: "minecraft:lapis_block"
+					count: 4L
+				}
+			]
+		}
+		{
+			x: 15.0d
+			y: 0.0d
+			shape: "gear"
+			dependencies: ["2BA18B6406C760E1"]
+			size: 1.5d
+			id: "54CC946EB5D47176"
+			tasks: [{
+				id: "050962895896B722"
+				type: "item"
+				item: "botania:terrasteel_ingot"
+			}]
+		}
+		{
+			title: "Quark Runes"
+			x: 10.5d
+			y: -2.5d
+			description: ["You will need all the colors of runes at some point or another for crafting Botania's Runes."]
+			dependencies: [
+				"63C4C8F553DBBF6B"
+				"0983AEA89345D905"
+			]
+			id: "5AD1C3D65EA1120B"
+			tasks: [{
+				id: "01EA1BF4577BB90C"
+				type: "item"
+				title: "Any #quark:runes"
+				item: {
+					id: "itemfilters:tag"
+					Count: 1b
+					tag: {
+						value: "quark:runes"
+					}
+				}
+			}]
+		}
+		{
+			title: "Growing Corundum Clusters"
+			x: 10.0d
+			y: -5.0d
+			subtitle: "Can be grown in Bonsai Pots."
+			dependencies: ["63C4C8F553DBBF6B"]
+			id: "32062FC20A9E77A3"
+			tasks: [
+				{
+					id: "64948B358D18E47B"
+					type: "item"
+					title: "Any #mbm2:corundum_cluster"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "mbm2:corundum_cluster"
+						}
+					}
+				}
+				{
+					id: "76A000457742D10E"
+					type: "item"
+					item: "ae2:quartz_growth_accelerator"
+				}
+			]
+		}
+		{
+			title: "Obtaining Corundum"
+			x: 9.0d
+			y: -4.0d
+			description: ["Corundum can either be crafted in the form of the \"White Corundum\" block, or found in special caves underground."]
+			id: "63C4C8F553DBBF6B"
+			tasks: [{
+				id: "23BF4B5784EB6712"
+				type: "item"
+				item: "quark:white_corundum"
+			}]
+		}
+		{
+			x: 10.0d
+			y: 4.5d
+			subtitle: "Efficent Mana Transfer!"
+			description: ["Sparks can be attached to Mana Pools and the Terrestrial Aglomeration Plate to transfer mana from one locaction to another, without worying about loosing any."]
+			dependencies: ["47ABC86D6865CF9B"]
+			id: "12773FCA51DBE66E"
+			tasks: [{
+				id: "64A38DD08BE2FE27"
+				type: "item"
+				item: "botania:spark"
+			}]
+		}
+		{
+			title: "Construct A Portal To Alfheim"
+			x: 17.0d
+			y: 0.0d
+			description: ["In order to open the portal, the Mana Pools under the pylons must be at least half full."]
+			dependencies: ["54CC946EB5D47176"]
+			id: "3F2C0F0BD486BBF1"
+			tasks: [
+				{
+					id: "5EB7F59A6FEDBE25"
+					type: "item"
+					item: "botania:alfheim_portal"
+				}
+				{
+					id: "111D5866AC3A3885"
+					type: "item"
+					item: "botania:livingwood_log"
+					count: 6L
+				}
+				{
+					id: "75F98F16F6C56FD7"
+					type: "item"
+					title: "Any #botania:glimmering_livingwood_logs"
+					item: {
+						id: "itemfilters:tag"
+						Count: 1b
+						tag: {
+							value: "botania:glimmering_livingwood_logs"
+						}
+					}
+					count: 3L
+				}
+				{
+					id: "608D544ED6A0EA7D"
+					type: "item"
+					item: "botania:natura_pylon"
+					count: 2L
+				}
+			]
+		}
+		{
+			title: "Elven Resources"
+			x: 19.0d
+			y: 0.0d
+			dependencies: ["3F2C0F0BD486BBF1"]
+			id: "61D0EFFD562535D3"
+			tasks: [
+				{
+					id: "7D232B3D61B1BA07"
+					type: "item"
+					item: "botania:elementium_ingot"
+				}
+				{
+					id: "128E5B4F80B429C5"
+					type: "item"
+					item: "botania:dragonstone"
+				}
+				{
+					id: "698DF2A8AE4058B4"
+					type: "item"
+					item: "botania:pixie_dust"
+				}
+			]
+		}
+		{
+			title: "Improving Mana Transfer"
+			x: 7.5d
+			y: -3.5d
+			subtitle: "You can put lenses on Mana Spreaders to affect how they transfer Mana."
+			description: [
+				"Potency Lens: Will transfer Mana in bursts that cary twice the usual amount, while being slower."
+				""
+				"Velocity Lens: Will transfer Mana in faster traveling bursts, however the bursts transfer less Mana."
+			]
+			dependencies: [
+				"172C16CB31F79537"
+				"0983AEA89345D905"
+			]
+			id: "07FDACD524DFDC17"
+			tasks: [
+				{
+					id: "7871FDD7E94F3869"
+					type: "item"
+					item: "botania:lens_speed"
+				}
+				{
+					id: "3E29A4FD5A0A6547"
+					type: "item"
+					item: "botania:lens_power"
+				}
+			]
+		}
+		{
+			icon: "mythicbotany:wither_aconite"
+			x: 17.0d
+			y: 2.5d
+			subtitle: "Consumes Nether Stars to generate Mana."
+			description: [
+				"If you have the infastructure for it, this is one of the best Mana generation methods in the pack."
+				""
+				"One Nether Star is equal to 1/6 of a Mana Pool!"
+				""
+				"In order to transfer mana fast enough from the flower, you will need a Mana Collector."
+			]
+			dependencies: ["3F2C0F0BD486BBF1"]
+			id: "4021FC97D77E964C"
+			tasks: [
+				{
+					id: "48F1382C0B7B72F6"
+					type: "item"
+					item: "mythicbotany:wither_aconite"
+				}
+				{
+					id: "631DEA3E8540DB9D"
+					type: "item"
+					item: "minecraft:nether_star"
+				}
+			]
+		}
+		{
+			title: "Beter Generating Flowers"
+			x: 13.0d
+			y: 2.0d
+			subtitle: "\"Flower Power 2: Electric Boogaloo!\""
+			description: ["IMPORTANT: The Entropinnyum no longer accepts \"duped\" TNT!"]
+			dependencies: ["0983AEA89345D905"]
+			id: "3211C8345200202A"
+			tasks: [{
+				id: "0C5E5D2844B59775"
+				type: "item"
+				title: "\"Obtain one of these generating flowers\""
+				item: {
+					id: "itemfilters:or"
+					Count: 1b
+					tag: {
+						items: [
+							{
+								id: "botania:gourmaryllis"
+								Count: 1b
+							}
+							{
+								id: "botania:entropinnyum"
+								Count: 1b
+							}
+							{
+								id: "botania:narslimmus"
+								Count: 1b
+							}
+							{
+								id: "botania:munchdew"
+								Count: 1b
+							}
+							{
+								id: "botania:thermalily"
+								Count: 1b
+							}
+						]
+					}
+				}
+			}]
+		}
+		{
+			x: 19.0d
+			y: -4.0d
+			description: ["A faster and better mana spreader."]
+			dependencies: [
+				"61D0EFFD562535D3"
+				"3F2C0F0BD486BBF1"
+			]
+			id: "5E59BB01FF88BB82"
+			tasks: [{
+				id: "54928E8249E6056E"
+				type: "item"
+				item: "botania:elven_spreader"
+			}]
+		}
+		{
+			title: "Spark Augments"
+			x: 21.0d
+			y: 2.5d
+			subtitle: "Used to transfer mana around a spark network."
+			description: [
+				"You can add Spark Augments to Sparks to change how they interact with other pools."
+				""
+				"Dominant Sparks pull mana to them from all available pools or loations, excluding other domainant or isolation augmented Sparks."
+				""
+				"Recessive Spark Augments can be put on a Mana Pool to have it automaticly disperse it's mana to all other pools on the Spark network, only filling itself after eveything else is full."
+			]
+			dependencies: [
+				"12773FCA51DBE66E"
+				"61D0EFFD562535D3"
+			]
+			id: "512E28F22CCD6593"
+			tasks: [{
+				id: "3A09006026C07A2E"
+				type: "item"
+				title: "\"Spark Augments\""
+				item: {
+					id: "itemfilters:or"
+					Count: 1b
+					tag: {
+						items: [
+							{
+								id: "botania:spark_upgrade_dispersive"
+								Count: 1b
+							}
+							{
+								id: "botania:spark_upgrade_dominant"
+								Count: 1b
+							}
+							{
+								id: "botania:spark_upgrade_recessive"
+								Count: 1b
+							}
+							{
+								id: "botania:spark_upgrade_isolated"
+								Count: 1b
+							}
+						]
+					}
+				}
+			}]
+		}
+		{
+			icon: "mythicbotany:mana_infuser"
+			x: 21.5d
+			y: 0.0d
+			subtitle: "Requires A Dominant Spark Augment!"
+			description: ["Functions almost identicaly to the Terrestral Aglomeration Plate."]
+			dependencies: [
+				"61D0EFFD562535D3"
+				"137469AE94155A2C"
+				"2E7104147D348F70"
+			]
+			id: "636C965F2A995D70"
+			tasks: [
+				{
+					id: "4801AECC1CF34B9A"
+					type: "item"
+					item: "mythicbotany:mana_infuser"
+				}
+				{
+					id: "33D15C388292A43E"
+					type: "item"
+					item: "botania:shimmerrock"
+					count: 5L
+				}
+				{
+					id: "7B467CDB7400D011"
+					type: "item"
+					item: "minecraft:gold_block"
+					count: 4L
+				}
+			]
+			rewards: [{
+				id: "0E40AC7475104569"
+				type: "item"
+				item: "botania:spark"
+			}]
+		}
+		{
+			x: 19.0d
+			y: 1.5d
+			dependencies: ["61D0EFFD562535D3"]
+			id: "137469AE94155A2C"
+			tasks: [{
+				id: "33CBB23DB6127C0E"
+				type: "item"
+				item: "mythicbotany:asgard_rune"
+			}]
+		}
+		{
+			x: 19.0d
+			y: -1.5d
+			dependencies: ["3F2C0F0BD486BBF1"]
+			id: "2E7104147D348F70"
+			tasks: [{
+				id: "438A2680D3A34C14"
+				type: "item"
+				item: "botania:shimmerrock"
+			}]
+		}
+		{
+			title: "Craft Every Rune!"
+			x: 4.0d
+			y: -8.0d
+			shape: "hexagon"
+			subtitle: "Master Engraver!"
+			size: 2.0d
+			id: "660F189BF31BB37E"
+			tasks: [
+				{
+					id: "37155761DD7E15F6"
+					type: "item"
+					item: "botania:rune_water"
+				}
+				{
+					id: "05624B19E0FE598E"
+					type: "item"
+					item: "botania:rune_fire"
+				}
+				{
+					id: "0E93FA16613B95E5"
+					type: "item"
+					item: "botania:rune_earth"
+				}
+				{
+					id: "232ADDB708D8B578"
+					type: "item"
+					item: "botania:rune_air"
+				}
+				{
+					id: "10D8179ACD8D2BB7"
+					type: "item"
+					item: "botania:rune_spring"
+				}
+				{
+					id: "7F5DCC8F1C9B66A2"
+					type: "item"
+					item: "botania:rune_summer"
+				}
+				{
+					id: "09D57412DF8D5656"
+					type: "item"
+					item: "botania:rune_autumn"
+				}
+				{
+					id: "4B0456D892D22D12"
+					type: "item"
+					item: "botania:rune_winter"
+				}
+				{
+					id: "50A46F660B518638"
+					type: "item"
+					item: "botania:rune_mana"
+				}
+				{
+					id: "51D5AC672EF26561"
+					type: "item"
+					item: "botania:rune_lust"
+				}
+				{
+					id: "194E2B544C0F8E54"
+					type: "item"
+					item: "botania:rune_gluttony"
+				}
+				{
+					id: "369C72998A2DDCC6"
+					type: "item"
+					item: "botania:rune_greed"
+				}
+				{
+					id: "4917B4629FFFBA13"
+					type: "item"
+					item: "botania:rune_sloth"
+				}
+				{
+					id: "1B16A976AC7F9B92"
+					type: "item"
+					item: "botania:rune_wrath"
+				}
+				{
+					id: "691786FF323E47D3"
+					type: "item"
+					item: "botania:rune_envy"
+				}
+				{
+					id: "1BA0B1D11B48995D"
+					type: "item"
+					item: "botania:rune_pride"
+				}
+				{
+					id: "55D07293C28C21D9"
+					type: "item"
+					item: "mythicbotany:asgard_rune"
+				}
+				{
+					id: "09A4D51829FF7A72"
+					type: "item"
+					item: "mythicbotany:vanaheim_rune"
+				}
+				{
+					id: "3934CBA5BBF16089"
+					type: "item"
+					item: "mythicbotany:alfheim_rune"
+				}
+				{
+					id: "0493FE37617B4860"
+					type: "item"
+					item: "mythicbotany:midgard_rune"
+				}
+				{
+					id: "5C286CF8EF04E2BF"
+					type: "item"
+					item: "mythicbotany:joetunheim_rune"
+				}
+				{
+					id: "4D8C7866BCFCAD7F"
+					type: "item"
+					item: "mythicbotany:muspelheim_rune"
+				}
+				{
+					id: "69DE8F5FEC82E709"
+					type: "item"
+					item: "mythicbotany:niflheim_rune"
+				}
+				{
+					id: "533B33C50DF82B7B"
+					type: "item"
+					item: "mythicbotany:nidavellir_rune"
+				}
+				{
+					id: "26A71760E97A2CF1"
+					type: "item"
+					item: "mythicbotany:helheim_rune"
+				}
+			]
+			rewards: [{
+				id: "78E34C35CCA51238"
+				type: "xp_levels"
+				xp_levels: 15
+			}]
+		}
+		{
+			title: "Craft Every Generating Flower!"
+			x: 6.0d
+			y: -8.0d
+			shape: "hexagon"
+			subtitle: "Master Botanist!"
+			size: 2.0d
+			id: "35F28842651AF2AA"
+			tasks: [
+				{
+					id: "62F4C69F646D0779"
+					type: "item"
+					item: "botania:endoflame"
+				}
+				{
+					id: "4EE1211EE818478D"
+					type: "item"
+					item: "botania:hydroangeas"
+				}
+				{
+					id: "35C0E51A6989B090"
+					type: "item"
+					item: "botania:thermalily"
+				}
+				{
+					id: "2450808CC89DC6BC"
+					type: "item"
+					item: "botania:rosa_arcana"
+				}
+				{
+					id: "19A6F9A494F344A4"
+					type: "item"
+					item: "botania:munchdew"
+				}
+				{
+					id: "3DB0482FBA17D57F"
+					type: "item"
+					item: "botania:entropinnyum"
+				}
+				{
+					id: "58A5E9E5A4176AAF"
+					type: "item"
+					item: "botania:kekimurus"
+				}
+				{
+					id: "0AC828F245637CAE"
+					type: "item"
+					item: "botania:gourmaryllis"
+				}
+				{
+					id: "5A20D1D58E19493A"
+					type: "item"
+					item: "botania:narslimmus"
+				}
+				{
+					id: "4F6373BE4A3604F3"
+					type: "item"
+					item: "botania:spectrolus"
+				}
+				{
+					id: "57B89A24B9D4EAE3"
+					type: "item"
+					item: "botania:dandelifeon"
+				}
+				{
+					id: "24CFA7F42D4E3233"
+					type: "item"
+					item: "botania:rafflowsia"
+				}
+				{
+					id: "341572C6B0857205"
+					type: "item"
+					item: "botania:shulk_me_not"
+				}
+				{
+					id: "61385A4DF9605429"
+					type: "item"
+					item: "mythicbotany:wither_aconite"
+				}
+				{
+					id: "020188E62749FD6D"
+					type: "item"
+					item: "mythicbotany:raindeletia"
+				}
+			]
+			rewards: [
+				{
+					id: "04686586414C4BF2"
+					type: "xp_levels"
+					xp_levels: 15
+				}
+				{
+					id: "0BB261AEA4FB80FE"
+					type: "item"
+					item: "botania:gaia_spreader"
+					count: 2
+				}
+				{
+					id: "26E18827899F19DC"
+					type: "item"
+					item: {
+						id: "botania:lens_speed"
+						Count: 1b
+						tag: {
+							compositeLens: {
+								id: "botania:lens_power"
+								Count: 1b
+							}
+						}
+					}
+					count: 2
+				}
+			]
+		}
+		{
+			title: "Craft Every Functional Flower!"
+			x: 8.0d
+			y: -8.0d
+			shape: "hexagon"
+			subtitle: "Function Over Fashion!"
+			size: 2.0d
+			id: "2345BCB793EA5BA6"
+			tasks: [
+				{
+					id: "57CEAF769DD293ED"
+					type: "item"
+					title: "\"Any Bellethorne\""
+					item: {
+						id: "itemfilters:or"
+						Count: 1b
+						tag: {
+							items: [
+								{
+									id: "botania:bellethorn"
+									Count: 1b
+								}
+								{
+									id: "botania:bellethorn_chibi"
+									Count: 1b
+								}
+							]
+						}
+					}
+				}
+				{
+					id: "2E9716DD7D91C1DB"
+					type: "item"
+					item: "botania:dreadthorn"
+				}
+				{
+					id: "2C05F6BCFD741AF3"
+					type: "item"
+					item: "botania:heisei_dream"
+				}
+				{
+					id: "1E3732415249F2A2"
+					type: "item"
+					item: "botania:tigerseye"
+				}
+				{
+					id: "705F89DADFD22989"
+					type: "item"
+					item: "botania:jaded_amaranthus"
+				}
+				{
+					id: "02205D17827514C0"
+					type: "item"
+					item: "botania:orechid"
+				}
+				{
+					id: "07959BA709D23947"
+					type: "item"
+					item: "botania:fallen_kanade"
+				}
+				{
+					id: "477969D5DA12EF43"
+					type: "item"
+					item: "botania:exoflame"
+				}
+				{
+					id: "165C2161DE1C66CA"
+					type: "item"
+					title: "\"Any Agricarnation\""
+					item: {
+						id: "itemfilters:or"
+						Count: 1b
+						tag: {
+							items: [
+								{
+									id: "botania:agricarnation"
+									Count: 1b
+								}
+								{
+									id: "botania:agricarnation_chibi"
+									Count: 1b
+								}
+							]
+						}
+					}
+				}
+				{
+					id: "35BAFB574A188AA2"
+					type: "item"
+					title: "\"Any Hopperhock\""
+					item: {
+						id: "itemfilters:or"
+						Count: 1b
+						tag: {
+							items: [
+								{
+									id: "botania:hopperhock"
+									Count: 1b
+								}
+								{
+									id: "botania:hopperhock_chibi"
+									Count: 1b
+								}
+							]
+						}
+					}
+				}
+				{
+					id: "7C8C152B79E2EEF0"
+					type: "item"
+					title: "\"Any Tangleberrie\""
+					item: {
+						id: "itemfilters:or"
+						Count: 1b
+						tag: {
+							items: [
+								{
+									id: "botania:tangleberrie"
+									Count: 1b
+								}
+								{
+									id: "botania:tangleberrie_chibi"
+									Count: 1b
+								}
+							]
+						}
+					}
+				}
+				{
+					id: "3D4C3D7CF53C9367"
+					type: "item"
+					title: "\"Any Jiyuulia\""
+					item: {
+						id: "itemfilters:or"
+						Count: 1b
+						tag: {
+							items: [
+								{
+									id: "botania:jiyuulia"
+									Count: 1b
+								}
+								{
+									id: "botania:jiyuulia_chibi"
+									Count: 1b
+								}
+							]
+						}
+					}
+				}
+				{
+					id: "711498B6B3B09A05"
+					type: "item"
+					title: "\"Any Rannuncarpus\""
+					item: {
+						id: "itemfilters:or"
+						Count: 1b
+						tag: {
+							items: [
+								{
+									id: "botania:rannuncarpus"
+									Count: 1b
+								}
+								{
+									id: "botania:rannuncarpus_chibi"
+									Count: 1b
+								}
+							]
+						}
+					}
+				}
+				{
+					id: "02362A3B47B4A2ED"
+					type: "item"
+					item: "botania:hyacidus"
+				}
+				{
+					id: "749515511F721C5D"
+					type: "item"
+					item: "botania:pollidisiac"
+				}
+				{
+					id: "2B87B9E0FA23BDFE"
+					type: "item"
+					title: "\"Any Clayconia\""
+					item: {
+						id: "itemfilters:or"
+						Count: 1b
+						tag: {
+							items: [
+								{
+									id: "botania:clayconia"
+									Count: 1b
+								}
+								{
+									id: "botania:clayconia_chibi"
+									Count: 1b
+								}
+							]
+						}
+					}
+				}
+				{
+					id: "3A6F8C9C1220D55C"
+					type: "item"
+					item: "botania:loonium"
+				}
+				{
+					id: "12F33E25AFC15672"
+					type: "item"
+					item: "botania:daffomill"
+				}
+				{
+					id: "593F5749CE0FEB92"
+					type: "item"
+					item: "botania:vinculotus"
+				}
+				{
+					id: "06FF2C3ACCF539AD"
+					type: "item"
+					item: "botania:spectranthemum"
+				}
+				{
+					id: "5063B1A5BF1BD85C"
+					type: "item"
+					item: "botania:medumone"
+				}
+				{
+					id: "60A502782AE2903E"
+					type: "item"
+					title: "\"Any Marimorphosis\""
+					item: {
+						id: "itemfilters:or"
+						Count: 1b
+						tag: {
+							items: [
+								{
+									id: "botania:marimorphosis"
+									Count: 1b
+								}
+								{
+									id: "botania:marimorphosis_chibi"
+									Count: 1b
+								}
+							]
+						}
+					}
+				}
+				{
+					id: "706BB8902C7B1BE7"
+					type: "item"
+					title: "\"Any Bubbell\""
+					item: {
+						id: "itemfilters:or"
+						Count: 1b
+						tag: {
+							items: [
+								{
+									id: "botania:bubbell"
+									Count: 1b
+								}
+								{
+									id: "botania:bubbell_chibi"
+									Count: 1b
+								}
+							]
+						}
+					}
+				}
+				{
+					id: "109F5A41EA6C2277"
+					type: "item"
+					title: "\"Any Solegnolia\""
+					item: {
+						id: "itemfilters:or"
+						Count: 1b
+						tag: {
+							items: [
+								{
+									id: "botania:solegnolia"
+									Count: 1b
+								}
+								{
+									id: "botania:solegnolia_chibi"
+									Count: 1b
+								}
+							]
+						}
+					}
+				}
+				{
+					id: "2CA6286CE6D52616"
+					type: "item"
+					item: "botania:orechid_ignem"
+				}
+				{
+					id: "68E11DD2E1D78283"
+					type: "item"
+					item: "botania:labellia"
+				}
+				{
+					id: "274E5D1BC8DB9DE7"
+					type: "item"
+					item: "mythicbotany:exoblaze"
+				}
+				{
+					id: "4FEF2D649CE419E5"
+					type: "item"
+					item: "mythicbotany:aquapanthus"
+				}
+				{
+					id: "3255C529BE03905F"
+					type: "item"
+					item: "mythicbotany:hellebore"
+				}
+				{
+					id: "377A9559D4D72CD2"
+					type: "item"
+					item: "mythicbotany:petrunia"
+				}
+			]
+			rewards: [{
+				id: "6C88F5E415BB9290"
+				type: "xp_levels"
+				xp_levels: 15
+			}]
+		}
+		{
+			x: 12.5d
+			y: -2.0d
+			subtitle: "The better way to brew!"
+			dependencies: ["0983AEA89345D905"]
+			id: "29466A8A7E86AB94"
+			tasks: [{
+				id: "135D9711171C46A4"
+				type: "item"
+				item: "botania:brewery"
+			}]
+		}
+		{
+			x: 23.5d
+			y: 0.0d
+			shape: "gear"
+			dependencies: ["636C965F2A995D70"]
+			size: 2.0d
+			id: "5611A977B3F71A6C"
+			tasks: [{
+				id: "24D181FE2730993D"
+				type: "item"
+				item: "mythicbotany:alfsteel_ingot"
+			}]
+		}
+		{
+			icon: "mythicbotany:yggdrasil_branch"
+			x: 2.625d
+			y: 4.375d
+			shape: "gear"
+			subtitle: "Getting to the root of things!"
+			description: ["By providing the Branch of Yggdrasil with mana, it will slowly start to fill the Gjallarhorn with water from Mimir's Well."]
+			dependencies: ["54CC946EB5D47176"]
+			size: 1.75d
+			id: "3DF874CFF2362A77"
+			tasks: [
+				{
+					id: "7BB5927B54E78918"
+					type: "item"
+					item: "mythicbotany:yggdrasil_branch"
+				}
+				{
+					id: "19040913C00EAFEF"
+					type: "item"
+					item: "mythicbotany:gjallar_horn_empty"
+				}
+			]
+		}
+		{
+			x: 2.5d
+			y: 6.5d
+			subtitle: "\"Hydration is important!\""
+			description: ["Once you have filled the Gjallarhorn, you will need to drink it's contents."]
+			dependencies: ["3DF874CFF2362A77"]
+			id: "518EEFE1F4A2070C"
+			tasks: [{
+				id: "3C1759F666C0C3F7"
+				type: "item"
+				item: "mythicbotany:gjallar_horn_full"
+			}]
+		}
+		{
+			title: "Set up an arena to fight Gaia"
+			x: 25.5d
+			y: 0.0d
+			dependencies: ["5611A977B3F71A6C"]
+			id: "23BC321D9BAEA0CE"
+			tasks: [
+				{
+					id: "32DD7F7D1D7C34E5"
+					type: "item"
+					item: "botania:gaia_pylon"
+					count: 4L
+				}
+				{
+					id: "161B6FA38694B00F"
+					type: "item"
+					item: "minecraft:beacon"
+				}
+			]
+		}
+		{
+			title: "Rematch... Again?"
+			x: 4.5d
+			y: 6.5d
+			subtitle: "Summon and kill the stronger Guardian of Gaia II after drinking water from the Well of Mimir."
+			description: ["In order to obtain the Rune Tablet of Fimbultyr for rune rituals, you need to drink the Water from the Well of Mimir, in order for Gaia II to drop it."]
+			dependencies: ["518EEFE1F4A2070C"]
+			id: "2BBB18020636B41B"
+			tasks: [
+				{
+					id: "057BF48204227DCB"
+					type: "item"
+					item: "botania:gaia_ingot"
+				}
+				{
+					id: "11A9D58641E11391"
+					type: "item"
+					item: "mythicbotany:fimbultyr_tablet"
+				}
+			]
+		}
+		{
+			title: "Best Generating Flowers"
+			x: 17.0d
+			y: -2.0d
+			subtitle: "\"Flower Power 3: These puns are killing me!\""
+			description: [
+				"The \"Kekimurus\" is not quite as easy to automate, since Astral Sorcery is not in this modpack. However it is still a good option."
+				""
+				"The \"Shulk Me Not\" requires a way to make Shulkers target each other. The Heisei Dream is a functional flower that does just that if you decide to use it."
+			]
+			dependencies: ["3F2C0F0BD486BBF1"]
+			id: "43A2773B2ADCF0A7"
+			tasks: [{
+				id: "5C086E78E7EC9342"
+				type: "item"
+				title: "\"Obtain one of these generating flowers\""
+				item: {
+					id: "itemfilters:or"
+					Count: 1b
+					tag: {
+						items: [
+							{
+								id: "botania:kekimurus"
+								Count: 1b
+							}
+							{
+								id: "botania:dandelifeon"
+								Count: 1b
+							}
+							{
+								id: "botania:rafflowsia"
+								Count: 1b
+							}
+							{
+								id: "botania:shulk_me_not"
+								Count: 1b
+							}
+							{
+								id: "botania:spectrolus"
+								Count: 1b
+							}
+						]
+					}
+				}
+			}]
+		}
+		{
+			title: "Rune Holders"
+			x: 6.5d
+			y: 6.5d
+			dependencies: ["2BBB18020636B41B"]
+			id: "07FCAFAF9A917CAA"
+			tasks: [
+				{
+					id: "2F4183C999AA182A"
+					type: "item"
+					item: "mythicbotany:central_rune_holder"
+				}
+				{
+					id: "1A2C1006564CED16"
+					type: "item"
+					item: "mythicbotany:rune_holder"
+					count: 12L
+				}
+			]
+		}
+		{
+			title: "Preform the Rune Ritual for Blood of Kvasir"
+			x: 8.5d
+			y: 6.5d
+			subtitle: "\"Finally, a good use for a Wandering Trader!\""
+			description: [
+				"Only the item on the Central Rune Holder, and the items (and entities) you throw as part of the craft get consumed."
+				""
+				"For recipes that require mana, it will pull from any you are carying around in a tablet, ring or other device."
+				""
+				"To start the ritual, right click the Center Rune Holder with a Wand of the Forest."
+			]
+			dependencies: ["07FCAFAF9A917CAA"]
+			id: "27873D7767ACEB71"
+			tasks: [
+				{
+					id: "3C8051E3ACC3E534"
+					type: "item"
+					item: "botania:rune_fire"
+					count: 4L
+				}
+				{
+					id: "50FFBEEFE7796FA1"
+					type: "item"
+					item: "mythicbotany:helheim_rune"
+					count: 2L
+				}
+				{
+					id: "3EA7F8BE47379199"
+					type: "item"
+					item: "botania:rune_summer"
+					count: 4L
+				}
+				{
+					id: "7F957B0F9ACA9E8A"
+					type: "item"
+					item: "mythicbotany:midgard_rune"
+					count: 2L
+				}
+				{
+					id: "0C1E2056DF62F9B5"
+					type: "item"
+					item: "mythicbotany:fimbultyr_tablet"
+				}
+				{
+					id: "0D09B9D9CB3BEBC7"
+					type: "item"
+					item: "minecraft:wandering_trader_spawn_egg"
+				}
+			]
+		}
+		{
+			x: 10.5d
+			y: 6.5d
+			subtitle: "\"And now, we drink!\""
+			description: ["By drinking the mead, made from the blood of a dwarf, you can now freely visit the relm of the elven race!"]
+			dependencies: ["27873D7767ACEB71"]
+			id: "4E3E77D8493FFD59"
+			tasks: [{
+				id: "522EC994A6DB456C"
+				type: "item"
+				item: "mythicbotany:kvasir_mead"
+			}]
+		}
+		{
+			title: "Visit Alfheim!"
+			x: 12.5d
+			y: 6.5d
+			dependencies: ["4E3E77D8493FFD59"]
+			id: "2E4299123781A0F9"
+			tasks: [{
+				id: "618E163B536920DB"
+				type: "dimension"
+				icon: {
+					id: "ftbquests:custom_icon"
+					Count: 1b
+					tag: {
+						Icon: "botania:textures/block/alfheim_portal_swirl.png"
+					}
+				}
+				dimension: "mythicbotany:alfheim"
+			}]
+		}
+		{
+			title: "Defeat the Guardian of Gaia"
+			x: 27.5d
+			y: 0.0d
+			subtitle: "\"How do I know which one is the real you?\""
+			description: ["By shift clicking a Beacon with Terrasteel, while the 4 Gaia Pylons in the correct spot, the Guardian of Gaia is summoned! Good Luck!"]
+			dependencies: ["23BC321D9BAEA0CE"]
+			id: "3F7CE306B2194903"
+			tasks: [{
+				id: "2FF886C5F37EA4F9"
+				type: "kill"
+				icon: "botania:life_essence"
+				entity: "botania:doppleganger"
+				value: 1L
+			}]
+		}
+		{
+			title: "Rematch!"
+			x: 27.5d
+			y: -2.5d
+			subtitle: "\"Conquer yourself!\" -Navi"
+			description: ["Use a ingot of Gaiasteel to summon the harder version of the Guardian of Gaia."]
+			dependencies: ["3F7CE306B2194903"]
+			id: "31C4C8F7B277C832"
+			tasks: [
+				{
+					id: "26B4D3135238C6ED"
+					type: "item"
+					item: "botania:gaia_ingot"
+				}
+				{
+					id: "24EDD7A4F81FB0D2"
+					type: "questsadditions:killnbt"
+					icon: "botania:gaia_head"
+					entity: "botania:doppleganger"
+					value: 1L
+					nbt: {
+						hardMode: 1b
+					}
+					checkItem: false
+				}
+			]
+			rewards: [{
+				id: "1BB71AFD9E4291FC"
+				type: "item"
+				item: "forbidden_arcanus:pixie"
+			}]
+		}
+		{
+			x: 14.5d
+			y: 8.0d
+			subtitle: "Generates below Y 100."
+			dependencies: ["2E4299123781A0F9"]
+			hide: true
+			id: "3B6CF5056175F21E"
+			tasks: [{
+				id: "189714262BACF548"
+				type: "item"
+				item: "mythicbotany:raw_elementium"
+			}]
+		}
+		{
+			x: 14.5d
+			y: 9.0d
+			subtitle: "Generates between Y 120 and Y 30."
+			dependencies: ["2E4299123781A0F9"]
+			hide: true
+			id: "203FABAC05039E05"
+			tasks: [{
+				id: "652ADF2A46EBCB19"
+				type: "item"
+				item: "kubejs:raw_aetherium"
+			}]
+		}
+		{
+			x: 14.5d
+			y: 7.0d
+			subtitle: "Generates below Y 60."
+			dependencies: ["2E4299123781A0F9"]
+			hide: true
+			id: "7087687EB4AD49D7"
+			tasks: [{
+				id: "7294AF537829ED0E"
+				type: "item"
+				item: "kubejs:raw_mithril"
+			}]
+		}
+		{
+			x: 15.5d
+			y: 7.0d
+			dependencies: ["2E4299123781A0F9"]
+			hide: true
+			id: "31AE3E01792C7131"
+			tasks: [{
+				id: "5D7B471117358695"
+				type: "item"
+				item: "kubejs:raw_orichalcum"
+			}]
+		}
+		{
+			x: 16.5d
+			y: 8.0d
+			description: ["Spawns below Y -10 in Elementium veins."]
+			dependencies: ["2E4299123781A0F9"]
+			hide: true
+			id: "55AFB3A3F69638A6"
+			tasks: [{
+				id: "0470AEC0FE7E4A5B"
+				type: "item"
+				item: "botania:dragonstone"
+			}]
+		}
+		{
+			x: 15.5d
+			y: 8.0d
+			dependencies: ["2E4299123781A0F9"]
+			hide: true
+			id: "62E427386F16B218"
+			tasks: [{
+				id: "184DFA955387390E"
+				type: "item"
+				item: "minecraft:raw_gold"
+			}]
+		}
+		{
+			icon: "botania:pixie_dust"
+			x: 14.5d
+			y: 5.0d
+			subtitle: "Pixies spawn naturaly in Alfheim and can drop Pixie Dust."
+			dependencies: ["2E4299123781A0F9"]
+			hide: true
+			id: "08C5B538F79231AE"
+			tasks: [{
+				id: "381BF4F3617F04B8"
+				type: "kill"
+				icon: "mythicbotany:alf_pixie_spawn_egg"
+				entity: "mythicbotany:alf_pixie"
+				value: 1L
+			}]
+		}
+		{
+			title: "A funny way to automate the Spectrolus"
+			x: 15.5d
+			y: -3.5d
+			subtitle: "You \"Wool\"dn't beleve how simple it can be!"
+			description: [
+				"The enchantment \"Chromatic Aberration\" dyes the wool you get from shearing sheep random colors."
+				""
+				"The Spectrolus is a generating flower that generates mana from being fed wool in a specific order."
+				""
+				"By using this, you won't need to have a sheep for each color of wool."
+			]
+			dependencies: ["43A2773B2ADCF0A7"]
+			id: "562EC6522B93908F"
+			tasks: [
+				{
+					id: "401A23CE8C530078"
+					type: "item"
+					title: "\"Any Shears\""
+					item: {
+						id: "itemfilters:or"
+						Count: 1b
+						tag: {
+							items: [
+								{
+									id: "minecraft:shears"
+									Count: 1b
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									id: "reliquary:shears_of_winter"
+									Count: 1b
+								}
+								{
+									id: "botania:manasteel_shears"
+									Count: 1b
+									tag: {
+										Damage: 0
+									}
+								}
+								{
+									id: "botania:elementium_shears"
+									Count: 1b
+									tag: {
+										Damage: 0
+									}
+								}
+							]
+						}
+					}
+				}
+				{
+					id: "10279DFDC315F0E8"
+					type: "item"
+					title: "\"Any Spectrolus\""
+					item: {
+						id: "itemfilters:or"
+						Count: 1b
+						tag: {
+							items: [
+								{
+									id: "botania:spectrolus"
+									Count: 1b
+								}
+								{
+									id: "botania:floating_spectrolus"
+									Count: 1b
+								}
+							]
+						}
+					}
+				}
+				{
+					id: "496757C331ED62B6"
+					type: "item"
+					title: "Any Item Enchanted with \"Chromatic Aberration\""
+					item: {
+						id: "itemfilters:or"
+						Count: 1b
+						tag: {
+							items: [
+								{
+									id: "itemfilters:weak_nbt"
+									tag: {
+										value: {
+											Enchantments: [{
+												id: "apotheosis:chromatic"
+												lvl: 1s
+											}]
+										}
+									}
+									Count: 1b
+								}
+								{
+									id: "itemfilters:weak_nbt"
+									tag: {
+										value: {
+											StoredEnchantments: [{
+												id: "apotheosis:chromatic"
+												lvl: 1s
+											}]
+										}
+									}
+									Count: 1b
+								}
+							]
+						}
+					}
+				}
+			]
+			rewards: [{
+				id: "7E85B7984B153993"
+				type: "item"
+				item: "minecraft:sheep_spawn_egg"
+				count: 4
+			}]
+		}
+	]
+	quest_links: [ ]
+}

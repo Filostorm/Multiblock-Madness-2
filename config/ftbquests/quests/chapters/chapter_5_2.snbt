@@ -694,11 +694,6 @@
 					type: "item"
 					item: "chemlib:xenon_bucket"
 				}
-				{
-					id: "18182FF6E0172841"
-					type: "item"
-					item: "multiblocked:energy_input_mk2"
-				}
 			]
 		}
 		{

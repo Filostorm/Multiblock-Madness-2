@@ -250,4 +250,113 @@ onEvent('recipes', event => {
 			  "item": 'kubejs:magic_widget'
 			}
 		  }).id('mbm2:magic_widget')
+	
+		//Mechanical Component
+		global.compactCrafting(event, 'kubejs:mechanical_component', 1, 'create:precision_mechanism',
+			1, [
+				{
+				  type: 'compactcrafting:mixed',
+				  pattern: [
+					  ['A', 'S', 'S', 'S', 'A'],
+					  ['S', 'E', 'H', 'C', 'S'],
+					  ['S', 'H', 'R', 'L', 'S'],
+					  ['S', 'R', 'C', 'E', 'S'],
+					  ['A', 'S', 'S', 'S', 'A']
+				  ]
+			  }
+			  ], {
+			  'A': {
+				type: 'compactcrafting:block',
+				block: 'kubejs:tier_2_structural_alloy_scaffolding'
+			  },
+			  'S': {
+				type: 'compactcrafting:block',
+				block: 'immersiveengineering:steel_scaffolding_standard'
+			  },
+			  'E': {
+				type: 'compactcrafting:block',
+				block: 'kubejs:tier_1_electrical_alloy_coil'
+			  },
+			  'H': {
+				type: 'compactcrafting:block',
+				block: 'immersiveengineering:heavy_engineering'
+			  },
+			  'C': {
+				type: 'compactcrafting:block',
+				block: 'kubejs:tier_2_mechanical_alloy_cog_block'
+			  },
+			  'R': {
+				type: 'compactcrafting:block',
+				block: 'immersiveengineering:rs_engineering'
+			  },
+			  'L': {
+				type: 'compactcrafting:block',
+				block: 'immersiveengineering:light_engineering'
+			  }
+			},  'mbm2:miniaturization/mechanical_component')
+		
+		//Multiblock Accelerator Mk1
+		event.recipes.createMechanicalCrafting('kubejs:multiblock_accelerator_mk1',[
+			'ACC',
+			'BDC',
+			'BBA'
+		  ],{
+			A: 'kubejs:tier_3_mechanical_alloy_interlocking_component',
+			B: Item.of('industrialforegoing:speed_addon_1', '{TitaniumAugment:{Speed:2.0f}}'),
+			C: 'modularrouters:speed_upgrade',
+			D: 'kubejs:mechanical_component'
+		  }).id('mbm2:multiblock_accelerator_mk1')
+
+		//Multiblock Accelerator Mk2
+		event.custom({
+			"type": "extendedcrafting:shaped_table",
+			"pattern": [
+			  "ABCCC",
+			  "BDECC",
+			  "DFGEC",
+			  "HFFDB",
+			  "IHDBA"
+			],
+			"key": {
+			  "A": {
+				"type": "forge:nbt",
+				"item": "elementalcraft:rune",
+				"count": 1,
+				"nbt": "{elementalcraft:{rune:\"elementalcraft:zod\"}}"
+			  },
+			  "B": {
+				"item": "kubejs:tier_3_mechanical_alloy_interlocking_component"
+			  },
+			  "C": {
+				"item": "modularrouters:speed_upgrade"
+			  },
+			  "D": {
+				"type": "forge:nbt",
+				"item": "industrialforegoing:speed_addon_2",
+				"count": 1,
+				"nbt": "{TitaniumAugment:{Speed:3.0f}}"
+			  },
+			  "E": {
+				"item": "mekanism:upgrade_speed"
+			  },
+			  "F": {
+				"item": "create:rotation_speed_controller"
+			  },
+			  "G": {
+				"item": "kubejs:multiblock_accelerator_mk1"
+			  },
+			  "H": {
+				"item": "thermal:upgrade_augment_3"
+			  },
+			  "I": {
+				"type": "forge:nbt",
+				"item": "elementalcraft:jewel",
+				"count": 1,
+				"nbt": "{elementalcraft:{jewel:\"elementalcraft:leopard\"}}"
+			  }
+			},
+			"result": {
+			  "item": "kubejs:multiblock_accelerator_mk2"
+			}
+		  }).id('mbm2:multiblock_accelerator_mk2')
 });

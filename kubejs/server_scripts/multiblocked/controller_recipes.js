@@ -558,5 +558,11 @@ event.shaped('mbm2:centrifuge_mk2', ['ABA','CDC','AEA'], {A: 'kubejs:osmium_plat
 		  "item": 'mbm2:galactic_trade_center'
 		}
 	  }).id('mbm2:galactic_trade_center')
+
+	  //Aureal Accumulator
+	  global.arsEnchantment(event, Item.of('mbm2:aureal_accumulator'), Item.of('forbidden_arcanus:dark_rune_block'), [Item.of('elementalcraft:vacuumshrine'), Item.of('forbidden_arcanus:aureal_bottle'), Item.of('forbidden_arcanus:aureal_bottle'), Item.of('forbidden_arcanus:aureal_bottle'), Item.of('forbidden_arcanus:aureal_bottle'), Item.of('#forge:sprockets/tier_2_magical_alloy'), Item.of('#forge:sprockets/tier_2_magical_alloy'), Item.of('#forge:sprockets/tier_2_magical_alloy'), Item.of('#forge:sprockets/tier_2_magical_alloy'), Item.of('forbidden_arcanus:mundabitur_dust')], 5000, 'mbm2:multiblocked/aureal_accumulator_controller')
+
+	  //Hephaestus Smithing Station
+	  event.shaped('mbm2:hephaestus_smithing_station', ['ABA','CDC','CEC'], {A: Item.of('forbidden_arcanus:netherite_blacksmith_gavel', '{Damage:0}'),B: Item.of('tconstruct:scorched_anvil', '{texture:"forbidden_arcanus:arcane_gold_block"}'),C: 'kubejs:tier_2_magical_alloy_sprocket',D: 'forbidden_arcanus:arcane_dragon_egg',E: 'ars_nouveau:arcane_core'}).id('mbm2:multiblocked/hephaestus_smithing_station')
 	  })
 

@@ -38,7 +38,7 @@ event.replaceInput({id: 'modularrouters:flinger_module'}, 'gunpowder', 'create:w
 event.replaceInput({id: 'modularrouters:detector_module'}, 'minecraft:comparator', 'laserio:card_redstone')
 event.replaceInput({id: 'modularrouters:sender_module_1_alt'}, 'minecraft:piston', 'laserio:card_item')
 
-//Casuing issues
+    //Casuing issues
 //event.shapeless(Item.of('modularrouters:puller_module_1', '{modularrouters:{Direction:"NONE",ModuleFilter:{}}}'), [Item.of('modularrouters:sender_module_1', '{modularrouters:{Direction:"NONE",ModuleFilter:{}}}')])
 //event.shapeless(Item.of('modularrouters:sender_module_1', '{modularrouters:{Direction:"NONE",ModuleFilter:{}}}'), [Item.of('modularrouters:puller_module_1', '{modularrouters:{Direction:"NONE",ModuleFilter:{}}}')])
 //event.shapeless(Item.of('modularrouters:sender_module_2', '{modularrouters:{ModuleFilter:{}}}'), [Item.of('modularrouters:sender_module_1', '{modularrouters:{Direction:"NONE",ModuleFilter:{}}}'),Item.of('industrialforegoing:range_addon7', '{TitaniumAugment:{Range:7.0f}}'),Item.of('industrialforegoing:range_addon7', '{TitaniumAugment:{Range:7.0f}}')])

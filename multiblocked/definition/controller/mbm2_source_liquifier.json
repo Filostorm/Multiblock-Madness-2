@@ -1,0 +1,194 @@
+{
+  "version": 3,
+  "location": "mbm2:source_liquifier",
+  "traits": {},
+  "properties": {
+    "rotationState": "ALL",
+    "showInJei": true,
+    "isOpaque": true,
+    "hasDynamicShape": false,
+    "hasCollision": true,
+    "destroyTime": 1.5,
+    "explosionResistance": 6.0,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "friction": 0.6,
+    "harvestLevel": 0,
+    "stackSize": 64,
+    "tabGroup": "multiblocked.all"
+  },
+  "status": {
+    "unformed": {
+      "renderer": {
+        "state": {
+          "id": "ars_nouveau:purple_archwood_wood",
+          "meta": 2
+        },
+        "type": "blockstate",
+        "postRenderer": true
+      }
+    },
+    "idle": {
+      "parent": "unformed"
+    },
+    "working": {
+      "parent": "idle"
+    },
+    "suspend": {
+      "parent": "working"
+    }
+  },
+  "recipeMap": "empty",
+  "basePattern": {
+    "structureDir": [
+      "FRONT",
+      "UP",
+      "LEFT"
+    ],
+    "pattern": [
+      [
+        "AAA",
+        "BCB",
+        "DDD",
+        "EEE"
+      ],
+      [
+        "AA@",
+        "C F",
+        "DGD",
+        "EHE"
+      ],
+      [
+        "AAA",
+        "BCB",
+        "DDD",
+        "EEE"
+      ]
+    ],
+    "aisleRepetitions": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "predicates": {
+      "A": {
+        "blocks": [
+          {
+            "id": "ars_nouveau:purple_archwood_wood"
+          }
+        ],
+        "type": "blocks"
+      },
+      "controller": {
+        "location": "mbm2:source_liquifier",
+        "type": "component"
+      },
+      "B": {
+        "blocks": [
+          {
+            "id": "forbidden_arcanus:arcane_golden_glass"
+          }
+        ],
+        "type": "blocks"
+      },
+      "C": {
+        "blocks": [
+          {
+            "id": "forbidden_arcanus:arcane_gold_block"
+          }
+        ],
+        "type": "blocks"
+      },
+      "D": {
+        "blocks": [
+          {
+            "id": "thermal:obsidian_glass"
+          }
+        ],
+        "type": "blocks"
+      },
+      "E": {
+        "blocks": [
+          {
+            "id": "ars_nouveau:archwood_slab"
+          }
+        ],
+        "type": "blocks"
+      },
+      "F": {
+        "blocks": [
+          {
+            "id": "ae2:sky_stone_tank"
+          }
+        ],
+        "type": "blocks",
+        "io": "OUT"
+      },
+      "G": {
+        "blocks": [
+          {
+            "id": "ars_nouveau:archwood_trapdoor"
+          }
+        ],
+        "type": "blocks"
+      },
+      "H": {
+        "blocks": [
+          {
+            "id": "ars_nouveau:source_jar"
+          }
+        ],
+        "type": "blocks"
+      },
+      "I": {
+        "capability": "arsnouveau.source",
+        "type": "capability"
+      },
+      "any": {
+        "type": "any"
+      }
+    },
+    "symbolMap": {
+      "@": [
+        "controller"
+      ],
+      " ": [
+        "any"
+      ],
+      "A": [
+        "A"
+      ],
+      "B": [
+        "B"
+      ],
+      "C": [
+        "C"
+      ],
+      "D": [
+        "D"
+      ],
+      "E": [
+        "E"
+      ],
+      "F": [
+        "F"
+      ],
+      "G": [
+        "G"
+      ],
+      "H": [
+        "H",
+        "I"
+      ]
+    }
+  }
+}

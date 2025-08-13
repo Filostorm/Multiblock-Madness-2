@@ -1,3 +1,8 @@
+onEvent('tags.items', event => {
+	//Sheetmetal Cast can go in cast chest?
+	event.add(`tconstruct:casts`, 'kubejs:sheetmetal_cast')
+})
+
 onEvent('recipes', event => {
 
 	//Puny Smelting Guide Book

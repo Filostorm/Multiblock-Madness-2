@@ -1,5 +1,12 @@
 onEvent('tags.items', event => {
 	event.add(`mbm2:livingwood_twig`, 'botania:livingwood_twig')
+	
+	//future-proofing botania quartz blocks
+	let quartzTypes = ["mana", "blaze", "lavender", "red", "elf", "sunny"]
+	quartzTypes.forEach(material => {
+	event.remove('forge:storage_blocks/quartz', `botania:${material}_quartz`)
+	event.remove('c:quartz_blocks', `botania:${material}_quartz`)
+	})
  });
 
 onEvent('recipes', event => {
@@ -13,6 +20,11 @@ onEvent('recipes', event => {
 	event.recipes.tconstruct.casting_table('botania:quartz_blaze', 'kubejs:blazing_pyrotheum', 25).cast('minecraft:quartz').consumeCast().coolingTime(80).id(`mbm2:casting/quartz_blaze/blazing_pyrotheum`)
     event.replaceInput({id: 'lazierae2:compat/botania/infuser/quartz_blaze'}, 'minecraft:blaze_powder', 'minecraft:blaze_rod')
 	
+	//Sunny Quartz
+	event.remove({id: 'botania:quartz_sunny'})
+	event.shaped('4x botania:quartz_sunny', [' A ','ABA',' A '], {A: 'minecraft:quartz',B: Item.of('naturesaura:aura_bottle', '{stored_type:"naturesaura:overworld"}')}).id(`mbm2:quartz_sunny_naturesaura`)
+	event.shaped('4x botania:quartz_sunny', [' A ','ABA',' A '], {A: 'minecraft:quartz',B: 'ars_nouveau:ritual_sunrise'}).id(`mbm2:quartz_sunny_ars`)
+
 	//Apothecary
 	event.remove({output: 'botania:apothecary_default'})
 	event.shaped('botania:apothecary_default', ['ABA',' A ','AAA'], {A: 'naturesaura:infused_stone',B: 'naturesaura:token_euphoria'})
@@ -49,7 +61,7 @@ event.remove({id: 'botania:pure_daisy/livingwood'})
 	},
 	"output": "botania:livingwood_log"
   }).id('mbm2:livingwood')
-
+event.recipes.botania.pure_daisy('botania:livingwood_log', 'naturesaura:ancient_bark').id('mbm2:livingwood_alt')
 //Manasteel
 event.remove({id: 'botania:mana_infusion/manasteel'})
 
@@ -258,5 +270,113 @@ event.shaped('botania:mana_spreader', ['AAA','BC ','AAA'], {A: 'botania:livingwo
 event.remove({output: 'botania:astrolabe'})
 event.shaped('botania:astrolabe', [' AB','ACA','BAD'], {A: 'botania:elementium_ingot',B: 'botania:life_essence',C: 'botania:sextant',D: 'botania:dreamwood_log'})
 
+//Wandering Trader Spawn Egg
+event.recipes.botania.mana_infusion('minecraft:wandering_trader_spawn_egg', 'minecraft:egg', 75000, 'gag:no_solicitors').id('mbm2:mana_infusion/wandering_trader')
+
+//Gaia Spirit ingots require Alfsteel
+event.replaceInput({id: 'botania:gaia_ingot'}, 'botania:terrasteel_ingot', 'mythicbotany:alfsteel_ingot')
+
+//mythic botany rune holders
+event.remove({id: 'mythicbotany:central_rune_holder'})
+event.remove({id: 'mythicbotany:rune_holder'})
+event.shaped('mythicbotany:central_rune_holder', [' A ','ABA','BCB'], {A: 'elementalcraft:springaline_shard',B: 'kubejs:tier_2_magical_alloy_ingot',C: 'ars_nouveau:arcane_pedestal'}).id('mbm2:mythicbotany/central_rune_holder')
+event.shaped('mythicbotany:rune_holder', [' A ','BCB'], {A: 'botania:mana_powder',B: 'botania:manasteel_ingot',C: 'ars_nouveau:arcane_pedestal'}).id('mbm2:mythicbotany/rune_holder')
+
+//Earlier Golden Pasture Seed
+global.naturesauraAltar(event, 'botania:golden_seeds', 'forbidden_arcanus:arcane_gold_block', 'botania:enchanted_soil', 'overworld', 20000, 100, 'mbm2:altar/golden_pasture_seed')
+
+//Runic Altar
+event.remove({id: 'botania:runic_altar'})
+global.compactCrafting(event, 'botania:runic_altar', 1, 'botania:mana_tablet', 3, [
+			   {
+				  type: 'compactcrafting:mixed',
+				  pattern: [
+					  ['B', 'B', 'B', 'B', 'B'],
+					  ['B', 'C', 'C', 'C', 'B'],
+					  ['B', 'C', 'D', 'C', 'B'],
+					  ['B', 'C', 'C', 'C', 'B'],
+					  ['B', 'B', 'B', 'B', 'B']
+				  ]
+			  },
+			  {
+				  type: 'compactcrafting:mixed',
+				  pattern: [
+					  ['-', 'S', 'S', 'S', '-'],
+					  ['S', 'Q', 'M', 'Q', 'S'],
+					  ['S', 'M', 'B', 'M', 'S'],
+					  ['S', 'Q', 'M', 'Q', 'S'],
+					  ['-', 'S', 'S', 'S', '-']
+				  ]
+			  },
+			  {
+				  type: 'compactcrafting:mixed',
+				  pattern: [
+					  ['L', 'L', 'Z', 'L', 'L'],
+					  ['L', 'S', 'S', 'S', 'L'],
+					  ['Z', 'S', '-', 'S', 'Z'],
+					  ['L', 'S', 'S', 'S', 'L'],
+					  ['L', 'L', 'Z', 'L', 'L']
+				  ]
+			  }			  
+], {
+			  'L': {
+				type: 'compactcrafting:block',
+				block: 'botania:livingrock'
+			  },
+			  'S': {
+				type: 'compactcrafting:block',
+				block: 'botania:livingrock_bricks_slab'
+			  },
+			  'Z': {
+				type: 'compactcrafting:block',
+				block: 'botania:livingrock_slab'
+			  },
+			  'M': {
+				type: 'compactcrafting:block',
+				block: 'botania:mana_quartz'
+			  },
+			  'Q': {
+				type: 'compactcrafting:block',
+				block: 'botania:chiseled_mana_quartz'
+			  },
+			  'B': {
+				type: 'compactcrafting:block',
+				block: 'botania:livingrock_bricks'
+			  },
+			  'D': {
+				type: 'compactcrafting:block',
+				block: 'botania:mana_diamond_block'
+			  },
+			  'C': {
+				type: 'compactcrafting:block',
+				block: 'botania:chiseled_livingrock_bricks'
+			  }
+			}, `mbm2:compact_crafting/botania/runic_altar`)
+	
+	//Apoth enchant for blacker lotus
+	event.custom({
+	"type": "apotheosis:enchanting",
+	"conditions": [{
+		"type": "apotheosis:module",
+		"module": "enchantment"
+	}],
+	"input": {
+		"item": 'botania:black_lotus'
+	},
+	"requirements": {
+		"eterna": 25,
+		"quanta": 0,
+		"arcana": 50
+	},
+	"max_requirements": {
+		"eterna": 50,
+		"quanta": 0,
+		"arcana": 75
+	},
+	"result": {
+		"item": 'botania:blacker_lotus',
+		"count": 1
+	}
+}).id('mbm2:apoth_enchant/botania/blacker_lotus')
 
 });

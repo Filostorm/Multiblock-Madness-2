@@ -22,6 +22,7 @@
 		{
 			x: -0.5d
 			y: 1.0d
+			description: ["This machine compress Glowstone and Refined Obsidian dust into an ingot."]
 			dependencies: ["766FA3877A259983"]
 			id: "248A48AB03F59D80"
 			tasks: [{
@@ -44,6 +45,8 @@
 		{
 			x: -0.5d
 			y: -0.5d
+			subtitle: "Solid to Gas conversion"
+			description: ["This machine will help with Sulfuric Acid produtcion."]
 			dependencies: ["766FA3877A259983"]
 			id: "6E0C90037432031C"
 			tasks: [{
@@ -67,6 +70,7 @@
 			x: 3.0d
 			y: -0.5d
 			shape: "gear"
+			subtitle: "Next step to Ore Processing!"
 			dependencies: [
 				"13A76B63A6E8833D"
 				"6C3EBA1AD09FEE6C"
@@ -81,6 +85,7 @@
 		{
 			x: 0.5d
 			y: 4.25d
+			subtitle: "Do not expose to heat!"
 			dependencies: ["64E2B67C0B0AB9E4"]
 			id: "4EEBD21943C92471"
 			tasks: [{
@@ -93,6 +98,8 @@
 			title: "Multiblock Power Storage"
 			x: 2.0d
 			y: 4.25d
+			subtitle: "Big and modular power storage!"
+			description: ["Induction Cells can have up to 18x18x18 space, with 16x16x16 of internal space. With this, you can put as many Inductions Cells/Providers as you possibly can. Walls can be made of Induction Casing, but Structural Glass also work, except the edges. Cells and Providers dont need to be the same tier."]
 			dependencies: ["4EEBD21943C92471"]
 			id: "1F35BD186E84BA9C"
 			tasks: [
@@ -121,6 +128,7 @@
 		{
 			x: -0.5d
 			y: 2.5d
+			subtitle: "Gas to Solid conversion"
 			dependencies: ["248A48AB03F59D80"]
 			id: "64E2B67C0B0AB9E4"
 			tasks: [{
@@ -132,6 +140,7 @@
 		{
 			x: -0.5d
 			y: -2.0d
+			subtitle: "Modular Routers can wirelessly power them!... Wait, I'm having a Deja Vu."
 			description: ["Laser Drill Bases can have multiple Laser Drills working together to speed up the mining. Place them within 3 spaces pointing towards the Base."]
 			dependencies: ["766FA3877A259983"]
 			id: "7427C745524AC00C"
@@ -151,6 +160,7 @@
 		{
 			x: -2.5d
 			y: -2.0d
+			subtitle: "Modular Routers can wirelessly power them!"
 			description: ["Laser Drill Bases can have multiple Laser Drills working together to speed up the mining. Place them within 3 spaces pointing towards the Base."]
 			dependencies: ["766FA3877A259983"]
 			id: "4EB8F3B73CD527A2"
@@ -224,6 +234,7 @@
 		{
 			x: 1.0d
 			y: -3.5d
+			subtitle: "A bucket of... Gas?!"
 			dependencies: [
 				"7427C745524AC00C"
 				"0C86C3CCA8F0E429"
@@ -238,7 +249,8 @@
 		{
 			x: -0.5d
 			y: -3.5d
-			description: ["Used to prevent the wither from moving for ether gas production"]
+			subtitle: "Stop right there!"
+			description: ["Used to prevent the wither from moving for ether gas production. This machine will heal it a bit when it takes damage from the extraction."]
 			dependencies: ["766FA3877A259983"]
 			id: "0C86C3CCA8F0E429"
 			tasks: [{
@@ -264,6 +276,7 @@
 		{
 			x: -2.5d
 			y: 1.0d
+			description: ["This machine generates various resources with very little setup."]
 			dependencies: ["766FA3877A259983"]
 			id: "75201B00917E0634"
 			tasks: [{

@@ -242,6 +242,7 @@
 		{
 			x: 14.5d
 			y: 2.0d
+			description: ["Scout Drones can be sent to space to adquire Data, that can be used to discover other destinations for the other drones."]
 			dependencies: [
 				"4D35B17C19F6F639"
 				"5114CFCD3802F95F"
@@ -258,6 +259,7 @@
 		{
 			x: 20.5d
 			y: 3.0d
+			description: ["Harvester Drones can be sent to space to collect resources."]
 			id: "3AF6C4D045AD4864"
 			tasks: [{
 				id: "1614A9A4699313E9"
@@ -268,6 +270,7 @@
 		{
 			x: 26.5d
 			y: 3.5d
+			description: ["Trade Drones can be used to receive trade requests from Intergalactic Clients."]
 			dependencies: ["61580BDED40BAEE8"]
 			id: "41A71474B801EF81"
 			tasks: [{
@@ -279,6 +282,8 @@
 		{
 			x: 26.5d
 			y: 5.0d
+			subtitle: "No tip?"
+			description: ["Cargo Drones are used to deliver requests from our Intergalactic Clients."]
 			dependencies: ["61580BDED40BAEE8"]
 			id: "15544C98901CAD95"
 			tasks: [{
@@ -290,6 +295,8 @@
 		{
 			x: 26.5d
 			y: 2.0d
+			subtitle: "A really expensive CPU"
+			description: ["Data Processing Unit (DPU for short) is a multiblock designed to process recipes that use Data."]
 			dependencies: ["7AB11BDE334D5583"]
 			id: "42ACBBB15EE13626"
 			tasks: [{
@@ -301,6 +308,7 @@
 		{
 			x: 20.5d
 			y: 1.0d
+			description: ["Drone bays receive drones from space with the resources they've collected."]
 			id: "528F0F0B742139D6"
 			tasks: [{
 				id: "594447EE69F250F2"
@@ -404,6 +412,7 @@
 		{
 			x: 23.5d
 			y: 3.5d
+			description: ["Data Chips can be use in the creation of Trade Drones and Planet Locations."]
 			dependencies: ["71684109DE42FABB"]
 			id: "384103D8A709F912"
 			tasks: [{
@@ -446,6 +455,7 @@
 		{
 			x: 31.0d
 			y: 3.0d
+			description: ["This multiblock will allow you to buy components from other civilizations across the universe."]
 			dependencies: [
 				"75BF1DF61BB5E4B1"
 				"36027D9E4172B9C9"
@@ -460,6 +470,7 @@
 		{
 			x: 33.5d
 			y: 2.0d
+			description: ["This machine will be used to refine data."]
 			dependencies: [
 				"50D5BCE00059F96C"
 				"0C176B79E0B9A16A"
@@ -564,6 +575,7 @@
 		{
 			x: 16.0d
 			y: 2.0d
+			description: ["Active Scout Drones return from Space with Data."]
 			dependencies: [
 				"40977AB1CDDB7C35"
 				"4E899924B02D0D37"
@@ -580,6 +592,7 @@
 			title: "Raw Data"
 			x: 17.5d
 			y: 3.5d
+			description: ["Raw Data will be used to discover other destinations for drones, for requests from Intergalactic trading and can be refined into refined data."]
 			dependencies: ["4CC7393E9AE8D9A6"]
 			id: "27236BC9CA70995C"
 			tasks: [{
@@ -612,6 +625,7 @@
 		{
 			x: 28.0d
 			y: 5.0d
+			description: ["Trades are required to get Galactic Currency, that are needed to buy components from other civilizations across the universe, and will be necessary to achieve our goal."]
 			dependencies: [
 				"41A71474B801EF81"
 				"47E773999DCE125E"
@@ -634,6 +648,7 @@
 			title: "Planet Locations"
 			x: 28.0d
 			y: 3.5d
+			description: ["Planet Locations are used to make trades."]
 			dependencies: [
 				"384103D8A709F912"
 				"42ACBBB15EE13626"
@@ -669,6 +684,7 @@
 		{
 			x: 20.5d
 			y: 2.0d
+			description: ["Tier 1 Asteroids can be used to adquire resources from the moon."]
 			dependencies: ["3E50C386D6D1A385"]
 			id: "004B9DD34618DC5A"
 			tasks: [{
@@ -716,6 +732,7 @@
 		{
 			x: 22.0d
 			y: 3.5d
+			description: ["This machine can be use to create Asteroid dusts and some metal fine dusts."]
 			id: "12EB651B1E8F3829"
 			tasks: [{
 				id: "2E94BBBF94040433"
@@ -726,6 +743,7 @@
 		{
 			x: 28.0d
 			y: 2.0d
+			description: ["Tier 2 Asteroids can be used to adquire resources from Mars."]
 			dependencies: ["42ACBBB15EE13626"]
 			id: "5CAF1761BCA7485F"
 			tasks: [{
@@ -807,6 +825,7 @@
 		{
 			x: 35.5d
 			y: 0.0d
+			description: ["Tier 3 Asteroids can be used to adquire resources from Venus."]
 			dependencies: ["408785BE135B0AAC"]
 			id: "251851814926A584"
 			tasks: [{
@@ -818,6 +837,7 @@
 		{
 			x: 35.0d
 			y: 5.5d
+			description: ["This machine allows you to fuse atoms."]
 			dependencies: ["4D3AC4853A55E8A6"]
 			id: "06DAB12F0F477038"
 			tasks: [{
@@ -829,6 +849,7 @@
 		{
 			x: 36.0d
 			y: 5.5d
+			description: ["This machine allows you to divide atoms."]
 			dependencies: ["4D3AC4853A55E8A6"]
 			id: "718AE210A4687C02"
 			tasks: [{

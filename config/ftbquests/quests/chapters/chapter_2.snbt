@@ -96,6 +96,7 @@
 			title: "Basic Create Components"
 			x: -0.5d
 			y: 10.0d
+			subtitle: "Encase your wheels for easier gear ratioing,"
 			description: [
 				"Large Cogwheels can be used in conjunction with small Cogs to increase rotational speed."
 				""
@@ -190,6 +191,7 @@
 			title: "Tinkers Tools"
 			x: -8.5d
 			y: 8.0d
+			subtitle: "Modular Tools!"
 			description: [
 				"Check the Tinkers Station for which parts you need to make a trusty Pickaxe."
 				""
@@ -492,6 +494,7 @@
 			title: "Backpacks have Upgrades now!"
 			x: -10.0d
 			y: 8.5d
+			subtitle: "On the Backpack, loaded with things and Knick-Knacks too"
 			dependencies: ["5FD77AB0F43882B8"]
 			id: "1C13BCBAB1983C5B"
 			tasks: [{
@@ -756,6 +759,7 @@
 			title: "Primitive Rotational Power"
 			x: 1.0d
 			y: 10.0d
+			subtitle: "Also works with Lava!"
 			dependencies: ["360253CDEF94C130"]
 			id: "273B98D3C35D7356"
 			tasks: [{
@@ -809,6 +813,7 @@
 			title: "Basic Item Routing"
 			x: -0.5d
 			y: 11.5d
+			subtitle: "Mechanical Transport"
 			dependencies: ["360253CDEF94C130"]
 			id: "508186DAF72A067F"
 			tasks: [
@@ -1072,8 +1077,8 @@
 					tag: {
 						BlockEntityTag: {
 							TankInv: [{
-								FluidName: "minecraft:empty"
 								Tank: 0b
+								FluidName: "minecraft:empty"
 								Capacity: 32000
 								Amount: 0
 							}]
@@ -1157,6 +1162,7 @@
 			icon: "farmersdelight:cutting_board"
 			x: -2.5d
 			y: 11.5d
+			subtitle: "Shift-Click with your tool for some fancy looks!"
 			description: ["Easy way to strip wood, and get the bark as a byproduct!"]
 			dependencies: ["36F53EFC92FB2CA7"]
 			id: "4E2670A228CB0F4F"
@@ -1176,6 +1182,7 @@
 			title: "So, you've found some new Ore"
 			x: -6.5d
 			y: 11.5d
+			subtitle: "Not a Nugget"
 			description: ["These Compound Ores can be processed down into a large array of different materials."]
 			dependencies: ["03F754FB73DEF8FA"]
 			id: "423438726B049430"

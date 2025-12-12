@@ -214,12 +214,19 @@
 			x: -5.0d
 			y: -1.5d
 			dependencies: ["5E01AA77D0473220"]
+			min_required_tasks: 1
 			id: "2FBCEC1ED55C93EB"
-			tasks: [{
-				id: "39E949F182268CF1"
-				type: "item"
-				item: "tconstruct:magma_bucket"
-			}]
+			tasks: [
+				{
+					id: "39E949F182268CF1"
+					type: "item"
+					item: "tconstruct:magma_bucket"
+				}
+				{
+					id: "2D2A91196F564A72"
+					type: "checkmark"
+				}
+			]
 		}
 		{
 			x: -3.5d
@@ -292,6 +299,17 @@
 				id: "7FECA698F2C2738D"
 				type: "item"
 				item: "minecraft:soul_sand"
+			}]
+		}
+		{
+			x: -11.0d
+			y: 1.5d
+			dependencies: ["0EB83A8878362B58"]
+			id: "04E0C2E389FE5D38"
+			tasks: [{
+				id: "222400CB5F959BA4"
+				type: "item"
+				item: "minecraft:brick"
 			}]
 		}
 	]

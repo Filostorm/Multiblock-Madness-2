@@ -57,7 +57,7 @@
 		}
 		{
 			x: -3.0d
-			y: 3.5d
+			y: 2.5d
 			subtitle: "Y256 - -64"
 			description: ["Commonly found in the overworld, with diamonds if its deep enough."]
 			id: "6FC338469E52020F"
@@ -69,7 +69,7 @@
 		}
 		{
 			x: -3.0d
-			y: 2.5d
+			y: 1.5d
 			subtitle: "Y20 - -60"
 			description: ["Rare Overworld Vein, found with Vinteum and Sapphire, and can spawn with Niter if below deepslate level."]
 			id: "1F8CDD9ACE48E870"
@@ -81,7 +81,7 @@
 		}
 		{
 			x: -2.0d
-			y: 3.5d
+			y: 2.5d
 			subtitle: "Y-10 - -64"
 			id: "528E2CC9DA56D0A8"
 			tasks: [{
@@ -92,7 +92,7 @@
 		}
 		{
 			x: -3.0d
-			y: 4.5d
+			y: 3.5d
 			subtitle: "Y20 - -64"
 			description: ["Uncommonly found in the Overworld or Nether at Y100 - 0."]
 			id: "092D6A2235FB823E"
@@ -149,7 +149,7 @@
 		}
 		{
 			x: -2.0d
-			y: 4.5d
+			y: 3.5d
 			description: ["Spawns as part of Redstone veins."]
 			id: "31E4E00C8803DA63"
 			tasks: [{
@@ -160,7 +160,7 @@
 		}
 		{
 			x: -1.0d
-			y: 4.5d
+			y: 3.5d
 			description: ["Spawns as part of Redstone veins."]
 			id: "73B604D13A5FAE52"
 			tasks: [{
@@ -193,7 +193,7 @@
 		}
 		{
 			x: -3.0d
-			y: 1.5d
+			y: 5.5d
 			subtitle: "Y80 - -48"
 			id: "1E84D9A013177358"
 			tasks: [{
@@ -204,7 +204,7 @@
 		}
 		{
 			x: -2.0d
-			y: 1.5d
+			y: 5.5d
 			subtitle: "Y200 - 32 In the Nether"
 			id: "3F03F79E1CD352F5"
 			tasks: [{
@@ -246,7 +246,7 @@
 		}
 		{
 			x: -2.0d
-			y: 5.5d
+			y: 4.5d
 			subtitle: "Spawns as part of Overworld Arcanite veins."
 			id: "7F721ADE2B2549C2"
 			tasks: [{
@@ -257,7 +257,7 @@
 		}
 		{
 			x: -1.0d
-			y: 5.5d
+			y: 4.5d
 			subtitle: "Spawns as part of Overworld Arcanite veins."
 			description: [""]
 			id: "570C10EC24040DCB"
@@ -477,7 +477,7 @@
 		}
 		{
 			x: -2.0d
-			y: 2.5d
+			y: 1.5d
 			id: "29FF83E81F4EF64C"
 			tasks: [{
 				id: "209079F60B320D16"
@@ -487,7 +487,7 @@
 		}
 		{
 			x: -1.0d
-			y: 2.5d
+			y: 1.5d
 			id: "61CE7BEBA6005FD2"
 			tasks: [{
 				id: "1E25C194ACC53A73"
@@ -768,7 +768,7 @@
 		}
 		{
 			x: -3.0d
-			y: 5.5d
+			y: 4.5d
 			subtitle: "Y100 - 32"
 			id: "42C1EE252075FE79"
 			tasks: [{
@@ -1731,6 +1731,46 @@
 				id: "127E8B6CBAC763A2"
 				type: "checkmark"
 				title: "Ore Generation"
+			}]
+		}
+		{
+			x: -4.0d
+			y: -1.5d
+			id: "7B0A0331F183FD28"
+			tasks: [{
+				id: "22DB807133C83D78"
+				type: "item"
+				item: "elementalcraft:powerful_earth_shard"
+			}]
+		}
+		{
+			x: -4.0d
+			y: -0.5d
+			id: "198839C994138FE5"
+			tasks: [{
+				id: "78EA47344D4A020F"
+				type: "item"
+				item: "elementalcraft:powerful_water_shard"
+			}]
+		}
+		{
+			x: -4.0d
+			y: 1.0d
+			id: "2CBC058B75EC2321"
+			tasks: [{
+				id: "17D11EDF5CDAFCD2"
+				type: "item"
+				item: "elementalcraft:powerful_air_shard"
+			}]
+		}
+		{
+			x: -4.0d
+			y: 3.0d
+			id: "75A731040B4DFCA7"
+			tasks: [{
+				id: "25D4986F6B23169F"
+				type: "item"
+				item: "elementalcraft:powerful_fire_shard"
 			}]
 		}
 	]

@@ -85,7 +85,7 @@ const INFUSETYPE = new $InfuseTypeDeferredRegister('kubejs')
 
 
 //ADD STUFF HERE
-//GASES.register('example_gas', 0xA020F0)
+GASES.register('luminite', 0xffed78)
 //SLURRY.register('example_slurry', builder => builder.color(0xA020F0))
 INFUSETYPE.register('chitin', 0x634f34)
 INFUSETYPE.register('matrix', 0xa091ed)
@@ -111,5 +111,7 @@ onEvent('client.generate_assets', event => {
     event.addLang('infuse_type.kubejs.matrix', `Matrix`)
     event.addLang('infuse_type.kubejs.data', `Data`)
     event.addLang('infuse_type.kubejs.dimensional', `Dimensional`)
+
+    event.addLang('gas.kubejs.luminite', `Luminite Vapor`)
   
 })

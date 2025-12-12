@@ -9,7 +9,7 @@
 	default_hide_dependency_lines: false
 	quests: [
 		{
-			x: -3.75d
+			x: -4.0d
 			y: -3.75d
 			shape: "gear"
 			subtitle: "Works just like a Time in a Bottle."
@@ -216,7 +216,7 @@
 			}]
 		}
 		{
-			x: -3.0d
+			x: -3.25d
 			y: -0.5d
 			subtitle: "Fall protection."
 			id: "61A769F8BAD4B4AF"
@@ -228,7 +228,7 @@
 			}]
 		}
 		{
-			x: -3.0d
+			x: -3.25d
 			y: -5.5d
 			subtitle: "Infinite water."
 			description: ["Acts as a infinite water source, and can be pumped out of."]
@@ -240,7 +240,7 @@
 			}]
 		}
 		{
-			x: -1.5d
+			x: -1.75d
 			y: -5.5d
 			subtitle: "Significantly boosts nearby crop growth."
 			id: "74F2712134151261"
@@ -251,7 +251,7 @@
 			}]
 		}
 		{
-			x: -1.5d
+			x: -1.75d
 			y: -0.5d
 			subtitle: "Auto places torches."
 			id: "3F6896F43986C485"
@@ -349,7 +349,7 @@
 			}]
 		}
 		{
-			x: -1.5d
+			x: -1.75d
 			y: -2.0d
 			subtitle: "Muffles suonds made by Immersive Engineering machines."
 			description: ["Can be applied to any helmet by putting the helmet in the crafting grid with them."]
@@ -372,7 +372,7 @@
 			}]
 		}
 		{
-			x: -3.0d
+			x: -3.25d
 			y: -2.0d
 			subtitle: "Stores XP levels."
 			description: ["Can be enchanted with holding for more capacity."]
@@ -389,7 +389,7 @@
 			}]
 		}
 		{
-			x: -1.5d
+			x: -1.75d
 			y: 1.0d
 			subtitle: "Holds 20 buckets of fluid."
 			description: ["Can be augmented or enchanted with holding to increase it's capacity."]
@@ -795,7 +795,7 @@
 		}
 		{
 			title: "Decorative Graves"
-			x: 0.0d
+			x: -0.25d
 			y: -5.5d
 			subtitle: "\"Rest in peace.\""
 			description: ["Will periodically generate a soul on it for use with Corail Tombstone. Having multiple is recomended."]
@@ -814,7 +814,7 @@
 			}]
 		}
 		{
-			x: -3.0d
+			x: -3.25d
 			y: -7.0d
 			description: ["A upgradable hopper that can face any direction, even upside down!"]
 			id: "5C157D12120E7C3C"
@@ -827,7 +827,7 @@
 		}
 		{
 			icon: "hexerei:sage_burning_plate"
-			x: -1.5d
+			x: -1.75d
 			y: -7.0d
 			subtitle: "Mob repellant."
 			id: "780B64B8B0563C0B"
@@ -863,7 +863,7 @@
 			}]
 		}
 		{
-			x: 0.0d
+			x: -0.25d
 			y: -7.0d
 			subtitle: "Automated crop growth."
 			description: ["A method of automated crop growth using power and water. Growth speed can be boosted using various forms of bonemeal."]
@@ -875,7 +875,7 @@
 			}]
 		}
 		{
-			x: 0.0d
+			x: -0.25d
 			y: -2.0d
 			subtitle: "Can rename items for free!"
 			id: "15CDA7D85ACDF3C2"
@@ -887,7 +887,7 @@
 			}]
 		}
 		{
-			x: 0.0d
+			x: -0.25d
 			y: -0.5d
 			subtitle: "Portable Waystone that does not need XP."
 			id: "0B59864B8A281F6D"
@@ -906,7 +906,7 @@
 		}
 		{
 			title: "Mob Transport"
-			x: 0.0d
+			x: -0.25d
 			y: 1.0d
 			id: "38E8A27C455746B3"
 			tasks: [
@@ -925,7 +925,7 @@
 			]
 		}
 		{
-			x: -3.0d
+			x: -3.25d
 			y: -8.5d
 			subtitle: "Passive milk production."
 			id: "3CB44B5AF6B20723"
@@ -938,7 +938,7 @@
 		}
 		{
 			icon: "forbidden_arcanus:hephaestus_forge"
-			x: -1.5d
+			x: -1.75d
 			y: -8.5d
 			subtitle: "Used to make Enchanted Books and Eternal Stellas"
 			id: "085CD7AD64352FDE"
@@ -1006,7 +1006,7 @@
 		}
 		{
 			title: "Engineers Decor"
-			x: 0.0d
+			x: -0.25d
 			y: -8.5d
 			subtitle: "A bunch of handy little machines."
 			id: "53D61B63C529F0C5"
@@ -1045,7 +1045,7 @@
 			}]
 		}
 		{
-			x: -3.0d
+			x: -3.25d
 			y: 1.0d
 			subtitle: "Disenchant items using graves."
 			id: "351C3B6F5DA9D737"
@@ -1071,7 +1071,7 @@
 			}]
 		}
 		{
-			x: 1.5d
+			x: 1.25d
 			y: -8.5d
 			subtitle: "Lets you interact with nearby inventories from a single block."
 			description: ["Requires a small amount of RF."]
@@ -1083,7 +1083,7 @@
 			}]
 		}
 		{
-			x: 1.5d
+			x: 1.25d
 			y: -7.0d
 			subtitle: "Like a Drawer Controller, but for chests!"
 			id: "6297FB66605ED8C9"
@@ -1102,7 +1102,7 @@
 		}
 		{
 			title: "LaserIO"
-			x: 1.5d
+			x: 1.25d
 			y: -5.5d
 			subtitle: "Modular item transport."
 			id: "0FA708B1BA54122E"

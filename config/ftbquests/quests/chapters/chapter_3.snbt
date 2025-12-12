@@ -933,7 +933,7 @@
 			]
 		}
 		{
-			x: 14.0d
+			x: 14.5d
 			y: 1.5d
 			description: ["Items must be placed in the shown order."]
 			dependencies: ["391E4F9DA1A3D71B"]
@@ -1170,6 +1170,31 @@
 					item: "naturesaura:gold_leaf"
 				}
 			]
+		}
+		{
+			title: "Upgraded Gearboxes"
+			x: 8.0d
+			y: 3.0d
+			dependencies: ["7D69D2DC60D8892C"]
+			id: "13423DFD0AACB1F7"
+			tasks: [
+				{
+					id: "1897C0CC3470182A"
+					type: "item"
+					item: "create_connected:six_way_gearbox"
+				}
+				{
+					id: "5E6E85886D189FFB"
+					type: "item"
+					item: "create_connected:brass_gearbox"
+				}
+			]
+			rewards: [{
+				id: "5063BB1615501AEB"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 1606026794008844755L
+			}]
 		}
 	]
 	quest_links: [ ]

@@ -96,6 +96,34 @@ upgradeMods.forEach(modID => {
 event.replaceInput({id: 'sophisticatedstorage:copper_to_iron_tier_upgrade'}, `redstone_torch`, `#forge:ingots/copper`)
 
 
+//copper Backpack
+event.remove({id: 'sophisticatedbackpacks:copper_backpack'})
+event.custom({
+  "type": "sophisticatedbackpacks:backpack_upgrade",
+  "conditions": [
+    {
+      "itemRegistryName": "sophisticatedbackpacks:copper_backpack",
+      "type": "sophisticatedcore:item_enabled"
+    }
+  ],
+  "pattern": [
+    "III",
+    "IBI",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "tag": "forge:plates/copper"
+    },
+    "B": {
+      "item": "sophisticatedbackpacks:backpack"
+    }
+  },
+  "result": {
+    "item": "sophisticatedbackpacks:copper_backpack"
+  }
+}).id('sophisticatedbackpacks:copper_backpack')
+
 //Iron Backpack
 event.remove({id: 'sophisticatedbackpacks:iron_backpack'})
 event.custom({
@@ -116,13 +144,13 @@ event.custom({
       "tag": "forge:plates/iron"
     },
     "B": {
-      "item": "sophisticatedbackpacks:backpack"
+      "item": "sophisticatedbackpacks:copper_backpack"
     }
   },
   "result": {
     "item": "sophisticatedbackpacks:iron_backpack"
   }
-})
+}).id('sophisticatedbackpacks:iron_backpack_from_copper')
 
 //Gold Backpack
 event.remove({id: 'sophisticatedbackpacks:gold_backpack'})
@@ -150,6 +178,6 @@ event.custom({
   "result": {
     "item": "sophisticatedbackpacks:gold_backpack"
   }
-})
+}).id('sophisticatedbackpacks:gold_backpack_from_iron')
 
 });

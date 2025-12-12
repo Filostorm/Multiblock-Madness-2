@@ -153,7 +153,7 @@ onEvent('recipes', event => {
 		.outputItem('kubejs:energy_orb_empty')
 		.duration(20)
 
-		let dysonPanelOutput = 100000 //100,000/t
+		let dysonPanelOutput = 1000000 //1,000,000/t
 
 		//Single Dyson Panel
 		event.recipes.multiblocked.multiblock("energy_receiver")

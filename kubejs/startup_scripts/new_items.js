@@ -39,7 +39,7 @@ var basicItems = [
 	'reactive_blend',
 	'deep_learner_base',
 	'polymer_clay',
-	'luminite_canister',
+	'contained_luminite',
 	'mesh',
 	'zinc_mesh',
 	'carbon_mesh',
@@ -93,14 +93,15 @@ var basicItems = [
 	'advanced_mechanical_component',
 	'blaze_core',
 	'amethyst_gate',
-	'empty_cannister',
-	'luminite_cannister',
-	'mana_cannister',
-	'aura_cannister',
-	'source_cannister',
+	'empty_canister',
+	'luminite_canister',
+	'mana_canister',
+	'aura_canister',
+	'source_canister',
 	'arcstone',
 	'plasma_orb',
 	'enriched_dimensional_shard',
+	'blaze_cake_slice'
 ]
 
 global.transitionalItems = [
@@ -373,13 +374,13 @@ onEvent('item.registry', event => {
 			'cost': 500,
 			'planet': ['red'],
 		},
-		{
-			'name': 'kubejs:empty_cannister',
-			'input': 'ae2:portable_fluid_cell_4k',
-			'amount': 1,
-			'cost': 100,
-			'planet': ['blue'],
-		},
+		//{
+		//	'name': 'kubejs:empty_canister',
+		//	'input': 'ae2:portable_fluid_cell_4k',
+		//	'amount': 1,
+		//	'cost': 100,
+		//	'planet': ['blue'],
+		//},
 		{
 			'name': 'kubejs:scarab_of_hours',
 			'input': 'reliquary:chelicerae',

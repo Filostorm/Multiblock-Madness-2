@@ -65,7 +65,6 @@ onEvent('recipes', event => {
 		A: 'kubejs:coke_oven_brick',
 		}).id(`mbm2:crafting/coke_bricks`)
   
-
 	//Kiln Bricks
 	event.remove({id: 'immersiveengineering:crafting/alloybrick'})
 	event.remove({id: 'createaddition:compat/immersiveengineering/item_application/kiln_brick'})

@@ -386,6 +386,7 @@ onEvent('recipes', event => {
 			//Dust
 			event.recipes.multiblocked.multiblock("powder_mill")
 				.inputItem(`kubejs:asteroid_chunk_tier_${asteroid.tier}`)
+				.inputFluid(Fluid.of(`kubejs:tectonic_petrotheum`, 250))
 				.setPerTick(true)
 				.inputFE(2000*(10**asteroid.tier))
 				.duration(200)

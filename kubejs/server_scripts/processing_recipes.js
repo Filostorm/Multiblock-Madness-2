@@ -7,6 +7,7 @@ onEvent('recipes', event => {
 		'#forge:gems/lapis':'thermal:lapis_dust',
 		'#forge:slag':'kubejs:slag_dust',
 		'#forge:gems/fluix':'#forge:dusts/fluix',
+		'biggerreactors:graphite_ingot':'biggerreactors:graphite_dust',
 	}
 	for (var recipe in crushingRecipes) {
 		event.recipes.mekanismCrushing(crushingRecipes[recipe], recipe).id(`mbm2:mekanism/crushing/${recipe.split(':')[1]}`)
@@ -21,6 +22,7 @@ onEvent('recipes', event => {
 		'create:milling/lapis_lazuli',
 		'create:compat/ae2/milling/fluix_crystal',
 		'mekanism:compat/ae2/fluix_crystal_to_dust',
+		'biggerreactors:compat/mekanism/crushing/crusher_graphite_ingot'
 	]
 	removeDupes.forEach(item => {
 		event.remove({id: item})

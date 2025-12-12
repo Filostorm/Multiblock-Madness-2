@@ -66,6 +66,15 @@ onEvent('recipes', event => {
 		"energy": 10000
 	  }).id('mbm2:centrifuge/soul_extraction_automatable')
 	
+	//Concentrated Soul
+	event.recipes.multiblocked.multiblock('mixer')
+    .inputItems('forbidden_arcanus:soul')
+	.inputFluid(Fluid.of('tconstruct:liquid_soul', 1000))
+    .outputFluid(Fluid.of('kubejs:concentrated_soul', 500))
+    .setPerTick(true)
+    .inputFE(4000)
+    .duration(100)
+
 	//Re-haunting Soul Sand
 	event.recipes.createHaunting('minecraft:soul_sand', 'forbidden_arcanus:soulless_sand').id('mbm2:haunting/resouling_soul_sand')
 	
@@ -83,7 +92,7 @@ onEvent('recipes', event => {
 	})*/
 	//Gavel Polish
 	event.recipes.multiblocked.multiblock('mixer')
-    .inputItems('#forge:gems/sulfur', 'forbidden_arcanus:wax', '#forge:ores/fine_dust/arcanite', 'gag:sacred_salve')
+    .inputItems('#forge:gems/sulfur', 'forbidden_arcanus:wax', '#forge:dusts/arcanite', 'gag:sacred_salve')
 	.inputFluid(Fluid.of('thermal:resin', 4000))
     .outputItem(`kubejs:gavel_polish`)
     .setPerTick(true)
@@ -117,7 +126,7 @@ onEvent('recipes', event => {
 		  })
 		.id(`mbm2:polish_gavel_${material}`)
 	})
-
+	//Dragon Scale Updates
 	event.replaceInput({id: 'forbidden_arcanus:golden_dragon_scale'}, 'forbidden_arcanus:dragon_scale', 'forbidden_arcanus:silver_dragon_scale')
 	event.replaceInput({id: 'forbidden_arcanus:silver_dragon_scale'}, '#forge:ingots/iron', '#forge:ingots/silver')
 });

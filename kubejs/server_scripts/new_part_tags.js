@@ -185,13 +185,13 @@ onEvent('fluid.tags', event => {
   global.newMaterialParts.forEach((item) => {
     if (item.fluid != null) {
       event.add(`forge:molten_${item.material}`, [`kubejs:molten_${item.material}`, `kubejs:flowing_molten_${item.material}`])
-    }
+    } 
   })
     event.add(`forge:zephyrean_aerotheum`, [`kubejs:zephyrean_aerotheum`, `kubejs:flowing_zephyrean_aerotheum`])
     event.add(`forge:gelid_cryotheum`, [`kubejs:gelid_cryotheum`, `kubejs:flowing_gelid_cryotheum`])
     event.add(`forge:tectonic_petrotheum`, [`kubejs:tectonic_petrotheum`, `kubejs:flowing_tectonic_petrotheum`])
     event.add(`forge:blazing_pyrotheum`, [`kubejs:blazing_pyrotheum`, `kubejs:flowing_blazing_pyrotheum`])
-    event.add(`minecraft:lava`, [`kubejs:blazing_pyrotheum`, `kubejs:flowing_blazing_pyrotheum`])
+    event.add(`minecraft:lava`, [`kubejs:blazing_pyrotheum`, `kubejs:flowing_blazing_pyrotheum`, 'kubejs:liquid_dragon_breath', 'kubejs:flowing_liquid_dragon_breath', 'kubejs:enriched_lava', 'kubejs:flowing_enriched_lava'])
     event.add(`forge:basic_catalyst_mixture`, [`kubejs:basic_catalyst_mixture`, `kubejs:flowing_basic_catalyst_mixture`])
     event.add(`forge:crystal_catalyst_mixture`, [`kubejs:crystal_catalyst_mixture`, `kubejs:flowing_crystal_catalyst_mixture`])
     event.add(`forge:magic_catalyst_mixture`, [`kubejs:magic_catalyst_mixture`, `kubejs:flowing_magic_catalyst_mixture`])

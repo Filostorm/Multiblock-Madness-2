@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "kubejs:block/block_scales_connecting"
+    }
+  }
+}

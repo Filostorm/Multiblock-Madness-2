@@ -45,6 +45,7 @@ var removeByName = [
 	'createaddition:mixing/bioethanol',
 	'extendedcrafting:black_iron_ingot',
 	'createaddition:compacting/seed_oil',
+	'immersiveengineering:jei_bucket_nutritional_paste',
 ]
 
 onEvent('recipes', event => {
@@ -304,6 +305,7 @@ onEvent('tags.items', event => {
 	})
 	event.add(`forge:blocks/bronze`, 'thermal:bronze_block')
 	event.add(`forge:blocks/steel`, 'immersiveengineering:storage_steel')
+	event.add(`forge:gems/netherite_scrap`, 'netherite_scrap')
 })
 
 

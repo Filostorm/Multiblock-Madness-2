@@ -150,7 +150,7 @@
       "B": {
         "blocks": [
           {
-            "id": "kubejs:uhv_casing"
+            "id": "minecraft:air"
           }
         ],
         "type": "blocks"
@@ -222,6 +222,18 @@
         "previewCount": 1,
         "io": "OUT"
       },
+      "I": {
+        "blocks": [
+          {
+            "id": "multiblocked:item_input"
+          },
+          {
+            "id": "multiblocked:big_item_input"
+          }
+        ],
+        "type": "blocks",
+        "io": "IN"
+      },
       "any": {
         "type": "any"
       }
@@ -237,7 +249,8 @@
         "A",
         "E",
         "F",
-        "G"
+        "G",
+        "I"
       ],
       "B": [
         "B"

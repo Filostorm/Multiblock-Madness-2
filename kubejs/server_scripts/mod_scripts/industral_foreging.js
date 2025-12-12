@@ -24,7 +24,6 @@ onEvent('recipes', event => {
   //Tier 2 Frame
   event.replaceInput({id: 'industrialforegoing:dissolution_chamber/simple_machine_frame'}, 'iron_ingot', 'kubejs:stainless_steel_plating')
 
-  
 
   //Tier 3 Frame
   event.remove({id:`industrialforegoing:dissolution_chamber/advanced_machine_frame`})

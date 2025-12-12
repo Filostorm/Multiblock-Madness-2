@@ -375,7 +375,15 @@
       "B": {
         "blocks": [
           {
-            "id": "kubejs:tier_2_structural_alloy_scaffolding"
+            "id": "kubejs:tier_3_structural_alloy_scaffolding"
+          }
+        ],
+        "type": "blocks"
+      },
+      "R": {
+        "blocks": [
+          {
+            "id": "multiblocked:receiver_block"
           }
         ],
         "type": "blocks"
@@ -391,15 +399,7 @@
       "D": {
         "blocks": [
           {
-            "id": "kubejs:tier_1_mechanical_alloy_cog_block"
-          }
-        ],
-        "type": "blocks"
-      },
-      "R": {
-        "blocks": [
-          {
-            "id": "multiblocked:receiver_block"
+            "id": "kubejs:tier_3_mechanical_alloy_cog_block"
           }
         ],
         "type": "blocks"
@@ -434,6 +434,21 @@
         "previewCount": 1,
         "io": "OUT"
       },
+      "I": {
+        "blocks": [
+          {
+            "id": "multiblocked:item_input"
+          },
+          {
+            "id": "multiblocked:big_item_input"
+          }
+        ],
+        "type": "blocks",
+        "io": "IN"
+      },
+      "any": {
+        "type": "any"
+      },
       "O": {
         "blocks": [
           {
@@ -448,12 +463,6 @@
         "maxCount": 1,
         "previewCount": 1,
         "io": "OUT"
-      },
-      "air": {
-        "type": "air"
-      },
-      "any": {
-        "type": "any"
       }
     },
     "symbolMap": {
@@ -473,6 +482,7 @@
         "C",
         "E",
         "F",
+        "I",
         "O"
       ],
       "D": [
@@ -480,9 +490,6 @@
       ],
       "E": [
         "R"
-      ],
-      "-": [
-        "air"
       ]
     }
   }

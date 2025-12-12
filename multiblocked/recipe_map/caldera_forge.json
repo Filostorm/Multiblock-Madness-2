@@ -1,0 +1,23 @@
+{
+  "name": "caldera_forge",
+  "progressTexture": "multiblocked:textures/gui/progress_bar_arrow.png",
+  "fuelTexture": "multiblocked:textures/gui/progress_bar_fuel.png",
+  "recipes": [],
+  "fuelRecipes": [
+    {
+      "uid": "3aeff89a-e1ef-4d23-b55f-467fcd905043",
+      "duration": 10,
+      "inputs": {
+        "mek_gas": [
+          {
+            "content": {
+              "type": "kubejs:luminite",
+              "amount": 1
+            },
+            "chance": 1.0
+          }
+        ]
+      }
+    }
+  ]
+}

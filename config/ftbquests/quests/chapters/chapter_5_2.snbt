@@ -673,28 +673,11 @@
 			description: ["You'll need to upgrade your Blast Furnace before you can smelt the next tier of Metal"]
 			min_required_tasks: 3
 			id: "767E691E21C2ABDC"
-			tasks: [
-				{
-					id: "433ECBEA5A7CD288"
-					type: "item"
-					item: "kubejs:desh_coil"
-				}
-				{
-					id: "2ECAF1DA9DA39B45"
-					type: "item"
-					item: "minecraft:dragon_breath"
-				}
-				{
-					id: "394646305C0ECA61"
-					type: "item"
-					item: "chemlib:xenon"
-				}
-				{
-					id: "59060DCAC4080BF4"
-					type: "item"
-					item: "chemlib:xenon_bucket"
-				}
-			]
+			tasks: [{
+				id: "433ECBEA5A7CD288"
+				type: "item"
+				item: "kubejs:desh_coil"
+			}]
 		}
 		{
 			title: "Laser Circuit Assembly"
@@ -762,6 +745,24 @@
 					id: "11442EB89D6B4FD8"
 					type: "item"
 					item: "pneumaticcraft:charging_station"
+				}
+			]
+		}
+		{
+			x: -1.0d
+			y: -1.0d
+			dependencies: ["5AB0ED73545E6581"]
+			id: "044E185CE9637030"
+			tasks: [
+				{
+					id: "77617D51D8634502"
+					type: "item"
+					item: "alchemistry:dissolver"
+				}
+				{
+					id: "205641DEDE661EA5"
+					type: "item"
+					item: "alchemistry:combiner"
 				}
 			]
 		}

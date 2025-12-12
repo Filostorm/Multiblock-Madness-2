@@ -73,6 +73,8 @@ onEvent('block.registry', event => {
 	
 	event.create('space_age_casing').displayName('§3Space Age Casing').hardness(3).resistance(3).tagBlock('minecraft:mineable/pickaxe').material('metal')
 	
+	event.create('black_block_scales').displayName('Block of Dragon Scales').hardness(3).resistance(3).tagBlock('minecraft:mineable/pickaxe').material('metal')
+	
 
 });
 

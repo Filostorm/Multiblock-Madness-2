@@ -86,6 +86,9 @@ onEvent('recipes', event => {
 		//dimensional_alloy
 		event.recipes.mekanismMetallurgicInfusing('kubejs:dimensional_alloy', Item.of('mekanism:alloy_atomic'), {infuse_type: 'kubejs:dimensional', amount: 50}).id(`mbm2:dimensional_alloy`);
 		
+		//Dragon Scale BLock
+		event.shaped('kubejs:black_block_scales', ['AAA','AAA','AAA'], {A: ['forbidden_arcanus:dragon_scale', 'quark:dragon_scale']}).id('mbm2:black_block_scales')
+
 		//sentient_processor
 		event.custom({
 			"type": "lazierae2:etcher",
@@ -359,4 +362,57 @@ onEvent('recipes', event => {
 			  "item": "kubejs:multiblock_accelerator_mk2"
 			}
 		  }).id('mbm2:multiblock_accelerator_mk2')
+
+
+		//Canister
+			event.shaped('kubejs:empty_canister', [' AB','ACA','BA '], {A: 'extendedcrafting:black_iron_slate',B: 'kubejs:tier_2_magical_alloy_ring',C: 'mekanism:basic_chemical_tank'}).id('mbm2:empty_canister')	
+		//Luminite Canister
+		  event.custom({
+			"input": [
+			  {
+				"item": 'kubejs:empty_canister'
+			  },
+			  {
+				"item": 'kubejs:luminite'
+			  }
+			],
+			"inputFluid": "{FluidName:\"kubejs:enriched_lava\",Amount:100}",
+			"processingTime": 300,
+			"output": {
+			  "item": 'kubejs:luminite_canister',
+			  "count": 1
+			},
+			"type": "industrialforegoing:dissolution_chamber"
+		  }).id('mbm2:luminite_canister')
+
+//luminite Vapor
+	event.custom({
+		"type":"mekanism:reaction",
+		"itemInput":{
+			"ingredient":{"item":'kubejs:luminite_canister'}
+		},
+		"fluidInput":{
+			"amount":100,"fluid":"mekanism:lithium"
+		},
+		"gasInput":{
+			"amount":100,"gas":"mekanism:oxygen"
+		},
+		"duration":200,
+		"itemOutput":{
+			"item":'kubejs:empty_canister'
+		},
+		"gasOutput":{
+			"gas":"kubejs:luminite","amount":1000
+		},
+		}).id("mbm2:luminite_vapor")
+
+		/*
+{"type":"mekanism:reaction",
+	"itemInput":{"ingredient":{"tag":"minecraft:coals"}},
+	"fluidInput":{"amount":100,"tag":"minecraft:water"},
+	"gasInput":{"amount":100,"gas":"mekanism:oxygen"},
+	"duration":100,
+	"itemOutput":{"item":"mekanism:dust_sulfur"},
+	"gasOutput":{"gas":"mekanism:hydrogen","amount":100}}
+*/
 });

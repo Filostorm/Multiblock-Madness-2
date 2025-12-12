@@ -161,6 +161,17 @@ event.shaped('2x kubejs:industrial_alloy_ingot', [
   //Spirited Bricks
 	event.recipes.createCompacting('kubejs:spirited_brick', ['kubejs:heated_brick', 'spirit:soul_powder']).superheated().id(`mbm2:compacting/spirited_brick`)
 
+  //One Step Bricks
+  event.recipes.multiblocked.multiblock('mixer')
+    .inputItems('4x #forge:clay', '4x #forge:sand', '4x #forge:gravel', '4x create:cinder_flour', '4x spirit:soul_powder', 'kubejs:blaze_cake_slice')
+    .inputFluid(Fluid.of('kubejs:molten_slag', 500))
+    .inputFluid(Fluid.of('tconstruct:magma', 1000))
+    .outputItem('4x kubejs:spirited_brick')
+    .setPerTick(true)
+    .inputFE(1000)
+    .duration(200)
+
+
   //Reactive Blend
 event.shaped('kubejs:reactive_blend', [
 	'RL',

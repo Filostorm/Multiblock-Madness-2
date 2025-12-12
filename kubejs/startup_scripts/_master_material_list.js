@@ -407,7 +407,7 @@ global.newMaterialParts = [
       'itemParts': ['plate', 'rod', 'gear'],
       'blockParts': [],
       'ore': true,
-      //'raw_ore': true,
+      'raw_ore': true,
       'byproducts': ['lead'],
       'fluid': 'thick',
       'fluid_id': 'kubejs:molten_thorium',
@@ -421,7 +421,7 @@ global.newMaterialParts = [
       'blockParts': [],
       'fluid': 'thick',
       'ore': true,
-      //'raw_ore': true,
+      'raw_ore': true,
     },
     {
       'material': 'chromium',
@@ -434,6 +434,7 @@ global.newMaterialParts = [
       'allomancy': 'Chromium removes all metals from the stock of players you click on, while also removing all potion effects from them',
       'feruchemy': 'Luck--Good or Bad Luck',
       'ore': true,
+      'raw_ore': true,
     },
     {
       'material': 'lithium',
@@ -443,14 +444,17 @@ global.newMaterialParts = [
       'itemParts': ['plating'],
       'blockParts': [],
       'ore': true,
+      'raw_ore': true,
     },
     {
       'material': 'beryllium',
       'color': 0x3C894B,
-      'type': 'base_metal',
+      'type': 'rare_metal',
       'tier': 5,
       'itemParts': ['wire', 'model_spool'],
       'blockParts': [],
+      'ore': true,
+      'raw_ore': true,
     },
     {
       'material': 'molybdenum',
@@ -461,7 +465,7 @@ global.newMaterialParts = [
       'blockParts': [],
       'fluid': 'thick',
       'ore': true,
-      //'raw_ore': true,
+      'raw_ore': true,
     },
     {
       'material': 'boron',
@@ -480,7 +484,7 @@ global.newMaterialParts = [
       'itemParts': [],
       'blockParts': [],
       'ore': true,
-      //'raw_ore': true,
+      'raw_ore': true,
     },
     {
       'material': 'vanadium',
@@ -490,7 +494,7 @@ global.newMaterialParts = [
       'itemParts': ['plate', 'gear', 'rod'],
       'blockParts': [],
       'ore': true,
-      //'raw_ore': true,
+      'raw_ore': true,
     },
     {
       'material': 'neodymium',
@@ -501,7 +505,7 @@ global.newMaterialParts = [
       'blockParts': [],
       'fluid': 'thick',
       'ore': true,
-      //'raw_ore': true,
+      'raw_ore': true,
     },
 
 
@@ -703,16 +707,16 @@ global.newMaterialParts = [
       'fluid': 'thick',
       'fluid_id': 'kubejs:molten_energetic_alloy',
     },
-    {
-      'material': 'vinteum',
-      'color': 0x9be3fa,
-      'type': 'alloy',
-      'tier': 2,
-      'itemParts': ['plate', 'gear', 'rod'],
-      'blockParts': [],
-      'fluid': 'thick',
-      'fluid_id': 'kubejs:molten_vinteum',
-    },
+    //{
+    //  'material': 'vinteum',
+    //  'color': 0x9be3fa,
+    //  'type': 'alloy',
+    //  'tier': 2,
+    //  'itemParts': ['plate', 'gear', 'rod'],
+    //  'blockParts': [],
+    //  'fluid': 'thick',
+    //  'fluid_id': 'kubejs:molten_vinteum',
+    //},
 
     {
       'material': 'hepatizon',
@@ -1362,7 +1366,7 @@ global.newMaterialParts = [
       'ore': true,
       'raw_ore': true,
       'components': ['copper', 'arcanite', 'cobalt', 'titanium', 'platinum', 'tungsten', 'iridium', 'uru', 'draconium'],
-      'gem_components': ['lapis', 'apatite'],
+      'gem_components': ['lapis', 'sapphire'],
       'byproducts': ['vincyte', 'densite'],
     },
     {

@@ -119,6 +119,18 @@ onEvent('recipes', event => {
 					event.smelting(`#forge:ingots/${item.material}`, `#forge:dusts/${item.material}`).id(`mbm2:${item.material}_furnace_smelting`)
 					event.blasting(`#forge:ingots/${item.material}`, `#forge:dusts/${item.material}`).id(`mbm2:${item.material}_furnace_blasting`)
 				}
+
+				//caldera_forge
+				event.recipes.multiblocked.multiblock("caldera_forge")
+				.setChance(0)
+				.inputItem('kubejs:ingot_mold')
+				.setChance(1)
+				.inputFluid(Fluid.of('mekanism:sodium', 50))
+				.inputItem(Item.of(`#forge:dusts/${item.material}`))
+				.outputItem(Item.of(`#forge:ingots/${item.material}`))
+				.outputFluid(Fluid.of('mekanism:superheated_sodium',50))
+				.setPerTick(true)
+				.duration(item.tier*20)
 			}
 			////////////// TIER 2 OR BELOW /////////////////////
 			if (item.tier <= 2) {
@@ -171,7 +183,7 @@ onEvent('recipes', event => {
 					.inputItem(Ingredient.of(`#forge:dusts/${item.material}`))
 					.outputItem(Item.of(`#forge:ingots/${item.material}`))
 					.setPerTick(true)
-					.inputFE(500 * (2**item.tier))
+					.inputFE(1000 * (2**item.tier))
 					.duration(100)
 					.id(`mbm2:ebf/dusts/${item.material}_ingot`)
 				}
@@ -187,7 +199,7 @@ onEvent('recipes', event => {
 					.inputItem(Ingredient.of(`#forge:dusts/${item.material}`))
 					.outputItem(Item.of(`#forge:ingots/${item.material}`))
 					.setPerTick(true)
-					.inputFE(500 * (4**item.tier))
+					.inputFE(1000*(2**item.tier))
 					.duration(100)
 					.data({ temperature: tier5Temp })
 					.text(`    Heat: §6${tier5Temp}`)
@@ -224,7 +236,7 @@ onEvent('recipes', event => {
 					.inputItem(Ingredient.of(`#forge:dusts/${item.material}`))
 					.outputItem(Item.of(`#forge:ingots/${item.material}`))
 					.setPerTick(true)
-					.inputFE(500 * (4**item.tier))
+					.inputFE(1000*(2**item.tier))
 					.duration(100)
 					.data({ temperature: tier6Temp })
 					.text(`    Heat: §6${tier6Temp}`)
@@ -261,7 +273,7 @@ onEvent('recipes', event => {
 					.inputItem(Ingredient.of(`#forge:dusts/${item.material}`))
 					.outputItem(Item.of(`#forge:ingots/${item.material}`))
 					.setPerTick(true)
-					.inputFE(500 * (4**item.tier))
+					.inputFE(1000*(2**item.tier))
 					.duration(100)
 					.data({ temperature: tier7Temp })
 					.text(`    Heat: §6${tier7Temp}`)

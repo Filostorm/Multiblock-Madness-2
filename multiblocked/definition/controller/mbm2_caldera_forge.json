@@ -1,0 +1,370 @@
+{
+  "version": 3,
+  "location": "mbm2:caldera_forge",
+  "traits": {},
+  "properties": {
+    "rotationState": "ALL",
+    "showInJei": true,
+    "isOpaque": true,
+    "hasDynamicShape": false,
+    "hasCollision": true,
+    "destroyTime": 1.5,
+    "explosionResistance": 6.0,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "friction": 0.6,
+    "harvestLevel": 0,
+    "stackSize": 64,
+    "tabGroup": "multiblocked.all"
+  },
+  "status": {
+    "unformed": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier2_casing",
+        "frontTexture": "multiblocked:overlay/blast_furnace",
+        "type": "gregtech",
+        "postRenderer": false
+      }
+    },
+    "idle": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier2_casing",
+        "frontTexture": "multiblocked:overlay/bf_paused",
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "parent": "unformed"
+    },
+    "working": {
+      "renderer": {
+        "baseTexture": "multiblocked:casing/tier2_casing",
+        "frontTexture": "multiblocked:overlay/bf_active",
+        "type": "gregtech",
+        "postRenderer": false
+      },
+      "parent": "idle"
+    },
+    "suspend": {
+      "parent": "working"
+    }
+  },
+  "recipeMap": "caldera_forge",
+  "basePattern": {
+    "structureDir": [
+      "LEFT",
+      "UP",
+      "BACK"
+    ],
+    "pattern": [
+      [
+        " AAAAAAAAA ",
+        " AAAAAAAAA ",
+        "  AAAAAAA  ",
+        "   AAAAA   ",
+        "           ",
+        "           ",
+        "           ",
+        "           "
+      ],
+      [
+        "AAAAAAAAAAA",
+        "AAAAAAAAAAA",
+        " AAAAAAAAA ",
+        "  AAAAAAA  ",
+        "           ",
+        "           ",
+        "           ",
+        "           "
+      ],
+      [
+        "AAAAAAAAAAA",
+        "AAAAAAAAAAA",
+        "AAAAAAAAAAA",
+        " AAABBBAAA ",
+        "           ",
+        "           ",
+        "           ",
+        "           "
+      ],
+      [
+        "AAAAAAAAAAA",
+        "AAAAAAAAAAA",
+        "AAAACCCAAAA",
+        "AAADEFEDAAA",
+        "    F@F    ",
+        "    EFE    ",
+        "    GGG    ",
+        "     G     "
+      ],
+      [
+        "AAAAAAAAAAA",
+        "AAAAAAAAAAA",
+        "AAACCCCCAAA",
+        "AABE   EBAA",
+        "   F   F   ",
+        "   E   E   ",
+        "   G   G   ",
+        "    GGG    "
+      ],
+      [
+        "AAAAAAAAAAA",
+        "AAAAAAAAAAA",
+        "AAACCCCCAAA",
+        "AABF   FBAA",
+        "   G   G   ",
+        "   F   F   ",
+        "   G   G   ",
+        "   GGGGG   "
+      ],
+      [
+        "AAAAAAAAAAA",
+        "AAAAAAAAAAA",
+        "AAACCCCCAAA",
+        "AABE   EBAA",
+        "   F   F   ",
+        "   E   E   ",
+        "   G   G   ",
+        "    GGG    "
+      ],
+      [
+        "AAAAAAAAAAA",
+        "AAAAAAAAAAA",
+        "AAAACCCAAAA",
+        "AAADEFEDAAA",
+        "    FGF    ",
+        "    EFE    ",
+        "    GGG    ",
+        "     G     "
+      ],
+      [
+        "AAAAAAAAAAA",
+        "AAAAAAAAAAA",
+        "AAAAAAAAAAA",
+        " AAABBBAAA ",
+        "           ",
+        "           ",
+        "           ",
+        "           "
+      ],
+      [
+        "AAAAAAAAAAA",
+        "AAAAAAAAAAA",
+        " AAAAAAAAA ",
+        "  AAAAAAA  ",
+        "           ",
+        "           ",
+        "           ",
+        "           "
+      ],
+      [
+        " AAAAAAAAA ",
+        " AAAAAAAAA ",
+        "  AAAAAAA  ",
+        "   AAAAA   ",
+        "           ",
+        "           ",
+        "           ",
+        "           "
+      ]
+    ],
+    "aisleRepetitions": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "predicates": {
+      "A": {
+        "blocks": [
+          {
+            "id": "minecraft:smooth_basalt"
+          }
+        ],
+        "type": "blocks"
+      },
+      "controller": {
+        "location": "mbm2:caldera_forge",
+        "type": "component"
+      },
+      "B": {
+        "blocks": [
+          {
+            "id": "kubejs:liquid_dragon_breath"
+          }
+        ],
+        "type": "blocks"
+      },
+      "C": {
+        "blocks": [
+          {
+            "id": "kubejs:tier_2_structural_alloy_hull_casing"
+          }
+        ],
+        "type": "blocks"
+      },
+      "D": {
+        "blocks": [
+          {
+            "id": "kubejs:enriched_lava"
+          }
+        ],
+        "type": "blocks"
+      },
+      "E": {
+        "blocks": [
+          {
+            "id": "thermal:lumium_glass"
+          }
+        ],
+        "type": "blocks"
+      },
+      "F": {
+        "blocks": [
+          {
+            "id": "kubejs:black_block_scales"
+          }
+        ],
+        "type": "blocks"
+      },
+      "G": {
+        "blocks": [
+          {
+            "id": "kubejs:tier2_casing"
+          }
+        ],
+        "type": "blocks"
+      },
+      "H": {
+        "blocks": [
+          {
+            "id": "multiblocked:gas_port"
+          }
+        ],
+        "type": "blocks"
+      },
+      "I": {
+        "blocks": [
+          {
+            "id": "multiblocked:item_input"
+          },
+          {
+            "id": "multiblocked:big_item_input"
+          },
+          {
+            "id": "multiblocked:combo_input"
+          },
+          {
+            "id": "multiblocked:big_combo_input"
+          }
+        ],
+        "type": "blocks"
+      },
+      "J": {
+        "blocks": [
+          {
+            "id": "multiblocked:item_output"
+          },
+          {
+            "id": "multiblocked:big_item_output"
+          }
+        ],
+        "type": "blocks"
+      },
+      "K": {
+        "blocks": [
+          {
+            "id": "multiblocked:fluid_input"
+          }
+        ],
+        "type": "blocks",
+        "minCount": 0,
+        "maxCount": 0
+      },
+      "L": {
+        "blocks": [
+          {
+            "id": "multiblocked:fluid_output"
+          }
+        ],
+        "type": "blocks"
+      },
+      "any": {
+        "type": "any"
+      }
+    },
+    "symbolMap": {
+      "@": [
+        "controller"
+      ],
+      " ": [
+        "any"
+      ],
+      "A": [
+        "A"
+      ],
+      "B": [
+        "B"
+      ],
+      "C": [
+        "C"
+      ],
+      "D": [
+        "D"
+      ],
+      "E": [
+        "E"
+      ],
+      "F": [
+        "F"
+      ],
+      "G": [
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L"
+      ]
+    }
+  }
+}

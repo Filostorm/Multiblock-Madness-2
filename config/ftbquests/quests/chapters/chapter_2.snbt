@@ -616,6 +616,7 @@
 			subtitle: "Looking for things, not so much"
 			description: ["Having people find you is even worse."]
 			dependencies: ["5FD77AB0F43882B8"]
+			min_required_tasks: 1
 			id: "7AB2CE16F7A558CA"
 			tasks: [
 				{
@@ -843,6 +844,7 @@
 			x: 3.0d
 			y: 11.0d
 			subtitle: "Replacement for Kelp"
+			description: ["No? Just me?"]
 			dependencies: ["2990DA17B56345DA"]
 			id: "7A86EFBA4A46492E"
 			tasks: [
@@ -1058,6 +1060,7 @@
 		{
 			x: 9.0d
 			y: 10.5d
+			description: ["One Block Tank (With upgrades)"]
 			dependencies: ["143FA2A8FD6E4E10"]
 			id: "42F5FCF0F07BA708"
 			tasks: [{
@@ -1077,6 +1080,12 @@
 						}
 					}
 				}
+			}]
+			rewards: [{
+				id: "60938B735CFF2DD4"
+				type: "random"
+				exclude_from_claim_all: true
+				table_id: 2582656620646881183L
 			}]
 		}
 		{

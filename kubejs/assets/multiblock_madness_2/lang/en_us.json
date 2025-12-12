@@ -140,6 +140,33 @@
     "multiblocked.recipe_map.centrifuge": "Mk2 Centrifuging",
 
 
+
+    "block.mbm2.hephaestus_smithing_station": "Hephasetus Smithing Station",
+    "mbm2.hephaestus_smithing_station.description": "Use the power of Hephasetus to refine ores",
+    "multiblocked.recipe_map.hephaestus_smithing_station": "Hephasetus Smithing",
+
+    "block.mbm2.ore_purification_infuser": "Ore Purification Infuser",
+    "mbm2.ore_purification_infuser.description": "Infuses ores with the elements to refine them",
+    "multiblocked.recipe_map.ore_purification_infuser": "Ore Infusing",
+
+    "block.mbm2.source_liquifier": "Source Liquifier",
+    "mbm2.source_liquifier.description": "Liquifies Source",
+    "multiblocked.recipe_map.source_liquifier": "Source Liquifying",
+
+    "block.mbm2.botanical_sourcelink": "Botanical Sourcelink",
+    "mbm2.botanical_sourcelink.description": "Converts between Mana and Source using a catalyst",
+    "multiblocked.recipe_map.botanical_sourcelink": "Mana Converting",
+
+    "block.mbm2.aureal_accumulator": "Aureal Accumulator",
+    "mbm2.aureal_accumulator.description": "Passively accumulates Aureal from the environment",
+    "multiblocked.recipe_map.aureal_accumulator": "Aureal Accumulating",
+
+    "block.mbm2.caldera_forge": "Caldera Forge",
+    "mbm2.caldera_forge.description": "Uses Luminite to melt metals and sodium to cast them quickly",
+    "multiblocked.recipe_map.caldera_forge": "Caldera Forging",
+
+
+
     "block.multiblocked.create_item_input": "Input Vault Part",
     "block.multiblocked.create_item_output": "Output Vault Part",
 
@@ -158,6 +185,8 @@
     
     "block.multiblocked.energy_input_mk3": "Mk3 Energy Input",
     "block.multiblocked.energy_output_mk3": "Mk3 Energy Output",
+
+    "block.multiblocked.gas_port": "Gas Port",
 
     "block.multiblocked.receiver_block": "Signal Receiver",
 

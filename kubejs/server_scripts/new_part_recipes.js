@@ -621,6 +621,7 @@ onEvent('recipes', event => {
 	if (Item.of(`#forge:fine_dusts/${item.material}`) != null) {
 		event.recipes.multiblocked.multiblock("powder_mill")
 		.inputItem(`#forge:ingots/${item.material}`)
+		.inputFluid(Fluid.of(`kubejs:tectonic_petrotheum`, 250))
 		.duration(200)
 		.outputItem(`#forge:fine_dusts/${item.material}`)
 		.setPerTick(true)

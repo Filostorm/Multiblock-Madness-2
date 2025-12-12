@@ -131,13 +131,13 @@ onEvent('item.tooltip', tooltip => {
 
 	//Multiblocked Tooltips
 	tooltip.addAdvanced(`multiblocked:energy_input_mk1`, (item, advanced, text) => {
-		text.add(1, [Text.of('Max transfer: ').gold(), Text.of('128,000').green()])
+		text.add(1, [Text.of('Max transfer: ').gold(), Text.of('250,000').green()])
  	})
   	tooltip.addAdvanced(`multiblocked:energy_input_mk2`, (item, advanced, text) => {
-		text.add(1, [Text.of('Max transfer: ').gold(), Text.of('1,028,000').green()])
+		text.add(1, [Text.of('Max transfer: ').gold(), Text.of('1,000,000').green()])
   	})
   	tooltip.addAdvanced(`multiblocked:energy_input_mk3`, (item, advanced, text) => {
-		text.add(1, [Text.of('Max transfer: ').gold(), Text.of('8,192,000').green()])
+		text.add(1, [Text.of('Max transfer: ').gold(), Text.of('10,000,000').green()])
   	})
 
 	//Battie tooltips
@@ -662,7 +662,7 @@ onEvent('item.tooltip', tooltip => {
 					}
 			//Finds the exact items then runs the tooltip creation function
 			let partName = ""
-			if (Item.of(`kubejs:${part.name}_${item.material}`) != null && part.name != 'fine_dust') {
+			if (Item.of(`kubejs:${part.name}_${item.material}`) != null && part.name != 'core') {
 				partName = `kubejs:${part.name}_${item.material}`
 				refiningToolTipCreation(partName)
 			}
@@ -671,6 +671,6 @@ onEvent('item.tooltip', tooltip => {
 	})
 	
 	//Dyson info
-	tooltip.add('kubejs:standard_dyson_panel', `Generates 100,000 RF/t while in space`)
+	tooltip.add('kubejs:standard_dyson_panel', `Generates 1,000,000 RF/t while in space`)
 	
 });

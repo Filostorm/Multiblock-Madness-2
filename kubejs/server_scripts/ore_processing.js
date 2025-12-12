@@ -368,7 +368,7 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 					'MMM'
 				], {
 					M: 'kubejs:mesh',
-					Z: '#forge:ores/fine_dust/zinc'
+					Z: 'kubejs:zinc_fine_dust'
 				}).id(`mbm2:zinc_mesh_fine_dust`)
 				//Carbon Mesh
 				//event.recipes.mekanismMetallurgicInfusing('kubejs:carbon_mesh', 'kubejs:mesh', 'mekanism:carbon', 10) //cant seem to change the amount from 10
@@ -649,7 +649,7 @@ var blastFurnaceSmelting = (event, material, inputItem, tier) => {
 		.inputItem(inputItem)
 		.outputItem(Item.of(`#forge:ingots/${material}`))
 		.setPerTick(true)
-		.inputFE(500*(2**tier))
+		.inputFE(1000*(2**tier))
 		.duration(tier*50)
 
 		//Air
@@ -658,8 +658,20 @@ var blastFurnaceSmelting = (event, material, inputItem, tier) => {
 		.inputItem(inputItem)
 		.outputItem(Item.of(`#forge:ingots/${material}`))
 		.setPerTick(true)
-		.inputFE(500*(2**tier))
+		.inputFE(1000*(2**tier))
 		.duration(tier*50+50)
+		
+		//caldera_forge
+		event.recipes.multiblocked.multiblock("caldera_forge")
+		.setChance(0)
+		.inputItem('kubejs:ingot_mold')
+		.setChance(1)
+		.inputFluid(Fluid.of('mekanism:sodium', 50))
+		.inputItem(inputItem)
+		.outputItem(Item.of(`#forge:ingots/${item.material}`))
+		.outputFluid(Fluid.of('mekanism:superheated_sodium',50))
+		.setPerTick(true)
+		.duration(item.tier*20)
 	} else {
 		let tierSmeltingTemp = global.coilHeatValues[tier-4].total
 		let tierFluid = global.coilHeatValues[tier-4].fluid
@@ -669,7 +681,7 @@ var blastFurnaceSmelting = (event, material, inputItem, tier) => {
 			.inputItem(inputItem)
 			.outputItem(Item.of(`#forge:ingots/${material}`))
 			.setPerTick(true)
-			.inputFE(500*(4**tier))
+			.inputFE(1000*(2**tier))
 			.duration(tier*50)
 			.data({ temperature: tierSmeltingTemp})
 			.text(`    Heat: §6${tierSmeltingTemp}`)
@@ -693,6 +705,18 @@ var blastFurnaceSmelting = (event, material, inputItem, tier) => {
 					return false
 				}
 		}, Component.string('Requires at least '+ nameUpper(global.coilHeatValues[tier-4].name) +' Coils'))
+
+		//caldera_forge
+		event.recipes.multiblocked.multiblock("caldera_forge")
+		.setChance(0)
+		.inputItem('kubejs:ingot_mold')
+		.setChance(1)
+		.inputFluid(Fluid.of('mekanism:sodium', 50))
+		.inputItem(inputItem)
+		.outputItem(Item.of(`#forge:ingots/${item.material}`))
+		.outputFluid(Fluid.of('mekanism:superheated_sodium',50))
+		.setPerTick(true)
+		.duration(item.tier*20)
 	}
 }
 
@@ -775,6 +799,7 @@ var blastFurnaceSmelting = (event, material, inputItem, tier) => {
 				if (item.tier == 5) {
 					blastFurnaceSmelting(event, item.material, smeltProcessedOre, 5)
 					blastFurnaceSmelting(event, item.material, smeltRefinedOre, 5)
+
 				}
 				////////////// TIER 6 /////////////////////
 				if (item.tier == 6) {
@@ -1014,7 +1039,7 @@ var blastFurnaceSmelting = (event, material, inputItem, tier) => {
 						console.log(`${item.gem_components[0]} has no gem!`);
 					}
 					if (Item.of(`#forge:gems/${item.gem_components[1]}`) != null) {
-						global.pneumaticcraftThermoPlant(event, Item.of(`#forge:gems/${item.gem_components[1]}`), Ingredient.of(`#forge:ores/dust/${item.material}`), {"type": "pneumaticcraft:fluid", "fluid": "kubejs:crystal_catalyst_mixture", "amount": 250}, 423, 4, 0.75, 1.0, false, `mbm2:thermo_plant/${item.gem_components[1]}_from_${item.material}`)
+						global.pneumaticcraftThermoPlant(event, Item.of(`#forge:gems/${item.gem_components[1]}`), Ingredient.of(`#forge:dusts/${item.material}`), {"type": "pneumaticcraft:fluid", "fluid": "kubejs:crystal_catalyst_mixture", "amount": 250}, 423, 4, 0.75, 1.0, false, `mbm2:thermo_plant/${item.gem_components[1]}_from_${item.material}`)
 					} else {
 						console.log(`${item.gem_components[1]} has no gem!`);
 					}
@@ -1060,7 +1085,7 @@ var elementalMobDrops = [
 	},
 	{
 	  'element': 'air',
-	  'drops': ['spider_eye', 'phantom_membrane', 'ender_pearl'],
+	  'drops': ['spider_eye', 'ender_pearl', 'phantom_membrane'],
 	},
 	{
 	  'element': 'earth',
@@ -1178,8 +1203,8 @@ onEvent("lootjs", (event) => {
 								.pool((pool) => {
 									pool.addWeightedLoot([0,1], [
 										Item.of(element.drops[0]).withChance(30),
-										Item.of(element.drops[1]).withChance(20),
-										Item.of(element.drops[2]).withChance(10)
+										Item.of(element.drops[1]).withChance(15),
+										Item.of(element.drops[2]).withChance(5)
 									])
 								})
 						}

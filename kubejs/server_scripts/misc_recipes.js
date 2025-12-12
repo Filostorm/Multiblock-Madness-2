@@ -42,6 +42,12 @@ onEvent('recipes', event => {
 	//Block Casing
 	global.casingBasin(event, 'thermal:slag_block', 'forge:molten_slag', 1000, 120, 'tconstruct:smeltery/casting/metal/slag/block')
 
+	//Rich Slag Casing
+	global.casingTable(event, 'tconstruct:casts/multi_use/gem', false, 'thermal:rich_slag', 'forge:molten_rich_slag', 250, 40, 'mbm2:smeltery/casting/rich_slag/gem_gold_cast')
+	global.casingTable(event, 'tconstruct:casts/single_use/gem', true, 'thermal:rich_slag', 'forge:molten_rich_slag', 250, 40, 'mbm2:smeltery/casting/rich_slag/gem_sand_cast')
+  
+	global.casingBasin(event, 'thermal:rich_slag_block', 'forge:molten_rich_slag', 1000, 120, 'mbm2:smeltery/casting/rich_slag/block')
+
   	//Sheetmetal Cast
 	global.casingBasinCast(event, 'forge:sheetmetals', true, 'kubejs:sheetmetal_cast', 'forge:molten_steel', 180, 200, 'tconstruct:smeltery/casting/sheetmetal_cast')
 
@@ -438,7 +444,7 @@ event.shapeless('9x #forge:gems/sapphire', ['#forge:storage_blocks/sapphire']).i
 		  },
 		  {
 			"fluid": 'kubejs:enriched_lava',
-			"amount": 10
+			"amount": 50
 		  }
 		],
 		"energy": 20000
@@ -464,7 +470,7 @@ event.shapeless('9x #forge:gems/sapphire', ['#forge:storage_blocks/sapphire']).i
 
 //Frozen Core alt recipe
 event.shaped('2x reliquary:frozen_core', ['ABA','BCB','ABA'], {A: 'minecraft:packed_ice',B: 'minecraft:snow_block',C: 'ars_nouveau:ritual_awakening'}).id( 'mbm2:crafting/frozen_core_alt')
-
+/*
 //Sapphire can be made now
 event.custom({
 	"type": "thermal:crystallizer",
@@ -479,8 +485,10 @@ event.custom({
 	  {"tag": 'forge:gems/sapphire',
 		"count": 1}]
 }).id(`mbm2:crystallizer/sapphire_from_vincyte`)
-
+*/
+//Flux Core
 event.remove({output: '4x fluxnetworks:flux_core'})
 event.shaped('4x fluxnetworks:flux_core', ['ABC','BDB','CBA'], {A: 'tconstruct:ender_slime_crystal',B: 'fluxnetworks:flux_dust',C: 'powah:dielectric_paste',D: 'powah:ender_gate_niotic'}).id('mbm2:crafting/fluxnetworks_flux_core')
-		
+
+event.shapeless('8x kubejs:blaze_cake_slice', ['create:blaze_cake']).id('mbm2:blaze_cake_slices')
 });

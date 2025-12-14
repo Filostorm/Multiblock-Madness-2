@@ -135,7 +135,7 @@
 			x: -2.5d
 			y: 3.0d
 			description: [
-				"This multiblock can have up 18 layers. It will use heat and water to produce brine, or brine and heat to produce lithium. Warm regions like badlands will have a higher base temperature, but it's possible to create heat using a resistive heater."
+				"This multiblock can have up 18 layers. It will use heat and water to produce brine, or brine and heat to produce lithium. Warm regions like badlands will have a higher base temperature, but it's possible to create heat using a resistive heater or advanced solar panels."
 				"{image:kubejs:textures/quests/tower.png width:100 height:100 align:1}"
 			]
 			dependencies: ["35C4C2060E205DAC"]
@@ -762,7 +762,7 @@
 			title: "Alchemy Machines"
 			x: -1.0d
 			y: -1.0d
-			subtitle: "Who needs a Philosopher Stone?"
+			subtitle: "Who needs a Philosopher's Stone?"
 			description: ["Dissolvers can turn materials, in its most basic elements, and combiner will use these elements to create others elements or items."]
 			dependencies: ["5AB0ED73545E6581"]
 			id: "044E185CE9637030"

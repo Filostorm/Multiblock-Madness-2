@@ -68,6 +68,7 @@
 		{
 			x: -4.0d
 			y: 4.5d
+			description: ["Metallurgic Ifuser will use chemical version of some items in combinations of some resources to create new items. It has some complexities when trying to automate, as it need an exclusive face for the &e&lextra&r input."]
 			dependencies: ["0A0FC4AF714D99F8"]
 			id: "35C4C2060E205DAC"
 			tasks: [{
@@ -130,19 +131,38 @@
 			}]
 		}
 		{
+			title: "Thermal Evaporation Tower"
 			x: -2.5d
 			y: 3.0d
+			description: [
+				"This multiblock can have up 18 layers. It will use heat and water to produce brine, or brine and heat to produce lithium. Warm regions like badlands will have a higher base temperature, but it's possible to create heat using a resistive heater."
+				"{image:kubejs:textures/quests/tower.png width:100 height:100 align:1}"
+			]
 			dependencies: ["35C4C2060E205DAC"]
 			id: "2A3A54D05C769435"
-			tasks: [{
-				id: "38BA49BA69FD6DA7"
-				type: "item"
-				item: "mekanism:thermal_evaporation_controller"
-			}]
+			tasks: [
+				{
+					id: "38BA49BA69FD6DA7"
+					type: "item"
+					item: "mekanism:thermal_evaporation_controller"
+				}
+				{
+					id: "20A9F24EA70745B6"
+					type: "item"
+					item: "mekanism:thermal_evaporation_valve"
+				}
+				{
+					id: "7888E5C073E70510"
+					type: "item"
+					item: "mekanism:thermal_evaporation_block"
+				}
+			]
 		}
 		{
 			x: -2.5d
 			y: 4.5d
+			subtitle: "Shocking Experience"
+			description: ["A machine that uses electrolysis to separate a fluid, into two different gases."]
 			dependencies: ["35C4C2060E205DAC"]
 			id: "457FD6C86076D5EC"
 			tasks: [{
@@ -154,6 +174,7 @@
 		{
 			x: -1.0d
 			y: 4.5d
+			description: ["This machine can create substrate and HDPE, also has a byproduct of Ethylene that can be used to generate power using a gas-burning generator."]
 			dependencies: ["457FD6C86076D5EC"]
 			id: "39107F36A3069811"
 			tasks: [{
@@ -191,6 +212,7 @@
 		{
 			x: -4.0d
 			y: -5.0d
+			description: ["Sewer will collect sewage from animals."]
 			dependencies: ["4007E77C425C976E"]
 			id: "2AEABA9499A68184"
 			tasks: [{
@@ -202,6 +224,7 @@
 		{
 			x: -2.5d
 			y: -5.0d
+			description: ["Sewage Composter can turn sewage into fertilizer."]
 			dependencies: ["4007E77C425C976E"]
 			id: "23E75CBC9844F00E"
 			tasks: [{
@@ -227,6 +250,8 @@
 		{
 			x: -1.0d
 			y: -6.5d
+			subtitle: "Industrial Meat Grinder"
+			description: ["Mob Slaughter Factory will kill any mobs or animals in range and turn it into Pink Slime and Liquid Meat. Passive mobs will yield more Pink Slime than the non-passive ones."]
 			dependencies: ["4007E77C425C976E"]
 			id: "54AC66A499DB68CF"
 			tasks: [{
@@ -238,6 +263,7 @@
 		{
 			x: -1.0d
 			y: -5.0d
+			description: ["This machine is the core and heart of Industrial Foregoing. Most of your recipes will be done here."]
 			dependencies: ["4007E77C425C976E"]
 			id: "139950A28F2CB6B9"
 			tasks: [{
@@ -295,6 +321,7 @@
 		{
 			x: -4.0d
 			y: -8.0d
+			description: ["This machine will harvest plants within its area. Feeding it with Ether Gas will make it replant the collected crops (but not the sapplings, except for oak). Also, produces a little bit of sludge and will stop working if its full of it."]
 			dependencies: ["4007E77C425C976E"]
 			id: "6F2D20CFF0DF5F75"
 			tasks: [{
@@ -317,6 +344,7 @@
 		{
 			x: -1.0d
 			y: -8.0d
+			description: ["When provided with organic material (seeds, sapplings, dyes and skulls), will create Biofuel. The more variety of different types it has, more biofuel it'll create."]
 			dependencies: ["4007E77C425C976E"]
 			id: "7E8398FD2D6CF30B"
 			tasks: [{
@@ -339,6 +367,8 @@
 		{
 			x: -5.5d
 			y: -5.0d
+			subtitle: "Meow Meow I'm a cow"
+			description: ["Animal Rancher, as the name says, will collect animal products such as wool and milk."]
 			dependencies: ["4007E77C425C976E"]
 			id: "1902A89183894D86"
 			tasks: [{
@@ -350,6 +380,7 @@
 		{
 			x: -5.5d
 			y: -3.5d
+			subtitle: "Good morning, Sunshine!"
 			dependencies: ["1902A89183894D86"]
 			id: "208A18358D0CA810"
 			tasks: [{
@@ -376,6 +407,8 @@
 			title: "Alternative Plastic from Latex"
 			x: -2.5d
 			y: -8.0d
+			subtitle: "Easy route."
+			description: ["Fluid Extractors will collect Latex from logs. They'll consume the log over time, and altough not necessary, they can use power to triple the output. Each log has a different yield from the other, check REI for more info."]
 			dependencies: ["4007E77C425C976E"]
 			id: "07A173CCEB148AD4"
 			tasks: [
@@ -394,6 +427,8 @@
 		{
 			x: -2.5d
 			y: -3.5d
+			subtitle: "Garden Cloche could never"
+			description: ["Hydoponic Beds utilize water and to grow plants faster than usual. They dont use fertilizers, but need &3Ether Gas&r to collect and replant the seeds automatically."]
 			dependencies: [
 				"4E9E527D477017AC"
 				"11ECD8E1D88C1DF5"
@@ -408,7 +443,7 @@
 		{
 			x: 2.0d
 			y: -6.5d
-			description: ["This will spawn mobs as long as one of the blocks has a supply of Liquid Meat."]
+			description: ["This will spawn mobs as long as one of the blocks has a supply of Power and Liquid Meat, the others will share a part of the receptor blocks."]
 			dependencies: ["6033214E0C26DFA0"]
 			id: "26FBF22972815A83"
 			tasks: [{
@@ -420,6 +455,7 @@
 		{
 			x: -4.0d
 			y: -11.0d
+			description: ["Can use sludge produced by the plant gatherer to create some items."]
 			dependencies: ["42249C449A0A5825"]
 			id: "76E0CB65FC0BFD3E"
 			tasks: [{
@@ -432,6 +468,7 @@
 			x: 1.5d
 			y: -0.5d
 			shape: "gear"
+			description: ["This multiblock will be used to create deposits of resources, using slurries and meshes."]
 			dependencies: [
 				"38BEC380C355AB46"
 				"36A0369CEDD44BB6"
@@ -450,6 +487,7 @@
 		{
 			x: -1.0d
 			y: 6.0d
+			description: ["Will only be used to create activated carbon meshes."]
 			dependencies: ["6D96C22AED8671A4"]
 			id: "15EDB164447E3DF9"
 			tasks: [{
@@ -585,7 +623,7 @@
 		{
 			x: 2.5d
 			y: 5.0d
-			dependencies: ["3C2C3C5BED4E830A"]
+			description: ["{\"text\" : \"Check ElementalCraft chapter for more info!\", \"color\": \"green\", \"underlined\": \"true\" ,\"clickEvent\": { \"action\": \"change_page\", \"value\": \"3B244ACC959125F2\"}}"]
 			id: "12B7444358A1347F"
 			tasks: [{
 				id: "0F1D3170DBD2BA66"
@@ -612,41 +650,9 @@
 			}]
 		}
 		{
-			x: 2.5d
-			y: 6.5d
-			dependencies: ["63D72477BB0F83A4"]
-			id: "3C2C3C5BED4E830A"
-			tasks: [
-				{
-					id: "21452291D63A6419"
-					type: "item"
-					item: "elementalcraft:pureinfuser"
-				}
-				{
-					id: "6E8788D27A919C39"
-					type: "item"
-					item: "elementalcraft:pedestal_air"
-				}
-				{
-					id: "15687913AA974F4B"
-					type: "item"
-					item: "elementalcraft:pedestal_earth"
-				}
-				{
-					id: "45B631FD29BFD758"
-					type: "item"
-					item: "elementalcraft:pedestal_water"
-				}
-				{
-					id: "53A8DC6786252298"
-					type: "item"
-					item: "elementalcraft:pedestal_fire"
-				}
-			]
-		}
-		{
 			x: -4.0d
 			y: 3.0d
+			description: ["This machine combine two gases into a different one."]
 			dependencies: ["35C4C2060E205DAC"]
 			id: "73DF8FC5E3617792"
 			tasks: [{
@@ -683,6 +689,8 @@
 			title: "Laser Circuit Assembly"
 			x: -4.0d
 			y: 7.5d
+			subtitle: "Multiblockn't"
+			description: ["These machines work together as a production line. Each machine has a different funcion: &2Assembly IO Units&r will import from a chest to export to the platform, and export from the platform to an inventory. &2Assembly Platforms&r will hold items so the other machines can work in it. &2Assembly Lasers (and drills)&r will work in the item inserted on the platform, until it's complete. &2Assembly Controller&r will provide pressure to all the machines and work as the core, commanding every other machine on the line, following the program inserted on it. &9Upgrades&r are inserted on the controller."]
 			dependencies: ["7F7EC08E0D521059"]
 			id: "1F060A2843541330"
 			tasks: [
@@ -734,6 +742,8 @@
 		{
 			x: -5.5d
 			y: 7.5d
+			subtitle: "Give up to Beff Jezos"
+			description: ["Amadron Tablets are used to request some essential items to start with PneumaticCraft. Use the charging station to recharge it."]
 			id: "7F7EC08E0D521059"
 			tasks: [
 				{
@@ -749,8 +759,11 @@
 			]
 		}
 		{
+			title: "Alchemy Machines"
 			x: -1.0d
 			y: -1.0d
+			subtitle: "Who needs a Philosopher Stone?"
+			description: ["Dissolvers can turn materials, in its most basic elements, and combiner will use these elements to create others elements or items."]
 			dependencies: ["5AB0ED73545E6581"]
 			id: "044E185CE9637030"
 			tasks: [

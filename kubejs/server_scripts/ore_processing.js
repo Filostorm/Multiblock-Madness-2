@@ -471,9 +471,9 @@ console.log(fluidTagLookup[`forge:molten_${item.material}`][1]);
 				///////////////////// ORE REFINING STEP 2 //////////////////
 			
 					//NA Crushing
-					global.naturesauraAltar(event, `${global.refiningMultiplier[2]}x kubejs:${global.oreRefiningParts[2].name}_${item.material}`, `#mbm2:ore_part/refinable_tier_2/${item.material}`, 'naturesaura:crushing_catalyst', 'overworld', 10000, 80, `mbm2:${global.oreRefiningParts[2].name}/${item.material}`)
+					global.naturesauraAltar(event, `${global.refiningMultiplier[2]}x kubejs:${global.oreRefiningParts[2].name}_${item.material}`, `#mbm2:ore_part/refinable_tier_2/${item.material}`, 'naturesaura:crushing_catalyst', 'overworld', 1000, 8, `mbm2:${global.oreRefiningParts[2].name}/${item.material}`)
 					//Chain recipe
-					global.naturesauraAltar(event, `kubejs:${global.oreRefiningParts[2].name}_${item.material}`, `kubejs:${global.oreRefiningParts[3].name}_${item.material}`, 'naturesaura:crushing_catalyst', 'overworld', 2000, 40, `mbm2:chain_recipe/${global.oreRefiningParts[2].name}/${item.material}`)
+					global.naturesauraAltar(event, `kubejs:${global.oreRefiningParts[2].name}_${item.material}`, `kubejs:${global.oreRefiningParts[3].name}_${item.material}`, 'naturesaura:crushing_catalyst', 'overworld', 200, 4, `mbm2:chain_recipe/${global.oreRefiningParts[2].name}/${item.material}`)
 
 	 				////Imbuing
 	 				//global.arsImbuement(event, `kubejs:${global.oreRefiningParts[2]}_${item.material}`, global.refiningMultiplier[2], refinableOre(2), 3000, [], `mbm2:${global.oreRefiningParts[2]}/${item.material}`)
